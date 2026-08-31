@@ -1,8 +1,15 @@
 import { useCallback, useRef, useState } from 'react';
-import type { Project, ProjectPlan } from '../../shared/types';
+import type { Idea, Project, ProjectPlan } from '../../shared/types';
 import { api } from '../api';
 import Modal from '../components/Modal';
 import Loader from '../components/Loader';
+
+const IDEAS_COPY = [
+  'rolling the dice…',
+  'raiding the toy box…',
+  'looking for a good "aha"…',
+  'skipping the boring ones…',
+];
 
 const LOADING_COPY = [
   'sizing up what you already know…',
@@ -50,21 +57,26 @@ export default function NewProjectModal({
   onCreated: (p: Project) => void;
   onError: (e: unknown, prefix?: string) => void;
 }) {
-  const [stage, setStage] = useState<'goal' | 'loading' | 'review'>('goal');
+  const [stage, setStage] = useState<'goal' | 'loading' | 'review' | 'ideas'>('goal');
   const [goal, setGoal] = useState('');
   const [plan, setPlan] = useState<ProjectPlan | null>(null);
   const [name, setName] = useState('');
   const [rows, setRows] = useState<Row[]>([]);
   const [creating, setCreating] = useState(false);
   const [warn, setWarn] = useState<string | null>(null);
+  const [ideas, setIdeas] = useState<Idea[] | null>(null);
+  const [ideasBusy, setIdeasBusy] = useState(false);
+  const [seed, setSeed] = useState<string | null>(null); // riffing on this idea's goal
+  const seen = useRef<string[]>([]);                     // titles already shown, never repeated
   const alive = useRef(true);
 
   const close = useCallback(() => { alive.current = false; onClose(); }, [onClose]);
 
-  const submitGoal = useCallback(async () => {
-    const g = goal.trim();
+  const planFrom = useCallback(async (rawGoal: string) => {
+    const g = rawGoal.trim();
     if (g.length < 6) { setWarn('Give it a sentence — what do you want to build?'); return; }
     setWarn(null);
+    setGoal(g); // accept() stores this as the project's goal
     setStage('loading');
     try {
       const p = await api.planProject(g);
@@ -84,7 +96,30 @@ export default function NewProjectModal({
       setStage('goal');
       onError(e, 'Planning failed:');
     }
-  }, [goal, onError]);
+  }, [onError]);
+
+  const submitGoal = useCallback(() => { void planFrom(goal); }, [planFrom, goal]);
+
+  const fetchIdeas = useCallback(async (nextSeed: string | null) => {
+    setIdeasBusy(true);
+    setSeed(nextSeed);
+    setStage('ideas');
+    try {
+      const res = await api.ideas({
+        ...(nextSeed ? { seed: nextSeed } : {}),
+        avoid: seen.current.slice(-20),
+      });
+      if (!alive.current) return;
+      setIdeas(res.ideas);
+      seen.current = [...seen.current, ...res.ideas.map((i) => i.title)].slice(-20);
+    } catch (e) {
+      if (!alive.current) return;
+      setStage('goal');
+      onError(e, 'Idea generation failed:');
+    } finally {
+      if (alive.current) setIdeasBusy(false);
+    }
+  }, [onError]);
 
   const move = (i: number, dir: -1 | 1) => setRows((rs) => {
     const j = i + dir;
@@ -139,6 +174,14 @@ export default function NewProjectModal({
         footer={stage === 'loading' ? undefined : (
           <>
             <button className="btn btn-ghost" onClick={close}>Cancel</button>
+            <button
+              className="btn"
+              data-testid="ideas-btn"
+              title="not sure what to learn? roll five project ideas"
+              onClick={() => void fetchIdeas(null)}
+            >
+              🎲 Inspire me
+            </button>
             <button className="btn btn-primary" data-testid="goal-submit" onClick={submitGoal}>
               Plan it →
             </button>
@@ -165,6 +208,84 @@ export default function NewProjectModal({
               plan will skip it.
             </p>
             {warn && <p className="np-warn" role="alert">{warn}</p>}
+          </>
+        )}
+      </Modal>
+    );
+  }
+
+  // --------------------------------------------------------------- ideas
+  if (stage === 'ideas') {
+    return (
+      <Modal
+        title={seed ? 'In that spirit…' : 'Five directions'}
+        onClose={close}
+        testId="ideas-panel"
+        width={680}
+        dismissOnScrim={!ideasBusy}
+        footer={
+          <>
+            <button className="btn btn-ghost" data-testid="ideas-back" disabled={ideasBusy} onClick={() => setStage('goal')}>
+              ← Write my own
+            </button>
+            <button
+              className="btn"
+              data-testid="ideas-refresh"
+              disabled={ideasBusy}
+              title={seed ? 'five more in this spirit' : 'five completely different ones'}
+              onClick={() => void fetchIdeas(seed)}
+            >
+              🎲 Five more
+            </button>
+          </>
+        }
+      >
+        {ideasBusy || !ideas ? (
+          <Loader lines={IDEAS_COPY} testId="ideas-loading" />
+        ) : (
+          <>
+            {seed && (
+              <p className="np-seed-note">
+                <span className="chip chip-accent2 chip-tilt">seed</span>
+                &nbsp;riffing on: <em>{seed.length > 90 ? `${seed.slice(0, 90)}…` : seed}</em>
+              </p>
+            )}
+            <ul className="np-ideas">
+              {ideas.map((idea, i) => (
+                <li key={`${idea.title}-${i}`} className="card np-idea anim-rise" style={{ animationDelay: `${i * 55}ms` }} data-testid={`idea-${i}`}>
+                  <div className="np-idea-main">
+                    <h3 className="np-idea-title">{idea.title}</h3>
+                    <p className="np-idea-pitch">{idea.pitch}</p>
+                  </div>
+                  <div className="np-idea-tools">
+                    <button
+                      className="btn btn-primary btn-sm"
+                      data-testid={`idea-plan-${i}`}
+                      title="plan this project now"
+                      onClick={() => void planFrom(idea.goal)}
+                    >
+                      Plan this →
+                    </button>
+                    <button
+                      className="btn btn-sm"
+                      data-testid={`idea-seed-${i}`}
+                      title="five more ideas in the spirit of this one"
+                      onClick={() => void fetchIdeas(idea.goal)}
+                    >
+                      ✨ more like this
+                    </button>
+                    <button
+                      className="btn btn-ghost btn-sm"
+                      data-testid={`idea-edit-${i}`}
+                      title="drop it into the goal box to tweak first"
+                      onClick={() => { setGoal(idea.goal); setStage('goal'); }}
+                    >
+                      ✎ edit
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </>
         )}
       </Modal>

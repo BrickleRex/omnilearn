@@ -81,6 +81,18 @@ export interface ProjectPlan {
   starterFiles: Array<{ path: string; content: string }>; // small: entry stubs, a README
 }
 
+// ---------- project ideas ("inspire me") ----------
+export interface Idea {
+  title: string;   // <= 8 words, e.g. "Build a tiny regex engine"
+  pitch: string;   // one line: what you'd learn / why it's fun
+  goal: string;    // ready-to-plan goal statement, first person
+}
+export interface IdeasRequest {
+  seed?: string;    // an idea's goal to riff on: five NEW ideas in its spirit
+  avoid?: string[]; // titles already shown; never repeat these
+}
+export interface IdeasResponse { ideas: Idea[] } // always 5
+
 // ---------- calibration ----------
 export interface CalibrationQuestion {
   id: string;
@@ -189,6 +201,7 @@ export interface RunResult {
 // PUT    /api/settings                      -> Settings           (body: Partial<Settings>)
 // GET    /api/projects                      -> ProjectSummary[]
 // POST   /api/projects/plan                 -> ProjectPlan        (body: ProjectPlanRequest)  [LLM]
+// POST   /api/projects/ideas                -> IdeasResponse      (body: IdeasRequest)        [LLM, sonnet-fast]
 // POST   /api/projects                      -> Project            (body: ProjectPlan — as edited by user)
 // GET    /api/projects/:id                  -> Project
 // PATCH  /api/projects/:id                  -> Project            (body: deep-merge of {milestones?: ...} status/currentStep edits)

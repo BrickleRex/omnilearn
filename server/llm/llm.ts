@@ -10,7 +10,7 @@
 import { spawn } from 'node:child_process';
 import { getSettings } from '../settings';
 
-export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch' | 'chat';
+export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch' | 'chat' | 'ideas';
 
 export interface CallClaudeOptions {
   task: LlmTask;
@@ -47,6 +47,9 @@ export async function modelForTask(task: LlmTask): Promise<string> {
     case 'chat':
       // `chat` is additive in Settings, so fall back rather than trust it exists.
       return models.chat ?? 'sonnet';
+    case 'ideas':
+      // Idea batches must feel refreshable, so they ride the fast hint model.
+      return models.hint;
   }
 }
 

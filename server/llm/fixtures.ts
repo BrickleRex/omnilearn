@@ -4,6 +4,9 @@
 
 import type {
   Calibration,
+  Idea,
+  IdeasRequest,
+  IdeasResponse,
   CalibrationQuestion,
   Concept,
   GhostRequest,
@@ -441,4 +444,35 @@ export function mockChat(milestone: Milestone, message: string): string {
     return `You're building "${milestone.title}" — next step: ${stepTitle}. (mock tutor)`;
   }
   return `Mock tutor reply: ${text.slice(0, 60)}`;
+}
+
+// ---------- ideas ("inspire me") ----------
+
+const MOCK_IDEAS: Idea[] = [
+  { title: 'Build a tiny regex engine', pitch: 'See how pattern matching is just a little state machine.', goal: 'I want to build a tiny regex engine supporting literals, star and dot from scratch in python' },
+  { title: 'Rasterize a spinning cube', pitch: 'Pixels, projection, and why 3D is mostly one matrix multiply.', goal: 'I want to rasterize a spinning wireframe cube to the terminal from scratch in python' },
+  { title: 'Write a byte-pair tokenizer', pitch: 'The exact algorithm that turns text into LLM tokens.', goal: 'I want to build a byte-pair-encoding tokenizer from scratch in python' },
+  { title: 'Make a key-value store', pitch: 'Append-only logs and why databases survive power cuts.', goal: 'I want to build a tiny persistent key-value store with a write-ahead log from scratch in python' },
+  { title: 'Train a two-layer net', pitch: 'Backprop by hand — the chain rule, running on real digits.', goal: 'I want to train a two-layer neural network on MNIST digits from scratch in numpy' },
+];
+
+export function mockIdeas(req: IdeasRequest): IdeasResponse {
+  if (req.seed) {
+    const stem = req.seed.slice(0, 40).trim();
+    return {
+      ideas: Array.from({ length: 5 }, (_, i) => ({
+        title: `Spirit of the seed #${i + 1}`,
+        pitch: `A sibling of "${stem}" that scratches the same itch. (mock)`,
+        goal: `${req.seed} — variation ${i + 1}`,
+      })),
+    };
+  }
+  const avoid = new Set(req.avoid ?? []);
+  const fresh = MOCK_IDEAS.filter((i) => !avoid.has(i.title));
+  const ideas = [...fresh];
+  let n = 2;
+  while (ideas.length < 5) {
+    ideas.push({ ...MOCK_IDEAS[ideas.length % MOCK_IDEAS.length], title: `${MOCK_IDEAS[ideas.length % MOCK_IDEAS.length].title} (round ${n++})` });
+  }
+  return { ideas: ideas.slice(0, 5) };
 }

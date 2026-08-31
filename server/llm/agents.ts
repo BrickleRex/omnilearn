@@ -8,6 +8,9 @@ import { Router } from 'express';
 import path from 'node:path';
 import type {
   Calibration,
+  Idea,
+  IdeasRequest,
+  IdeasResponse,
   CalibrationResult,
   CalibrationSubmit,
   Concept,
@@ -52,6 +55,30 @@ export async function generatePlan(goal: string): Promise<ProjectPlan> {
   if (isMock()) return fixtures.mockPlan(goal);
   const text = await callClaude({ task: 'plan', prompt: prompts.planPrompt(goal) });
   return extractJson<ProjectPlan>(text);
+}
+
+// ---------- ideas ("inspire me") ----------
+
+function coerceIdeas(raw: IdeasResponse): IdeasResponse {
+  const list = Array.isArray(raw?.ideas) ? raw.ideas : [];
+  const ideas: Idea[] = list
+    .filter((i) => i && typeof i.title === 'string' && typeof i.goal === 'string')
+    .map((i) => ({
+      title: String(i.title).slice(0, 80),
+      pitch: typeof i.pitch === 'string' ? i.pitch.slice(0, 200) : '',
+      goal: String(i.goal).slice(0, 400),
+    }))
+    .slice(0, 5);
+  if (ideas.length === 0) throw new HttpError(502, 'idea generation came back empty — try again');
+  return { ideas };
+}
+
+export async function generateIdeas(req: IdeasRequest): Promise<IdeasResponse> {
+  const seed = typeof req.seed === 'string' && req.seed.trim() ? req.seed.trim().slice(0, 400) : undefined;
+  const avoid = Array.isArray(req.avoid) ? req.avoid.filter((t) => typeof t === 'string').slice(0, 20) : [];
+  if (isMock()) return fixtures.mockIdeas({ ...(seed !== undefined ? { seed } : {}), avoid });
+  const text = await callClaude({ task: 'ideas', prompt: prompts.ideasPrompt(seed, avoid) });
+  return coerceIdeas(extractJson<IdeasResponse>(text));
 }
 
 // ---------- calibration ----------
@@ -209,6 +236,14 @@ agentsRouter.post('/projects/plan', async (req, res, next) => {
     const goal = String(((req.body ?? {}) as { goal?: unknown }).goal ?? '').trim();
     if (!goal) throw new HttpError(400, 'body.goal is required');
     res.json(await generatePlan(goal));
+  } catch (err) {
+    next(err);
+  }
+});
+
+agentsRouter.post('/projects/ideas', async (req, res, next) => {
+  try {
+    res.json(await generateIdeas((req.body ?? {}) as IdeasRequest));
   } catch (err) {
     next(err);
   }

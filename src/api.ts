@@ -3,6 +3,7 @@ import type {
   Calibration, CalibrationSubmit, CalibrationResult, PrimerDoc,
   HintRequest, HintResponse, GhostRequest, GhostResponse, WatchRequest, WatchResponse,
   CompleteRequest, CompleteResponse, ChatMessage, ChatRequest, ChatResponse,
+  IdeasRequest, IdeasResponse,
 } from '../shared/types';
 
 async function req<T>(method: string, url: string, body?: unknown): Promise<T> {
@@ -26,6 +27,7 @@ export const api = {
 
   listProjects: () => req<ProjectSummary[]>('GET', '/api/projects'),
   planProject: (goal: string) => req<ProjectPlan>('POST', '/api/projects/plan', { goal }),
+  ideas: (body: IdeasRequest) => req<IdeasResponse>('POST', '/api/projects/ideas', body),
   createProject: (plan: ProjectPlan) => req<Project>('POST', '/api/projects', plan),
   getProject: (id: string) => req<Project>('GET', `/api/projects/${id}`),
   patchProject: (id: string, patch: Partial<Project>) => req<Project>('PATCH', `/api/projects/${id}`, patch),

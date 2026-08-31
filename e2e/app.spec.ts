@@ -197,6 +197,37 @@ test('real intellisense and the Ask tutor tab', async ({ page }) => {
   await expect(page.getByTestId('workspace')).toBeVisible({ timeout: 10_000 });
 });
 
+test('inspire me: five ideas, refresh, seed, and plan from one', async ({ page }) => {
+  await page.goto('/');
+  await page.getByTestId('new-project').click();
+  await page.getByTestId('ideas-btn').click();
+
+  // five fresh ideas
+  await expect(page.getByTestId('ideas-panel')).toBeVisible({ timeout: 10_000 });
+  for (let i = 0; i < 5; i++) await expect(page.getByTestId(`idea-${i}`)).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByTestId('idea-0')).toContainText('regex engine');
+
+  // refresh: five different ones (mock suffixes rounds to avoid repeats)
+  await page.getByTestId('ideas-refresh').click();
+  await expect(page.getByTestId('idea-0')).toContainText(/round/, { timeout: 10_000 });
+
+  // seed an idea: the next batch riffs on its spirit
+  await page.getByTestId('idea-seed-1').click();
+  await expect(page.getByTestId('ideas-panel')).toContainText('riffing on', { timeout: 10_000 });
+  await expect(page.getByTestId('idea-0')).toContainText('Spirit of the seed');
+
+  // edit-first drops the goal into the textarea
+  await page.getByTestId('idea-edit-2').click();
+  await expect(page.getByTestId('goal-input')).toHaveValue(/variation 3/);
+
+  // and planning straight from an idea reaches the plan review
+  await page.getByTestId('ideas-btn').click();
+  await expect(page.getByTestId('idea-0')).toBeVisible({ timeout: 10_000 });
+  await page.getByTestId('idea-plan-0').click();
+  await expect(page.getByTestId('plan-review')).toBeVisible({ timeout: 15_000 });
+  await page.getByRole('button', { name: 'Cancel' }).click(); // no project created
+});
+
 test('theme schemes switch and persist', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByTestId('library')).toBeVisible();

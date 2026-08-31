@@ -395,3 +395,39 @@ HOW TO WRITE IT
 - Answer the thing they actually asked, first sentence.
 - Plain text. Light markdown is fine. Do NOT return JSON.`;
 }
+
+// ---------- ideas ("inspire me") ----------
+
+const IDEA_SPARKS = [
+  'systems internals', 'graphics from first principles', 'ML plumbing', 'text and languages',
+  'compression and encoding', 'networking by hand', 'databases from scratch', 'audio and signals',
+  'emulation and virtual machines', 'search and ranking', 'games and simulation', 'cryptography basics',
+  'concurrency primitives', 'parsers and interpreters', 'numerical computing',
+];
+
+export function ideasPrompt(seed: string | undefined, avoid: string[]): string {
+  const flavor = [...IDEA_SPARKS].sort(() => Math.random() - 0.5).slice(0, 4).join(', ');
+  const mode = seed
+    ? `SEED: the learner liked this idea and wants FIVE NEW ideas in its spirit — siblings and
+variations that scratch the same itch (same domain, same kind of "aha"), never the seed restated:
+"${seed}"`
+    : `No seed: five genuinely VARIED ideas, each from a different corner. For spread, lean on
+some of these directions: ${flavor}.`;
+  const avoidBlock = avoid.length
+    ? `\nALREADY SHOWN (never repeat or lightly rephrase these):\n${avoid.map((t) => `- ${t}`).join('\n')}`
+    : '';
+  return `Propose learning projects for someone rebuilding their hands-on coding muscle: they code
+in python, love understanding things from first principles, and will type every line themselves
+with an instructor teaching just enough. Each idea must be buildable in small runnable milestones
+over a few evenings — no web apps, no boilerplate farms, nothing needing accounts or GPUs.
+
+${mode}
+${avoidBlock}
+
+Each idea: title <= 8 words starting with a verb; pitch = ONE line on the "aha" it delivers
+(plain language, a smart 15-year-old gets it); goal = first-person ready-to-plan sentence
+("I want to build ... from scratch in python"), mentioning "not from scratch" leaning on a
+library only when that is genuinely the better lesson.
+
+${fence(`{ ideas: Array<{ title: string; pitch: string; goal: string }> }  // exactly 5`)}`;
+}
