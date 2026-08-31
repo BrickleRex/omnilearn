@@ -8,10 +8,12 @@ export const DEFAULT_SETTINGS: Settings = {
   scheme: 'sunshower',
   guidanceStyle: 'both',
   models: { plan: 'opus', primer: 'opus', hint: 'sonnet', ghost: 'sonnet', watch: 'haiku' },
+  runner: 'auto',
 };
 
 const SCHEMES = new Set(['sunshower', 'blackboard', 'arcade', 'mint']);
 const GUIDANCE = new Set(['compass', 'footlight', 'both']);
+const RUNNERS = new Set(['auto', 'uv', 'python']);
 
 function coerce(raw: unknown): Settings {
   const p = (raw ?? {}) as Partial<Settings>;
@@ -27,6 +29,7 @@ function coerce(raw: unknown): Settings {
       ? (p.guidanceStyle as Settings['guidanceStyle'])
       : DEFAULT_SETTINGS.guidanceStyle,
     models,
+    runner: RUNNERS.has(String(p.runner)) ? (p.runner as Settings['runner']) : DEFAULT_SETTINGS.runner,
   };
 }
 

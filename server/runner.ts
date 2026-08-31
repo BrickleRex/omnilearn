@@ -5,9 +5,10 @@ import { spawn } from 'node:child_process';
 import fsp from 'node:fs/promises';
 import type { RunResult } from '../shared/types';
 import { HttpError, projectDir, resolveInProject, toPosix } from './store';
+import { resolveRunner } from './interp';
+import { getSettings } from './settings';
 import path from 'node:path';
 
-const RUN_TIMEOUT_MS = 30_000;
 const OUTPUT_CAP = 200_000;
 
 /** Last structured run per project — the watcher endpoint may lean on this. */
@@ -35,11 +36,14 @@ export async function runFile(projectId: string, relPath: string): Promise<RunRe
   }
 
   const rel = toPosix(path.relative(dir, abs));
+  const source = await fsp.readFile(abs, 'utf8').catch(() => '');
+  const settings = await getSettings();
+  const runner = resolveRunner(settings.runner ?? 'auto', dir, rel, source);
   const startedAt = new Date().toISOString();
   const t0 = Date.now();
 
   const result = await new Promise<RunResult>((resolve) => {
-    const child = spawn('python3', [rel], {
+    const child = spawn(runner.bin, runner.args, {
       cwd: dir,
       env: { ...process.env, PYTHONUNBUFFERED: '1' },
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -53,14 +57,14 @@ export async function runFile(projectId: string, relPath: string): Promise<RunRe
     const timer = setTimeout(() => {
       timedOut = true;
       child.kill('SIGKILL');
-    }, RUN_TIMEOUT_MS);
+    }, runner.timeoutMs);
 
     const finish = (exitCode: number) => {
       if (settled) return;
       settled = true;
       clearTimeout(timer);
       if (timedOut) {
-        stderr += `\n[omnilearn] killed after ${RUN_TIMEOUT_MS / 1000}s timeout`;
+        stderr += `\n[omnilearn] killed after ${runner.timeoutMs / 1000}s timeout`;
       }
       resolve({
         path: rel,
@@ -69,6 +73,7 @@ export async function runFile(projectId: string, relPath: string): Promise<RunRe
         stderr: cap(stderr),
         durationMs: Date.now() - t0,
         startedAt,
+        command: runner.display,
       });
     };
 
@@ -79,7 +84,7 @@ export async function runFile(projectId: string, relPath: string): Promise<RunRe
       if (stderr.length < OUTPUT_CAP * 2) stderr += d.toString('utf8');
     });
     child.on('error', (err) => {
-      stderr += `\n[omnilearn] could not start python3: ${err.message}`;
+      stderr += `\n[omnilearn] could not start ${runner.bin}: ${err.message}`;
       finish(127);
     });
     child.on('close', (code, signal) => {

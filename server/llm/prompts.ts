@@ -56,6 +56,12 @@ RULES
   * the entry file: a module docstring restating the goal, the imports the learner will need,
     and an \`if __name__ == "__main__":\` block that prints something so a first run succeeds.
   * a short README.md (under 15 lines) naming the goal and how to run it.
+  * If an entry file needs third-party packages (numpy, etc.), open it with a PEP 723
+    inline-metadata block so \`uv run\` installs them automatically:
+    # /// script
+    # dependencies = ["numpy"]
+    # ///
+    Pure-stdlib files get no block.
   * Never write the code the learner is here to write. Stubs only.
 - If the goal says "not from scratch" (or names a library to lean on), plan AROUND that library:
   use it for the parts the learner is not trying to learn, and keep the hand-written parts focused.

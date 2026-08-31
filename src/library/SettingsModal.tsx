@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { GuidanceStyle, Scheme, Settings } from '../../shared/types';
+import type { GuidanceStyle, RunnerPref, Scheme, Settings } from '../../shared/types';
 import { api } from '../api';
 import Modal from '../components/Modal';
 
@@ -14,6 +14,12 @@ const GUIDANCE: Array<{ id: GuidanceStyle; name: string; note: string }> = [
   { id: 'compass',   name: 'Compass',   note: 'slim strip above the editor: step pips + the current step.' },
   { id: 'footlight', name: 'Footlight', note: 'bottom bar with an amber lamp; hints type themselves out.' },
   { id: 'both',      name: 'Both',      note: 'compass overhead, footlight below. The default.' },
+];
+
+const RUNNERS: Array<{ id: RunnerPref; name: string; note: string }> = [
+  { id: 'auto',   name: 'Auto',   note: 'uv when the project or script asks for it (or python is missing); plain python otherwise.' },
+  { id: 'uv',     name: 'uv',     note: 'always `uv run` — handles interpreters and inline deps, no PATH fuss.' },
+  { id: 'python', name: 'python', note: 'always plain python3 from PATH.' },
 ];
 
 export default function SettingsModal({
@@ -85,6 +91,33 @@ export default function SettingsModal({
               </span>
             </button>
           ))}
+        </div>
+      </section>
+
+      <section className="set-block">
+        <span className="label">Python runner</span>
+        <div className="set-radios" role="radiogroup" aria-label="Python runner">
+          {RUNNERS.map((r) => {
+            const on = (settings.runner ?? 'auto') === r.id;
+            return (
+              <button
+                key={r.id}
+                type="button"
+                role="radio"
+                aria-checked={on}
+                className={`set-radio${on ? ' is-on' : ''}`}
+                data-testid={`runner-${r.id}`}
+                disabled={saving !== null}
+                onClick={() => save({ runner: r.id }, `runner-${r.id}`)}
+              >
+                <span className="set-dot" aria-hidden="true" />
+                <span>
+                  <b>{r.name}</b>
+                  <em>{r.note}</em>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </section>
 

@@ -180,7 +180,7 @@ export default function Rail(props: RailProps) {
                 {!lastRun && !running && <div className="railIdle">nothing has run yet — Cmd/Ctrl+Enter</div>}
                 {lastRun && (
                   <>
-                    <div className="railCmd">$ python3 {lastRun.path}</div>
+                    <div className="railCmd">$ {lastRun.command ?? `python3 ${lastRun.path}`}</div>
                     {lastRun.stdout && <pre className="railOut">{lastRun.stdout}</pre>}
                     {lastRun.stderr && <pre className="railOut railErr">{lastRun.stderr}</pre>}
                     {!lastRun.stdout && !lastRun.stderr && <pre className="railOut railQuiet">(no output)</pre>}

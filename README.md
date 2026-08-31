@@ -27,7 +27,13 @@ npm run dev        # server :4650 + vite :5173  → open http://localhost:5173
 
 Generation runs through the **Claude Code CLI** (`claude -p`) using your Claude
 subscription — no API key. Make sure `claude` is installed and logged in.
-Python 3 (+ numpy for numpy projects) must be on PATH for the run button.
+
+**Running code**: either `python3` or [`uv`](https://docs.astral.sh/uv/) on PATH
+is enough. The runner is `auto` by default: plain python for plain scripts, and
+`uv run` when the project has a `pyproject.toml`/`uv.lock`, when a script carries
+PEP 723 inline deps (generated starter files declare things like numpy that way,
+so uv installs them on first run), or when python isn't on PATH at all. Force
+one or the other under Settings → Python runner.
 
 ## Tests
 

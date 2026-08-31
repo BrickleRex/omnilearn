@@ -4,10 +4,15 @@
 export type Scheme = 'sunshower' | 'blackboard' | 'arcade' | 'mint';
 export type GuidanceStyle = 'compass' | 'footlight' | 'both';
 
+/** How to run python files. 'auto' prefers uv when the project/script wants it
+ *  (pyproject/uv.lock or PEP 723 inline deps) or when no python is on PATH. */
+export type RunnerPref = 'auto' | 'uv' | 'python';
+
 export interface Settings {
   scheme: Scheme;
   guidanceStyle: GuidanceStyle;
   models: { plan: string; primer: string; hint: string; ghost: string; watch: string };
+  runner?: RunnerPref; // additive; server always fills it (default 'auto')
 }
 
 export type MilestoneStatus = 'todo' | 'current' | 'done';
@@ -136,6 +141,7 @@ export interface RunResult {
   stderr: string;
   durationMs: number;
   startedAt: string;
+  command?: string; // additive: the exact command line used, e.g. "uv run mhsa.py"
 }
 
 // ---------- websocket (terminal) ----------
