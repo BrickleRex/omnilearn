@@ -113,7 +113,15 @@ export interface HintRequest {
   cursorLine: number;    // 1-based
   level: 'step' | 'composite';
 }
-export interface HintResponse { hint: string; stepIndex: number } // stepIndex: compass position
+export interface HintResponse {
+  hint: string;
+  stepIndex: number; // compass position
+  // Additive: set ONLY when something in the code written so far is clearly and
+  // unambiguously wrong for the goal (never stylistic, never plausible
+  // exploration). Surfaces through the same gutter-dot + footlight channel as
+  // watcher nudges. 1-2 kid-simple lines.
+  flag?: { line: number; note: string };
+}
 
 export interface GhostRequest { milestoneId: string; path: string; content: string; cursorLine: number }
 export interface GhostResponse { code: string }  // ONE line of code, no explanation
