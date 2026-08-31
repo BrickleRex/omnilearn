@@ -2,6 +2,7 @@ import type {
   Settings, ProjectSummary, Project, ProjectPlan, FileNode, RunResult,
   Calibration, CalibrationSubmit, CalibrationResult, PrimerDoc,
   HintRequest, HintResponse, GhostRequest, GhostResponse, WatchRequest, WatchResponse,
+  CompleteRequest, CompleteResponse, ChatMessage, ChatRequest, ChatResponse,
 } from '../shared/types';
 
 async function req<T>(method: string, url: string, body?: unknown): Promise<T> {
@@ -43,6 +44,11 @@ export const api = {
     req<CalibrationResult>('POST', `/api/projects/${id}/calibration/submit`, body),
   primer: (id: string, milestoneId: string) =>
     req<PrimerDoc>('POST', `/api/projects/${id}/primer`, { milestoneId }),
+
+  complete: (id: string, body: CompleteRequest) => req<CompleteResponse>('POST', `/api/projects/${id}/complete`, body),
+  chatHistory: (id: string, milestoneId: string) =>
+    req<ChatMessage[]>('GET', `/api/projects/${id}/chat?milestoneId=${encodeURIComponent(milestoneId)}`),
+  chat: (id: string, body: ChatRequest) => req<ChatResponse>('POST', `/api/projects/${id}/chat`, body),
 
   hint: (id: string, body: HintRequest) => req<HintResponse>('POST', `/api/projects/${id}/hint`, body),
   ghost: (id: string, body: GhostRequest) => req<GhostResponse>('POST', `/api/projects/${id}/ghost`, body),

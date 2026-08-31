@@ -11,7 +11,7 @@ export type RunnerPref = 'auto' | 'uv' | 'python';
 export interface Settings {
   scheme: Scheme;
   guidanceStyle: GuidanceStyle;
-  models: { plan: string; primer: string; hint: string; ghost: string; watch: string };
+  models: { plan: string; primer: string; hint: string; ghost: string; watch: string; chat?: string };
   runner?: RunnerPref; // additive; server always fills it (default 'auto')
 }
 
@@ -132,6 +132,33 @@ export interface WatchResponse {
   line?: number;         // gutter line to mark, 1-based
 }
 
+// ---------- code completion (local static analysis via jedi — NOT an LLM) ----------
+export interface CompleteRequest {
+  path: string;
+  content: string;
+  line: number;    // 1-based (jedi convention)
+  column: number;  // 0-based within the line (jedi convention)
+}
+export interface CompletionItem {
+  label: string;                 // e.g. "zeros"
+  kind: string;                  // jedi type: "function" | "module" | "class" | "instance" | ...
+  detail?: string;               // short signature/description if cheap to get
+}
+export interface CompleteResponse {
+  items: CompletionItem[];       // max ~80, jedi's order (relevance)
+  engine: 'jedi' | 'words';      // 'words' = fallback when jedi unavailable
+}
+
+// ---------- tutor chat ----------
+export interface ChatMessage { role: 'user' | 'tutor'; text: string; at: string }
+export interface ChatRequest {
+  milestoneId: string;
+  message: string;
+  path?: string;      // active file, for context
+  content?: string;   // its buffer, for context
+}
+export interface ChatResponse { reply: string }
+
 // ---------- running code ----------
 export interface RunRequest { path: string }
 export interface RunResult {
@@ -162,6 +189,9 @@ export interface RunResult {
 // GET    /api/projects/:id/file?path=       -> {content: string}
 // PUT    /api/projects/:id/file?path=       -> {ok: true}         (body: {content: string})
 // POST   /api/projects/:id/run              -> RunResult          (body: RunRequest)
+// POST   /api/projects/:id/complete         -> CompleteResponse   (body: CompleteRequest)  [local jedi, never LLM]
+// GET    /api/projects/:id/chat?milestoneId= -> ChatMessage[]     (persisted history)
+// POST   /api/projects/:id/chat             -> ChatResponse       (body: ChatRequest)      [LLM]
 // POST   /api/projects/:id/calibration      -> Calibration        (body: {milestoneId})       [LLM, cached]
 // POST   /api/projects/:id/calibration/submit -> CalibrationResult (body: CalibrationSubmit)
 // POST   /api/projects/:id/primer           -> PrimerDoc          (body: {milestoneId})       [LLM, cached]

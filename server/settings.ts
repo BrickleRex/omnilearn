@@ -7,7 +7,7 @@ import { readJson, settingsPath, writeJson } from './store';
 export const DEFAULT_SETTINGS: Settings = {
   scheme: 'sunshower',
   guidanceStyle: 'both',
-  models: { plan: 'opus', primer: 'opus', hint: 'sonnet', ghost: 'sonnet', watch: 'haiku' },
+  models: { plan: 'opus', primer: 'opus', hint: 'sonnet', ghost: 'sonnet', watch: 'haiku', chat: 'sonnet' },
   runner: 'auto',
 };
 

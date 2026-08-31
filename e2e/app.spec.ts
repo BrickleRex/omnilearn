@@ -146,6 +146,39 @@ test('guidance loop: hint, ghost line, run pulse, watcher nudge, explore mode', 
   await expect(page.getByTestId(`project-card-${PROJECT_ID}`)).toContainText(/1\s*\/\s*2/);
 });
 
+test('real intellisense and the Ask tutor tab', async ({ page }) => {
+  await page.goto(`/#/workspace/${PROJECT_ID}/sdpa`);
+  await expect(page.getByTestId('workspace')).toBeVisible();
+  await expect(page.locator('.cm-content')).toBeVisible();
+
+  // --- jedi completions: np. must offer real numpy members like zeros
+  await page.locator('.cm-content').click();
+  await page.keyboard.press('ControlOrMeta+a');
+  await page.keyboard.press('Delete');
+  await page.keyboard.type('import numpy as np\nnp.', { delay: 15 });
+  const tooltip = page.locator('.cm-tooltip-autocomplete');
+  await expect(tooltip).toBeVisible({ timeout: 10_000 });
+  await expect(tooltip).toContainText('zeros', { timeout: 10_000 });
+  await page.keyboard.type('ze', { delay: 30 });
+  await expect(tooltip).toContainText('zeros');
+  await page.keyboard.press('Escape');
+
+  // --- Ask tab: Ctrl+/ opens the tutor, mock reply knows the milestone
+  await page.keyboard.press('Control+/');
+  await expect(page.getByTestId('rail-ask')).toBeVisible({ timeout: 5_000 });
+  await page.getByTestId('ask-input').fill('what is the task here');
+  await page.keyboard.press('Enter');
+  await expect(page.getByTestId('rail-ask')).toContainText(/mock tutor/i, { timeout: 15_000 });
+  await expect(page.getByTestId('rail-ask')).toContainText(/Scaled dot-product attention/i);
+
+  // history survives a reload
+  await page.reload();
+  await expect(page.locator('.cm-content')).toBeVisible();
+  await page.keyboard.press('Control+/');
+  await expect(page.getByTestId('rail-ask')).toContainText('what is the task here', { timeout: 10_000 });
+  await expect(page.getByTestId('rail-ask')).toContainText(/mock tutor/i);
+});
+
 test('theme schemes switch and persist', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByTestId('library')).toBeVisible();
