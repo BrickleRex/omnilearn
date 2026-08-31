@@ -320,8 +320,15 @@ export default function Workspace(props: {
   }, [cancelCollapse]);
 
   // --- scheme --------------------------------------------------------------
+  // `pendingScheme` keeps rapid clicks from all computing off the same stale
+  // settings prop while the PUT is still in flight.
+  const pendingScheme = useRef<Scheme | null>(null);
+  if (pendingScheme.current === settings.scheme) pendingScheme.current = null;
+
   const cycleScheme = useCallback(() => {
-    const next = SCHEMES[(SCHEMES.indexOf(settings.scheme) + 1) % SCHEMES.length];
+    const from = pendingScheme.current ?? settings.scheme;
+    const next = SCHEMES[(SCHEMES.indexOf(from) + 1) % SCHEMES.length];
+    pendingScheme.current = next;
     api.putSettings({ scheme: next })
       .then(onSettings)
       .catch(() => onSettings({ ...settings, scheme: next }));

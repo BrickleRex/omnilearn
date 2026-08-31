@@ -12,6 +12,7 @@ import { defaultKeymap, history, historyKeymap, indentWithTab } from '@codemirro
 import { bracketMatching, indentOnInput } from '@codemirror/language';
 import {
   acceptCompletion, autocompletion, closeBrackets, closeBracketsKeymap, closeCompletion,
+  completionKeymap,
 } from '@codemirror/autocomplete';
 import { python } from '@codemirror/lang-python';
 import type { Scheme } from '../../shared/types';
@@ -113,11 +114,11 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
         closeBrackets(),
         EditorState.allowMultipleSelections.of(true),
         EditorView.lineWrapping,
-        autocompletion({ activateOnTyping: true, icons: true, defaultKeymap: true }),
-        python(),
-        ghostExtension(),
 
-        // Workspace keys that must beat every built-in binding.
+        // Workspace keys that must beat every built-in binding. These come
+        // FIRST on purpose: autocompletion() registers its own Prec.highest
+        // keymap (which owns Ctrl-Space), and within one precedence level the
+        // earlier extension wins.
         Prec.highest(keymap.of([
           {
             key: 'Ctrl-Space',
@@ -130,6 +131,12 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
             run: (v) => { closeCompletion(v); latest.current.onGhost(); return true; },
           },
         ])),
+        ghostExtension(),
+
+        // ...and the completion keys minus Ctrl-Space, which is the hint now.
+        autocompletion({ activateOnTyping: true, icons: true, defaultKeymap: false }),
+        Prec.high(keymap.of(completionKeymap.filter((b) => b.key !== 'Ctrl-Space'))),
+        python(),
 
         // Tab: accept a completion if one is open, otherwise indent. The ghost's
         // Prec.highest Tab guard already refused before we get here.

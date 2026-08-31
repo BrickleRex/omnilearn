@@ -1,0 +1,12 @@
+import { chromium } from '@playwright/test';
+const base='http://localhost:4655';
+const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:1280,height:900}});
+p.on('pageerror',e=>console.log('PAGE ERROR:',e.message));
+p.on('console',m=>{if(m.type()==='error')console.log('CONSOLE:',m.text());});
+await p.goto(base+'/#/milestone/attention-from-scratch/sdpa');
+await p.waitForTimeout(3000);
+console.log(await p.locator('body').innerText());
+console.log('---testids---');
+console.log(await p.locator('[data-testid]').evaluateAll(els=>els.map(e=>e.dataset.testid).join(',')));
+await b.close();

@@ -1,0 +1,15 @@
+import { chromium, request as pwrequest } from '@playwright/test';
+const OUT='/tmp/claude-0/-home-user-omnilearn/73c89a4a-ba3f-5180-a913-3be7e41fad79/scratchpad';
+const base='http://localhost:4655';
+const api = await pwrequest.newContext({ baseURL: base });
+await api.put('/api/settings',{data:{scheme:'sunshower'}});
+const b=await chromium.launch();
+const p=await b.newPage({viewport:{width:420,height:820}});
+await p.goto(base+'/#/milestone/attention-from-scratch/sdpa');
+await p.waitForSelector('[data-testid="primer-deck"]');
+await p.waitForTimeout(1500);
+await p.screenshot({path:`${OUT}/Q-narrow2.png`,fullPage:true});
+await p.goto(base+'/#/');
+await p.waitForTimeout(1200);
+await p.screenshot({path:`${OUT}/R-narrow-lib.png`,fullPage:true});
+await b.close();
