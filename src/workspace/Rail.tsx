@@ -67,7 +67,14 @@ export default function Rail(props: RailProps) {
   const ctxRef = useRef(getAskContext); ctxRef.current = getAskContext;
   const historyFor = useRef<string | null>(null);
   const alive = useRef(true);
-  useEffect(() => () => { alive.current = false; }, []);
+  // Set true in the body, not just at ref init: StrictMode's dev-only
+  // mount->unmount->remount runs the cleanup once, and a ref keeps its value
+  // across that remount — cleanup-only would leave this false forever and
+  // silently drop every chat update in `npm run dev`.
+  useEffect(() => {
+    alive.current = true;
+    return () => { alive.current = false; };
+  }, []);
 
   const askVisible = open && tab === 'ask';
 

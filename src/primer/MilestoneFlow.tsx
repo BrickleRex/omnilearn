@@ -34,7 +34,12 @@ export default function MilestoneFlow({
   const [fatal, setFatal] = useState<string | null>(null);
   const alive = useRef(true);
 
-  useEffect(() => () => { alive.current = false; }, []);
+  // Body sets true again: under StrictMode's dev remount a ref survives the
+  // simulated unmount, so a cleanup-only guard would stay false forever.
+  useEffect(() => {
+    alive.current = true;
+    return () => { alive.current = false; };
+  }, []);
 
   const milestone = useMemo(
     () => project?.milestones.find((m) => m.id === milestoneId),

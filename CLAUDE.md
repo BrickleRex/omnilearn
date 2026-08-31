@@ -20,6 +20,10 @@ additively.
 ## Rules of the road
 - Verify with `npm run typecheck && npm run test:unit && npm run test:e2e`
   before calling anything done. E2e is the bar — unit tests alone hide UX breaks.
+- E2e runs the PRODUCTION build; also hand-check UI changes against `npm run
+  dev`. React StrictMode double-mounts there and exposes ref-guard bugs the
+  prod build hides (an `alive` ref must be set true in the effect BODY, never
+  only initialized — cleanup-only guards go permanently false in dev).
 - The product premise: the user types every line. Nothing may auto-insert AI
   code into the buffer (no Tab-accept on ghosts, no closeBrackets auto-pairs).
 - Guidance copy is 1–2 lines, explained like to a smart 15-year-old.
