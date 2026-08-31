@@ -5,6 +5,7 @@ import { NavContext, type View } from './nav';
 import Library from './library/Library';
 import MilestoneFlow from './primer/MilestoneFlow';
 import Workspace from './workspace/Workspace';
+import TokenGate from './components/TokenGate';
 
 function viewFromHash(): View {
   const m = location.hash.match(/^#\/(milestone|workspace)\/([^/]+)\/([^/]+)$/);
@@ -21,6 +22,7 @@ export const SettingsContext = { current: null as Settings | null };
 export default function App() {
   const [view, setView] = useState<View>(viewFromHash);
   const [settings, setSettings] = useState<Settings | null>(null);
+  const [locked, setLocked] = useState(false);
 
   const go = useCallback((v: View) => {
     setView(v);
@@ -34,7 +36,8 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    api.getSettings().then(setSettings).catch(() => {
+    api.getSettings().then(setSettings).catch((e: Error) => {
+      if (e.message === 'unauthorized') { setLocked(true); return; }
       setSettings({
         scheme: 'sunshower', guidanceStyle: 'both',
         models: { plan: 'opus', primer: 'opus', hint: 'sonnet', ghost: 'sonnet', watch: 'haiku' },
@@ -48,6 +51,7 @@ export default function App() {
   }, [settings]);
 
   const nav = useMemo(() => ({ view, go }), [view, go]);
+  if (locked) return <TokenGate />;
   if (!settings) return null;
 
   return (

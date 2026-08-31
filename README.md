@@ -43,6 +43,12 @@ npm run test:unit
 npm run test:e2e   # Playwright drives the real app with a deterministic mock LLM
 ```
 
+## Access from other devices / the internet
+
+See `DEPLOY.md` — Tailscale (recommended), a quick cloudflared/ngrok tunnel,
+or Docker on a VPS/Fly.io. In every internet-facing setup, set
+`OMNILEARN_TOKEN` — it gates the API, the UI, and the terminal.
+
 ## Docs
 
 - `SPEC.md` — the signed-off product spec.

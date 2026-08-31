@@ -1,0 +1,16 @@
+services:
+  omnilearn:
+    build: .
+    ports:
+      - "4650:4650"
+    environment:
+      # Access token for the UI/API/terminal. Generate one:  openssl rand -hex 24
+      OMNILEARN_TOKEN: ${OMNILEARN_TOKEN:?set OMNILEARN_TOKEN before exposing this}
+      # Long-lived Claude subscription token from:  claude setup-token
+      CLAUDE_CODE_OAUTH_TOKEN: ${CLAUDE_CODE_OAUTH_TOKEN:?run `claude setup-token` and export it}
+    volumes:
+      - omnilearn-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  omnilearn-data:

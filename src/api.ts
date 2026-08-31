@@ -19,6 +19,7 @@ async function req<T>(method: string, url: string, body?: unknown): Promise<T> {
 }
 
 export const api = {
+  login: (token: string) => req<{ ok: true }>('POST', '/api/auth/login', { token }),
   getSettings: () => req<Settings>('GET', '/api/settings'),
   putSettings: (s: Partial<Settings>) => req<Settings>('PUT', '/api/settings', s),
 

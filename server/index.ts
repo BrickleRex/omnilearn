@@ -5,6 +5,7 @@ import express, { type NextFunction, type Request, type Response } from 'express
 import http from 'node:http';
 import path from 'node:path';
 import { HttpError, ensureDir, projectsDir } from './store';
+import { authRouter, configuredToken, requireAuth, wsAuthorized } from './auth';
 import { settingsRouter } from './settings';
 import { projectsRouter } from './projects';
 import { runnerRouter } from './runner';
@@ -18,6 +19,10 @@ app.use(express.json({ limit: '4mb' }));
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
 });
+
+// Login stays outside the gate; everything below requires the token when set.
+app.use('/api/auth', authRouter);
+app.use('/api', requireAuth);
 
 // Order is irrelevant here (no path collides), but keep it readable.
 app.use('/api', settingsRouter);
@@ -54,6 +59,11 @@ server.on('upgrade', (req, socket, head) => {
     socket.destroy();
     return;
   }
+  if (!wsAuthorized(req)) {
+    socket.write('HTTP/1.1 401 Unauthorized\r\nConnection: close\r\n\r\n');
+    socket.destroy();
+    return;
+  }
   termWss.handleUpgrade(req, socket, head, (ws) => {
     void attachTerminal(ws, url);
   });
@@ -64,8 +74,11 @@ const port = Number(process.env.PORT ?? 4650);
 async function main(): Promise<void> {
   await ensureDir(projectsDir());
   server.listen(port, () => {
-    const mode = process.env.LLM_MOCK === '1' ? ' (LLM_MOCK)' : '';
-    console.log(`[omnilearn] server on :${port}${mode}`);
+    const flags = [
+      process.env.LLM_MOCK === '1' ? 'LLM_MOCK' : '',
+      configuredToken() ? 'auth: token' : 'auth: OFF (local trust)',
+    ].filter(Boolean).join(', ');
+    console.log(`[omnilearn] server on :${port} (${flags})`);
   });
 }
 
