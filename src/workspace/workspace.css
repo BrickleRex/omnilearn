@@ -159,6 +159,7 @@
 .wsRun:hover:not(:disabled) { transform: translate(-1px, -1px); }
 .wsRun:active:not(:disabled) { transform: translate(var(--shadow-offset), var(--shadow-offset)); box-shadow: none; }
 
+.wsPrimer,
 .wsScheme {
   display: inline-flex;
   align-items: center;
@@ -171,7 +172,9 @@
   font-size: 11.5px;
   font-weight: 700;
 }
+.wsPrimer:hover,
 .wsScheme:hover { transform: translate(-1px, -1px); }
+.wsPrimer span { color: var(--accent2); }
 .schemeSwatch {
   width: 12px;
   height: 12px;

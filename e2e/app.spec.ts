@@ -157,10 +157,12 @@ test('real intellisense and the Ask tutor tab', async ({ page }) => {
   await page.keyboard.press('Delete');
   await page.keyboard.type('import numpy as np\nnp.', { delay: 15 });
   const tooltip = page.locator('.cm-tooltip-autocomplete');
+  // The tooltip virtualizes its list, so assert membership only after filtering.
   await expect(tooltip).toBeVisible({ timeout: 10_000 });
+  await expect(tooltip).toContainText('abs', { timeout: 10_000 }); // jedi surface arrived
+  await page.keyboard.type('ze', { delay: 40 });
   await expect(tooltip).toContainText('zeros', { timeout: 10_000 });
-  await page.keyboard.type('ze', { delay: 30 });
-  await expect(tooltip).toContainText('zeros');
+  await expect(tooltip).toContainText('zeros_like');
   await page.keyboard.press('Escape');
 
   // --- Ask tab: Ctrl+/ opens the tutor, mock reply knows the milestone
@@ -177,6 +179,22 @@ test('real intellisense and the Ask tutor tab', async ({ page }) => {
   await page.keyboard.press('Control+/');
   await expect(page.getByTestId('rail-ask')).toContainText('what is the task here', { timeout: 10_000 });
   await expect(page.getByTestId('rail-ask')).toContainText(/mock tutor/i);
+  await page.keyboard.press('Control+/'); // fold the chat away again
+
+  // --- hint look-back: an unambiguous mistake in earlier code gets flagged
+  await replaceEditorContent(page, 'import numpy as np\nscores = q @ q\n');
+  await page.keyboard.press('Control+Space');
+  await expect(page.getByTestId('footlight-lamp')).toHaveAttribute('data-state', 'nudge', { timeout: 15_000 });
+  await page.keyboard.press('Alt+h');
+  await expect(page.getByTestId('footlight-text')).toContainText(/scoring q against itself/i, { timeout: 10_000 });
+
+  // --- back to the primer: review mode never auto-forwards to the editor
+  await page.getByTestId('review-primer').click();
+  await expect(page.getByTestId('milestone-flow')).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByTestId('primer-deck')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByTestId('primer-deck')).not.toContainText("let's build"); // not auto-jumped to the finale
+  await page.goBack();
+  await expect(page.getByTestId('workspace')).toBeVisible({ timeout: 10_000 });
 });
 
 test('theme schemes switch and persist', async ({ page }) => {

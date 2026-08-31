@@ -84,6 +84,10 @@ export default function Workspace(props: {
   const compassOnRef = useRef(compassOn); compassOnRef.current = compassOn;
   const footOnRef = useRef(footOn); footOnRef.current = footOn;
 
+  // Declared early so requestHint (defined before onNudge) can route hint
+  // flags into the nudge channel without a TDZ on the callback itself.
+  const nudgeFnRef = useRef<(res: WatchResponse) => void>(() => {});
+
   const busyRef = useRef(false);            // an LLM call (hint/ghost) is in flight
   const runningRef = useRef(false);
   const cursorLineRef = useRef(1);
@@ -221,6 +225,11 @@ export default function Workspace(props: {
       if (compassOnRef.current) { setCompassDetail(res.hint); armDetailTimer(); }
       if (footOnRef.current) say(res.hint);
       setLamp('hint');
+      // The instructor also reread the earlier code: an unambiguous mistake
+      // arrives as a flag and takes the normal nudge path (gutter dot + Alt+H).
+      if (res.flag) {
+        nudgeFnRef.current({ posture: 'nudge', note: res.flag.note, line: res.flag.line });
+      }
     } catch {
       setLamp('idle');
       if (footOnRef.current) say('no hint right now — try again in a moment');
@@ -307,6 +316,7 @@ export default function Workspace(props: {
     setLamp('nudge');
     editorRef.current?.setNudge(line);
   }, []);
+  nudgeFnRef.current = onNudge;
 
   useEffect(() => {
     const w = createWatcher({
@@ -468,10 +478,13 @@ export default function Workspace(props: {
       }
       if (inXterm) return;
 
-      // Ctrl+/ — the tutor. Handled before the editor/input bail-out below so it
-      // works while typing code, and so a second press folds the chat away from
-      // inside the chat itself.
+      // Ctrl+/ — the tutor. Inside CodeMirror the editor's own Prec.highest
+      // binding already claimed it (it has to, or defaultKeymap's Mod-/ would
+      // comment the line first), exactly like Ctrl+Space. Everywhere else —
+      // including the ask box itself, so a second press folds the chat away
+      // mid-sentence — the window handles it.
       if (mod && !e.altKey && (e.key === '/' || e.code === 'Slash')) {
+        if (inEditor) return;
         e.preventDefault(); cmds.current.toggleAsk(); return;
       }
 
@@ -527,6 +540,15 @@ export default function Workspace(props: {
         </div>
 
         <span className="wsGrow" />
+
+        <button
+          className="wsPrimer"
+          data-testid="review-primer"
+          title="re-read this milestone's primer"
+          onClick={() => nav.go({ name: 'milestone', projectId, milestoneId, review: true })}
+        >
+          <span aria-hidden="true">▤</span> primer
+        </button>
 
         <button
           className="exploreSwitch"
@@ -597,6 +619,7 @@ export default function Workspace(props: {
                 onCursorLine={onCursorLine}
                 onHint={() => void requestHint()}
                 onGhost={() => void requestGhost()}
+                onAsk={toggleAsk}
                 onOpenNudge={openNudge}
               />
             ) : (

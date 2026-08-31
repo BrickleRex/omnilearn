@@ -11,7 +11,7 @@ import { projectsRouter } from './projects';
 import { runnerRouter } from './runner';
 // The jedi daemon is stdio-attached and never detached: it sees EOF on stdin and
 // exits with us, so index.ts needs no signal handler of its own.
-import { completeRouter } from './complete';
+import { completeRouter, warmCompleteDaemon } from './complete';
 import { agentsRouter } from './llm/agents';
 import { chatRouter } from './llm/chat';
 import { attachTerminal, termWss } from './term';
@@ -79,6 +79,7 @@ const port = Number(process.env.PORT ?? 4650);
 
 async function main(): Promise<void> {
   await ensureDir(projectsDir());
+  warmCompleteDaemon(); // pay jedi's one-time numpy indexing cost before any keystroke needs it
   server.listen(port, () => {
     const flags = [
       process.env.LLM_MOCK === '1' ? 'LLM_MOCK' : '',

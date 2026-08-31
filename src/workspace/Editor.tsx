@@ -45,6 +45,7 @@ export interface EditorProps {
   onCursorLine: (line: number) => void;
   onHint: () => void;
   onGhost: () => void;
+  onAsk: () => void;
   onOpenNudge: () => void;
 }
 
@@ -132,6 +133,15 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
             key: 'Ctrl-Shift-Space',
             preventDefault: true,
             run: (v) => { closeCompletion(v); latest.current.onGhost(); return true; },
+          },
+          {
+            // Ctrl+/ is the tutor. defaultKeymap binds Mod-/ to toggleComment,
+            // and a plain window listener loses that race (CodeMirror's DOM
+            // handler runs first), so claim it here — the workspace's own
+            // listener deliberately skips Ctrl+/ while focus is in the editor.
+            key: 'Mod-/',
+            preventDefault: true,
+            run: (v) => { closeCompletion(v); latest.current.onAsk(); return true; },
           },
         ])),
         ghostExtension(),

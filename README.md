@@ -15,7 +15,14 @@ editor. AI helps only on request — or when you're truly down a rabbit hole.
   only when you're genuinely rabbit-holing, fully silent in explore mode (`Alt+E`).
 - **A terminal that manages its own presence**: translucent right-hand rail that
   springs open on run output and folds itself away (`Ctrl+\``), with a real
-  shell tab.
+  shell tab — and an **Ask** tab (`Ctrl+/`): a concise tutor who knows your
+  project, file, and last run. It explains; it never dumps code.
+- **Real intellisense**: completions come from a local jedi daemon (static
+  analysis, ~50ms, knows `np.zeros` and friends) — never an LLM. `pip3 install
+  jedi` if the server can't auto-install it.
+- **Hints look back**: `Ctrl+Space` gives the next step *and* flags at most one
+  thing in your earlier code that's unambiguously wrong — plausible experiments
+  stay unflagged. Re-read the milestone's primer anytime via the top-bar button.
 - Playroom visual identity with 4 schemes (2 light, 2 dark).
 
 ## Run it

@@ -15,6 +15,8 @@ import type { CompleteRequest, CompleteResponse, CompletionItem } from '../share
 import { HttpError, exists, projectDir, resolveInProject } from './store';
 
 const REQUEST_TIMEOUT_MS = 3_000;
+const FIRST_REQUEST_TIMEOUT_MS = 20_000;
+let warmed = false;
 const IMPORT_CHECK_TIMEOUT_MS = 10_000;
 const PIP_INSTALL_TIMEOUT_MS = 90_000;
 const MAX_PENDING = 4;
@@ -201,6 +203,22 @@ export function shutdownCompleteDaemon(): void {
   killDaemon();
 }
 
+/**
+ * Fire-and-forget boot warm-up: spawn the daemon and pay jedi's one-time numpy
+ * stub-indexing cost before any real keystroke needs it. Failures are fine —
+ * the first real request just becomes the warm-up instead.
+ */
+export function warmCompleteDaemon(): void {
+  if (!ensureAvailable()) return;
+  askDaemon(
+    { path: 'warmup.py', content: 'import numpy as np\nnp.', line: 2, column: 3 },
+    null,
+  ).then(
+    () => { warmed = true; console.log('[omnilearn] jedi warm'); },
+    () => { /* the first real request will warm it instead */ },
+  );
+}
+
 /** Oldest-first drop valve: a burst of keystrokes must not queue up unbounded. */
 function trimPending(): void {
   while (pending.size > MAX_PENDING) {
@@ -213,7 +231,7 @@ function trimPending(): void {
   }
 }
 
-function askDaemon(req: CompleteRequest, absPath: string): Promise<CompletionItem[]> {
+function askDaemon(req: CompleteRequest, absPath: string | null): Promise<CompletionItem[]> {
   return new Promise<CompletionItem[]>((resolve, reject) => {
     let proc: ChildProcess;
     try {
@@ -228,10 +246,13 @@ function askDaemon(req: CompleteRequest, absPath: string): Promise<CompletionIte
     }
 
     const id = nextId++;
+    // jedi's first pass over a big library (numpy) can take several seconds of
+    // one-time stub indexing; only steady-state requests get the tight budget.
+    const budget = warmed ? REQUEST_TIMEOUT_MS : FIRST_REQUEST_TIMEOUT_MS;
     const timer = setTimeout(() => {
       pending.delete(id);
-      reject(new Error(`jedi daemon timed out after ${REQUEST_TIMEOUT_MS}ms`));
-    }, REQUEST_TIMEOUT_MS);
+      reject(new Error(`jedi daemon timed out after ${budget}ms`));
+    }, budget);
 
     pending.set(id, { resolve, reject, timer });
     trimPending();
@@ -266,6 +287,7 @@ async function completeViaJedi(req: CompleteRequest, absPath: string): Promise<C
   try {
     const items = await askDaemon(req, absPath);
     consecutiveFailures = 0;
+    warmed = true;
     return items;
   } catch (first) {
     // The daemon may simply have died. Tear it down — anything else queued
