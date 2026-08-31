@@ -1,0 +1,775 @@
+<title>Omnilearn Design Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&display=swap">
+<style>
+/* ---------- studio tokens (deliberate single-theme: a dark review room so the six skins read true) ---------- */
+:root{
+  --bg:#0E0F12; --panel:#15171C; --panel2:#1B1E24; --line:#272B33; --line2:#333845;
+  --ink:#EAE7E0; --mut:#A09C91; --dim:#6E6A61;
+  --brass:#D8A03D; --brass-soft:rgba(216,160,61,.14);
+  --cyan:#6FB8C9; --good:#82B476; --warn:#E0A458; --bad:#D07A6A;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --serif:'Fraunces',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+*{box-sizing:border-box;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+a{color:var(--brass)}
+::selection{background:var(--brass-soft)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 30px}
+.hero .brand{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,7.5vw,58px);line-height:1.03;letter-spacing:-.02em;margin:14px 0 18px;text-wrap:balance}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brass);letter-spacing:0}
+.hero p.lede{color:var(--mut);max-width:56ch;font-size:17px}
+.howto{margin-top:26px;border:1px solid var(--line);border-left:3px solid var(--brass);background:var(--panel);border-radius:10px;padding:14px 16px;color:var(--mut);font-size:14.5px}
+.howto b{color:var(--ink);font-weight:600}
+
+/* ---------- sticky nav ---------- */
+nav.chips{position:sticky;top:0;z-index:40;background:linear-gradient(var(--bg) 78%,transparent);padding:12px 0 14px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.chips::-webkit-scrollbar{display:none}
+nav.chips a{flex:0 0 auto;font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:6px 13px;background:var(--panel)}
+nav.chips a:active{color:var(--ink);border-color:var(--brass)}
+
+/* ---------- sections ---------- */
+section{margin-top:74px;scroll-margin-top:58px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+section>h2{font-family:var(--disp);font-weight:800;font-size:clamp(26px,5vw,36px);letter-spacing:-.015em;margin:10px 0 8px;text-wrap:balance}
+.sec-lede{color:var(--mut);max-width:62ch;font-size:15.5px;margin-bottom:26px}
+.sec-lede b{color:var(--ink);font-weight:600}
+
+/* ---------- option cards ---------- */
+.opt{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px 16px 14px;margin:0 0 22px}
+.opt-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.opt-tag{font-family:var(--mono);font-size:12px;font-weight:500;color:#0E0F12;background:var(--brass);border-radius:6px;padding:2px 8px}
+.opt-name{font-family:var(--disp);font-weight:600;font-size:19px}
+.opt-thesis{color:var(--mut);font-size:14.5px;margin:2px 0 12px;max-width:62ch}
+.opt-foot{color:var(--dim);font-size:13px;margin-top:10px;line-height:1.5}
+.opt-foot b{color:var(--mut);font-weight:600}
+
+/* ---------- structure section ---------- */
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.flow .st{flex:1 1 140px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:12px 12px 10px;position:relative}
+.flow .st .n{font-family:var(--mono);font-size:11px;color:var(--brass)}
+.flow .st h4{font-family:var(--disp);font-size:15.5px;font-weight:600;margin:3px 0 4px}
+.flow .st p{font-size:12.5px;color:var(--mut);line-height:1.45}
+.tree{font-family:var(--mono);font-size:13px;line-height:1.85;color:var(--mut);border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:14px 18px;overflow-x:auto;white-space:pre}
+.tree b{color:var(--ink);font-weight:500}
+.tree i{color:var(--brass);font-style:normal}
+.tree s{color:var(--dim);text-decoration:none}
+.enough{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px 18px;margin-top:16px}
+.enough h4{font-family:var(--disp);font-size:16px;font-weight:600;margin-bottom:8px}
+.enough ul{padding-left:18px;color:var(--mut);font-size:14px;display:grid;gap:7px}
+.enough li b{color:var(--ink);font-weight:600}
+.states{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}
+.state{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:13px 14px}
+.state .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px;vertical-align:1px}
+.state h4{font-family:var(--disp);display:inline;font-size:15.5px;font-weight:600}
+.state p{color:var(--mut);font-size:13px;margin-top:6px;line-height:1.5}
+.kbd{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line2);border-bottom-width:2px;border-radius:6px;padding:1px 7px;background:var(--panel2);color:var(--ink);white-space:nowrap}
+
+/* ---------- shared mini-window (identity skins) ---------- */
+.mini{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10.4;min-height:290px;font-size:11.5px;line-height:1.75;isolation:isolate}
+.mbar{display:flex;align-items:center;gap:6px;padding:7px 12px;font-family:var(--mono);font-size:10px}
+.mbar .dots i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.mbody{display:flex;height:calc(100% - 30px)}
+.mside{width:118px;flex:none;padding:10px 0 0 12px;font-family:var(--mono);font-size:10px;line-height:2.05;overflow:hidden;white-space:nowrap}
+.med{flex:1;padding:10px 12px 0 8px;font-family:var(--mono);overflow:hidden;position:relative}
+.cl{white-space:pre;counter-increment:ln}
+.cl::before{content:counter(ln);display:inline-block;width:2ch;margin-right:1.6ch;text-align:right;opacity:.34;font-size:.9em}
+.cl.ind{padding-left:0}
+.cl.ind::after{content:""}
+.caret{display:inline-block;width:7px;height:1.15em;vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.mterm{position:absolute;left:0;right:0;bottom:0;font-family:var(--mono);font-size:10.5px;padding:7px 12px 9px;line-height:1.6}
+.mhint{position:absolute;font-size:10.5px;line-height:1.45;max-width:60%}
+
+/* skin A — blueprint */
+.skin-a{background:#0B1B2C;color:#BFD9E8;
+  background-image:linear-gradient(rgba(87,199,227,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(87,199,227,.055) 1px,transparent 1px);
+  background-size:22px 22px;border:1px solid #1E3A52}
+.skin-a .mbar{border-bottom:1px dashed #2A4A66;color:#57C7E3}
+.skin-a .mbar .dots i{background:none;border:1px solid #57C7E3}
+.skin-a .mside{border-right:1px dashed #2A4A66;color:#5E85A3}
+.skin-a .mside b{color:#9FCFE4;font-weight:500}
+.skin-a .kw{color:#57C7E3}.skin-a .fn{color:#F2D06B}.skin-a .cm{color:#4A6E8C;font-style:italic}
+.skin-a .caret{background:#57C7E3}
+.skin-a .mterm{border-top:1px dashed #2A4A66;background:rgba(7,17,28,.88);color:#7FB4D1}
+.skin-a .mterm b{color:#57C7E3;font-weight:500}
+.skin-a .mhint{right:10px;top:84px;border:1px dashed #57C7E3;color:#9FDBEF;padding:5px 8px;background:rgba(9,25,41,.92);border-radius:2px}
+.skin-a .mhint::before{content:"HINT · 04";display:block;font-size:8.5px;letter-spacing:.18em;color:#57C7E3;margin-bottom:2px}
+
+/* skin B — field notes (riso print) */
+.skin-b{background:#F3EEE2;color:#20242B;border:1px solid #D8D0BC;font-family:var(--mono)}
+.skin-b .mbar{background:#20242B;color:#F3EEE2;font-family:var(--serif);font-style:italic;font-size:11px}
+.skin-b .mbar .dots i{background:#F3EEE2;opacity:.6}
+.skin-b .mside{border-right:1px solid #DCD4C0;color:#8A8474}
+.skin-b .mside b{color:#20242B;font-weight:500}
+.skin-b .kw{color:#2B50AA;font-weight:500}.skin-b .fn{color:#E4572E}.skin-b .cm{color:#9B9280;font-style:italic}
+.skin-b .caret{background:#E4572E}
+.skin-b .mterm{border-top:2px solid #20242B;background:#ECE6D6;color:#4C463A}
+.skin-b .mterm b{color:#2B50AA;font-weight:500}
+.skin-b .mhint{right:8px;top:120px;background:rgba(243,238,226,.93);padding:1px 5px;font-family:var(--serif);font-style:italic;font-size:11.5px;color:#B03A1A;transform:rotate(-1.6deg)}
+.skin-b .mhint::after{content:"";display:block;height:1px;background:repeating-linear-gradient(90deg,#B03A1A 0 4px,transparent 4px 7px);margin-top:3px}
+
+/* skin C — phosphor */
+.skin-c{background:#060906;color:#59D97C;border:1px solid #12331C}
+.skin-c::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);z-index:5}
+.skin-c .mbar{color:#2E7A45;border-bottom:1px solid #12331C}
+.skin-c .mbar .dots{display:none}
+.skin-c .mside{color:#2E7A45;border-right:1px solid #12331C}
+.skin-c .mside b{color:#59D97C;font-weight:400}
+.skin-c .kw{color:#9CFFB0}.skin-c .fn{color:#FFB454}.skin-c .cm{color:#2E7A45}
+.skin-c .caret{background:#59D97C;width:8px}
+.skin-c .mterm{border-top:1px solid #12331C;background:#040604;color:#59D97C}
+.skin-c .mterm b{color:#FFB454;font-weight:400}
+.skin-c .mhint{right:10px;top:118px;color:#FFB454;background:#0A0F0A;padding:2px 6px;border-left:2px solid #FFB454}
+.skin-c .mhint::before{content:"?? ";color:#805A2A}
+
+/* skin D — playroom */
+.skin-d{background:#F2EFE8;color:#1B1B1F;border:3px solid #1B1B1F;border-radius:16px;font-weight:500}
+.skin-d .mbar{background:#FFC700;border-bottom:3px solid #1B1B1F;font-weight:600;font-size:10.5px}
+.skin-d .mbar .dots i{background:#1B1B1F}
+.skin-d .mside{border-right:3px solid #1B1B1F;background:#FFFDF6;color:#7A7668}
+.skin-d .mside b{color:#2B50FF;font-weight:600}
+.skin-d .kw{color:#2B50FF;font-weight:600}.skin-d .fn{color:#FF5C39;font-weight:600}.skin-d .cm{color:#A09A88}
+.skin-d .caret{background:#FF5C39}
+.skin-d .mterm{background:#1B1B1F;color:#F2EFE8;border-top:3px solid #1B1B1F}
+.skin-d .mterm b{color:#FFC700;font-weight:500}
+.skin-d .mhint{right:10px;top:78px;background:#fff;border:2.5px solid #1B1B1F;border-radius:12px 12px 12px 3px;padding:6px 9px;box-shadow:3px 3px 0 #1B1B1F;font-family:var(--body);font-size:11px}
+.skin-d .mhint b{color:#FF5C39}
+
+/* skin E — zen ink */
+.skin-e{background:#161614;color:#B9B5AB;border:1px solid #232320}
+.skin-e .mbar{color:#5C594F;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase}
+.skin-e .mbar .dots{display:none}
+.skin-e .mside{display:none}
+.skin-e .med{padding:18px 26px 0}
+.skin-e .cl::before{opacity:0}
+.skin-e .kw{color:#DAD6CB}.skin-e .fn{color:#A9BCA1}.skin-e .cm{color:#54524A;font-style:italic}
+.skin-e .caret{background:#A9BCA1;width:2px}
+.skin-e .mterm{color:#6E6B61;background:transparent;border-top:1px solid #232320}
+.skin-e .mterm b{color:#A9BCA1;font-weight:400}
+.skin-e .mhint{left:26px;bottom:64px;color:#8FA487;font-style:italic;font-family:var(--body);font-size:11.5px;opacity:.9}
+
+/* skin F — aurora glass */
+.skin-f{background:#0B0E1A;color:#D9DCEC;border:1px solid #232946}
+.skin-f::before{content:"";position:absolute;inset:-40%;z-index:-1;
+  background:radial-gradient(38% 30% at 24% 30%,rgba(124,92,255,.5),transparent 70%),radial-gradient(34% 30% at 78% 70%,rgba(45,212,191,.34),transparent 70%),radial-gradient(30% 26% at 66% 18%,rgba(232,79,140,.22),transparent 70%);
+  filter:blur(30px);animation:auroraDrift 14s ease-in-out infinite alternate}
+@keyframes auroraDrift{to{transform:translate3d(4%, -3%,0) rotate(4deg)}}
+.skin-f .mbar{color:#8B92B8;background:rgba(15,19,36,.5);backdrop-filter:blur(8px);border-bottom:1px solid rgba(139,146,184,.18)}
+.skin-f .mbar .dots i{background:#8B92B8;opacity:.5}
+.skin-f .mside{background:rgba(15,19,36,.44);backdrop-filter:blur(8px);border-right:1px solid rgba(139,146,184,.14);color:#7B82A8}
+.skin-f .mside b{color:#D9DCEC;font-weight:500}
+.skin-f .med{background:rgba(11,14,26,.42)}
+.skin-f .kw{color:#A78BFF}.skin-f .fn{color:#2DD4BF}.skin-f .cm{color:#565E85;font-style:italic}
+.skin-f .caret{background:#2DD4BF}
+.skin-f .mterm{background:rgba(13,16,30,.66);backdrop-filter:blur(10px);border-top:1px solid rgba(139,146,184,.18);color:#9AA1C7}
+.skin-f .mterm b{color:#2DD4BF;font-weight:500}
+.skin-f .mhint{right:10px;top:80px;background:rgba(20,24,44,.72);backdrop-filter:blur(10px);border:1px solid rgba(167,139,255,.4);border-radius:9px;padding:6px 9px;color:#C9BFFF;font-family:var(--body);font-size:11px}
+/* ---------- neutral demo editor (used by terminal / guidance / primer sections so those choices stay independent of the skin vote) ---------- */
+.demo{position:relative;border-radius:12px;overflow:hidden;background:#111318;border:1px solid var(--line);aspect-ratio:16/10;min-height:280px;font-family:var(--mono);font-size:11.5px;line-height:1.8;color:#C8C4BA}
+.demo .bar{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;font-size:10px;color:var(--dim);border-bottom:1px solid var(--line)}
+.demo .ed{padding:10px 12px;position:relative}
+.demo .kw{color:#8FB7E8}.demo .fn{color:#E8C97D}.demo .cm{color:#5F6672;font-style:italic}
+.demo .caret{background:#D8A03D}
+.keychip{position:absolute;z-index:9;font-family:var(--mono);font-size:10.5px;color:var(--ink);background:#22262E;border:1px solid var(--line2);border-bottom-width:2px;border-radius:7px;padding:3px 9px;opacity:0}
+.tout{color:#9BA3B0}.tout b{color:#7FD1B9;font-weight:500}.tout .p{color:#D8A03D}
+.demo .anim,.demo::before,.demo::after{animation-play-state:paused}
+.demo.on .anim,.demo.on::before,.demo.on::after{animation-play-state:running}
+
+/* T1 veil */
+.t1 .veil{position:absolute;left:0;right:0;bottom:0;height:56%;background:rgba(10,11,15,.6);backdrop-filter:blur(5px);border-top:1px solid var(--line2);padding:8px 12px;transform:translateY(103%);animation:veil 9s cubic-bezier(.3,1.2,.3,1) infinite}
+@keyframes veil{0%,14%{transform:translateY(103%)}22%,72%{transform:translateY(0)}80%,100%{transform:translateY(103%)}}
+.t1 .keychip{right:12px;bottom:12px;animation:chipPulse 9s ease infinite}
+@keyframes chipPulse{12%,20%{opacity:1}0%,8%,26%,66%{opacity:0}70%,78%{opacity:1}84%,100%{opacity:0}}
+.t1 .veil .tl{opacity:0;animation:tline 9s steps(1) infinite}
+.t1 .veil .tl:nth-child(2){animation-name:tline2}.t1 .veil .tl:nth-child(3){animation-name:tline3}.t1 .veil .tl:nth-child(4){animation-name:tline4}
+@keyframes tline{24%,78%{opacity:1}0%,23%,79%,100%{opacity:0}}
+@keyframes tline2{30%,78%{opacity:1}0%,29%,79%,100%{opacity:0}}
+@keyframes tline3{38%,78%{opacity:1}0%,37%,79%,100%{opacity:0}}
+@keyframes tline4{46%,78%{opacity:1}0%,45%,79%,100%{opacity:0}}
+
+/* T2 rail */
+.t2 .ed{padding-right:118px}
+.t2 .rail{position:absolute;top:29px;right:0;bottom:0;width:106px;border-left:1px solid var(--line);background:#0C0E12;padding:8px 10px;font-size:9.5px;line-height:1.7}
+.t2 .rail .rl{opacity:0;animation:railLine 8s steps(1) infinite}
+.t2 .rail .rl:nth-child(2){animation-name:railLine2}.t2 .rail .rl:nth-child(3){animation-name:railLine3}.t2 .rail .rl:nth-child(4){animation-name:railLine4}.t2 .rail .rl:nth-child(5){animation-name:railLine5}
+@keyframes railLine{10%,96%{opacity:1}0%,9%,97%,100%{opacity:0}}
+@keyframes railLine2{22%,96%{opacity:1}0%,21%,97%,100%{opacity:0}}
+@keyframes railLine3{34%,96%{opacity:1}0%,33%,97%,100%{opacity:0}}
+@keyframes railLine4{46%,96%{opacity:.85}0%,45%,97%,100%{opacity:0}}
+@keyframes railLine5{58%,96%{opacity:1}0%,57%,97%,100%{opacity:0}}
+.t2 .rail::before{content:"";position:absolute;inset:0;border-left:2px solid #7FD1B9;opacity:0;animation:railGlow 8s ease infinite}
+@keyframes railGlow{10%,14%{opacity:.9}22%,26%{opacity:.9}34%,38%{opacity:.9}58%,62%{opacity:.9}0%,18%,30%,50%,70%,100%{opacity:0}}
+
+/* T3 pulse strip */
+.t3 .strip{position:absolute;left:0;right:0;bottom:0;height:26px;background:#0C0E12;border-top:1px solid var(--line);padding:4px 12px;overflow:hidden;animation:strip 10s cubic-bezier(.34,1.45,.4,1) infinite}
+@keyframes strip{0%,18%{height:26px}26%,66%{height:46%}76%,100%{height:26px}}
+.t3 .strip .full{opacity:0;animation:stripFull 10s steps(1) infinite}
+@keyframes stripFull{26%,72%{opacity:1}0%,25%,73%,100%{opacity:0}}
+.t3 .strip .tail{position:absolute;top:4px;left:12px;right:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--dim);animation:stripTail 10s steps(1) infinite}
+@keyframes stripTail{0%,25%{opacity:1}26%,72%{opacity:0}73%,100%{opacity:1}}
+.t3 .keychip{right:12px;bottom:34px;animation:t3chip 10s ease infinite}
+@keyframes t3chip{16%,24%{opacity:1}0%,12%,30%,100%{opacity:0}}
+
+/* T4 inline lens */
+.t4 .lens{margin:4px 0 4px 3.6ch;border:1px solid var(--line2);border-left:2px solid #7FD1B9;border-radius:0 8px 8px 8px;background:#0C0E12;overflow:hidden;max-height:0;opacity:0;animation:lens 11s cubic-bezier(.3,1,.3,1) infinite;padding:0 10px}
+@keyframes lens{0%,16%{max-height:0;opacity:0;padding-top:0;padding-bottom:0}24%,60%{max-height:90px;opacity:1;padding-top:6px;padding-bottom:6px}68%,100%{max-height:0;opacity:0;padding-top:0;padding-bottom:0}}
+.t4 .chipout{display:inline-block;margin-left:3.6ch;color:#7FD1B9;font-size:10px;border:1px solid var(--line2);border-radius:99px;padding:0 9px;opacity:0;animation:chipout 11s steps(1) infinite}
+@keyframes chipout{70%,96%{opacity:1}0%,69%,97%,100%{opacity:0}}
+
+/* T5 loupe */
+.t5 .loupe{position:absolute;right:10px;bottom:10px;width:56%;border:1px solid var(--line2);border-radius:10px;background:rgba(12,14,18,.9);padding:6px 10px;font-size:10px;line-height:1.7;box-shadow:0 10px 26px rgba(0,0,0,.5);animation:loupe 9s ease infinite}
+@keyframes loupe{0%,20%{opacity:.5;transform:translateY(0)}30%,72%{opacity:1;transform:translateY(-4px)}84%,100%{opacity:.5;transform:translateY(0)}}
+.t5 .loupe .grip{height:3px;width:34px;border-radius:3px;background:var(--line2);margin:0 auto 5px}
+.t5 .loupe .nl{opacity:0;animation:loupeLine 9s steps(1) infinite}
+@keyframes loupeLine{36%,80%{opacity:1}0%,35%,81%,100%{opacity:0}}
+
+/* H1 whisper */
+.h1d .whisper{position:absolute;left:calc(12px + 3.6ch);right:14px;color:#9FB897;font-style:italic;font-family:var(--body);font-size:12px;line-height:1.4;background:rgba(15,18,15,.94);border-radius:6px;padding:2px 8px;opacity:0;animation:whisper 8s ease infinite}
+@keyframes whisper{18%,64%{opacity:1;transform:translateY(0)}0%,12%{opacity:0;transform:translateY(4px)}72%,100%{opacity:0;transform:translateY(-2px)}}
+.h1d .keychip{left:12px;bottom:12px;animation:h1chip 8s ease infinite}
+@keyframes h1chip{8%,16%{opacity:1}0%,4%,22%,100%{opacity:0}}
+
+/* H2 margin note */
+.h2d .ed{padding-right:37%}
+.h2d .note{position:absolute;right:10px;width:31%;top:0;background:#111318;padding:5px 0 5px 9px;color:#B0A98E;font-family:var(--body);font-size:11px;line-height:1.45;border-left:1px solid var(--line2);padding-left:9px;opacity:0;animation:noteIn 8s ease infinite}
+@keyframes noteIn{20%,70%{opacity:1}0%,14%,78%,100%{opacity:0}}
+.h2d .thread{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#8A8266);transform-origin:left;transform:scaleX(0);animation:thread 8s ease infinite}
+@keyframes thread{14%,20%{transform:scaleX(1)}70%{transform:scaleX(1);opacity:1}0%,10%{transform:scaleX(0)}78%,100%{transform:scaleX(0);opacity:0}}
+
+/* H3 compass */
+.h3d .compass{position:absolute;top:29px;left:0;right:0;background:#0C0E12;border-bottom:1px solid var(--line);padding:4px 12px;font-size:10.5px;color:var(--mut);display:flex;gap:8px;align-items:center}
+.h3d .compass .pips{display:flex;gap:3px}
+.h3d .compass .pips i{width:10px;height:3px;border-radius:2px;background:var(--line2)}
+.h3d .compass .pips i.done{background:#7FD1B9}
+.h3d .compass .pips i.cur{background:var(--brass)}
+.h3d .ed{padding-top:36px}
+.h3d .expand{position:absolute;top:52px;left:12px;right:12px;background:#171A21;border:1px solid var(--line2);border-radius:8px;padding:5px 10px;font-family:var(--body);font-size:11.5px;color:#C9C2A9;opacity:0;animation:expand 8s ease infinite}
+@keyframes expand{26%,68%{opacity:1;transform:translateY(0)}0%,20%{opacity:0;transform:translateY(-5px)}76%,100%{opacity:0;transform:translateY(-3px)}}
+.h3d .keychip{right:12px;top:46px;animation:h1chip 8s ease infinite}
+
+/* H4 footlight */
+.h4d .foot{position:absolute;left:0;right:0;bottom:0;border-top:1px solid var(--line);background:#0C0E12;padding:5px 12px;font-family:var(--body);font-size:11.5px;color:#C9C2A9;display:flex;gap:8px;align-items:center}
+.h4d .foot .lamp{width:7px;height:7px;border-radius:50%;background:var(--brass);flex:none;animation:lamp 7s ease infinite}
+@keyframes lamp{0%,10%{opacity:.25}16%,80%{opacity:1}90%,100%{opacity:.25}}
+.h4d .foot .txt{overflow:hidden;white-space:nowrap;width:0;animation:typeout 7s steps(46) infinite}
+@keyframes typeout{0%,14%{width:0}52%,86%{width:46ch}98%,100%{width:0}}
+
+/* G ghost */
+.gd .ghost{color:#7A88B8;opacity:.5;font-style:italic}
+.gd .ghost .typed{color:#E8C97D;opacity:1;font-style:normal}
+.gd .badge{display:inline-block;font-size:8.5px;letter-spacing:.14em;color:#7A88B8;border:1px solid #3A4260;border-radius:4px;padding:0 5px;margin-left:8px;vertical-align:1px}
+.gd .tabno{position:absolute;z-index:9;font-family:var(--body);font-size:11px;color:#E8B4A8;background:#2A1E1C;border:1px solid #55352F;border-radius:8px;padding:4px 10px;opacity:0}
+.gd .tabno.show{opacity:1;animation:shake .4s ease}
+@keyframes shake{25%{transform:translateX(-3px)}50%{transform:translateX(3px)}75%{transform:translateX(-2px)}}
+.gvar{border:1px solid var(--line);border-radius:10px;background:#111318;padding:10px 12px;font-family:var(--mono);font-size:11.5px;overflow-x:auto}
+.gvar .cap{font-family:var(--body);font-size:12px;color:var(--mut);margin-top:7px}
+.gvar .cap b{color:var(--ink);font-weight:600}
+.gvars{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:14px}
+.gv1{color:#7A88B8;font-style:italic;text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px;text-decoration-color:#4A5578}
+.gv2{color:transparent;-webkit-text-stroke:.6px #8A93BC;font-style:normal}
+.gv2 b{color:#E8C97D;-webkit-text-stroke:0;font-weight:400}
+.gv3{border:1px dashed #4A5578;border-radius:7px;padding:3px 8px;display:inline-block;color:#98A2C8;background:rgba(122,136,184,.07)}
+.gv3::before{content:"trace";font-size:8.5px;letter-spacing:.15em;color:#5A6488;display:block;margin-bottom:1px}
+.gv4{color:#8A93BC;filter:blur(2.4px)}.gv4 b{filter:blur(0);color:#E8C97D;font-weight:400}
+
+/* Primer minis */
+.pmini{position:relative;border-radius:12px;overflow:hidden;background:#111318;border:1px solid var(--line);aspect-ratio:16/10.6;min-height:270px;font-family:var(--body);font-size:12px;color:#C8C4BA}
+.pmini .anim{animation-play-state:paused}.pmini.on .anim{animation-play-state:running}
+/* P1 deck */
+.p1 .stage{position:absolute;inset:22px 18px 40px}
+.p1 .card{position:absolute;inset:0;border:1px solid var(--line2);border-radius:12px;background:#171A21;padding:16px}
+.p1 .card h5{font-family:var(--disp);font-size:14px;margin-bottom:6px;color:var(--ink)}
+.p1 .card p{font-size:11.5px;color:var(--mut);line-height:1.55}
+.p1 .card .fig{margin-top:10px;font-family:var(--mono);font-size:10.5px;color:#8FB7E8;background:#0C0E12;border-radius:8px;padding:8px 10px}
+.p1 .card.c1{animation:deck1 12s ease infinite}
+.p1 .card.c2{animation:deck2 12s ease infinite}
+.p1 .card.c3{animation:deck3 12s ease infinite}
+@keyframes deck1{0%,26%{transform:none;opacity:1}33%,100%{transform:translateX(-115%) rotate(-4deg);opacity:0}}
+@keyframes deck2{0%,26%{transform:translateY(10px) scale(.96);opacity:.55}33%,59%{transform:none;opacity:1}66%,100%{transform:translateX(-115%) rotate(-4deg);opacity:0}}
+@keyframes deck3{0%,59%{transform:translateY(10px) scale(.96);opacity:.55}66%,92%{transform:none;opacity:1}97%,100%{opacity:1}}
+.p1 .dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:6px}
+.p1 .dots i{width:6px;height:6px;border-radius:50%;background:var(--line2)}
+.p1 .dots i:nth-child(1){animation:dotA 12s steps(1) infinite}
+.p1 .dots i:nth-child(2){animation:dotB 12s steps(1) infinite}
+.p1 .dots i:nth-child(3){animation:dotC 12s steps(1) infinite}
+@keyframes dotA{0%,32%{background:#D8A03D}33%,100%{background:#333845}}
+@keyframes dotB{33%,65%{background:#D8A03D}0%,32%,66%,100%{background:#333845}}
+@keyframes dotC{66%,100%{background:#D8A03D}0%,65%{background:#333845}}
+/* P2 scroll story */
+.p2 .split{display:flex;height:100%}
+.p2 .diag{flex:1.1;display:grid;place-items:center;border-right:1px solid var(--line)}
+.p2 .txts{flex:1;position:relative;overflow:hidden}
+.p2 .blk{position:absolute;left:14px;right:14px;font-size:11.5px;color:var(--mut);line-height:1.55}
+.p2 .blk b{color:var(--ink);font-weight:600;display:block;font-family:var(--disp);font-size:13px;margin-bottom:3px}
+.p2 .blk.b1{animation:scrollb1 12s ease infinite}
+.p2 .blk.b2{animation:scrollb2 12s ease infinite}
+.p2 .blk.b3{animation:scrollb3 12s ease infinite}
+@keyframes scrollb1{0%,28%{top:30%;opacity:1}36%,100%{top:-30%;opacity:0}}
+@keyframes scrollb2{0%,28%{top:105%;opacity:0}36%,62%{top:30%;opacity:1}70%,100%{top:-30%;opacity:0}}
+@keyframes scrollb3{0%,62%{top:105%;opacity:0}70%,96%{top:30%;opacity:1}100%{top:28%;opacity:1}}
+.p2 svg .g1{animation:dfade1 12s ease infinite}
+.p2 svg .g2{animation:dfade2 12s ease infinite}
+.p2 svg .g3{animation:dfade3 12s ease infinite}
+@keyframes dfade1{0%,28%{opacity:1}36%,100%{opacity:.12}}
+@keyframes dfade2{36%,62%{opacity:1}0%,28%,70%,100%{opacity:.12}}
+@keyframes dfade3{70%,100%{opacity:1}0%,62%{opacity:.12}}
+/* P3 atlas */
+.p3 svg{width:100%;height:100%}
+.p3 .nodelab{font:9.5px var(--mono);fill:#A09C91}
+.p3 .ring{fill:none;stroke-width:2.5}
+.p3 .pulse{animation:nodePulse 2.6s ease infinite}
+@keyframes nodePulse{50%{stroke-opacity:.25;r:26}}
+/* P4 socratic */
+.p4 .chat{position:absolute;inset:14px 14px 14px;display:flex;flex-direction:column;gap:8px}
+.p4 .msg{max-width:82%;border-radius:12px;padding:7px 11px;font-size:11.5px;line-height:1.45;opacity:0}
+.p4 .msg.q{background:#171A21;border:1px solid var(--line2);align-self:flex-start;border-bottom-left-radius:3px}
+.p4 .msg.a{background:#232A22;border:1px solid #374131;align-self:flex-end;border-bottom-right-radius:3px;color:#C9D6BE}
+.p4 .msg.m1{animation:msgIn 13s ease infinite}
+.p4 .msg.m2{animation:msgIn 13s ease infinite;animation-delay:1.4s}
+.p4 .msg.m3{animation:msgIn 13s ease infinite;animation-delay:2.8s}
+.p4 .msg.m4{animation:msgIn 13s ease infinite;animation-delay:4.2s}
+@keyframes msgIn{6%,88%{opacity:1;transform:none}0%,4%{opacity:0;transform:translateY(6px)}94%,100%{opacity:0}}
+.p4 .plan{position:absolute;left:14px;right:14px;bottom:14px;background:#14181F;border:1px solid var(--brass);border-radius:10px;padding:9px 12px;font-size:11px;opacity:0;animation:planIn 13s ease infinite}
+@keyframes planIn{52%,88%{opacity:1;transform:none}0%,46%{opacity:0;transform:translateY(8px)}94%,100%{opacity:0}}
+.p4 .plan b{color:var(--brass);font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;display:block;margin-bottom:3px}
+.p4 .plan s{text-decoration:line-through;color:var(--dim)}
+
+/* ---------- decisions ---------- */
+.ballot{border:1px solid var(--brass);border-radius:14px;background:linear-gradient(180deg,rgba(216,160,61,.06),transparent 40%),var(--panel);padding:20px 20px 16px}
+.ballot ol{padding-left:22px;display:grid;gap:12px;font-size:15px}
+.ballot li b{font-family:var(--mono);font-weight:500;color:var(--brass)}
+.ballot .fmt{margin-top:18px;font-family:var(--mono);font-size:13px;background:#0C0E12;border:1px solid var(--line);border-radius:9px;padding:10px 14px;color:var(--cyan);overflow-x:auto;white-space:nowrap}
+.ballot p.small{color:var(--mut);font-size:13.5px;margin-top:12px}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:14px}
+.tech .t{border:1px solid var(--line);border-radius:11px;background:var(--panel);padding:12px 14px;font-size:13px;color:var(--mut)}
+.tech .t b{display:block;color:var(--ink);font-family:var(--disp);font-weight:600;font-size:14.5px;margin-bottom:3px}
+
+@media (max-width:560px){
+  .mini{aspect-ratio:auto;height:300px}
+  .demo{aspect-ratio:auto;height:290px}
+  .pmini{aspect-ratio:auto;height:280px}
+  .mside{width:96px}
+  .t2 .ed{padding-right:100px}.t2 .rail{width:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01s!important;animation-iteration-count:1!important;transition:none!important}
+}
+</style>
+<div class="wrap">
+
+<header class="hero">
+  <div class="brand">Omnilearn · design review 01</div>
+  <h1>You write every line.<br>It knows <em>when to whisper.</em></h1>
+  <p class="lede">A coding dojo for someone who's been programming since age nine and wants the muscle back: real projects (MHSA in numpy, a tokenizer, an inference engine), a native editor, and an instructor that teaches just enough, hints only when asked, and never types for you.</p>
+  <div class="howto"><b>How to read this page:</b> each numbered section is one decision. Every option has a live animated mock — let it loop, judge the feel. At the bottom there's a ballot; reply with your picks (mixing is fine, e.g. "identity E but with F's glass hints"). Then I dispatch the build.</div>
+</header>
+
+<nav class="chips">
+  <a href="#structure">01 Structure</a>
+  <a href="#identity">02 Identity</a>
+  <a href="#terminal">03 Terminal</a>
+  <a href="#guidance">04 Guidance</a>
+  <a href="#primer">05 Primer</a>
+  <a href="#decide">Ballot</a>
+</nav>
+
+<!-- ══════════════ 01 STRUCTURE ══════════════ -->
+<section id="structure">
+  <div class="eyebrow">Decision 01</div>
+  <h2>The shape of the app</h2>
+  <p class="sec-lede">One screen owns your attention at a time. A project is a goal ("tokenizer from scratch"); it breaks into <b>milestones</b> (train BPE → encode → decode), and every milestone runs the same five-beat loop:</p>
+
+  <div class="flow">
+    <div class="st"><div class="n">1</div><h4>Pick</h4><p>Project → milestone. Plain list, zero ceremony.</p></div>
+    <div class="st"><div class="n">2</div><h4>Calibrate</h4><p>2–3 min. The instructor probes what you already know — you can answer, or just say "I know this, test me".</p></div>
+    <div class="st"><div class="n">3</div><h4>Primer</h4><p>Reading only for the gaps. Each concept ends in one check question. No text walls.</p></div>
+    <div class="st"><div class="n">4</div><h4>Build</h4><p>The editor. You type everything. Hints and ghost lines on demand; a watcher decides when to nudge.</p></div>
+    <div class="st"><div class="n">5</div><h4>Reflect</h4><p>Run it, compare against a reference, log what tripped you up. Feeds the next calibration.</p></div>
+  </div>
+
+  <div class="tree">
+<b>Library</b>
+├─ <b>Attention from scratch</b>          <i>numpy</i>
+│   ├─ scaled dot-product attention   <s>done</s>
+│   ├─ multi-head + projections       <i>● current</i>
+│   └─ causal masking
+├─ <b>Tokenizer</b>                       <i>python</i>
+│   ├─ BPE training loop
+│   └─ encode / decode
+└─ <b>Inference engine</b>                <i>not from scratch</i>
+    └─ KV-cache on top of my MHSA</div>
+
+  <div class="enough">
+    <h4>How the instructor decides "enough"</h4>
+    <ul>
+      <li>Every milestone carries a short, visible <b>concept list</b> (for MHSA: dot products as similarity, scaling, softmax, weighted sums, heads). You can see and veto it.</li>
+      <li>A concept is <b>cleared</b> one of three ways: you evidenced it in calibration, you passed its one check question after reading, or you demonstrated it in code from a previous milestone.</li>
+      <li>All concepts cleared → primer <b>ends itself</b> and drops you in the editor. It never pads. If you flounder later, the watcher can reopen exactly one concept — not the whole lesson.</li>
+    </ul>
+  </div>
+
+  <p class="sec-lede" style="margin:26px 0 4px"><b>The watcher</b> (the open question you raised). It reads your diffs in the background and holds one of three postures — wrong code is allowed to run; that's how you learn:</p>
+  <div class="states">
+    <div class="state"><span class="dot" style="background:var(--good)"></span><h4>Quiet</h4><p>Default. You're wrong in a recoverable way, or productively struggling. It says nothing — a mistake you find yourself is the lesson.</p></div>
+    <div class="state"><span class="dot" style="background:var(--warn)"></span><h4>Nudge</h4><p>Only when you're heading down a rabbit hole: an error that contradicts a cleared concept, or ~10 min circling the same spot. A small amber dot appears in the gutter. It never interrupts — you tap it (or <span class="kbd">⌥H</span>) to read one or two kid-simple lines.</p></div>
+    <div class="state"><span class="dot" style="background:var(--cyan)"></span><h4>Explore</h4><p>You toggle it (<span class="kbd">⌥E</span>). "I'm breaking things on purpose." Watcher goes fully silent, and your diffs get marked as experiments, not mistakes.</p></div>
+  </div>
+  <p class="opt-foot" style="margin-top:14px">Default hotkeys (all rebindable): <span class="kbd">⌃Space</span> next-step hint · <span class="kbd">⌃⇧Space</span> ghost code line · <span class="kbd">⌃`</span> terminal · <span class="kbd">⌥E</span> explore · <span class="kbd">⌘↵</span> run file.</p>
+</section>
+
+<!-- ══════════════ 02 IDENTITY ══════════════ -->
+<section id="identity">
+  <div class="eyebrow">Decision 02</div>
+  <h2>Six visual identities</h2>
+  <p class="sec-lede">Same workspace — sidebar, editor mid-write on attention, a hint, a strip of terminal — worn six genuinely different ways. Pick the world you want to spend hours in.</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">A</span><span class="opt-name">Blueprint</span></div>
+  <p class="opt-thesis">Learning as drafting. Grid paper, cyan linework, hints drawn like dimension callouts on an engineering plan.</p>
+  <div class="mini skin-a">
+    <div class="mbar"><span class="dots"><i></i><i></i></span>MHSA — SHEET 2 OF 3 · SCALE 1:1</div>
+    <div class="mbody">
+      <div class="mside">ATTENTION/<br>├ <b>mhsa.py</b><br>├ tests.py<br>└ notes.md</div>
+      <div class="med" data-code></div>
+    </div>
+    <div class="mhint">scale by √dₖ — or the dot products explode</div>
+    <div class="mterm"><b>▸</b> python mhsa.py — out (4, 8) <b>✓</b></div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> precise, technical, calm. <b>Risk:</b> cool-toned blues for long sessions.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">B</span><span class="opt-name">Field Notes</span></div>
+  <p class="opt-thesis">Ink on warm paper, two riso inks, hints as a tutor's pencil in the margin. The only light option — a notebook, not a tool.</p>
+  <div class="mini skin-b">
+    <div class="mbar"><span class="dots"><i></i><i></i></span>&nbsp;attention, from scratch — day 2</div>
+    <div class="mbody">
+      <div class="mside">attention/<br>├ <b>mhsa.py</b><br>├ tests.py<br>└ notes.md</div>
+      <div class="med" data-code></div>
+    </div>
+    <div class="mhint">divide by √dk — keeps softmax gentle</div>
+    <div class="mterm"><b>$</b> python mhsa.py · out (4, 8) ✓</div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> bookish, warm, yui540-adjacent softness. <b>Risk:</b> light theme only really sings; less "engine room".</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">C</span><span class="opt-name">Phosphor</span></div>
+  <p class="opt-thesis">One green, one amber, zero chrome. The machine you learned on at nine, rebuilt with taste. Hints arrive as amber interrupts.</p>
+  <div class="mini skin-c">
+    <div class="mbar">OMNILEARN v0.1 ── mhsa.py ── [calibrated 4/5]</div>
+    <div class="mbody">
+      <div class="mside">attention/<br>&gt; <b>mhsa.py</b><br>&nbsp; tests.py<br>&nbsp; notes.md</div>
+      <div class="med" data-code></div>
+    </div>
+    <div class="mhint">next: scale scores by sqrt(dk)</div>
+    <div class="mterm"><b>&gt;</b> run — out (4, 8) OK · rows sum 1.0</div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> nostalgic, hyper-focused, zero distraction. <b>Risk:</b> monochrome limits how gently guidance can be layered.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">D</span><span class="opt-name">Playroom</span></div>
+  <p class="opt-thesis">animate.com energy: chunky borders, sticker hints, three loud primaries. Learning framed as play, not penance.</p>
+  <div class="mini skin-d">
+    <div class="mbar"><span class="dots"><i></i><i></i></span>&nbsp;ATTENTION! (the fun kind)</div>
+    <div class="mbody">
+      <div class="mside">attention/<br>★ <b>mhsa.py</b><br>&nbsp; tests.py<br>&nbsp; notes.md</div>
+      <div class="med" data-code></div>
+    </div>
+    <div class="mhint"><b>Psst</b> — big dot products make softmax spiky. Scale them down!</div>
+    <div class="mterm"><b>▶</b> run! out (4, 8) — nailed it</div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> energetic, GSAP-motion-native, celebratory. <b>Risk:</b> loud for deep multi-hour focus.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">E</span><span class="opt-name">Zen Ink</span></div>
+  <p class="opt-thesis">Near-nothing. No sidebar, no line numbers, one sage accent; chrome materializes only when summoned. Maximum lines of code on screen — your stated priority, taken literally.</p>
+  <div class="mini skin-e">
+    <div class="mbar">mhsa · attention</div>
+    <div class="mbody"><div class="med" data-code></div></div>
+    <div class="mhint">softmax turns scores into shares of attention</div>
+    <div class="mterm">run · out (4, 8) · rows sum to <b>1.0</b></div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> monastic, typographic, everything-earns-its-pixels. <b>Risk:</b> discoverability — you must love hotkeys (you do).</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">F</span><span class="opt-name">Aurora</span></div>
+  <p class="opt-thesis">Dark glass over slow-drifting color fields — the refined three-js-site language (Linear/Raycast lineage). Guidance floats on frosted panels.</p>
+  <div class="mini skin-f">
+    <div class="mbar"><span class="dots"><i></i><i></i></span>&nbsp;attention — multi-head</div>
+    <div class="mbody">
+      <div class="mside">attention/<br>◆ <b>mhsa.py</b><br>&nbsp; tests.py<br>&nbsp; notes.md</div>
+      <div class="med" data-code></div>
+    </div>
+    <div class="mhint">Next: scale scores by √dₖ</div>
+    <div class="mterm"><b>▸</b> python mhsa.py — out (4, 8) ✓</div>
+  </div>
+  <div class="opt-foot"><b>Feels:</b> premium, ambient, motion-friendly. <b>Risk:</b> the most "current AI product" of the six — least yours.</div></div>
+</section>
+
+<!-- ══════════════ 03 TERMINAL ══════════════ -->
+<section id="terminal">
+  <div class="eyebrow">Decision 03</div>
+  <h2>Where the terminal lives</h2>
+  <p class="sec-lede">Your constraint: the VS Code bottom dock steals vertical space and costs clicks both ways. Five answers, all one-key (<span class="kbd">⌃`</span>), all animated with their real transitions. Demos use a neutral skin — this choice is independent of 02.</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">T1</span><span class="opt-name">The Veil</span></div>
+  <p class="opt-thesis">Terminal is a translucent layer that slides <em>over</em> the code. You never lose a single line of editor height — the code stays ghosted underneath, and one key dismisses it.</p>
+  <div class="demo t1"><div class="bar"><span>mhsa.py</span><span>⌃` toggles</span></div>
+    <div class="ed" data-code></div>
+    <div class="veil tout">
+      <div class="tl"><span class="p">$</span> python mhsa.py</div>
+      <div class="tl">scores&nbsp;&nbsp;(4, 4)</div>
+      <div class="tl">weights rows sum → <b>1.0000</b></div>
+      <div class="tl">out (4, 8) <b>✓ matches reference</b></div>
+    </div>
+    <span class="keychip">⌃`</span>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> zero standing cost, fastest in/out. <b>Cost:</b> can't read code and output at the same instant.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">T2</span><span class="opt-name">The Rail</span></div>
+  <p class="opt-thesis">A narrow always-on output column on the right. Code keeps full height; output streams beside it and glows when something new lands. Focus it only when you need to type into it.</p>
+  <div class="demo t2"><div class="bar"><span>mhsa.py</span><span>output rail · live</span></div>
+    <div class="ed" data-code></div>
+    <div class="rail tout">
+      <div class="rl"><span class="p">$</span> run</div>
+      <div class="rl">scores (4,4)</div>
+      <div class="rl">sum <b>1.0000</b></div>
+      <div class="rl">out (4,8)</div>
+      <div class="rl"><b>✓ ref ok</b></div>
+    </div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> code + output visible together, no toggling ever. <b>Cost:</b> ~100px of width, wraps long lines.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">T3</span><span class="opt-name">The Pulse</span></div>
+  <p class="opt-thesis">At rest: a one-line tail, like a status bar that happens to be your shell. On run, it springs up, shows the result, and folds itself away after a beat. The terminal manages its own presence.</p>
+  <div class="demo t3"><div class="bar"><span>mhsa.py</span><span>auto-collapse 4s</span></div>
+    <div class="ed" data-code></div>
+    <div class="strip tout">
+      <div class="tail"><span class="p">$</span> … out (4, 8) ✓</div>
+      <div class="full"><span class="p">$</span> python mhsa.py<br>scores (4, 4) · weights rows sum → <b>1.0000</b><br>out (4, 8) <b>✓ matches reference</b></div>
+    </div>
+    <span class="keychip">⌘↵ run</span>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> zero clicks either direction — it appears when relevant, leaves when not. <b>Cost:</b> motion you don't control; pin-open needs a key.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">T4</span><span class="opt-name">The Lens</span></div>
+  <p class="opt-thesis">Notebook logic in a real file: output materializes inline, right under the code that produced it, then collapses to a one-word chip. Results live next to their cause, not in a distant panel.</p>
+  <div class="demo t4"><div class="bar"><span>mhsa.py</span><span>inline output</span></div>
+    <div class="ed"><div class="cl"><span class="kw">def</span> <span class="fn">attention</span>(q, k, v):</div>
+      <div class="cl">    scores = q @ k.T / np.<span class="fn">sqrt</span>(dk)</div>
+      <div class="cl">    <span class="kw">return</span> <span class="fn">softmax</span>(scores) @ v</div>
+      <div class="cl"></div>
+      <div class="cl"><span class="fn">print</span>(attention(q, k, v).shape)  <span class="cm"># ⌘↵</span></div>
+      <div class="lens tout">scores (4, 4)<br>weights rows sum → <b>1.0000</b><br>out <b>(4, 8) ✓</b></div>
+      <div><span class="chipout">▸ out · 3 lines ✓</span></div>
+      <div class="cl"></div>
+      <div class="cl"><span class="cm"># next: stack h heads…</span><span class="caret"></span></div>
+    </div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> tightest cause→effect loop, beautiful for experiments. <b>Cost:</b> not a real shell surface; needs T1 or T3 as fallback for interactive use.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">T5</span><span class="opt-name">The Loupe</span></div>
+  <p class="opt-thesis">A floating glass mini-terminal, docked to a corner, semi-transparent until output arrives. Drag it anywhere; it never reflows your code.</p>
+  <div class="demo t5"><div class="bar"><span>mhsa.py</span><span>floating</span></div>
+    <div class="ed" data-code></div>
+    <div class="loupe tout"><div class="grip"></div>
+      <div><span class="p">$</span> python mhsa.py</div>
+      <div>out (4, 8) <b>✓ matches reference</b></div>
+      <div class="nl">weights rows sum → <b>1.0000</b></div>
+    </div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> spatially free, code never moves. <b>Cost:</b> covers some code; floating windows demand fiddling.</div></div>
+</section>
+
+<!-- ══════════════ 04 GUIDANCE ══════════════ -->
+<section id="guidance">
+  <div class="eyebrow">Decision 04</div>
+  <h2>Hints &amp; the ghost line</h2>
+  <p class="sec-lede">Two separate gestures. <span class="kbd">⌃Space</span> gives a <b>text hint</b> — the next precise step, one or two lines, explained like you're fifteen (press again for the composite step). <span class="kbd">⌃⇧Space</span> reveals the <b>ghost line</b> — actual code, visually quarantined, and Tab will <b>never</b> accept it. First: four ways the text hint can arrive.</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">H1</span><span class="opt-name">Whisper</span></div>
+  <p class="opt-thesis">The hint breathes in directly above your cursor line, italic and dim, and fades the moment you start typing. Guidance at the point of doubt, nowhere else.</p>
+  <div class="demo h1d"><div class="bar"><span>mhsa.py</span><span>⌃Space</span></div>
+    <div class="ed" data-code></div>
+    <div class="whisper anim" style="top:110px">divide scores by √dk — big dots make softmax spiky</div>
+    <span class="keychip anim">⌃Space</span>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> zero eye travel, self-cleaning. <b>Cost:</b> briefly pushes code down one line (or overlays it).</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">H2</span><span class="opt-name">Margin Note</span></div>
+  <p class="opt-thesis">A tutor's annotation in a reserved right margin, tied to your line by a hairline thread. Hints accumulate quietly; the code column itself is never touched.</p>
+  <div class="demo h2d"><div class="bar"><span>mhsa.py</span><span>⌃Space</span></div>
+    <div class="ed" data-code></div>
+    <div class="thread anim" style="left:36%;right:30%;top:131px"></div>
+    <div class="note anim" style="top:112px">Scale by √dk here — otherwise softmax goes spiky and one token hogs all the attention.</div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> code untouched, hints have a home, re-readable. <b>Cost:</b> permanent margin = fewer columns (pairs badly with Zen, well with Field Notes).</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">H3</span><span class="opt-name">Compass</span></div>
+  <p class="opt-thesis">A slim strip above the editor always names where you are — step pips plus a five-word heading. <span class="kbd">⌃Space</span> unfolds one sentence of detail beneath it. Orientation is ambient; explanation is on demand.</p>
+  <div class="demo h3d"><div class="bar"><span>mhsa.py</span><span>step 3 / 7</span></div>
+    <div class="compass"><span class="pips"><i class="done"></i><i class="done"></i><i class="cur"></i><i></i><i></i><i></i><i></i></span><span>turn scores into weights</span></div>
+    <div class="ed" data-code></div>
+    <div class="expand anim">Apply softmax along the last axis — each row becomes shares that sum to 1.</div>
+    <span class="keychip anim">⌃Space</span>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> you always know where you are in the plan; least "AI popping up". <b>Cost:</b> a persistent strip; steps must stay honest as you diverge.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">H4</span><span class="opt-name">Footlight</span></div>
+  <p class="opt-thesis">One quiet line at the very bottom where the hint types itself out. The amber lamp says "I have something" (that's also the watcher's nudge channel) — the text only appears when you ask.</p>
+  <div class="demo h4d"><div class="bar"><span>mhsa.py</span><span>⌃Space</span></div>
+    <div class="ed" data-code></div>
+    <div class="foot"><span class="lamp anim"></span><span class="txt anim">Next: apply softmax — each row becomes shares.</span></div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> a single stable place for all guidance, easy to ignore. <b>Cost:</b> far from the cursor; one line caps hint length (maybe a feature).</div></div>
+
+  <p class="sec-lede" style="margin-top:34px"><b>The ghost line</b> (<span class="kbd">⌃⇧Space</span>). Live demo of the mechanic — watch what happens on Tab, then as you type the right characters:</p>
+  <div class="opt"><div class="opt-head"><span class="opt-tag">G</span><span class="opt-name">Type-through ghost</span></div>
+  <p class="opt-thesis">The line appears quarantined — cool-hued, italic, badged. Tab is refused with a shake. As you type matching characters they solidify into real code; the ghost never enters your file except through your fingers. Intellisense stays warm-colored and Tab-able — the two can never be confused.</p>
+  <div class="demo gd"><div class="bar"><span>mhsa.py</span><span>⌃⇧Space</span></div>
+    <div class="ed"><div class="cl"><span class="kw">def</span> <span class="fn">attention</span>(q, k, v):</div>
+      <div class="cl">    <span class="cm"># q,k,v: (tokens, dk)</span></div>
+      <div class="cl">    <span id="ghost-line"></span><span class="caret"></span></div>
+      <div class="cl"></div>
+      <div class="cl"></div>
+    </div>
+    <span class="badge" style="position:absolute;bottom:12px;right:12px">PRACTICE · TAB OFF</span><div class="tabno" id="tabno" style="left:60px;top:118px">Tab ✗ — practice line: type it yourself</div>
+  </div>
+  <div class="opt-foot">Four visual treatments for the ghost text below — pick one:</div>
+  <div class="gvars">
+    <div class="gvar"><span class="gv1">scores = q @ k.T / np.sqrt(dk)</span><div class="cap"><b>G1 Dashed</b> — dim italic, hatched underline.</div></div>
+    <div class="gvar"><span class="gv2">scores = <b>q @ k</b>.T / np.sqrt(dk)</span><div class="cap"><b>G2 Hollow</b> — outlined letters that fill as you type. (shown mid-fill)</div></div>
+    <div class="gvar"><span class="gv3">scores = q @ k.T / np.sqrt(dk)</span><div class="cap"><b>G3 Trace paper</b> — sits in its own inset chip above the line, never inline.</div></div>
+    <div class="gvar"><span class="gv4"><b>scores = q @ k</b>.T / np.sqrt(dk)</span><div class="cap"><b>G4 Defrost</b> — blurred; each word you type correctly sharpens. (shown mid-type)</div></div>
+  </div></div>
+</section>
+
+<!-- ══════════════ 05 PRIMER ══════════════ -->
+<section id="primer">
+  <div class="eyebrow">Decision 05</div>
+  <h2>The primer, four ways</h2>
+  <p class="sec-lede">The reading that happens before code — sized by calibration, ended by the "enough" rule from 01. Four formats for the same MHSA material:</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">P1</span><span class="opt-name">Deck</span></div>
+  <p class="opt-thesis">One idea per card, a diagram on most, a check question at the end of each concept. Swipe through; skip a card by answering its check early.</p>
+  <div class="pmini p1">
+    <div class="stage">
+      <div class="card c3 anim"><h5>Check yourself</h5><p>Q is (4, 64) and K is (4, 64). What's the shape of Q·Kᵀ — and why does that shape make sense?</p><div class="fig">a) (64, 64) &nbsp;&nbsp;b) (4, 4) ✓ &nbsp;&nbsp;c) (4, 64)</div></div>
+      <div class="card c2 anim"><h5>Why √dk?</h5><p>Bigger vectors → bigger dot products → softmax collapses onto one token. Dividing by √dk keeps the contest fair.</p><div class="fig">scores / √64  →  gentle weights</div></div>
+      <div class="card c1 anim"><h5>Attention is a weighted average</h5><p>Each token asks "who's relevant to me?", scores everyone, then averages their values by those scores.</p><div class="fig">out = weights · V</div></div>
+    </div>
+    <div class="dots"><i></i><i></i><i></i></div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> enforced concision, progress is visible, phone-friendly. <b>Cost:</b> chops flowing arguments into fragments.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">P2</span><span class="opt-name">Scroll Story</span></div>
+  <p class="opt-thesis">One continuous piece with a pinned diagram that transforms as you scroll — the animate.com / GSAP scrollytelling grammar spent on explanation, not decoration.</p>
+  <div class="pmini p2"><div class="split">
+    <div class="diag"><svg viewBox="0 0 120 120" width="82%" aria-hidden="true">
+      <g class="g1 anim"><rect x="18" y="30" width="34" height="34" rx="3" fill="none" stroke="#8FB7E8" stroke-width="1.5"/><rect x="66" y="30" width="34" height="34" rx="3" fill="none" stroke="#8FB7E8" stroke-width="1.5"/><text x="35" y="51" fill="#8FB7E8" font-size="9" text-anchor="middle">Q</text><text x="83" y="51" fill="#8FB7E8" font-size="9" text-anchor="middle">Kᵀ</text><text x="59" y="50" fill="#C8C4BA" font-size="11" text-anchor="middle">·</text><text x="59" y="86" fill="#6E6A61" font-size="7" text-anchor="middle">similarity of every pair</text></g>
+      <g class="g2 anim"><rect x="24" y="78" width="8" height="16" fill="#E8C97D"/><rect x="38" y="70" width="8" height="24" fill="#E8C97D"/><rect x="52" y="84" width="8" height="10" fill="#E8C97D"/><rect x="66" y="60" width="8" height="34" fill="#E8C97D"/><rect x="80" y="80" width="8" height="14" fill="#E8C97D"/><text x="59" y="46" fill="#E8C97D" font-size="8" text-anchor="middle">softmax → shares of 1</text></g>
+      <g class="g3 anim"><circle cx="34" cy="42" r="9" fill="none" stroke="#7FD1B9" stroke-width="1.5"/><circle cx="60" cy="42" r="13" fill="none" stroke="#7FD1B9" stroke-width="2"/><circle cx="88" cy="42" r="6" fill="none" stroke="#7FD1B9" stroke-width="1.2"/><path d="M34 55 L58 82 M60 59 L60 82 M88 52 L64 82" stroke="#7FD1B9" stroke-width="1"/><rect x="48" y="82" width="24" height="14" rx="3" fill="#7FD1B9" opacity=".85"/><text x="60" y="112" fill="#6E6A61" font-size="7" text-anchor="middle">blend values by weight</text></g>
+    </svg></div>
+    <div class="txts">
+      <div class="blk b1 anim"><b>1 · Score every pair</b>Q·Kᵀ asks, for each token: how relevant is everyone else to me?</div>
+      <div class="blk b2 anim"><b>2 · Make them shares</b>Softmax turns raw scores into positive weights that sum to one.</div>
+      <div class="blk b3 anim"><b>3 · Blend the values</b>Each output is a weighted mix of V — attention is just averaging, done carefully.</div>
+    </div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> the strongest "aha" delivery; ideas connect. <b>Cost:</b> heaviest to author per lesson; skimming is harder.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">P3</span><span class="opt-name">Atlas</span></div>
+  <p class="opt-thesis">The milestone's concepts as a map. Rings show mastery from calibration; you read in any order; the pulsing node is the instructor's suggestion. "Enough" is visible — the map is full.</p>
+  <div class="pmini p3"><svg viewBox="0 0 320 210" aria-hidden="true">
+    <path d="M70 60 L160 50 M70 60 L120 130 M160 50 L230 90 M120 130 L230 90 M230 90 L275 160 M120 130 L190 170" stroke="#272B33" stroke-width="1.2"/>
+    <circle cx="70" cy="60" r="17" fill="#171A21" stroke="#7FD1B9" stroke-width="2.5"/><text class="nodelab" x="70" y="90" text-anchor="middle">dot product</text><text x="70" y="64" text-anchor="middle" font-size="9" fill="#7FD1B9">✓</text>
+    <circle cx="160" cy="50" r="17" fill="#171A21" stroke="#7FD1B9" stroke-width="2.5"/><text class="nodelab" x="160" y="24" text-anchor="middle">matmul shapes</text><text x="160" y="54" text-anchor="middle" font-size="9" fill="#7FD1B9">✓</text>
+    <circle cx="120" cy="130" r="17" fill="#171A21" stroke="#E8C97D" stroke-width="2.5" stroke-dasharray="70 37"/><text class="nodelab" x="104" y="158" text-anchor="middle">softmax</text><text x="120" y="134" text-anchor="middle" font-size="8" fill="#E8C97D">65%</text>
+    <circle class="pulse" cx="230" cy="90" r="20" fill="#1D1A12" stroke="#D8A03D" stroke-width="2.5"/><text class="nodelab" x="230" y="122" text-anchor="middle" fill="#D8A03D">scaling √dk · next</text><text x="230" y="94" text-anchor="middle" font-size="8" fill="#D8A03D">read</text>
+    <circle cx="275" cy="160" r="15" fill="#14161B" stroke="#333845" stroke-width="2"/><text class="nodelab" x="275" y="186" text-anchor="middle">multi-head</text>
+    <circle cx="190" cy="170" r="15" fill="#14161B" stroke="#333845" stroke-width="2"/><text class="nodelab" x="182" y="196" text-anchor="middle">masking</text>
+  </svg></div>
+  <div class="opt-foot"><b>Wins:</b> non-linear, mastery and "enough" are literally visible, doubles as the calibration UI. <b>Cost:</b> maps get silly for small lessons; needs a reader panel anyway.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">P4</span><span class="opt-name">Socratic</span></div>
+  <p class="opt-thesis">Calibration and primer are one conversation: it asks, you answer in your own words, it teaches only into the gaps, then hands you a plan of what it skipped and why.</p>
+  <div class="pmini p4"><div class="chat">
+    <div class="msg q m1 anim">In one line — what does softmax do to a row of scores?</div>
+    <div class="msg a m2 anim">makes them positive and sum to 1, biggest score wins most</div>
+    <div class="msg q m3 anim">Exactly. And why divide by √dk first? (honest guess is fine)</div>
+    <div class="msg a m4 anim">…no idea, actually</div>
+    <div class="plan anim"><b>YOUR PRIMER — 1 OF 5 CONCEPTS</b><s>dot products</s> · <s>matmul shapes</s> · <s>softmax</s> · <span style="color:#D8A03D">→ scaling (2 min read)</span> · heads: teach in-editor</div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> calibration is invisible and exact; nothing taught twice. <b>Cost:</b> typing answers is slower than tapping; quality depends on the probe questions.</div></div>
+</section>
+
+<!-- ══════════════ BALLOT ══════════════ -->
+<section id="decide">
+  <div class="eyebrow">Sign-off</div>
+  <h2>The ballot</h2>
+  <div class="ballot">
+    <ol>
+      <li><b>01</b> Structure — the five-beat loop, "enough" rule, and watcher postures: approve or amend?</li>
+      <li><b>02</b> Identity — <b>A</b> Blueprint · <b>B</b> Field Notes · <b>C</b> Phosphor · <b>D</b> Playroom · <b>E</b> Zen Ink · <b>F</b> Aurora</li>
+      <li><b>03</b> Terminal — <b>T1</b> Veil · <b>T2</b> Rail · <b>T3</b> Pulse · <b>T4</b> Lens · <b>T5</b> Loupe (combos welcome, e.g. T4 inline + T1 for a real shell)</li>
+      <li><b>04</b> Hint delivery — <b>H1</b> Whisper · <b>H2</b> Margin · <b>H3</b> Compass · <b>H4</b> Footlight — and ghost treatment <b>G1–G4</b></li>
+      <li><b>05</b> Primer — <b>P1</b> Deck · <b>P2</b> Scroll Story · <b>P3</b> Atlas · <b>P4</b> Socratic</li>
+      <li><b>06</b> Platform call (my rec first): local web app — Node + CodeMirror 6 editor, xterm.js + a real pty, Claude API for instructor/watcher, projects as plain folders on disk. Fully drivable by Playwright for my end-to-end loop; wrappable in Tauri later if you want a dock icon. First language target: Python. OK?</li>
+    </ol>
+    <div class="fmt">reply like: 1 ok · 2 E · 3 T3+T4 · 4 H1 G2 · 5 P4 · 6 ok</div>
+    <p class="small">Mix freely across options, override anything, or say "your call" on any line. Once you sign off I dispatch Opus builders and run the Playwright loop against every beat of the app myself before reporting back.</p>
+  </div>
+
+  <div class="tech">
+    <div class="t"><b>Editor</b>CodeMirror 6 — native intellisense/autocomplete kept visually warm &amp; Tab-able; ghost lines are a separate quarantined decoration layer that Tab ignores by construction.</div>
+    <div class="t"><b>Agents</b>Instructor (calibration + primer), Hinter (step / composite / ghost), Watcher (diff stream → quiet/nudge). Separate prompts, shared project memory.</div>
+    <div class="t"><b>Testing</b>Playwright drives the real UI: calibrate → read → type wrong code → expect silence → rabbit-hole → expect amber dot → run → see output. Unit tests underneath, but the e2e loop is the gate.</div>
+  </div>
+</section>
+
+</div>
+
+<template id="tpl-code">
+  <div class="cl"><span class="kw">import</span> numpy <span class="kw">as</span> np</div>
+  <div class="cl"></div>
+  <div class="cl"><span class="kw">def</span> <span class="fn">attention</span>(q, k, v):</div>
+  <div class="cl">    <span class="cm"># each token scores every other token</span></div>
+  <div class="cl">    scores = q @ k.T<span class="caret"></span></div>
+  <div class="cl"></div>
+  <div class="cl">    <span class="cm"># then: softmax → weighted sum of v</span></div>
+</template>
+
+<script>
+// inject shared code sample
+const tpl = document.getElementById('tpl-code');
+document.querySelectorAll('[data-code]').forEach(el => el.appendChild(tpl.content.cloneNode(true)));
+
+// play animations only when visible
+const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('on', e.isIntersecting)), {threshold: .25});
+document.querySelectorAll('.demo,.pmini').forEach(el => io.observe(el));
+
+// ghost type-through demo
+(function(){
+  const line = document.getElementById('ghost-line'), tab = document.getElementById('tabno');
+  const txt = 'scores = q @ k.T / np.sqrt(dk)';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced){ line.innerHTML = '<span class="ghost">'+txt.slice(14)+'</span>'; line.insertAdjacentHTML('afterbegin','<span class="ghost"><span class="typed">'+txt.slice(0,14)+'</span></span>'); return; }
+  function render(n){
+    line.innerHTML = '<span class="ghost"><span class="typed">'+txt.slice(0,n)+'</span>'+txt.slice(n)+'</span>';
+  }
+  function cycle(){
+    render(0);
+    setTimeout(()=>{ tab.classList.add('show'); }, 1600);           // user "presses Tab" → refused
+    setTimeout(()=>{ tab.classList.remove('show'); }, 3400);
+    let n = 0;
+    setTimeout(function type(){                                     // then types it through
+      n++; render(n);
+      if (n < txt.length) setTimeout(type, 55 + Math.random()*70);
+      else setTimeout(cycle, 2600);
+    }, 3800);
+  }
+  cycle();
+})();
+</script>
