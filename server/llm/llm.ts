@@ -10,7 +10,7 @@
 import { spawn } from 'node:child_process';
 import { getSettings } from '../settings';
 
-export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch';
+export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch' | 'chat';
 
 export interface CallClaudeOptions {
   task: LlmTask;
@@ -44,6 +44,9 @@ export async function modelForTask(task: LlmTask): Promise<string> {
       return models.ghost;
     case 'watch':
       return models.watch;
+    case 'chat':
+      // `chat` is additive in Settings, so fall back rather than trust it exists.
+      return models.chat ?? 'sonnet';
   }
 }
 

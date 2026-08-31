@@ -1,4 +1,4 @@
-// Prompt templates for the six generation tasks.
+// Prompt templates for the generation tasks.
 //
 // House voice (hint / nudge text): 1–2 short lines, concrete, explained like to
 // a smart 15-year-old who is not being talked down to. No hedging, no "As an
@@ -7,7 +7,7 @@
 // Every structured prompt states the exact TypeScript shape inline and demands
 // ONLY a JSON object back, so `extractJson` always has something to grab.
 
-import type { Concept, Milestone, RunResult, Step } from '../../shared/types';
+import type { ChatMessage, Concept, Milestone, RunResult, Step } from '../../shared/types';
 
 const VOICE = `VOICE
 - Write like you are explaining to a smart 15-year-old who is new to this topic, never condescending.
@@ -285,4 +285,104 @@ ${fence(`{
   note?: string;                   // present if and only if posture is "nudge"
   line?: number;                   // 1-based gutter line, present when nudging
 }`)}`;
+}
+
+// ---------- chat ----------
+
+export interface ChatContext {
+  projectName: string;
+  goal: string;
+  milestoneTitle: string;
+  concepts: Array<{ label: string; cleared: boolean }>;
+  steps: Step[];
+  currentStep: number;
+  activePath?: string;
+  activeContent?: string;
+  lastRun?: RunResult;
+  history: ChatMessage[]; // oldest first, already trimmed to the last 12
+  message: string;        // what the learner just asked
+}
+
+const CHAT_HEAD = 6000;   // characters of the active buffer the tutor gets to see
+const CHAT_RUN_TAIL = 400;
+
+function tailOf(text: string | undefined, n: number): string {
+  const t = String(text ?? '').trim();
+  if (!t) return '(empty)';
+  return t.length > n ? `…${t.slice(-n)}` : t;
+}
+
+/**
+ * The tutor chat. Plain prose back, never JSON, and never the milestone's code —
+ * the learner types every line themselves, which is the whole product.
+ */
+export function chatPrompt(ctx: ChatContext): string {
+  const concepts = ctx.concepts.length
+    ? ctx.concepts.map((c) => `- [${c.cleared ? 'cleared' : 'not yet'}] ${c.label}`).join('\n')
+    : '(no concepts recorded)';
+
+  const steps = ctx.steps.length
+    ? ctx.steps
+        .map((s, i) => `${i === ctx.currentStep ? '>' : ' '} ${i}. ${s.title} — ${s.detail}`)
+        .join('\n')
+    : '(no build plan yet — they are still getting set up)';
+
+  const buffer = ctx.activeContent
+    ? `THEIR CURRENT FILE: ${ctx.activePath ?? '(unnamed)'}
+\`\`\`python
+${numberedBuffer(ctx.activeContent.slice(0, CHAT_HEAD))}
+\`\`\``
+    : 'THEIR CURRENT FILE: (none open)';
+
+  const lastRun = ctx.lastRun
+    ? `LAST RUN (exit ${ctx.lastRun.exitCode})
+stderr: ${tailOf(ctx.lastRun.stderr, CHAT_RUN_TAIL)}
+stdout: ${tailOf(ctx.lastRun.stdout, CHAT_RUN_TAIL)}`
+    : 'LAST RUN: (they have not run anything yet)';
+
+  const history = ctx.history.length
+    ? ctx.history.map((m) => `${m.role === 'user' ? 'LEARNER' : 'YOU'}: ${m.text}`).join('\n')
+    : '(this is the first thing they have said)';
+
+  return `You are the learner's instructor, sitting beside them inside their editor.
+
+PROJECT: ${ctx.projectName}
+THEIR GOAL: ${ctx.goal}
+CURRENT MILESTONE: ${ctx.milestoneTitle}
+
+CONCEPTS FOR THIS MILESTONE
+${concepts}
+
+BUILD PLAN (">" marks the step they are on)
+${steps}
+
+${buffer}
+
+${lastRun}
+
+CONVERSATION SO FAR
+${history}
+
+THE LEARNER JUST ASKED
+${ctx.message}
+
+WHAT YOU ARE GREAT AT
+- Explaining what the current step or task is actually asking of them, in their own context.
+- Clarifying a concept they are shaky on, with a concrete example that is NOT their milestone code.
+- Reading their buffer and their run output and saying plainly what is happening and why.
+
+THE ONE HARD RULE
+- NEVER write multi-line implementation code for this milestone. The learner types every line
+  themselves — that is the entire point of this app, and handing them the answer steals the lesson.
+- A single short inline fragment (one line at most, ideally just an expression) is the ceiling,
+  and only when nothing else will land the idea.
+- If they ask you outright for the code, decline warmly in ONE sentence and point them at
+  Ctrl+Space for a hint, or Ctrl+Shift+Space for a ghost line they type in themselves.
+
+HOW TO WRITE IT
+- At most 120 words, unless they explicitly ask you to go deep. Usually far fewer.
+- Plain language, like you are talking to a smart 15-year-old — never condescending.
+- No filler, no "great question", no restating their question back at them, no emoji.
+- Answer the thing they actually asked, first sentence.
+- Plain text. Light markdown is fine. Do NOT return JSON.`;
 }

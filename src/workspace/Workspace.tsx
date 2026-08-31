@@ -47,6 +47,7 @@ export default function Workspace(props: {
   const [railOpen, setRailOpen] = useState(false);
   const [railPinned, setRailPinned] = useState(false);
   const [railTab, setRailTab] = useState<RailTab>('run');
+  const [askFocusSeq, setAskFocusSeq] = useState(0);
   const [lastRun, setLastRun] = useState<RunResult | null>(null);
   const [running, setRunning] = useState(false);
   const [lamp, setLamp] = useState<LampState>('idle');
@@ -75,6 +76,9 @@ export default function Workspace(props: {
   const lastRunRef = useRef<RunResult | null>(null); lastRunRef.current = lastRun;
   const exploreRef = useRef(explore); exploreRef.current = explore;
   const pinnedRef = useRef(railPinned); pinnedRef.current = railPinned;
+  const railTabRef = useRef(railTab); railTabRef.current = railTab;
+  const railOpenRef = useRef(railOpen); railOpenRef.current = railOpen;
+  const askFocusedRef = useRef(false);
   const pendingNudgeRef = useRef<PendingNudge | null>(null); pendingNudgeRef.current = pendingNudge;
   const stepsRef = useRef<Step[]>(steps); stepsRef.current = steps;
   const compassOnRef = useRef(compassOn); compassOnRef.current = compassOn;
@@ -112,13 +116,25 @@ export default function Workspace(props: {
     if (collapseTimer.current !== null) { clearTimeout(collapseTimer.current); collapseTimer.current = null; }
   }, []);
 
+  /**
+   * The pulse is allowed to yank the rail away from a finished run — never from
+   * a conversation. While Ask is the visible tab, or the caret is sitting in its
+   * input, the rail stays put.
+   */
+  const askHolds = useCallback(
+    () => askFocusedRef.current || (railOpenRef.current && railTabRef.current === 'ask'),
+    [],
+  );
+
   const scheduleCollapse = useCallback(() => {
     cancelCollapse();
+    if (askHolds()) return;
     collapseTimer.current = window.setTimeout(() => {
       collapseTimer.current = null;
-      if (!pinnedRef.current) setRailOpen(false);
+      // re-check: the learner may have switched to Ask during the 4s
+      if (!pinnedRef.current && !askHolds()) setRailOpen(false);
     }, RAIL_COLLAPSE_MS);
-  }, [cancelCollapse]);
+  }, [cancelCollapse, askHolds]);
 
   useEffect(() => () => { cancelCollapse(); if (detailTimer.current) clearTimeout(detailTimer.current); }, [cancelCollapse]);
 
@@ -241,33 +257,41 @@ export default function Workspace(props: {
   }, [projectId, milestoneId, say]);
 
   // --- run -----------------------------------------------------------------
+  /** true while the learner is actually looking at the tutor conversation */
+  const askShowing = useCallback(
+    () => railOpenRef.current && railTabRef.current === 'ask',
+    [],
+  );
+
   const doRun = useCallback(async () => {
     const path = activePathRef.current;
     if (!path || runningRef.current) return;
     runningRef.current = true;
     setRunning(true);
-    setRailTab('run');
-    setRailOpen(true);
+    // Mid-conversation, a run must not steal the panel. The strip dot still
+    // reports how it went, and a failure below will pull Run forward anyway.
+    if (!askShowing()) { setRailTab('run'); setRailOpen(true); }
     cancelCollapse();
     try { await editorRef.current?.flush(); } catch { /* run what's on disk */ }
     try {
       const res = await api.run(projectId, path);
       setLastRun(res);
       watcherRef.current?.noteRun();
-      setRailTab('run');
-      setRailOpen(true);
+      // An error demands attention; a clean run does not.
+      if (res.exitCode !== 0 || !askShowing()) { setRailTab('run'); setRailOpen(true); }
       if (res.exitCode === 0 && !pinnedRef.current) scheduleCollapse();
     } catch (e) {
       setLastRun({
         path, exitCode: -1, stdout: '', stderr: (e as Error).message || 'run failed',
         durationMs: 0, startedAt: new Date().toISOString(),
       });
+      setRailTab('run');
       setRailOpen(true);
     } finally {
       runningRef.current = false;
       setRunning(false);
     }
-  }, [projectId, cancelCollapse, scheduleCollapse]);
+  }, [projectId, cancelCollapse, scheduleCollapse, askShowing]);
 
   // --- watcher -------------------------------------------------------------
   const onNudge = useCallback((res: WatchResponse) => {
@@ -331,6 +355,36 @@ export default function Workspace(props: {
   const togglePin = useCallback(() => {
     cancelCollapse();
     setRailPinned((p) => !p);
+  }, [cancelCollapse]);
+
+  const pickRailTab = useCallback((t: RailTab) => {
+    cancelCollapse();
+    setRailTab(t);
+    if (t === 'ask') setAskFocusSeq((s) => s + 1);
+  }, [cancelCollapse]);
+
+  const onAskFocus = useCallback((focused: boolean) => {
+    askFocusedRef.current = focused;
+    if (focused) cancelCollapse();
+  }, [cancelCollapse]);
+
+  const getAskContext = useCallback(() => ({
+    path: activePathRef.current,
+    content: editorRef.current?.getContent() ?? '',
+  }), []);
+
+  /** Ctrl+/ — open the tutor with the caret in the box; again to fold it away. */
+  const toggleAsk = useCallback(() => {
+    cancelCollapse();
+    if (railOpenRef.current && railTabRef.current === 'ask') {
+      askFocusedRef.current = false;
+      setRailOpen(false);
+      editorRef.current?.focus();
+      return;
+    }
+    setRailTab('ask');
+    setRailOpen(true);
+    setAskFocusSeq((s) => s + 1);
   }, [cancelCollapse]);
 
   // --- scheme --------------------------------------------------------------
@@ -397,8 +451,8 @@ export default function Workspace(props: {
   }, []);
 
   // --- global keys ---------------------------------------------------------
-  const cmds = useRef({ doRun, requestHint, requestGhost, toggleExplore, openNudge, toggleRail });
-  cmds.current = { doRun, requestHint, requestGhost, toggleExplore, openNudge, toggleRail };
+  const cmds = useRef({ doRun, requestHint, requestGhost, toggleExplore, openNudge, toggleRail, toggleAsk });
+  cmds.current = { doRun, requestHint, requestGhost, toggleExplore, openNudge, toggleRail, toggleAsk };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -413,6 +467,13 @@ export default function Workspace(props: {
         e.preventDefault(); cmds.current.toggleRail(); return;
       }
       if (inXterm) return;
+
+      // Ctrl+/ — the tutor. Handled before the editor/input bail-out below so it
+      // works while typing code, and so a second press folds the chat away from
+      // inside the chat itself.
+      if (mod && !e.altKey && (e.key === '/' || e.code === 'Slash')) {
+        e.preventDefault(); cmds.current.toggleAsk(); return;
+      }
 
       if (e.altKey && !mod && (e.code === 'KeyE' || e.key.toLowerCase() === 'e')) {
         e.preventDefault(); cmds.current.toggleExplore(); return;
@@ -545,14 +606,18 @@ export default function Workspace(props: {
 
           <Rail
             projectId={projectId}
+            milestoneId={milestoneId}
             state={railState}
             tab={railTab}
             lastRun={lastRun}
             running={running}
+            getAskContext={getAskContext}
+            askFocusSeq={askFocusSeq}
+            onAskFocus={onAskFocus}
             onOpen={() => { cancelCollapse(); setRailOpen(true); }}
             onClose={() => { cancelCollapse(); setRailOpen(false); }}
             onTogglePin={togglePin}
-            onTab={setRailTab}
+            onTab={pickRailTab}
             onHover={cancelCollapse}
           />
         </main>

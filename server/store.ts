@@ -2,6 +2,7 @@
 //
 //   <data>/projects/<slug>/project.json
 //   <data>/projects/<slug>/.omnilearn/cache/<milestoneId>.{calibration,primer}.json
+//   <data>/projects/<slug>/.omnilearn/chat/<milestoneId>.json
 //   <data>/settings.json
 //
 // Every path that comes from a client is resolved *inside* the owning project
@@ -47,6 +48,10 @@ export function projectDir(id: string): string {
 
 export function cacheDir(id: string): string {
   return path.join(projectDir(id), '.omnilearn', 'cache');
+}
+
+export function chatDir(id: string): string {
+  return path.join(projectDir(id), '.omnilearn', 'chat');
 }
 
 // ---------- path safety ----------

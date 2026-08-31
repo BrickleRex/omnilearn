@@ -503,6 +503,9 @@
 }
 .rail[data-state='open'],
 .rail[data-state='pinned'] { width: min(420px, 45vw); }
+/* the tutor gets more room — prose needs a wider measure than a traceback */
+.rail[data-state='open'][data-tab='ask'],
+.rail[data-state='pinned'][data-tab='ask'] { width: min(520px, 55vw); }
 .rail[data-state='pinned'] { border-left-color: var(--accent2); }
 
 /* full height so a click anywhere on the strip opens the rail */
@@ -639,6 +642,168 @@
 }
 .railShell .xterm { height: 100%; }
 .railShell .xterm-viewport { background: transparent !important; }
+
+/* ------------------------------------------------------------------- ask -- */
+.railAsk {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+}
+
+.askThread {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 11px 11px 4px;
+}
+
+.askEmpty {
+  margin: 4px 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.askMsg { display: flex; min-width: 0; }
+.askMsg[data-role='user'] { justify-content: flex-end; }
+.askMsg[data-role='tutor'] { justify-content: flex-start; }
+
+/* the learner's own words: a sticker chip, loud and short */
+.askBubble {
+  max-width: 86%;
+  padding: 6px 11px 7px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  font-weight: 600;
+  background: var(--accent3);
+  color: var(--on-accent);
+  border: 2px solid var(--line);
+  border-radius: var(--radius) var(--radius) 4px var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  animation: popIn 240ms cubic-bezier(.34, 1.45, .4, 1);
+}
+
+/* the tutor: plain prose on the surface, no chrome fighting the words */
+.askMsg[data-role='tutor'] .askMd {
+  max-width: 94%;
+  padding: 7px 11px 8px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius) var(--radius) var(--radius) 4px;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  overflow-wrap: anywhere;
+  animation: popIn 260ms cubic-bezier(.34, 1.45, .4, 1);
+}
+.askMd.md { font-size: 12.5px; line-height: 1.5; }
+.askMd.md > * + * { margin-top: .6em; }
+.askMd.md p { max-width: none; }
+.askMd.md h1, .askMd.md h2, .askMd.md h3 { font-size: 13.5px; margin-top: .8em; }
+.askMd.md code { font-size: 11.5px; }
+.askMd.md pre { padding: 6px 8px; overflow-x: auto; }
+.askMd.md pre code { font-size: 11.5px; }
+
+/* bouncing dots while the tutor thinks */
+.askThinking {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 26px;
+  padding: 0 12px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius) var(--radius) var(--radius) 4px;
+}
+.askThinking i {
+  width: 5px;
+  height: 5px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: askBounce 900ms cubic-bezier(.34, 1.45, .4, 1) infinite;
+}
+.askThinking i:nth-child(2) { animation-delay: 130ms; background: var(--accent2); }
+.askThinking i:nth-child(3) { animation-delay: 260ms; background: var(--accent3); }
+
+.askFail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: transparent;
+  border: 2px dashed var(--bad);
+  border-radius: var(--radius);
+}
+.askFailWhat { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.askRetry {
+  flex: none;
+  padding: 2px 10px 3px;
+  font-size: 11px;
+  font-weight: 800;
+  background: var(--bad);
+  color: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  transition: transform 180ms cubic-bezier(.34, 1.45, .4, 1);
+}
+.askRetry:hover { transform: translate(-1px, -1px); }
+
+.askBar {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  padding: 8px 10px 10px;
+  border-top: 2px solid var(--line);
+}
+.askInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 30px;
+  max-height: 84px;
+  padding: 6px 9px;
+  resize: none;
+  overflow-y: auto;
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink);
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+.askInput::placeholder { color: var(--muted); }
+.askInput:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--ring); }
+.askInput:disabled { opacity: 0.55; cursor: progress; }
+.askSend {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--accent);
+  color: #fff;
+  border: var(--border-w) solid var(--line);
+  border-radius: 10px;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  transition: transform 180ms cubic-bezier(.34, 1.45, .4, 1), background 140ms ease;
+}
+.askSend:hover:not(:disabled) { transform: translate(-1px, -1px); }
+.askSend:active:not(:disabled) { transform: translate(var(--shadow-offset), var(--shadow-offset)); box-shadow: none; }
 
 /* ------------------------------------------------------------- footlight -- */
 .footlight {
@@ -780,6 +945,10 @@
   45% { transform: translateX(-3px); }
   60% { transform: translateX(3px); }
   80% { transform: translateX(-1.5px); }
+}
+@keyframes askBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
 }
 @keyframes ghostSettle {
   0%, 62% { color: var(--ghost-fill); }

@@ -9,7 +9,11 @@ import { authRouter, configuredToken, requireAuth, wsAuthorized } from './auth';
 import { settingsRouter } from './settings';
 import { projectsRouter } from './projects';
 import { runnerRouter } from './runner';
+// The jedi daemon is stdio-attached and never detached: it sees EOF on stdin and
+// exits with us, so index.ts needs no signal handler of its own.
+import { completeRouter } from './complete';
 import { agentsRouter } from './llm/agents';
+import { chatRouter } from './llm/chat';
 import { attachTerminal, termWss } from './term';
 
 const app = express();
@@ -27,8 +31,10 @@ app.use('/api', requireAuth);
 // Order is irrelevant here (no path collides), but keep it readable.
 app.use('/api', settingsRouter);
 app.use('/api', agentsRouter);
+app.use('/api', chatRouter);
 app.use('/api', projectsRouter);
 app.use('/api', runnerRouter);
+app.use('/api', completeRouter);
 
 app.use('/api', (_req, res) => {
   res.status(404).json({ error: 'not found' });

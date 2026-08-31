@@ -4,23 +4,33 @@
 // strip at rest, springing open on a run and folding back after ~4s unless the
 // run failed or the rail is pinned.
 // ---------------------------------------------------------------------------
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Terminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';
-import type { RunResult } from '../../shared/types';
-import { termSocketUrl } from '../api';
+import type { ChatMessage, RunResult } from '../../shared/types';
+import { api, termSocketUrl } from '../api';
+import { Markdown } from '../components/Markdown';
 import { cssVar } from './theme';
 
 export type RailState = 'strip' | 'open' | 'pinned';
-export type RailTab = 'run' | 'shell';
+export type RailTab = 'run' | 'shell' | 'ask';
+
+/** What the tutor needs to know about where the learner currently is. */
+export interface AskContext { path: string | null; content: string }
 
 export interface RailProps {
   projectId: string;
+  milestoneId: string;
   state: RailState;
   tab: RailTab;
   lastRun: RunResult | null;
   running: boolean;
+  /** Read live from the editor at send time — never a stale render's copy. */
+  getAskContext: () => AskContext;
+  /** Bumped by the workspace (Ctrl+/) to put the caret in the ask box. */
+  askFocusSeq: number;
+  onAskFocus: (focused: boolean) => void;
   onOpen: () => void;
   onClose: () => void;
   onTogglePin: () => void;
@@ -28,8 +38,15 @@ export interface RailProps {
   onHover: () => void;
 }
 
+/** ~4 lines of the ask textarea before it starts scrolling instead of growing. */
+const ASK_INPUT_MAX = 84;
+
 export default function Rail(props: RailProps) {
-  const { projectId, state, tab, lastRun, running, onOpen, onClose, onTogglePin, onTab, onHover } = props;
+  const {
+    projectId, milestoneId, state, tab, lastRun, running,
+    getAskContext, askFocusSeq, onAskFocus,
+    onOpen, onClose, onTogglePin, onTab, onHover,
+  } = props;
   const open = state !== 'strip';
 
   const shellHost = useRef<HTMLDivElement | null>(null);
@@ -37,6 +54,94 @@ export default function Rail(props: RailProps) {
   const fit = useRef<FitAddon | null>(null);
   const sock = useRef<WebSocket | null>(null);
   const closing = useRef(false);
+
+  // --- Ask (tutor chat) ------------------------------------------------------
+  const [msgs, setMsgs] = useState<ChatMessage[]>([]);
+  const [draft, setDraft] = useState('');
+  const [asking, setAsking] = useState(false);
+  const [failed, setFailed] = useState<{ text: string; reason: string } | null>(null);
+
+  const askInput = useRef<HTMLTextAreaElement | null>(null);
+  const askThread = useRef<HTMLDivElement | null>(null);
+  const askingRef = useRef(false); askingRef.current = asking;
+  const ctxRef = useRef(getAskContext); ctxRef.current = getAskContext;
+  const historyFor = useRef<string | null>(null);
+  const alive = useRef(true);
+  useEffect(() => () => { alive.current = false; }, []);
+
+  const askVisible = open && tab === 'ask';
+
+  // History is per-milestone and lives on the server; pull it once, the first
+  // time the tab is actually shown.
+  useEffect(() => {
+    if (!askVisible || historyFor.current === milestoneId) return;
+    historyFor.current = milestoneId;
+    api.chatHistory(projectId, milestoneId)
+      .then((h) => { if (alive.current) setMsgs(h ?? []); })
+      .catch(() => { /* an empty thread is a fine place to start */ });
+  }, [askVisible, projectId, milestoneId]);
+
+  // Follow the conversation down as it grows.
+  useEffect(() => {
+    if (!askVisible) return;
+    const el = askThread.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [askVisible, msgs, asking, failed]);
+
+  // Ctrl+/ from the workspace: put the caret in the box.
+  useEffect(() => {
+    if (!askVisible || askFocusSeq === 0) return;
+    const raf = requestAnimationFrame(() => askInput.current?.focus());
+    return () => cancelAnimationFrame(raf);
+  }, [askFocusSeq, askVisible]);
+
+  // Grow the textarea with its content, up to ~4 lines.
+  useEffect(() => {
+    const el = askInput.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${Math.min(el.scrollHeight, ASK_INPUT_MAX)}px`;
+  }, [draft, askVisible]);
+
+  const sendAsk = useCallback(async (raw: string) => {
+    const message = raw.trim();
+    if (!message || askingRef.current) return;
+
+    askingRef.current = true;
+    setFailed(null);
+    setDraft('');
+    setAsking(true);
+    setMsgs((m) => [...m, { role: 'user', text: message, at: new Date().toISOString() }]);
+
+    const ctx = ctxRef.current();
+    try {
+      const res = await api.chat(projectId, {
+        milestoneId,
+        message,
+        path: ctx.path ?? undefined,
+        content: ctx.content,
+      });
+      if (!alive.current) return;
+      setMsgs((m) => [...m, { role: 'tutor', text: res.reply, at: new Date().toISOString() }]);
+    } catch (e) {
+      if (!alive.current) return;
+      // Take the optimistic bubble back out and hand the words to the learner
+      // again — retyping a question you already asked is a small insult.
+      setMsgs((m) => (m.length && m[m.length - 1].role === 'user' ? m.slice(0, -1) : m));
+      setFailed({ text: message, reason: (e as Error).message || 'could not reach the tutor' });
+      setDraft(message);
+    } finally {
+      if (alive.current) setAsking(false);
+      askingRef.current = false;
+    }
+  }, [projectId, milestoneId]);
+
+  // The textarea is disabled while a reply is in flight, which blurs it; give
+  // the caret back the moment the tutor is done talking.
+  useEffect(() => {
+    if (!asking && askVisible && msgs.length) askInput.current?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [asking]);
 
   // --- lazily build the pty session the first time the Shell tab is shown ----
   useEffect(() => {
@@ -130,6 +235,7 @@ export default function Rail(props: RailProps) {
       className="rail"
       data-testid="rail"
       data-state={state}
+      data-tab={tab}
       onMouseEnter={onHover}
     >
       {!open ? (
@@ -156,6 +262,15 @@ export default function Rail(props: RailProps) {
               onClick={() => onTab('shell')}
             >
               Shell
+            </button>
+            <button
+              className="railTab"
+              data-testid="rail-tab-ask"
+              data-active={tab === 'ask'}
+              title="ask the tutor (Ctrl+/)"
+              onClick={() => onTab('ask')}
+            >
+              Ask
             </button>
             <span className="railSpacer" />
             <button
@@ -197,6 +312,86 @@ export default function Rail(props: RailProps) {
 
             <div className="railPane" style={{ display: tab === 'shell' ? 'flex' : 'none' }}>
               <div className="railShell" data-testid="rail-shell" ref={shellHost} />
+            </div>
+
+            <div className="railPane" style={{ display: tab === 'ask' ? 'flex' : 'none' }}>
+              <div className="railAsk" data-testid="rail-ask">
+                <div className="askThread" ref={askThread}>
+                  {msgs.length === 0 && !asking && (
+                    <p className="askEmpty" data-testid="ask-empty">
+                      Ask about the task, a concept, or your error — short answers, no spoilers.
+                    </p>
+                  )}
+
+                  {msgs.map((m, i) => (
+                    <div
+                      key={`${i}-${m.at}`}
+                      className="askMsg"
+                      data-role={m.role}
+                      data-testid={m.role === 'user' ? 'ask-msg-user' : 'ask-msg-tutor'}
+                    >
+                      {m.role === 'user'
+                        ? <span className="askBubble">{m.text}</span>
+                        : <Markdown md={m.text} className="askMd" />}
+                    </div>
+                  ))}
+
+                  {asking && (
+                    <div className="askMsg" data-role="tutor">
+                      <span className="askThinking" data-testid="ask-thinking" aria-label="thinking">
+                        <i /><i /><i />
+                      </span>
+                    </div>
+                  )}
+
+                  {failed && (
+                    <div className="askFail" data-testid="ask-error" role="alert">
+                      <span className="askFailWhat">“{failed.text}” didn’t get through — {failed.reason}</span>
+                      <button
+                        className="askRetry"
+                        data-testid="ask-retry"
+                        onClick={() => void sendAsk(failed.text)}
+                      >
+                        retry
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="askBar">
+                  <textarea
+                    ref={askInput}
+                    className="askInput"
+                    data-testid="ask-input"
+                    rows={1}
+                    placeholder="what is this step actually asking?"
+                    aria-label="ask the tutor"
+                    value={draft}
+                    disabled={asking}
+                    onChange={(e) => setDraft(e.target.value)}
+                    onFocus={() => onAskFocus(true)}
+                    onBlur={() => onAskFocus(false)}
+                    onKeyDown={(e) => {
+                      // Enter sends, Shift+Enter is a newline. Ctrl/Cmd+Enter is
+                      // the workspace's "run", so leave it to the window handler.
+                      if (e.key === 'Enter' && !e.shiftKey && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                        e.preventDefault();
+                        void sendAsk(draft);
+                      }
+                    }}
+                  />
+                  <button
+                    className="askSend"
+                    data-testid="ask-send"
+                    disabled={asking || !draft.trim()}
+                    title="send (Enter)"
+                    aria-label="send"
+                    onClick={() => void sendAsk(draft)}
+                  >
+                    ↑
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

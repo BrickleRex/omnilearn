@@ -414,3 +414,21 @@ export function mockWatch(req: WatchRequest): WatchResponse {
   }
   return { posture: 'quiet' };
 }
+
+// ---------- chat ----------
+
+/**
+ * Two deterministic tutor replies: an orienting one for "what/task/step"
+ * questions, and an echo for everything else. The e2e suite matches these
+ * strings exactly.
+ */
+export function mockChat(milestone: Milestone, message: string): string {
+  const text = String(message ?? '');
+  if (/task|what|step/i.test(text)) {
+    const steps = milestone.steps ?? [];
+    const step = steps[milestone.currentStep] ?? steps[0];
+    const stepTitle = step?.title ?? 'getting set up';
+    return `You're building "${milestone.title}" — next step: ${stepTitle}. (mock tutor)`;
+  }
+  return `Mock tutor reply: ${text.slice(0, 60)}`;
+}

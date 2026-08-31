@@ -13,9 +13,10 @@ import { bracketMatching, indentOnInput } from '@codemirror/language';
 import {
   acceptCompletion, autocompletion, closeCompletion, completionKeymap,
 } from '@codemirror/autocomplete';
-import { python } from '@codemirror/lang-python';
+import { globalCompletion, localCompletionSource, python } from '@codemirror/lang-python';
 import type { Scheme } from '../../shared/types';
 import { api } from '../api';
+import { jediCompletionSource } from './complete';
 import { buildEditorTheme } from './theme';
 import { dismissGhost, ghostActive, ghostExtension, showGhost } from './ghost';
 import { nudgeGutter, setNudgeLine } from './nudge';
@@ -136,7 +137,21 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
         ghostExtension(),
 
         // ...and the completion keys minus Ctrl-Space, which is the hint now.
-        autocompletion({ activateOnTyping: true, icons: true, defaultKeymap: false }),
+        //
+        // `override` rather than another `pythonLanguage.data.of(...)`: it makes
+        // the running order explicit and unarguable — jedi first, then the two
+        // sources python() would have registered on its own (which we therefore
+        // have to name here, since override replaces the language-data set).
+        autocompletion({
+          activateOnTyping: true,
+          icons: true,
+          defaultKeymap: false,
+          override: [
+            jediCompletionSource(props.projectId, () => latest.current.path),
+            localCompletionSource,
+            globalCompletion,
+          ],
+        }),
         Prec.high(keymap.of(completionKeymap.filter((b) => b.key !== 'Ctrl-Space'))),
         python(),
 
