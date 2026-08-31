@@ -153,7 +153,7 @@ export interface CompletionItem {
   detail?: string;               // short signature/description if cheap to get
 }
 export interface CompleteResponse {
-  items: CompletionItem[];       // max ~80, jedi's order (relevance)
+  items: CompletionItem[];       // capped at 1000 (jedi's order); `detail` only on the first ~80
   engine: 'jedi' | 'words';      // 'words' = fallback when jedi unavailable
 }
 
