@@ -153,7 +153,15 @@ export default function Workspace(props: {
           primerAsked.current = true;
           // cached server-side; populates the compass without blocking the editor
           api.primer(projectId, ms.id)
-            .then((d) => { if (alive && d.steps?.length) setSteps(d.steps); })
+            .then((d) => {
+              if (!alive || !d.steps?.length) return;
+              setSteps(d.steps);
+              // The server persists these onto the milestone; mirror them locally
+              // so a later patchProject doesn't send them back as an empty array.
+              setProject((cur) => (cur
+                ? { ...cur, milestones: cur.milestones.map((m) => (m.id === ms.id ? { ...m, steps: d.steps } : m)) }
+                : cur));
+            })
             .catch(() => { /* the compass just stays empty */ });
         }
       })
@@ -264,8 +272,14 @@ export default function Workspace(props: {
   // --- watcher -------------------------------------------------------------
   const onNudge = useCallback((res: WatchResponse) => {
     const line = res.line ?? cursorLineRef.current;
-    setPendingNudge({ line, note: res.note ?? '' });
-    setNudgeOpened(false);
+    const note = res.note ?? '';
+    const prev = pendingNudgeRef.current;
+    // Repeating the same nudge re-hangs the marker but must not re-open the
+    // "something's off" affordance the learner has already read.
+    if (!prev || prev.line !== line || prev.note !== note) {
+      setPendingNudge({ line, note });
+      setNudgeOpened(false);
+    }
     setLamp('nudge');
     editorRef.current?.setNudge(line);
   }, []);

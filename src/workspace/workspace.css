@@ -505,12 +505,15 @@
 .rail[data-state='pinned'] { width: min(420px, 45vw); }
 .rail[data-state='pinned'] { border-left-color: var(--accent2); }
 
+/* full height so a click anywhere on the strip opens the rail */
 .railStrip {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 9px;
   width: 28px;
+  height: 100%;
   padding: 10px 0;
   background: none;
   border: 0;
@@ -667,7 +670,7 @@
 }
 .footLamp[data-state='thinking'] { background: var(--lamp); animation: breathe 1.5s ease-in-out infinite; }
 .footLamp[data-state='hint'] { background: var(--lamp); box-shadow: 0 0 12px 2px var(--lamp); }
-.footLamp[data-state='nudge'] { background: var(--lamp); box-shadow: 0 0 12px 2px var(--lamp); animation: nudgePulse 2s ease-in-out infinite; }
+.footLamp[data-state='nudge'] { background: var(--lamp); animation: lampNudge 2s ease-in-out infinite; }
 
 .footText {
   flex: 1;
@@ -750,9 +753,17 @@
   0%, 100% { transform: scale(1.3); }
   50% { transform: scale(1.75); }
 }
+/* Rings out rather than scaling: an element whose box never moves stays
+   clickable (and stays hit-testable for e2e) while it keeps asking politely. */
 @keyframes nudgePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.28); }
+  0% { box-shadow: 0 0 0 0 var(--warn); opacity: 1; }
+  70% { box-shadow: 0 0 0 6px transparent; opacity: 0.72; }
+  100% { box-shadow: 0 0 0 0 transparent; opacity: 1; }
+}
+@keyframes lampNudge {
+  0% { box-shadow: 0 0 12px 2px var(--lamp), 0 0 0 0 var(--lamp); }
+  70% { box-shadow: 0 0 12px 2px var(--lamp), 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 12px 2px var(--lamp), 0 0 0 0 transparent; }
 }
 @keyframes unfold {
   from { opacity: 0; transform: translateY(-7px) scaleY(0.55); }

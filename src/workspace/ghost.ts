@@ -36,6 +36,8 @@ const REFUSE_MS = 1500;
 const FADE_MS = 1500;
 const DIVERGE_LIMIT = 3;
 
+const plainSpaces = (s: string) => s.replace(/\u00a0/g, ' ');
+
 // ---------------------------------------------------------------------------
 // widget
 // ---------------------------------------------------------------------------
@@ -53,8 +55,9 @@ class GhostWidget extends WidgetType {
 
     const text = document.createElement('span');
     text.className = 'cm-ghost-text';
-    // Preserve leading/interior spaces of the not-yet-typed remainder.
-    text.textContent = this.remaining.replace(/ /g, ' ');
+    // Real characters, not &nbsp; — `.cm-ghost-text { white-space: pre }` keeps
+    // the spacing, and the widget's textContent stays exactly the code to type.
+    text.textContent = this.remaining;
     wrap.appendChild(text);
 
     const chip = document.createElement('span');
@@ -93,33 +96,33 @@ export const ghostField = StateField.define<GhostState | null>({
     for (const e of tr.effects) if (e.is(refuseGhostEffect)) v = { ...v, refusing: e.value };
     if (!tr.docChanged) return v;
 
-    // Collect the changes; ordinary typing is always exactly one.
-    const changes: Array<{ fA: number; tA: number; ins: string }> = [];
-    tr.changes.iterChanges((fA, tA, _fB, _tB, ins) => changes.push({ fA, tA, ins: ins.toString() }));
-    if (changes.length !== 1) return null;
-
-    const c = changes[0];
-    const frontier = v.from + v.typedCount;
+    // Rather than reasoning about the *shape* of the change (which varies:
+    // fast typing coalesces, the DOM reader rewrites whole lines when spaces
+    // become &nbsp;, auto-indent edits the line start), ask the resulting
+    // document a simple question: is everything between the anchor and the
+    // cursor exactly the start of the ghost text? If so the learner is on
+    // track, and how far they got is just cursor - anchor.
     const from = tr.changes.mapPos(v.from, -1);
+    const head = tr.newSelection.main.head;
+    const n = head - from;
 
-    // (a) insertion exactly at the typing frontier
-    if (c.fA === c.tA && c.fA === frontier && c.ins.length > 0) {
-      const want = v.text.slice(v.typedCount, v.typedCount + c.ins.length);
-      if (c.ins === want) {
-        return { ...v, from, typedCount: v.typedCount + c.ins.length, diverged: 0, refusing: false };
-      }
-      const diverged = v.diverged + 1;
-      return diverged >= DIVERGE_LIMIT ? null : { ...v, from, diverged };
+    // Some browsers hand contenteditable a non-breaking space; treat it as one.
+    const onTrack = n >= 0 && n <= v.text.length
+      && plainSpaces(tr.newDoc.sliceString(from, head)) === plainSpaces(v.text.slice(0, n));
+
+    if (onTrack) {
+      return {
+        ...v,
+        from,
+        typedCount: n,
+        diverged: 0,
+        refusing: n === v.typedCount ? v.refusing : false,
+      };
     }
 
-    // (b) backspace inside the already-typed region
-    if (c.ins.length === 0 && c.tA === frontier && c.fA >= v.from && c.tA > c.fA) {
-      return { ...v, from, typedCount: Math.max(0, v.typedCount - (c.tA - c.fA)) };
-    }
-
-    // (c) anything else counts as divergence
     const diverged = v.diverged + 1;
-    return diverged >= DIVERGE_LIMIT ? null : { ...v, from, diverged };
+    if (diverged >= DIVERGE_LIMIT) return null;
+    return { ...v, from, typedCount: Math.max(0, Math.min(v.typedCount, n)), diverged };
   },
 });
 
@@ -276,13 +279,19 @@ export function showGhost(view: EditorView, code: string) {
   const line = view.state.doc.lineAt(pos);
   const before = view.state.doc.sliceString(line.from, pos);
 
-  let text = raw;
-  if (before && raw.startsWith(before)) text = raw.slice(before.length);
-  else if (/^\s*$/.test(before)) text = raw.replace(/^\s+/, '');
-  else {
+  let text: string;
+  if (raw.startsWith(before)) {
+    // The line so far is a prefix of the suggestion (including an empty line, or
+    // one holding just the indent CodeMirror already inserted): show the rest.
+    text = raw.slice(before.length);
+  } else {
+    // The cursor sits after unrelated text, so the model's own indentation is
+    // meaningless here — drop it, and any part of the body already typed.
     const trimmed = raw.replace(/^\s+/, '');
     const beforeTrimmed = before.replace(/^\s+/, '');
-    if (beforeTrimmed && trimmed.startsWith(beforeTrimmed)) text = trimmed.slice(beforeTrimmed.length);
+    text = beforeTrimmed && trimmed.startsWith(beforeTrimmed)
+      ? trimmed.slice(beforeTrimmed.length)
+      : trimmed;
   }
   if (!text) return;
 

@@ -29,6 +29,7 @@ export default function Compass({
               key={`${i}-${s.title}`}
               className="pip"
               role="tab"
+              data-pip={i}
               aria-selected={i === currentStep}
               aria-label={s.title}
               title={`${i + 1}. ${s.title}`}

@@ -36,6 +36,7 @@ export default function Rail(props: RailProps) {
   const term = useRef<Terminal | null>(null);
   const fit = useRef<FitAddon | null>(null);
   const sock = useRef<WebSocket | null>(null);
+  const closing = useRef(false);
 
   // --- lazily build the pty session the first time the Shell tab is shown ----
   useEffect(() => {
@@ -82,7 +83,7 @@ export default function Rail(props: RailProps) {
           } catch { /* ignore malformed frames */ }
         };
         ws.onerror = () => t.write('\r\n\x1b[31m[shell connection error]\x1b[0m\r\n');
-        ws.onclose = () => t.write('\r\n\x1b[2m[shell disconnected]\x1b[0m\r\n');
+        ws.onclose = () => { if (!closing.current) t.write('\r\n\x1b[2m[shell disconnected]\x1b[0m\r\n'); };
         t.onData((d) => send({ type: 'data', data: d }));
         t.onResize(({ cols, rows }) => send({ type: 'resize', cols, rows }));
       }
@@ -93,16 +94,19 @@ export default function Rail(props: RailProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, tab, projectId]);
 
-  // keep the pty sized to the rail
+  // Keep the pty sized to the rail. Re-attached when the panel (and therefore
+  // the host element) appears, since it doesn't exist while the rail is a strip.
   useEffect(() => {
     const el = shellHost.current;
     if (!el || typeof ResizeObserver === 'undefined') return;
     const ro = new ResizeObserver(() => safeFit());
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, tab]);
 
   useEffect(() => () => {
+    closing.current = true;
     try { sock.current?.close(); } catch { /* noop */ }
     term.current?.dispose();
     term.current = null;

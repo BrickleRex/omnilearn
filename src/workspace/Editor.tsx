@@ -11,8 +11,7 @@ import {
 import { defaultKeymap, history, historyKeymap, indentWithTab } from '@codemirror/commands';
 import { bracketMatching, indentOnInput } from '@codemirror/language';
 import {
-  acceptCompletion, autocompletion, closeBrackets, closeBracketsKeymap, closeCompletion,
-  completionKeymap,
+  acceptCompletion, autocompletion, closeCompletion, completionKeymap,
 } from '@codemirror/autocomplete';
 import { python } from '@codemirror/lang-python';
 import type { Scheme } from '../../shared/types';
@@ -111,7 +110,10 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
         rectangularSelection(),
         indentOnInput(),
         bracketMatching(),
-        closeBrackets(),
+        // NOTE: no closeBrackets(). Auto-inserting the closing half of a pair
+        // puts characters in the buffer that the learner did not type, which
+        // both breaks ghost matching and quietly undercuts "type every line
+        // yourself". Bracket *matching* (highlighting) stays.
         EditorState.allowMultipleSelections.of(true),
         EditorView.lineWrapping,
 
@@ -141,7 +143,6 @@ const Editor = forwardRef<EditorHandle, EditorProps>(function Editor(props, ref)
         // Tab: accept a completion if one is open, otherwise indent. The ghost's
         // Prec.highest Tab guard already refused before we get here.
         keymap.of([
-          ...closeBracketsKeymap,
           { key: 'Tab', run: acceptCompletion },
           indentWithTab,
           ...defaultKeymap,

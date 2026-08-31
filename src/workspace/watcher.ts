@@ -8,6 +8,13 @@ import { api } from '../api';
 
 export const TICK_MS = 20_000;
 export const MIN_GAP_MS = 60_000;
+/**
+ * e2e escape hatch: `localStorage.omnilearnFastWatch = '1'` polls once a second
+ * with no throttle, so a test doesn't have to sit through a real minute.
+ */
+export function fastWatch(): boolean {
+  try { return localStorage.getItem('omnilearnFastWatch') === '1'; } catch { return false; }
+}
 /** cursor must stay inside +/- this many lines to count as "the same spot" */
 export const REGION = 3;
 /** if no edits for this long, the user isn't circling — they're away */
@@ -38,6 +45,10 @@ export interface Watcher {
 }
 
 export function createWatcher(deps: WatcherDeps): Watcher {
+  const fast = fastWatch();
+  const tickMs = fast ? 1_000 : TICK_MS;
+  const minGapMs = fast ? 0 : MIN_GAP_MS;
+
   let timer: number | null = null;
   let inFlight = false;
 
@@ -61,7 +72,7 @@ export function createWatcher(deps: WatcherDeps): Watcher {
     if (deps.isExplore()) return false;
     if (deps.isBusy()) return false;
     if (!deps.getPath()) return false;
-    if (now - lastCallAt < MIN_GAP_MS) return false;
+    if (now - lastCallAt < minGapMs) return false;
     const content = deps.getContent();
     const runAt = deps.getLastRun()?.startedAt ?? null;
     if (lastSentContent !== null && content === lastSentContent && runAt === lastSentRunAt) return false;
@@ -100,7 +111,7 @@ export function createWatcher(deps: WatcherDeps): Watcher {
   return {
     start() {
       if (timer !== null) return;
-      timer = window.setInterval(() => { void tick(); }, TICK_MS);
+      timer = window.setInterval(() => { void tick(); }, tickMs);
     },
     stop() {
       if (timer !== null) { clearInterval(timer); timer = null; }
