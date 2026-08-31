@@ -202,9 +202,18 @@ RULES
 - stepIndex is the index into the BUILD PLAN of the step the learner is currently on.
   If the plan is empty, use 0.
 
+LOOK BACK (the flag field)
+- Also reread everything written SO FAR. If — and only if — something earlier is clearly and
+  unambiguously wrong for this goal (a name used before it exists, q scored against q instead
+  of k, softmax over an axis that cannot be intended, a formula that contradicts the plan),
+  set flag = { line, note }: the 1-based line and 1-2 kid-simple lines saying what is off.
+- Being wrong is allowed here. If it could plausibly be intentional, exploratory, unfinished,
+  or merely unusual style — OMIT flag entirely. At most ONE flag, the worst one. Never
+  stylistic, never "you could also", never a second opinion on working code.
+
 ${VOICE}
 
-${fence(`{ hint: string; stepIndex: number }`)}`;
+${fence(`{ hint: string; stepIndex: number; flag?: { line: number; note: string } }`)}`;
 }
 
 // ---------- ghost ----------

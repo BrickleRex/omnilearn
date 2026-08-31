@@ -371,21 +371,31 @@ export function mockPrimer(milestone: Milestone, uncleared: Concept[]): PrimerDo
 // ---------- hint ----------
 
 export function mockHint(req: HintRequest): HintResponse {
+  // Deterministic look-back flag: 'q @ q' is unambiguously wrong (scoring q
+  // against itself); e2e depends on this exact trigger and note.
+  const lines = (req.content ?? '').split('\n');
+  const bad = lines.findIndex((l) => l.includes('q @ q'));
+  const flag = bad >= 0
+    ? { line: bad + 1, note: "You're scoring q against itself — the second matrix should be k, transposed." }
+    : undefined;
   if ((req.content ?? '').includes('np.sqrt')) {
     return {
       hint: 'Now apply softmax along the last axis — each row becomes shares that sum to 1.',
       stepIndex: 3,
+      ...(flag ? { flag } : {}),
     };
   }
   if (req.level === 'composite') {
     return {
       hint: 'Build the whole scoring block: q @ k.T, divide by √dk, then softmax each row.',
       stepIndex: 1,
+      ...(flag ? { flag } : {}),
     };
   }
   return {
     hint: 'Multiply q by k transposed — that scores every pair of tokens.',
     stepIndex: 1,
+    ...(flag ? { flag } : {}),
   };
 }
 
