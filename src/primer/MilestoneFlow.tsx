@@ -22,8 +22,8 @@ export function decidePhase(m: Milestone | undefined): 'calibration' | 'primer' 
 }
 
 export default function MilestoneFlow({
-  projectId, milestoneId,
-}: { projectId: string; milestoneId: string }) {
+  projectId, milestoneId, review = false,
+}: { projectId: string; milestoneId: string; review?: boolean }) {
   const { go } = useNav();
   const { toasts, pushError, dismiss } = useToasts();
 
@@ -54,6 +54,7 @@ export default function MilestoneFlow({
       const m = p.milestones.find((x) => x.id === milestoneId);
       if (!m) { setFatal(`No milestone “${milestoneId}” in this project.`); setPhase('error'); return; }
       setConcepts(m.concepts);
+      if (review) { setPhase('primer'); return; } // re-reading: no calibration, no auto-forward
       const next = decidePhase(m);
       if (next === 'workspace') { go({ name: 'workspace', projectId, milestoneId }); return; }
       setPhase(next);
@@ -63,7 +64,7 @@ export default function MilestoneFlow({
       setPhase('error');
     });
     return () => { cancelled = true; };
-  }, [projectId, milestoneId, go]);
+  }, [projectId, milestoneId, review, go]);
 
   /** Write concepts back to disk (and into local state). */
   const applyConcepts = useCallback(async (
@@ -126,6 +127,7 @@ export default function MilestoneFlow({
         <strong className="ms-milestone">{milestone?.title ?? milestoneId}</strong>
       </div>
       <div className="ms-top-right">
+        {review && <span className="chip chip-accent2">reviewing</span>}
         <span className="chip chip-quiet">
           {concepts.filter((c) => c.cleared).length}/{concepts.length} concepts
         </span>
@@ -172,6 +174,7 @@ export default function MilestoneFlow({
               projectId={projectId}
               milestoneId={milestoneId}
               concepts={concepts}
+              review={review}
               onCleared={(conceptId) => clearConcept(conceptId, 'check')}
               onStartBuilding={startBuilding}
               onSkip={skipToEditor}

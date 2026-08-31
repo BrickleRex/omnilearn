@@ -3,7 +3,9 @@ import { createContext, useContext } from 'react';
 // App-level navigation. State-based, no router; hash is kept in sync for reloads.
 export type View =
   | { name: 'library' }
-  | { name: 'milestone'; projectId: string; milestoneId: string } // calibrate + primer flow
+  // calibrate + primer flow; review = re-reading from the workspace: no
+  // calibration, no auto-forwarding to the editor even when all is cleared
+  | { name: 'milestone'; projectId: string; milestoneId: string; review?: boolean }
   | { name: 'workspace'; projectId: string; milestoneId: string };
 
 export interface Nav {

@@ -16,7 +16,7 @@ const LOADING = [
 interface CheckState { picked: number; correct: boolean }
 
 export default function PrimerDeck({
-  projectId, milestoneId, concepts, onCleared, onStartBuilding, onSkip, onError,
+  projectId, milestoneId, concepts, onCleared, onStartBuilding, onSkip, onError, review = false,
 }: {
   projectId: string;
   milestoneId: string;
@@ -25,12 +25,14 @@ export default function PrimerDeck({
   onStartBuilding: () => void;
   onSkip: () => void;
   onError: (e: unknown) => void;
+  review?: boolean;
 }) {
   const [doc, setDoc] = useState<PrimerDoc | null>(null);
   const [failed, setFailed] = useState(false);
   const [i, setI] = useState(0);
   const [checks, setChecks] = useState<Record<string, CheckState>>({});
-  const jumped = useRef(false);
+  // In review the reader drives — the deck never auto-jumps to the finale.
+  const jumped = useRef(review);
 
   useEffect(() => {
     let cancelled = false;
@@ -191,7 +193,23 @@ export default function PrimerDeck({
 
         {unit === null && (
           <div className="unit unit-finish" data-testid="primer-finish">
-            {allCleared ? (
+            {review && units.length === 0 ? (
+              <>
+                <span className="eyebrow">nothing was taught here</span>
+                <h1>You cleared this one in calibration.</h1>
+                <p className="ms-lede">There's no primer to re-read — these are the ideas it rests on:</p>
+                <ul className="con-list">
+                  {concepts.map((c) => (
+                    <li key={c.id} className="con-row is-cleared"><span className="con-tick" aria-hidden="true">✓</span>{c.label}</li>
+                  ))}
+                </ul>
+                <div className="ms-actions">
+                  <button className="btn btn-primary" data-testid="start-building" onClick={onStartBuilding}>
+                    Back to building →
+                  </button>
+                </div>
+              </>
+            ) : allCleared ? (
               <>
                 <div className="confetti" aria-hidden="true">
                   {Array.from({ length: 12 }, (_, n) => (
@@ -216,7 +234,7 @@ export default function PrimerDeck({
                 )}
                 <div className="ms-actions">
                   <button className="btn btn-primary btn-lg" data-testid="start-building" onClick={onStartBuilding}>
-                    Start building →
+                    {review ? 'Back to building →' : 'Start building →'}
                   </button>
                 </div>
               </>

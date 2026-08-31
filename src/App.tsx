@@ -8,13 +8,21 @@ import Workspace from './workspace/Workspace';
 import TokenGate from './components/TokenGate';
 
 function viewFromHash(): View {
-  const m = location.hash.match(/^#\/(milestone|workspace)\/([^/]+)\/([^/]+)$/);
-  if (m) return { name: m[1] as 'milestone' | 'workspace', projectId: m[2], milestoneId: m[3] };
+  const m = location.hash.match(/^#\/(milestone|workspace)\/([^/]+)\/([^/]+?)(\/review)?$/);
+  if (m) {
+    const name = m[1] as 'milestone' | 'workspace';
+    if (name === 'milestone' && m[4]) {
+      return { name, projectId: m[2], milestoneId: m[3], review: true };
+    }
+    return { name, projectId: m[2], milestoneId: m[3] };
+  }
   return { name: 'library' };
 }
 
 function hashFromView(v: View): string {
-  return v.name === 'library' ? '#/' : `#/${v.name}/${v.projectId}/${v.milestoneId}`;
+  if (v.name === 'library') return '#/';
+  const review = v.name === 'milestone' && v.review ? '/review' : '';
+  return `#/${v.name}/${v.projectId}/${v.milestoneId}${review}`;
 }
 
 export const SettingsContext = { current: null as Settings | null };
@@ -58,7 +66,12 @@ export default function App() {
     <NavContext.Provider value={nav}>
       {view.name === 'library' && <Library settings={settings} onSettings={setSettings} />}
       {view.name === 'milestone' && (
-        <MilestoneFlow key={`${view.projectId}/${view.milestoneId}`} projectId={view.projectId} milestoneId={view.milestoneId} />
+        <MilestoneFlow
+          key={`${view.projectId}/${view.milestoneId}/${view.review ? 'r' : ''}`}
+          projectId={view.projectId}
+          milestoneId={view.milestoneId}
+          review={view.review}
+        />
       )}
       {view.name === 'workspace' && (
         <Workspace key={`${view.projectId}/${view.milestoneId}`} projectId={view.projectId} milestoneId={view.milestoneId} settings={settings} onSettings={setSettings} />
