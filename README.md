@@ -22,7 +22,7 @@ editor. AI helps only on request — or when you're truly down a rabbit hole.
 
 ```bash
 npm install
-npm run dev        # server :4650 + vite :5173  → open http://localhost:5173
+npm run dev        # server :4650 + web :4652  → open http://localhost:4652
 ```
 
 Generation runs through the **Claude Code CLI** (`claude -p`) using your Claude
