@@ -76,7 +76,7 @@
   --good: #4dc590;
   --warn: #f0b429;
   --bad: #f0705c;
-  --shadow: #08090b;
+  --shadow: #04050a;
   --shadow-offset: 3px;
   --code-bg: #1f2127;
   --code-ink: #efede6;
@@ -116,7 +116,7 @@
   --good: #3ddc97;
   --warn: #ffc700;
   --bad: #ff4d6d;
-  --shadow: #2c0a24;
+  --shadow: #4d1033;   /* plum offset: a black offset would vanish on near-black */
   --shadow-offset: 3px;
   --radius: 12px;
   --border-w: 2.5px;
@@ -328,7 +328,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .btn-primary { --btn-bg: var(--accent); --btn-ink: var(--on-accent); }
-.btn-secondary { --btn-bg: var(--accent2); --btn-ink: #fff; }
+.btn-secondary { --btn-bg: var(--accent2); --btn-ink: var(--surface); }
 .btn-highlight { --btn-bg: var(--accent3); --btn-ink: #1b1b1f; }
 .btn-ghost {
   --btn-bg: transparent;
@@ -341,7 +341,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
 }
 .btn-ghost:active:not(:disabled) { box-shadow: none; transform: scale(.97); }
-.btn-danger { --btn-bg: var(--bad); --btn-ink: #fff; }
+.btn-danger { --btn-bg: var(--bad); --btn-ink: var(--surface); }
 .btn-sm { padding: 5px 10px; font-size: 12.5px; border-radius: 8px; }
 .btn-lg { padding: 13px 24px; font-size: 16px; }
 .btn-icon { padding: 6px; width: 32px; height: 32px; border-radius: 9px; }
@@ -363,10 +363,10 @@ button, input, textarea, select { font: inherit; color: inherit; }
   white-space: nowrap;
 }
 .chip-accent  { background: var(--accent);  color: var(--on-accent); }
-.chip-accent2 { background: var(--accent2); color: #fff; }
+.chip-accent2 { background: var(--accent2); color: var(--surface); }
 .chip-accent3 { background: var(--accent3); color: #1b1b1f; }
 .chip-quiet   { background: var(--surface2); color: var(--muted); box-shadow: none; border-color: var(--muted); }
-.chip-good    { background: var(--good); color: var(--on-accent); }
+.chip-good    { background: var(--good); color: var(--surface); }
 .chip-tilt    { transform: rotate(-1.6deg); }
 .chip-tilt:nth-child(even) { transform: rotate(1.4deg); }
 

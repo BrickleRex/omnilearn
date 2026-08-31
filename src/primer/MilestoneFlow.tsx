@@ -6,6 +6,7 @@ import { ToastStack, useToasts } from '../components/Toast';
 import Loader from '../components/Loader';
 import Wordmark from './../library/Wordmark';
 import Calibration from './Calibration';
+import CalibSummary from './CalibSummary';
 import PrimerDeck from './PrimerDeck';
 import './primer.css';
 
@@ -24,11 +25,12 @@ export default function MilestoneFlow({
   projectId, milestoneId,
 }: { projectId: string; milestoneId: string }) {
   const { go } = useNav();
-  const { toasts, push, pushError, dismiss } = useToasts();
+  const { toasts, pushError, dismiss } = useToasts();
 
   const [project, setProject] = useState<Project | null>(null);
   const [concepts, setConcepts] = useState<Concept[]>([]);
   const [phase, setPhase] = useState<Phase>('loading');
+  const [calibrated, setCalibrated] = useState<Concept[] | null>(null);
   const [fatal, setFatal] = useState<string | null>(null);
   const alive = useRef(true);
 
@@ -64,14 +66,17 @@ export default function MilestoneFlow({
   }, [projectId, milestoneId, go]);
 
   /** Write concepts back to disk (and into local state). */
-  const applyConcepts = useCallback(async (next: Concept[], opts?: { status?: 'current' }) => {
+  const applyConcepts = useCallback(async (
+    next: Concept[],
+    opts?: { status?: 'current'; persist?: boolean },
+  ) => {
     setConcepts(next);
     setProject((p) => (p ? {
       ...p,
       milestones: p.milestones.map((m) => (m.id === milestoneId ? { ...m, concepts: next } : m)),
     } : p));
     const base = project;
-    if (!base) return;
+    if (!base || opts?.persist === false) return;
     const milestones = base.milestones.map((m) => (m.id === milestoneId
       ? { ...m, concepts: next, status: opts?.status && m.status === 'todo' ? opts.status : m.status }
       : m));
@@ -152,24 +157,27 @@ export default function MilestoneFlow({
             milestoneId={milestoneId}
             concepts={concepts}
             onError={(e) => pushError(e, 'Calibration:')}
-            onResult={(next) => { void applyConcepts(next); }}
-            onContinue={() => setPhase('primer')}
+            /* the server already persisted the grading — just mirror it locally */
+            onResult={(next) => { void applyConcepts(next, { persist: false }); }}
+            onContinue={(next) => { if (next) setCalibrated(next); setPhase('primer'); }}
             onStartBuilding={startBuilding}
             onSkip={skipToEditor}
           />
         )}
 
         {phase === 'primer' && milestone && (
-          <PrimerDeck
-            projectId={projectId}
-            milestoneId={milestoneId}
-            concepts={concepts}
-            onCleared={(conceptId) => clearConcept(conceptId, 'check')}
-            onStartBuilding={startBuilding}
-            onSkip={skipToEditor}
-            onError={(e) => pushError(e, 'Primer:')}
-            onNotice={(msg) => push('good', msg)}
-          />
+          <>
+            {calibrated && <CalibSummary concepts={calibrated} />}
+            <PrimerDeck
+              projectId={projectId}
+              milestoneId={milestoneId}
+              concepts={concepts}
+              onCleared={(conceptId) => clearConcept(conceptId, 'check')}
+              onStartBuilding={startBuilding}
+              onSkip={skipToEditor}
+              onError={(e) => pushError(e, 'Primer:')}
+            />
+          </>
         )}
       </main>
       <ToastStack toasts={toasts} onDismiss={dismiss} />

@@ -153,8 +153,17 @@
 .np-row-tools { display: flex; gap: 4px; flex: 0 0 auto; }
 .np-row-tools .btn-icon { width: 28px; height: 28px; font-size: 13px; }
 .np-del:hover { color: var(--bad); }
-.np-add { align-self: start; border-style: dashed; }
+.np-add { justify-self: start; border-style: dashed; }
 .np-note { color: var(--muted); font-size: 13px; }
+
+/* ---- narrow ---- */
+@media (max-width: 560px) {
+  .lib-top { flex-wrap: wrap; row-gap: 10px; padding: 12px 14px; }
+  .lib-top-right { width: 100%; }
+  .lib-top-right .btn-primary { flex: 1; }
+  .lib-main { padding: 20px 14px 60px; }
+  .np-row-tools { flex-direction: column; }
+}
 
 /* ============================ settings =================================== */
 .set-block { margin-bottom: 22px; }

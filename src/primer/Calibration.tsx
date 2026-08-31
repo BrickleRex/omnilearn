@@ -113,7 +113,7 @@ export default function Calibration({
             <h1>Calibration didn't come back.</h1>
             <p className="ms-lede">You can head straight into the primer instead.</p>
             <div className="ms-actions">
-              <button className="btn btn-primary" onClick={onContinue}>Go to the primer →</button>
+              <button className="btn btn-primary" onClick={() => onContinue()}>Go to the primer →</button>
               <button className="btn btn-ghost btn-sm" data-testid="skip-to-editor" onClick={onSkip}>Skip to editor</button>
             </div>
           </>

@@ -71,7 +71,7 @@
   flex: 0 0 auto; width: 17px; height: 17px;
   display: grid; place-items: center;
   font-size: 11px; font-weight: 800; line-height: 1;
-  color: var(--on-accent); background: var(--good);
+  color: var(--surface); background: var(--good);
   border: 2px solid var(--line); border-radius: 5px;
   box-shadow: 1.5px 1.5px 0 var(--shadow);
   animation: pl-pop .34s var(--spring) both;
@@ -131,6 +131,16 @@
 .cal-none { font-size: 13.5px; color: var(--muted); font-style: italic; margin-top: 8px; }
 @media (max-width: 620px) { .cal-split { grid-template-columns: 1fr; } }
 
+/* ---- calibration summary banner (rides on top of the deck) ---- */
+.calsum { padding: 12px 16px 14px; display: grid; gap: 10px; animation: pl-rise .32s var(--spring) both; }
+.calsum.is-closed { padding-bottom: 12px; }
+.calsum-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.calsum .eyebrow { margin-bottom: 0; }
+.calsum-line { font-size: 14px; color: var(--muted); font-weight: 600; }
+.calsum-line b { color: var(--ink); font-weight: 800; }
+.calsum-head .btn { margin-left: auto; }
+.calsum .cal-split { margin-top: 0; }
+
 /* ============================== the deck ================================= */
 .deck { display: grid; gap: 14px; }
 
@@ -164,9 +174,9 @@
 /* ---- check ---- */
 .check-opts { display: grid; gap: 9px; margin-top: 6px; }
 .check-opt { font-size: 15px; }
-.check-opt.is-right { background: var(--good); color: var(--on-accent); }
+.check-opt.is-right { background: var(--good); color: var(--surface); }
 .check-opt.is-right .cal-key { background: var(--surface); color: var(--ink); }
-.check-opt.is-wrong { background: var(--bad); color: #fff; animation: pl-shake .38s var(--ease) both; }
+.check-opt.is-wrong { background: var(--bad); color: var(--surface); animation: pl-shake .38s var(--ease) both; }
 .check-opt.is-wrong .cal-key { background: var(--surface); color: var(--ink); }
 .check-opt.is-answer { outline: 3px solid var(--good); outline-offset: 2px; }
 .check-mark { margin-left: auto; font-weight: 800; }
@@ -198,7 +208,7 @@
   grid-row: 1 / span 2;
   width: 24px; height: 24px; display: grid; place-items: center;
   font-size: 12px; font-weight: 800;
-  background: var(--accent2); color: #fff;
+  background: var(--accent2); color: var(--surface);
   border: 2px solid var(--line); border-radius: 7px;
 }
 .finish-steps b { font-size: 14.5px; font-weight: 800; }
@@ -261,6 +271,9 @@
 
 .story-beats { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .story-beats::before, .story-beats::after { content: ''; display: block; height: 22vh; }
+.unit-story.no-figures .story-scroll { max-height: min(46vh, 380px); }
+.unit-story.no-figures .story-beats::before,
+.unit-story.no-figures .story-beats::after { height: 15vh; }
 .story-beat {
   position: relative;
   display: flex; gap: 12px;
@@ -300,4 +313,26 @@
 @media (prefers-reduced-motion: reduce) {
   .story-beat { opacity: 1; transform: none; }
   .story-scroll { scroll-behavior: auto; }
+}
+
+/* ============================ narrow screens ============================= */
+@media (max-width: 760px) {
+  .ms-top { flex-wrap: wrap; row-gap: 6px; }
+  .ms-top-left { order: 1; }
+  .ms-top-right { order: 2; margin-left: auto; }
+  .ms-crumbs { order: 3; width: 100%; }
+  .ms-project { max-width: 40%; }
+  .ms-milestone { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .unit { padding: 20px 16px 18px; }
+  .ms-panel { padding: 20px 16px 18px; }
+  .cal-opts, .cal-tag { margin-left: 0; }
+}
+@media (max-width: 680px) {
+  /* single column story: keep the figure short so a beat is on screen too */
+  .story-sticky { height: min(26vh, 200px); }
+  .story-beats::before { height: 4vh; }
+  .story-beats::after { height: 30vh; }
+}
+@media (max-width: 520px) {
+  .ms-top-left .wordmark { display: none; }
 }

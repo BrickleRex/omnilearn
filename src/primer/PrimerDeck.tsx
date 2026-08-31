@@ -16,7 +16,7 @@ const LOADING = [
 interface CheckState { picked: number; correct: boolean }
 
 export default function PrimerDeck({
-  projectId, milestoneId, concepts, onCleared, onStartBuilding, onSkip, onError, onNotice,
+  projectId, milestoneId, concepts, onCleared, onStartBuilding, onSkip, onError,
 }: {
   projectId: string;
   milestoneId: string;
@@ -25,7 +25,6 @@ export default function PrimerDeck({
   onStartBuilding: () => void;
   onSkip: () => void;
   onError: (e: unknown) => void;
-  onNotice: (msg: string) => void;
 }) {
   const [doc, setDoc] = useState<PrimerDoc | null>(null);
   const [failed, setFailed] = useState(false);
@@ -84,12 +83,9 @@ export default function PrimerDeck({
     setChecks((c) => ({ ...c, [unit.id]: { picked: j, correct } }));
     if (correct) {
       const concept = concepts.find((c) => c.id === unit.conceptId);
-      if (concept && !concept.cleared) {
-        onCleared(unit.conceptId);
-        onNotice(`“${concept.label}” — cleared.`);
-      }
+      if (concept && !concept.cleared) onCleared(unit.conceptId);
     }
-  }, [concepts, onCleared, onNotice]);
+  }, [concepts, onCleared]);
 
   // --------------------------------------------------------------- loading
   if (!doc) {
