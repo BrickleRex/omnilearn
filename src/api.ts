@@ -50,6 +50,42 @@ export const api = {
     req<ChatMessage[]>('GET', `/api/projects/${id}/chat?milestoneId=${encodeURIComponent(milestoneId)}`),
   chat: (id: string, body: ChatRequest) => req<ChatResponse>('POST', `/api/projects/${id}/chat`, body),
 
+  /**
+   * Streaming chat over SSE: `onDelta` fires per text chunk; resolves with the
+   * full reply. Callers should fall back to api.chat when this rejects.
+   */
+  chatStream: async (id: string, body: ChatRequest, onDelta: (text: string) => void): Promise<string> => {
+    const res = await fetch(`/api/projects/${id}/chat/stream`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok || !res.body) throw new Error(`stream failed: ${res.status}`);
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let reply: string | null = null;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let sep: number;
+      while ((sep = buffer.indexOf('\n\n')) !== -1) {
+        const frame = buffer.slice(0, sep);
+        buffer = buffer.slice(sep + 2);
+        const data = frame.split('\n').filter((l) => l.startsWith('data: ')).map((l) => l.slice(6)).join('');
+        if (!data) continue;
+        let ev: { type: string; text?: string; reply?: string; message?: string };
+        try { ev = JSON.parse(data); } catch { continue; }
+        if (ev.type === 'delta' && ev.text) onDelta(ev.text);
+        else if (ev.type === 'done') reply = ev.reply ?? '';
+        else if (ev.type === 'error') throw new Error(ev.message || 'chat failed');
+      }
+    }
+    if (reply === null) throw new Error('stream ended without a reply');
+    return reply;
+  },
+
   hint: (id: string, body: HintRequest) => req<HintResponse>('POST', `/api/projects/${id}/hint`, body),
   ghost: (id: string, body: GhostRequest) => req<GhostResponse>('POST', `/api/projects/${id}/ghost`, body),
   watch: (id: string, body: WatchRequest) => req<WatchResponse>('POST', `/api/projects/${id}/watch`, body),

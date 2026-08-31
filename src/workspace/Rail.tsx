@@ -114,20 +114,50 @@ export default function Rail(props: RailProps) {
     setMsgs((m) => [...m, { role: 'user', text: message, at: new Date().toISOString() }]);
 
     const ctx = ctxRef.current();
+    const body = { milestoneId, message, path: ctx.path ?? undefined, content: ctx.content };
     try {
-      const res = await api.chat(projectId, {
-        milestoneId,
-        message,
-        path: ctx.path ?? undefined,
-        content: ctx.content,
+      // Stream first: words appear as the tutor produces them. A growing
+      // tutor bubble is appended on the first delta and updated in place.
+      let started = false;
+      const reply = await api.chatStream(projectId, body, (text) => {
+        if (!alive.current) return;
+        if (!started) {
+          started = true;
+          setAsking(false); // thinking dots yield to the live bubble
+          setMsgs((m) => [...m, { role: 'tutor', text, at: new Date().toISOString() }]);
+        } else {
+          setMsgs((m) => {
+            const last = m[m.length - 1];
+            if (!last || last.role !== 'tutor') return m;
+            return [...m.slice(0, -1), { ...last, text: last.text + text }];
+          });
+        }
+      }).catch(async (streamErr) => {
+        // No deltas made it through -> plain request. A half-streamed bubble
+        // means the stream died mid-reply; surface that instead of restarting.
+        if (started) throw streamErr;
+        const res = await api.chat(projectId, body);
+        return res.reply;
       });
       if (!alive.current) return;
-      setMsgs((m) => [...m, { role: 'tutor', text: res.reply, at: new Date().toISOString() }]);
+      setMsgs((m) => {
+        const last = m[m.length - 1];
+        if (started && last?.role === 'tutor') {
+          return [...m.slice(0, -1), { ...last, text: reply }]; // settle on the final text
+        }
+        return [...m, { role: 'tutor', text: reply, at: new Date().toISOString() }];
+      });
     } catch (e) {
       if (!alive.current) return;
-      // Take the optimistic bubble back out and hand the words to the learner
-      // again — retyping a question you already asked is a small insult.
-      setMsgs((m) => (m.length && m[m.length - 1].role === 'user' ? m.slice(0, -1) : m));
+      // Take the optimistic bubbles back out (a half-streamed tutor bubble too)
+      // and hand the words to the learner again — retyping a question you
+      // already asked is a small insult.
+      setMsgs((m) => {
+        let out = m;
+        if (out.length && out[out.length - 1].role === 'tutor') out = out.slice(0, -1);
+        if (out.length && out[out.length - 1].role === 'user') out = out.slice(0, -1);
+        return out;
+      });
       setFailed({ text: message, reason: (e as Error).message || 'could not reach the tutor' });
       setDraft(message);
     } finally {
@@ -281,7 +311,7 @@ export default function Rail(props: RailProps) {
               aria-label="pin terminal"
               onClick={onTogglePin}
             >
-              ✜
+              📌
             </button>
             <button className="railIcon" title="close (Ctrl+`)" aria-label="close terminal" onClick={onClose}>
               ×

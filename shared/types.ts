@@ -200,6 +200,7 @@ export interface RunResult {
 // POST   /api/projects/:id/complete         -> CompleteResponse   (body: CompleteRequest)  [local jedi, never LLM]
 // GET    /api/projects/:id/chat?milestoneId= -> ChatMessage[]     (persisted history)
 // POST   /api/projects/:id/chat             -> ChatResponse       (body: ChatRequest)      [LLM]
+// POST   /api/projects/:id/chat/stream      -> SSE: {type:'delta',text} ... {type:'done',reply} | {type:'error',message}
 // POST   /api/projects/:id/calibration      -> Calibration        (body: {milestoneId})       [LLM, cached]
 // POST   /api/projects/:id/calibration/submit -> CalibrationResult (body: CalibrationSubmit)
 // POST   /api/projects/:id/primer           -> PrimerDoc          (body: {milestoneId})       [LLM, cached]

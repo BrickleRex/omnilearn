@@ -191,6 +191,127 @@ function runCli(model: string, prompt: string, timeoutMs: number): Promise<strin
   });
 }
 
+function runCliStream(
+  model: string,
+  prompt: string,
+  timeoutMs: number,
+  onDelta: (text: string) => void,
+): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const child = spawn(
+      'claude',
+      ['-p', '--model', model, '--output-format', 'stream-json', '--include-partial-messages', '--verbose', '--max-turns', '1'],
+      { stdio: ['pipe', 'pipe', 'pipe'] },
+    );
+
+    let buffered = '';
+    let streamed = '';
+    let finalResult: string | null = null;
+    let stderr = '';
+    let settled = false;
+    let timedOut = false;
+
+    const timer = setTimeout(() => {
+      timedOut = true;
+      child.kill('SIGKILL');
+    }, timeoutMs);
+
+    const fail = (err: Error) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(err);
+    };
+    const ok = (value: string) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve(value);
+    };
+
+    const handleLine = (line: string) => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+      let ev: Record<string, unknown>;
+      try {
+        ev = JSON.parse(trimmed) as Record<string, unknown>;
+      } catch {
+        return; // non-JSON noise from --verbose
+      }
+      if (ev.type === 'stream_event') {
+        const inner = ev.event as { type?: string; delta?: { type?: string; text?: string } } | undefined;
+        if (inner?.type === 'content_block_delta' && inner.delta?.type === 'text_delta' && inner.delta.text) {
+          streamed += inner.delta.text;
+          try { onDelta(inner.delta.text); } catch { /* listener errors must not kill the stream */ }
+        }
+      } else if (ev.type === 'result') {
+        if (ev.is_error) {
+          const msg = typeof ev.result === 'string' ? ev.result : JSON.stringify(ev);
+          fail(new Error(`claude CLI reported an error: ${tail(String(msg))}`));
+        } else if (typeof ev.result === 'string') {
+          finalResult = ev.result;
+        }
+      }
+    };
+
+    child.stdout.on('data', (d: Buffer) => {
+      buffered += d.toString('utf8');
+      let nl: number;
+      while ((nl = buffered.indexOf('\n')) !== -1) {
+        handleLine(buffered.slice(0, nl));
+        buffered = buffered.slice(nl + 1);
+      }
+    });
+    child.stderr.on('data', (d: Buffer) => { stderr += d.toString('utf8'); });
+    child.on('error', (err) => fail(new Error(`claude CLI could not start: ${err.message}`)));
+    child.on('close', (code) => {
+      if (buffered) handleLine(buffered);
+      if (timedOut) return fail(new Error(`claude CLI timed out after ${timeoutMs}ms (model ${model})`));
+      if (code !== 0) return fail(new Error(`claude CLI exited ${code}: ${tail(stderr)}`));
+      const reply = finalResult ?? streamed;
+      if (!reply) return fail(new Error('claude CLI stream produced no text'));
+      ok(reply);
+    });
+
+    try {
+      child.stdin.write(prompt, 'utf8');
+      child.stdin.end();
+    } catch (err) {
+      fail(new Error(`failed writing prompt to claude CLI: ${(err as Error).message}`));
+    }
+  });
+}
+
+/**
+ * Like callClaude, but text deltas reach `onDelta` as the model produces them.
+ * Retries once ONLY if nothing has been streamed yet — a half-delivered reply
+ * must not silently restart from the top.
+ */
+export async function callClaudeStream(
+  opts: CallClaudeOptions,
+  onDelta: (text: string) => void,
+): Promise<string> {
+  const { task, prompt } = opts;
+  if (isMock()) {
+    throw new Error('callClaudeStream must not be reached in LLM_MOCK mode — use fixtures');
+  }
+  const model = await modelForTask(task);
+  const timeoutMs = SLOW_TASKS.has(task) ? TIMEOUT_SLOW_MS : TIMEOUT_FAST_MS;
+  const release = await acquire(task === 'watch' ? 10 : 0);
+  let anyDelta = false;
+  const tracked = (text: string) => { anyDelta = true; onDelta(text); };
+  try {
+    try {
+      return await runCliStream(model, prompt, timeoutMs, tracked);
+    } catch (first) {
+      if (anyDelta) throw first;
+      return await runCliStream(model, prompt, timeoutMs, tracked);
+    }
+  } finally {
+    release();
+  }
+}
+
 /**
  * Run one headless Claude CLI turn and return its `result` text.
  * Queued (max 2 concurrent, watch last) and retried once on failure.

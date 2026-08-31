@@ -16,6 +16,12 @@ const GUIDANCE: Array<{ id: GuidanceStyle; name: string; note: string }> = [
   { id: 'both',      name: 'Both',      note: 'compass overhead, footlight below. The default.' },
 ];
 
+const CHAT_MODELS: Array<{ id: string; name: string; note: string }> = [
+  { id: 'haiku',  name: 'Haiku',  note: 'fastest answers — great for "what is this task asking?"' },
+  { id: 'sonnet', name: 'Sonnet', note: 'balanced — better at reading your half-written code. The default.' },
+  { id: 'opus',   name: 'Opus',   note: 'deepest explanations, slowest. For the gnarly questions.' },
+];
+
 const RUNNERS: Array<{ id: RunnerPref; name: string; note: string }> = [
   { id: 'auto',   name: 'Auto',   note: 'uv when the project or script asks for it (or python is missing); plain python otherwise.' },
   { id: 'uv',     name: 'uv',     note: 'always `uv run` — handles interpreters and inline deps, no PATH fuss.' },
@@ -91,6 +97,33 @@ export default function SettingsModal({
               </span>
             </button>
           ))}
+        </div>
+      </section>
+
+      <section className="set-block">
+        <span className="label">Tutor (Ask tab) model</span>
+        <div className="set-radios" role="radiogroup" aria-label="Tutor model">
+          {CHAT_MODELS.map((m) => {
+            const on = (settings.models.chat ?? 'sonnet') === m.id;
+            return (
+              <button
+                key={m.id}
+                type="button"
+                role="radio"
+                aria-checked={on}
+                className={`set-radio${on ? ' is-on' : ''}`}
+                data-testid={`chat-model-${m.id}`}
+                disabled={saving !== null}
+                onClick={() => save({ models: { ...settings.models, chat: m.id } }, `chat-${m.id}`)}
+              >
+                <span className="set-dot" aria-hidden="true" />
+                <span>
+                  <b>{m.name}</b>
+                  <em>{m.note}</em>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </section>
 

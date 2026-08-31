@@ -12,7 +12,7 @@ import type { ChatMessage, ChatRequest, ChatResponse, Milestone, Project } from 
 import { HttpError, chatDir, ensureDir, readJsonOrDelete } from '../store';
 import { findMilestone, loadProject } from '../projects';
 import { getLastRun } from '../runner';
-import { callClaude, isMock } from './llm';
+import { callClaude, callClaudeStream, isMock } from './llm';
 import * as fixtures from './fixtures';
 import * as prompts from './prompts';
 
@@ -121,6 +121,49 @@ export async function askTutor(projectId: string, req: ChatRequest): Promise<Cha
   return { reply };
 }
 
+/**
+ * Streaming variant: text deltas are pushed through `onDelta` as they arrive,
+ * the full reply is returned, and history is persisted exactly like askTutor.
+ * In mock mode the fixture reply streams in three deterministic chunks.
+ */
+export async function askTutorStream(
+  projectId: string,
+  req: ChatRequest,
+  onDelta: (text: string) => void,
+): Promise<ChatResponse> {
+  const message = String(req.message ?? '').trim();
+  if (!message) throw new HttpError(400, 'body.message is required');
+
+  const project = await loadProject(projectId);
+  const milestone = findMilestone(project, String(req.milestoneId ?? ''));
+  const history = await readChat(projectId, milestone.id);
+
+  let reply: string;
+  if (isMock()) {
+    reply = fixtures.mockChat(milestone, message);
+    const third = Math.max(1, Math.ceil(reply.length / 3));
+    for (let i = 0; i < reply.length; i += third) {
+      onDelta(reply.slice(i, i + third));
+      await new Promise((r) => setTimeout(r, 40));
+    }
+  } else {
+    reply = (
+      await callClaudeStream(
+        { task: 'chat', prompt: prompts.chatPrompt(buildContext(project, milestone, req, history, message)) },
+        onDelta,
+      )
+    ).trim();
+  }
+
+  const now = new Date().toISOString();
+  await writeChat(projectId, milestone.id, [
+    ...history,
+    { role: 'user', text: message, at: now },
+    { role: 'tutor', text: reply, at: new Date().toISOString() },
+  ]);
+  return { reply };
+}
+
 // ---------- routes ----------
 
 export const chatRouter: Router = Router();
@@ -142,5 +185,29 @@ chatRouter.post('/projects/:id/chat', async (req, res, next) => {
     res.json(await askTutor(req.params.id, (req.body ?? {}) as ChatRequest));
   } catch (err) {
     next(err);
+  }
+});
+
+// SSE: `data: {"type":"delta","text":...}` per chunk, then `{"type":"done","reply":...}`.
+// Errors after headers are sent become an `{"type":"error"}` event, not a 500.
+chatRouter.post('/projects/:id/chat/stream', async (req, res) => {
+  const send = (payload: unknown) => {
+    res.write(`data: ${JSON.stringify(payload)}\n\n`);
+  };
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders?.();
+  try {
+    const { reply } = await askTutorStream(
+      req.params.id,
+      (req.body ?? {}) as ChatRequest,
+      (text) => send({ type: 'delta', text }),
+    );
+    send({ type: 'done', reply });
+  } catch (err) {
+    send({ type: 'error', message: err instanceof Error ? err.message : 'chat failed' });
+  } finally {
+    res.end();
   }
 });
