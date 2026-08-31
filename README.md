@@ -1,1 +1,44 @@
-# omnilearn
+# Omnilearn
+
+A local learning app for keeping your coding muscle sharp in the AI era: pick a
+real goal ("MHSA in numpy from scratch", "my own BPE tokenizer"), an instructor
+agent teaches *just enough*, and you write **every line yourself** in a native
+editor. AI helps only on request — or when you're truly down a rabbit hole.
+
+- **Calibrate → Primer → Build → Reflect** per milestone; the primer ends itself
+  the moment every concept is cleared.
+- **Ghost lines you can't Tab-accept**: `Ctrl+Shift+Space` shows one hollow line
+  of code that only enters the file through your own fingers.
+- **Hints on demand** (`Ctrl+Space`): the next precise step in 1–2 plain lines;
+  press again for the composite step.
+- **A watcher that respects struggle**: quiet by default, an amber gutter dot
+  only when you're genuinely rabbit-holing, fully silent in explore mode (`Alt+E`).
+- **A terminal that manages its own presence**: translucent right-hand rail that
+  springs open on run output and folds itself away (`Ctrl+\``), with a real
+  shell tab.
+- Playroom visual identity with 4 schemes (2 light, 2 dark).
+
+## Run it
+
+```bash
+npm install
+npm run dev        # server :4650 + vite :5173  → open http://localhost:5173
+```
+
+Generation runs through the **Claude Code CLI** (`claude -p`) using your Claude
+subscription — no API key. Make sure `claude` is installed and logged in.
+Python 3 (+ numpy for numpy projects) must be on PATH for the run button.
+
+## Tests
+
+```bash
+npm run typecheck
+npm run test:unit
+npm run test:e2e   # Playwright drives the real app with a deterministic mock LLM
+```
+
+## Docs
+
+- `SPEC.md` — the signed-off product spec.
+- `shared/types.ts` — the API + data contract (server and client both build on it).
+- `design/design-review-01.html` — the original design review the UI was chosen from.

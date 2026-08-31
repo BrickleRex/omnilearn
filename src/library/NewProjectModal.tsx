@@ -102,8 +102,11 @@ export default function NewProjectModal({
     setWarn(null);
     setCreating(true);
     const ids = uniqueIds(rows);
-    const edited: ProjectPlan = {
+    // `goal` rides along so the server stores the user's original ask (it
+    // otherwise falls back to the project name on the library card).
+    const edited: ProjectPlan & { goal: string } = {
       ...plan,
+      goal: goal.trim(),
       name: name.trim(),
       slug: slugify(name) || plan.slug,
       milestones: rows.map((r, i) => ({
@@ -122,7 +125,7 @@ export default function NewProjectModal({
     } finally {
       setCreating(false);
     }
-  }, [plan, name, rows, onCreated, onError]);
+  }, [plan, goal, name, rows, onCreated, onError]);
 
   // ---------------------------------------------------------------- goal
   if (stage === 'goal' || stage === 'loading') {

@@ -64,11 +64,6 @@ export default function Calibration({
     }
   }, [doc, projectId, milestoneId, answers, onResult, onContinue, onError]);
 
-  const conceptLabel = useMemo(() => {
-    const map = new Map(concepts.map((c) => [c.id, c.label]));
-    return (id: string) => map.get(id) ?? id;
-  }, [concepts]);
-
   // ------------------------------- everything already cleared: celebrate
   if (result) {
     const cleared = result.filter((c) => c.cleared);
@@ -141,7 +136,6 @@ export default function Calibration({
               <span className="cal-num" aria-hidden="true">{qi + 1}</span>
               <p className="cal-text">{q.question}</p>
             </div>
-            <span className="chip chip-quiet cal-tag">{conceptLabel(q.conceptId)}</span>
             <div className="cal-opts" role="group" aria-label={q.question}>
               {q.options.map((opt, oi) => {
                 const picked = answers[qi] === oi;
