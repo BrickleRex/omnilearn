@@ -1,0 +1,83 @@
+/* ============================================================================
+   THEME TOKEN CONTRACT — variable NAMES are frozen (workspace + core both build
+   against them). The frontend-core agent owns this file and the full Playroom
+   styling: it must keep every variable below, refine values, and add the
+   `arcade` and `mint` schemes plus all component styling.
+   Playroom language: chunky borders (var(--border-w)), offset hard shadows
+   (var(--shadow-offset) var(--shadow-offset) 0 var(--shadow)), rounded corners,
+   three loud accents, sticker-like chips.
+   ========================================================================== */
+
+:root, :root[data-scheme='sunshower'] {
+  --ground: #f2efe8;      /* app background */
+  --surface: #fffdf6;     /* cards, panels */
+  --surface2: #f7f3ea;    /* secondary panel */
+  --ink: #1b1b1f;         /* primary text */
+  --muted: #7a7668;       /* secondary text */
+  --line: #1b1b1f;        /* playroom border color */
+  --accent: #ff5c39;      /* primary action */
+  --accent2: #2b50ff;     /* secondary */
+  --accent3: #ffc700;     /* highlight */
+  --good: #1d9e6f;
+  --warn: #e8960c;
+  --bad: #d33a2c;
+  --shadow: #1b1b1f;
+  --shadow-offset: 3px;
+  --radius: 12px;
+  --border-w: 2.5px;
+  --font-ui: system-ui, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Menlo, monospace;
+
+  /* editor + code */
+  --code-bg: #fffdf6;
+  --code-ink: #1b1b1f;
+  --code-line: #efe9da;       /* active-line background */
+  --gutter-ink: #b5af9e;
+  --syn-kw: #2b50ff;
+  --syn-fn: #d14a26;
+  --syn-str: #1d9e6f;
+  --syn-num: #a05fc4;
+  --syn-com: #a09a88;
+
+  /* guidance + terminal */
+  --ghost-ink: #8a93bc;       /* hollow ghost stroke color */
+  --ghost-fill: #d14a26;      /* solidified (typed) ghost chars */
+  --rail-bg: rgba(255, 253, 246, 0.84);  /* translucent terminal rail */
+  --rail-ink: #1b1b1f;
+  --lamp: #e8960c;            /* footlight lamp */
+}
+
+:root[data-scheme='blackboard'] {
+  --ground: #17181c;
+  --surface: #1f2127;
+  --surface2: #24262e;
+  --ink: #efede6;
+  --muted: #9a978c;
+  --line: #efede6;
+  --accent: #ff7a5c;
+  --accent2: #6e8bff;
+  --accent3: #ffd34d;
+  --good: #4dc590;
+  --warn: #f0b429;
+  --bad: #f0705c;
+  --shadow: #0b0c0e;
+  --code-bg: #1f2127;
+  --code-ink: #efede6;
+  --code-line: #262932;
+  --gutter-ink: #565a66;
+  --syn-kw: #6e8bff;
+  --syn-fn: #ffd34d;
+  --syn-str: #4dc590;
+  --syn-num: #c99cff;
+  --syn-com: #6d7280;
+  --ghost-ink: #7a88b8;
+  --ghost-fill: #ffd34d;
+  --rail-bg: rgba(23, 24, 28, 0.82);
+  --rail-ink: #efede6;
+  --lamp: #f0b429;
+}
+
+/* base reset */
+* { box-sizing: border-box; margin: 0; }
+html, body, #root { height: 100%; }
+body { font-family: var(--font-ui); background: var(--ground); color: var(--ink); }
