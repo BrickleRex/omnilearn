@@ -18,8 +18,9 @@ editor. AI helps only on request — or when you're truly down a rabbit hole.
   shell tab — and an **Ask** tab (`Ctrl+/`): a concise tutor who knows your
   project, file, and last run. It explains; it never dumps code.
 - **Real intellisense**: completions come from a local jedi daemon (static
-  analysis, ~50ms, knows `np.zeros` and friends) — never an LLM. `pip3 install
-  jedi` if the server can't auto-install it.
+  analysis, ~50ms, knows `np.zeros` and friends) — never an LLM. If jedi isn't
+  importable and pip can't install it, the daemon runs itself through
+  `uv run --with jedi` automatically — having `uv` on PATH is enough.
 - **Hints look back**: `Ctrl+Space` gives the next step *and* flags at most one
   thing in your earlier code that's unambiguously wrong — plausible experiments
   stay unflagged. Re-read the milestone's primer anytime via the top-bar button.

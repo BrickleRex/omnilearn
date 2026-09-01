@@ -13,9 +13,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { CompleteRequest, CompleteResponse, CompletionItem } from '../shared/types';
 import { HttpError, exists, projectDir, resolveInProject } from './store';
+import { hasBin } from './interp';
 
 const REQUEST_TIMEOUT_MS = 3_000;
 const FIRST_REQUEST_TIMEOUT_MS = 20_000;
+const UV_FIRST_REQUEST_TIMEOUT_MS = 90_000; // first uv spawn may download jedi+numpy
 let warmed = false;
 const IMPORT_CHECK_TIMEOUT_MS = 10_000;
 const PIP_INSTALL_TIMEOUT_MS = 90_000;
@@ -29,8 +31,11 @@ const DAEMON_SCRIPT = path.join(path.dirname(fileURLToPath(import.meta.url)), 'p
 
 // ---------- availability ----------
 
-type Availability = 'unknown' | 'ok' | 'missing';
-let availability: Availability = 'unknown';
+// How to run the daemon: system python3 with jedi installed, or through
+// `uv run --with jedi` (no install step — uv resolves and caches it, and
+// covers machines where pip is PEP 668-locked or python isn't on PATH).
+type DaemonMode = 'unknown' | 'python3' | 'uv' | 'missing';
+let daemonMode: DaemonMode = 'unknown';
 
 function jediImports(): boolean {
   try {
@@ -45,14 +50,13 @@ function jediImports(): boolean {
 }
 
 /**
- * Probe for jedi once per process; on a miss, attempt exactly one user-level
- * pip install before declaring it unavailable. Synchronous on purpose: it runs
- * at most once, before the first daemon spawn.
+ * Decide how to run the daemon, once per process, before the first spawn:
+ * python3-with-jedi -> one pip attempt -> uv (`--with jedi`) -> give up soft.
  */
 function ensureAvailable(): boolean {
-  if (availability !== 'unknown') return availability === 'ok';
+  if (daemonMode !== 'unknown') return daemonMode !== 'missing';
   if (jediImports()) {
-    availability = 'ok';
+    daemonMode = 'python3';
     return true;
   }
   console.log('[omnilearn] jedi not found — trying one "pip3 install --user jedi"');
@@ -64,11 +68,18 @@ function ensureAvailable(): boolean {
   } catch {
     // fall through to the re-check
   }
-  availability = jediImports() ? 'ok' : 'missing';
-  if (availability === 'missing') {
-    console.log('[omnilearn] jedi unavailable — completions fall back to buffer words');
+  if (jediImports()) {
+    daemonMode = 'python3';
+    return true;
   }
-  return availability === 'ok';
+  if (hasBin('uv')) {
+    daemonMode = 'uv';
+    console.log('[omnilearn] running completions via "uv run --with jedi" (first spawn resolves deps, then cached)');
+    return true;
+  }
+  daemonMode = 'missing';
+  console.log('[omnilearn] jedi unavailable — completions fall back to buffer words. Fix: `pip3 install jedi` or put `uv` on PATH.');
+  return false;
 }
 
 // ---------- the daemon ----------
@@ -153,9 +164,15 @@ function onDaemonLine(line: string): void {
 
 /** Start the daemon, wired for line-buffered JSON. Not detached: it dies with us. */
 function startDaemon(): ChildProcess {
-  const proc = spawn('python3', ['-u', DAEMON_SCRIPT], {
+  // uv mode carries numpy too: jedi completes `np.` from what is importable in
+  // ITS environment, and `uv run --with` envs are isolated from site-packages.
+  const [bin, args] = daemonMode === 'uv'
+    ? ['uv', ['run', '--quiet', '--with', 'jedi', '--with', 'numpy', 'python', DAEMON_SCRIPT]] as const
+    : ['python3', ['-u', DAEMON_SCRIPT]] as const;
+  const proc = spawn(bin, args, {
     stdio: ['pipe', 'pipe', 'pipe'],
     detached: false,
+    env: { ...process.env, PYTHONUNBUFFERED: '1' },
   });
 
   proc.stdout?.setEncoding('utf8');
@@ -248,7 +265,10 @@ function askDaemon(req: CompleteRequest, absPath: string | null): Promise<Comple
     const id = nextId++;
     // jedi's first pass over a big library (numpy) can take several seconds of
     // one-time stub indexing; only steady-state requests get the tight budget.
-    const budget = warmed ? REQUEST_TIMEOUT_MS : FIRST_REQUEST_TIMEOUT_MS;
+    // In uv mode the very first spawn may also resolve/download jedi+numpy.
+    const budget = warmed
+      ? REQUEST_TIMEOUT_MS
+      : (daemonMode === 'uv' ? UV_FIRST_REQUEST_TIMEOUT_MS : FIRST_REQUEST_TIMEOUT_MS);
     const timer = setTimeout(() => {
       pending.delete(id);
       reject(new Error(`jedi daemon timed out after ${budget}ms`));
