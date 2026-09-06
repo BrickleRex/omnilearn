@@ -9,6 +9,7 @@ export const DEFAULT_SETTINGS: Settings = {
   guidanceStyle: 'both',
   models: { plan: 'opus', primer: 'opus', hint: 'sonnet', ghost: 'sonnet', watch: 'haiku', chat: 'sonnet' },
   runner: 'auto',
+  skillModels: { cartographer: 'claude-fable-5-1', scout: 'opus', assessor: 'opus', reconciler: 'opus', architect: 'opus', panel: 'sonnet', freshness: 'haiku' },
 };
 
 const SCHEMES = new Set(['sunshower', 'blackboard', 'arcade', 'mint']);
@@ -30,6 +31,7 @@ function coerce(raw: unknown): Settings {
       : DEFAULT_SETTINGS.guidanceStyle,
     models,
     runner: RUNNERS.has(String(p.runner)) ? (p.runner as Settings['runner']) : DEFAULT_SETTINGS.runner,
+    skillModels: { ...DEFAULT_SETTINGS.skillModels!, ...((p.skillModels ?? {}) as Partial<NonNullable<Settings['skillModels']>>) },
   };
 }
 

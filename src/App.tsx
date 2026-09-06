@@ -6,8 +6,14 @@ import Library from './library/Library';
 import MilestoneFlow from './primer/MilestoneFlow';
 import Workspace from './workspace/Workspace';
 import TokenGate from './components/TokenGate';
+import SkillFlow from './skills/flow/SkillFlow';
+import SkillMake from './skills/make/SkillMake';
 
 function viewFromHash(): View {
+  const sk = location.hash.match(/^#\/skill\/([^/]+)\/(map|research|calibrate|learn|drills|make)(?:\/([^/]+))?$/);
+  if (sk) {
+    return { name: 'skill', skillId: sk[1], screen: sk[2] as View extends { name: 'skill' } ? never : 'map', ...(sk[3] ? { moduleId: sk[3] } : {}) } as View;
+  }
   const m = location.hash.match(/^#\/(milestone|workspace)\/([^/]+)\/([^/]+?)(\/review)?$/);
   if (m) {
     const name = m[1] as 'milestone' | 'workspace';
@@ -21,6 +27,7 @@ function viewFromHash(): View {
 
 function hashFromView(v: View): string {
   if (v.name === 'library') return '#/';
+  if (v.name === 'skill') return `#/skill/${v.skillId}/${v.screen}${v.moduleId ? `/${v.moduleId}` : ''}`;
   const review = v.name === 'milestone' && v.review ? '/review' : '';
   return `#/${v.name}/${v.projectId}/${v.milestoneId}${review}`;
 }
@@ -72,6 +79,12 @@ export default function App() {
           milestoneId={view.milestoneId}
           review={view.review}
         />
+      )}
+      {view.name === 'skill' && view.screen !== 'make' && (
+        <SkillFlow key={`${view.skillId}/${view.screen}/${view.moduleId ?? ''}`} skillId={view.skillId} screen={view.screen} moduleId={view.moduleId} settings={settings} />
+      )}
+      {view.name === 'skill' && view.screen === 'make' && (
+        <SkillMake key={`${view.skillId}/make/${view.moduleId ?? ''}`} skillId={view.skillId} moduleId={view.moduleId} settings={settings} onSettings={setSettings} />
       )}
       {view.name === 'workspace' && (
         <Workspace key={`${view.projectId}/${view.milestoneId}`} projectId={view.projectId} milestoneId={view.milestoneId} settings={settings} onSettings={setSettings} />

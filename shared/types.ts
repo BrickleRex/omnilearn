@@ -13,6 +13,8 @@ export interface Settings {
   guidanceStyle: GuidanceStyle;
   models: { plan: string; primer: string; hint: string; ghost: string; watch: string; chat?: string };
   runner?: RunnerPref; // additive; server always fills it (default 'auto')
+  // additive: skills-track agent routing (see SPEC-SKILLS.md)
+  skillModels?: { cartographer: string; scout: string; assessor: string; reconciler: string; architect: string; panel: string; freshness: string };
 }
 
 export type MilestoneStatus = 'todo' | 'current' | 'done';

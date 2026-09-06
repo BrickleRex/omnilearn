@@ -15,6 +15,8 @@ import { completeRouter, warmCompleteDaemon } from './complete';
 import { agentsRouter } from './llm/agents';
 import { chatRouter } from './llm/chat';
 import { attachTerminal, termWss } from './term';
+import { skillsResearchRouter } from './skills/research';
+import { skillsPracticeRouter } from './skills/practice';
 
 const app = express();
 app.disable('x-powered-by');
@@ -35,6 +37,8 @@ app.use('/api', chatRouter);
 app.use('/api', projectsRouter);
 app.use('/api', runnerRouter);
 app.use('/api', completeRouter);
+app.use('/api', skillsResearchRouter);
+app.use('/api', skillsPracticeRouter);
 
 app.use('/api', (_req, res) => {
   res.status(404).json({ error: 'not found' });

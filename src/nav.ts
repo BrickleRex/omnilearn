@@ -6,7 +6,11 @@ export type View =
   // calibrate + primer flow; review = re-reading from the workspace: no
   // calibration, no auto-forwarding to the editor even when all is cleared
   | { name: 'milestone'; projectId: string; milestoneId: string; review?: boolean }
-  | { name: 'workspace'; projectId: string; milestoneId: string };
+  | { name: 'workspace'; projectId: string; milestoneId: string }
+  // skills track: one view, several screens; moduleId applies to learn/drills/make
+  | { name: 'skill'; skillId: string; screen: SkillScreen; moduleId?: string };
+
+export type SkillScreen = 'map' | 'research' | 'calibrate' | 'learn' | 'drills' | 'make';
 
 export interface Nav {
   view: View;
