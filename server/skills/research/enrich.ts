@@ -59,7 +59,7 @@ export function normalizeUrl(raw: string): string {
     u.hostname = u.hostname.toLowerCase().replace(/^www\./, '');
     u.protocol = 'https:';
     for (const key of [...u.searchParams.keys()]) {
-      if (/^(utm_|ref|ref_src|ref_url|fbclid|gclid|si|s|t)$/i.test(key)) u.searchParams.delete(key);
+      if (/^(utm_[a-z]*|ref|ref_src|ref_url|fbclid|gclid|igshid|si|s|t)$/i.test(key)) u.searchParams.delete(key);
     }
     let out = u.toString();
     out = out.replace(/\?$/, '');
@@ -101,7 +101,7 @@ export function humanizeUrlSlug(url: string): string {
   try {
     const parts = new URL(url).pathname.split('/').filter(Boolean);
     const slug = [...parts].reverse().find((p) => /[a-z]{3}/i.test(p) && p.includes('-')) ?? parts[parts.length - 1] ?? '';
-    return slug.replace(/[-_]+/g, ' ').replace(/\b\d{6,}\b/g, '').replace(/\s+/g, ' ').trim();
+    return slug.replace(/[-_]+/g, ' ').replace(/\b\d{4,}\b/g, '').replace(/\s+/g, ' ').trim();
   } catch {
     return '';
   }
