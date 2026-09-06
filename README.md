@@ -26,6 +26,30 @@ editor. AI helps only on request — or when you're truly down a rabbit hole.
   stay unflagged. Re-read the milestone's primer anytime via the top-bar button.
 - Playroom visual identity with 4 schemes (2 light, 2 dark).
 
+## The Skills track (learn anything that isn't code)
+
+Flip the Library to **Skills** to learn things like cold email, Meta ads or UGC
+the same way: an agent crew maps every angle of the skill (an **outline ladder**
+you prune), scouts the web with search — Reddit threads, X posts (via the public
+syndication endpoint), YouTube transcripts, blogs, docs, public Facebook posts
+where reachable — then an assessor scores every source for reputation,
+recency and soundness, a reconciler marks contested claims, and an architect
+builds a course. Evidence stays one click away as **index cards** and a
+**consensus grid**. Then the rule is *volume, iteration, practice beat all*:
+
+- **Drills** of four kinds, never gating: predict the documented A/B winner,
+  sprint under a timer, spot the flawed sentence, rewrite for a persona.
+- **Make** the real thing in the editor (same ghost line + hints, you type every
+  word), **Run** it against three personas built from the corpus (a persona
+  margin with the bail line highlighted, a scorecard citing claims, a predicted
+  range next to the corpus median), climb a version ladder with score deltas,
+  and **Ship** real results back to see prediction vs reality.
+
+`SPEC-SKILLS.md` has the decisions; `shared/skills.ts` the contract. Data lives in
+`data/skills/<slug>/`. Reddit's `.json` and YouTube transcripts are blocked from
+datacenter IPs but work from a laptop; the research log says which sources were
+only snippets.
+
 ## Run it
 
 ```bash
@@ -59,6 +83,7 @@ or Docker on a VPS/Fly.io. In every internet-facing setup, set
 
 ## Docs
 
-- `SPEC.md` — the signed-off product spec.
-- `shared/types.ts` — the API + data contract (server and client both build on it).
+- `SPEC.md` — the signed-off product spec; `SPEC-SKILLS.md` — the skills track.
+- `shared/types.ts` and `shared/skills.ts` — the API + data contracts (server and client both build on them).
+- `design/design-review-02-skills.html` — the skills-track design review.
 - `design/design-review-01.html` — the original design review the UI was chosen from.

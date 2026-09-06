@@ -6,6 +6,10 @@ the terminal WS protocol are documented at the bottom of it; change it only
 additively.
 
 ## Layout
+- Two tracks: code (`SPEC.md`, `shared/types.ts`) and skills (`SPEC-SKILLS.md`,
+  `shared/skills.ts`, `server/skills/`, `src/skills/`). The skills mock corpus is
+  `server/skills/fixtures.ts`; `e2e/skills.spec.ts` and the test-id list at the
+  bottom of `SPEC-SKILLS.md` depend on it — change them together.
 - `server/` — Express + ws. `llm/` shells out to the Claude Code CLI
   (`claude -p --output-format json`) on the user's subscription; `LLM_MOCK=1`
   swaps in deterministic fixtures (`server/llm/fixtures.ts`) that the e2e suite
