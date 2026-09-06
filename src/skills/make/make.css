@@ -1,0 +1,527 @@
+/* ==========================================================================
+   MAKE — the skills-track workspace. Same Playroom bones as the code track
+   (chunky borders, hard offset shadows, the translucent rail), every colour
+   from the token contract in src/theme/base.css. The rail, ghost, nudge and
+   ask styling are reused from src/workspace/workspace.css, which SkillMake
+   imports; only what is new to Make lives here.
+   ========================================================================== */
+
+.skillMake {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  overflow: hidden;
+}
+.skillMake button,
+.skillMake input,
+.skillMake textarea { font-family: inherit; color: inherit; }
+.skillMake button { cursor: pointer; }
+.skillMake button:disabled { cursor: not-allowed; opacity: 0.5; }
+
+/* ------------------------------------------------------------------ top -- */
+.mkTop {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  background: var(--surface);
+  border-bottom: var(--border-w) solid var(--line);
+  min-height: 46px;
+}
+
+.mkBack {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--surface2);
+  border: var(--border-w) solid var(--line);
+  border-radius: 9px;
+  box-shadow: 2px 2px 0 var(--shadow);
+  transition: transform 160ms var(--spring);
+}
+.mkBack:hover { transform: translate(-1px, -1px); }
+.mkBack:active { transform: translate(2px, 2px); box-shadow: none; }
+
+.mkTitle { display: flex; align-items: baseline; gap: 7px; min-width: 0; flex: none; }
+.mkSkill { font-weight: 800; font-size: 14px; letter-spacing: -0.01em; }
+.mkSlash { color: var(--muted); font-weight: 700; }
+.mkModule {
+  font-size: 12.5px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 22ch;
+}
+
+.mkDraftTitle {
+  width: min(280px, 26vw);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mkGrow { flex: 1 1 auto; }
+
+.mkRepChip {
+  flex: none;
+  padding: 2px 10px 3px;
+  font-size: 11.5px;
+  font-weight: 800;
+  /* accent3 is a light fill in every scheme, so its ink is fixed near-black —
+     the same rule base.css uses for .chip-accent3. */
+  color: #1b1b1f;
+  background: var(--accent3);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+}
+
+.mkSkip {
+  flex: none;
+  padding: 3px 9px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+  background: transparent;
+  border: 2px dashed var(--muted);
+  border-radius: 999px;
+}
+.mkSkip:hover { color: var(--ink); border-color: var(--ink); }
+.mkSkip[aria-current='page'] { color: var(--accent2); border-color: var(--accent2); border-style: solid; }
+
+.mkHintBtn,
+.mkShipBtn,
+.mkScheme {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--surface2);
+  border: var(--border-w) solid var(--line);
+  border-radius: 9px;
+  box-shadow: 2px 2px 0 var(--shadow);
+  transition: transform 160ms var(--spring);
+}
+.mkHintBtn:hover,
+.mkShipBtn:hover,
+.mkScheme:hover { transform: translate(-1px, -1px); }
+.mkShipBtn { background: var(--accent2); color: var(--surface); }
+
+.mkRun {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  font-size: 12.5px;
+  font-weight: 800;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: var(--border-w) solid var(--line);
+  border-radius: 9px;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  transition: transform 160ms var(--spring);
+}
+.mkRun:hover:not(:disabled) { transform: translate(-1px, -1px); }
+.mkRun:active:not(:disabled) { transform: translate(var(--shadow-offset), var(--shadow-offset)); box-shadow: none; }
+
+.mkScheme .schemeSwatch {
+  width: 13px;
+  height: 13px;
+  border-radius: 4px;
+  border: 2px solid var(--line);
+  background: linear-gradient(135deg, var(--accent) 50%, var(--accent2) 50%);
+}
+
+/* ----------------------------------------------------------------- body -- */
+.mkBody {
+  display: grid;
+  grid-template-columns: 252px minmax(0, 1fr);
+  min-height: 0;
+}
+
+.mkMain {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-width: 0;
+  min-height: 0;
+}
+.mkStage { position: relative; min-height: 0; min-width: 0; }
+.mkEditorWrap {
+  height: 100%;
+  min-height: 0;
+  background: var(--code-bg);
+  border-left: var(--border-w) solid var(--line);
+  overflow: hidden;
+}
+.mkEditor { height: 100%; }
+.mkEditor .cm-editor { height: 100%; }
+.mkEditorEmpty {
+  padding: 22px;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* the line a reader stopped at: a tint, not an alarm */
+.cm-bail-line {
+  background: color-mix(in srgb, var(--bad) 16%, transparent);
+  box-shadow: inset 3px 0 0 var(--bad);
+}
+
+/* --------------------------------------------------------- version ladder -- */
+.mkLadder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 16px;
+  overflow: auto;
+  background: var(--surface2);
+  min-height: 0;
+}
+.mkLadderHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.mkLadderHead h2 {
+  font-size: 10.5px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mkGhostBtn {
+  padding: 2px 8px 3px;
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--accent2);
+  background: transparent;
+  border: 2px solid var(--accent2);
+  border-radius: 999px;
+}
+.mkGhostBtn:hover { background: var(--accent2); color: var(--surface); }
+
+.mkQuiet { font-size: 11.5px; line-height: 1.45; color: var(--muted); font-style: italic; }
+
+.mkRungs { list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0; }
+
+.mkRung {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  text-align: left;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 var(--shadow);
+  transition: transform 160ms var(--spring), background 140ms ease;
+}
+.mkRung:hover { transform: translate(-1px, -1px); }
+.mkRung[data-newest='true'] { background: var(--accent3); color: #1b1b1f; }
+.mkRung[data-selected='true'] { border-color: var(--accent2); box-shadow: 2px 2px 0 var(--accent2); }
+.mkRungName { font-weight: 900; font-size: 13px; }
+.mkRungWhen { font-size: 10.5px; color: var(--muted); }
+.mkRung[data-newest='true'] .mkRungWhen { color: #4a4433; }
+.mkRungDelta {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 6px;
+  border: 1.5px solid var(--line);
+  background: var(--surface2);
+}
+.mkRungDelta[data-tone='good'] { background: var(--good); color: #fff; }
+.mkRungDelta[data-tone='bad'] { background: var(--bad); color: #fff; }
+/* the lit rung is always a light accent3 fill, so its neutral chip needs a
+   light ground of its own — surface2 is near-black in the dark schemes. */
+.mkRung[data-newest='true'] .mkRungDelta[data-tone='flat'] {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #1b1b1f;
+  color: #1b1b1f;
+}
+
+.mkPreview {
+  margin: 6px 0 2px 8px;
+  padding: 8px 9px;
+  background: var(--surface);
+  border: 2px dashed var(--muted);
+  border-radius: 10px;
+}
+.mkPreview pre {
+  margin: 0 0 8px;
+  max-height: 180px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.mkRestore {
+  width: 100%;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+.mkRestore:hover { transform: translate(-1px, -1px); }
+
+.mkReps {
+  font-size: 11px;
+  line-height: 1.45;
+  color: var(--muted);
+  border-top: 1.5px dashed var(--line);
+  padding-top: 8px;
+}
+
+.mkShips { display: flex; flex-direction: column; gap: 7px; }
+.mkShip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  padding: 6px 9px;
+  font-size: 11.5px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+.mkShip b { font-size: 12.5px; }
+.mkShipPred { font-weight: 700; color: var(--bad); }
+.mkShip[data-hit='true'] .mkShipPred { color: var(--good); }
+.mkShipNote { width: 100%; color: var(--muted); font-size: 11px; }
+
+/* ------------------------------------------------------------- hint bar -- */
+.mkFoot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 38px;
+  padding: 6px 12px;
+  background: var(--surface);
+  border-top: var(--border-w) solid var(--line);
+  font-size: 12.5px;
+}
+.mkLamp {
+  flex: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  background: var(--muted);
+}
+.mkFoot[data-lit='true'] .mkLamp { background: var(--lamp); box-shadow: 0 0 10px 2px var(--lamp); }
+.mkLamp[data-on='true'] { background: var(--lamp); animation: breathe 1.4s ease-in-out infinite; }
+.mkHintText { flex: 1; min-width: 0; line-height: 1.4; }
+.mkHintIdle { flex: 1; min-width: 0; color: var(--muted); font-style: italic; }
+.mkFlagBtn {
+  flex: none;
+  padding: 2px 9px 3px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--warn);
+  background: transparent;
+  border: 2px dashed var(--warn);
+  border-radius: 999px;
+}
+.mkFlagBtn:hover { background: var(--warn); color: var(--surface); border-style: solid; }
+.mkFootX {
+  flex: none;
+  background: none;
+  border: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1;
+}
+.mkFootX:hover { color: var(--ink); }
+
+/* ------------------------------------------------------------ rail panes -- */
+.mkPane { overflow: hidden; }
+.mkRunPane {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 10px 11px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mkRunEmpty, .mkRunBusy { font-size: 12.5px; line-height: 1.5; color: var(--muted); font-style: italic; }
+.mkRunBusy { animation: breathe 1.2s ease-in-out infinite; }
+
+.mkSubToggle { display: flex; gap: 6px; }
+.mkSeg {
+  padding: 3px 10px 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--muted);
+  background: transparent;
+  border: 2px solid var(--muted);
+  border-radius: 999px;
+}
+.mkSeg.is-on { color: #1b1b1f; border-color: var(--line); background: var(--accent3); }
+
+.mkMargin { display: flex; flex-direction: column; gap: 10px; }
+.mkPersona {
+  padding: 8px 9px 9px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+.mkPersonaHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin-bottom: 7px;
+}
+.mkPersonaHead b { font-size: 12.5px; }
+.mkPersonaHead span { font-size: 11px; color: var(--muted); }
+.mkBailTag {
+  font-size: 10px !important;
+  font-weight: 800;
+  color: var(--bad) !important;
+  border: 1.5px solid var(--bad);
+  border-radius: 999px;
+  padding: 0 7px 1px;
+}
+
+.mkReactions { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 0; }
+.mkReaction {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px;
+  align-items: baseline;
+  padding: 3px 6px;
+  font-size: 11.5px;
+  line-height: 1.45;
+  border-radius: 7px;
+}
+.mkReaction:hover { background: var(--surface2); }
+.mkReaction.is-bail {
+  background: color-mix(in srgb, var(--bad) 14%, transparent);
+  box-shadow: inset 2px 0 0 var(--bad);
+}
+.mkLineNo {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.mkReactionText { min-width: 0; }
+.mkBailFlag {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 3px;
+  padding: 1px 8px 2px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--bad);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+}
+
+.mkScorecard { display: flex; flex-direction: column; gap: 10px; }
+.mkScore { display: flex; flex-direction: column; gap: 3px; }
+.mkScoreTop { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.mkScoreLabel { font-size: 12px; font-weight: 700; }
+.mkScoreNum { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.mkBar {
+  height: 11px;
+  background: var(--surface2);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.mkBar i {
+  display: block;
+  height: 100%;
+  background: var(--good);
+  transition: width 420ms var(--spring);
+}
+.mkBar[data-tone='warn'] i { background: var(--warn); }
+.mkBar[data-tone='bad'] i { background: var(--bad); }
+.mkScoreNote { font-size: 11px; line-height: 1.45; color: var(--muted); }
+.mkClaimChip {
+  margin-left: 5px;
+  padding: 0 7px 1px;
+  font-size: 10px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--accent2);
+  background: transparent;
+  border: 1.5px solid var(--accent2);
+  border-radius: 999px;
+}
+.mkClaimChip:hover { background: var(--accent2); color: var(--surface); }
+
+.mkPredict {
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 2px dashed var(--line);
+  border-radius: 10px;
+}
+.mkPredict b { font-size: 13px; }
+.mkPredict em { display: block; margin-top: 3px; font-size: 10.5px; color: var(--muted); }
+
+.mkLever {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.mkLeverTag {
+  padding: 1px 8px 2px;
+  font-size: 9.5px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+}
+
+.mkEvidence { flex: 1; min-height: 0; overflow: auto; padding: 8px 10px 14px; }
+
+/* ------------------------------------------------------------------ ship -- */
+.mkShipLede { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+.mkShipGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.mkShipNotes { display: block; margin-top: 12px; }
+.mkShipMath { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .skillMake *, .mkRail {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
