@@ -207,7 +207,14 @@ function runTranscript(videoId: string): Promise<string> {
     child.on('error', (e) => done(() => reject(new Error(`transcript helper could not start: ${e.message}`))));
     child.on('close', (code) => done(() => {
       if (code === 0 && out.trim()) resolve(out.trim());
-      else reject(new Error(`no transcript (${code}): ${err.trim().slice(-200)}`));
+      else {
+        // The last non-empty stderr line is the human reason (e.g. "TranscriptsDisabled",
+        // "IP blocked"); the traceback above it would flood the job log.
+        const last = err.trim().split('\n').filter(Boolean).pop() ?? '';
+        const reason = /blocked|ipblocked|requestblocked/i.test(err) ? 'blocked from this network — works from a laptop'
+          : last.slice(0, 120) || `exit ${code}`;
+        reject(new Error(`no transcript: ${reason}`));
+      }
     }));
   });
 }
