@@ -67,10 +67,19 @@ export function subtreeIds(angles: Angle[], id: string): Set<string> {
   return out;
 }
 
-/** "~34 sources · ~6 min" — 10 seconds a source, rounded to something honest. */
+/**
+ * "~230 sources · ~55 min". Only kept LEAF angles get a scout (a kept parent with
+ * kept children is covered by them), a scout brings back at most ~10 sources,
+ * three scouts run at once at ~4 min each, and assessing/reconciling/building
+ * the course adds ~20 min. Calibrated on the live cold-email run (26 scouts →
+ * 214 sources in 87 min).
+ */
 export function estimate(angles: Angle[]): { sources: number; minutes: number; text: string } {
-  const sources = angles.filter((a) => a.kept).reduce((n, a) => n + (a.estSources || 0), 0);
-  const minutes = Math.max(1, Math.round((sources * 10) / 60));
+  const kept = angles.filter((a) => a.kept);
+  const hasKeptChild = new Set(kept.filter((a) => a.parentId).map((a) => a.parentId as string));
+  const scouts = kept.filter((a) => !hasKeptChild.has(a.id));
+  const sources = scouts.reduce((n, a) => n + Math.min(10, Math.max(3, a.estSources || 0)), 0);
+  const minutes = scouts.length ? Math.ceil(scouts.length / 3) * 4 + 20 : 0;
   return { sources, minutes, text: `~${sources} sources · ~${minutes} min` };
 }
 
