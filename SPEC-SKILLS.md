@@ -88,3 +88,35 @@ whole pipeline instantly (fake progress ticks) — the e2e suite depends on it.
 `npm run test:e2e` covers the skills journey in mock mode: frame → map prune →
 research (mock) → calibrate → learn → all four drills → make: draft, ghost,
 run → persona margin + scorecard → v2 → delta → ship results → evidence tab.
+
+## Mock corpus and test ids (the e2e contract)
+`server/skills/fixtures.ts` is the deterministic cold-email corpus (LLM_MOCK=1):
+angles targeting/copy/deliverability/followups/metrics (+ sub-angles), sources
+s1–s8, claims c1–c8 (c3 contested, c7 stale), modules `first-line` (drills
+d-predict-1, d-sprint-1, d-spot-1, d-rewrite-1) and `sequence` (d-predict-2),
+personas priya/tom/lena, rubric r-trigger/r-short/r-ask/r-subject.
+Mock research advances a phase every ~150ms and finishes in under 3s.
+
+data-testids (must exist exactly):
+- Library: `track-code`, `track-skills` (switch), `skills-lane`, `new-skill`,
+  `skill-card-<id>`, `skill-open-<id>`.
+- Frame modal: `frame-name`, `frame-outcome`, `frame-context`, `frame-level-<new|some|experienced>`,
+  `frame-existing`, `frame-submit`.
+- Map: `skill-map`, `angle-<id>` (row), `angle-toggle-<id>` (checkbox), `map-est` (est sources text),
+  `start-research`, `skip-to-drills`, `skip-to-make` (the two skips appear on EVERY skill screen header).
+- Research: `skill-research`, `research-phase` (text = current phase), `research-log`, `research-continue`
+  (enabled when done → Calibrate).
+- Calibrate: `skill-calibrate`, `calib-opt-<qi>-<oi>`, `calib-submit`, `grade-existing-input`, `grade-existing-submit`,
+  `grade-existing-result`, `calib-continue`.
+- Learn: `skill-learn`, reuses primer deck ids (`primer-deck`, `unit-<id>`, `check-opt-<i>`, `check-submit`, `deck-next`)
+  plus `claim-chip-<claimId>` (click opens `evidence-card-<claimId>`), `learn-to-drills`.
+- Drills: `skill-drills`, `rep-counter` (text contains the number), `drill-<id>`,
+  predict: `predict-opt-<0|1>`, `predict-result`; sprint: `sprint-timer`, `sprint-line-<i>` (textarea/input), `sprint-submit`, `sprint-feedback`;
+  spot: `spot-seg-<i>`, `spot-result`; rewrite: `rewrite-input`, `rewrite-submit`, `rewrite-feedback`;
+  `drill-next`, `drills-to-make`.
+- Make: `skill-make`, `.cm-content` editor, `draft-title`, `version-ladder`, `version-<n>`, `version-delta-<n>`,
+  `make-run`, rail tabs `rail-tab-run|ask|evidence`, `persona-margin`, `persona-<id>`, `reaction-bail` (highlighted bail line),
+  `scorecard`, `score-<rubricId>`, `predicted-range`, `biggest-lever`, `make-hint` (or Ctrl+Space), `hint-text`,
+  `.cm-ghost` (ghost line, Tab must NOT accept), `ship-open`, `ship-sent`, `ship-replies`, `ship-submit`, `ship-<id>` (row with prediction vs reality),
+  `evidence-cards`, `evidence-card-<claimId>`, `evidence-grid`, `grid-cell-<claimId>-<kind>`, `evidence-view-cards|grid`,
+  `back-to-map` (link back to the map/learn).

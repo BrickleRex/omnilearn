@@ -10,22 +10,38 @@
 import { spawn } from 'node:child_process';
 import { getSettings } from '../settings';
 
-export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch' | 'chat' | 'ideas';
+export type LlmTask = 'plan' | 'calibration' | 'primer' | 'hint' | 'ghost' | 'watch' | 'chat' | 'ideas' | 'skill';
 
 export interface CallClaudeOptions {
   task: LlmTask;
   prompt: string;
+  // Additive (skills track). `model` overrides settings routing (alias or full
+  // id, e.g. skillModels.cartographer). `allowedTools` enables CLI tools such as
+  // WebSearch/WebFetch — this also lifts max-turns so the agent can call them.
+  model?: string;
+  allowedTools?: string[];
+  maxTurns?: number;   // default 1 (or 12 when allowedTools is set)
+  timeoutMs?: number;  // default 60s fast / 180s slow
+}
+
+export interface CliExtras { allowedTools?: string[]; maxTurns?: number }
+
+function cliArgs(model: string, extras: CliExtras, outputFormat: string[]): string[] {
+  const maxTurns = extras.maxTurns ?? (extras.allowedTools?.length ? 12 : 1);
+  const args = ['-p', '--model', model, ...outputFormat, '--max-turns', String(maxTurns)];
+  if (extras.allowedTools?.length) args.push('--allowedTools', extras.allowedTools.join(','));
+  return args;
 }
 
 export function isMock(): boolean {
   return process.env.LLM_MOCK === '1';
 }
 
-const SLOW_TASKS = new Set<LlmTask>(['plan', 'calibration', 'primer']);
+const SLOW_TASKS = new Set<LlmTask>(['plan', 'calibration', 'primer', 'skill']);
 const TIMEOUT_SLOW_MS = 180_000;
 const TIMEOUT_FAST_MS = 60_000;
 const WATCH_THROTTLE_MS = 60_000;
-const MAX_CONCURRENT = 2;
+const MAX_CONCURRENT = 3; // scouts run up to 3 wide; code-track calls share the pool
 
 // ---------- model routing ----------
 
@@ -50,6 +66,10 @@ export async function modelForTask(task: LlmTask): Promise<string> {
     case 'ideas':
       // Idea batches must feel refreshable, so they ride the fast hint model.
       return models.hint;
+    case 'skill':
+      // Skills-track callers pass `model` explicitly (settings.skillModels);
+      // this is only the fallback when they don't.
+      return 'sonnet';
   }
 }
 
@@ -125,11 +145,11 @@ function tail(text: string, n = 600): string {
   return t.length > n ? `…${t.slice(-n)}` : t;
 }
 
-function runCli(model: string, prompt: string, timeoutMs: number): Promise<string> {
+function runCli(model: string, prompt: string, timeoutMs: number, extras: CliExtras = {}): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = spawn(
       'claude',
-      ['-p', '--model', model, '--output-format', 'json', '--max-turns', '1'],
+      cliArgs(model, extras, ['--output-format', 'json']),
       { stdio: ['pipe', 'pipe', 'pipe'] },
     );
 
@@ -203,7 +223,7 @@ function runCliStream(
   return new Promise((resolve, reject) => {
     const child = spawn(
       'claude',
-      ['-p', '--model', model, '--output-format', 'stream-json', '--include-partial-messages', '--verbose', '--max-turns', '1'],
+      cliArgs(model, {}, ['--output-format', 'stream-json', '--include-partial-messages', '--verbose']),
       { stdio: ['pipe', 'pipe', 'pipe'] },
     );
 
@@ -298,8 +318,8 @@ export async function callClaudeStream(
   if (isMock()) {
     throw new Error('callClaudeStream must not be reached in LLM_MOCK mode — use fixtures');
   }
-  const model = await modelForTask(task);
-  const timeoutMs = SLOW_TASKS.has(task) ? TIMEOUT_SLOW_MS : TIMEOUT_FAST_MS;
+  const model = opts.model?.trim() || (await modelForTask(task));
+  const timeoutMs = opts.timeoutMs ?? (SLOW_TASKS.has(task) ? TIMEOUT_SLOW_MS : TIMEOUT_FAST_MS);
   const release = await acquire(task === 'watch' ? 10 : 0);
   let anyDelta = false;
   const tracked = (text: string) => { anyDelta = true; onDelta(text); };
@@ -324,16 +344,17 @@ export async function callClaude(opts: CallClaudeOptions): Promise<string> {
   if (isMock()) {
     throw new Error('callClaude must not be reached in LLM_MOCK mode — use fixtures');
   }
-  const model = await modelForTask(task);
-  const timeoutMs = SLOW_TASKS.has(task) ? TIMEOUT_SLOW_MS : TIMEOUT_FAST_MS;
+  const model = opts.model?.trim() || (await modelForTask(task));
+  const timeoutMs = opts.timeoutMs ?? (SLOW_TASKS.has(task) ? TIMEOUT_SLOW_MS : TIMEOUT_FAST_MS);
+  const extras: CliExtras = { allowedTools: opts.allowedTools, maxTurns: opts.maxTurns };
   const release = await acquire(task === 'watch' ? 10 : 0);
   try {
     try {
-      return await runCli(model, prompt, timeoutMs);
+      return await runCli(model, prompt, timeoutMs, extras);
     } catch (first) {
       // one retry
       try {
-        return await runCli(model, prompt, timeoutMs);
+        return await runCli(model, prompt, timeoutMs, extras);
       } catch (second) {
         throw new Error(
           `claude CLI failed for task "${task}" (twice): ${(second as Error).message} ` +
