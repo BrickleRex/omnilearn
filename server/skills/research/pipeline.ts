@@ -88,21 +88,27 @@ export function claimConfidence(input: ConfidenceInput): number {
   const rep = mean(input.reputations);
   const sound = mean(input.soundnesses);
   const agreement = Math.min(1, Math.max(0, input.consensus) / 3);
-  const base = 0.42 * rep + 0.34 * sound + 0.24 * agreement;
+  // Triangulation carries the most weight: assessors score vendor blogs harshly
+  // on soundness, so a claim three independent sources agree on must still be
+  // able to earn the 'solid' stamp (live calibration: cold-email corpus, 2026-09).
+  const base = 0.35 * rep + 0.25 * sound + 0.4 * agreement;
   const decayed = base * recencyFactor(input.newest, input.horizon, input.now);
   const penalised = input.contested ? decayed * 0.85 : decayed;
   return Math.round(Math.min(1, Math.max(0, penalised)) * 100) / 100;
 }
 
+export const SOLID_CONFIDENCE = 0.7;
+
 /**
- * Verdict from the numbers. Anything below .8 that is neither stale nor
- * contested reads as 'likely' — the frozen Verdict union has no weaker label,
- * so genuinely thin claims are dropped instead (MIN_CONFIDENCE).
+ * Verdict from the numbers. 'solid' needs the score AND at least two sources —
+ * one source is never solid however good it looks. Anything else that is
+ * neither stale nor contested reads as 'likely' — the frozen Verdict union has
+ * no weaker label, so genuinely thin claims are dropped instead (MIN_CONFIDENCE).
  */
-export function verdictFor(confidence: number, flags: { contested?: boolean; stale?: boolean }): Verdict {
+export function verdictFor(confidence: number, flags: { contested?: boolean; stale?: boolean; sources?: number }): Verdict {
   if (flags.stale) return 'stale';
   if (flags.contested) return 'contested';
-  return confidence >= 0.8 ? 'solid' : 'likely';
+  return confidence >= SOLID_CONFIDENCE && (flags.sources ?? 2) >= 2 ? 'solid' : 'likely';
 }
 
 /** The consensus-grid row: which source kinds back this claim, and which fight it. */
@@ -569,7 +575,7 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
       id: `c${claims.length + 1}`,
       angleId,
       text,
-      verdict: verdictFor(confidence, { contested, stale }),
+      verdict: verdictFor(confidence, { contested, stale, sources: sourceIds.length }),
       confidence,
       sourceIds,
       contextTags: tagsFor.get(key) ?? [...new Set(sourceIds.flatMap((sid) => tagsBySource.get(sid) ?? []))].slice(0, 4),

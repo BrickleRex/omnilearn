@@ -12,7 +12,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",
-    "e2e:boot": "rm -rf data-e2e && npm run build && LLM_MOCK=1 PORT=4655 NODE_ENV=production tsx server/index.ts"
+    "e2e:boot": "rm -rf data-e2e && npm run build && LLM_MOCK=1 PORT=4655 NODE_ENV=production tsx server/index.ts",
+    "seed:skills": "node scripts/seed-skills.mjs"
   },
   "dependencies": {
     "@codemirror/autocomplete": "^6.18.4",

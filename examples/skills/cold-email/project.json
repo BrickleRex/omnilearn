@@ -1,0 +1,2275 @@
+{
+  "id": "cold-email",
+  "name": "Cold email",
+  "frame": {
+    "outcome": "5 qualified meetings a month from cold email",
+    "context": "B2B SaaS founder selling a $400/mo tool to sales leaders at 50-500 person companies, $0 ad budget, sent ~50 cold emails ever, 1 reply",
+    "level": "new"
+  },
+  "phase": "calibrating",
+  "createdAt": "2026-09-06T08:16:56.932Z",
+  "reps": {
+    "drills": 0,
+    "runs": 0,
+    "ships": 0
+  },
+  "map": {
+    "angles": [
+      {
+        "id": "who-to-target",
+        "title": "Who to email",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 20,
+        "why": "Most of your 50 emails went to the wrong people; a tight list fixes reply rate before you touch copy."
+      },
+      {
+        "id": "one-narrow-segment",
+        "title": "Pick one narrow segment first",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 18,
+        "why": "A 60-person startup and a 450-person company have different sales leaders; pick one and write for them only.",
+        "parentId": "who-to-target"
+      },
+      {
+        "id": "trigger-events",
+        "title": "Hiring and change signals",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "A VP who posted 5 SDR jobs this month is 10x more likely to book than one picked at random.",
+        "parentId": "who-to-target"
+      },
+      {
+        "id": "list-building",
+        "title": "Build and verify the list",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 25,
+        "why": "You need 300 to 500 verified contacts a month, and over 3% bounces gets your domain flagged.",
+        "parentId": "who-to-target"
+      },
+      {
+        "id": "the-offer",
+        "title": "The offer and positioning",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 15,
+        "why": "A vague product pitch to a sales leader gets deleted; a specific outcome for their team gets a reply."
+      },
+      {
+        "id": "pain-in-their-words",
+        "title": "Find the pain in their words",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 10,
+        "why": "Talk to 5 sales leaders before writing; their exact phrases become your first line and your promise.",
+        "parentId": "the-offer"
+      },
+      {
+        "id": "pain-to-promise",
+        "title": "One specific promise, not features",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 12,
+        "why": "Sales leaders reply to a number they miss, not to a feature list.",
+        "parentId": "the-offer"
+      },
+      {
+        "id": "the-ask",
+        "title": "The ask: 15 minutes or teardown",
+        "level": "working",
+        "kept": true,
+        "estSources": 10,
+        "why": "A 15-minute look or a free teardown of their outbound gets 3x the yes of asking for a demo.",
+        "parentId": "the-offer"
+      },
+      {
+        "id": "founder-angle",
+        "title": "Use the founder angle",
+        "level": "working",
+        "kept": true,
+        "estSources": 8,
+        "why": "I built this and want your take gets replies a sales rep never will; use it while you still can.",
+        "parentId": "the-offer"
+      },
+      {
+        "id": "writing-the-email",
+        "title": "Writing the email",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 30,
+        "why": "Your one reply in 50 came from the words; better words at the same volume gets you 5 to 10."
+      },
+      {
+        "id": "subject-and-first-line",
+        "title": "Subject line and first line",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 20,
+        "why": "A short plain subject plus a first line about them is what shows in the preview and decides the open.",
+        "parentId": "writing-the-email"
+      },
+      {
+        "id": "structure-and-length",
+        "title": "Under 80 words, one ask",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 25,
+        "why": "Busy leaders read on a phone; one observation, one promise, one question, nothing else.",
+        "parentId": "writing-the-email"
+      },
+      {
+        "id": "personalization-at-scale",
+        "title": "Personalization without hours",
+        "level": "working",
+        "kept": true,
+        "estSources": 20,
+        "why": "You cannot hand-write 400 emails a month, so learn which one line to personalize.",
+        "parentId": "writing-the-email"
+      },
+      {
+        "id": "deliverability",
+        "title": "Landing in the inbox",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 25,
+        "why": "At volume, half your emails can silently go to spam, and you would never know."
+      },
+      {
+        "id": "domain-and-inbox-setup",
+        "title": "Secondary domains, inboxes, warmup",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 20,
+        "why": "Two lookalike domains, 2 inboxes each, 20 to 30 sends a day per inbox, warmed for 2 weeks before you send.",
+        "parentId": "deliverability"
+      },
+      {
+        "id": "authentication-records",
+        "title": "SPF, DKIM, DMARC",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 20,
+        "why": "Missing records is the top reason cold email gets filtered before opening.",
+        "parentId": "deliverability"
+      },
+      {
+        "id": "plain-text-no-tracking",
+        "title": "Plain text, no links, no tracking",
+        "level": "working",
+        "kept": true,
+        "estSources": 12,
+        "why": "Open-tracking pixels, links, and images in a first email cut inbox placement; send it like a person would.",
+        "parentId": "deliverability"
+      },
+      {
+        "id": "placement-testing",
+        "title": "Test inbox placement before sending",
+        "level": "working",
+        "kept": true,
+        "estSources": 10,
+        "why": "Send each new template to your own Gmail and Outlook seeds first; spam there means spam everywhere.",
+        "parentId": "deliverability"
+      },
+      {
+        "id": "opt-out-and-compliance",
+        "title": "Opt-out line and the law",
+        "level": "working",
+        "kept": true,
+        "estSources": 12,
+        "why": "One opt-out line, a real address, and honoring every no keeps your domain and company out of trouble.",
+        "parentId": "deliverability"
+      },
+      {
+        "id": "sequences-follow-up",
+        "title": "Follow-up sequences",
+        "level": "working",
+        "kept": true,
+        "estSources": 25,
+        "why": "Most replies come on email 2 to 4, and one-and-done is why 50 emails got 1 reply."
+      },
+      {
+        "id": "sequence-cadence",
+        "title": "Cadence: 3 to 5 steps",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "3 to 5 touches over 2 weeks roughly doubles replies versus a single email.",
+        "parentId": "sequences-follow-up"
+      },
+      {
+        "id": "follow-up-copy",
+        "title": "Follow-ups and the breakup",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "Just checking in gets ignored; each step needs a new reason, and the last one asks if you should close the file.",
+        "parentId": "sequences-follow-up"
+      },
+      {
+        "id": "linkedin-touch",
+        "title": "Add a LinkedIn touch",
+        "level": "advanced",
+        "kept": true,
+        "estSources": 12,
+        "why": "A profile view or connect the day before email 1 lifts replies, and it costs nothing.",
+        "parentId": "sequences-follow-up"
+      },
+      {
+        "id": "replies-to-meetings",
+        "title": "Turning replies into meetings",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "A reply is not a meeting; the handoff is where beginners lose half of them."
+      },
+      {
+        "id": "reply-fast-book-now",
+        "title": "Reply within the hour, book now",
+        "level": "working",
+        "kept": true,
+        "estSources": 8,
+        "why": "Interest fades in hours; answer fast and offer two times or a link in the first reply.",
+        "parentId": "replies-to-meetings"
+      },
+      {
+        "id": "handling-objections",
+        "title": "Handling not now and send info",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "Half of replies are soft nos, and a good response turns some into meetings.",
+        "parentId": "replies-to-meetings"
+      },
+      {
+        "id": "qualify-and-confirm",
+        "title": "Qualify, confirm, cut no-shows",
+        "level": "working",
+        "kept": true,
+        "estSources": 10,
+        "why": "Ask team size before booking, then send a reminder the morning of; that saves 1 in 4 meetings.",
+        "parentId": "replies-to-meetings"
+      },
+      {
+        "id": "running-the-numbers",
+        "title": "Running it week to week",
+        "level": "working",
+        "kept": true,
+        "estSources": 20,
+        "why": "5 meetings a month comes from sending every day and knowing which stage is leaking."
+      },
+      {
+        "id": "funnel-math",
+        "title": "The funnel math to 5 meetings",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "At 5% replies and 25% of replies booking, 5 meetings needs about 400 sends; know your numbers.",
+        "parentId": "running-the-numbers"
+      },
+      {
+        "id": "daily-routine",
+        "title": "The daily sending routine",
+        "level": "foundation",
+        "kept": true,
+        "estSources": 8,
+        "why": "20 to 25 new contacts a day, every workday, beats a 200-email burst once a month.",
+        "parentId": "running-the-numbers"
+      },
+      {
+        "id": "diagnose-the-leak",
+        "title": "Find which stage is broken",
+        "level": "working",
+        "kept": true,
+        "estSources": 15,
+        "why": "Under 1% replies is deliverability or list, 1 to 3% is copy; at your volume change one thing per 200 sends, not A/B tests.",
+        "parentId": "running-the-numbers"
+      },
+      {
+        "id": "tooling",
+        "title": "Pick one sending tool",
+        "level": "working",
+        "kept": true,
+        "estSources": 20,
+        "why": "One tool that runs sequences and rotates inboxes frees your time for copy, not spreadsheets.",
+        "parentId": "running-the-numbers"
+      },
+      {
+        "id": "scaling-inboxes",
+        "title": "Scaling past 5 meetings",
+        "level": "advanced",
+        "kept": true,
+        "estSources": 15,
+        "why": "Going from 5 to 15 meetings means more domains and inboxes, not longer emails.",
+        "parentId": "running-the-numbers"
+      }
+    ]
+  },
+  "course": {
+    "modules": [
+      {
+        "id": "pick-one-segment",
+        "title": "Pick one narrow segment",
+        "angleIds": [
+          "who-to-target",
+          "one-narrow-segment",
+          "trigger-events",
+          "list-building"
+        ],
+        "concepts": [
+          {
+            "id": "segment-three-filters",
+            "label": "A segment is a role plus a size band plus a trigger, not a job title",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "segment-small-batch",
+            "label": "A smaller list out-replies a bigger one because it lets you write one honest email",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "segment-not-this",
+            "label": "Irrelevance is what kills replies, so cutting the list is the fastest fix",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "segment-trigger",
+            "label": "A trigger is why you are emailing this week, and it expires",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "pick-one-segment-u1",
+            "conceptId": "segment-three-filters",
+            "title": "Three filters, then write",
+            "bodyMd": "A segment is not a job title. It is three filters stacked — industry, one employee-count band, one role — plus a trigger. Campaigns built that way reply at 3-5%. Role-only lists reply at 1-2%. Your version: B2B SaaS, 50-200 employees, VP Sales or Head of Sales. Decide all three before you write a word, because the filters decide what the email is allowed to say. One warning about your target. Sales leaders reply around 6.6% on well-targeted sends; founders reply at 7.63%. Sales leaders get pitched all day and know every move. Your framing has to be tighter than average just to land on average."
+          },
+          {
+            "kind": "card",
+            "id": "pick-one-segment-u2",
+            "conceptId": "segment-small-batch",
+            "title": "Fifty, not five thousand",
+            "bodyMd": "Across 11 million emails, campaigns under 50 recipients replied at 5.8%. Campaigns over 1,000 replied at 2.1%. Batches of 21-50 hit 6.2%; 501+ hit 2.4%. Small lists do not win because they are small. They win because you can only write one honest email to 50 people if those 50 are the same person. Top senders clear 10% reply rates against a 3.43% average across billions of 2025 sends, and micro-segmentation is the thing that separates them. Your week one: 50-100 named prospects inside one segment. Not 1,000 generic ones. You have sent about 50 emails ever for 1 reply. Same volume, one segment, different result."
+          },
+          {
+            "kind": "card",
+            "id": "pick-one-segment-u3",
+            "conceptId": "segment-not-this",
+            "title": "Write the 'not this' rule",
+            "bodyMd": "71% of 217 surveyed decision-makers said the reason they don't reply is that the email wasn't relevant. Not volume. Not the subject line. Relevance. The fastest route to relevant is subtraction. Write one line naming who you will not email, then cut the list with it. Teams that halved their list with a negative ICP doubled their reply rate. Yours could be: no companies under 50 employees, no agencies, nobody without reps to manage. The size band matters on its own too — 0-10 employee companies replied at 0.72%, 11-50 at 0.49%, 10,000+ at 0.22%. Pick one band and let every other band go."
+          },
+          {
+            "kind": "card",
+            "id": "pick-one-segment-u4",
+            "conceptId": "segment-trigger",
+            "title": "A trigger is why today",
+            "bodyMd": "A trigger tells you why you are emailing this week, not just who they are. Opening on a real trigger replied at 8.7% versus 3.2% for name-and-company personalization. Two fit you. One: a company posting five SDR or AE roles in 30 days is an outbound build — a real buying window. Send within 1-2 weeks, drop the account after 30-45 days. Two: a VP Sales hired 2-6 weeks ago. Week one their inbox is buried; by 60 days the signal is dead. New buyers spend about 70% of their budget in the first 100 days. Write what the hiring causes, not the posting: \"3 new SDRs ramping at once\" is a problem they feel."
+          },
+          {
+            "kind": "check",
+            "id": "pick-one-segment-u5",
+            "conceptId": "segment-three-filters",
+            "question": "Your target is written down as \"sales leaders at SaaS companies.\" What is missing before you write the email?",
+            "options": [
+              "One employee-count band and a trigger event",
+              "A stronger subject line",
+              "More contacts, so the list is worth sending to",
+              "A discount off the $400/mo price"
+            ],
+            "answerIndex": 0,
+            "explain": "c2: role plus company size plus a trigger replies at 3-5%; role alone replies at 1-2%."
+          },
+          {
+            "kind": "check",
+            "id": "pick-one-segment-u6",
+            "conceptId": "segment-small-batch",
+            "question": "You have 1,200 contacts that loosely fit. What do you send this week?",
+            "options": [
+              "All 1,200 at once, for volume",
+              "600 now and 600 next week",
+              "50-100 from the tightest slice of that list",
+              "All 1,200, split across three subject lines"
+            ],
+            "answerIndex": 2,
+            "explain": "c1: under-50 campaigns reply at 5.8% versus 2.1% for 1,000+. c5: 100 tightly filtered contacts beat 1,000 generic ones."
+          },
+          {
+            "kind": "check",
+            "id": "pick-one-segment-u7",
+            "conceptId": "segment-not-this",
+            "question": "A list of 800 loosely-fitting sales leaders is getting no replies. Which change most likely lifts the reply rate?",
+            "options": [
+              "Add 400 more contacts from the same source",
+              "Cut it to 400 using a written \"not this\" rule",
+              "Send from two domains instead of one",
+              "End every email with a question"
+            ],
+            "answerIndex": 1,
+            "explain": "c6: teams halving their list with a negative ICP doubled reply rate. c7: 71% named irrelevance as why they don't reply."
+          },
+          {
+            "kind": "check",
+            "id": "pick-one-segment-u8",
+            "conceptId": "segment-trigger",
+            "question": "A VP Sales started 10 weeks ago at a 120-person SaaS company. What is the best move?",
+            "options": [
+              "Email today; the new-hire angle is still your strongest line",
+              "Wait until their one-year mark",
+              "Drop the new-hire angle — that signal is dead past 60 days",
+              "Email their CEO instead"
+            ],
+            "answerIndex": 2,
+            "explain": "c11: the window is weeks 2-6 of the job, and by 60 days the job-change signal is dead."
+          }
+        ],
+        "unitClaims": {
+          "pick-one-segment-u1": [
+            "c2",
+            "c3",
+            "c8"
+          ],
+          "pick-one-segment-u2": [
+            "c1",
+            "c4",
+            "c5"
+          ],
+          "pick-one-segment-u3": [
+            "c6",
+            "c7",
+            "c3"
+          ],
+          "pick-one-segment-u4": [
+            "c9",
+            "c10",
+            "c11",
+            "c12"
+          ],
+          "pick-one-segment-u5": [
+            "c2",
+            "c8"
+          ],
+          "pick-one-segment-u6": [
+            "c1",
+            "c5",
+            "c4"
+          ],
+          "pick-one-segment-u7": [
+            "c6",
+            "c7"
+          ],
+          "pick-one-segment-u8": [
+            "c11",
+            "c9"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "pick-one-segment-d1",
+            "moduleId": "pick-one-segment",
+            "prompt": "Same copy, same sender, same offer. One campaign goes to 50 recipients. The other goes to 1,000+. Which got more replies, per campaign?",
+            "options": [
+              "The 50-recipient campaign",
+              "The 1,000+ recipient campaign"
+            ],
+            "winner": 0,
+            "result": "Campaigns of 50 or fewer averaged a 5.8% reply rate; campaigns of 1,000+ averaged 2.1% — a 2.76x gap.",
+            "why": "A list small enough to be one kind of person lets one honest email be true for all of them.",
+            "claimIds": [
+              "c1",
+              "c4"
+            ],
+            "sourceId": "s1"
+          },
+          {
+            "kind": "predict",
+            "id": "pick-one-segment-d2",
+            "moduleId": "pick-one-segment",
+            "prompt": "The same cold email goes to companies with 0-10 employees and to companies with 10,000+ employees. Which band replied more?",
+            "options": [
+              "0-10 employees",
+              "10,000+ employees"
+            ],
+            "winner": 0,
+            "result": "0-10 employee companies replied at 0.72% — more than three times the 0.22% from 10,000+ enterprises.",
+            "why": "At small companies the reader is usually the buyer; at enterprises the email dies in layers.",
+            "claimIds": [
+              "c3"
+            ],
+            "sourceId": "s2"
+          },
+          {
+            "kind": "sprint",
+            "id": "pick-one-segment-d3",
+            "moduleId": "pick-one-segment",
+            "prompt": "Write 4 segment definitions for your $400/mo tool. One line each: industry + employee band + one role + one trigger + the send window. No two may use the same trigger.",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-three-filters",
+              "r-trigger",
+              "r-not-this"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "pick-one-segment-d4",
+            "moduleId": "pick-one-segment",
+            "segments": [
+              {
+                "text": "Segment: VP Sales or Head of Sales. One title, not \"sales leadership.\""
+              },
+              {
+                "text": "Company: B2B SaaS, 50-200 employees. One band, nothing above or below."
+              },
+              {
+                "text": "Trigger: posted 3 or more SDR or AE roles in the last 30 days."
+              },
+              {
+                "text": "List: 2,400 matching contacts pulled from Apollo. Sending all of them Monday morning.",
+                "flaw": "The batch is too big — a 2,400-recipient send drops you into the 2.1% blast band instead of the 5.8% small-batch band.",
+                "claimIds": [
+                  "c1",
+                  "c5",
+                  "c4"
+                ]
+              },
+              {
+                "text": "Not this: no companies under 50 employees, no agencies, nobody without reps to manage."
+              },
+              {
+                "text": "Send window: within 10 days of the job posting going live. Drop the account at day 40."
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "pick-one-segment-d5",
+            "moduleId": "pick-one-segment",
+            "original": "Hi Marcus — saw you're hiring 3 SDRs. Most teams your size lose the first quarter to ramp: new reps burn the good accounts while they learn what to say. We give sales leaders at 50-500 person SaaS companies one shared library of what's already working, so rep #4 sends rep #1's best email in week one. $400/mo. Worth 15 minutes?",
+            "fromPersona": "p2",
+            "toPersona": "p1",
+            "rubricIds": [
+              "r-trigger",
+              "r-relevance",
+              "r-three-filters"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-three-filters",
+            "label": "Segment names an industry, one employee-count band, and one role — not a departm",
+            "claimIds": [
+              "c2",
+              "c3"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-trigger",
+            "label": "Names a specific, dated trigger event and the window to send inside",
+            "claimIds": [
+              "c9",
+              "c10",
+              "c11"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-batch-size",
+            "label": "Batch is 50-100 named prospects in one segment, not a big generic list",
+            "claimIds": [
+              "c1",
+              "c5"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-not-this",
+            "label": "States an explicit \"not this\" exclusion that removes real names from the list",
+            "claimIds": [
+              "c6"
+            ],
+            "weight": 1
+          },
+          {
+            "id": "r-relevance",
+            "label": "Every line is true only of this segment, and states the effect the trigger cause",
+            "claimIds": [
+              "c7",
+              "c12",
+              "c8"
+            ],
+            "weight": 2
+          }
+        ],
+        "status": "current"
+      },
+      {
+        "id": "offer-and-promise",
+        "title": "The offer and promise",
+        "angleIds": [
+          "the-offer",
+          "pain-in-their-words",
+          "pain-to-promise",
+          "the-ask",
+          "founder-angle"
+        ],
+        "concepts": [
+          {
+            "id": "op-problem-first",
+            "label": "the first line names their problem, not your product",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "op-promise-number",
+            "label": "a promise carries a number and is aimed at the reader's level",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "op-first-ask",
+            "label": "the first ask should cost a click, not a calendar slot",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "op-founder-angle",
+            "label": "the founder voice out-replies the company voice, and only you can send it",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "offer-and-promise-u1",
+            "conceptId": "op-problem-first",
+            "title": "Open on their problem, not your product",
+            "bodyMd": "You get about three seconds to earn the open and about nine seconds to be read. So the top of the email is the whole email.\n\nOpen with one named problem your reader has. One pain per email. Hold your product until that problem lands. A B2B team that changed only this went from 1.1% to 4.8% replies in seven weeks — same list, same tools, same volume.\n\nCut the words \"AI\" and \"platform\", and cut any opener that leads with a feature. Executives read those as a mass pitch and reply less.\n\nName the pain in plain words, the way you would say it out loud."
+          },
+          {
+            "kind": "card",
+            "id": "offer-and-promise-u2",
+            "conceptId": "op-promise-number",
+            "title": "Put a number in the promise",
+            "bodyMd": "A promise is not \"we help companies grow\". That gets about 3% replies. A specific measurable result gets about 7%.\n\nSo pack four things into one line near the top: their industry, their problem, your result, and a number.\n\nThen aim it at the reader's level. Sales leaders and other executives reply to company revenue, cost and risk. Managers reply to tactics. Same tool, different sentence.\n\nAnd if you are sitting at a 2% reply rate, that is a message problem, not a volume problem. B2B SaaS averages 3.4% replies; the top 10% of campaigns hit 10.7%. Fix the line before you buy more addresses."
+          },
+          {
+            "kind": "card",
+            "id": "offer-and-promise-u3",
+            "conceptId": "op-first-ask",
+            "title": "Make the first ask cost a click",
+            "bodyMd": "Asking a stranger for 30 minutes in message one is where most cold email dies.\n\nAcross 304,174 emails, asking whether they are interested booked 30% of meetings versus 15% for proposing a day and time, and 68% of replies were positive versus 41%. Soft, open-ended asks pull 4.2% replies against 1.4% for \"book a demo\".\n\nStrongest is a teardown you ask permission to send: \"Filmed a quick teardown of [X], want to see it?\" gets 5-7% versus 2-4% for \"open to a 15-minute call?\". A short personalized video pulls 10-16%.\n\nSave the day-and-time ask for after they reply."
+          },
+          {
+            "kind": "card",
+            "id": "offer-and-promise-u4",
+            "conceptId": "op-founder-angle",
+            "title": "Send it as the founder",
+            "bodyMd": "Being the founder is the advantage you have and a rep does not.\n\nSend from your own name and title. Write in first person: \"I'm building…\", not \"We at [Company]…\". Founder and CEO senders show roughly +0.5 to +1.0 percentage points of reply rate at 50-500 person companies, and founder-written lists land 5-10% replies against 1-3% for generic sends.\n\nTell the story only you have: you hit this problem, so you built the fix. Ask a sales leader for their read on the problem instead of their calendar — people grant a favor faster than a purchase. Then use authority a rep lacks: a pilot, a price, your phone number, in the thread."
+          },
+          {
+            "kind": "check",
+            "id": "offer-and-promise-u5",
+            "conceptId": "op-problem-first",
+            "question": "First line of a cold email to a VP Sales. Which one earns the most replies?",
+            "options": [
+              "Quick intro to our AI-powered pipeline platform.",
+              "New VPs spend their first eight weeks guessing which reps are actually in trouble.",
+              "Hope you're having a great week — wanted to reach out and connect.",
+              "We help sales teams grow faster."
+            ],
+            "answerIndex": 1,
+            "explain": "c18: name one customer problem and hold the product. c20: \"AI\" and \"platform\" and feature-led openers read as a mass pitch to executives."
+          },
+          {
+            "kind": "check",
+            "id": "offer-and-promise-u6",
+            "conceptId": "op-promise-number",
+            "question": "Which promise line is doing its job on a CRO at a 400-person company?",
+            "options": [
+              "We're a modern platform for revenue teams.",
+              "We help B2B companies grow revenue.",
+              "SaaS sales orgs your size cut new-rep ramp from 12 weeks to 7, so each hire pays back a quarter earlier.",
+              "Let me know if you'd like to hear more about what we do."
+            ],
+            "answerIndex": 2,
+            "explain": "c19: generic value props get about 3% replies, a specific measurable result about 7%. c22: executives reply to revenue, cost and risk."
+          },
+          {
+            "kind": "check",
+            "id": "offer-and-promise-u7",
+            "conceptId": "op-first-ask",
+            "question": "Last line of your first email to a stranger. Which ask?",
+            "options": [
+              "Do you have 30 minutes Thursday at 2pm?",
+              "Book a demo here: [link]",
+              "Filmed a 3-minute teardown of your outbound sequence — want to see it?",
+              "Attaching a teardown of your sequence plus our deck."
+            ],
+            "answerIndex": 2,
+            "explain": "c26: the permission-to-send teardown pulls 5-7% replies versus 2-4% for a call request. The ask is \"want it?\", not \"here it is\"."
+          },
+          {
+            "kind": "check",
+            "id": "offer-and-promise-u8",
+            "conceptId": "op-founder-angle",
+            "question": "You have sent 50 cold emails and got 1 reply. What is the next move?",
+            "options": [
+              "Hand it to an agency and push volume to 2,000 a month.",
+              "Buy a sending tool and automate the sequence.",
+              "Write 150-250 emails a week yourself, in your own name, and watch which pitch works.",
+              "Drop cold email — with no ad budget the numbers can't work."
+            ],
+            "answerIndex": 2,
+            "explain": "c34: do not outsource at 50 emails sent. c33: 150-250 founder emails a week at 3-8% replies gives about 5 meetings a month."
+          }
+        ],
+        "unitClaims": {
+          "offer-and-promise-u1": [
+            "c18",
+            "c20",
+            "c21"
+          ],
+          "offer-and-promise-u2": [
+            "c19",
+            "c21",
+            "c22",
+            "c23"
+          ],
+          "offer-and-promise-u3": [
+            "c24",
+            "c25",
+            "c26",
+            "c27",
+            "c28"
+          ],
+          "offer-and-promise-u4": [
+            "c29",
+            "c30",
+            "c31",
+            "c32",
+            "c35"
+          ],
+          "offer-and-promise-u5": [
+            "c18",
+            "c20"
+          ],
+          "offer-and-promise-u6": [
+            "c19",
+            "c22"
+          ],
+          "offer-and-promise-u7": [
+            "c25",
+            "c26"
+          ],
+          "offer-and-promise-u8": [
+            "c33",
+            "c34",
+            "c35"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "offer-and-promise-d1",
+            "moduleId": "offer-and-promise",
+            "prompt": "Same list, same product, first cold touch. Two closing lines were tested across 304,174 emails. Which booked more meetings?",
+            "options": [
+              "Ask if they are interested: \"Worth a look?\"",
+              "Propose a slot: \"Do you have 15 minutes Tuesday at 10?\""
+            ],
+            "winner": 0,
+            "result": "The interest ask booked 30% of meetings versus 15% for the meeting request — double. Positive replies ran 68% versus 41%.",
+            "why": "A stranger will say \"tell me more\" long before they will give up a slot on their calendar.",
+            "claimIds": [
+              "c24",
+              "c25"
+            ],
+            "sourceId": "s42"
+          },
+          {
+            "kind": "sprint",
+            "id": "offer-and-promise-d2",
+            "moduleId": "offer-and-promise",
+            "prompt": "Dana is a CRO at a 400-person company. Write promise lines for her: one line each, a named problem plus a number plus your result, aimed at revenue, cost or risk. No product name, no \"AI\", no \"platform\".",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-pain-first",
+              "r-number",
+              "r-level"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "offer-and-promise-d3",
+            "moduleId": "offer-and-promise",
+            "segments": [
+              {
+                "text": "Subject: the eight-week guessing period"
+              },
+              {
+                "text": "Hi Priya — new VPs inherit a team mid-quarter and spend their first eight weeks guessing which reps are actually in trouble."
+              },
+              {
+                "text": "Our AI-powered revenue intelligence platform gives you full-funnel visibility across every rep and every deal.",
+                "flaw": "Leads with the product and with \"AI\" and \"platform\" before the problem has landed — executives read this as a mass pitch and reply less.",
+                "claimIds": [
+                  "c18",
+                  "c20"
+                ]
+              },
+              {
+                "text": "I'm Sam. I ran sales at a 200-person SaaS company, lost a quarter to that blind spot, and built the fix myself."
+              },
+              {
+                "text": "Two teams your size started flagging at-risk deals 11 days earlier in the quarter."
+              },
+              {
+                "text": "Filmed a 3-minute teardown of your team's pipeline review. Want to see it?"
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "offer-and-promise-d4",
+            "moduleId": "offer-and-promise",
+            "original": "Hi Marcus — hiring three SDRs means three ramp plans, three call-review habits, and three sequences to keep clean. I'm Sam; I built a tool that scores every rep's calls so you don't have to listen to all of them. Want a 3-minute teardown of your current onboarding docs?",
+            "fromPersona": "p2",
+            "toPersona": "p3",
+            "rubricIds": [
+              "r-pain-first",
+              "r-number",
+              "r-level",
+              "r-soft-ask",
+              "r-founder-voice"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-pain-first",
+            "label": "Opens on one named customer problem; the product waits until the problem lands, ",
+            "claimIds": [
+              "c18",
+              "c20"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-number",
+            "label": "The promise is one line near the top with a number, their industry, their proble",
+            "claimIds": [
+              "c19",
+              "c21",
+              "c23"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-level",
+            "label": "Aimed at the reader's level: revenue, cost or risk for executives; tactics for m",
+            "claimIds": [
+              "c22"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-soft-ask",
+            "label": "The ask costs a click, not a calendar slot — interest or a teardown, never 30 mi",
+            "claimIds": [
+              "c24",
+              "c25",
+              "c26",
+              "c28"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-founder-voice",
+            "label": "First person, founder's own name and story, asking for their read rather than th",
+            "claimIds": [
+              "c29",
+              "c30",
+              "c31"
+            ],
+            "weight": 2
+          }
+        ],
+        "status": "todo"
+      },
+      {
+        "id": "write-the-email",
+        "title": "Write the email",
+        "angleIds": [
+          "writing-the-email",
+          "subject-and-first-line",
+          "structure-and-length",
+          "personalization-at-scale"
+        ],
+        "concepts": [
+          {
+            "id": "c-subject-short-specific",
+            "label": "A 2-4 word subject line that names something from their world is what gets opened",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-first-line-is-preview",
+            "label": "Your first sentence is preview text, so it has to be about them",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-under-80-one-ask",
+            "label": "Under 80 words with exactly one ask, and the ask goes last",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-relevance-is-a-business-fact",
+            "label": "Relevance is a business fact you can reuse across a 21-50 person segment, not a custom email",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "write-the-email-u1",
+            "conceptId": "c-subject-short-specific",
+            "title": "Short, plain, and about them",
+            "bodyMd": "The subject line is the door. Across 5.5M B2B cold emails, 2-4 word lines opened at 46%; ten-word lines fell to 34%. Characters matter too: 21-40 characters opened at 49.1%, over 60 characters at 39.2%. An iPhone cuts at 35-40 characters, Gmail on Android at 30-35.\n\nWrite it like a coworker inside their company typed it: lowercase, plain, no pitch. Put one specific detail in it — a competitor's name, their city, a post they wrote. Opens go from about 35% to 46%, replies from 3% to 7%.\n\nCut \"quick question\", \"ASAP\", \"Hello friend\". Those drop opens below 36%. Numbers do nothing: 27% with, 28% without."
+          },
+          {
+            "kind": "card",
+            "id": "write-the-email-u2",
+            "conceptId": "c-first-line-is-preview",
+            "title": "The first line is read before the email is opened",
+            "bodyMd": "Your first sentence is not private. It shows next to the subject line as preview text, so it gets read before the email is opened — about 35 characters of it on a phone.\n\nThat makes \"Hi {{firstName}}, hope you're well\" the most expensive line in your email. So is \"I'm the founder of...\". Both burn the preview on nothing.\n\nSpend it on them. A factual observation about their role's pain works: \"Most VPs of Sales inherit a forecast they can't trust.\" That pattern reports 4-8% positive replies. A short question about their current situation works too — it opened every top campaign in a 1,160-campaign review."
+          },
+          {
+            "kind": "card",
+            "id": "write-the-email-u3",
+            "conceptId": "c-under-80-one-ask",
+            "title": "Nine seconds, one ask",
+            "bodyMd": "An executive gives your email about nine seconds, and 61% of B2B emails are opened on a phone first. At 75-100 words the whole thing fits without scrolling.\n\nSo: under about 80 words, roughly six short sentences. Emails of 50-125 words replied at 8.2%; 200-300 word emails at 3.9%. Across 34 million sends, the 20-39 word band replied best at 4.5%. Keep sentences to 8-12 words — each long one costs about 17% of your response chance.\n\nFour parts, nothing else: subject line, one relevant opener, one line of value, one ask. One. A second ask forces a decision and they close the tab. Put the ask last: 22% more replies."
+          },
+          {
+            "kind": "card",
+            "id": "write-the-email-u4",
+            "conceptId": "c-relevance-is-a-business-fact",
+            "title": "One custom line, reused",
+            "bodyMd": "You need one or two custom details per email, not a custom email. Across 31 million sends, emails with two custom attributes replied at 5.6% versus 3.6% with none.\n\nIt has to be a business fact — a decision they just made, a role they are hiring for. \"{{first_name}}\" and \"I saw you went to Stanford\" move nothing.\n\nCap research at 2-4 minutes per prospect. Full hand-research runs 15-18 minutes and caps you near 30 emails a day. Instead write one custom line per 21-50 person segment and reuse it: 6.2% replies versus 2.4% for lists of 500+.\n\nThen hand-edit a handful before sending. That lifted average replies from 4.4% to 5.2%."
+          },
+          {
+            "kind": "check",
+            "id": "write-the-email-u5",
+            "conceptId": "c-subject-short-specific",
+            "question": "Marcus, Head of Sales, just posted that he is hiring three SDRs. Which subject line do you send?",
+            "options": [
+              "Quick question about scaling your sales team at Acme",
+              "sdr hiring",
+              "IDEA FOR ACME — need your answer ASAP",
+              "Acme x [YourCo]: a 3-minute idea worth your time"
+            ],
+            "answerIndex": 1,
+            "explain": "2-4 word lines open at 46% versus 34% for ten-word lines, and naming his hiring is the specific detail (c36, c37, c39)."
+          },
+          {
+            "kind": "check",
+            "id": "write-the-email-u6",
+            "conceptId": "c-first-line-is-preview",
+            "question": "Which first sentence earns the most from the ~35 characters of preview a phone shows?",
+            "options": [
+              "Hi Marcus, hope you're having a great week!",
+              "I'm Sam, founder of [YourCo], and we help sales teams work faster.",
+              "Most Heads of Sales hiring 3 SDRs lose 10+ weeks to ramp before anyone hits quota.",
+              "Big fan of what you're building at Acme — really impressive team."
+            ],
+            "answerIndex": 2,
+            "explain": "The first line is preview text read before opening; a factual pain observation reports 4-8% positive replies, while greetings and intros waste it (c40, c41)."
+          },
+          {
+            "kind": "check",
+            "id": "write-the-email-u7",
+            "conceptId": "c-under-80-one-ask",
+            "question": "Your draft is 180 words and ends: \"Let me know your thoughts — also happy to send the case study.\" What is the single biggest fix?",
+            "options": [
+              "Add bullets so it scans faster",
+              "Cut to under 80 words and leave exactly one ask, as the last sentence",
+              "Move the ask to the first line so busy readers see it immediately",
+              "Keep the length but bold the ask"
+            ],
+            "answerIndex": 1,
+            "explain": "50-125 words reply at 8.2% versus 3.9% at 200-300, one ask only, and a final-sentence CTA gets 22% more replies (c43, c45, c48)."
+          },
+          {
+            "kind": "check",
+            "id": "write-the-email-u8",
+            "conceptId": "c-relevance-is-a-business-fact",
+            "question": "You have 300 prospects and 40 minutes before you send. What gets the most replies?",
+            "options": [
+              "Fully hand-research 3 prospects at 15 minutes each",
+              "One template to all 300 with {{first_name}} and {{company_name}} merged in",
+              "Split into segments of 21-50, write one custom line per segment, then hand-edit a few before sending",
+              "Look up each prospect's school and open with it"
+            ],
+            "answerIndex": 2,
+            "explain": "Segment lines replied at 6.2% versus 2.4% for 500+ lists, and hand-edits lifted 4.4% to 5.2%; merge tags and school facts move nothing (c52, c53, c56)."
+          }
+        ],
+        "unitClaims": {
+          "write-the-email-u1": [
+            "c36",
+            "c37",
+            "c38",
+            "c39",
+            "c42"
+          ],
+          "write-the-email-u2": [
+            "c40",
+            "c41",
+            "c54"
+          ],
+          "write-the-email-u3": [
+            "c43",
+            "c44",
+            "c45",
+            "c46",
+            "c47",
+            "c48",
+            "c49"
+          ],
+          "write-the-email-u4": [
+            "c50",
+            "c51",
+            "c52",
+            "c53",
+            "c56"
+          ],
+          "write-the-email-u5": [
+            "c36",
+            "c37",
+            "c38",
+            "c39"
+          ],
+          "write-the-email-u6": [
+            "c40",
+            "c41",
+            "c54"
+          ],
+          "write-the-email-u7": [
+            "c43",
+            "c45",
+            "c48"
+          ],
+          "write-the-email-u8": [
+            "c50",
+            "c52",
+            "c53",
+            "c56"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "write-the-email-predict-subject-length",
+            "moduleId": "write-the-email",
+            "prompt": "5.5M B2B cold emails, subject lines sorted by word count. Which band opened better?",
+            "options": [
+              "Ten-word lines: \"quick question about your team's outbound process this quarter\"",
+              "Two-to-four-word lines: \"sdr ramp\""
+            ],
+            "winner": 1,
+            "result": "The 2-4 word lines opened at 46%. The ten-word lines fell to 34%.",
+            "why": "Short lines survive the phone cut — an iPhone truncates at 35-40 characters.",
+            "claimIds": [
+              "c36"
+            ],
+            "sourceId": "s59"
+          },
+          {
+            "kind": "predict",
+            "id": "write-the-email-predict-subject-personalized",
+            "moduleId": "write-the-email",
+            "prompt": "130M+ B2B emails analyzed. Same campaign, two subject line styles. Which opened better?",
+            "options": [
+              "\"idea for [company]\" — the same generic line to everyone",
+              "A line naming something specific from that prospect's world"
+            ],
+            "winner": 1,
+            "result": "Personalized subject lines opened at 46% versus 35% without — a 31% improvement.",
+            "why": "The specific detail proves the email was meant for them before they open it.",
+            "claimIds": [
+              "c37"
+            ],
+            "sourceId": "s60"
+          },
+          {
+            "kind": "predict",
+            "id": "write-the-email-predict-length",
+            "moduleId": "write-the-email",
+            "prompt": "3 million cold emails sorted by word count. Which replied better?",
+            "options": [
+              "A 220-word email covering the product, the proof and the ask",
+              "A 60-word email with one line of value and one ask"
+            ],
+            "winner": 1,
+            "result": "Emails of 50-125 words got a 2.4x higher reply rate than emails over 200 words.",
+            "why": "Adding paragraphs to sound serious costs replies; a 47-word email is a real email.",
+            "claimIds": [
+              "c43"
+            ],
+            "sourceId": "s71"
+          },
+          {
+            "kind": "sprint",
+            "id": "write-the-email-sprint-subjects",
+            "moduleId": "write-the-email",
+            "prompt": "Three prospects: Priya (VP Sales, 8 weeks in), Marcus (Head of Sales, hiring 3 SDRs), Dana (CRO, 400-person company). Write one subject line for each, plus one spare. 2-4 words, lowercase, no pitch, each naming a fact from that person's world.",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-subject",
+              "r-trigger"
+            ]
+          },
+          {
+            "kind": "sprint",
+            "id": "write-the-email-sprint-closers",
+            "moduleId": "write-the-email",
+            "prompt": "Write the closing ask for Priya, Marcus and Dana. One sentence each, under 12 words, exactly one ask — no \"or\", no \"also\", no attached deck.",
+            "quota": 3,
+            "seconds": 60,
+            "rubricIds": [
+              "r-one-ask",
+              "r-length"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "write-the-email-spot-marcus",
+            "moduleId": "write-the-email",
+            "segments": [
+              {
+                "text": "Subject: sdr onboarding"
+              },
+              {
+                "text": "You're hiring three SDRs this quarter."
+              },
+              {
+                "text": "Most teams lose 10+ weeks getting new reps to their first closed deal, because ramp lives in five spreadsheets."
+              },
+              {
+                "text": "We put ramp for a team your size on one dashboard, for $400/mo."
+              },
+              {
+                "text": "Worth fifteen minutes Thursday? Also happy to send our ramp benchmark deck instead, or loop in your RevOps lead if that is easier for you.",
+                "flaw": "Three asks stacked in the closing line — a meeting, a deck, and a third person — and the sentence runs past 20 words.",
+                "claimIds": [
+                  "c45",
+                  "c46",
+                  "c48"
+                ]
+              },
+              {
+                "text": "— Sam"
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "write-the-email-rewrite-priya-to-dana",
+            "moduleId": "write-the-email",
+            "original": "Subject: onboarding\n\nYou stepped into the VP Sales seat 8 weeks ago and inherited a pipeline you didn't build. Most new VPs spend their first quarter rebuilding forecast trust by hand. We give you a clean number in week two. Worth 15 minutes Thursday?",
+            "fromPersona": "p1",
+            "toPersona": "p3",
+            "rubricIds": [
+              "r-subject",
+              "r-preview",
+              "r-length",
+              "r-one-ask",
+              "r-trigger"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-subject",
+            "label": "Subject line is 2-4 words, lowercase, no pitch or urgency words, and names somet",
+            "claimIds": [
+              "c36",
+              "c37",
+              "c38",
+              "c39",
+              "c42"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-preview",
+            "label": "First sentence is about them — a factual pain observation or a question about th",
+            "claimIds": [
+              "c40",
+              "c41",
+              "c54"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-length",
+            "label": "Under 80 words, sentences of 8-12 words, fits a phone screen without scrolling",
+            "claimIds": [
+              "c43",
+              "c44",
+              "c46",
+              "c47"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-one-ask",
+            "label": "Exactly one ask, and it is the final sentence",
+            "claimIds": [
+              "c45",
+              "c48",
+              "c49"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-trigger",
+            "label": "Personalized on a business fact a template could not generate, written once per ",
+            "claimIds": [
+              "c50",
+              "c51",
+              "c52",
+              "c53",
+              "c55"
+            ],
+            "weight": 3
+          }
+        ],
+        "status": "todo"
+      },
+      {
+        "id": "land-in-the-inbox",
+        "title": "Land in the inbox",
+        "angleIds": [
+          "deliverability",
+          "domain-and-inbox-setup",
+          "authentication-records",
+          "plain-text-no-tracking",
+          "placement-testing",
+          "opt-out-and-compliance"
+        ],
+        "concepts": [
+          {
+            "id": "c-lookalike-warm",
+            "label": "Cold email goes out from a lookalike domain on inboxes warmed for 14 days, never from your real one",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-auth-then-test",
+            "label": "SPF, DKIM, and DMARC stop silent filtering, and only a seed test proves where the mail landed",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-no-tracking",
+            "label": "Every tracker you add costs you replies",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "c-optout",
+            "label": "One plain opt-out sentence keeps you legal and keeps complaints off your domain",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "land-in-the-inbox-u1",
+            "conceptId": "c-lookalike-warm",
+            "title": "Send from a lookalike domain, warmed",
+            "bodyMd": "Never send cold email from acme.com. One bad run there and your invoices and support mail get filtered too. Buy a lookalike — tryacme.com, getacme.com, useacme.com — and point it at your main site. Put 2 to 3 inboxes on it, two of them Google Workspace. Five or more on a fresh domain reads as a sending operation. Age is not the blocker: across 4,406 inboxes a six-month-old domain placed at 99.06%, a ten-year-old at 98.41%. Warm every inbox at least 14 days before the first cold send. Placement climbs to about 95% in week one and 98% by week two. Skipping warmup costs about 23 points: 91.3% versus 68.4%."
+          },
+          {
+            "kind": "card",
+            "id": "land-in-the-inbox-u2",
+            "conceptId": "c-auth-then-test",
+            "title": "Three DNS records, then prove it",
+            "bodyMd": "Three DNS records decide whether a filter reads you at all. SPF and DKIM say the mail really came from you; DMARC tells inboxes what to do when it didn't. Domains with all three land about 84% of the time; with none, about 45%. Publish a TXT record at _dmarc.yourdomain.com reading `v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com`, move to p=quarantine after four weeks and p=reject after eight. Then stop trusting your tool: a 99% delivery rate counts mail the server accepted, spam folder included. Send every new template to 10 to 40 seed inboxes on Google Workspace and Microsoft 365, where your buyers read mail. Above 90% is healthy. Below 85%, fix it before prospects see it."
+          },
+          {
+            "kind": "card",
+            "id": "land-in-the-inbox-u3",
+            "conceptId": "c-no-tracking",
+            "title": "Turn the tracking off",
+            "bodyMd": "Open tracking is a 1x1 invisible image that forces your email into HTML and calls an outside server. Emails carrying that pixel were about 15% more likely to be flagged as spam, and campaigns without tracking replied at 2.36% versus 1.08% with it on. You lose nothing: Apple Mail pre-loads pixels at delivery and fakes 64.66% of all tracked opens. If you kill one thing, kill click tracking — it rewrites your links through a tracking domain and hurts delivery more. Put no link in email one: 0.87% replied versus 0.21% with a tracked link. Images are fine; filters tell an image from a pixel. Score yourself on reply rate: 2% or higher means you are landing."
+          },
+          {
+            "kind": "card",
+            "id": "land-in-the-inbox-u4",
+            "conceptId": "c-optout",
+            "title": "The way out is one sentence",
+            "bodyMd": "You do not need an unsubscribe link. The law wants an opt-out that is clear and works, so a sentence does it: \"Not relevant? Reply 'pass' and you won't hear from me again.\" Write it as a human line, not a marketing footer — across 200+ campaigns the human version lifted reply rate 18–25%, and footers were 2–3x more likely to land in Promotions. Include a real postal address; a PO box counts. Keep one suppression list and check it before every send: emailing someone after they opt out is a separate violation worth up to $53,088 per message. Without an easy exit people hit spam instead, and one complaint per 1,000 sends is already Gmail's warning zone."
+          },
+          {
+            "kind": "check",
+            "id": "land-in-the-inbox-u5",
+            "conceptId": "c-lookalike-warm",
+            "question": "Your cap is 30 cold sends a day per inbox, and warmup is already sending 25 from that inbox. How many cold emails can it send today?",
+            "options": [
+              "55",
+              "30",
+              "5",
+              "25"
+            ],
+            "answerIndex": 2,
+            "explain": "Warmup mail counts against the cap (c60). 25 warmup sends leave 5 cold slots, not 30. Need more volume? Add inboxes."
+          },
+          {
+            "kind": "check",
+            "id": "land-in-the-inbox-u6",
+            "conceptId": "c-auth-then-test",
+            "question": "Your sending tool reports 99% delivered. What does that number prove?",
+            "options": [
+              "Nearly all of it reached the inbox",
+              "Only that receiving servers accepted it — spam folder included",
+              "That your SPF and DKIM records pass",
+              "That your warmup score is green"
+            ],
+            "answerIndex": 1,
+            "explain": "Delivery counts accepted mail, including everything dropped into spam (c76). Placement is only knowable from a seed test."
+          },
+          {
+            "kind": "check",
+            "id": "land-in-the-inbox-u7",
+            "conceptId": "c-no-tracking",
+            "question": "You want more replies from your first email. Which change helps most?",
+            "options": [
+              "Add a Calendly link so booking is easy",
+              "Remove the link and turn click tracking off",
+              "Turn open tracking on so you can see who reads",
+              "Strip every image out of the email"
+            ],
+            "answerIndex": 1,
+            "explain": "No-link campaigns replied at 0.87% versus 0.21% (c73), and click tracking hurts delivery most (c72). Images are harmless (c75)."
+          },
+          {
+            "kind": "check",
+            "id": "land-in-the-inbox-u8",
+            "conceptId": "c-optout",
+            "question": "A prospect replies \"pass.\" What has to happen next?",
+            "options": [
+              "Nothing — she can unsubscribe from the footer link",
+              "Add her to one suppression list you check before every send",
+              "Wait 30 days, then try a different angle",
+              "Move her to a lower-frequency sequence"
+            ],
+            "answerIndex": 1,
+            "explain": "Mailing someone after they opt out is a separate violation up to $53,088 per message; one checked suppression list prevents it (c88)."
+          }
+        ],
+        "unitClaims": {
+          "land-in-the-inbox-u1": [
+            "c57",
+            "c58",
+            "c59",
+            "c62"
+          ],
+          "land-in-the-inbox-u2": [
+            "c66",
+            "c67",
+            "c76",
+            "c77",
+            "c78"
+          ],
+          "land-in-the-inbox-u3": [
+            "c70",
+            "c71",
+            "c72",
+            "c73",
+            "c74",
+            "c75"
+          ],
+          "land-in-the-inbox-u4": [
+            "c84",
+            "c85",
+            "c86",
+            "c88",
+            "c89"
+          ],
+          "land-in-the-inbox-u5": [
+            "c60",
+            "c61",
+            "c63"
+          ],
+          "land-in-the-inbox-u6": [
+            "c76",
+            "c81",
+            "c83"
+          ],
+          "land-in-the-inbox-u7": [
+            "c72",
+            "c73",
+            "c75"
+          ],
+          "land-in-the-inbox-u8": [
+            "c88",
+            "c90"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "land-in-the-inbox-d-predict",
+            "moduleId": "land-in-the-inbox",
+            "prompt": "Two identical campaigns go out from brand-new inboxes. One inbox is warmed first; the other sends cold on day one. Which one places higher in the inbox during days 1–7?",
+            "options": [
+              "Warm the inbox first, then send",
+              "Skip warmup and start sending on day one"
+            ],
+            "winner": 0,
+            "result": "Days 1–7 inbox placement was 91.3% with proper warm-up versus 68.4% without — about 23 points of your first week's mail.",
+            "why": "Providers judge a brand-new sender by its history, so warmup builds one before any prospect sees you.",
+            "claimIds": [
+              "c59"
+            ],
+            "sourceId": "s86"
+          },
+          {
+            "kind": "sprint",
+            "id": "land-in-the-inbox-d-sprint",
+            "moduleId": "land-in-the-inbox",
+            "prompt": "Write the closing line of a first cold email to a sales leader. One sentence, plain speech, gives them a clear way out, no link, no footer language. Write 4 different versions.",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-optout-line",
+              "r-no-link"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "land-in-the-inbox-d-spot",
+            "moduleId": "land-in-the-inbox",
+            "segments": [
+              {
+                "text": "Domain: tryhirestack.com, registered nine days ago, forwarding to hirestack.com. The real company domain stays out of the campaign."
+              },
+              {
+                "text": "Two inboxes on it, both Google Workspace: adam@tryhirestack.com and adam.k@tryhirestack.com."
+              },
+              {
+                "text": "DNS: SPF published, DKIM key generated at 2048 bits, and a TXT record at _dmarc.tryhirestack.com reading v=DMARC1; p=none; rua=mailto:dmarc@tryhirestack.com."
+              },
+              {
+                "text": "Warmup ran 14 days and stays on at 25 messages a day. Campaign starts today at 50 cold sends per inbox, on top of the warmup.",
+                "flaw": "Warmup counts against the daily cap, so this inbox is doing 75 sends a day when the ceiling is 15–30 total — and it jumps straight to 50 instead of starting at 5–10 and adding about 2 a day.",
+                "claimIds": [
+                  "c60",
+                  "c61"
+                ]
+              },
+              {
+                "text": "Open tracking off, click tracking off, no link in the first email. Closing line: \"Not relevant? Reply 'pass' and you won't hear from me again.\""
+              },
+              {
+                "text": "Before launch, the template goes to 12 seed inboxes across Google Workspace and Microsoft 365, sent through the same tool and inbox as the real campaign. Go at 90%, stop below 85%."
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "land-in-the-inbox-d-rewrite",
+            "moduleId": "land-in-the-inbox",
+            "original": "Priya — eight weeks into the VP Sales seat and the pipeline you inherited is somebody else's. Two other new VPs used us to rebuild theirs in a quarter. Grab 15 minutes here: calendly.com/adam/15. To unsubscribe, click the link at the bottom of this email.",
+            "fromPersona": "p1",
+            "toPersona": "p3",
+            "rubricIds": [
+              "r-no-link",
+              "r-optout-line",
+              "r-proof-seed"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-optout-line",
+            "label": "Closes with a plain human opt-out sentence a person could answer, not a footer o",
+            "claimIds": [
+              "c84",
+              "c85",
+              "c89"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-no-link",
+            "label": "First email carries no link and no open or click tracking",
+            "claimIds": [
+              "c70",
+              "c72",
+              "c73"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-warm-ramp",
+            "label": "Sending plan warms 14 days, starts at 5–10 a day, and keeps total sends inside t",
+            "claimIds": [
+              "c59",
+              "c60",
+              "c61",
+              "c64"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-auth-dns",
+            "label": "Setup names SPF, DKIM, and a DMARC record starting at p=none on a lookalike doma",
+            "claimIds": [
+              "c57",
+              "c66",
+              "c67"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-proof-seed",
+            "label": "Judges placement by a seed test read provider by provider and by reply rate, nev",
+            "claimIds": [
+              "c74",
+              "c76",
+              "c77",
+              "c79",
+              "c81"
+            ],
+            "weight": 2
+          }
+        ],
+        "status": "todo"
+      },
+      {
+        "id": "follow-up-and-replies",
+        "title": "Follow up, book meetings",
+        "angleIds": [
+          "sequences-follow-up",
+          "sequence-cadence",
+          "follow-up-copy",
+          "linkedin-touch",
+          "replies-to-meetings",
+          "reply-fast-book-now",
+          "handling-objections",
+          "qualify-and-confirm"
+        ],
+        "concepts": [
+          {
+            "id": "sequence-not-single-send",
+            "label": "One email is not a campaign — the sequence is the campaign",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "each-follow-up-own-job",
+            "label": "Every follow-up needs its own reason to exist, and the last one is a clean exit",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "reply-fast-two-times",
+            "label": "A reply is the whole month's pipeline — answer it in minutes with two named times",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "booked-is-not-held",
+            "label": "A booked meeting is not a held meeting until you qualify, book close, and remind",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "follow-up-and-replies-u1",
+            "conceptId": "sequence-not-single-send",
+            "title": "Four to seven touches, not one",
+            "bodyMd": "Fifty emails sent once is not a campaign. At a 3.4% average reply rate, 50 one-shot emails produce one or two replies. A 3–5 step sequence replies at 8.3% versus 4.1% for one-and-done, and adding one follow-up lifts replies 50–66%.\n\nPick a number between 4 and 7 touches. Run every prospect to the end.\n\nSpace touches 3–4 days apart over about 20 days: day 0, day 2, day 6, day 10, day 17. A 3-day gap raised replies 31%; next-day cut them 11%.\n\nFree upgrade: add LinkedIn. Connection request day 1, email day 3, LinkedIn message day 7, email day 10 — about 15% replies versus 5% for email alone."
+          },
+          {
+            "kind": "card",
+            "id": "follow-up-and-replies-u2",
+            "conceptId": "each-follow-up-own-job",
+            "title": "Give each follow-up a job",
+            "bodyMd": "Follow-ups carry the sequence. In a 7.5M-email study, steps 2–6 produced 58.6% of replies. Step 3 alone drove 35.6% of email-sourced meetings. The meeting comes from the middle.\n\nNever send a bare bump. \"Just checking in\" and \"circling back\" lowered reply rates in every test. They give no new reason to answer.\n\nGive each follow-up one job: a different pain point, a proof point, a short teardown. Each has to stand alone, because the earlier ones probably went unread.\n\nEnd with a breakup — \"Should I close your file?\" It got 5x the response rate of mid-sequence follow-ups. Clean exit, never passive-aggressive."
+          },
+          {
+            "kind": "card",
+            "id": "follow-up-and-replies-u3",
+            "conceptId": "reply-fast-two-times",
+            "title": "Fifteen minutes and two named times",
+            "bodyMd": "A reply is not a lead to nurture later. It is your whole month's pipeline: 0.5–2% of sent emails become meetings, and teams turn only 15–30% of replies into calls.\n\nHard rule — any interested reply gets an answer in under 15 minutes. Answering within an hour makes you about 7x more likely to qualify them (2.24M leads).\n\nMake yes cost one word: two named times first, link as fallback. \"Tuesday at 2pm or Wednesday at 10am, or grab a time here: [link]\". Link alone booked 1.9%; suggested times 13x more.\n\nA soft no gets a question, not a second pitch."
+          },
+          {
+            "kind": "card",
+            "id": "follow-up-and-replies-u4",
+            "conceptId": "booked-is-not-held",
+            "title": "Booked is not held",
+            "bodyMd": "Cold-outbound no-shows run 25–35%. At a 60% show rate you book 7 meetings to hold 5.\n\nBook close to today. Same-day no-shows run about 7%, next-day 10%, eight or more days out past 23%.\n\nAsk one or two qualifying questions — company size, role, use case — before you show the calendar link.\n\nTurn on reminders 24 hours, 1 hour and 30 minutes before; automation cuts no-shows about 28%. Add a prep line: \"what's the one thing you want to walk away with?\"\n\nChase every no-show the same day. A third to a half rebook within 48 hours."
+          },
+          {
+            "kind": "check",
+            "id": "follow-up-and-replies-u5",
+            "conceptId": "sequence-not-single-send",
+            "question": "You have sent ~50 cold emails ever, each one a single send, and got 1 reply. What is the single highest-value change?",
+            "options": [
+              "Send 200 single emails next month instead of 50",
+              "Add one follow-up to every prospect and run each sequence to the end",
+              "Rewrite the subject line and send the same 50 again",
+              "Wait two weeks so the first email has time to land"
+            ],
+            "answerIndex": 1,
+            "explain": "c94: adding one follow-up lifts total replies 50–66%. c97: at a 3.4% reply rate, 50 one-shot sends were always going to produce one or two replies."
+          },
+          {
+            "kind": "check",
+            "id": "follow-up-and-replies-u6",
+            "conceptId": "each-follow-up-own-job",
+            "question": "It is day 6. Priya never opened emails one or two. What goes in the day-6 email?",
+            "options": [
+              "\"Just checking in — did you get a chance to look at my last email?\"",
+              "\"Bumping this to the top of your inbox.\"",
+              "A different pain point, stated so it makes sense on its own",
+              "The same email forwarded with \"any thoughts?\" on top"
+            ],
+            "answerIndex": 2,
+            "explain": "c101: each follow-up needs its own job and must stand alone. c100: bare bumps lowered reply rates in every test — they give no new reason to answer."
+          },
+          {
+            "kind": "check",
+            "id": "follow-up-and-replies-u7",
+            "conceptId": "reply-fast-two-times",
+            "question": "10:02am Tuesday: a VP Sales replies \"interested — what does this cost?\" What do you send?",
+            "options": [
+              "By 10:15: the price in one line, plus \"Tuesday 2pm or Wednesday 10am work? Or grab a time here: [link]\"",
+              "By 10:15: your booking link and nothing else",
+              "Tomorrow morning: a pricing PDF and your booking link",
+              "By 10:15: five qualifying questions before you name a price"
+            ],
+            "answerIndex": 0,
+            "explain": "c113: interested replies get an answer inside 15 minutes. c116: suggested times beat the bare link 13x. c123: one line plus one ask."
+          },
+          {
+            "kind": "check",
+            "id": "follow-up-and-replies-u8",
+            "conceptId": "booked-is-not-held",
+            "question": "It is Monday. Marcus says yes to a call. When do you put it?",
+            "options": [
+              "A week Thursday, so he has room to prepare",
+              "Tomorrow or Wednesday — the soonest slot he will take",
+              "Whenever his calendar auto-books, usually 10 days out",
+              "Friday, so you have time to research his company"
+            ],
+            "answerIndex": 1,
+            "explain": "c129: same-day no-shows run about 7%, next-day 10%, eight or more days out past 23%. Distance is what kills the meeting."
+          }
+        ],
+        "unitClaims": {
+          "follow-up-and-replies-u1": [
+            "c93",
+            "c94",
+            "c95",
+            "c97",
+            "c104",
+            "c105"
+          ],
+          "follow-up-and-replies-u2": [
+            "c98",
+            "c99",
+            "c100",
+            "c101",
+            "c102",
+            "c103"
+          ],
+          "follow-up-and-replies-u3": [
+            "c113",
+            "c114",
+            "c115",
+            "c116",
+            "c117",
+            "c118",
+            "c123"
+          ],
+          "follow-up-and-replies-u4": [
+            "c127",
+            "c128",
+            "c129",
+            "c130",
+            "c131",
+            "c132",
+            "c133"
+          ],
+          "follow-up-and-replies-u5": [
+            "c94",
+            "c96",
+            "c97",
+            "c111"
+          ],
+          "follow-up-and-replies-u6": [
+            "c100",
+            "c101",
+            "c98"
+          ],
+          "follow-up-and-replies-u7": [
+            "c113",
+            "c116",
+            "c123"
+          ],
+          "follow-up-and-replies-u8": [
+            "c129",
+            "c128",
+            "c127"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "follow-up-and-replies-d1",
+            "moduleId": "follow-up-and-replies",
+            "prompt": "Someone replies \"sure, happy to chat.\" Two versions of the reply went out to 50 people each. Which booked more demos?",
+            "options": [
+              "\"Grab a time that works for you: [calendar link]\"",
+              "\"Does Tuesday at 2pm or Wednesday at 10am work, or you can grab a time directly here: [calendar link]\""
+            ],
+            "winner": 1,
+            "result": "The calendar-link-only version booked 1.9% of the 50. The suggested-times version booked 13x more demos.",
+            "why": "Two named times make saying yes cost one word; a bare link makes the prospect do the scheduling work.",
+            "claimIds": [
+              "c116"
+            ],
+            "sourceId": "s159"
+          },
+          {
+            "kind": "sprint",
+            "id": "follow-up-and-replies-d2",
+            "moduleId": "follow-up-and-replies",
+            "prompt": "Your prospects are sales leaders at 50–500 person companies. Write the one-line job of each remaining touch in your sequence: day 2, day 6, day 10, and the day-17 breakup. One line each, each one a different reason to answer. The word \"checking\" is banned.",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-own-job",
+              "r-clean-exit"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "follow-up-and-replies-d3",
+            "moduleId": "follow-up-and-replies",
+            "segments": [
+              {
+                "text": "Day 0 — \"Marcus, saw you're hiring 3 SDRs. Most teams lose the first 6 weeks because new reps can't see what the good reps actually did. Worth 15 minutes?\""
+              },
+              {
+                "text": "Day 2 — \"Different angle: when you onboard 3 at once, your ramp cost is roughly 3x one bad month. The fix is usually visibility, not more training.\""
+              },
+              {
+                "text": "Day 6 — \"Just circling back on my last email — did you get a chance to take a look?\"",
+                "flaw": "A bare bump. It gives Marcus no new reason to reply and wastes the touch that should be doing the most work.",
+                "claimIds": [
+                  "c100",
+                  "c101",
+                  "c99"
+                ]
+              },
+              {
+                "text": "Day 10 — \"A 180-person team ramped their last two SDRs in 3 weeks instead of 7 after they started doing this. Happy to send the one-page breakdown.\""
+              },
+              {
+                "text": "Day 17 — \"Should I close your file? If hiring shifts and this gets relevant, my calendar is here: [link].\""
+              },
+              {
+                "text": "Marcus replies at 9:41am: \"send me info.\" You reply at 9:52am: \"Will do — is there anything specific you'd want in it: pricing, or how ramp time works for a team hiring 3 at once?\""
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "follow-up-and-replies-d4",
+            "moduleId": "follow-up-and-replies",
+            "original": "Great to hear from you. You're 8 weeks in, so you're probably still stitching together what your reps did last week from three different places — that's the part we kill. Does Tuesday at 2pm or Wednesday at 10am work, or grab a time here: [link]. Quick one before then: how many reps are you running now?",
+            "fromPersona": "p1",
+            "toPersona": "p3",
+            "rubricIds": [
+              "r-two-times",
+              "r-question-first",
+              "r-book-close"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-own-job",
+            "label": "Every follow-up carries a new reason to answer — a pain point, a proof point, a ",
+            "claimIds": [
+              "c100",
+              "c101",
+              "c98",
+              "c99"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-clean-exit",
+            "label": "The sequence ends with a breakup written as a clean exit, not a guilt trip.",
+            "claimIds": [
+              "c102",
+              "c103"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-two-times",
+            "label": "Interested replies get an answer inside 15 minutes, with two named times first a",
+            "claimIds": [
+              "c113",
+              "c115",
+              "c116"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-question-first",
+            "label": "A soft no or \"send me info\" gets one short question, not a second pitch. Under a",
+            "claimIds": [
+              "c118",
+              "c119",
+              "c120",
+              "c123",
+              "c126"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-book-close",
+            "label": "The next step is dated and near-term — a specific slot this week, not a vague ci",
+            "claimIds": [
+              "c125",
+              "c129",
+              "c122"
+            ],
+            "weight": 1
+          }
+        ],
+        "status": "todo"
+      },
+      {
+        "id": "run-the-numbers",
+        "title": "Run it week to week",
+        "angleIds": [
+          "running-the-numbers",
+          "funnel-math",
+          "daily-routine",
+          "diagnose-the-leak",
+          "tooling",
+          "scaling-inboxes"
+        ],
+        "concepts": [
+          {
+            "id": "rtn-target",
+            "label": "Five meetings a month is 400-540 unique prospects, not \"more emails\"",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "rtn-denominator",
+            "label": "Your denominator is unique people, not emails sent",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "rtn-four-numbers",
+            "label": "Four numbers a week tell you where the funnel leaks",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          },
+          {
+            "id": "rtn-daily-block",
+            "label": "A day's block is 20-50 sends per inbox, follow-ups included",
+            "mastery": 0,
+            "cleared": false,
+            "source": "unseen"
+          }
+        ],
+        "units": [
+          {
+            "kind": "card",
+            "id": "run-the-numbers-u1",
+            "conceptId": "rtn-target",
+            "title": "Work backwards from 5 meetings",
+            "bodyMd": "You want 5 meetings a month. Work backwards.\n\nAt a 5% reply rate with a quarter of repliers booking, that is about 400 unique prospects a month. At the 3.7% average reply rate, about 540. Measured the other way — meetings per 100 prospects — average campaigns land 0.5-2 and the best land 2-3. At 1%, you need roughly 500 prospects a month.\n\nSo the plan is 400-540 new people a month, or 100-135 a week. Pick 200 well-chosen names over 1,000 sloppy ones: lists under 200 reply at 15-20%, lists of 500-1,000 at 8%. Quality of the list sets the top of the funnel."
+          },
+          {
+            "kind": "card",
+            "id": "run-the-numbers-u2",
+            "conceptId": "rtn-denominator",
+            "title": "Count people, not sends",
+            "bodyMd": "A 4-step sequence to 150 people is 600 sends. It is still only 150 real chances. Divide replies by sends and your rate looks four times better than it is. Always divide by unique people.\n\nYour own number: 1 reply from 50 sends is 2%. That is under the 3.43% average and far from the 5.5% top quarter — but 50 people is too small to blame your copy. The typical sender needs about 135 contacts before one reply comes back. Some benchmarks are worse: 625 contacts per reply is a real data point.\n\nContact a few hundred people before you decide the email is the problem."
+          },
+          {
+            "kind": "card",
+            "id": "run-the-numbers-u3",
+            "conceptId": "rtn-four-numbers",
+            "title": "The four numbers, in order",
+            "bodyMd": "Log four numbers every week: prospects contacted, replies, positive replies, meetings booked. Nothing else.\n\nRead them in a fixed order. Bounce rate first — over 2% and your list is the leak, and no rewrite lands. Spam complaints under 0.10%, never near 0.30%, or providers throttle you. Then who is on the list. Then the message. Infrastructure failures make copy results unreadable.\n\nThe leak is usually between positive reply and booked meeting. And do not A/B test at this size: at a 3.4% baseline, 50 sends give each variant 1 or 2 replies — noise. Change one thing, send another 200, compare to your own last batch."
+          },
+          {
+            "kind": "card",
+            "id": "run-the-numbers-u4",
+            "conceptId": "rtn-daily-block",
+            "title": "What a sending day looks like",
+            "bodyMd": "Cap each inbox at 20-50 cold sends a day. Accounts sending 20-49 reply at 5.7% against a 4.5% average, and rates fall above that band. To send more, add inboxes — never raise the per-inbox number.\n\nA new inbox ramps: 10-20 a day the first week, then climb, never more than doubling day over day. No jumping from 20 to 200.\n\nFill the block with follow-ups as well as new names. A first reply takes about 4.8 touches, a booked meeting about 7.4. Run 4-6 steps over about three weeks — one email replies at 3.3%, a three-message sequence at 6.8%. Send Tuesday to Thursday, 8-10am their time."
+          },
+          {
+            "kind": "check",
+            "id": "run-the-numbers-u5",
+            "conceptId": "rtn-target",
+            "question": "You want 5 meetings a month. You assume a 5% reply rate and that a quarter of repliers book. How many unique prospects do you contact?",
+            "options": [
+              "About 100",
+              "About 400",
+              "About 1,200",
+              "About 5,000"
+            ],
+            "answerIndex": 1,
+            "explain": "5% of 400 is 20 replies; a quarter of 20 books 5 meetings. At the 3.7% average it takes about 540 (c134)."
+          },
+          {
+            "kind": "check",
+            "id": "run-the-numbers-u6",
+            "conceptId": "rtn-denominator",
+            "question": "You run a 4-step sequence to 150 people — 600 sends — and get 9 replies. What is your reply rate?",
+            "options": [
+              "1.5%, because 9 of 600 sends replied",
+              "6%, because 9 of 150 people replied",
+              "2.25%, averaged across the four steps",
+              "You cannot tell until the sequence ends"
+            ],
+            "answerIndex": 1,
+            "explain": "Unique people are the denominator. Using 600 sends makes the same result look four times better than it is (c135)."
+          },
+          {
+            "kind": "check",
+            "id": "run-the-numbers-u7",
+            "conceptId": "rtn-four-numbers",
+            "question": "Week's log: 220 contacted, 11 replies, 4 positive replies, 0 meetings booked, bounce rate 1.1%. What do you work on first?",
+            "options": [
+              "Rewrite the subject line",
+              "Double the sending volume",
+              "The gap between positive reply and booked meeting",
+              "Switch sending tools"
+            ],
+            "answerIndex": 2,
+            "explain": "Bounce is under 2% and copy is already producing positives. The leak is usually between positive reply and booked meeting (c140, c146)."
+          },
+          {
+            "kind": "check",
+            "id": "run-the-numbers-u8",
+            "conceptId": "rtn-daily-block",
+            "question": "One warmed inbox sends 40 a day and you want roughly triple the volume. What do you do?",
+            "options": [
+              "Raise that inbox to 120 a day",
+              "Add inboxes and keep each one at 20-50 a day",
+              "Send the whole week's volume on Monday",
+              "Start a new inbox at 100 a day"
+            ],
+            "answerIndex": 1,
+            "explain": "Reply rates fall above the 20-49 band, so add inboxes instead of raising per-inbox volume; new inboxes ramp from 10-20 (c141, c142)."
+          }
+        ],
+        "unitClaims": {
+          "run-the-numbers-u1": [
+            "c134",
+            "c138",
+            "c143"
+          ],
+          "run-the-numbers-u2": [
+            "c135",
+            "c136"
+          ],
+          "run-the-numbers-u3": [
+            "c140",
+            "c146",
+            "c147",
+            "c151",
+            "c149"
+          ],
+          "run-the-numbers-u4": [
+            "c141",
+            "c142",
+            "c145",
+            "c144",
+            "c137"
+          ],
+          "run-the-numbers-u5": [
+            "c134",
+            "c143"
+          ],
+          "run-the-numbers-u6": [
+            "c135"
+          ],
+          "run-the-numbers-u7": [
+            "c140",
+            "c146",
+            "c151"
+          ],
+          "run-the-numbers-u8": [
+            "c141",
+            "c142"
+          ]
+        },
+        "drills": [
+          {
+            "kind": "predict",
+            "id": "run-the-numbers-d1",
+            "moduleId": "run-the-numbers",
+            "prompt": "Same offer, same sender. One campaign targets fewer than 50 recipients. Another targets 1,000+. Which replied better?",
+            "options": [
+              "The campaign targeting fewer than 50 recipients",
+              "The campaign targeting 1,000+ recipients"
+            ],
+            "winner": 0,
+            "result": "Campaigns under 50 recipients replied at 5.8%. At 1,000+ recipients replies dropped to 2.1% — a 2.76x gap.",
+            "why": "Small cohorts let the message match the reader, so a weak rate on a big list is a targeting problem, not a volume problem.",
+            "claimIds": [
+              "c148",
+              "c138"
+            ],
+            "sourceId": "s196"
+          },
+          {
+            "kind": "sprint",
+            "id": "run-the-numbers-d2",
+            "moduleId": "run-the-numbers",
+            "prompt": "Your week: 210 unique prospects contacted, 8 replies, 2 positive, 0 meetings booked, bounce 1.1%, one inbox at 45 sends a day, single email with no follow-ups. Write one line per fix. Each line names the number it moves and the next action.",
+            "quota": 4,
+            "seconds": 90,
+            "rubricIds": [
+              "r-unique-denominator",
+              "r-volume-target",
+              "r-sequence-first",
+              "r-daily-block"
+            ]
+          },
+          {
+            "kind": "spot",
+            "id": "run-the-numbers-d3",
+            "moduleId": "run-the-numbers",
+            "segments": [
+              {
+                "text": "Week 3 log — prospects contacted: 150 unique people, all sales leaders at 50-500 person companies."
+              },
+              {
+                "text": "Sequence: 4 steps over 19 days, so 600 sends went out in total."
+              },
+              {
+                "text": "Reply rate: 9 replies out of 600 sends = 1.5%. Way under the 3.4% average, so the copy is broken. Rewriting the whole email this week.",
+                "flaw": "The denominator is sends, not people. 9 replies from 150 unique prospects is 6% — above average, not broken.",
+                "claimIds": [
+                  "c135",
+                  "c134"
+                ]
+              },
+              {
+                "text": "Bounce rate: 1.1%. Under the 2% line, so the list is clean enough to keep mailing."
+              },
+              {
+                "text": "Sending: 2 warmed inboxes at 35 a day each, Tuesday through Thursday."
+              },
+              {
+                "text": "Positive replies: 3. Meetings booked: 0. Next: fix the gap between positive reply and booked call."
+              }
+            ]
+          },
+          {
+            "kind": "rewrite",
+            "id": "run-the-numbers-d4",
+            "moduleId": "run-the-numbers",
+            "original": "Hi Priya — a lot of VPs of Sales struggle with reps wasting time on bad-fit accounts. We help fix that. Open to a quick chat this week?",
+            "fromPersona": "p1",
+            "toPersona": "p3",
+            "rubricIds": [
+              "r-opener-before-volume",
+              "r-sequence-first"
+            ]
+          }
+        ],
+        "rubric": [
+          {
+            "id": "r-unique-denominator",
+            "label": "Rates are figured on unique people contacted, never on emails sent",
+            "claimIds": [
+              "c135",
+              "c134"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-volume-target",
+            "label": "Names the volume the goal actually needs (400-540 prospects a month for 5 meetin",
+            "claimIds": [
+              "c134",
+              "c143",
+              "c138"
+            ],
+            "weight": 2
+          },
+          {
+            "id": "r-sequence-first",
+            "label": "Adds follow-ups and waits for a few hundred contacts before blaming the copy",
+            "claimIds": [
+              "c137",
+              "c145",
+              "c136"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "r-daily-block",
+            "label": "Keeps each inbox at 20-50 sends a day, ramped, Tuesday-Thursday",
+            "claimIds": [
+              "c141",
+              "c142",
+              "c144"
+            ],
+            "weight": 1
+          },
+          {
+            "id": "r-opener-before-volume",
+            "label": "Changes the whole angle of the opener before adding volume, not one word",
+            "claimIds": [
+              "c139",
+              "c150",
+              "c148"
+            ],
+            "weight": 2
+          }
+        ],
+        "status": "todo"
+      }
+    ],
+    "personas": [
+      {
+        "id": "p1",
+        "name": "Priya, VP Sales (8 weeks in)",
+        "role": "New VP Sales at a 180-person B2B SaaS company, hired to build outbound from scratch.",
+        "bio": "She is in her first 100 days and spending about 70% of a fresh budget, so she opens things that name the problem she was hired to fix. Week one her inbox was buried and she deleted everything; by day 60 she has already picked her tools. She reads on her phone between meetings, and an email that opens with 'Hi Priya, hope you're well' is gone before the second line.",
+        "sourceIds": [
+          "s15",
+          "s19",
+          "s20",
+          "s36",
+          "s62"
+        ]
+      },
+      {
+        "id": "p2",
+        "name": "Marcus, Head of Sales (hiring 3 SDRs)",
+        "role": "Head of Sales at a 60-person company that posted three SDR openings in the last 30 days.",
+        "bio": "He stops when an email names a consequence of something he just did — three reps ramping at once, no one to write their sequences — and ignores emails that just recite the job posting back to him, because he already knows he posted it. He replies to a question about his situation, not to a pitch; a founder asking for his read on the ramp problem gets an answer, a request for 30 minutes from a stra",
+        "sourceIds": [
+          "s11",
+          "s12",
+          "s14",
+          "s18",
+          "s48",
+          "s57",
+          "s81"
+        ]
+      },
+      {
+        "id": "p3",
+        "name": "Dana, CRO (400-person company)",
+        "role": "CRO at a 400-person software company, on every vendor list already.",
+        "bio": "She gives an email about nine seconds and stops reading past 100 words; the words 'AI', 'platform', and any feature-led opener read as a mass pitch and get archived. What earns a reply is a company-level number — revenue, cost, risk — in the first line, and a first ask that costs a click instead of a calendar slot. Without an easy way out she hits the spam button rather than reply.",
+        "sourceIds": [
+          "s34",
+          "s36",
+          "s69",
+          "s43",
+          "s129",
+          "s127"
+        ]
+      }
+    ],
+    "exemplars": [
+      {
+        "id": "e1",
+        "title": "First touch on a hiring trigger",
+        "body": "Subject: 3 sdrs ramping\n\nYou've added three SDRs in the last month.\n\nThe part that usually hurts is not the hiring — it's three reps ramping at once, all writing their own messaging, while the number stays the same.\n\nI'm the founder of a tool built for this. Two 200-person teams cut new-rep ramp from about 90 days to 45.\n\nWant me to send the one-pager on how they did it?\n\nNot relevant? Reply 'pass' and you won't hear from me again.",
+        "why": "77 words, one pain, one ask, plain lowercase subject and a founder first person — c43, c44, c45, c12, c19, c25, c29, c36, c38, c84.",
+        "sourceId": "s18"
+      },
+      {
+        "id": "e2",
+        "title": "Step 3: the teardown ask",
+        "body": "Different angle.\n\nI recorded 90 seconds walking through your team's public sequence — the three points where replies drop off.\n\nNo pitch in it. Want me to send it?",
+        "why": "The middle of the sequence carries the meetings, and asking permission to send a teardown beats asking for a call — c26, c27, c99, c101.",
+        "sourceId": "s44"
+      },
+      {
+        "id": "e3",
+        "title": "Breakup close",
+        "body": "Should I close your file?\n\nI've sent three notes about ramp time and haven't landed, so I'll assume it's not this quarter.\n\nIf that changes, my direct line is below and I'll answer it myself.",
+        "why": "A clean exit, no passive-aggressive jab, plus founder authority in the last line — c102, c103, c32.",
+        "sourceId": "s144"
+      }
+    ],
+    "metric": {
+      "name": "Reply rate on unique prospects contacted",
+      "unit": "percent",
+      "corpusMedian": 3.43
+    }
+  }
+}

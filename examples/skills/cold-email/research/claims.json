@@ -1,0 +1,3629 @@
+[
+  {
+    "id": "c1",
+    "angleId": "one-narrow-segment",
+    "text": "Send in small batches: campaigns under 50 recipients replied at 5.8% versus 2.1% for campaigns over 1,000 across 11 million emails, and campaigns of 21-50 averaged 6.2% versus 2.4% for 501+.",
+    "verdict": "solid",
+    "confidence": 0.78,
+    "sourceIds": [
+      "s1",
+      "s6",
+      "s28"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "small-list",
+      "list-size"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-08-21"
+  },
+  {
+    "id": "c2",
+    "angleId": "one-narrow-segment",
+    "text": "Define the segment by role plus company size plus a trigger, not role alone: tight-ICP campaigns reply at 3-5% versus 1-2% for role-only. Pick the industry, the size band, and the role before you write a word.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s3",
+      "s9",
+      "s10"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "targeting",
+      "icp"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-07-16"
+  },
+  {
+    "id": "c3",
+    "angleId": "one-narrow-segment",
+    "text": "Pick one employee-count band and write only for it: 0-10 employee companies replied at 0.72%, 11-50 at 0.49%, and 10,000+ at 0.22% across 7.5 million emails.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s2"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "company-size",
+      "targeting"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c4",
+    "angleId": "one-narrow-segment",
+    "text": "Micro-segmentation is what separates top senders at 10%+ reply rates from the 3.43% average across billions of 2025 sends.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s4"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "benchmark",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "newest": "2026-01-12"
+  },
+  {
+    "id": "c5",
+    "angleId": "one-narrow-segment",
+    "text": "Start with 50-100 named prospects in one segment per week instead of a big generic list: 100 tightly filtered contacts beat 1,000 generic ones.",
+    "verdict": "likely",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s5"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "beginner",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c6",
+    "angleId": "one-narrow-segment",
+    "text": "Write down a 'not this' rule and cut the list with it: teams that halved their list with a negative ICP doubled their reply rate.",
+    "verdict": "likely",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s5"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "beginner",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c7",
+    "angleId": "one-narrow-segment",
+    "text": "Irrelevance kills replies more than volume does: 71% of 217 surveyed decision-makers named lack of relevance as their main reason for not replying.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s1"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "small-list",
+      "list-size"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "newest": "2025"
+  },
+  {
+    "id": "c8",
+    "angleId": "one-narrow-segment",
+    "text": "Sales leaders reply around 6.6% on well-targeted sends versus 7.63% for founders, so a sales-leader segment needs tighter framing to hit average.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s6"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "small-list",
+      "list-size"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025-11-10"
+  },
+  {
+    "id": "c9",
+    "angleId": "trigger-events",
+    "text": "Build your list from companies posting sales roles — five SDR or AE openings in 30 days at a 50-500 person company is a real buying window. Send within 1 to 2 weeks of spotting the posting and drop the account after 30 to 45 days.",
+    "verdict": "contested",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s11",
+      "s12",
+      "s14"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "hiring-signal",
+      "mid-market"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "newest": "2026-05-28",
+    "sides": {
+      "for": [
+        "s11",
+        "s14"
+      ],
+      "against": [
+        "s12"
+      ]
+    }
+  },
+  {
+    "id": "c10",
+    "angleId": "trigger-events",
+    "text": "Triggers beat generic openers: opening on a real trigger event replied at 8.7% versus 3.2% for name-and-company personalization, and change-triggered outreach converts to opportunity at around 12% versus under 2% for plain cold outbound across 7,000 tracked opportunities.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s13",
+      "s16"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "first-touch",
+      "trigger-based"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025"
+  },
+  {
+    "id": "c11",
+    "angleId": "trigger-events",
+    "text": "Email a newly hired VP of Sales in weeks 2 through 6 of the job: week 1 their inbox is buried, by 60 days the signal is dead, and new buyers spend about 70% of their budget in their first 100 days.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s12",
+      "s20",
+      "s15",
+      "s16"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "hiring-signal",
+      "mid-market"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-04-01"
+  },
+  {
+    "id": "c12",
+    "angleId": "trigger-events",
+    "text": "Write about what the hiring causes, not the posting: \"you're hiring 3 SDRs\" is a fact they know, \"3 new SDRs ramping at once\" is a problem they feel.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s14",
+      "s18",
+      "s11"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "hiring-signal",
+      "mid-market"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-05-28"
+  },
+  {
+    "id": "c13",
+    "angleId": "list-building",
+    "text": "Verify right before you send, and make it a fixed step in every list build instead of a reaction: about 2% of a clean B2B list goes stale in four weeks and 23-25% in a year, yet 39% of teams only check their data after a bounce.",
+    "verdict": "likely",
+    "confidence": 0.63,
+    "sourceIds": [
+      "s22",
+      "s27",
+      "s28",
+      "s23",
+      "s24"
+    ],
+    "contextTags": [
+      "b2b",
+      "list-hygiene",
+      "pre-send",
+      "cold-email"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-08-21"
+  },
+  {
+    "id": "c14",
+    "angleId": "list-building",
+    "text": "Keep total bounces under 2% and hard bounces under 1%; stop and re-verify above 3%, because above 5% sending platforms throttle or suspend you.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s25",
+      "s27",
+      "s23"
+    ],
+    "contextTags": [
+      "cold-email",
+      "deliverability",
+      "sending-limits",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c15",
+    "angleId": "list-building",
+    "text": "Catch-all addresses are 20-40% of B2B domains and no verifier can confirm them: send them as their own segment in batches of 50-100, keep them under 15% of a day's volume, and stop that segment if it bounces over 2%.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s26",
+      "s27",
+      "s24"
+    ],
+    "contextTags": [
+      "b2b",
+      "apollo",
+      "list-hygiene",
+      "catch-all"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-30"
+  },
+  {
+    "id": "c16",
+    "angleId": "list-building",
+    "text": "Do not buy prebuilt lists: one 4,000-contact purchased list returned a 0.3% reply rate and over 12% bounces, enough to flag your domain.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s28"
+    ],
+    "contextTags": [
+      "b2b",
+      "list-hygiene",
+      "pre-send",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-21"
+  },
+  {
+    "id": "c17",
+    "angleId": "list-building",
+    "text": "Use three separate steps: source from Apollo or Sales Navigator, clean through a standalone verifier like MillionVerifier, then load into your sequencer.",
+    "verdict": "likely",
+    "confidence": 0.62,
+    "sourceIds": [
+      "s29",
+      "s30",
+      "s31"
+    ],
+    "contextTags": [
+      "b2b",
+      "tooling",
+      "list-build",
+      "tool-choice"
+    ],
+    "consensus": {
+      "x": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-07-09"
+  },
+  {
+    "id": "c18",
+    "angleId": "pain-to-promise",
+    "text": "Open with one named customer problem instead of your product, name one pain per email, and hold your product until the problem lands: one B2B team went from 1.1% to 4.8% replies in seven weeks with no change to list, tools, or volume.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s33",
+      "s39"
+    ],
+    "contextTags": [
+      "b2b",
+      "copywriting",
+      "first-touch",
+      "b2b-saas"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "podcast": "agree"
+    },
+    "newest": "2026-07-12"
+  },
+  {
+    "id": "c19",
+    "angleId": "pain-to-promise",
+    "text": "Put a number in your promise and name their industry, their problem, and your result: generic value props like \"we help companies grow\" get about 3% replies, a specific measurable result about 7%.",
+    "verdict": "likely",
+    "confidence": 0.64,
+    "sourceIds": [
+      "s35",
+      "s38",
+      "s40"
+    ],
+    "contextTags": [
+      "b2b",
+      "copywriting",
+      "value-prop"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-07-08"
+  },
+  {
+    "id": "c20",
+    "angleId": "pain-to-promise",
+    "text": "Cut words like \"AI\" and \"platform\" and any feature-led opener — they lower reply rates from executives because they read as a mass pitch.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s34"
+    ],
+    "contextTags": [
+      "executives",
+      "copywriting",
+      "cold-email",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c21",
+    "angleId": "pain-to-promise",
+    "text": "You get about three seconds to earn the open and about nine seconds to be read, so put the promise in one line near the top.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s34"
+    ],
+    "contextTags": [
+      "executives",
+      "copywriting",
+      "cold-email",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c22",
+    "angleId": "pain-to-promise",
+    "text": "Aim the promise at the reader's level: sales leaders and other executives reply to company revenue, cost and risk, while managers reply to tactics.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s36"
+    ],
+    "contextTags": [
+      "executives",
+      "b2b",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "newest": "2026-02-23"
+  },
+  {
+    "id": "c23",
+    "angleId": "pain-to-promise",
+    "text": "Treat a 2% reply rate as a message problem, not a volume problem: B2B SaaS cold email averages 3.4% replies and the top 10% of campaigns hit 10.7%.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s37",
+      "s33"
+    ],
+    "contextTags": [
+      "b2b-saas",
+      "benchmark",
+      "cold-email",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-12"
+  },
+  {
+    "id": "c24",
+    "angleId": "the-ask",
+    "text": "On a first cold email, ask if they're interested rather than proposing a day and time — 30% versus 15% meetings booked across 304,174 emails, and 68% of replies positive versus 41% for meeting-request CTAs. Save the day-and-time ask for after they reply: specific CTAs convert 15% on cold first touches versus 37% once a deal is live.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s41",
+      "s42"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "the-ask",
+      "follow-up"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c25",
+    "angleId": "the-ask",
+    "text": "Use a soft ask instead of \"book a demo\" — 4.2% versus 1.4% replies across 200,000+ cold emails. Do not ask a stranger for 30 minutes in the first message; make the first ask cost a click, not a calendar slot.",
+    "verdict": "likely",
+    "confidence": 0.63,
+    "sourceIds": [
+      "s43",
+      "s42",
+      "s48"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "the-ask",
+      "follow-up"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-08-07"
+  },
+  {
+    "id": "c26",
+    "angleId": "the-ask",
+    "text": "Offer a teardown of something they own instead of a call, and ask permission to send it rather than attaching it: \"Filmed a quick teardown of [X], want to see it?\" gets 5-7% replies versus 2-4% for \"Open to a 15-minute call next Tuesday?\" The ask is \"want it?\", not \"here it is\".",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s44",
+      "s47"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "b2b",
+      "meeting-ask"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "podcast": "agree"
+    },
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c27",
+    "angleId": "the-ask",
+    "text": "A short personalized video is the strongest teardown ask: video campaigns pull 10-16% reply rates against a 3.4% text baseline, and in an 8,000-email test \"Can I show you a demo video?\" took 50% of the positive replies versus 27% and 22% for vaguer asks.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s45",
+      "s44",
+      "s50"
+    ],
+    "contextTags": [
+      "cold-email",
+      "video",
+      "first-touch",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "reddit": "agree"
+    },
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c28",
+    "angleId": "the-ask",
+    "text": "If you ask for 15 minutes, name what they get: \"15-minute deliverability check for your current setup\" beats \"quick call\".",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s46",
+      "s44"
+    ],
+    "contextTags": [
+      "cold-email",
+      "meeting-ask",
+      "reply-handling",
+      "booking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c29",
+    "angleId": "founder-angle",
+    "text": "Send from your own name and title as founder, and write in first person — \"I'm building…\" not \"We at [Company]…\": founder/CEO senders show roughly +0.5 to +1.0 percentage points of reply rate at 50-500 person companies, and founder-written lists land 5-10% replies against 1-3% for generic sends.",
+    "verdict": "likely",
+    "confidence": 0.69,
+    "sourceIds": [
+      "s51",
+      "s3",
+      "s52",
+      "s53"
+    ],
+    "contextTags": [
+      "founder-led",
+      "b2b",
+      "mid-market",
+      "volume-planning"
+    ],
+    "consensus": {
+      "youtube": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-07-16"
+  },
+  {
+    "id": "c30",
+    "angleId": "founder-angle",
+    "text": "Tell the story only you have: you hit this problem yourself and built the tool for it.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s52",
+      "s53"
+    ],
+    "contextTags": [
+      "founder-led",
+      "b2b",
+      "mid-market",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-08"
+  },
+  {
+    "id": "c31",
+    "angleId": "founder-angle",
+    "text": "Ask a sales leader for their read on the problem instead of their calendar — people grant a favor more readily than a purchase.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s57",
+      "s58"
+    ],
+    "contextTags": [
+      "founder-led",
+      "first-touch",
+      "b2b",
+      "volume-planning"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-23"
+  },
+  {
+    "id": "c32",
+    "angleId": "founder-angle",
+    "text": "Use authority a rep does not have: offer a pilot, a price, a fix, or your personal phone number right in the reply thread.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s52",
+      "s54"
+    ],
+    "contextTags": [
+      "founder-led",
+      "b2b",
+      "mid-market",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "podcast": "agree"
+    },
+    "newest": "2026-07-08"
+  },
+  {
+    "id": "c33",
+    "angleId": "founder-angle",
+    "text": "Run the funnel backwards before sending: at average rates 1,000 emails produce about 7 booked meetings, so plan on 150-250 hand-personalized founder emails a week at a 3-8% reply rate — about 10 conversations a week, enough for 5 meetings a month.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s52",
+      "s58",
+      "s51"
+    ],
+    "contextTags": [
+      "founder-led",
+      "b2b",
+      "mid-market",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-08-23"
+  },
+  {
+    "id": "c34",
+    "angleId": "founder-angle",
+    "text": "Do not hand cold email to a tool or an agency at 50 emails sent — writing every line yourself is how you learn which pitch works.",
+    "verdict": "solid",
+    "confidence": 0.7,
+    "sourceIds": [
+      "s56",
+      "s54",
+      "s55"
+    ],
+    "contextTags": [
+      "founder-led",
+      "early-stage",
+      "small-list",
+      "reply-thread"
+    ],
+    "consensus": {
+      "x": "agree",
+      "podcast": "agree"
+    },
+    "newest": "2024-11-24"
+  },
+  {
+    "id": "c35",
+    "angleId": "founder-angle",
+    "text": "Use the founder angle now, while you are still the person who built and sells the thing — it stops working once emails come from a sales hire.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s55",
+      "s52"
+    ],
+    "contextTags": [
+      "founder-led",
+      "early-stage",
+      "small-list",
+      "b2b"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-07-08"
+  },
+  {
+    "id": "c36",
+    "angleId": "subject-and-first-line",
+    "text": "Keep subject lines short: 2-4 words opened at 46% across 5.5M B2B cold emails while ten-word lines fell to 34%, and 21-40 characters opened at 49.1% versus 39.2% above 60 — iPhone cuts at 35-40 characters, Gmail on Android at 30-35.",
+    "verdict": "solid",
+    "confidence": 0.74,
+    "sourceIds": [
+      "s59",
+      "s60",
+      "s62"
+    ],
+    "contextTags": [
+      "subject-line",
+      "cold-email",
+      "b2b",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-19"
+  },
+  {
+    "id": "c37",
+    "angleId": "subject-and-first-line",
+    "text": "Put one specific detail from their world in the subject line — a competitor's name, their city, a post they wrote — instead of a generic 'quick question' or 'idea for [company]'. Opens go from about 35% to about 46% and replies double from 3% to 7%; one practitioner went from 41% to 74% opens.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s59",
+      "s60",
+      "s62",
+      "s63",
+      "s64"
+    ],
+    "contextTags": [
+      "subject-line",
+      "cold-email",
+      "b2b",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-05-19"
+  },
+  {
+    "id": "c38",
+    "angleId": "subject-and-first-line",
+    "text": "Write the subject line so it looks like it came from a coworker inside their company: plain, lowercase, no pitch.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s65",
+      "s60"
+    ],
+    "contextTags": [
+      "cold-email",
+      "subject-line",
+      "b2b",
+      "first-touch"
+    ],
+    "consensus": {
+      "podcast": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-05-05"
+  },
+  {
+    "id": "c39",
+    "angleId": "subject-and-first-line",
+    "text": "Cut jargon, urgency words and greetings like 'Hello, friend' or 'ASAP' from the subject line — they drop opens below 36%.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s59"
+    ],
+    "contextTags": [
+      "subject-line",
+      "cold-email",
+      "b2b",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025-08-06"
+  },
+  {
+    "id": "c40",
+    "angleId": "subject-and-first-line",
+    "text": "Your first sentence shows as preview text next to the subject line, so it gets read before the email is opened. Keep the subject short to leave room for it, and never spend that first line on 'Hi {{firstName}}, hope you're well' or on introducing yourself — it burns the ~35 characters of preview a phone shows.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s61",
+      "s62"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "mobile-preview",
+      "subject-line"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-19"
+  },
+  {
+    "id": "c41",
+    "angleId": "subject-and-first-line",
+    "text": "Open with a factual observation about them or their role's pain instead of a compliment, like 'Most [job title] at [industry] waste 10+ hours/week on [pain point]' — that pattern reports 4-8% positive replies.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s66",
+      "s63"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "b2b",
+      "subject-line"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-03-21"
+  },
+  {
+    "id": "c42",
+    "angleId": "subject-and-first-line",
+    "text": "Question-shaped subject lines hit the top open rate of 46%, and putting numbers in the subject line does nothing (27% with versus 28% without).",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s59"
+    ],
+    "contextTags": [
+      "subject-line",
+      "cold-email",
+      "b2b",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025-08-06"
+  },
+  {
+    "id": "c43",
+    "angleId": "structure-and-length",
+    "text": "Keep the first email under about 80 words, roughly six short sentences. Emails of 50-125 words replied at 8.2% against 3.9% for 200-300 word emails, and across 34 million sends the 20-39 word band replied best at 4.5%. A 47-word email is a real email; adding paragraphs to sound serious costs replies.",
+    "verdict": "solid",
+    "confidence": 0.7,
+    "sourceIds": [
+      "s4",
+      "s71",
+      "s67",
+      "s68",
+      "s70",
+      "s74"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "benchmark",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c44",
+    "angleId": "structure-and-length",
+    "text": "For sales leaders, reply rates drop sharply past 100 words — an executive gives your email about nine seconds.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s69"
+    ],
+    "contextTags": [
+      "cold-email",
+      "executive-buyers",
+      "sales-leaders"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-29"
+  },
+  {
+    "id": "c45",
+    "angleId": "structure-and-length",
+    "text": "Put exactly one ask in the email. If you want three things, that is a three-email sequence — a second ask forces a decision, and readers who have to decide close the tab.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s44",
+      "s4"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "b2b",
+      "meeting-ask"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c46",
+    "angleId": "structure-and-length",
+    "text": "Keep sentences to 8-12 words — each long sentence costs about 17% of your response chance, and four short sentences is only 35-50 words.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s47",
+      "s67"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "copywriting",
+      "reply-rate"
+    ],
+    "consensus": {
+      "podcast": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c47",
+    "angleId": "structure-and-length",
+    "text": "Write for a phone screen: 61% of B2B emails are opened on a phone first, and at 75-100 words the whole email fits without scrolling.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s67",
+      "s71"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "copywriting",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c48",
+    "angleId": "structure-and-length",
+    "text": "Make the ask your last sentence — emails with the call-to-action in the final sentence got 22% more replies than ones with it buried mid-body.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s67"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "copywriting",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c49",
+    "angleId": "structure-and-length",
+    "text": "Use a four-part skeleton and nothing else: short personalized subject line, one relevant opener, one line of value, one simple ask — all under 100 words.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s72",
+      "s73"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "template"
+    ],
+    "consensus": {
+      "x": "agree"
+    },
+    "newest": "2026-06-21"
+  },
+  {
+    "id": "c50",
+    "angleId": "personalization-at-scale",
+    "text": "You need one or two custom details per email, not a custom email. Across 31 million sends, emails with two custom attributes replied at 5.6% versus 3.6% with none, and hand-researched personalization roughly doubles replies (17-18% versus 7-9%) — but it multiplies an already-correct list instead of fixing a wrong one.",
+    "verdict": "contested",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s75",
+      "s76",
+      "s78",
+      "s79",
+      "s83"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "mixed",
+      "facebook": "disagree"
+    },
+    "newest": "2026-08-07",
+    "sides": {
+      "for": [
+        "s75",
+        "s76",
+        "s78"
+      ],
+      "against": [
+        "s79",
+        "s83"
+      ]
+    }
+  },
+  {
+    "id": "c51",
+    "angleId": "personalization-at-scale",
+    "text": "Cap research at 2-4 minutes per prospect. Full hand-research runs 15-18 minutes, and 10-15 minutes per email caps you at about 30 emails a day.",
+    "verdict": "likely",
+    "confidence": 0.68,
+    "sourceIds": [
+      "s77",
+      "s79",
+      "s78"
+    ],
+    "contextTags": [
+      "cold-email",
+      "high-volume",
+      "solo-founder",
+      "ai-drafted"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-07"
+  },
+  {
+    "id": "c52",
+    "angleId": "personalization-at-scale",
+    "text": "Write one custom line per 21-50 person segment and reuse it across that list: those sequences replied at 6.2% versus 2.4% for lists of 500+, a 158% gap. Save 20-40 minute per-prospect research for deals above $100K.",
+    "verdict": "solid",
+    "confidence": 0.73,
+    "sourceIds": [
+      "s75",
+      "s78",
+      "s80"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-08-07"
+  },
+  {
+    "id": "c53",
+    "angleId": "personalization-at-scale",
+    "text": "Personalize on a business fact — a decision they just made — not on their school or a 'passion for innovation'. Merge tags like {{first_name}} and {{company_name}} barely move reply rates; the custom snippet has to be something a template cannot generate.",
+    "verdict": "likely",
+    "confidence": 0.64,
+    "sourceIds": [
+      "s80",
+      "s81",
+      "s47",
+      "s76",
+      "s83"
+    ],
+    "contextTags": [
+      "low-acv",
+      "b2b",
+      "segmented-list",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree",
+      "podcast": "agree",
+      "facebook": "agree"
+    },
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c54",
+    "angleId": "personalization-at-scale",
+    "text": "Open with a short question about the prospect's current situation instead of a compliment or a product statement — that shape recurred across the top campaigns in a 1,160-campaign review.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s81"
+    ],
+    "contextTags": [
+      "first-touch",
+      "b2b",
+      "opener"
+    ],
+    "consensus": {
+      "x": "agree"
+    },
+    "newest": "2026-04-27"
+  },
+  {
+    "id": "c55",
+    "angleId": "personalization-at-scale",
+    "text": "Feed AI openers real research data. Built that way they lifted replies 57%, and the 140%-lift workflow is just research-then-write automated.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s77",
+      "s82"
+    ],
+    "contextTags": [
+      "cold-email",
+      "high-volume",
+      "solo-founder",
+      "ai-drafted"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-07-31"
+  },
+  {
+    "id": "c56",
+    "angleId": "personalization-at-scale",
+    "text": "Hand-edit a handful of emails before sending instead of writing each from scratch: manual edits lifted average reply rate from 4.4% to 5.2%.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s75"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "newest": "2025"
+  },
+  {
+    "id": "c57",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Send cold email from lookalike domains like tryacme.com, getacme.com, or useacme.com pointed at your main site, never from your company's real domain.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s87",
+      "s85"
+    ],
+    "contextTags": [
+      "domain-setup",
+      "deliverability",
+      "cold-email",
+      "send-volume"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c58",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Put 2 to 3 inboxes on each domain — 2 on Google Workspace — because 5 or more on a fresh domain reads as a sending operation to spam filters.",
+    "verdict": "likely",
+    "confidence": 0.34,
+    "sourceIds": [
+      "s85"
+    ],
+    "contextTags": [
+      "domain-setup",
+      "deliverability",
+      "cold-email",
+      "new-domain"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c59",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Warm every new inbox at least 14 days before the first cold send. Placement climbs to about 95% in week one and 98% by week two, then flattens; skipping warmup costs about 23 points of first-week placement (91.3% with versus 68.4% without).",
+    "verdict": "solid",
+    "confidence": 0.7,
+    "sourceIds": [
+      "s84",
+      "s85",
+      "s91",
+      "s86"
+    ],
+    "contextTags": [
+      "new-inbox",
+      "warmup",
+      "deliverability",
+      "new-domain"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-07-01"
+  },
+  {
+    "id": "c60",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Cap each inbox at 15 to 30 cold sends a day and count warmup mail against that cap — if warmup sends 25, you have 25 cold slots left, not 50.",
+    "verdict": "solid",
+    "confidence": 0.77,
+    "sourceIds": [
+      "s85",
+      "s86",
+      "s88"
+    ],
+    "contextTags": [
+      "domain-setup",
+      "deliverability",
+      "cold-email",
+      "new-domain"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-04-16"
+  },
+  {
+    "id": "c61",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Start at 5 to 10 sends a day per inbox and add about 2 a day, never increasing more than 1.5x the previous step.",
+    "verdict": "solid",
+    "confidence": 0.72,
+    "sourceIds": [
+      "s89",
+      "s86",
+      "s90"
+    ],
+    "contextTags": [
+      "new-inbox",
+      "ramp-up",
+      "deliverability",
+      "warmup"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-09-01"
+  },
+  {
+    "id": "c62",
+    "angleId": "domain-and-inbox-setup",
+    "text": "A brand-new domain is not the blocker: across 4,406 inboxes domain age barely correlated with placement (r = -0.096), with a six-month-old domain at 99.06% and a ten-year-old at 98.41%.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s84"
+    ],
+    "contextTags": [
+      "new-inbox",
+      "warmup",
+      "deliverability",
+      "new-domain"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-01"
+  },
+  {
+    "id": "c63",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Divide your daily send target by the per-inbox cap to get your inbox count, then spread those inboxes across at least two or three domains.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s87",
+      "s85"
+    ],
+    "contextTags": [
+      "domain-setup",
+      "deliverability",
+      "cold-email",
+      "send-volume"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c64",
+    "angleId": "domain-and-inbox-setup",
+    "text": "Keep warmup running after you start sending, at roughly a 2:1 warm-to-cold ratio early on, so placement does not drift down.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s85",
+      "s87"
+    ],
+    "contextTags": [
+      "domain-setup",
+      "deliverability",
+      "cold-email",
+      "new-domain"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c65",
+    "angleId": "authentication-records",
+    "text": "Gmail requires SPF or DKIM on every sender, and at 5,000+ messages a day to Gmail you need both plus a DMARC record, where p=none is enough.",
+    "verdict": "stale",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s94",
+      "s98"
+    ],
+    "contextTags": [
+      "gmail",
+      "authentication",
+      "high-volume",
+      "alignment"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    }
+  },
+  {
+    "id": "c66",
+    "angleId": "authentication-records",
+    "text": "Domains with SPF, DKIM, and DMARC all set up land in the inbox about 84% of the time versus about 45% with no authentication — but even fully authenticated mail hit spam more than 30% of the time across millions of 2025 tests. Fixing DNS stops silent filtering; it does not earn replies.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s96",
+      "s97",
+      "s103"
+    ],
+    "contextTags": [
+      "deliverability",
+      "pre-copy",
+      "cold-email",
+      "2025-data"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-04-20"
+  },
+  {
+    "id": "c67",
+    "angleId": "authentication-records",
+    "text": "Publish a TXT record at _dmarc.yourdomain.com reading v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com, then move to p=quarantine after about 4 weeks and p=reject after about 8.",
+    "verdict": "contested",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s98",
+      "s102",
+      "s94",
+      "s100",
+      "s101"
+    ],
+    "contextTags": [
+      "gmail",
+      "authentication",
+      "high-volume",
+      "spf"
+    ],
+    "consensus": {
+      "blog": "mixed",
+      "x": "agree",
+      "docs": "agree",
+      "reddit": "disagree"
+    },
+    "newest": "2026-07-17",
+    "sides": {
+      "for": [
+        "s98",
+        "s102",
+        "s94"
+      ],
+      "against": [
+        "s100",
+        "s101"
+      ]
+    }
+  },
+  {
+    "id": "c68",
+    "angleId": "authentication-records",
+    "text": "The domain in your From: address has to match your SPF or DKIM domain, or Gmail treats the mail as unauthenticated even when both pass.",
+    "verdict": "stale",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s94"
+    ],
+    "contextTags": [
+      "gmail",
+      "authentication",
+      "high-volume",
+      "alignment"
+    ],
+    "consensus": {
+      "docs": "agree"
+    }
+  },
+  {
+    "id": "c69",
+    "angleId": "authentication-records",
+    "text": "Generate your DKIM key at 2048 bits when your provider allows it; Google's minimum is 1024 bits and anything weaker fails.",
+    "verdict": "stale",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s98",
+      "s94"
+    ],
+    "contextTags": [
+      "gmail",
+      "authentication",
+      "high-volume",
+      "spf"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    }
+  },
+  {
+    "id": "c70",
+    "angleId": "plain-text-no-tracking",
+    "text": "Turn open tracking off. The pixel is a 1x1 invisible image that forces your email into HTML and calls an outside server; in a 44-million-email comparison, campaigns without tracking replied at 2.36% versus 1.08% with it on, and emails carrying a pixel were about 15% more likely to be flagged as spam. Removing it is a cheap edge, not a fix for a bad list or bad copy.",
+    "verdict": "contested",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s105",
+      "s111",
+      "s106",
+      "s109",
+      "s112",
+      "s110",
+      "s107"
+    ],
+    "contextTags": [
+      "cold-email",
+      "reply-rate",
+      "large-sample",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "mixed",
+      "docs": "mixed"
+    },
+    "newest": "2026-08-31",
+    "sides": {
+      "for": [
+        "s105",
+        "s111",
+        "s106",
+        "s109",
+        "s112"
+      ],
+      "against": [
+        "s110",
+        "s107"
+      ]
+    }
+  },
+  {
+    "id": "c71",
+    "angleId": "plain-text-no-tracking",
+    "text": "Open rates are already fake — Apple Mail pre-loads pixels at delivery and accounts for 64.66% of all tracked opens — so you lose nothing by turning tracking off.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s108",
+      "s109"
+    ],
+    "contextTags": [
+      "open-rates",
+      "apple-mail",
+      "measurement",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c72",
+    "angleId": "plain-text-no-tracking",
+    "text": "If you only remove one thing, remove click tracking — it rewrites your links through a tracking domain and hurts delivery more than open tracking does.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s112",
+      "s105"
+    ],
+    "contextTags": [
+      "deliverability",
+      "plain-text",
+      "cold-email",
+      "prioritization"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-07-17"
+  },
+  {
+    "id": "c73",
+    "angleId": "plain-text-no-tracking",
+    "text": "Put no link in the first email — campaigns without tracked links replied at 0.87% versus 0.21% for those with them, even though the tracked ones showed better open and click numbers.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s105",
+      "s113"
+    ],
+    "contextTags": [
+      "cold-email",
+      "reply-rate",
+      "large-sample",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-07-17"
+  },
+  {
+    "id": "c74",
+    "angleId": "plain-text-no-tracking",
+    "text": "Track reply rate instead of open rate, and treat 2% or higher as proof you are landing in the inbox, because a human had to read the email to answer.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s109",
+      "s111",
+      "s108"
+    ],
+    "contextTags": [
+      "deliverability",
+      "plain-text",
+      "cold-email",
+      "open-rates"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c75",
+    "angleId": "plain-text-no-tracking",
+    "text": "Images are fine — filters distinguish an image from a tracking pixel, and emails with and without images showed no measurable deliverability difference.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s107"
+    ],
+    "contextTags": [
+      "deliverability",
+      "expectation-setting",
+      "cold-email",
+      "email-design"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c76",
+    "angleId": "placement-testing",
+    "text": "Send every new template to a set of real seed inboxes first, because your tool's 99% delivery rate counts mail the server accepted, including everything it dropped into spam.",
+    "verdict": "likely",
+    "confidence": 0.63,
+    "sourceIds": [
+      "s118",
+      "s120",
+      "s116"
+    ],
+    "contextTags": [
+      "pre-launch",
+      "new-template",
+      "deliverability",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c77",
+    "angleId": "placement-testing",
+    "text": "Use 85% inbox placement as your go/no-go line: above 90% is healthy, below 85% means fix the template or sending setup before you send to prospects.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s116",
+      "s120"
+    ],
+    "contextTags": [
+      "pre-launch",
+      "new-template",
+      "deliverability",
+      "seed-testing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-04-05"
+  },
+  {
+    "id": "c78",
+    "angleId": "placement-testing",
+    "text": "Use a seed panel of roughly 10 to 40 monitored inboxes matched to where your prospects read mail — for sales leaders at 50-500 person companies that is Google Workspace and Microsoft 365, not consumer Gmail.",
+    "verdict": "likely",
+    "confidence": 0.69,
+    "sourceIds": [
+      "s119",
+      "s118",
+      "s122"
+    ],
+    "contextTags": [
+      "b2b",
+      "seed-testing",
+      "workspace-m365",
+      "deliverability"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c79",
+    "angleId": "placement-testing",
+    "text": "Read placement results provider by provider. An 85% average can hide half your Microsoft mail in Junk while Gmail looks clean.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s122",
+      "s120"
+    ],
+    "contextTags": [
+      "b2b",
+      "seed-testing",
+      "workspace-m365",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-10"
+  },
+  {
+    "id": "c80",
+    "angleId": "placement-testing",
+    "text": "Run the test through the exact tool and sending inbox you'll use for the real campaign. A message typed into Gmail's compose window carries different headers and gives a false pass.",
+    "verdict": "likely",
+    "confidence": 0.46,
+    "sourceIds": [
+      "s116"
+    ],
+    "contextTags": [
+      "pre-launch",
+      "new-template",
+      "deliverability",
+      "seed-testing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-04-05"
+  },
+  {
+    "id": "c81",
+    "angleId": "placement-testing",
+    "text": "A warmup dashboard's green score is not placement proof — the two disagree. Run a separate seed test weekly while campaigns run, every 3 days while repairing bad placement, and again before every new template or volume increase.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s115",
+      "s121",
+      "s118",
+      "s116"
+    ],
+    "contextTags": [
+      "deliverability",
+      "warmup-tools",
+      "seed-testing",
+      "ongoing-campaigns"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c82",
+    "angleId": "placement-testing",
+    "text": "Most placement tests report in under 10 minutes, so never launch a template untested.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s116",
+      "s119"
+    ],
+    "contextTags": [
+      "pre-launch",
+      "new-template",
+      "deliverability",
+      "seed-testing"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-04-05"
+  },
+  {
+    "id": "c83",
+    "angleId": "placement-testing",
+    "text": "A clean seed test only proves the template can reach an inbox. Check it against your real bounce, complaint, and reply numbers after the send.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s122",
+      "s118"
+    ],
+    "contextTags": [
+      "b2b",
+      "seed-testing",
+      "workspace-m365",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c84",
+    "angleId": "opt-out-and-compliance",
+    "text": "A plain sentence like \"Not relevant? Reply 'pass' and you won't hear from me again\" satisfies CAN-SPAM. The law requires an opt-out that is clear and works, not a clickable link.",
+    "verdict": "solid",
+    "confidence": 0.72,
+    "sourceIds": [
+      "s127",
+      "s125"
+    ],
+    "contextTags": [
+      "us-canspam",
+      "cold-email",
+      "b2b",
+      "list-hygiene"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-06-11"
+  },
+  {
+    "id": "c85",
+    "angleId": "opt-out-and-compliance",
+    "text": "Write the opt-out as a human line, not a marketing footer. Across 200+ campaigns the human version lifted reply rate 18–25%, and the footer version was 2–3x more likely to land in Promotions.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s128",
+      "s131"
+    ],
+    "contextTags": [
+      "b2b",
+      "cold-email",
+      "copywriting",
+      "200-campaign-sample"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-05-20"
+  },
+  {
+    "id": "c86",
+    "angleId": "opt-out-and-compliance",
+    "text": "Every cold email must include a real physical postal address. A street address, USPS-registered PO box, or registered private mailbox all count.",
+    "verdict": "stale",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s125"
+    ],
+    "contextTags": [
+      "us-canspam",
+      "cold-email",
+      "b2b",
+      "list-hygiene"
+    ],
+    "consensus": {
+      "docs": "agree"
+    }
+  },
+  {
+    "id": "c87",
+    "angleId": "opt-out-and-compliance",
+    "text": "Honor every opt-out within 10 business days, keep the opt-out mechanism working for at least 30 days after sending, and never require more than a reply or one page visit.",
+    "verdict": "stale",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s125"
+    ],
+    "contextTags": [
+      "us-canspam",
+      "cold-email",
+      "b2b",
+      "list-hygiene"
+    ],
+    "consensus": {
+      "docs": "agree"
+    }
+  },
+  {
+    "id": "c88",
+    "angleId": "opt-out-and-compliance",
+    "text": "Emailing someone after they opt out is a separate violation per message at up to $53,088 each. Keep one suppression list and check it before every send.",
+    "verdict": "solid",
+    "confidence": 0.72,
+    "sourceIds": [
+      "s125",
+      "s127"
+    ],
+    "contextTags": [
+      "us-canspam",
+      "cold-email",
+      "b2b",
+      "list-hygiene"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-06-11"
+  },
+  {
+    "id": "c89",
+    "angleId": "opt-out-and-compliance",
+    "text": "Without an easy way out, recipients hit spam instead. A clear opt-out mechanism cut spam complaint rate 40–60% versus the same campaign without one, and one complaint per 1,000 emails (0.1%) puts you in Gmail's warning zone while 0.3% risks your sending being shut down.",
+    "verdict": "solid",
+    "confidence": 0.74,
+    "sourceIds": [
+      "s129",
+      "s126",
+      "s130"
+    ],
+    "contextTags": [
+      "deliverability",
+      "gmail",
+      "cold-email",
+      "a-b-tested"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-09-05"
+  },
+  {
+    "id": "c90",
+    "angleId": "opt-out-and-compliance",
+    "text": "Expect 1–3% of replies to be opt-out requests and an opt-out rate of 0.5–1.5% of sends. Much higher means your targeting is off, not your opt-out line.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s128"
+    ],
+    "contextTags": [
+      "b2b",
+      "cold-email",
+      "copywriting",
+      "200-campaign-sample"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-20"
+  },
+  {
+    "id": "c91",
+    "angleId": "opt-out-and-compliance",
+    "text": "Under 5,000 messages a day to Gmail you don't need one-click List-Unsubscribe headers, but that exemption ends as soon as you scale past it.",
+    "verdict": "likely",
+    "confidence": 0.68,
+    "sourceIds": [
+      "s126",
+      "s128"
+    ],
+    "contextTags": [
+      "deliverability",
+      "gmail",
+      "cold-email",
+      "low-volume"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-05-20"
+  },
+  {
+    "id": "c92",
+    "angleId": "opt-out-and-compliance",
+    "text": "For UK and EU business recipients, PECR generally lets you cold email without prior consent. You must identify yourself, give a contact address for opting out, and keep a do-not-email list of anyone who objects.",
+    "verdict": "stale",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s133",
+      "s132"
+    ],
+    "contextTags": [
+      "uk-eu-pecr",
+      "b2b",
+      "cold-email"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "youtube": "agree"
+    }
+  },
+  {
+    "id": "c93",
+    "angleId": "sequence-cadence",
+    "text": "Run 4–7 total touches instead of one email: a 3–5 step sequence replies at 8.3% versus 4.1% for one-and-done. Pick a fixed number, run every sequence to the end, and change it only once you have your own reply data. A minority of operators stop at 3–4, arguing per-email reply rates fall steeply after the third touch and that going past four touches more than triples unsubscribes and spam complaint",
+    "verdict": "contested",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s4",
+      "s76",
+      "s134",
+      "s135",
+      "s143",
+      "s137",
+      "s144",
+      "s48"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "benchmark",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "mixed",
+      "x": "disagree"
+    },
+    "newest": "2026-08-10",
+    "sides": {
+      "for": [
+        "s4",
+        "s76",
+        "s134",
+        "s135",
+        "s143"
+      ],
+      "against": [
+        "s137",
+        "s144",
+        "s48"
+      ]
+    }
+  },
+  {
+    "id": "c94",
+    "angleId": "sequence-cadence",
+    "text": "Adding one follow-up is the single biggest upgrade. It lifts total replies by 50–66%.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s76",
+      "s134"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c95",
+    "angleId": "sequence-cadence",
+    "text": "Space touches 3–4 days apart across about 20 days — day 0, day 2, day 6, day 10, day 17. A 3-day gap raised replies 31% while a next-day follow-up cut them 11%.",
+    "verdict": "likely",
+    "confidence": 0.69,
+    "sourceIds": [
+      "s135",
+      "s136",
+      "s141",
+      "s143"
+    ],
+    "contextTags": [
+      "cold-email",
+      "sequences",
+      "b2b",
+      "sequence-design"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c96",
+    "angleId": "sequence-cadence",
+    "text": "The first follow-up drives about 26% of positive replies, more than double the second follow-up.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s135",
+      "s76"
+    ],
+    "contextTags": [
+      "cold-email",
+      "sequences",
+      "b2b",
+      "sequence-design"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c97",
+    "angleId": "sequence-cadence",
+    "text": "At a 3.4% average reply rate, 50 emails sent once should produce about one or two replies. Plan volume around the full sequence, not a single blast.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s4",
+      "s76"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "benchmark",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c98",
+    "angleId": "follow-up-copy",
+    "text": "Follow-ups carry the sequence: 42–44% of replies arrive after the first email, steps 2–6 produced 58.6% of replies in a 7.5M-email study, and 44% of positive replies came from follow-ups in a 53M-email study.",
+    "verdict": "solid",
+    "confidence": 0.75,
+    "sourceIds": [
+      "s4",
+      "s135",
+      "s142"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "benchmark",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c99",
+    "angleId": "follow-up-copy",
+    "text": "Step 3 alone drove 35.6% of email-sourced meetings and steps 3–5 drove 53.5%. The meeting usually comes from the middle of the sequence.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s142"
+    ],
+    "contextTags": [
+      "cold-email",
+      "follow-up",
+      "large-sample",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c100",
+    "angleId": "follow-up-copy",
+    "text": "Never send a bare bump like \"just checking in\" or \"circling back.\" It lowered reply rates in every test because it gives no new reason to answer.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s143",
+      "s144"
+    ],
+    "contextTags": [
+      "cold-email",
+      "sequence-design",
+      "follow-up",
+      "copywriting"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c101",
+    "angleId": "follow-up-copy",
+    "text": "Give each follow-up its own job — a different pain point, a proof point, a short teardown — so it stands alone if the earlier emails were never read.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s143",
+      "s147"
+    ],
+    "contextTags": [
+      "cold-email",
+      "follow-up",
+      "copywriting"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c102",
+    "angleId": "follow-up-copy",
+    "text": "End with a breakup email. It got 3x the clicks and 5x the response rate of mid-sequence follow-ups across 2,500 emails, and a 6-touch sequence built around it hit a 9.7% reply rate with 52% of replies positive.",
+    "verdict": "solid",
+    "confidence": 0.7,
+    "sourceIds": [
+      "s145",
+      "s143",
+      "s144"
+    ],
+    "contextTags": [
+      "cold-email",
+      "breakup-email",
+      "sequence-end",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c103",
+    "angleId": "follow-up-copy",
+    "text": "Write the breakup as a clean exit — \"Should I close your file?\" or \"Taking you off my list, here's my calendar if anything changes.\" Buyers call passive-aggressive versions insulting and they kill deals.",
+    "verdict": "likely",
+    "confidence": 0.63,
+    "sourceIds": [
+      "s144",
+      "s146",
+      "s145"
+    ],
+    "contextTags": [
+      "cold-email",
+      "follow-up",
+      "copywriting",
+      "breakup-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c104",
+    "angleId": "linkedin-touch",
+    "text": "Run this schedule: LinkedIn connection request day 1, first email day 3, LinkedIn message day 7, email follow-up day 10 — the shape teams hitting 15–25% reply rates use.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s152",
+      "s149"
+    ],
+    "contextTags": [
+      "b2b",
+      "multichannel",
+      "linkedin",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c105",
+    "angleId": "linkedin-touch",
+    "text": "Pairing LinkedIn with email lifts replies to about 15% versus 5% for email alone.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s150",
+      "s149",
+      "s153"
+    ],
+    "contextTags": [
+      "b2b",
+      "multichannel",
+      "linkedin",
+      "cold-outreach"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c106",
+    "angleId": "linkedin-touch",
+    "text": "Add one line to every LinkedIn connection request. Across 16,492 requests, a note took post-acceptance replies from 5.44% to 9.36%.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s151",
+      "s149"
+    ],
+    "contextTags": [
+      "linkedin",
+      "connection-request",
+      "large-sample",
+      "cold-outreach"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c107",
+    "angleId": "linkedin-touch",
+    "text": "Set LinkedIn Settings & Privacy → Profile viewing options to public before viewing prospects, or they never see your name and the warm-up touch does nothing.",
+    "verdict": "stale",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s154",
+      "s155"
+    ],
+    "contextTags": [
+      "linkedin",
+      "setup",
+      "warm-up"
+    ],
+    "consensus": {
+      "docs": "agree"
+    }
+  },
+  {
+    "id": "c108",
+    "angleId": "linkedin-touch",
+    "text": "If your targeting is right, 30–45% of your LinkedIn connection requests get accepted. Under 20% means the list or your profile is broken, not your message.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s151",
+      "s150"
+    ],
+    "contextTags": [
+      "linkedin",
+      "connection-request",
+      "large-sample",
+      "cold-outreach"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c109",
+    "angleId": "linkedin-touch",
+    "text": "Send no more than 15–20 LinkedIn connection requests a day. LinkedIn's hard limit sets the pace for your whole email list.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s152"
+    ],
+    "contextTags": [
+      "b2b",
+      "multichannel",
+      "linkedin",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c110",
+    "angleId": "linkedin-touch",
+    "text": "Message someone within 24–48 hours of them accepting your connection request, while the acceptance is still warm.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s153",
+      "s149"
+    ],
+    "contextTags": [
+      "b2b",
+      "multichannel",
+      "linkedin",
+      "post-acceptance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c111",
+    "angleId": "linkedin-touch",
+    "text": "Run all four steps of the sequence before judging the results. 55% of replies come on the second or third touch.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s149"
+    ],
+    "contextTags": [
+      "b2b",
+      "multichannel",
+      "linkedin",
+      "connection-request"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c112",
+    "angleId": "linkedin-touch",
+    "text": "SaaS has the lowest LinkedIn reply rate of any vertical at 4.77%. Use LinkedIn to warm up the email, not to replace it.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s151",
+      "s158"
+    ],
+    "contextTags": [
+      "linkedin",
+      "connection-request",
+      "large-sample",
+      "cold-outreach"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-05"
+  },
+  {
+    "id": "c113",
+    "angleId": "reply-fast-book-now",
+    "text": "Make it a hard rule: any interested reply gets an answer in under 15 minutes during working hours, not the next day. Waiting 1–3 days on a warm reply measurably cuts how many of those replies turn into meetings.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s160",
+      "s162",
+      "s58"
+    ],
+    "contextTags": [
+      "reply-handling",
+      "warm-reply",
+      "speed-to-lead",
+      "working-hours"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-26"
+  },
+  {
+    "id": "c114",
+    "angleId": "reply-fast-book-now",
+    "text": "Reaching someone at 5 minutes instead of 30 makes them about 21x more likely to qualify, measured across 15,000+ leads and 100,000+ contact attempts.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s163",
+      "s161"
+    ],
+    "contextTags": [
+      "speed-to-lead",
+      "inbound-leads",
+      "large-sample",
+      "reply-handling"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c115",
+    "angleId": "reply-fast-book-now",
+    "text": "Contacting someone within an hour makes you about 7x more likely to qualify them than waiting longer, measured across 2.24 million leads.",
+    "verdict": "likely",
+    "confidence": 0.64,
+    "sourceIds": [
+      "s164",
+      "s160"
+    ],
+    "contextTags": [
+      "speed-to-lead",
+      "lead-qualification",
+      "large-sample",
+      "reply-handling"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-26"
+  },
+  {
+    "id": "c116",
+    "angleId": "reply-fast-book-now",
+    "text": "Put two named times first and the booking link as a fallback: \"does Tuesday at 2pm or Wednesday at 10am work, or you can grab a time directly here: [link]\". In a 50-vs-50 test the calendar link alone booked 1.9% while the suggested-times version booked 13x more meetings. Send the raw link only after they pick a slot or say neither works.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s159",
+      "s160",
+      "s161",
+      "s46"
+    ],
+    "contextTags": [
+      "reply-handling",
+      "booking",
+      "a-b-test",
+      "objection"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-26"
+  },
+  {
+    "id": "c117",
+    "angleId": "reply-fast-book-now",
+    "text": "Only about 0.5–2% of sent emails become meetings, and teams turn just 15–30% of replies into booked calls. At 50 emails sent, one reply is your whole month's pipeline — drop everything for it.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s58",
+      "s161"
+    ],
+    "contextTags": [
+      "founder-led",
+      "first-touch",
+      "b2b",
+      "volume-planning"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-23"
+  },
+  {
+    "id": "c118",
+    "angleId": "handling-objections",
+    "text": "Answer a soft no with a question, not a second pitch. Top performers reply to objections with a question 54.3% of the time versus 31% for average reps.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s168"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "soft-no",
+      "sales-calls",
+      "not-now"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c119",
+    "angleId": "handling-objections",
+    "text": "Treat \"send me info\" as a brush-off. Sending the deck ends the thread; one qualifying question keeps it alive.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s167",
+      "s170",
+      "s173"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-reply",
+      "not-now"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-01-24"
+  },
+  {
+    "id": "c120",
+    "angleId": "handling-objections",
+    "text": "Before sending anything, ask what they want in it: \"Is there anything you would want to see in that email?\" or \"a case study, pricing, or a quick overview of how we handle [problem]?\"",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s171",
+      "s169",
+      "s170"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-copy",
+      "booking"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-03-02"
+  },
+  {
+    "id": "c121",
+    "angleId": "handling-objections",
+    "text": "Send the info and ask for a tentative slot in the same reply, so saying yes costs them one word instead of a scheduling back-and-forth.",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s169",
+      "s161"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-copy",
+      "booking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c122",
+    "angleId": "handling-objections",
+    "text": "For \"not right now\", ask one binary question that tells you whether it is timing or satisfaction with what they already use.",
+    "verdict": "likely",
+    "confidence": 0.62,
+    "sourceIds": [
+      "s168",
+      "s167"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "soft-no",
+      "sales-calls",
+      "not-now"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c123",
+    "angleId": "handling-objections",
+    "text": "Keep a reply short: one line on what you do plus one question, under about 125 words. Pitching harder or interrogating inside a reply can cut response rates by up to 57%.",
+    "verdict": "likely",
+    "confidence": 0.62,
+    "sourceIds": [
+      "s167",
+      "s168"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-reply",
+      "not-now"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c124",
+    "angleId": "handling-objections",
+    "text": "Send at least three follow-ups. 44% of reps quit after one, but three attempts capture 93% of conversations and five capture 98.6%.",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s169",
+      "s161"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-copy",
+      "booking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c125",
+    "angleId": "handling-objections",
+    "text": "When the no is about timing, send a dated, specific follow-up instead of a vague \"circle back.\" It keeps roughly 70% of prospects from going cold.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s175",
+      "s167"
+    ],
+    "contextTags": [
+      "soft-no",
+      "timing-objection",
+      "b2b",
+      "objection-handling"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-01-24"
+  },
+  {
+    "id": "c126",
+    "angleId": "handling-objections",
+    "text": "Ask \"can I level with you briefly?\" before you push back. Asking permission turns a brush-off into a real conversation more often than defending your pitch.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s169",
+      "s174",
+      "s172"
+    ],
+    "contextTags": [
+      "objection-handling",
+      "send-me-info",
+      "email-copy",
+      "booking"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c127",
+    "angleId": "qualify-and-confirm",
+    "text": "Expect about 1 in 5 booked B2B meetings to never happen, and 25-35% no-shows on meetings booked from cold outbound. Some data is worse: a 60% show rate average means booking about 7 meetings to hold 5.",
+    "verdict": "contested",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s180",
+      "s178",
+      "s176",
+      "s181"
+    ],
+    "contextTags": [
+      "cold-outbound",
+      "meeting-booking",
+      "b2b",
+      "meeting-reminders"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "newest": "2026-07-26",
+    "sides": {
+      "for": [
+        "s180",
+        "s178",
+        "s176"
+      ],
+      "against": [
+        "s181"
+      ]
+    }
+  },
+  {
+    "id": "c128",
+    "angleId": "qualify-and-confirm",
+    "text": "Turn on automated reminders. They cut no-shows by about 28% on average, and 88% of surveyed sales teams saw a drop.",
+    "verdict": "likely",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s179",
+      "s178"
+    ],
+    "contextTags": [
+      "meeting-reminders",
+      "no-shows",
+      "b2b-sales-teams",
+      "cold-outbound"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-26"
+  },
+  {
+    "id": "c129",
+    "angleId": "qualify-and-confirm",
+    "text": "Book the meeting as close to today as possible. Same-day no-shows run about 7%, next-day about 10%, and eight or more days out passes 23%.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s178",
+      "s181"
+    ],
+    "contextTags": [
+      "cold-outbound",
+      "meeting-booking",
+      "b2b",
+      "meeting-reminders"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-26"
+  },
+  {
+    "id": "c130",
+    "angleId": "qualify-and-confirm",
+    "text": "Send three reminders — 24 hours before, 1 hour before, and 30 minutes before. That is what the teams with the highest show rates do.",
+    "verdict": "likely",
+    "confidence": 0.46,
+    "sourceIds": [
+      "s177",
+      "s180"
+    ],
+    "contextTags": [
+      "meeting-reminders",
+      "no-shows",
+      "high-performing-teams",
+      "qualification"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c131",
+    "angleId": "qualify-and-confirm",
+    "text": "Ask one or two qualifying questions — company size, role, use case — before you show the calendar link. The people who book after answering show up far more often.",
+    "verdict": "likely",
+    "confidence": 0.46,
+    "sourceIds": [
+      "s180",
+      "s177"
+    ],
+    "contextTags": [
+      "cold-outbound",
+      "meeting-booking",
+      "b2b",
+      "meeting-reminders"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c132",
+    "angleId": "qualify-and-confirm",
+    "text": "Put a one-line prep question in the reminder: \"what's the one thing you want to walk away with?\" It makes the prospect commit in writing.",
+    "verdict": "likely",
+    "confidence": 0.46,
+    "sourceIds": [
+      "s180",
+      "s177"
+    ],
+    "contextTags": [
+      "cold-outbound",
+      "meeting-booking",
+      "b2b",
+      "meeting-reminders"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c133",
+    "angleId": "qualify-and-confirm",
+    "text": "Chase every no-show the same day. A third to a half rebook within 48 hours if rescheduling takes one click.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s178"
+    ],
+    "contextTags": [
+      "cold-outbound",
+      "meeting-booking",
+      "b2b",
+      "meeting-reminders"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-26"
+  },
+  {
+    "id": "c134",
+    "angleId": "funnel-math",
+    "text": "For 5 meetings a month, plan on contacting 400-540 unique prospects: about 400 at a 5% reply rate with a quarter of repliers booking, or about 540 at the 3.7% average. Tracked as meetings per 100 prospects, average campaigns land 0.5-2 and the best land 2-3, so 1% means roughly 500 prospects a month.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s135",
+      "s184",
+      "s161"
+    ],
+    "contextTags": [
+      "cold-email",
+      "sequences",
+      "b2b",
+      "sequence-design"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-06-07"
+  },
+  {
+    "id": "c135",
+    "angleId": "funnel-math",
+    "text": "Count unique people, not emails sent. A 4-step sequence to 150 people is 600 sends but only 150 real chances, and using sends as the denominator makes your rate look four times better.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s185"
+    ],
+    "contextTags": [
+      "funnel-math",
+      "multi-step-sequence",
+      "measurement",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-29"
+  },
+  {
+    "id": "c136",
+    "angleId": "diagnose-the-leak",
+    "text": "One reply from 50 sends is 2% — below the 3.43% average and far from the 5.5% top quarter — but 50 sends is too small a sample to blame your copy. The typical sender needs about 135 contacts before one reply, so wait until you have contacted a few hundred people.",
+    "verdict": "solid",
+    "confidence": 0.79,
+    "sourceIds": [
+      "s186",
+      "s4",
+      "s194"
+    ],
+    "contextTags": [
+      "small-list",
+      "early-stage",
+      "measurement",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-08-04"
+  },
+  {
+    "id": "c137",
+    "angleId": "funnel-math",
+    "text": "Add follow-ups before you rewrite the first email. One email replies at 3.3% while a three-message sequence replies at 6.8%, and 42% of replies and 44% of positive replies come after the first email — run 4-6 steps over about three weeks.",
+    "verdict": "solid",
+    "confidence": 0.72,
+    "sourceIds": [
+      "s161",
+      "s135",
+      "s75"
+    ],
+    "contextTags": [
+      "reply-handling",
+      "booking",
+      "email-copy",
+      "speed-to-lead"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-06-07"
+  },
+  {
+    "id": "c138",
+    "angleId": "funnel-math",
+    "text": "Mail 200 well-chosen prospects instead of 1,000 sloppy ones. Lists under 200 reply at 15-20% versus 8% at 500-1,000.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s135",
+      "s184"
+    ],
+    "contextTags": [
+      "cold-email",
+      "sequences",
+      "b2b",
+      "sequence-design"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-06-07"
+  },
+  {
+    "id": "c139",
+    "angleId": "funnel-math",
+    "text": "The same volume books 0.69% meetings with a generic problem-statement opener and 2.34% with a timeline opener. Rewrite the opener before you send more.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s6"
+    ],
+    "contextTags": [
+      "cold-email",
+      "b2b",
+      "small-list",
+      "list-size"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2025-11-10"
+  },
+  {
+    "id": "c140",
+    "angleId": "funnel-math",
+    "text": "Log four numbers weekly: prospects contacted, replies, positive replies, meetings booked. The leak is usually between positive reply and booked meeting.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s185",
+      "s161"
+    ],
+    "contextTags": [
+      "funnel-math",
+      "multi-step-sequence",
+      "measurement",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-29"
+  },
+  {
+    "id": "c141",
+    "angleId": "daily-routine",
+    "text": "Cap each inbox at 20-50 cold sends a day. Accounts sending 20-49 a day reply at 5.7% against a 4.5% average, and rates fall above that band — to send more, add inboxes instead of raising the per-inbox number.",
+    "verdict": "contested",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s75",
+      "s189",
+      "s209",
+      "s213",
+      "s203",
+      "s210"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "mixed"
+    },
+    "newest": "2026-08",
+    "sides": {
+      "for": [
+        "s75",
+        "s189",
+        "s209",
+        "s213"
+      ],
+      "against": [
+        "s203",
+        "s210"
+      ]
+    }
+  },
+  {
+    "id": "c142",
+    "angleId": "daily-routine",
+    "text": "Ramp a new inbox. Start at 10-20 sends a day for the first week, then climb — keep day-over-day increases under 2x and never jump from 20 to 200 in a day.",
+    "verdict": "likely",
+    "confidence": 0.68,
+    "sourceIds": [
+      "s192",
+      "s190",
+      "s189"
+    ],
+    "contextTags": [
+      "cold-email",
+      "new-sender",
+      "warmup",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06-03"
+  },
+  {
+    "id": "c143",
+    "angleId": "tooling",
+    "text": "Roughly 0.5-1.1% of sends turn into a booked meeting, so 5 meetings a month means 450-1,000 sends a month — about 23-35 a workday, which needs 6-9 mailboxes.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s58",
+      "s204",
+      "s53"
+    ],
+    "contextTags": [
+      "founder-led",
+      "first-touch",
+      "b2b",
+      "volume-planning"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-23"
+  },
+  {
+    "id": "c144",
+    "angleId": "daily-routine",
+    "text": "Send your daily block Tuesday through Thursday, 8-10am in the prospect's timezone. Tuesday and Wednesday reply at 3.5-4.5% versus 2-3% Monday and Friday.",
+    "verdict": "contested",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s191",
+      "s189"
+    ],
+    "contextTags": [
+      "cold-email",
+      "send-timing",
+      "sending-volume",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "newest": "2026-04-05",
+    "sides": {
+      "for": [
+        "s191"
+      ],
+      "against": [
+        "s189"
+      ]
+    }
+  },
+  {
+    "id": "c145",
+    "angleId": "daily-routine",
+    "text": "Fill your daily block with follow-ups as well as new names. A first reply takes about 4.8 touches and a booked meeting about 7.4.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s58",
+      "s190"
+    ],
+    "contextTags": [
+      "founder-led",
+      "first-touch",
+      "b2b",
+      "volume-planning"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-08-23"
+  },
+  {
+    "id": "c146",
+    "angleId": "diagnose-the-leak",
+    "text": "Check bounce rate first. Over 2% means your list is the leak, and the 3.6% industry average shows most senders fail this before copy matters.",
+    "verdict": "solid",
+    "confidence": 0.7,
+    "sourceIds": [
+      "s75",
+      "s194"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-07-23"
+  },
+  {
+    "id": "c147",
+    "angleId": "diagnose-the-leak",
+    "text": "Keep spam complaints under 0.10% and never let them hit 0.30%. Past that, mailbox providers throttle you and no rewrite lands.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s194",
+      "s196"
+    ],
+    "contextTags": [
+      "cold-email",
+      "small-sample",
+      "diagnosis",
+      "list-quality"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-07-23"
+  },
+  {
+    "id": "c148",
+    "angleId": "scaling-inboxes",
+    "text": "Run more small campaigns instead of one big one. Sequences with 21-50 recipients reply at 6.2% while 500+ recipient sequences reply at 2.4%, so a low reply rate on a big list is a targeting problem.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s75",
+      "s196",
+      "s212"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026"
+  },
+  {
+    "id": "c149",
+    "angleId": "diagnose-the-leak",
+    "text": "At a 3.4% baseline, 50 sends give each A/B variant 1 or 2 replies — pure noise. Change one thing, send another 200, and compare to your own last batch.",
+    "verdict": "likely",
+    "confidence": 0.64,
+    "sourceIds": [
+      "s195",
+      "s4"
+    ],
+    "contextTags": [
+      "cold-email",
+      "small-sample",
+      "testing",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "newest": "2026-09-03"
+  },
+  {
+    "id": "c150",
+    "angleId": "diagnose-the-leak",
+    "text": "At low volume, test whole angles rather than a word in the subject line. Small gaps between versions are always inconclusive.",
+    "verdict": "likely",
+    "confidence": 0.46,
+    "sourceIds": [
+      "s195"
+    ],
+    "contextTags": [
+      "cold-email",
+      "small-sample",
+      "testing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-09-03"
+  },
+  {
+    "id": "c151",
+    "angleId": "diagnose-the-leak",
+    "text": "Audit in a fixed order: inbox placement, then bounce and complaint rates, then who is on the list, then the message. Infrastructure failures make copy results unreadable.",
+    "verdict": "likely",
+    "confidence": 0.61,
+    "sourceIds": [
+      "s199",
+      "s200",
+      "s197"
+    ],
+    "contextTags": [
+      "diagnosis",
+      "cold-email",
+      "low-reply"
+    ],
+    "consensus": {
+      "youtube": "agree",
+      "reddit": "agree"
+    },
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c152",
+    "angleId": "tooling",
+    "text": "Pick Smartlead or Instantly and stop shopping. Across 547 tool recommendations in cold email subreddits from January to May 2026, Smartlead took 34% and Instantly 26%, and nothing else broke 15%.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s201",
+      "s29"
+    ],
+    "contextTags": [
+      "tool-choice",
+      "solo-founder",
+      "reddit-sourced",
+      "budget"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "newest": "2026-07-09"
+  },
+  {
+    "id": "c153",
+    "angleId": "tooling",
+    "text": "The feature you are actually buying is inbox rotation: you assign several mailboxes to one campaign and the tool spreads every send across them automatically.",
+    "verdict": "likely",
+    "confidence": 0.64,
+    "sourceIds": [
+      "s202",
+      "s203"
+    ],
+    "contextTags": [
+      "tool-choice",
+      "multi-mailbox",
+      "deliverability",
+      "sending-limits"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-08"
+  },
+  {
+    "id": "c154",
+    "angleId": "tooling",
+    "text": "Budget $180-$310 a month for a solo cold email setup. The sending tool is only $37-$97 of that; the rest is domains, mailboxes and a verifier — the $39 headline price lands at $150-$250 once you run 10 sending accounts with warmup and verification.",
+    "verdict": "likely",
+    "confidence": 0.65,
+    "sourceIds": [
+      "s53",
+      "s207",
+      "s201",
+      "s204"
+    ],
+    "contextTags": [
+      "founder-led",
+      "cold-email",
+      "small-list",
+      "solo-founder"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-05-22"
+  },
+  {
+    "id": "c155",
+    "angleId": "tooling",
+    "text": "Setup takes a one-time 6-8 hours, then 2-4 hours a week that should go into copy and lists instead of tracking sends.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s53",
+      "s205"
+    ],
+    "contextTags": [
+      "founder-led",
+      "cold-email",
+      "small-list",
+      "solo-founder"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "newest": "2026-05-06"
+  },
+  {
+    "id": "c156",
+    "angleId": "tooling",
+    "text": "A working setup gets a 3-8% reply rate and 1-3% positive replies. If you are well under that, the problem is copy or list, not the tool.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s204"
+    ],
+    "contextTags": [
+      "b2b",
+      "meeting-math",
+      "small-volume",
+      "benchmarks"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-02-11"
+  },
+  {
+    "id": "c157",
+    "angleId": "tooling",
+    "text": "Smartlead and Instantly only send and rotate. Lead sourcing and email verification are separate paid tools you still have to buy.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s29",
+      "s201",
+      "s53"
+    ],
+    "contextTags": [
+      "b2b",
+      "tooling",
+      "list-build",
+      "tool-choice"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-07-09"
+  },
+  {
+    "id": "c158",
+    "angleId": "scaling-inboxes",
+    "text": "Work backwards from meetings. At a 2% reply rate, 20% of replies positive, and 35% of positives booking, 1,000 sends produce about 1.4 booked calls, so 15 meetings a month needs 10,000-11,000 sends a month.",
+    "verdict": "likely",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s208"
+    ],
+    "contextTags": [
+      "b2b",
+      "meeting-math",
+      "scaling",
+      "infrastructure"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-02-27"
+  },
+  {
+    "id": "c159",
+    "angleId": "scaling-inboxes",
+    "text": "About 10,000 emails a month needs roughly 25 inboxes across 9 domains at 20 sends per inbox per day, costing around $310 a month.",
+    "verdict": "likely",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s208",
+      "s209"
+    ],
+    "contextTags": [
+      "b2b",
+      "meeting-math",
+      "scaling",
+      "infrastructure"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06"
+  },
+  {
+    "id": "c160",
+    "angleId": "scaling-inboxes",
+    "text": "Add more companies rather than more contacts per company. Emailing one or two people per company replies at 5.1% versus 3.5% for three or more.",
+    "verdict": "stale",
+    "confidence": 0.32,
+    "sourceIds": [
+      "s75"
+    ],
+    "contextTags": [
+      "cold-email",
+      "personalization",
+      "large-sample",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "newest": "2025"
+  },
+  {
+    "id": "c161",
+    "angleId": "scaling-inboxes",
+    "text": "Keep 2-3 mailboxes per sending domain so one burned domain never takes the whole operation down.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s209",
+      "s213"
+    ],
+    "contextTags": [
+      "scaling",
+      "infrastructure",
+      "10k-sends",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-06"
+  },
+  {
+    "id": "c162",
+    "angleId": "scaling-inboxes",
+    "text": "Volume alone is a bad lever. 1,200 sends a day at a 1% reply rate is only 12 replies a day, and one sender who pushed 147,000 emails booked just 40 calls — a 0.027% send-to-call rate.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s211",
+      "s212"
+    ],
+    "contextTags": [
+      "high-volume",
+      "scaling",
+      "cautionary",
+      "campaign-design"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c163",
+    "angleId": "scaling-inboxes",
+    "text": "At 1,000 sends a day, domains and inboxes cost roughly $200-300 a month. For a $400/mo product, the constraint on 15 meetings is list quality and reply handling, not budget.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s213",
+      "s210"
+    ],
+    "contextTags": [
+      "deliverability",
+      "risk-spreading",
+      "infrastructure",
+      "b2b-saas"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "newest": "2026-03-21"
+  }
+]

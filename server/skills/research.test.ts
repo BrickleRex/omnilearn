@@ -276,7 +276,8 @@ describe('claimConfidence', () => {
   it('rewards strong, recent, widely-supported claims', () => {
     const c = claimConfidence({ reputations: [0.95, 0.8, 0.8], soundnesses: [0.95, 0.8, 0.8], newest: '2026-08-01', horizon: 36, consensus: 3, now });
     expect(c).toBeGreaterThan(0.8);
-    expect(verdictFor(c, {})).toBe('solid');
+    expect(verdictFor(c, { sources: 3 })).toBe('solid');
+    expect(verdictFor(c, { sources: 1 })).toBe('likely'); // one source is never solid
   });
 
   it('punishes a lone weak source', () => {
@@ -307,8 +308,8 @@ describe('verdictFor', () => {
     expect(verdictFor(0.95, { stale: true })).toBe('stale');
     expect(verdictFor(0.95, { contested: true })).toBe('contested');
     expect(verdictFor(0.95, { contested: true, stale: true })).toBe('stale');
-    expect(verdictFor(0.8, {})).toBe('solid');
-    expect(verdictFor(0.79, {})).toBe('likely');
+    expect(verdictFor(0.7, { sources: 2 })).toBe('solid');
+    expect(verdictFor(0.69, { sources: 2 })).toBe('likely');
   });
 });
 

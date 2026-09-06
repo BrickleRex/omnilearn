@@ -45,6 +45,9 @@ builds a course. Evidence stays one click away as **index cards** and a
   range next to the corpus median), climb a version ladder with score deltas,
   and **Ship** real results back to see prediction vs reality.
 
+A finished, real cold-email course (214 sources, 163 claims, 6 modules,
+researched live through the CLI) ships in `examples/skills/`; `npm run
+seed:skills` drops it into `data/skills/` so you can drill and make right away.
 `SPEC-SKILLS.md` has the decisions; `shared/skills.ts` the contract. Data lives in
 `data/skills/<slug>/`. Reddit's `.json` and YouTube transcripts are blocked from
 datacenter IPs but work from a laptop; the research log says which sources were

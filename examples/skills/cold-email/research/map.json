@@ -1,0 +1,294 @@
+{
+  "angles": [
+    {
+      "id": "who-to-target",
+      "title": "Who to email",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 20,
+      "why": "Most of your 50 emails went to the wrong people; a tight list fixes reply rate before you touch copy."
+    },
+    {
+      "id": "one-narrow-segment",
+      "title": "Pick one narrow segment first",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 18,
+      "why": "A 60-person startup and a 450-person company have different sales leaders; pick one and write for them only.",
+      "parentId": "who-to-target"
+    },
+    {
+      "id": "trigger-events",
+      "title": "Hiring and change signals",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "A VP who posted 5 SDR jobs this month is 10x more likely to book than one picked at random.",
+      "parentId": "who-to-target"
+    },
+    {
+      "id": "list-building",
+      "title": "Build and verify the list",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 25,
+      "why": "You need 300 to 500 verified contacts a month, and over 3% bounces gets your domain flagged.",
+      "parentId": "who-to-target"
+    },
+    {
+      "id": "the-offer",
+      "title": "The offer and positioning",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 15,
+      "why": "A vague product pitch to a sales leader gets deleted; a specific outcome for their team gets a reply."
+    },
+    {
+      "id": "pain-in-their-words",
+      "title": "Find the pain in their words",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 10,
+      "why": "Talk to 5 sales leaders before writing; their exact phrases become your first line and your promise.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "pain-to-promise",
+      "title": "One specific promise, not features",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 12,
+      "why": "Sales leaders reply to a number they miss, not to a feature list.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "the-ask",
+      "title": "The ask: 15 minutes or teardown",
+      "level": "working",
+      "kept": true,
+      "estSources": 10,
+      "why": "A 15-minute look or a free teardown of their outbound gets 3x the yes of asking for a demo.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "founder-angle",
+      "title": "Use the founder angle",
+      "level": "working",
+      "kept": true,
+      "estSources": 8,
+      "why": "I built this and want your take gets replies a sales rep never will; use it while you still can.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "writing-the-email",
+      "title": "Writing the email",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 30,
+      "why": "Your one reply in 50 came from the words; better words at the same volume gets you 5 to 10."
+    },
+    {
+      "id": "subject-and-first-line",
+      "title": "Subject line and first line",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 20,
+      "why": "A short plain subject plus a first line about them is what shows in the preview and decides the open.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "structure-and-length",
+      "title": "Under 80 words, one ask",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 25,
+      "why": "Busy leaders read on a phone; one observation, one promise, one question, nothing else.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "personalization-at-scale",
+      "title": "Personalization without hours",
+      "level": "working",
+      "kept": true,
+      "estSources": 20,
+      "why": "You cannot hand-write 400 emails a month, so learn which one line to personalize.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "deliverability",
+      "title": "Landing in the inbox",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 25,
+      "why": "At volume, half your emails can silently go to spam, and you would never know."
+    },
+    {
+      "id": "domain-and-inbox-setup",
+      "title": "Secondary domains, inboxes, warmup",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 20,
+      "why": "Two lookalike domains, 2 inboxes each, 20 to 30 sends a day per inbox, warmed for 2 weeks before you send.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "authentication-records",
+      "title": "SPF, DKIM, DMARC",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 20,
+      "why": "Missing records is the top reason cold email gets filtered before opening.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "plain-text-no-tracking",
+      "title": "Plain text, no links, no tracking",
+      "level": "working",
+      "kept": true,
+      "estSources": 12,
+      "why": "Open-tracking pixels, links, and images in a first email cut inbox placement; send it like a person would.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "placement-testing",
+      "title": "Test inbox placement before sending",
+      "level": "working",
+      "kept": true,
+      "estSources": 10,
+      "why": "Send each new template to your own Gmail and Outlook seeds first; spam there means spam everywhere.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "opt-out-and-compliance",
+      "title": "Opt-out line and the law",
+      "level": "working",
+      "kept": true,
+      "estSources": 12,
+      "why": "One opt-out line, a real address, and honoring every no keeps your domain and company out of trouble.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "sequences-follow-up",
+      "title": "Follow-up sequences",
+      "level": "working",
+      "kept": true,
+      "estSources": 25,
+      "why": "Most replies come on email 2 to 4, and one-and-done is why 50 emails got 1 reply."
+    },
+    {
+      "id": "sequence-cadence",
+      "title": "Cadence: 3 to 5 steps",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "3 to 5 touches over 2 weeks roughly doubles replies versus a single email.",
+      "parentId": "sequences-follow-up"
+    },
+    {
+      "id": "follow-up-copy",
+      "title": "Follow-ups and the breakup",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "Just checking in gets ignored; each step needs a new reason, and the last one asks if you should close the file.",
+      "parentId": "sequences-follow-up"
+    },
+    {
+      "id": "linkedin-touch",
+      "title": "Add a LinkedIn touch",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 12,
+      "why": "A profile view or connect the day before email 1 lifts replies, and it costs nothing.",
+      "parentId": "sequences-follow-up"
+    },
+    {
+      "id": "replies-to-meetings",
+      "title": "Turning replies into meetings",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "A reply is not a meeting; the handoff is where beginners lose half of them."
+    },
+    {
+      "id": "reply-fast-book-now",
+      "title": "Reply within the hour, book now",
+      "level": "working",
+      "kept": true,
+      "estSources": 8,
+      "why": "Interest fades in hours; answer fast and offer two times or a link in the first reply.",
+      "parentId": "replies-to-meetings"
+    },
+    {
+      "id": "handling-objections",
+      "title": "Handling not now and send info",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "Half of replies are soft nos, and a good response turns some into meetings.",
+      "parentId": "replies-to-meetings"
+    },
+    {
+      "id": "qualify-and-confirm",
+      "title": "Qualify, confirm, cut no-shows",
+      "level": "working",
+      "kept": true,
+      "estSources": 10,
+      "why": "Ask team size before booking, then send a reminder the morning of; that saves 1 in 4 meetings.",
+      "parentId": "replies-to-meetings"
+    },
+    {
+      "id": "running-the-numbers",
+      "title": "Running it week to week",
+      "level": "working",
+      "kept": true,
+      "estSources": 20,
+      "why": "5 meetings a month comes from sending every day and knowing which stage is leaking."
+    },
+    {
+      "id": "funnel-math",
+      "title": "The funnel math to 5 meetings",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "At 5% replies and 25% of replies booking, 5 meetings needs about 400 sends; know your numbers.",
+      "parentId": "running-the-numbers"
+    },
+    {
+      "id": "daily-routine",
+      "title": "The daily sending routine",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 8,
+      "why": "20 to 25 new contacts a day, every workday, beats a 200-email burst once a month.",
+      "parentId": "running-the-numbers"
+    },
+    {
+      "id": "diagnose-the-leak",
+      "title": "Find which stage is broken",
+      "level": "working",
+      "kept": true,
+      "estSources": 15,
+      "why": "Under 1% replies is deliverability or list, 1 to 3% is copy; at your volume change one thing per 200 sends, not A/B tests.",
+      "parentId": "running-the-numbers"
+    },
+    {
+      "id": "tooling",
+      "title": "Pick one sending tool",
+      "level": "working",
+      "kept": true,
+      "estSources": 20,
+      "why": "One tool that runs sequences and rotates inboxes frees your time for copy, not spreadsheets.",
+      "parentId": "running-the-numbers"
+    },
+    {
+      "id": "scaling-inboxes",
+      "title": "Scaling past 5 meetings",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 15,
+      "why": "Going from 5 to 15 meetings means more domains and inboxes, not longer emails.",
+      "parentId": "running-the-numbers"
+    }
+  ]
+}

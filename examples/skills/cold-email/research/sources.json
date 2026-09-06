@@ -1,0 +1,3347 @@
+[
+  {
+    "id": "s1",
+    "url": "https://hunter.io/the-state-of-cold-email-2025",
+    "kind": "docs",
+    "title": "The State of Cold Email 2025 (Hunter)",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025",
+    "quote": "Campaigns with 50 recipients or fewer get an average 5.8% reply rate, compared to 2.1% for campaigns with 1000+ recipients.",
+    "note": "Vendor report with a real base (100s of surveys, 11M emails) but the excerpt is all headline stats and Hunter sells the sequencing tool the conclusions point to."
+  },
+  {
+    "id": "s2",
+    "url": "https://belkins.io/blog/cold-email-response-rates",
+    "kind": "blog",
+    "title": "What are B2B Cold Email Response Rates? (2026 Study)",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-06-26",
+    "quote": "Very small companies (0–10 employees) reply at 0.72% — more than three times the rate of large enterprises (10,000+ employees at 0.22%).",
+    "note": "Agency first-hand data at scale (7.5M emails) yet Belkins sells the exact outreach service the benchmarks flatter."
+  },
+  {
+    "id": "s3",
+    "url": "https://puzzleinbox.com/blog/cold-email-reply-rate-benchmarks-2026-by-segment",
+    "kind": "blog",
+    "title": "Cold Email Reply Rate Benchmarks 2026: B2B / SaaS / Agency",
+    "angleIds": [
+      "one-narrow-segment",
+      "founder-angle"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-16",
+    "quote": "Tight ICP (precise role, company size, trigger event): 3-5% reply rate, 1.5-2.5% PRR",
+    "note": "Compiles rather than measures, but the reply-rate-vs-positive-reply-rate distinction shows real operator reasoning about the mechanism."
+  },
+  {
+    "id": "s4",
+    "url": "https://instantly.ai/cold-email-benchmark-report-2026",
+    "kind": "docs",
+    "title": "Cold Email Benchmark Report 2026 (Instantly)",
+    "angleIds": [
+      "one-narrow-segment",
+      "structure-and-length",
+      "sequence-cadence",
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-01-12",
+    "quote": "The biggest contributing factors to top performing campaigns are micro-segmentation, problem-focused messaging, frequent A/B testing...",
+    "note": "Huge proprietary dataset ('billions') that no one can audit, published by a platform selling the fix."
+  },
+  {
+    "id": "s5",
+    "url": "https://prospeo.io/s/choosing-targets-for-cold-outreach",
+    "kind": "blog",
+    "title": "Choosing Targets for Cold Outreach (2026 Guide)",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "A tight, signal-filtered list of 100 will outperform a generic list of 1,000",
+    "note": "Excerpt is almost entirely site navigation for a lead-data vendor — no visible argument or evidence to judge."
+  },
+  {
+    "id": "s6",
+    "url": "https://thedigitalbloom.com/learn/cold-outbound-reply-rate-benchmarks/",
+    "kind": "blog",
+    "title": "Cold Email Reply-Rate Benchmarks 2025 (Hook × ICP × Industry Data)",
+    "angleIds": [
+      "one-narrow-segment",
+      "funnel-math"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-11-10",
+    "quote": "segmentation into smaller cohorts (50 recipients) achieves 5.8% reply rate versus 2.1% for 1,000+ recipient blasts—a 2.76x lift",
+    "note": "Unusually specific factorial breakdown (10.01% vs 4.39% by hook type) but no sample size or method disclosed, and a 2.3x gap that neat invites doubt."
+  },
+  {
+    "id": "s7",
+    "url": "https://x.com/scaling_shields/status/2030549588734808377",
+    "kind": "x",
+    "title": "James Shields on picking one hard niche and getting 6% positive replies",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "i cold email agency owners for a living agency owners who literally do cold email themselves and i get a 6% positive reply rate on them",
+    "note": "First-hand operator claiming a self-reported 6% positive reply rate — a single unverified winner's story used as a general rule."
+  },
+  {
+    "id": "s8",
+    "url": "https://x.com/MartinGTobias/status/2075309148867350640",
+    "kind": "x",
+    "title": "Martin Tobias: targeted cold outreach vs untargeted blasts",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "Cold outreach to VCs converts at roughly 5-15% reply rate when it's targeted.",
+    "note": "VC on the receiving end of the outreach, which is genuine vantage, but the 5-15% range is a thread-post estimate with no data behind it."
+  },
+  {
+    "id": "s9",
+    "url": "https://www.youtube.com/watch?v=A7cloTqRYUg",
+    "kind": "youtube",
+    "title": "13 Ways To Pick A Profitable Niche For Cold Email (Cheatsheet included) — Instantly",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only YouTube listing from a cold-email vendor; nothing to evaluate but the headline and a lead-magnet hook."
+  },
+  {
+    "id": "s10",
+    "url": "https://www.youtube.com/watch?v=DnnhtpjsJz8",
+    "kind": "youtube",
+    "title": "How To Pick The Best Niches For Cold Email Outreach — Hoani Taylor",
+    "angleIds": [
+      "one-narrow-segment"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only YouTube listing from an unknown creator; no content, no evidence."
+  },
+  {
+    "id": "s11",
+    "url": "https://lead-scorer.com/blog/buying-signals-b2b-2026",
+    "kind": "blog",
+    "title": "B2B Buying Signals in 2026: The Trigger Stack That Lifts Reply Rates From 3.4% to 18%",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-28",
+    "quote": "Five SDR job postings in 30 days at a 50-person SaaS is a signal that the company is investing in outbound.",
+    "note": "Cites the Instantly 2026 benchmark for the 3.43% baseline, but the 18% trigger figure is laundered through a vendor guide (Autobound) and the site sells lead scoring."
+  },
+  {
+    "id": "s12",
+    "url": "https://twelfth.agency/2026/04/01/signal-based-outbound/",
+    "kind": "blog",
+    "title": "Signal based outbound gets 15-25% reply rates vs 3% for cold email",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-04-01",
+    "quote": "When a company posts 5 demand gen roles in 60 days, they're building a function that needs platforms and systems.",
+    "note": "Agency post recycling the same Autobound vendor claim as its sole source; the 63-meetings-from-175-accounts anecdote is unverifiable and self-serving."
+  },
+  {
+    "id": "s13",
+    "url": "https://prospeo.io/s/cold-email-triggers",
+    "kind": "blog",
+    "title": "Cold Email Triggers That Actually Get Replies (2026)",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "referencing a specific trigger event - a funding round, a job posting, a leadership change - pushed reply rates to 8.7%, roughly 2.7x the 3.2% he got from basic first-name-and-company personalization",
+    "note": "Scrape captured only Prospeo's site navigation — no argument or data present, and the vendor sells the intent-signal product implied by the title."
+  },
+  {
+    "id": "s14",
+    "url": "https://salestarget.ai/blogs/buying-signals-b2b-company-ready-to-buy",
+    "kind": "blog",
+    "title": "The 5 Buying Signals That Mean a Company Is Ready to Buy Right Now (And How to Find Them)",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-04",
+    "quote": "A company posting 10+ roles in a department you sell into is allocating budget right now",
+    "note": "Attributes a 37% vs 19% win rate to Champify 2025 but shows no methodology or sample; vendor blog wrapped in a discount banner."
+  },
+  {
+    "id": "s15",
+    "url": "https://www.usergems.com/blog/how-to-implement-new-hire-sales-trigger",
+    "kind": "blog",
+    "title": "How to turn new hire buying signals into pipeline",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-02-13",
+    "quote": "New buyers spend 70% of their budget in the first 100 days.",
+    "note": "UserGems sells the new-hire signal it advocates, and the captured text is almost entirely site chrome with no evidence."
+  },
+  {
+    "id": "s16",
+    "url": "https://www.champify.io/resources/the-impact-of-tracking-job-changes-value-report",
+    "kind": "blog",
+    "title": "The Impact of Tracking Job Changes (Value Report)",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025",
+    "quote": "12% vs <2% from cold outbound",
+    "note": "First-party numbers on a real customer base (5x conversion, 39% win rate, $256M pipeline), but it is Champify measuring its own product with no denominators or control group."
+  },
+  {
+    "id": "s17",
+    "url": "https://hunter.io/blog/job-data-use-cases",
+    "kind": "blog",
+    "title": "Three Cold Email Use Cases For Job Posting Data",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2024-01-09",
+    "quote": "You can use a job posting to identify companies with an explicit need aligned with your solution",
+    "note": "Vendor blog whose entire argument funnels into its own Signals product; premise is reasonable but the excerpt is all setup and no evidence."
+  },
+  {
+    "id": "s18",
+    "url": "https://www.apollo.io/templates/spot-companies-hiring-for-specific-roles",
+    "kind": "docs",
+    "title": "Spot Companies Hiring for Specific Roles (Apollo play template)",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Noticed you're hiring for {{role}} — that usually means {{challenge}} is on the radar. We've helped similar teams {{solution}}.",
+    "note": "Nothing but Apollo site navigation scraped as text — no template content, no argument to assess despite the docs prior."
+  },
+  {
+    "id": "s19",
+    "url": "https://x.com/codyschneider/status/2028606359617388794",
+    "kind": "x",
+    "title": "Cody Schneider on the two best intent signals for cold email",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "the two best intent signals for cold email when somebody gets a new job. and when a company is hiring for a role.",
+    "note": "Plausible mechanism (new hires re-evaluate stacks, job posts reveal gaps) stated as a confident rule with zero evidence, and the post is truncated."
+  },
+  {
+    "id": "s20",
+    "url": "https://x.com/itsalexvacca/status/2057212337682276668",
+    "kind": "x",
+    "title": "Alex Vacca on why cold email fails on the wrong list",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "a job-change signal is basically dead 60 days after the hire",
+    "note": "Names the real failure mode (list, not copy) and gives a concrete 60-day signal decay, but the numbers are asserted from nowhere and the thread is cut off."
+  },
+  {
+    "id": "s21",
+    "url": "https://www.youtube.com/watch?v=s_EUgLx-esY",
+    "kind": "youtube",
+    "title": "How to Use Hiring Signals for Cold Email in 2026",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — no transcript, nothing to evaluate."
+  },
+  {
+    "id": "s22",
+    "url": "https://hunter.io/email-verification-guide/email-data-decay",
+    "kind": "docs",
+    "title": "Email Data Decay — Hunter Email Verification Guide",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-11-04",
+    "quote": "In total, 5.5% of my mailing list was no longer valid after 8 weeks.",
+    "note": "Hunter's own verification guide, and the captured text is pure site chrome; decay is real but this vendor sells the remedy."
+  },
+  {
+    "id": "s23",
+    "url": "https://hunter.io/email-verification-guide/costs-of-unverified-email-data",
+    "kind": "docs",
+    "title": "The Costs of Unverified Email Data — Hunter Email Verification Guide",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-11-04",
+    "quote": "39% of businesses reported verifying their email data after an email bounce.",
+    "note": "Same Hunter guide series, same problem: only navigation menus survived the scrape, and the conclusion is the product."
+  },
+  {
+    "id": "s24",
+    "url": "https://www.millionverifier.com/blog/the-safest-b2b-cold-email-workflow-to-verify-scraped-leads/",
+    "kind": "blog",
+    "title": "The Safest B2B Cold Email Workflow to Verify Scraped Leads",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-30",
+    "quote": "Never exceed 15% catch-alls in a single daily send volume.",
+    "note": "MillionVerifier marketing page; the only numbers are its own accuracy and pricing claims, not measurements of the workflow it recommends."
+  },
+  {
+    "id": "s25",
+    "url": "https://www.amplemarket.com/blog/cold-email-benchmarks",
+    "kind": "blog",
+    "title": "The 2026 cold email benchmarks for bounce, open, reply and spam rates",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-06-23",
+    "quote": "A good cold email bounce rate in 2026 is under 3%, and best-in-class is under 1.5%.",
+    "note": "Vendor benchmark post whose captured text is pure nav chrome — the promised numbers never appear, and the seller of deliverability tooling owns the benchmark."
+  },
+  {
+    "id": "s26",
+    "url": "https://prospeo.io/s/apollo-email-verification-accuracy",
+    "kind": "blog",
+    "title": "Apollo Email Verification Accuracy in 2026: The Truth",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Hunter ran a benchmark of 15 email verification providers using 3,000 real business emails. The top overall accuracy? 70%.",
+    "note": "Competitor teardown of Apollo by a rival data vendor, and the text is entirely menu boilerplate with zero methodology or findings."
+  },
+  {
+    "id": "s27",
+    "url": "https://prospeo.io/s/verify-email-list-cold-email",
+    "kind": "blog",
+    "title": "Verify Email List for Cold Email: 2026 Playbook",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Keep total bounces under 2%, with hard bounces ideally under 1%",
+    "note": "Same vendor, same nav-only capture; a 'playbook' that states no steps is unusable as evidence."
+  },
+  {
+    "id": "s28",
+    "url": "https://thunderbit.com/blog/how-to-build-a-lead-list",
+    "kind": "blog",
+    "title": "How to Build a Lead List That Gets Replies (2026 Workflow)",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-21",
+    "quote": "at least 23% of an email list decays within one year",
+    "note": "Only source with substance: cites Hunter's 31M-email study plus a concrete 0.3% reply / 12% bounce case, but it's one anecdote and the fix sold is the author's scraper."
+  },
+  {
+    "id": "s29",
+    "url": "https://x.com/NickAbraham12/status/2075217226848735578",
+    "kind": "x",
+    "title": "Nick Abraham on X: the one-person cold email stack",
+    "angleIds": [
+      "list-building",
+      "tooling"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "If I wanted to generate leads from cold email starting from 0 in July 2026: Infra: Hypertide List-building: GetLeads Verification: MillionVerifier / Scrubby Sequencer: Smartlead CRM: Close 1-man stack that lets you operate like a team of 10.",
+    "note": "Recognized first-hand operator, but it's a bare tool list with no mechanism, no results, and the usual affiliate incentive behind each name.",
+    "date": "2026-07-09"
+  },
+  {
+    "id": "s30",
+    "url": "https://x.com/seanlongden/status/1915379079529795870",
+    "kind": "x",
+    "title": "Sean Longden on X: Ultimate Cold Email Stack",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Leads: Apollo, Apify, Sales Nav, PandaMatch Lead list + enrich: LeadFormatter Deliverability: EmailGuard Warm-up: Warm Up Inbox List cleaning: MillionVerifier",
+    "note": "Identical stack-list format with an explicit 'discounts inside my community' link — self-promotion is the whole post.",
+    "date": "2025-04-24"
+  },
+  {
+    "id": "s31",
+    "url": "https://www.youtube.com/watch?v=BkBx_YZM7s4",
+    "kind": "youtube",
+    "title": "NEW! How to Verify Emails in Clay (2025) 📧 | Step by Step Email Verification Tutorial",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "Procedurally correct click-through of Clay's verify-email enrichment, but purely descriptive with no accuracy data on the underlying verification."
+  },
+  {
+    "id": "s32",
+    "url": "https://www.skool.com/outbound-b2b-sales/podcast-episode-9-b2b-cold-email-101-2025",
+    "kind": "podcast",
+    "title": "Podcast Episode 9 | B2B Cold Email 101 2025 — NextGen Sales Leaders Podcast",
+    "angleIds": [
+      "list-building"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-03",
+    "quote": "host Benjamin Reed breaks down the fundamentals of cold email, covering everything from lead generation, list building, copywriting, AI-driven personalization, inbox management, and deliverability.",
+    "note": "Only an episode blurb inside a paid-community funnel; claims mastery of deliverability and reply rates while showing none of the reasoning."
+  },
+  {
+    "id": "s33",
+    "url": "https://www.pitchkitchen.com/blog/why-does-our-cold-outreach-get-ignored",
+    "kind": "blog",
+    "title": "Why Does Our Cold Outreach Get Ignored?",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-07-12",
+    "quote": "Reply rate went from 1.1% to 4.8% over about seven weeks",
+    "note": "Named founder with a book, but it's a consultant's anecdote-driven pitch for the messaging service he sells — zero evidence beyond one founder's screen."
+  },
+  {
+    "id": "s34",
+    "url": "https://salesmotion.io/blog/cold-email-executives-reply-rates",
+    "kind": "blog",
+    "title": "Cold Emailing Executives: What the Reply Data Shows",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-02-16",
+    "quote": "Terms like 'AI,' 'platform,' and feature-led positioning significantly lower reply rates because they signal a generic pitch.",
+    "note": "Vendor blog, but the load-bearing claims are attributed to Gong's 1M+ sales-cycle analysis with specific thresholds rather than the vendor's own funnel."
+  },
+  {
+    "id": "s35",
+    "url": "https://prospeo.io/s/b2b-cold-email-examples",
+    "kind": "blog",
+    "title": "8 B2B Cold Email Examples That Get Replies (2026)",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "Lead with a specific metric. 'We help companies grow' means nothing. 'Bounce rate from 35% to under 4%' means everything.",
+    "note": "Excerpt is almost entirely product navigation from a lead-data vendor; no argument or evidence is actually present to judge."
+  },
+  {
+    "id": "s36",
+    "url": "https://www.lavender.ai/blog/5-takeaways-from-our-latest-cold-email-benchmark-report",
+    "kind": "docs",
+    "title": "5 Takeaways from Our Latest Cold Email Benchmark Report",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.68,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-02-23",
+    "quote": "Executives respond to company-level strategy and timing",
+    "note": "Large first-party sample (231,818 emails, ~50k inboxes) segmented by seniority, but it's Lavender's own data promoting Lavender's coach, with no method or controls shown."
+  },
+  {
+    "id": "s37",
+    "url": "https://emailbison.com/blogs/cold-email-saas-startup",
+    "kind": "blog",
+    "title": "Cold Email For SaaS in 2026: Reply Rates, Strategy, Scale",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-19",
+    "quote": "Cold email for SaaS in 2026 produces a 3.43% industry average reply rate, with top 10% B2B SaaS campaigns reaching 10.7%",
+    "note": "SEO-shaped vendor page relaying another vendor's 'billions of emails' benchmark; precise-sounding rates (3.43%, 10.7%) with no methodology or reply definition."
+  },
+  {
+    "id": "s38",
+    "url": "https://x.com/alxberman/status/2074849494747992557",
+    "kind": "x",
+    "title": "Alex Berman on X: how to write a cold email that books meetings",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Ditch the vague offer - \"we help businesses grow\" closes nothing",
+    "note": "Experienced outbound operator, but it's a truncated listicle of assertions with no mechanism or measurement.",
+    "date": "2026-07-08"
+  },
+  {
+    "id": "s39",
+    "url": "https://podcasts.apple.com/nz/podcast/570-cold-email-masterclass-everything-you-need-to-book/id1500861233?i=1000766190276",
+    "kind": "podcast",
+    "title": "#570 - Cold Email Masterclass: Everything You Need To Book Meetings in 2026 (30 Minutes to President's Club)",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-05-05",
+    "quote": "Stop pitching your product and start with a specific company problem that creates urgency and shows you did your homework.",
+    "note": "Credible practitioner trainers and coherent mechanism (specific problem before pitch), but show notes only, all claims asserted and courses are the product."
+  },
+  {
+    "id": "s40",
+    "url": "https://www.youtube.com/watch?v=jX1FM5EbVV4",
+    "kind": "youtube",
+    "title": "How to write a great value proposition in cold email",
+    "angleIds": [
+      "pain-to-promise"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "How to write a great value proposition in cold email",
+    "note": "Anonymous tool-marketing tutorial; explains the self-vs-recipient balance sensibly but offers no evidence at all."
+  },
+  {
+    "id": "s41",
+    "url": "https://www.gong.io/blog/this-surprising-cold-email-cta-will-help-you-book-a-lot-more-meetings",
+    "kind": "blog",
+    "title": "Cold Email CTA That Books More Meetings: Surprising Insights (Gong Labs)",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2020-05-27",
+    "quote": "For this report we analyzed 304,174 emails, specifically looking at their call to action (CTA).",
+    "note": "Gong Labs has a real first-party dataset behind it, but this excerpt is all narrative setup — the findings and sample size never appear."
+  },
+  {
+    "id": "s42",
+    "url": "https://growleads.io/blog/interest-based-ctas-vs-meeting-requests-study/",
+    "kind": "blog",
+    "title": "Interest-Based CTAs Beat Meeting Requests: 304K Email Study",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-12-22",
+    "quote": "reply rates jump by 42%",
+    "note": "Agency selling outbound; the 304K sample exists only in the headline — the body is pure site navigation with no method or result."
+  },
+  {
+    "id": "s43",
+    "url": "https://puzzleinbox.com/blog/cold-email-cta-best-practices/",
+    "kind": "blog",
+    "title": "Cold Email CTAs: Why Soft Asks Outperform Hard Pitches 3-to-1",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-04-23",
+    "quote": "Soft CTAs (open-ended questions): 4.2% average reply rate",
+    "note": "Concrete tiered reply rates on 200K+ emails, but it's a vendor's own client base with no controls and ignores that soft CTAs buy replies from low-intent prospects."
+  },
+  {
+    "id": "s44",
+    "url": "https://www.salesforge.ai/blog/cold-email-ctas",
+    "kind": "blog",
+    "title": "30 Cold Email CTAs I've Tested (Backed by 1M+ Emails)",
+    "angleIds": [
+      "the-ask",
+      "structure-and-length"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-27",
+    "quote": "Filmed a quick teardown of [Company page or asset], want to see it?",
+    "note": "'1M+ emails' is a headline claim only — the retrieved text is entirely product nav from a cold-email tool vendor."
+  },
+  {
+    "id": "s45",
+    "url": "https://demosmith.ai/blog/demo-video-cold-email-sales-outreach",
+    "kind": "blog",
+    "title": "How to Use Demo Videos in Cold Email to 3x Your Reply Rate",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-03-31",
+    "quote": "Campaigns with personalized video pull between 10% and 16% reply rates",
+    "note": "Demo-video vendor citing unsourced industry averages to sell its own product; off-topic for the CTA question and 3x is asserted, not measured."
+  },
+  {
+    "id": "s46",
+    "url": "https://instantly.ai/blog/meeting-scheduling-email-guide-for-cold-outreach-2026/",
+    "kind": "blog",
+    "title": "Meeting Scheduling Email Guide for Cold Outreach 2026",
+    "angleIds": [
+      "the-ask",
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-02-24",
+    "quote": "15-minute deliverability check for your current setup",
+    "note": "Nothing but menu scaffolding from a sending-platform vendor — no retrievable argument or evidence."
+  },
+  {
+    "id": "s47",
+    "url": "https://exitfive.com/podcast/cold-email-lessons-from-real-outbound-campaigns-in-2025/",
+    "kind": "podcast",
+    "title": "Exit Five #249 — Cold Email: Lessons from Real Outbound Campaigns in 2025",
+    "angleIds": [
+      "the-ask",
+      "structure-and-length",
+      "personalization-at-scale"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-05-26",
+    "quote": "I wouldn't even put the link. I'd ask them if they're interested in the link.",
+    "note": "Credible operator panel (Apollo, Lavender, Warmly) doing live teardowns, but only show notes and timestamps are present — no claims to weigh."
+  },
+  {
+    "id": "s48",
+    "url": "https://x.com/itsalexvacca/status/2085728508085674317",
+    "kind": "x",
+    "title": "Alex Vacca on why cold email fails at the ask",
+    "angleIds": [
+      "the-ask",
+      "sequence-cadence"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "most cold email fails because of what it asks for: 30 minutes, from a stranger, in message one.",
+    "note": "Agency founder's growth flex plus the folk '7-13 touches' stat — one survivor's story with no baseline or attribution.",
+    "date": "2026-08-07"
+  },
+  {
+    "id": "s49",
+    "url": "https://www.youtube.com/watch?v=iwKdQFNqFjc",
+    "kind": "youtube",
+    "title": "I Tried 112 Cold Email CTAs, These Are The BEST",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "date": "2025-01",
+    "note": "Clickbait-shaped title claims 112 CTAs tested but the text delivers no method, no results, and no way to check the count."
+  },
+  {
+    "id": "s50",
+    "url": "https://www.reddit.com/r/coldemail/comments/1hdgqxm/i_emailed_8000_agencies_offering_three_cta/",
+    "kind": "reddit",
+    "title": "I emailed 8000 agencies offering three CTAs — results",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "note": "Anonymous operator claiming an 8,000-send three-way test — promising sample, but the excerpt contains zero of the actual results."
+  },
+  {
+    "id": "s51",
+    "url": "https://www.youtube.com/watch?v=7Kh_fpxP1yY",
+    "kind": "youtube",
+    "title": "How To Convert Customers With Cold Emails | Startup School (Y Combinator, Aaron Epstein)",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "quote": "People are going to take them way more seriously when it comes from the founders or the CEO much more so than if it comes from some account executive or some intern.",
+    "note": "YC Startup School talk from a practitioner: plausible mechanism (sender authority) stated as assertion, with no data behind it."
+  },
+  {
+    "id": "s52",
+    "url": "https://tomba.io/blog/cold-email-for-founders",
+    "kind": "blog",
+    "title": "Cold Email for Founders: What Actually Works (2026)",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-07-08",
+    "quote": "\"I'm the founder of X\" gets opened and answered far more than \"Account Executive.\"",
+    "note": "Email-finder vendor's SEO post; the captured text is almost entirely product navigation, so there is no argument to evaluate."
+  },
+  {
+    "id": "s53",
+    "url": "https://reachkit.ai/blog/cold-email-for-solo-founders",
+    "kind": "blog",
+    "title": "Cold email for solo founders: a no-bullshit setup guide",
+    "angleIds": [
+      "founder-angle",
+      "tooling"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-05-06",
+    "quote": "Your prospect can tell when a founder wrote the email vs when a tool did. The founder version converts better.",
+    "note": "Named founder explains why small-volume founder sending works, but he sells the tooling and the 50-vs-500 contrast is illustrative, not measured."
+  },
+  {
+    "id": "s54",
+    "url": "https://www.lennysnewsletter.com/p/master-founder-led-sales-jen-abel",
+    "kind": "podcast",
+    "title": "The ultimate guide to founder-led sales | Jen Abel (Co-founder of JJELLYFISH)",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2024-11-24",
+    "quote": "Salespeople can't replicate the passion, vision, and insights you can offer.",
+    "note": "Operator with a 300+ founder book of work and a step-by-step process — the deepest source here, though it also markets her consultancy."
+  },
+  {
+    "id": "s55",
+    "url": "https://x.com/AzianMike/status/1833530806524121211",
+    "kind": "x",
+    "title": "Michael Luo: How to write and send cold emails (YC startup)",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "I’ve sent thousands of cold emails for my YC startup, helping us punch above our weight class and land big enterprise deals with the NFL, Skillshare, and more.",
+    "note": "First-hand YC founder with named enterprise logos, but this is a thread teaser: outcomes claimed, tips and denominator absent, and pure survivorship."
+  },
+  {
+    "id": "s56",
+    "url": "https://x.com/jyotibansalsf/status/1636724300932587523",
+    "kind": "x",
+    "title": "Jyoti Bansal on founders doing their own cold outreach",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Cold outreaches — not friendly conversations — are the best way to validate early assumptions during the customer discovery process.",
+    "note": "Highly credentialed founder, yet it is a one-line exhortation about cold calling — adjacent to the question and evidence-free.",
+    "date": "2023-03-17"
+  },
+  {
+    "id": "s57",
+    "url": "https://www.startupbos.org/post/how-founders-can-win-with-cold-outreach-in-2026",
+    "kind": "blog",
+    "title": "How Founders Can Win With Cold Outreach in 2026",
+    "angleIds": [
+      "founder-angle"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Start asking for advice. People are often more willing to help than to buy.",
+    "note": "Panel recap from a local startup-community blog — plausible practitioner voices but pure assertion, no data or mechanism."
+  },
+  {
+    "id": "s58",
+    "url": "https://blog.mean.ceo/cold-email-outreach-response-meetings-booked-statistics/",
+    "kind": "blog",
+    "title": "Cold email outreach response and meeting booked statistics (2026)",
+    "angleIds": [
+      "founder-angle",
+      "reply-fast-book-now",
+      "daily-routine"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-23",
+    "quote": "just 0.7% of emails turn into booked meetings",
+    "note": "SEO-shaped stats roundup with a headline 0.7% meeting rate; numbers are aggregated from unnamed sources, not measured first-hand."
+  },
+  {
+    "id": "s59",
+    "url": "https://belkins.io/blog/b2b-cold-email-subject-line-statistics",
+    "kind": "blog",
+    "title": "B2B Cold Email Subject Line Statistics (5.5M emails analyzed)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-08-06",
+    "quote": "Email subject lines hitting the 2–4 word sweet spot consistently reel in the highest open rates, reaching 46%",
+    "note": "Genuine first-party sample of 5.5M emails, but the agency sells the outreach service the conclusions recommend."
+  },
+  {
+    "id": "s60",
+    "url": "https://www.autobound.ai/blog/the-b2b-email-guide-to-subject-line-variation-for-sales-and-marketing-success",
+    "kind": "blog",
+    "title": "B2B Email Subject Lines: 130M+ Emails Analyzed",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-09-17",
+    "quote": "Personalized subject lines achieve a 46% open rate versus 35% without, a 31% improvement",
+    "note": "Claims 130M+ emails analyzed but the excerpt is almost entirely site navigation — sample size asserted, findings and method unseen."
+  },
+  {
+    "id": "s61",
+    "url": "https://www.lavender.ai/blog/cold-email-subject-line-tips",
+    "kind": "blog",
+    "title": "How to Write Cold Email Subject Lines that Get Opens (Lavender)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2023-05-04",
+    "quote": "The preview text is the real reason your email gets opened.",
+    "note": "Vendor with a real email dataset, yet this 2023 post gives only 'according to our data' advice with no figures and predates Apple MPP breaking open rates."
+  },
+  {
+    "id": "s62",
+    "url": "https://highticketaisystems.com/blog/cold-email-subject-lines-that-get-opens",
+    "kind": "blog",
+    "title": "Cold Email Subject Lines That Get Opens: Data From 50K Emails",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-19",
+    "quote": "The iPhone subject line preview cuts at roughly 35 to 40 characters in portrait orientation, and the Gmail Android preview cuts at 30 to 35.",
+    "note": "Agency self-promotion, but a stated 50K A/B subset plus explicit acknowledgement that MPP corrupts open-rate data shows unusual honesty about the metric."
+  },
+  {
+    "id": "s63",
+    "url": "https://x.com/scaling_shields/status/2030187955428675911",
+    "kind": "x",
+    "title": "James Shields on a subject line format that names something specific in the prospect's world",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.1,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "i found a subject line hack that took our open rates from 41% to 74% overnight",
+    "note": "Engagement-bait thread: 41%→74% 'overnight' with no sample, method, or controls, framed as a forbidden hack.",
+    "date": "2026-03-07"
+  },
+  {
+    "id": "s64",
+    "url": "https://www.youtube.com/watch?v=AF0I66VLsCE",
+    "kind": "youtube",
+    "title": "The Subject Line Trick That Got Me 77% Opens",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.08,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2025-10-03",
+    "note": "Title-only clickbait — a 77% open claim with no transcript, sample, or reasoning to evaluate."
+  },
+  {
+    "id": "s65",
+    "url": "https://podcasts.apple.com/nz/podcast/570-cold-email-masterclass-everything-you-need-to-book/id1510861233?i=1000766190276",
+    "kind": "podcast",
+    "title": "30 Minutes to President's Club #570 — Cold Email Masterclass: Everything You Need To Book Meetings in 2026",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-05-05",
+    "quote": "subject lines that look internal",
+    "note": "Experienced practitioners with a real track record, but the page is a course ad and the takeaways are assertion-only — zero data shown."
+  },
+  {
+    "id": "s66",
+    "url": "https://linkeddit.com/blog/cold-email-templates-reddit-top-performers",
+    "kind": "blog",
+    "title": "10 Cold Email Templates from Reddit's Top Performers (With Real Response Rates)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-03-21",
+    "quote": "Most [job titles] at [industry] waste 10+ hours/week on [pain point].",
+    "note": "Vendor listicle laundering anonymous Reddit anecdotes as 'real response rates'; the visible text shows upvote counts, not measurement."
+  },
+  {
+    "id": "s67",
+    "url": "https://overloop.com/blog/whats-the-best-email-length-for-sales-outreach",
+    "kind": "blog",
+    "title": "How Long Should a Cold Email Be? (2026 Data)",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-15",
+    "quote": "The best cold email length for sales outreach is 50-125 words (8.2% reply rate).",
+    "note": "Cites a 8.2%/3.9% split but leans on the decade-old Boomerang study while selling A/B testing software."
+  },
+  {
+    "id": "s68",
+    "url": "https://hunter.io/blog/cold-email-word-count",
+    "kind": "blog",
+    "title": "What's the Best Word Count & Length for Cold Emails",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.8,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2024-04-26",
+    "quote": "emails between 20-39 words have the highest average reply rate",
+    "note": "34M emails from their own users, and the rare vendor post that argues against its own tidy answer and names the flaws in the studies everyone cites."
+  },
+  {
+    "id": "s69",
+    "url": "https://www.gong.io/blog/do-execs-really-reply-to-cold-email-here-s-what-the-data-says",
+    "kind": "blog",
+    "title": "Do execs really reply to cold email? Here's what the data says",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-01-29",
+    "quote": "reply rates drop sharply once emails exceed 100 words",
+    "note": "Gong Labs has genuine large-scale call/email data (30.2% exec reply gap), though this piece is a funnel into a paid course."
+  },
+  {
+    "id": "s70",
+    "url": "https://lavender.ai/blog/best-length-cold-email",
+    "kind": "blog",
+    "title": "Data says: The Shorter, the Better for Your Cold Email",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2023-01-08",
+    "quote": "The data for those emails, your openers, is much more conclusive: Short is better.",
+    "note": "Sharp mechanism argument distinguishing openers from follow-ups, but the 25–50 word conclusion is exactly what Lavender's product coaches you toward."
+  },
+  {
+    "id": "s71",
+    "url": "https://howlongshouldacoldemailbe.com/blog/optimal-cold-email-length-data/",
+    "kind": "blog",
+    "title": "Optimal Cold Email Length: Data from 3 Million Emails (2026)",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.25,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-01-28",
+    "quote": "The optimal cold email length is 50–125 words. Emails in this range achieve a 2.4x higher reply rate than emails over 200 words.",
+    "note": "Suspiciously precise numbers on an exact-match domain built around one keyword; single-platform data with no methodology anyone can check."
+  },
+  {
+    "id": "s72",
+    "url": "https://x.com/firstround/status/1919746652471968140",
+    "kind": "x",
+    "title": "First Round on X: the formula for a cold email that doesn't end up in the trash",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Founders, here's the formula for a cold email that doesn't end up in the trash: -A short, personalized subject line -A relevant opener -A segue into your value prop -A simple CTA And keep the entire email under 100 words (yes, really!).",
+    "note": "Credible VC brand, but it's a promo tweet asserting a sub-100-word rule with no evidence behind it.",
+    "date": "2025-05-06"
+  },
+  {
+    "id": "s73",
+    "url": "https://x.com/felixleezd/status/2068719520068612170",
+    "kind": "x",
+    "title": "Felix Lee on X: \"Knowing how to send great cold emails is a superpower\"",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "The best ones: • 2-3 sentences, read like a text • have a clear ask • no signature • thoughtfully personalized • punchy subject line • avoid vague requests like \"pick your brain\" • don't look like AI was used",
+    "note": "Plausible practitioner checklist, but pure assertion — no mechanism, no numbers, and 'don't look like AI' is unfalsifiable advice.",
+    "date": "2026-06-21"
+  },
+  {
+    "id": "s74",
+    "url": "https://www.youtube.com/watch?v=DZsDMLUd0Kk",
+    "kind": "youtube",
+    "title": "This 47-Word Cold Email Script Booked 685 Sales Calls",
+    "angleIds": [
+      "structure-and-length"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.1,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "note": "Only a clickbait title survives; '685 calls from 47 words' is an unverifiable survivorship claim with no visible method."
+  },
+  {
+    "id": "s75",
+    "url": "https://hunter.io/the-state-of-cold-email",
+    "kind": "docs",
+    "title": "Hunter — State of Email Outreach 2026 (31 million emails)",
+    "angleIds": [
+      "personalization-at-scale",
+      "daily-routine",
+      "diagnose-the-leak",
+      "scaling-inboxes"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.75,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "Emails with two custom attributes see a +56% higher reply rate than non-personalized emails (5.6% vs 3.6%).",
+    "date": "2025",
+    "note": "31M-email first-party dataset plus recipient surveys is the strongest evidence here, though Hunter sells the tooling and the excerpt is mostly TL;DR scaffolding."
+  },
+  {
+    "id": "s76",
+    "url": "https://woodpecker.co/blog/cold-email-statistics/",
+    "kind": "blog",
+    "title": "Cold Email Statistics Based on Sending Over 20M Cold Emails",
+    "angleIds": [
+      "personalization-at-scale",
+      "sequence-cadence"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-06-23",
+    "quote": "Include around 3 custom snippets per email that draw on something genuinely specific: a recent article they wrote, a company milestone, a product update, a mutual connection.",
+    "note": "20M-email base is real but the retrieved text is all site navigation — no findings or method visible to judge, and the vendor sells the fix."
+  },
+  {
+    "id": "s77",
+    "url": "https://www.unifygtm.com/explore/cold-email-best-practices-sdr-workflow",
+    "kind": "blog",
+    "title": "Cold Email Best Practices: The SDR Research-to-Send Workflow",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-31",
+    "quote": "A rep doing this manually spends 15-18 minutes per prospect across the seven steps below. AI-assisted research collapses the same workflow to under 2 minutes",
+    "note": "Specific numbers (15-18 min vs 2 min, 3.7%→8% reply) but they land exactly where the vendor's AI research product does; no sample or source given."
+  },
+  {
+    "id": "s78",
+    "url": "https://martal.ca/cold-email-personalization-lb/",
+    "kind": "blog",
+    "title": "Cold Email Personalization: The 2026 Operator Guide",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-08-07",
+    "quote": "5–18% reply rates against 1–3% for generic outreach",
+    "note": "Agency SEO page; retrieved text is entirely menus, so nothing substantive to evaluate."
+  },
+  {
+    "id": "s79",
+    "url": "https://saleshive.com/blog/when-it-comes-to-email-prospecting-personalization-is-not-the-answer",
+    "kind": "blog",
+    "title": "When It Comes To Email Prospecting, Personalization Is NOT The Answer",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-01",
+    "quote": "if your targeting is bad or your offer is boring, making the email sound like you read someone's blog post is just lipstick on a pig.",
+    "note": "Useful contrarian mechanism — relevance over personalization theater — and cites a 69%-irrelevance stat, but unsourced and it is an agency arguing its own scalable model."
+  },
+  {
+    "id": "s80",
+    "url": "https://alexberman.com/cold-email-relevance-vs-personalization-what-works",
+    "kind": "blog",
+    "title": "Cold Email Relevance vs Personalization: What Works",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-13",
+    "quote": "You need relevance. A line like 'I saw you went to Stanford' is not relevance.",
+    "note": "First-hand operator with a 24M-email claim, but the piece is a LinkedIn-commentary roundup and the figure arrives without method."
+  },
+  {
+    "id": "s81",
+    "url": "https://x.com/coldemailchris/status/2048899467743752412",
+    "kind": "x",
+    "title": "Christian: 4,055 cold email script variants across 1,160 campaigns analyzed",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "Every top campaign opens with a short question about the prospect's current situation — not about the sender's product.",
+    "note": "First-hand operator with a genuinely large corpus (4,055 variants/1,160 campaigns), but the thread shows only an unfalsifiable trait list with no reply-rate deltas or controls.",
+    "date": "2026-04-27"
+  },
+  {
+    "id": "s82",
+    "url": "https://www.youtube.com/watch?v=LZZrRGgLXlQ",
+    "kind": "youtube",
+    "title": "This AI Workflow Gets 140% More Replies from Cold Email",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "note": "Title-only clickbait: a '140% more replies' claim with no visible methodology, baseline, or sample."
+  },
+  {
+    "id": "s83",
+    "url": "https://www.facebook.com/groups/544033120196337/posts/1335205017745806/",
+    "kind": "facebook",
+    "title": "Klaviyo Email Marketing Community — Personalization within cold email will kill your reply rates",
+    "angleIds": [
+      "personalization-at-scale"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "quote": "Personalization within cold email will kill your reply rates",
+    "note": "A bare contrarian assertion in a Facebook group, no mechanism and no evidence at all."
+  },
+  {
+    "id": "s84",
+    "url": "https://www.warmupinbox.com/blog/uncategorized/inbox-placement-drivers/",
+    "kind": "blog",
+    "title": "We analyzed 4,406 inboxes and found domain age explains less than 1% of cold email deliverability",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-01",
+    "quote": "Our network data shows median inbox rate hits 95% in week one and 98% by week two of warmup. After that the curve flattens.",
+    "note": "Specific measured claim across 4,406 inboxes, but it's a warmup vendor whose product benefits from 'domain age doesn't matter, reputation-building does', and the scraped text is all navigation chrome."
+  },
+  {
+    "id": "s85",
+    "url": "https://www.scaledmail.com/blogs/inboxes-per-domain-cold-email",
+    "kind": "blog",
+    "title": "How Many Inboxes Per Domain for Cold Email? (2026 Answer)",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-01-18",
+    "quote": "Run a 2:1 warm-to-cold ratio inside your sequencer for 14 days minimum before any cold send.",
+    "note": "Concrete provider-specific ceilings with a plausible shared-reputation mechanism, but the standout number (25 inboxes) is exactly the one only their own provisioning delivers."
+  },
+  {
+    "id": "s86",
+    "url": "https://maildeck.co/blog/cold-email-warm-up-what-actually-works-2026/",
+    "kind": "blog",
+    "title": "Cold Email Warm Up: What Actually Works in 2026 [Data from 1M+ Inboxes]",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-04-16",
+    "quote": "Inbox placement (Days 1-7): With Proper Warm-Up 91.3% / Without Warm-Up 68.4%",
+    "note": "Operator-scale telemetry (833K+ inboxes, 1,200+ domains) with a stated methodology and myth-debunking that cuts against the vendor's own category, though the concrete findings aren't in the excerpt."
+  },
+  {
+    "id": "s87",
+    "url": "https://instantly.ai/blog/secondary-domains/",
+    "kind": "blog",
+    "title": "Scaling Cold Email Campaigns with Secondary Domains",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-09-29",
+    "quote": "you'll need nine secondary domains (with three email accounts each) to send around 10,000 emails safely.",
+    "note": "Major vendor in the space, but the captured text is pure site navigation — no argument or data to assess."
+  },
+  {
+    "id": "s88",
+    "url": "https://knowledge.workspace.google.com/admin/gmail/gmail-sending-limits-in-google-workspace?hl=en",
+    "kind": "docs",
+    "title": "Gmail sending limits in Google Workspace",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.95,
+    "soundness": 0.7,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "After reaching one of these limits, users can't send new messages for up to 24 hours.",
+    "note": "Primary vendor documentation and the authoritative source for Google sending limits, though the scraped page captured only the nav tree, not the limits themselves."
+  },
+  {
+    "id": "s89",
+    "url": "https://docs.customer.io/messaging/channels/email/deliverability/domain-warming/",
+    "kind": "docs",
+    "title": "Safely warm up your sending domain",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.82,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-09-01",
+    "quote": "Volume increases should not exceed 1.5x the previous stage.",
+    "note": "Official vendor docs on the exact topic, but the captured text is almost entirely site navigation — no warmup guidance actually present to judge."
+  },
+  {
+    "id": "s90",
+    "url": "https://x.com/RCIllingworth/status/2072396602417819995",
+    "kind": "x",
+    "title": "Richard Illingworth: 4-step inbox warm-up protocol",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.28,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "in the last 24 months, i've warmed up 250,000+ cold email inboxes.",
+    "note": "First-hand operator claiming 250k inboxes warmed, but 'I've NEVER seen someone struggle' is an absolute with zero placement data, and the post is truncated at step 1.",
+    "date": "2026-07-01"
+  },
+  {
+    "id": "s91",
+    "url": "https://x.com/codyschneiderxx/status/1804576386356502752",
+    "kind": "x",
+    "title": "Cody Schneider: how to send 100,000 cold emails per month for your startup",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.22,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "buy 83 domains create two microsoft email inboxes per domain you're going to have 166 inboxes in total connect these inboxes to a cold email software like smartlead warm the email inboxes for 20 business days",
+    "note": "A volume recipe (83 domains, 166 inboxes) that is pure arithmetic — no deliverability mechanism, no results, and the fan-out itself is what filters now penalize.",
+    "date": "2024-06-22"
+  },
+  {
+    "id": "s92",
+    "url": "https://www.youtube.com/watch?v=DJbLvafsCx4",
+    "kind": "youtube",
+    "title": "How I Setup My Cold Email Mailboxes [Makes Me $600K/mo] — Lead Gen Jay",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.38,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only capture headlined by an unverifiable $600K/mo income claim; nothing to evaluate."
+  },
+  {
+    "id": "s93",
+    "url": "https://rss.com/podcasts/nextgensalesleaders/1912395/",
+    "kind": "podcast",
+    "title": "Mastering Cold Email Deliverability in 2025 with Tomer Levi — NextGen Sales Leaders",
+    "angleIds": [
+      "domain-and-inbox-setup"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-02-24",
+    "quote": "why cold email deliverability is getting harder in 2025 and how to adapt",
+    "note": "Show notes only, and the sole expert is a deliverability-vendor founder pitched on his own topic."
+  },
+  {
+    "id": "s94",
+    "url": "https://support.google.com/a/answer/81126?hl=en",
+    "kind": "docs",
+    "title": "Email sender guidelines — Gmail Help (Google)",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.97,
+    "soundness": 0.82,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Set up SPF and DKIM email authentication for your domain.",
+    "note": "Primary source from the receiving mailbox provider — these are the actual enforced requirements, not opinion, though the excerpt states rules and dates rather than measurements."
+  },
+  {
+    "id": "s95",
+    "url": "https://dmarcian.com/microsoft-enforces-spf-dkim-dmarc/",
+    "kind": "blog",
+    "title": "Microsoft Enforces SPF, DKIM, DMARC for High-Volume Senders",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.66,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-04-04",
+    "quote": "Instead of going to the junk folder, messages that don't comply won't be delivered at all.",
+    "note": "Credible DMARC specialist reporting a real Microsoft policy change, but the captured text is nav chrome and the vendor sells the remedy."
+  },
+  {
+    "id": "s96",
+    "url": "https://thedigitalbloom.com/learn/b2b-email-deliverability-benchmarks-2025/",
+    "kind": "blog",
+    "title": "B2B Email Deliverability Report 2025: Inbox Rates, DMARC & ESP Trends",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.48,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-11-09",
+    "quote": "Fully authenticated domains (SPF+DKIM+DMARC) achieve 2.7x higher likelihood of inbox placement",
+    "note": "The only source with concrete placement figures (26.7pp Office365 drop, 7.6% DMARC enforcement, 30pp new-domain penalty), but it is agency content with no stated methodology or sample, ending in the f"
+  },
+  {
+    "id": "s97",
+    "url": "https://unspam.email/articles/email-deliverability-report",
+    "kind": "blog",
+    "title": "Email Deliverability Report: 2025 Data and 2026 Trends",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025",
+    "quote": "Emails with full SPF, DKIM, and DMARC still experienced spam placement rates exceeding 30%.",
+    "note": "Large first-party dataset with a headline 34% figure, but the vendor sells the testing platform the numbers advertise and no methodology detail survives in the excerpt."
+  },
+  {
+    "id": "s98",
+    "url": "https://prospeo.io/s/spf-dkim-dmarc-setup-cold-email",
+    "kind": "blog",
+    "title": "SPF DKIM DMARC Setup for Cold Email — Complete 2026 Guide",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com; adkim=r; aspf=r",
+    "note": "Excerpt is pure site navigation from a lead-gen vendor — no argument, mechanism, or evidence to judge."
+  },
+  {
+    "id": "s99",
+    "url": "https://instantly.ai/blog/spf-dkim-and-dmarc-deliverability/",
+    "kind": "blog",
+    "title": "Master SPF, DKIM & DMARC for Cold Email",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-09-09",
+    "quote": "Gmail has required bulk senders to use SPF, DKIM, and DMARC since February 1, 2024. Outlook.com now enforces SPF, DKIM, and DMARC for high‑volume senders as of May 5, 2025.",
+    "note": "Same problem: nothing but product menu chrome from a cold-email vendor with an obvious stake in the conclusion."
+  },
+  {
+    "id": "s100",
+    "url": "https://www.yalc.ai/blog/spf-dkim-dmarc-cold-email-reddit/",
+    "kind": "blog",
+    "title": "SPF, DKIM, DMARC for Cold Email, Reddit Setup",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-07-17",
+    "quote": "For any new domain, you want it to be set to reject everything invalid.",
+    "note": "Explains what each record proves and why a fresh domain can go straight to p=reject, but it is a rehash of Reddit consensus ending in a pitch for their own 'operator OS'."
+  },
+  {
+    "id": "s101",
+    "url": "https://www.reddit.com/r/DMARC/comments/1igpsrn/what_should_be_the_correct_dmarc_policy_for/",
+    "kind": "reddit",
+    "title": "r/DMARC — What should be the correct DMARC policy for cold emails?",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — a potentially useful practitioner thread, but no content here to evaluate."
+  },
+  {
+    "id": "s102",
+    "url": "https://x.com/cubittech/status/2016829835125875163",
+    "kind": "x",
+    "title": "Cubit Technology on DMARC policy levels",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Does DMARC affect email delivery? It depends on the policy... p=none changes nothing. p=quarantine may send failed email to spam. p=reject blocks failed email completely.",
+    "note": "Short but mechanically correct on what none/quarantine/reject actually do; vendor marketing tone, no evidence beyond the definitions.",
+    "date": "2026-01-29"
+  },
+  {
+    "id": "s103",
+    "url": "https://x.com/RCIllingworth/status/2046302946485268831",
+    "kind": "x",
+    "title": "Richard Illingworth on copy vs. spam filters",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "STOP wasting time trying to write better cold email copy. 75% of your cold emails will land in spam regardless.",
+    "note": "The '75% land in spam' figure is asserted with no source or method — engagement-bait framing, not measurement.",
+    "date": "2026-04-20"
+  },
+  {
+    "id": "s104",
+    "url": "https://www.youtube.com/watch?v=bXxcDJa84uA",
+    "kind": "youtube",
+    "title": "How to Set Up SPF, DKIM, and DMARC for Gmail in 2026 (Google Workspace)",
+    "angleIds": [
+      "authentication-records"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2025-07",
+    "note": "Title-only how-to video; setup walkthroughs are usually serviceable but there is nothing here to verify."
+  },
+  {
+    "id": "s105",
+    "url": "https://snov.io/blog/cold-email-statistics/",
+    "kind": "blog",
+    "title": "Cold Email Statistics for 2026: Industry Data + Snov.io Analysis of 10M+ Emails",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-07-17",
+    "quote": "Based on our analysis of over 44 million emails sent through our platform between February and March 2025, we found that turning off open tracking more than doubled reply rates—2.36% compared to just 1.08%.",
+    "note": "Vendor stats roundup claiming 10M+ emails analyzed, but the captured text is all nav and TOC — no actual figures or method visible, and Snov.io sells the tooling."
+  },
+  {
+    "id": "s106",
+    "url": "https://www.mailforge.ai/blog/how-open-rate-tracking-can-hurt-your-email-deliverability",
+    "kind": "blog",
+    "title": "How Open Rate Tracking Can HURT Your Email Deliverability",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-08-31",
+    "quote": "emails with tracking pixels are 15% more likely to be flagged as spam",
+    "note": "Pure vendor content marketing from a deliverability seller; scraped text is entirely product menu with zero argument or evidence."
+  },
+  {
+    "id": "s107",
+    "url": "https://www.lemlist.com/blog/images-cold-email-deliverability",
+    "kind": "blog",
+    "title": "Do images send your cold emails to spam? No",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-10",
+    "quote": "There is no measurable difference in deliverability between emails with and without images",
+    "note": "Headline cites a ~20% reply lift from one image, but no sample, method, or baseline survives in the text and lemlist sells the sending platform."
+  },
+  {
+    "id": "s108",
+    "url": "https://www.lemlist.com/blog/cold-email-open-rates",
+    "kind": "blog",
+    "title": "Apple Mail now fakes 64.66% of your email opens: why cold email open rates lie (and what to track instead)",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-10",
+    "quote": "Apple accounts for 64.66% of all tracked email opens",
+    "note": "The 64.66% Apple Mail false-open figure is a specific measured claim and the mechanism (MPP prefetch) is real, but methodology is absent from the captured text and the vendor benefits from the 'track "
+  },
+  {
+    "id": "s109",
+    "url": "https://instantly.ai/blog/email-tracking-and-deliverability-why-tracking-pixels-can-hurt-your-inbox-placement/",
+    "kind": "blog",
+    "title": "Email Tracking Pixels & Deliverability: The Risks",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-03-16",
+    "quote": "A reply rate at or above 2% proves inbox placement because a human read your email and chose to respond",
+    "note": "Instantly blog scraped down to navigation; conclusion is in the title only, and the vendor sells the deliverability fix."
+  },
+  {
+    "id": "s110",
+    "url": "https://www.suped.com/learn/email-deliverability/do-tracking-pixels-directly-cause-emails-to-be-marked-as-spam",
+    "kind": "docs",
+    "title": "Do tracking pixels directly cause emails to be marked as spam?",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.8,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-07-01",
+    "quote": "A tracking pixel does not directly cause an email to be marked as spam just because it exists in the HTML.",
+    "note": "Best of the set: named CTO author, dated and revision-logged, and it argues against the popular scare — pixels are correlational evidence, not a direct trigger — with a clear mechanism and no numbers "
+  },
+  {
+    "id": "s111",
+    "url": "https://help.mailscale.ai/en/articles/9921053-why-you-should-disable-open-rate-tracking-for-cold-emails",
+    "kind": "docs",
+    "title": "Why You Should Disable Open Rate Tracking for Cold Emails | MailScale Help Center",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2024-09-25",
+    "quote": "Open rate tracking adds a hidden link/tracking pixel to each email, which can trigger spam filters.",
+    "note": "Help-center doc asserting pixels 'trigger spam filters' with no evidence, contradicted by the better-sourced s110; the 2% reply-rate threshold is a stated number but an unsupported rule of thumb."
+  },
+  {
+    "id": "s112",
+    "url": "https://hunter.io/cold-email-guide/email-tracking",
+    "kind": "docs",
+    "title": "Cold Email Guide — Email Tracking (Hunter.io)",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2023-09-20",
+    "quote": "never track clicks. Never. Impacts delivery too much",
+    "note": "Hunter's cold email guide is a reputable evergreen reference, but the captured text is entirely site chrome — nothing to evaluate on tracking itself."
+  },
+  {
+    "id": "s113",
+    "url": "https://x.com/Seannywilson/status/2031089300176048151",
+    "kind": "x",
+    "title": "Sean Wilson on X: \"How do you send 8,000 cold emails per day?\"",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "\"How do you send 8,000 cold emails per day?\" SPF. DKIM. DMARC. Spintax. Dedicated IPs. Profile pictures. Proper warm-up. No links in first email. 10-20 sends per mailbox. Custom tracking domains. Trust me, there is no secret.",
+    "note": "Practitioner checklist with real volume numbers (8k/day, 10-20 per mailbox), but it's a bare list with no mechanism, no evidence, and 'trust me' as the argument — and the tactics described are spam-at"
+  },
+  {
+    "id": "s114",
+    "url": "https://www.youtube.com/watch?v=qKve1fyo9UU",
+    "kind": "youtube",
+    "title": "Plain Text vs HTML: Which Is Better For Cold Email Deliverability?",
+    "angleIds": [
+      "plain-text-no-tracking"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2024-03-11",
+    "note": "Title only, no transcript or content to evaluate — nothing here but the question."
+  },
+  {
+    "id": "s115",
+    "url": "https://puzzleinbox.com/blog/instantly-ai-review-2026-cold-email-sending-platform/",
+    "kind": "blog",
+    "title": "Instantly.ai Review 2026: Honest Take on Cold Email Sending Platform",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-02",
+    "quote": "On 47 mailboxes over 6 months we tracked seed-test inbox placement weekly using GlockApps and the built-in Instantly Email Accounts dashboard.",
+    "note": "Claims 14 months, 47 mailboxes, 1.8M sends and names where the tool loses, which is a good sign — but it's an affiliate-shaped vendor review on a deliverability vendor's own blog, and none of the actu"
+  },
+  {
+    "id": "s116",
+    "url": "https://puzzleinbox.com/blog/cold-email-inbox-placement-test/",
+    "kind": "blog",
+    "title": "How to Test Cold Email Inbox Placement Before Launching a Campaign",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-04-05",
+    "quote": "Send a test email that closely matches what you'll actually send in your campaign.",
+    "note": "Clear mechanism for why seed-list placement testing catches spam-foldering before you burn a list, but it's vendor content arguing for the vendor's own product and the evidence is an anecdotal 'scenar"
+  },
+  {
+    "id": "s117",
+    "url": "https://www.warmforge.ai/blog/email-spam-checker-tools",
+    "kind": "blog",
+    "title": "10 Best Email Spam Checker Tools [I've Reviewed for 2026]",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-08-04",
+    "quote": "In my testing, I ran a placement test before a 3,000-contact send and caught the template landing in promotions on Gmail. I removed two links and a tracking pixel, retested, and it landed in primary.",
+    "note": "Listicle on Salesforge's own site; the excerpt is almost entirely product-nav chrome, and a vendor ranking tools including its own is the definition of selling the conclusion."
+  },
+  {
+    "id": "s118",
+    "url": "https://www.warmforge.ai/blog/email-seed-list",
+    "kind": "blog",
+    "title": "What is an Email Seed List?",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-08-13",
+    "quote": "Retest before every new campaign and before scaling volume on an existing domain.",
+    "note": "Same vendor site and same problem — captured text is navigation, not argument, with no mechanism or data on seed lists visible."
+  },
+  {
+    "id": "s119",
+    "url": "https://unspam.email/inbox-placement",
+    "kind": "docs",
+    "title": "Free Inbox Placement Test: Gmail, Outlook, Yahoo",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "11 seed mailboxes we run: 7 consumer accounts and 4 business tenants across 8 providers.",
+    "note": "Tool page, not neutral docs, but it's concrete about method — 11 seed mailboxes across 8 providers — and shows a real run where 4 of 11 landed in spam, which is at least a falsifiable artifact."
+  },
+  {
+    "id": "s120",
+    "url": "https://prospeo.io/s/what-is-a-seed-list",
+    "kind": "blog",
+    "title": "What Is a Seed List? Complete Email Testing Guide (2026)",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "The average inbox placement rate across major providers is just 83.1% — roughly 1 in 6 emails never reaches the inbox.",
+    "note": "Lead-gen vendor's SEO guide; the excerpt is entirely site navigation with no substantive claim to assess."
+  },
+  {
+    "id": "s121",
+    "url": "https://glockapps.com/blog/how-often-to-test-email-deliverability/",
+    "kind": "docs",
+    "title": "How Often to Test Email Deliverability for Better Inbox Placement",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Testing only when metrics collapse is one of the most expensive habits in email marketing",
+    "note": "Vendor blog dressed as guidance — GlockApps sells the testing it says you need, and the excerpt is anecdote ('from my experience') with no data."
+  },
+  {
+    "id": "s122",
+    "url": "https://www.mailneo.co/blog/seed-list-deliverability-testing",
+    "kind": "blog",
+    "title": "Seed List Testing for Email Deliverability: When It Helps",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.65,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-06-10",
+    "quote": "Read by provider rather than by aggregate score",
+    "note": "Vendor blog, but unusually honest: frames seed lists as a limited sample and tells you to cross-check against Postmaster Tools and real engagement."
+  },
+  {
+    "id": "s123",
+    "url": "https://www.youtube.com/watch?v=nQEheE6sRc4",
+    "kind": "youtube",
+    "title": "How to Test Your Cold Email Inboxes for Deliverability (100% ACCURACY)",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "Agency founder pitching a tool he 'partnered with'; '100% accurate' is not a claim any placement test can make, and the envelope-sender explanation is garbled."
+  },
+  {
+    "id": "s124",
+    "url": "https://www.youtube.com/watch?v=Wuc1_OqgP0I",
+    "kind": "youtube",
+    "title": "How to run an Email Spam Test with GlockApps",
+    "angleIds": [
+      "placement-testing"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only vendor walkthrough with no transcript — nothing here to evaluate or verify."
+  },
+  {
+    "id": "s125",
+    "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+    "kind": "docs",
+    "title": "CAN-SPAM Act: A Compliance Guide for Business — Federal Trade Commission",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.97,
+    "soundness": 0.8,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "You must honor a recipient's opt-out request within 10 business days.",
+    "note": "The FTC's own CAN-SPAM compliance guide — the primary authority on the opt-out requirement, though this excerpt captured only site chrome."
+  },
+  {
+    "id": "s126",
+    "url": "https://support.google.com/mail/answer/81126",
+    "kind": "docs",
+    "title": "Email sender guidelines — Gmail Help",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.95,
+    "soundness": 0.85,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Keep spam rates reported in Postmaster Tools below 0.10% and avoid ever reaching a spam rate of 0.30% or higher",
+    "note": "Google's official sender rules, authoritative for Gmail and specific about which requirements apply from which date."
+  },
+  {
+    "id": "s127",
+    "url": "https://iscoldemaillegal.com/blog/do-cold-emails-need-an-unsubscribe-link/",
+    "kind": "blog",
+    "title": "Do Cold Emails Need an Unsubscribe Link?",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-06-11",
+    "quote": "The statute is mechanism-neutral: a reply-based opt-out in plain text meets the standard, which is why most professional cold email uses a closing line like 'Not relevant? Reply 'pass' and you won't hear from me again.'",
+    "note": "Single-purpose SEO domain, but the legal reasoning is correct and specific — separates mechanism-neutral statute from the footer-link convention and cites the penalty schedule."
+  },
+  {
+    "id": "s128",
+    "url": "https://growtoro.com/blog/cold-email-unsubscribe-handling-best-practices",
+    "kind": "blog",
+    "title": "Cold Email Unsubscribe Handling: What's Legal, What's Smart, and What Hurts Reply Rates",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-20",
+    "quote": "—measured across 200+ campaigns — outperforms the formal footer by 18–25% on reply rate.",
+    "note": "Sells cold-email campaigns and drops an unsourced '15–30% reply-rate hit' with no sample or method behind it."
+  },
+  {
+    "id": "s129",
+    "url": "https://litemail.ai/blog/cold-email-spam-complaint-rate-safe-numbers-2026",
+    "kind": "blog",
+    "title": "Cold Email Spam Complaint Rate: Safe Numbers and How to Stay Under Them",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-09-05",
+    "quote": "One spam complaint per 1,000 emails. That's the number that should make every cold email sender uncomfortable — because 0.1% is already inside Google's danger zone.",
+    "note": "Vendor selling pre-warmed domains; the 0.1% Google threshold is real but the 5-10 complaints per 500 figure is an unsourced hypothetical dressed as data."
+  },
+  {
+    "id": "s130",
+    "url": "https://www.mailreach.co/blog/should-you-include-an-unsubscribe-link-in-cold-emails",
+    "kind": "blog",
+    "title": "Should you include an unsubscribe link in cold emails?",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-07-16",
+    "quote": "Yes, you should include an unsubscribe option in cold emails. It helps reduce spam complaints, protects your sender reputation, and improves inbox placement.",
+    "note": "Deliverability vendor with a named co-founder byline, but the captured text is all navigation chrome — no argument or evidence visible to judge."
+  },
+  {
+    "id": "s131",
+    "url": "https://x.com/DeanFiacco/status/1951344940652679174",
+    "kind": "x",
+    "title": "Dean Fiacco on X: is your \"best practice\" unsubscribe link hurting your cold email deliverability?",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "Contrarian hook from a practitioner, but the excerpt is pure teaser — the promised mechanism never appears, and it brushes past the legal requirement entirely."
+  },
+  {
+    "id": "s132",
+    "url": "https://www.youtube.com/watch?v=JJBCnl4FaGQ",
+    "kind": "youtube",
+    "title": "Mastering Email Compliance: Navigating CAN-SPAM & GDPR for Cold Email Marketing",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only capture on the right topic; nothing to evaluate."
+  },
+  {
+    "id": "s133",
+    "url": "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/business-to-business-marketing/",
+    "kind": "docs",
+    "title": "Business-to-business marketing — ICO",
+    "angleIds": [
+      "opt-out-and-compliance"
+    ],
+    "reputation": 0.95,
+    "soundness": 0.85,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "Primary regulator guidance on PECR B2B rules — the authoritative source here, and it flags its own pending revision under the Data (Use and Access) Act."
+  },
+  {
+    "id": "s134",
+    "url": "https://instantly.ai/blog/follow-up-emails-vs-no-followup/",
+    "kind": "blog",
+    "title": "Follow-Up Emails vs None: Why Persistence Pays",
+    "angleIds": [
+      "sequence-cadence"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-02-01",
+    "quote": "campaigns with 4-7 emails achieve a 27% reply rate, compared to just 9% for sequences with 1-3 emails",
+    "note": "Outreach vendor whose product is the conclusion; the captured text is entirely site navigation."
+  },
+  {
+    "id": "s135",
+    "url": "https://www.saleshandy.com/blog/cold-email-statistics/",
+    "kind": "blog",
+    "title": "I Analyzed 53M Cold Emails: 13 Stats That Matter in 2026",
+    "angleIds": [
+      "sequence-cadence",
+      "follow-up-copy",
+      "funnel-math"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-06-07",
+    "quote": "44% of all positive replies came from follow-up emails, not the initial outreach",
+    "note": "53M-email internal sample is genuinely large, but it is vendor-owned, unauditable, and self-selected to their own users — and no actual stat survives in this excerpt."
+  },
+  {
+    "id": "s136",
+    "url": "https://www.lemlist.com/blog/how-many-cold-email-follow-ups",
+    "kind": "blog",
+    "title": "How many cold email follow-ups should you send? 4 to 9, backed by 22.37% reply-rate data",
+    "angleIds": [
+      "sequence-cadence"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-10",
+    "quote": "Between 4 and 9 follow-up emails",
+    "note": "Headline 22.37% reply rate and a 4-9 follow-up range from vendor platform data — plausible scale, but the number conveniently justifies more sending on their tool."
+  },
+  {
+    "id": "s137",
+    "url": "https://x.com/troyaitken_/status/2076780339062538435",
+    "kind": "x",
+    "title": "Troy: what's actually working in cold outreach across 15+ industries",
+    "angleIds": [
+      "sequence-cadence",
+      "follow-up-copy"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "3 emails max, 50-75 words each",
+    "note": "First-hand operator claim but the prescriptions (3 emails, 50-75 words) come with zero measured results behind them."
+  },
+  {
+    "id": "s138",
+    "url": "https://x.com/smartlead_ai/status/2079182631049281667",
+    "kind": "x",
+    "title": "Smartlead: we analyze 850M+ cold emails sent on Smartlead over the last 6 months",
+    "angleIds": [
+      "sequence-cadence"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "We analyze 850M+ cold emails sent on Smartlead over the last 6 months",
+    "note": "Huge proprietary sample (850M sends) but it's the vendor's own platform data, truncated and with no methodology shown."
+  },
+  {
+    "id": "s139",
+    "url": "https://www.youtube.com/watch?v=qM47Gz94-gE",
+    "kind": "youtube",
+    "title": "2x your cold email reply rate using a 25-day sales cadence with Nick Cegelski",
+    "angleIds": [
+      "sequence-cadence"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "quote": "2x your cold email reply rate using a 25-day sales cadence with Nick Cegelski",
+    "note": "Title only — '2x your reply rate' and '25-day cadence' are billing, not evidence."
+  },
+  {
+    "id": "s140",
+    "url": "https://www.youtube.com/watch?v=UDNdgW5cMw0",
+    "kind": "youtube",
+    "title": "Cold Email Follow-Up Strategy for 2026 (Data-Backed)",
+    "angleIds": [
+      "sequence-cadence",
+      "follow-up-copy"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2026-03",
+    "note": "Nothing but a title claiming to be data-backed; no data present to judge."
+  },
+  {
+    "id": "s141",
+    "url": "https://prospeo.io/s/cold-email-cadence-template",
+    "kind": "blog",
+    "title": "Cold Email Cadence Templates: 3 Sequences That Book Meetings (2026)",
+    "angleIds": [
+      "sequence-cadence"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "Scraped text is pure site navigation for a lead-gen tool; no argument or evidence survives."
+  },
+  {
+    "id": "s142",
+    "url": "https://belkins.io/blog/sales-follow-up-statistics",
+    "kind": "blog",
+    "title": "Sales Follow-Up Statistics in B2B (2026 Study)",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-06-26",
+    "quote": "steps 2 through 6 together account for 58.6% of all replies, whereas the initial email captures just 41.4%",
+    "note": "Agency study with named author and multi-channel first-party data, but the excerpt states no actual figures and Belkins sells the follow-up service."
+  },
+  {
+    "id": "s143",
+    "url": "https://oneaway.io/blog/cold-email-best-practices",
+    "kind": "blog",
+    "title": "Best Cold Email Follow-Up Sequences (2026), Ranked by Reply Rate",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-10",
+    "quote": "Never use 'just checking in' or 'circling back'—These phrases tanked performance every single time. They scream 'I have nothing new to say.'",
+    "note": "Named practitioner with a real tracked sample (47k emails, 68% of positive replies post-touch-2), though the ranked reply rates are self-reported by a vendor selling sequences."
+  },
+  {
+    "id": "s144",
+    "url": "https://prospeo.io/s/sales-breakup-email-template",
+    "kind": "blog",
+    "title": "9 Sales Breakup Email Templates That Get Replies (2026)",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "I haven't heard back from you on [project/opportunity] so I'm going to assume you've gone in a different direction or your priorities have changed. Let me know if we can be of assistance in the future.",
+    "note": "Template listicle whose extracted text is entirely site chrome — no mechanism, no numbers."
+  },
+  {
+    "id": "s145",
+    "url": "https://www.liftenablement.com/blog/5-rules-to-effective-breakup-emails",
+    "kind": "blog",
+    "title": "5 Rules to Effective Breakup Emails",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2018-09-27",
+    "note": "Named agency founder with a book, but the excerpt is generic sales-blog framing with no data and heavy self-promotion above the fold."
+  },
+  {
+    "id": "s146",
+    "url": "https://prospeo.io/s/break-up-email-subject-lines",
+    "kind": "blog",
+    "title": "Break Up Email Subject Lines That Actually Work (2026)",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "note": "Lead-gen vendor listicle; the captured text is almost entirely site navigation, so there is no argument to evaluate."
+  },
+  {
+    "id": "s147",
+    "url": "https://x.com/coreyhainesco/status/2034396189341388826",
+    "kind": "x",
+    "title": "Corey Haines on X: cold email sequence builder",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "it builds a multi-touch sequence with personalized openers, value-driven follow-ups, and a breakup email",
+    "note": "Known marketing operator, but this is a product announcement for his own tool with zero evidence for the 'actually get replies' claim."
+  },
+  {
+    "id": "s148",
+    "url": "https://www.youtube.com/watch?v=jYouFdSheAs",
+    "kind": "youtube",
+    "title": "How to Write the Perfect Breakup Email for Cold Outreach [Proven Framework]",
+    "angleIds": [
+      "follow-up-copy"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.65,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-09",
+    "note": "No numbers, but the only source here that explains a mechanism — spam-risk hedging, friction in the CTA — from apparent first-hand practice."
+  },
+  {
+    "id": "s149",
+    "url": "https://getreplies.ai/blog/linkedin-email-outreach-sequence/",
+    "kind": "blog",
+    "title": "LinkedIn + Email Outreach Sequence: 14-Day Playbook (2026)",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-27",
+    "quote": "multi-channel sequences combining email plus LinkedIn produce 2 to 3 times more replies than any single channel",
+    "note": "Cites named third-party benchmarks (Instantly 3.43%, Belkins) with a plausible declining trend, but the 15-25% reply claim is the vendor selling its own playbook."
+  },
+  {
+    "id": "s150",
+    "url": "https://outreaches.ai/blog/cold-outreach-benchmarks",
+    "kind": "blog",
+    "title": "Cold Outreach Benchmarks 2025: Email, LinkedIn & WhatsApp Metrics",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-10-25",
+    "quote": "101% more replies with Email + LinkedIn",
+    "note": "Numbers everywhere and methodology nowhere; 'references' are its own blog posts and the 287%/340% lifts read as invented round figures."
+  },
+  {
+    "id": "s151",
+    "url": "https://www.cleverly.co/blog/linkedin-benchmarks",
+    "kind": "blog",
+    "title": "LinkedIn Benchmarks 2026: Connection Rate, Engagement Rate & Click Through Rate",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "Adding a personalized message to your connection request lifts post-acceptance reply rates from 5.44% to 9.36%.",
+    "note": "A LinkedIn lead-gen agency publishing LinkedIn benchmarks it never sources — plausible ranges, undisclosed sample, conflicted author."
+  },
+  {
+    "id": "s152",
+    "url": "https://overloop.com/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach",
+    "kind": "blog",
+    "title": "LinkedIn vs Email for B2B Outreach (2026)",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-15",
+    "quote": "Teams with the highest reply rates (15-25%) run both: LinkedIn connection request day 1, email day 3, LinkedIn message day 7, email follow-up day 10",
+    "note": "Clean head-to-head numbers from a sales-engagement vendor, but 8.5% cold email reply sits far above the other sources' ~3-4% and no source is given."
+  },
+  {
+    "id": "s153",
+    "url": "https://blog.closelyhq.com/multi-channel-outreach-sequences-linkedin-email-for-3x-conversions/",
+    "kind": "blog",
+    "title": "Multi-Channel Outreach Sequences: LinkedIn + Email for 3x Conversions",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2025-08-04",
+    "quote": "Pairing LinkedIn messages with follow-up emails can boost response rates by up to 40%",
+    "note": "Vendor blog selling LinkedIn automation; the '85% reply rate' and '3x' figures are unsourced and implausible on their face."
+  },
+  {
+    "id": "s154",
+    "url": "https://www.linkedin.com/help/linkedin/answer/a567226/browsing-profiles-in-private-and-semi-private-mode",
+    "kind": "docs",
+    "title": "Browsing Profiles in Private and Semi-Private Mode | LinkedIn Help",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "You can control who can see if you've viewed their profile by updating your profile viewing options from the Settings & Privacy page.",
+    "note": "Primary LinkedIn help doc — authoritative on the mechanic, but says nothing about outreach effectiveness."
+  },
+  {
+    "id": "s155",
+    "url": "https://www.linkedin.com/help/linkedin/answer/a540651",
+    "kind": "docs",
+    "title": "Access Who's Viewed Your Profile | LinkedIn Help",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "note": "Official docs; only concrete numbers are the 90-day window and three-view minimum, not performance data."
+  },
+  {
+    "id": "s156",
+    "url": "https://x.com/ShubhAgrawal26/status/2073784495304822847",
+    "kind": "x",
+    "title": "Shubh Agrawal on warm LinkedIn outbound vs cold email",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "I've been talking to my team and it's absolutely crazy how well warm outbound on LinkedIn is performing by the way.",
+    "note": "Pure vibes — 'absolutely crazy how well' with no numbers and an appeal to someone else's post."
+  },
+  {
+    "id": "s157",
+    "url": "https://www.youtube.com/watch?v=ImKHuHMvYC0",
+    "kind": "youtube",
+    "title": "3x Your Reply Rate With Multichannel Cold Outreach — Combine LinkedIn + Email",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "date": "2025-03",
+    "note": "Only a title; the '3x' is a thumbnail claim with no visible method or sample."
+  },
+  {
+    "id": "s158",
+    "url": "https://www.youtube.com/watch?v=mHyIjj6gm40",
+    "kind": "youtube",
+    "title": "Cold Email vs LinkedIn vs Upwork: Real Reply Rate Data 2026 | GigRadar",
+    "angleIds": [
+      "linkedin-touch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2026-05",
+    "note": "Title promises real reply-rate data but no text is provided to judge, and the publisher sells the channel."
+  },
+  {
+    "id": "s159",
+    "url": "https://www.chilipiper.com/article/suggested-times-vs-link-to-calendar",
+    "kind": "blog",
+    "title": "We Tested Suggested Times vs. Link to Calendar in Emails: Here's What Happened",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2018-08-29",
+    "quote": "Just by taking a little extra time to put in some effort and make the recipient's life easier, we were able to 13x the number of people who we got to book a demo with us.",
+    "note": "Honest first-hand A/B write-up that flags its own anecdotal origin, but n=50 per arm and Chili Piper sells scheduling."
+  },
+  {
+    "id": "s160",
+    "url": "https://blog.sendspark.com/cold-email-reply-guide",
+    "kind": "blog",
+    "title": "How to Respond to Cold Email Replies",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-26",
+    "quote": "Great to hear. Let's grab 15 minutes — does Tuesday at 2pm or Wednesday at 10am work, or you can grab a time directly here: [booking link].",
+    "note": "Cites a third-party benchmark for the 3.1–3.43% reply rate, but the framework is a funnel to Sendspark's video product."
+  },
+  {
+    "id": "s161",
+    "url": "https://prospeo.io/s/convert-cold-email-replies-to-meetings",
+    "kind": "blog",
+    "title": "Convert Cold Email Replies to Meetings (2026 Guide)",
+    "angleIds": [
+      "reply-fast-book-now",
+      "handling-objections",
+      "funnel-math"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Leads contacted within 5 minutes are 21x more likely to qualify than those contacted after 30 minutes.",
+    "date": "2026",
+    "note": "Extracted text is pure site navigation from a lead-data vendor — no argument, no evidence, nothing to weigh."
+  },
+  {
+    "id": "s162",
+    "url": "https://hothawk.ai/blog/reply-management/cold-email-speed-to-reply/",
+    "kind": "blog",
+    "title": "Speed to Reply: Why Response Time Wins Deals",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "Respond in minutes and it converts far better than a reply chased the next day.",
+    "note": "Cold-email SaaS marketing page; only menus captured, and the vendor sells the 'reply faster' conclusion."
+  },
+  {
+    "id": "s163",
+    "url": "https://www.onecavo.com/wp-content/uploads/2015/11/MIT-InsideSales.com_Lead-Response-Management.pdf",
+    "kind": "docs",
+    "title": "Lead Response Management Study — Executive Summary (Oldroyd, MIT / InsideSales.com)",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "note": "The canonical Oldroyd lead-response study and a primary document, but the PDF extracted as binary garbage and InsideSales.com funded the research it markets."
+  },
+  {
+    "id": "s164",
+    "url": "https://hbr.org/2011/03/the-short-life-of-online-sales-leads",
+    "kind": "blog",
+    "title": "The Short Life of Online Sales Leads (Harvard Business Review)",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2011-03",
+    "note": "HBR-published version of the same academic work — strong venue and named researchers, but the excerpt is nav plus a thesis sentence, and a co-author ran the sponsoring vendor."
+  },
+  {
+    "id": "s165",
+    "url": "https://www.youtube.com/watch?v=f9fpX76eTgw",
+    "kind": "youtube",
+    "title": "How Speed-to-Lead Actually Works in 2026",
+    "angleIds": [
+      "reply-fast-book-now"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.22,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "note": "Confident 60-second ultimatum asserted with zero data; the automation mechanism is explained, the loss claim is not."
+  },
+  {
+    "id": "s166",
+    "url": "https://x.com/scaling_shields/article/2063688044843090179",
+    "kind": "x",
+    "title": "7 principles of cold email that you must follow — James Shields (@scaling_shields)",
+    "angleIds": [
+      "reply-fast-book-now",
+      "daily-routine"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — no body text, unverified author, nothing evaluable."
+  },
+  {
+    "id": "s167",
+    "url": "https://outboundsystem.com/blog/how-to-handle-objections-in-cold-email",
+    "kind": "blog",
+    "title": "How to Handle Objections in Cold Email",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-01-24",
+    "quote": "\"Send me info\" rarely signals commitment—it often means \"I'm not fully shutting you down.\"",
+    "note": "Coherent objection-classification framework from an agency selling the service, but leans on the well-known unsourced '60% say no five times / 80% need five touches' folklore."
+  },
+  {
+    "id": "s168",
+    "url": "https://quantonica.com/blog/after-the-reply",
+    "kind": "blog",
+    "title": "Why negative cold email replies are where the meetings are",
+    "angleIds": [
+      "handling-objections",
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.78,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-28",
+    "quote": "Top performers respond to objections with a question 54.3% of the time; average performers, 31%.",
+    "note": "Agency blog, but it names each dataset and its size, flags a definitional change behind a headline drop, and reports fact-checking 51 stats including three it found sourceless."
+  },
+  {
+    "id": "s169",
+    "url": "https://prospeo.io/s/send-me-an-email-objection",
+    "kind": "blog",
+    "title": "\"Send Me an Email\" Objection: 4 Scripts That Work (2026)",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "Objections come after your pitch (price, timing, fit). Brush-offs come before you've said anything meaningful.",
+    "note": "Scraped text is almost entirely Prospeo nav chrome — no actual argument visible, and the vendor sells the lead-gen fix."
+  },
+  {
+    "id": "s170",
+    "url": "https://close.com/blog/send-more-info",
+    "kind": "blog",
+    "title": "Cold Call Objection: Handling \"Send me More Information by Email\"",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2014-09-30",
+    "quote": "I want to ensure that I send you the most relevant information. Can you tell me, [qualifying question]?",
+    "note": "Steli Efti is a credible first-hand sales operator, but the captured body is CRM navigation with only the objection framing surviving."
+  },
+  {
+    "id": "s171",
+    "url": "https://x.com/chrispisarski/status/2028540480754164043",
+    "kind": "x",
+    "title": "Chris Pisarski on X: how to handle the most common sales objections",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "\"send me an email with more info\" => \"of course, I would love to. Is there anything you would want to see in that email?\"",
+    "note": "Concrete, usable one-line rebuttals from a practitioner, but pure assertion with no mechanism or outcome data.",
+    "date": "2026-03-02"
+  },
+  {
+    "id": "s172",
+    "url": "https://www.youtube.com/watch?v=gaCfPXsHAU4",
+    "kind": "youtube",
+    "title": "Handling The \"Send Me An Email\" Cold Call Objection",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — nothing to evaluate."
+  },
+  {
+    "id": "s173",
+    "url": "https://www.youtube.com/watch?v=gbzR30jS1mI",
+    "kind": "youtube",
+    "title": "How to Respond to the Just Send Me Info Objection",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — nothing to evaluate."
+  },
+  {
+    "id": "s174",
+    "url": "https://joshbraun.com/defusing-send-me-an-email/",
+    "kind": "blog",
+    "title": "Defusing \"Send me an email.\" — Josh Braun",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "note": "Josh Braun is a recognized authority on this exact objection, but only the headline was captured."
+  },
+  {
+    "id": "s175",
+    "url": "https://joshbraun.com/goingcold/",
+    "kind": "blog",
+    "title": "Three Email Templates That Prevent Prospects From Going Cold 70% Of The Time",
+    "angleIds": [
+      "handling-objections"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.2,
+    "hasRealNumbers": true,
+    "fetched": "failed",
+    "note": "Headline claims a 70% figure with zero visible methodology; a round marketing number on a template opt-in page."
+  },
+  {
+    "id": "s176",
+    "url": "https://www.revenuehero.io/reports/no-show-benchmark-december-02-2024",
+    "kind": "blog",
+    "title": "No-shows benchmark in B2B industry — RevenueHero",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2024-12-13",
+    "quote": "419 no-shows out of 6,428 meetings",
+    "note": "A benchmark report would be the right kind of evidence, but the scrape shows only product menus and RevenueHero sells the no-show cure."
+  },
+  {
+    "id": "s177",
+    "url": "https://www.revenuehero.io/blog/ways-to-reduce-no-show-rates-in-sales-calls",
+    "kind": "blog",
+    "title": "How to Reduce No-Show Rates in B2B Sales Calls | 7 Proven Tactics",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-08-18",
+    "quote": "Two to three. The baseline cadence is 24 hours before, 1 hour before, and 30 minutes",
+    "note": "Scheduling vendor whose product is the recommended fix, and the captured text is all site navigation — no argument to judge."
+  },
+  {
+    "id": "s178",
+    "url": "https://ziellab.com/post/sales-meeting-no-show-rate-b2b-revops-guide",
+    "kind": "blog",
+    "title": "Sales meeting no-shows: fix the 30% that vanish",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-26",
+    "quote": "Push it eight or more days out and it climbs past 23%",
+    "note": "First-hand RevOps auditor with a concrete client case (118 booked / 74 held) and a real mechanism — CRM stamps the stage at invite creation — but it's n=1 and he sells the audit."
+  },
+  {
+    "id": "s179",
+    "url": "https://calendly.com/blog/reduce-no-show-rates-sales",
+    "kind": "blog",
+    "title": "How to decrease sales no-show rates and have the most productive meeting | Calendly",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2020-06-05",
+    "quote": "On average, Calendly's sales users have decreased no-show rates by 28% using automated reminders.",
+    "note": "Established scheduling vendor with obvious incentive; only chrome captured, so nothing substantive to weigh."
+  },
+  {
+    "id": "s180",
+    "url": "https://prospeo.io/s/how-to-reduce-no-shows-in-sales",
+    "kind": "blog",
+    "title": "How to Reduce No-Shows in Sales (2026 Playbook)",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "A prospect who answers two qualifying questions before seeing your calendar link is dramatically more likely to show up than one who clicked a Calendly link in a mass email.",
+    "note": "SEO 'playbook' from a lead-data vendor; captured text is entirely product menu, zero content."
+  },
+  {
+    "id": "s181",
+    "url": "https://salesflo.substack.com/p/the-data-backed-method-to-reduce",
+    "kind": "blog",
+    "title": "Prospecting from the Trenches — the data-backed method to reduce no-shows",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2023-04-22",
+    "quote": "The average SDR team is at about a 60% show rate right now.",
+    "note": "Named SDR operator citing a 6,414-meeting analysis with a plausible decay mechanism (time-to-meeting), though the key data is secondhand and his own 75%+ claim is unverified."
+  },
+  {
+    "id": "s182",
+    "url": "https://www.youtube.com/watch?v=fEugMBEc2mM",
+    "kind": "youtube",
+    "title": "Stop No-Shows: How to 2X Your Sales Meeting Show Rate",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2025-09-25",
+    "note": "Title only — a '2X your show rate' hook with no retrievable substance."
+  },
+  {
+    "id": "s183",
+    "url": "https://www.youtube.com/watch?v=cGolHEq0cfU",
+    "kind": "youtube",
+    "title": "How To Fix Low Show Up Rates On Sales Calls (10 Steps That Actually Work)",
+    "angleIds": [
+      "qualify-and-confirm"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-12",
+    "note": "Agency operator with genuine volume (27k meetings, 600–800/mo) but the numbers describe their own book, not a measured test, and the format is a lead-gen teaser."
+  },
+  {
+    "id": "s184",
+    "url": "https://hunter.io/outreach-calculator",
+    "kind": "docs",
+    "title": "Email Outreach Calculator — Hunter",
+    "angleIds": [
+      "funnel-math"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025",
+    "quote": "The average outreach email gets a 4.5% reply rate",
+    "note": "Vendor calculator rather than primary documentation; its funnel assumptions aren't shown, so the math can't be checked."
+  },
+  {
+    "id": "s185",
+    "url": "https://leadhaste.com/blog/cold-email-meeting-booked-rate-benchmarks-2026",
+    "kind": "blog",
+    "title": "Cold Email Meeting Booked Rate Benchmarks 2026: What Good Looks Like",
+    "angleIds": [
+      "funnel-math"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-29",
+    "quote": "The denominator is unique prospects, not emails sent.",
+    "note": "Agency selling cold email quotes its own unaudited client benchmarks (2% down to 0.5-1%) with no methodology, and the page is one long CTA."
+  },
+  {
+    "id": "s186",
+    "url": "https://founderreports.com/outbound-sales-benchmarks/",
+    "kind": "blog",
+    "title": "Outbound Sales Benchmarks Every Startup Should Track",
+    "angleIds": [
+      "funnel-math"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08-04",
+    "quote": "38 contacts per reply works out to about a 2.6% reply rate, 135 is around 0.74%, and 625 is roughly 0.16%.",
+    "note": "Cites Smartlead's 850M-email H1 2026 dataset and, unusually, argues the average is useless and you should read the spread — but it's a secondary retelling of a vendor's report."
+  },
+  {
+    "id": "s187",
+    "url": "https://www.youtube.com/watch?v=xkcv-eKceHE",
+    "kind": "youtube",
+    "title": "How Many Cold Emails Should You Send? (The Real Math)",
+    "angleIds": [
+      "funnel-math"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only, no transcript, unknown creator or date — nothing here to evaluate."
+  },
+  {
+    "id": "s188",
+    "url": "https://x.com/itsalexvacca/article/2069102903089070089",
+    "kind": "x",
+    "title": "The Signal-first Outbound Playbook for 2026 — Alex Vacca (@itsalexvacca)",
+    "angleIds": [
+      "funnel-math"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2026",
+    "note": "Only a headline from an X post; the 'playbook' framing is a marketing genre and no content was retrieved."
+  },
+  {
+    "id": "s189",
+    "url": "https://prospeo.io/s/cold-email-volume-best-practices",
+    "kind": "blog",
+    "title": "Cold Email Volume Best Practices in 2026",
+    "angleIds": [
+      "daily-routine"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "The safe ceiling is 30-50 cold emails per inbox per day. Not per domain. Not per account. Per inbox.",
+    "note": "Scraped text is entirely site navigation for a lead-gen data vendor; no argument or evidence captured, and the vendor profits from higher send volume."
+  },
+  {
+    "id": "s190",
+    "url": "https://www.mailreach.co/blog/email-frequency-best-practices",
+    "kind": "blog",
+    "title": "Email Frequency Best Practices 2026: B2B Guide & Tips",
+    "angleIds": [
+      "daily-routine"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-06-03",
+    "quote": "sudden spikes or aggressive jumps look like abuse and get filtered to spam",
+    "note": "Deliverability vendor writing about send limits — a direct conflict — and the excerpt is menus and a promo banner, not reasoning."
+  },
+  {
+    "id": "s191",
+    "url": "https://puzzleinbox.com/blog/cold-email-timing-best-days-hours/",
+    "kind": "blog",
+    "title": "Best Days and Times to Send Cold Emails: What the Data Actually Shows",
+    "angleIds": [
+      "daily-routine"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-04-05",
+    "quote": "Send your cold emails Tuesday through Thursday, 8am to 10am in the recipient's timezone.",
+    "note": "Makes a real mechanistic distinction (opt-in marketing data vs cold reply-rate data) and claims reply-based campaign data, but the promised numbers and sample size are cut off."
+  },
+  {
+    "id": "s192",
+    "url": "https://woodpecker.co/blog/how-many-cold-emails-to-send-per-day/",
+    "kind": "blog",
+    "title": "How Many Cold Emails to Send Per Day? The Definitive Answer",
+    "angleIds": [
+      "daily-routine"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-01-21",
+    "quote": "it's best to send up to 10-20 emails per day",
+    "note": "Established sending platform with real campaign data behind it, but the captured text is all nav, it sells the sending tool, and it's the oldest source here (Jan 2025)."
+  },
+  {
+    "id": "s193",
+    "url": "https://www.youtube.com/watch?v=wNQXbyObAS0",
+    "kind": "youtube",
+    "title": "My Daily Routine for Lead Generation & Sending out Cold Emails",
+    "angleIds": [
+      "daily-routine"
+    ],
+    "reputation": 0.42,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title-only YouTube routine video with no transcript, no mechanism, and nothing measurable to check."
+  },
+  {
+    "id": "s194",
+    "url": "https://www.unifygtm.com/explore/cold-email-2026-domain-setup-deliverability-sequences",
+    "kind": "blog",
+    "title": "Cold Email in 2026: Domains, Deliverability, Replies",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.58,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-07-23",
+    "quote": "keep bounce rate under 2%",
+    "note": "Named-author vendor guide that at least cites and dates its benchmarks (3.43% avg reply, 10.7% top decile), but Unify sells the deliverability fix it prescribes."
+  },
+  {
+    "id": "s195",
+    "url": "https://www.unifygtm.com/explore/cold-email-ab-testing-statistical-rigor",
+    "kind": "blog",
+    "title": "Cold Email A/B Testing: Sample Size Math and Platform Config",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-09-03",
+    "quote": "If the team has low volume, test larger message differences and collect evidence longer.",
+    "note": "Genuinely sound testing method (one variable, judge replies not opens, predeclared stopping rule) undercut by an unsourced '50%' self-claim and a platform ranking with itself at #1."
+  },
+  {
+    "id": "s196",
+    "url": "https://prospeo.io/s/cold-email-case-study",
+    "kind": "blog",
+    "title": "Cold Email Case Studies: Lessons from 16.5M+ Emails",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.48,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026",
+    "quote": "Campaigns targeting fewer than 50 recipients hit 5.8% reply rates. Scale to 1,000+ and replies drop to 2.1%.",
+    "note": "Only the 16.5M headline number survives — the body is pure site navigation, and case studies from a data vendor are survivorship by construction."
+  },
+  {
+    "id": "s197",
+    "url": "https://www.reddit.com/r/coldemail/comments/1qobtcd/",
+    "kind": "reddit",
+    "title": "r/coldemail: 147,000 cold emails sent, 1.2% positive reply rate",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "note": "Large first-hand volume (147k sends, 1.2% positive) but anonymous, title-only, and no breakdown of which stage produced the number."
+  },
+  {
+    "id": "s198",
+    "url": "https://www.reddit.com/r/SaaS/comments/1qx9wdz/",
+    "kind": "reddit",
+    "title": "r/SaaS: 464,000 emails, 616 positive replies, 50 customers",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.52,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "snippet",
+    "note": "Rare full-funnel chain from one operator (464k → 616 replies → 50 customers), which is the right shape for stage diagnosis, but unverifiable and stripped of any method."
+  },
+  {
+    "id": "s199",
+    "url": "https://www.youtube.com/watch?v=eYB9xu4EDe0",
+    "kind": "youtube",
+    "title": "Cold Email Audit Live: How to Increase the Reply Rate",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2026-06-26",
+    "note": "A live audit could be diagnostic, but nothing is here except the title."
+  },
+  {
+    "id": "s200",
+    "url": "https://www.youtube.com/watch?v=1qz3-JV74g0",
+    "kind": "youtube",
+    "title": "From Reply to Revenue: Cold Email Funnel Audit with Isaac Wood | #SmartleadOfficeHours",
+    "angleIds": [
+      "diagnose-the-leak"
+    ],
+    "reputation": 0.42,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2025-08-08",
+    "note": "Transcript captured is entirely webinar small talk; a Smartlead-hosted session with zero content reaching the funnel question."
+  },
+  {
+    "id": "s201",
+    "url": "https://puzzleinbox.com/blog/best-cold-email-tool-reddit-analyzed-2026/",
+    "kind": "blog",
+    "title": "Best Cold Email Tool Reddit Thread Analyzed: 500 Votes in 2026",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-05-22",
+    "quote": "Smartlead: 187 recommendations (34%)",
+    "note": "Stated method and vote counts, but it's a competitor's blog counting Reddit popularity — unverifiable and a proxy for buzz, not performance."
+  },
+  {
+    "id": "s202",
+    "url": "https://help.instantly.ai/en/articles/7046484-inbox-rotation-assign-sending-accounts-to-a-campaign",
+    "kind": "docs",
+    "title": "Inbox Rotation - Assign Sending Accounts to a Campaign | Instantly Help Center",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.8,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-06-29",
+    "quote": "Instantly automatically rotates sending between your selected accounts to make outreach appear more natural.",
+    "note": "Official product docs: authoritative on its own behavior, purely procedural with no efficacy claims."
+  },
+  {
+    "id": "s203",
+    "url": "https://www.smartlead.ai/blog/how-many-cold-emails-per-day",
+    "kind": "blog",
+    "title": "How Many Cold Emails Can You Send Per Day Per Inbox",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-08",
+    "quote": "Send 400 emails from four warmed mailboxes on one domain, and you are usually fine. Send the same 400 from one mailbox, and you have a burned mailbox by the end of the week.",
+    "note": "Vendor blog whose extracted body is all product nav; only numbers are cherry-picked case-study wins."
+  },
+  {
+    "id": "s204",
+    "url": "https://alexberman.com/smartlead-ai",
+    "kind": "blog",
+    "title": "Smartlead AI Review: Features, Pricing & Real Testing Results",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026-02-11",
+    "quote": "4.2% reply rate, 1.8% positive reply rate, 11 qualified meetings booked",
+    "note": "Named practitioner promising 'real testing results' but the captured text is a lead-gen quiz and TOC, and review sites here run on affiliate payouts."
+  },
+  {
+    "id": "s205",
+    "url": "https://www.youtube.com/watch?v=g-LBMBb6ac4",
+    "kind": "youtube",
+    "title": "SmartLead Tutorial 2025 // Campaign Setup From Start To Finish",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2025-07",
+    "note": "Title-only 2025 walkthrough video — no retrievable reasoning or evidence."
+  },
+  {
+    "id": "s206",
+    "url": "https://www.youtube.com/watch?v=_iGjRSCPXuA",
+    "kind": "youtube",
+    "title": "How To Use Smartlead.ai 2026 - Full Cold Email Tutorial",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "date": "2026",
+    "note": "Title-only tutorial video; nothing to assess beyond the vendor name."
+  },
+  {
+    "id": "s207",
+    "url": "https://instantly.ai/blog/instantly-vs-smartlead-lemlist-2026/",
+    "kind": "blog",
+    "title": "Instantly vs Smartlead vs Lemlist: Pipeline Per Dollar",
+    "angleIds": [
+      "tooling"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "date": "2026",
+    "note": "Vendor grading itself against rivals, and the scrape captured only navigation chrome."
+  },
+  {
+    "id": "s208",
+    "url": "https://botsgonewildd.substack.com/p/the-25-inbox-math-for-10-monthly",
+    "kind": "blog",
+    "title": "The 25-Inbox Math for 10 Monthly Meetings",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-02-27",
+    "quote": "You get a 2% reply rate. About 20% of those replies are actually interested. From those positive replies, about 35% will actually book a call.",
+    "note": "Explains the back-calculation mechanism clearly, but the funnel rates are asserted from an unnamed internal dataset."
+  },
+  {
+    "id": "s209",
+    "url": "https://vendisys.com/blog/how-many-sending-domains-inboxes-scale-cold-outbound/",
+    "kind": "blog",
+    "title": "How Many Sending Domains and Inboxes You Need to Scale Cold Outbound",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-06",
+    "quote": "Two to three mailboxes per sending domain is the common standard",
+    "note": "Sensible capacity-planning mechanism and a plausible 30–50/day ceiling, but it's an outbound agency's own blog selling the setup it prescribes, and the range is asserted rather than measured."
+  },
+  {
+    "id": "s210",
+    "url": "https://puzzleinbox.com/blog/how-many-inboxes-do-you-need-cold-email/",
+    "kind": "blog",
+    "title": "How Many Inboxes Do You Need for Cold Email? The 2026 Formula",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "date": "2026-03-21",
+    "quote": "Google Workspace inboxes needed = Daily email target / 15",
+    "note": "Precise-looking formula with zero sourcing, and the implausibly low Outlook figure (3/day, vs 15 for Google) conveniently multiplies the inbox count a company named Puzzle Inbox would sell you."
+  },
+  {
+    "id": "s211",
+    "url": "https://x.com/scaling_shields/status/2059636255076557110",
+    "kind": "x",
+    "title": "James Shields on the reply-to-call math at agency send volumes",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "quote": "the average operator sends around 1,200 emails a day per client at a 1% reply rate thats 12 replies a day",
+    "note": "First-hand operator numbers but n=1, self-promotional, unverifiable, and truncated mid-claim — a winner's anecdote, not a rate.",
+    "date": "2026-05-27"
+  },
+  {
+    "id": "s212",
+    "url": "https://prospeo.io/s/cold-email-benchmarks",
+    "kind": "blog",
+    "title": "Cold Email Benchmarks 2026: Rates & Stats",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "One sender who pushed 147,000 cold emails got 1,764 conversations and 40 actual calls - a 0.027% send-to-call rate.",
+    "note": "Captured text is entirely site navigation from a data vendor's SEO benchmark page — no actual benchmark content to judge."
+  },
+  {
+    "id": "s213",
+    "url": "https://prospeo.io/s/cold-email-reddit",
+    "kind": "blog",
+    "title": "Cold Email Reddit: What Actually Works in 2026",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "quote": "To send 1,000 emails daily, you need roughly 14 domains—$200-300/month in domains and inboxes alone.",
+    "note": "Same vendor's SEO page, and one scraping Reddit second-hand at that; nothing but nav chrome was captured."
+  },
+  {
+    "id": "s214",
+    "url": "https://www.youtube.com/watch?v=CYANRN-HaL8",
+    "kind": "youtube",
+    "title": "How to Send 1,000 Cold Emails/Day",
+    "angleIds": [
+      "scaling-inboxes"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "note": "Title only — a volume-maximalist YouTube hook with no transcript, no author, and nothing to evaluate."
+  }
+]
