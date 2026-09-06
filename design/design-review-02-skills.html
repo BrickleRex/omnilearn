@@ -1,0 +1,563 @@
+<title>Omnilearn Skills Track Review</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&display=swap">
+<style>
+/* ---------- studio tokens (deliberate single-theme: a dark review room so the six skins read true) ---------- */
+:root{
+  --bg:#0E0F12; --panel:#15171C; --panel2:#1B1E24; --line:#272B33; --line2:#333845;
+  --ink:#EAE7E0; --mut:#A09C91; --dim:#6E6A61;
+  --brass:#D8A03D; --brass-soft:rgba(216,160,61,.14);
+  --cyan:#6FB8C9; --good:#82B476; --warn:#E0A458; --bad:#D07A6A;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --serif:'Fraunces',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+*{box-sizing:border-box;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px 90px}
+a{color:var(--brass)}
+::selection{background:var(--brass-soft)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{padding:64px 0 30px}
+.hero .brand{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(34px,7.5vw,58px);line-height:1.03;letter-spacing:-.02em;margin:14px 0 18px;text-wrap:balance}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brass);letter-spacing:0}
+.hero p.lede{color:var(--mut);max-width:56ch;font-size:17px}
+.howto{margin-top:26px;border:1px solid var(--line);border-left:3px solid var(--brass);background:var(--panel);border-radius:10px;padding:14px 16px;color:var(--mut);font-size:14.5px}
+.howto b{color:var(--ink);font-weight:600}
+
+/* ---------- sticky nav ---------- */
+nav.chips{position:sticky;top:0;z-index:40;background:linear-gradient(var(--bg) 78%,transparent);padding:12px 0 14px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.chips::-webkit-scrollbar{display:none}
+nav.chips a{flex:0 0 auto;font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--mut);border:1px solid var(--line);border-radius:99px;padding:6px 13px;background:var(--panel)}
+nav.chips a:active{color:var(--ink);border-color:var(--brass)}
+
+/* ---------- sections ---------- */
+section{margin-top:74px;scroll-margin-top:58px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+section>h2{font-family:var(--disp);font-weight:800;font-size:clamp(26px,5vw,36px);letter-spacing:-.015em;margin:10px 0 8px;text-wrap:balance}
+.sec-lede{color:var(--mut);max-width:62ch;font-size:15.5px;margin-bottom:26px}
+.sec-lede b{color:var(--ink);font-weight:600}
+
+/* ---------- option cards ---------- */
+.opt{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:16px 16px 14px;margin:0 0 22px}
+.opt-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.opt-tag{font-family:var(--mono);font-size:12px;font-weight:500;color:#0E0F12;background:var(--brass);border-radius:6px;padding:2px 8px}
+.opt-name{font-family:var(--disp);font-weight:600;font-size:19px}
+.opt-thesis{color:var(--mut);font-size:14.5px;margin:2px 0 12px;max-width:62ch}
+.opt-foot{color:var(--dim);font-size:13px;margin-top:10px;line-height:1.5}
+.opt-foot b{color:var(--mut);font-weight:600}
+
+/* ---------- structure section ---------- */
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px}
+.flow .st{flex:1 1 140px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:12px 12px 10px;position:relative}
+.flow .st .n{font-family:var(--mono);font-size:11px;color:var(--brass)}
+.flow .st h4{font-family:var(--disp);font-size:15.5px;font-weight:600;margin:3px 0 4px}
+.flow .st p{font-size:12.5px;color:var(--mut);line-height:1.45}
+.tree{font-family:var(--mono);font-size:13px;line-height:1.85;color:var(--mut);border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:14px 18px;overflow-x:auto;white-space:pre}
+.tree b{color:var(--ink);font-weight:500}
+.tree i{color:var(--brass);font-style:normal}
+.tree s{color:var(--dim);text-decoration:none}
+.enough{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px 18px;margin-top:16px}
+.enough h4{font-family:var(--disp);font-size:16px;font-weight:600;margin-bottom:8px}
+.enough ul{padding-left:18px;color:var(--mut);font-size:14px;display:grid;gap:7px}
+.enough li b{color:var(--ink);font-weight:600}
+.states{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}
+.state{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:13px 14px}
+.state .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px;vertical-align:1px}
+.state h4{font-family:var(--disp);display:inline;font-size:15.5px;font-weight:600}
+.state p{color:var(--mut);font-size:13px;margin-top:6px;line-height:1.5}
+.kbd{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line2);border-bottom-width:2px;border-radius:6px;padding:1px 7px;background:var(--panel2);color:var(--ink);white-space:nowrap}
+
+/* ---------- decisions ---------- */
+.ballot{border:1px solid var(--brass);border-radius:14px;background:linear-gradient(180deg,rgba(216,160,61,.06),transparent 40%),var(--panel);padding:20px 20px 16px}
+.ballot ol{padding-left:22px;display:grid;gap:12px;font-size:15px}
+.ballot li b{font-family:var(--mono);font-weight:500;color:var(--brass)}
+.ballot .fmt{margin-top:18px;font-family:var(--mono);font-size:13px;background:#0C0E12;border:1px solid var(--line);border-radius:9px;padding:10px 14px;color:var(--cyan);overflow-x:auto;white-space:nowrap}
+.ballot p.small{color:var(--mut);font-size:13.5px;margin-top:12px}
+.tech{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:14px}
+.tech .t{border:1px solid var(--line);border-radius:11px;background:var(--panel);padding:12px 14px;font-size:13px;color:var(--mut)}
+.tech .t b{display:block;color:var(--ink);font-family:var(--disp);font-weight:600;font-size:14.5px;margin-bottom:3px}
+
+@media (max-width:560px){
+  .mini{aspect-ratio:auto;height:300px}
+  .demo{aspect-ratio:auto;height:290px}
+  .pmini{aspect-ratio:auto;height:280px}
+  .mside{width:96px}
+  .t2 .ed{padding-right:100px}.t2 .rail{width:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01s!important;animation-iteration-count:1!important;transition:none!important}
+}
+/* ---------- structure extras ---------- */
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:18px 0 8px}
+.ph{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:11px 12px 9px}
+.ph .n{font-family:var(--mono);font-size:11px;color:var(--brass)}
+.ph h4{font-family:var(--disp);font-size:15px;font-weight:600;margin:3px 0 4px}
+.ph p{font-size:12.3px;color:var(--mut);line-height:1.45}
+.ph.new{border-color:var(--brass);background:linear-gradient(180deg,var(--brass-soft),var(--panel) 60%)}
+.ph.new::after{content:"no code twin";font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--brass);display:block;margin-top:6px}
+table.tbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px}
+table.tbl th{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+table.tbl td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--mut)}
+table.tbl td:first-child{color:var(--ink);font-weight:500}
+.tblwrap{overflow-x:auto}
+.pill{display:inline-block;font-family:var(--mono);font-size:10.5px;padding:1px 8px;border-radius:99px;border:1px solid var(--line2);white-space:nowrap}
+.pill.ok{color:#8FD4A8;border-color:#2F6B45}.pill.exp{color:#E8C97D;border-color:#6B5A2F}.pill.part{color:#E8A46A;border-color:#6B4A2F}.pill.no{color:#D07A6A;border-color:#6B3A32}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.trio .t{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px 14px}
+.trio .t b{display:block;font-family:var(--disp);font-size:15px;margin-bottom:3px}
+.trio .t p{font-size:13px;color:var(--mut);line-height:1.5}
+.trio .t .rank{font-family:var(--mono);font-size:10.5px;color:var(--brass);letter-spacing:.14em}
+
+/* ---------- neutral demo pane ---------- */
+.pane{position:relative;border-radius:12px;overflow:hidden;background:#111318;border:1px solid var(--line);min-height:250px;font-size:12.5px;line-height:1.5;color:#C8C4BA;font-family:var(--body)}
+.pane .bar{display:flex;justify-content:space-between;padding:6px 12px;font-family:var(--mono);font-size:10px;color:var(--dim);border-bottom:1px solid var(--line)}
+.pane .in{padding:12px 14px}
+.pane .anim{animation-play-state:paused}.pane.on .anim{animation-play-state:running}
+.conf{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;padding:1px 7px;border-radius:4px;border:1px solid}
+.conf.solid{color:#8FD4A8;border-color:#2F6B45;background:rgba(143,212,168,.08)}
+.conf.likely{color:#E8C97D;border-color:#6B5A2F;background:rgba(232,201,125,.08)}
+.conf.contested{color:#E8A46A;border-color:#6B4A2F;background:rgba(232,164,106,.08)}
+.conf.stale{color:#8A8A8A;border-color:#444;background:rgba(138,138,138,.08);text-decoration:line-through}
+.src{font-family:var(--mono);font-size:10px;color:var(--dim)}
+.src b{color:#8FB7E8;font-weight:500}
+
+/* map A constellation */
+.mapA svg{width:100%;height:240px;display:block}
+.mapA .nd{fill:#1B1F27;stroke:#8FB7E8;stroke-width:1.5}
+.mapA .nd.core{fill:#D8A03D;stroke:#D8A03D}
+.mapA .nd.pruned{stroke:#444;stroke-dasharray:3 3}
+.mapA .lb{font:10px var(--mono);fill:#C8C4BA}
+.mapA .lb.pruned{fill:#555;text-decoration:line-through}
+.mapA .ln{stroke:#2A2F3A;stroke-width:1}
+.mapA .halo{fill:none;stroke:#D8A03D;stroke-width:2;animation:halo 2.4s ease infinite}
+@keyframes halo{50%{stroke-opacity:.15;r:26}}
+/* map B outline */
+.mapB .row{display:flex;gap:9px;align-items:center;padding:3px 0;font-family:var(--mono);font-size:11.5px}
+.mapB .row.d1{padding-left:18px}.mapB .row.d2{padding-left:36px;color:#9BA3B0}
+.mapB .cb{width:12px;height:12px;border:1.5px solid #8FB7E8;border-radius:3px;flex:none;display:grid;place-items:center;font-size:9px;color:#8FB7E8}
+.mapB .cb.off{border-color:#444;color:transparent}
+.mapB .row.off{color:#555;text-decoration:line-through}
+.mapB .cnt{margin-left:auto;color:var(--dim);font-size:10px}
+/* map C lanes */
+.mapC .lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mapC .lane h5{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--brass);margin-bottom:6px}
+.mapC .chip{display:block;border:1px solid var(--line2);border-radius:8px;padding:5px 8px;margin-bottom:6px;font-size:11.5px;background:#171A21}
+.mapC .chip.off{opacity:.35;text-decoration:line-through}
+/* map D sunburst */
+.mapD svg{width:100%;height:250px;display:block}
+.mapD .seg{fill:none;stroke-width:22}
+.mapD .lbl{font:9.5px var(--mono);fill:#C8C4BA}
+
+/* evidence A cards */
+.evA .card{border:1px solid var(--line2);border-radius:10px;background:#171A21;padding:10px 12px;margin-bottom:10px;position:relative}
+.evA .claim{font-size:13px;color:var(--ink);margin-bottom:6px;padding-right:80px}
+.evA .stamp{position:absolute;right:10px;top:10px;transform:rotate(4deg)}
+.evA .meta{font-family:var(--mono);font-size:10px;color:var(--dim)}
+.evA .side{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:11.5px}
+.evA .side div{border-left:2px solid #6B4A2F;padding-left:8px;color:#C9B9A6}
+/* evidence B ledger */
+.evB table{width:100%;border-collapse:collapse;font-size:11.5px}
+.evB td{padding:6px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.evB .bar{height:6px;border-radius:3px;background:#2A2F3A;width:90px;overflow:hidden}
+.evB .bar i{display:block;height:100%;background:#8FD4A8}
+.evB .bar i.c{background:#E8A46A}
+/* evidence C quotes */
+.evC blockquote{border-left:3px solid #8FB7E8;margin:0 0 10px;padding:6px 10px;background:#171A21;border-radius:0 8px 8px 0;font-size:12.5px;color:#D9D5CB;font-family:var(--serif);font-style:italic}
+.evC .who{font-family:var(--mono);font-size:10px;color:var(--dim);font-style:normal;display:block;margin-top:4px}
+.evC .verdict{font-family:var(--body);font-style:normal;font-size:11.5px;color:#C8C4BA;margin:-4px 0 12px 13px}
+/* evidence D grid */
+.evD table{border-collapse:separate;border-spacing:3px;font-size:10.5px}
+.evD th{font-family:var(--mono);font-weight:400;color:var(--dim);font-size:9.5px;padding:2px 4px}
+.evD td.c{width:26px;height:22px;border-radius:4px;background:#1B1F27}
+.evD td.c.y{background:#8FD4A8}.evD td.c.n{background:#D07A6A}.evD td.c.m{background:#E8C97D}
+.evD td.l{color:#C8C4BA;padding-right:8px;white-space:nowrap}
+
+/* sim A persona margin */
+.simA .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+.simA .draft p{margin:0 0 8px;font-size:12px;color:#D9D5CB;padding:2px 6px;border-radius:4px}
+.simA .draft p.hit{background:rgba(208,122,106,.16)}
+.simA .rx{border:1px solid var(--line2);border-radius:10px;padding:7px 10px;margin-bottom:8px;font-size:11.5px;background:#171A21;opacity:0;animation:rxIn 9s ease infinite}
+.simA .rx:nth-child(2){animation-delay:1.2s}.simA .rx:nth-child(3){animation-delay:2.4s}
+@keyframes rxIn{8%,88%{opacity:1;transform:none}0%,4%{opacity:0;transform:translateX(8px)}94%,100%{opacity:0}}
+.simA .rx b{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--brass);margin-bottom:2px}
+/* sim B scorecard */
+.simB .r{display:grid;grid-template-columns:120px 1fr 44px;gap:10px;align-items:center;margin-bottom:8px;font-size:12px}
+.simB .r .bar{height:8px;border-radius:4px;background:#2A2F3A;overflow:hidden}
+.simB .r .bar i{display:block;height:100%;background:#8FD4A8;transform-origin:left;animation:grow 1.4s cubic-bezier(.3,1.2,.3,1) both}
+.simB .r .bar i.w{background:#E8A46A}.simB .r .bar i.b{background:#D07A6A}
+@keyframes grow{from{transform:scaleX(0)}}
+.simB .r em{font-family:var(--mono);font-size:10px;color:var(--dim);font-style:normal}
+.simB .pred{margin-top:12px;border:1px dashed var(--line2);border-radius:8px;padding:8px 10px;font-size:12px}
+.simB .pred b{color:#E8C97D;font-family:var(--mono)}
+/* sim C inbox */
+.simC .row{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;padding:6px 8px;border-bottom:1px solid var(--line);font-size:11.5px;color:#9BA3B0}
+.simC .row b{color:#D9D5CB;font-weight:600}
+.simC .row.you{background:rgba(216,160,61,.08)}
+.simC .row .st{font-family:var(--mono);font-size:9.5px;text-align:right}
+.simC .row.you .st{color:var(--brass);animation:inboxSt 8s steps(1) infinite}
+@keyframes inboxSt{0%,25%{content:"unread"}}
+.simC .verdict{padding:8px 10px;font-size:11.5px;color:#C8C4BA;border-top:1px solid var(--line);opacity:0;animation:vIn 8s ease infinite}
+@keyframes vIn{40%,90%{opacity:1}0%,30%,96%,100%{opacity:0}}
+/* sim D redline */
+.simD p{font-size:12.5px;color:#D9D5CB;line-height:1.7;margin:0 0 8px}
+.simD s{color:#D07A6A;text-decoration-color:#D07A6A}
+.simD .ins{color:#8FD4A8;border-bottom:1px dotted #8FD4A8}
+.simD .cm{display:inline-block;font-size:10px;font-family:var(--mono);color:#E8C97D;border:1px solid #6B5A2F;border-radius:4px;padding:0 5px;margin-left:4px;vertical-align:1px}
+
+/* drill A predict */
+.drA .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.drA .opt{border:1px solid var(--line2);border-radius:10px;padding:10px 12px;background:#171A21;cursor:pointer;font-size:12.5px;transition:transform .15s}
+.drA .opt:hover{transform:translateY(-2px);border-color:#8FB7E8}
+.drA .opt.win{border-color:#8FD4A8;background:rgba(143,212,168,.08)}.drA .opt.lose{opacity:.55}
+.drA .reveal{margin-top:10px;font-size:12px;color:#C8C4BA;min-height:40px}
+.drA .reveal b{color:#8FD4A8}
+/* drill B sprint */
+.drB .timer{font-family:var(--mono);font-size:28px;color:var(--brass);letter-spacing:.06em}
+.drB ol{margin:8px 0 0;padding-left:20px;font-size:12px;color:#9BA3B0;columns:2;column-gap:18px}
+.drB li{margin-bottom:3px}
+.drB li.done{color:#D9D5CB}
+.drB li.cur{color:var(--brass)}
+.drB li.cur::after{content:"▍";animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+/* drill C spot */
+.drC p{font-size:12.5px;line-height:1.75;color:#D9D5CB}
+.drC .mk{border-bottom:2px solid transparent;cursor:pointer;transition:background .2s}
+.drC .mk.hit{background:rgba(208,122,106,.22);border-bottom-color:#D07A6A}
+.drC .why{font-size:11.5px;color:#C8C4BA;margin-top:8px;min-height:20px}
+/* drill D rewrite */
+.drD .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px}
+.drD .col{border:1px solid var(--line2);border-radius:10px;padding:9px 11px;background:#171A21;color:#D9D5CB}
+.drD .col h6{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--brass);margin-bottom:5px}
+.drD .col.mine{border-style:dashed}
+
+@media (max-width:560px){.simA .grid,.drA .opts,.drD .cols{grid-template-columns:1fr}.mapC .lanes{grid-template-columns:1fr}.drB ol{columns:1}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+</style>
+<div class="wrap">
+
+<header class="hero">
+  <div class="brand">Omnilearn · design review 02 · skills track</div>
+  <h1>Learn anything.<br>Reality still gets <em>the last word.</em></h1>
+  <p class="lede">A second section beside the code track: pick a skill ("cold email for B2B SaaS"), an agent crew maps every angle, harvests the web with trust and recency weighting, and builds you a course — then you <b>make the real thing</b> and run it against a simulated audience before the world grades it slowly.</p>
+  <div class="howto"><b>Same drill as last time:</b> each numbered section is one decision, every option is a live mock, the ballot is at the bottom. Pilot domain is cold email; the coding-equivalent mapping is in 01.</div>
+</header>
+
+<nav class="chips">
+  <a href="#structure">01 Structure</a>
+  <a href="#map">02 Angle map</a>
+  <a href="#evidence">03 Evidence</a>
+  <a href="#sim">04 Simulator</a>
+  <a href="#drills">05 Drills</a>
+  <a href="#decide">Ballot</a>
+</nav>
+
+<!-- ══════════════ 01 ══════════════ -->
+<section id="structure">
+  <div class="eyebrow">Decision 01</div>
+  <h2>The shape of a skill project</h2>
+  <p class="sec-lede">Nine beats. Six have a twin in the code track; three are new because a skill has no compiler and needs reps.</p>
+  <div class="phases">
+    <div class="ph"><div class="n">0</div><h4>Frame</h4><p>Outcome + context: "5 meetings/mo, B2B SaaS, $0 budget, sent ~50 cold emails ever." Context filters every claim.</p></div>
+    <div class="ph"><div class="n">1</div><h4>Map</h4><p>The angle map, editable. Prune what you don't care about before any research spend.</p></div>
+    <div class="ph new"><div class="n">2</div><h4>Research</h4><p>Harvest → assess → reconcile into claim cards. Paste your own sources at elevated trust.</p></div>
+    <div class="ph"><div class="n">3</div><h4>Calibrate</h4><p>Probes — plus "paste your last three cold emails" and get them graded. Existing work as calibration.</p></div>
+    <div class="ph"><div class="n">4</div><h4>Learn</h4><p>Deck + story units, every claim wearing a confidence chip and a citation. Dissent stays visible.</p></div>
+    <div class="ph new"><div class="n">5</div><h4>Drill</h4><p>Short spaced reps: predict the A/B winner, 10 subject lines in 5 min, spot the mistake.</p></div>
+    <div class="ph"><div class="n">6</div><h4>Make</h4><p>The workspace: draft the real artifact with hints, ghost lines, watcher. Run = simulator.</p></div>
+    <div class="ph"><div class="n">7</div><h4>Ship &amp; learn</h4><p>Send it for real, paste results back; prediction-vs-reality diff corrects the course.</p></div>
+    <div class="ph new"><div class="n">8</div><h4>Refresh</h4><p>A freshness daemon re-scans sources; stale-evidence units get a re-verify badge.</p></div>
+  </div>
+
+  <p class="sec-lede" style="margin:26px 0 4px"><b>The compiler question.</b> Code gets honest feedback in milliseconds; cold email gets it in weeks, from a noisy world. So the track manufactures signal, ranked by honesty:</p>
+  <div class="trio">
+    <div class="t"><span class="rank">MOST HONEST</span><b>Prediction drills</b><p>Real documented A/B results from the corpus. "These two subject lines were actually tested — which won?" Objective ground truth, instant, trains judgment.</p></div>
+    <div class="t"><span class="rank">FAST</span><b>Simulator run</b><p>A persona panel built from the corpus reads your draft, plus a rubric grader whose rubric cites its evidence. Labelled as a model of the audience, never the audience.</p></div>
+    <div class="t"><span class="rank">SLOW, TRUE</span><b>Real results</b><p>You ship, paste reply rate back, and the app diffs prediction vs reality — the one loop that can prove the course wrong for <em>your</em> context.</p></div>
+  </div>
+
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>Agent</th><th>Model</th><th>Job</th></tr>
+    <tr><td>Cartographer</td><td>Fable</td><td>Enumerates every angle: sub-skills, mental models, tactics, tools, metrics, failure modes, controversies, adjacent skills — then a second, skeptical-practitioner pass asking what the first missed.</td></tr>
+    <tr><td>Scouts ×N</td><td>Opus, parallel</td><td>One per angle: web search + fetch across source types, extract candidate claims with evidence.</td></tr>
+    <tr><td>Assessor</td><td>Opus</td><td>Per source: reputation, recency with domain-specific decay, and <b>soundness</b> — mechanism, evidence, sample size, survivorship bias, self-promotion. Emits claim cards.</td></tr>
+    <tr><td>Reconciler</td><td>Opus</td><td>Clusters claims, detects conflicts, weights reputation × recency × soundness × consensus; keeps dissent as "contested".</td></tr>
+    <tr><td>Architect</td><td>Opus</td><td>Sequences modules, units, checks, drills, exemplars — and the simulator rubrics.</td></tr>
+    <tr><td>Persona panel</td><td>Sonnet</td><td>The simulator and drill grader. Fast, many calls.</td></tr>
+    <tr><td>Freshness daemon</td><td>Haiku</td><td>Cheap periodic re-scan; flags stale claims.</td></tr>
+  </table></div>
+
+  <p class="sec-lede" style="margin:26px 0 4px"><b>Sources — what I actually verified today.</b> Everything runs through your <code>claude</code> subscription's built-in web search plus plain fetches from your machine; nothing needs an account or a finger.</p>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>Source</th><th>Status</th><th>How</th></tr>
+    <tr><td>Blogs, newsletters, docs, case studies</td><td><span class="pill ok">verified</span></td><td>Search → fetch → readability extraction.</td></tr>
+    <tr><td>X / Twitter</td><td><span class="pill ok">verified</span></td><td>Search surfaces x.com post URLs (tested: 3 real cold-email posts) → X's public syndication endpoint returns full tweet text by id, no auth (tested).</td></tr>
+    <tr><td>Reddit</td><td><span class="pill exp">expected on your machine</span></td><td>Public <code>.json</code> endpoints with a user-agent. Blocked from this cloud IP (403 — datacenter block), normally fine from a laptop; verified on first run.</td></tr>
+    <tr><td>YouTube transcripts</td><td><span class="pill exp">expected on your machine</span></td><td>Public captions via <code>youtube-transcript-api</code>. Same datacenter block here; huge practitioner source.</td></tr>
+    <tr><td>Facebook (public posts/pages)</td><td><span class="pill part">partial</span></td><td>Search surfaces public post URLs whose slugs carry the post's opening text, plus the search snippet. The page body itself is a login shell — no full text, no groups. Honest ceiling without automating a logged-in session, which Meta's terms forbid.</td></tr>
+    <tr><td>Podcasts, books</td><td><span class="pill part">partial</span></td><td>Transcripts where public; otherwise summaries and your own notes at elevated trust.</td></tr>
+    <tr><td>FB groups, X search, paywalled</td><td><span class="pill no">no</span></td><td>Walled. Paste-in only.</td></tr>
+  </table></div>
+</section>
+
+<!-- ══════════════ 02 ══════════════ -->
+<section id="map">
+  <div class="eyebrow">Decision 02</div>
+  <h2>The angle map</h2>
+  <p class="sec-lede">What the Cartographer hands you before research spends a token. You prune it. Four ways to see the same map of "cold email":</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">A</span><span class="opt-name">Constellation</span></div>
+  <p class="opt-thesis">A force graph. The skill in the middle, angles orbiting, sub-angles beyond. Tap to prune (dashed), the pulsing node is where research starts.</p>
+  <div class="pane mapA"><div class="bar"><span>cold email · 14 angles</span><span>tap = prune</span></div>
+    <svg viewBox="0 0 400 240" aria-hidden="true">
+      <line class="ln" x1="200" y1="120" x2="90" y2="60"/><line class="ln" x1="200" y1="120" x2="310" y2="58"/><line class="ln" x1="200" y1="120" x2="70" y2="170"/><line class="ln" x1="200" y1="120" x2="330" y2="175"/><line class="ln" x1="200" y1="120" x2="200" y2="30"/><line class="ln" x1="200" y1="120" x2="205" y2="212"/>
+      <line class="ln" x1="90" y1="60" x2="40" y2="30"/><line class="ln" x1="90" y1="60" x2="120" y2="20"/><line class="ln" x1="310" y1="58" x2="360" y2="30"/><line class="ln" x1="330" y1="175" x2="375" y2="205"/><line class="ln" x1="70" y1="170" x2="30" y2="215"/>
+      <circle class="nd core" cx="200" cy="120" r="16"/><text class="lb" x="200" y="124" text-anchor="middle" fill="#111">cold email</text>
+      <circle class="halo anim" cx="90" cy="60" r="18"/><circle class="nd" cx="90" cy="60" r="11"/><text class="lb" x="90" y="82" text-anchor="middle">subject lines</text>
+      <circle class="nd" cx="310" cy="58" r="11"/><text class="lb" x="310" y="80" text-anchor="middle">offer &amp; angle</text>
+      <circle class="nd" cx="70" cy="170" r="11"/><text class="lb" x="70" y="192" text-anchor="middle">follow-ups</text>
+      <circle class="nd" cx="330" cy="175" r="11"/><text class="lb" x="330" y="197" text-anchor="middle">deliverability</text>
+      <circle class="nd" cx="200" cy="30" r="11"/><text class="lb" x="200" y="18" text-anchor="middle">list building</text>
+      <circle class="nd pruned" cx="205" cy="212" r="11"/><text class="lb pruned" x="205" y="233" text-anchor="middle">enterprise ABM</text>
+      <circle class="nd" cx="40" cy="30" r="6"/><text class="lb" x="40" y="20" text-anchor="middle" font-size="8">length</text>
+      <circle class="nd" cx="120" cy="20" r="6"/><text class="lb" x="128" y="12" text-anchor="middle" font-size="8">curiosity vs clarity</text>
+      <circle class="nd" cx="360" cy="30" r="6"/><text class="lb" x="360" y="20" text-anchor="middle" font-size="8">proof</text>
+      <circle class="nd" cx="375" cy="205" r="6"/><text class="lb" x="372" y="226" text-anchor="middle" font-size="8">warm-up</text>
+      <circle class="nd pruned" cx="30" cy="215" r="6"/><text class="lb pruned" x="34" y="234" text-anchor="middle" font-size="8">breakup email</text>
+    </svg>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> you see the shape and the gaps at once. <b>Cost:</b> gets busy past ~40 nodes; needs zoom.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">B</span><span class="opt-name">Outline ladder</span></div>
+  <p class="opt-thesis">A dense checklist tree. Every angle is a checkbox, every checkbox has a cost (how many sources it'll pull). Fast to prune fifty things.</p>
+  <div class="pane mapB"><div class="bar"><span>cold email · 14 angles · 9 kept</span><span>est. 212 sources</span></div><div class="in">
+    <div class="row"><span class="cb">✓</span>Subject lines<span class="cnt">31 src</span></div>
+    <div class="row d1"><span class="cb">✓</span>length &amp; word count<span class="cnt">12</span></div>
+    <div class="row d1"><span class="cb">✓</span>curiosity vs clarity<span class="cnt">9</span></div>
+    <div class="row d1 off"><span class="cb off">✓</span>emoji &amp; symbols<span class="cnt">4</span></div>
+    <div class="row"><span class="cb">✓</span>Offer &amp; angle<span class="cnt">44 src</span></div>
+    <div class="row d1"><span class="cb">✓</span>trigger events (funding, hiring)<span class="cnt">18</span></div>
+    <div class="row d1"><span class="cb">✓</span>proof &amp; social proof<span class="cnt">15</span></div>
+    <div class="row"><span class="cb">✓</span>Follow-up sequencing<span class="cnt">27 src</span></div>
+    <div class="row d1 off"><span class="cb off">✓</span>the "breakup" email<span class="cnt">6</span></div>
+    <div class="row"><span class="cb">✓</span>Deliverability<span class="cnt">38 src</span></div>
+    <div class="row d1"><span class="cb">✓</span>domain warm-up &amp; DNS<span class="cnt">21</span></div>
+    <div class="row off"><span class="cb off">✓</span>Enterprise ABM<span class="cnt">29 src</span></div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> pruning 50 things takes 30 seconds; cost is visible. <b>Cost:</b> no sense of relationships between angles.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">C</span><span class="opt-name">Level lanes</span></div>
+  <p class="opt-thesis">Angles sorted into beginner / working / advanced columns by the Cartographer. You mostly prune whole lanes ("skip beginner, I've sent 500").</p>
+  <div class="pane mapC"><div class="bar"><span>cold email · by level</span><span>drag between lanes</span></div><div class="in"><div class="lanes">
+    <div class="lane"><h5>FOUNDATIONS</h5><span class="chip off">what cold email is / isn't</span><span class="chip off">tools &amp; sending setup</span><span class="chip">deliverability basics</span><span class="chip">one-ask emails</span></div>
+    <div class="lane"><h5>WORKING SKILL</h5><span class="chip">subject lines</span><span class="chip">offer &amp; angle</span><span class="chip">personalization at scale</span><span class="chip">follow-up sequencing</span><span class="chip">reply handling</span></div>
+    <div class="lane"><h5>ADVANCED</h5><span class="chip">trigger-event outbound</span><span class="chip">multi-channel (email + LinkedIn)</span><span class="chip off">enterprise ABM</span><span class="chip">deliverability at volume</span></div>
+  </div></div></div>
+  <div class="opt-foot"><b>Wins:</b> matches how you actually decide ("I'm past the basics"). <b>Cost:</b> level is a guess until calibration runs.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">D</span><span class="opt-name">Sunburst</span></div>
+  <p class="opt-thesis">Radial: the skill at the center, angles as the first ring, sub-angles as the outer ring. Ring thickness = evidence volume; pruned wedges go grey.</p>
+  <div class="pane mapD"><div class="bar"><span>cold email · rings = depth, arc = evidence</span><span></span></div>
+    <svg viewBox="0 0 400 250" aria-hidden="true">
+      <circle cx="200" cy="125" r="28" fill="#D8A03D"/><text x="200" y="129" text-anchor="middle" font-size="9" font-family="monospace" fill="#111">cold email</text>
+      <circle class="seg" cx="200" cy="125" r="52" stroke="#8FB7E8" stroke-dasharray="90 236.7" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="52" stroke="#7FD1B9" stroke-dasharray="78 248.7" stroke-dashoffset="-92" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="52" stroke="#E8C97D" stroke-dasharray="60 266.7" stroke-dashoffset="-172" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="52" stroke="#E8A46A" stroke-dasharray="58 268.7" stroke-dashoffset="-234" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="52" stroke="#3A3F4A" stroke-dasharray="32 294.7" stroke-dashoffset="-294" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="80" stroke="#8FB7E8" stroke-opacity=".55" stroke-dasharray="40 462.6" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="80" stroke="#8FB7E8" stroke-opacity=".35" stroke-dasharray="38 464.6" stroke-dashoffset="-42" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="80" stroke="#7FD1B9" stroke-opacity=".5" stroke-dasharray="52 450.6" stroke-dashoffset="-140" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="80" stroke="#E8C97D" stroke-opacity=".5" stroke-dasharray="44 458.6" stroke-dashoffset="-262" transform="rotate(-90 200 125)"/>
+      <circle class="seg" cx="200" cy="125" r="80" stroke="#E8A46A" stroke-opacity=".5" stroke-dasharray="46 456.6" stroke-dashoffset="-356" transform="rotate(-90 200 125)"/>
+      <text class="lbl" x="262" y="60">subject lines</text><text class="lbl" x="300" y="150">offer &amp; angle</text><text class="lbl" x="150" y="228">follow-ups</text><text class="lbl" x="40" y="150">deliverability</text><text class="lbl" x="60" y="60" fill="#666">enterprise (pruned)</text>
+    </svg>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> evidence volume and depth in one glance; gorgeous. <b>Cost:</b> labels get cramped; hardest to edit.</div></div>
+</section>
+
+<!-- ══════════════ 03 ══════════════ -->
+<section id="evidence">
+  <div class="eyebrow">Decision 03</div>
+  <h2>How evidence shows its work</h2>
+  <p class="sec-lede">Every unit, every rubric line, and the Evidence tab in the workspace are built from <b>claim cards</b>: one claim, its confidence, its sources, its age. Four treatments of the same five claims:</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">A</span><span class="opt-name">Index cards</span></div>
+  <p class="opt-thesis">One card per claim with a rubber-stamp confidence. Contested claims split into both sides. Reads like a researcher's desk.</p>
+  <div class="pane evA"><div class="bar"><span>subject lines · 5 claims</span><span>weights: rep × recency × soundness × consensus</span></div><div class="in">
+    <div class="card"><div class="claim">A personalized first line roughly doubles reply rate vs a template opener.</div><span class="stamp conf solid">SOLID · 0.86</span><div class="meta">11 sources · newest 3 wks · <b>YouTube</b> ×4 · <b>Reddit</b> ×3 · <b>blog</b> ×3 · <b>X</b> ×1 · 2 with real numbers</div></div>
+    <div class="card"><div class="claim">Shorter subject lines (≤4 words) get more opens.</div><span class="stamp conf contested">CONTESTED</span><div class="side"><div><b>for (6):</b> curiosity-gap data from 2 tools' aggregate stats</div><div><b>against (5):</b> clarity wins in B2B; "quick question" is now a spam signal</div></div></div>
+    <div class="card"><div class="claim">Tuesday–Thursday mornings beat Mondays for opens.</div><span class="stamp conf stale">STALE · 2019</span><div class="meta">4 sources, none newer than 2021 · re-verify queued</div></div>
+    <div class="card"><div class="claim">Follow-ups produce more than half of all replies.</div><span class="stamp conf solid">SOLID · 0.91</span><div class="meta">14 sources · newest 1 wk · three independent datasets agree</div></div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> confidence is unmissable; contested claims stay two-sided. <b>Cost:</b> tall; five claims already scroll.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">B</span><span class="opt-name">Ledger</span></div>
+  <p class="opt-thesis">A dense table: claim, confidence bar, age, sources. Scan fifty claims in a minute; click a row for the card.</p>
+  <div class="pane evB"><div class="bar"><span>subject lines · 5 of 38 claims</span><span>sort: confidence</span></div><div class="in"><table>
+    <tr><td>Follow-ups &gt; half of replies</td><td><div class="bar"><i style="width:91%"></i></div></td><td class="src">1 wk</td><td class="src">14</td></tr>
+    <tr><td>Personalized first line ≈ 2× replies</td><td><div class="bar"><i style="width:86%"></i></div></td><td class="src">3 wk</td><td class="src">11</td></tr>
+    <tr><td>One ask per email</td><td><div class="bar"><i style="width:82%"></i></div></td><td class="src">2 mo</td><td class="src">9</td></tr>
+    <tr><td>≤4-word subject lines open more</td><td><div class="bar"><i class="c" style="width:52%"></i></div></td><td class="src">1 mo</td><td class="src">11 <span class="conf contested" style="font-size:8px">split</span></td></tr>
+    <tr><td>Tue–Thu mornings beat Mon</td><td><div class="bar"><i class="c" style="width:30%"></i></div></td><td class="src" style="color:#D07A6A">2019</td><td class="src">4</td></tr>
+  </table></div></div>
+  <div class="opt-foot"><b>Wins:</b> density; sorting by confidence or age is a superpower. <b>Cost:</b> flattens nuance until you click in.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">C</span><span class="opt-name">Voices</span></div>
+  <p class="opt-thesis">Show the sources as quotes in their own words, then the Assessor's verdict beneath. You hear the practitioners, then the referee.</p>
+  <div class="pane evC"><div class="bar"><span>claim · personalized first line</span><span>3 of 11 voices</span></div><div class="in">
+    <blockquote>"We A/B'd 4,000 sends. Templated opener: 3.1% reply. First line referencing their last LinkedIn post: 6.8%."<span class="who">r/sales · 2,300 upvotes · 3 weeks ago · has numbers</span></blockquote>
+    <div class="verdict"><span class="conf solid">SOLID</span> real sample, recent, no product pitch attached.</div>
+    <blockquote>"Personalization is dead, volume is everything, use our tool to send 10k/day."<span class="who">vendor blog · 2 months ago · sells the tool</span></blockquote>
+    <div class="verdict"><span class="conf contested">DISCOUNTED</span> self-promotional; contradicts three independent datasets.</div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> you learn to smell bad sources yourself — a meta-skill. <b>Cost:</b> slowest to scan; long.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">D</span><span class="opt-name">Consensus grid</span></div>
+  <p class="opt-thesis">Claims × source-types heatmap. Green agrees, red disagrees, yellow mixed, empty silent. Consensus and controversy are visible as shapes.</p>
+  <div class="pane evD"><div class="bar"><span>subject lines · consensus by source type</span><span></span></div><div class="in"><table>
+    <tr><th></th><th>Reddit</th><th>YouTube</th><th>blogs</th><th>X</th><th>docs</th><th>yours</th></tr>
+    <tr><td class="l">follow-ups &gt; half</td><td class="c y"></td><td class="c y"></td><td class="c y"></td><td class="c y"></td><td class="c"></td><td class="c y"></td></tr>
+    <tr><td class="l">personalized opener 2×</td><td class="c y"></td><td class="c y"></td><td class="c m"></td><td class="c y"></td><td class="c"></td><td class="c"></td></tr>
+    <tr><td class="l">one ask per email</td><td class="c y"></td><td class="c y"></td><td class="c y"></td><td class="c m"></td><td class="c"></td><td class="c"></td></tr>
+    <tr><td class="l">≤4-word subjects</td><td class="c n"></td><td class="c y"></td><td class="c m"></td><td class="c y"></td><td class="c"></td><td class="c n"></td></tr>
+    <tr><td class="l">Tue–Thu mornings</td><td class="c n"></td><td class="c m"></td><td class="c m"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+  </table></div></div>
+  <div class="opt-foot"><b>Wins:</b> "who disagrees with whom" at a glance; your own results get a column. <b>Cost:</b> abstract; needs the card underneath.</div></div>
+</section>
+
+<!-- ══════════════ 04 ══════════════ -->
+<section id="sim">
+  <div class="eyebrow">Decision 04</div>
+  <h2>The Run button</h2>
+  <p class="sec-lede">You've drafted a real email in the workspace. Cmd+Enter. Four ways the simulator can talk back (in the rail, same place the terminal lives on the code side):</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">A</span><span class="opt-name">Persona margin</span></div>
+  <p class="opt-thesis">Three personas from the corpus read your draft line by line and react in the margin — the "stack trace" of a cold email. The line they bailed on gets highlighted.</p>
+  <div class="pane simA"><div class="bar"><span>run · 3 personas</span><span>VP Sales · skeptical founder · deliverability nerd</span></div><div class="in"><div class="grid">
+    <div class="draft"><p><b>Subject:</b> Quick question about Acme's outbound</p><p>Hi Priya — noticed Acme just opened a Berlin office.</p><p>Most teams expanding into DACH hit the same wall: English-only sequences lose half their replies.</p><p class="hit">We help SaaS teams localize outbound without hiring — Clearbit and Notion cut ramp time 40%. Worth 15 min Thursday? Happy to send our DACH playbook too.</p></div>
+    <div><div class="rx anim"><b>VP SALES · read 2 lines</b>Berlin office — fine, you did homework. Kept reading.</div><div class="rx anim"><b>SKEPTICAL FOUNDER · stopped at line 4</b>Two asks in one breath: a meeting AND a playbook. I'll take neither.</div><div class="rx anim"><b>DELIVERABILITY NERD</b>"Quick question" subject is a 2024 spam-filter signal. Reply rate prediction: <b style="color:#E8C97D;display:inline">2–4%</b>.</div></div>
+  </div></div></div>
+  <div class="opt-foot"><b>Wins:</b> the most human, most memorable feedback. <b>Cost:</b> personas can be confidently wrong; must show their evidence.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">B</span><span class="opt-name">Scorecard</span></div>
+  <p class="opt-thesis">A rubric derived from the corpus — each bar cites the claim it's grading against — plus a predicted reply-rate range with the uncertainty shown honestly.</p>
+  <div class="pane simB"><div class="bar"><span>run · rubric v3 (12 criteria, 5 shown)</span><span>from 38 claims</span></div><div class="in">
+    <div class="r"><span>Personalized opener</span><div class="bar"><i class="anim" style="width:88%"></i></div><em>0.88</em></div>
+    <div class="r"><span>One clear ask</span><div class="bar"><i class="b anim" style="width:30%"></i></div><em>0.30</em></div>
+    <div class="r"><span>Proof is specific</span><div class="bar"><i class="w anim" style="width:55%"></i></div><em>0.55</em></div>
+    <div class="r"><span>Length (≤ 90 words)</span><div class="bar"><i class="anim" style="width:80%"></i></div><em>0.80</em></div>
+    <div class="r"><span>Subject not spammy</span><div class="bar"><i class="b anim" style="width:25%"></i></div><em>0.25</em></div>
+    <div class="pred">Predicted reply rate <b>2.5% – 4.5%</b> · corpus median for B2B SaaS first-touch: 5% · biggest lift available: cut to one ask (<span class="conf solid" style="font-size:8px">solid</span>)</div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> precise, cites its reasons, tells you the biggest lever. <b>Cost:</b> a number can feel more true than it is.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">C</span><span class="opt-name">Inbox</span></div>
+  <p class="opt-thesis">Your email lands in a simulated inbox among eleven others competing for the persona's morning. Watch what happens to it. Brutal and honest about attention.</p>
+  <div class="pane simC"><div class="bar"><span>Priya's inbox · Thursday 8:14</span><span>12 unread</span></div>
+    <div class="row"><b>Stripe</b><span>Your March invoice is ready</span><span class="st">read</span></div>
+    <div class="row"><b>Marcus (CEO)</b><span>Re: board deck — need by EOD</span><span class="st">replied</span></div>
+    <div class="row you"><b>You</b><span>Quick question about Acme's outbound</span><span class="st">opened · skimmed · archived at 4s</span></div>
+    <div class="row"><b>LinkedIn</b><span>You appeared in 47 searches</span><span class="st">deleted</span></div>
+    <div class="row"><b>Dana R.</b><span>saw Acme's Berlin news — 1 idea for DACH</span><span class="st" style="color:#8FD4A8">replied</span></div>
+    <div class="verdict anim">Yours got opened (the Berlin line worked) and archived at line 4. Dana's got a reply: one idea, one ask, seven words in the subject.</div>
+  </div>
+  <div class="opt-foot"><b>Wins:</b> teaches the competition for attention that no rubric conveys. <b>Cost:</b> theatrical; the competing emails are fiction.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">D</span><span class="opt-name">Redline</span></div>
+  <p class="opt-thesis">An editor's markup: strikethroughs, suggested phrasing, inline reason chips — each chip a claim id. Nothing is applied; you retype what you agree with (ghost-line rule holds).</p>
+  <div class="pane simD"><div class="bar"><span>run · redline</span><span>3 edits · 0 applied</span></div><div class="in">
+    <p><b>Subject:</b> <s>Quick question about Acme's outbound</s> <span class="ins">Acme's Berlin office — 1 idea</span><span class="cm">#c12 spam-signal</span></p>
+    <p>Hi Priya — noticed Acme just opened a Berlin office. Most teams expanding into DACH hit the same wall: English-only sequences lose half their replies.</p>
+    <p>We help SaaS teams localize outbound without hiring — <s>Clearbit and Notion cut ramp time 40%.</s> <span class="ins">Notion's DACH team booked 40% more from localized sequences.</span><span class="cm">#c31 specific proof</span> Worth 15 min Thursday? <s>Happy to send our DACH playbook too.</s><span class="cm">#c07 one ask</span></p>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> the fix is right where the problem is; every edit is traceable to evidence. <b>Cost:</b> closest to "AI wrote it for me" — the type-through rule does the heavy lifting.</div></div>
+</section>
+
+<!-- ══════════════ 05 ══════════════ -->
+<section id="drills">
+  <div class="eyebrow">Decision 05</div>
+  <h2>Drills</h2>
+  <p class="sec-lede">Short, spaced reps between learning and making. Two of these are interactive — tap them.</p>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">A</span><span class="opt-name">Predict the winner</span></div>
+  <p class="opt-thesis">Two subject lines that were <em>actually</em> tested. Pick, then see the real result and why. The most honest signal in the whole track.</p>
+  <div class="pane drA"><div class="bar"><span>drill · real A/B from r/sales (n = 4,000)</span><span>streak 6</span></div><div class="in">
+    <div class="opts"><div class="opt" data-win="0">A · "Priya — Berlin office question"</div><div class="opt" data-win="1">B · "Quick question about Acme's outbound"</div></div>
+    <div class="reveal" data-text="<b>A won: 41% vs 23% opens.</b> Name + specific trigger beats the generic 'quick question', which two filters now flag. Consistent with claim #c12 (solid)."><em style="color:var(--dim)">tap one to reveal</em></div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> objective ground truth; builds calibrated judgment fast. <b>Cost:</b> depends on the corpus having real tests (cold email has plenty).</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">B</span><span class="opt-name">Sprint</span></div>
+  <p class="opt-thesis">A timer and a quota: ten subject lines for this prospect in five minutes. Volume kills preciousness. The panel then ranks your ten.</p>
+  <div class="pane drB"><div class="bar"><span>drill · sprint</span><span>prospect: Priya, Acme, Berlin expansion</span></div><div class="in">
+    <div class="timer anim" id="sprint">04:12</div>
+    <ol><li class="done">Berlin office — one idea</li><li class="done">Priya, DACH reply rates</li><li class="done">Acme × DACH: the localization wall</li><li class="done">Your English sequences in Berlin</li><li class="cur">Notion did this in DACH</li><li>—</li><li>—</li><li>—</li><li>—</li><li>—</li></ol>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> the fastest way past writer's block; produces raw material for Make. <b>Cost:</b> stress isn't for everyone; make it optional.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">C</span><span class="opt-name">Spot the mistake</span></div>
+  <p class="opt-thesis">A real (anonymized) cold email from the corpus with one planted or genuine error. Tap where it goes wrong.</p>
+  <div class="pane drC"><div class="bar"><span>drill · spot it</span><span>tap the line</span></div><div class="in">
+    <p><span class="mk" data-why="Fine — a real trigger, one line.">Hi Tom, congrats on the Series B — saw the TechCrunch piece.</span> <span class="mk" data-why="Fine — a specific, relevant pain.">Post-raise, most teams double their SDR headcount and watch reply rates halve.</span> <span class="mk" data-why="Here — an unverifiable claim ('industry-leading') plus a product name-drop. Claim #c31: proof must be specific or omitted.">Our industry-leading AI platform fixes that.</span> <span class="mk" data-why="Fine — one ask, low friction.">Open to a 12-minute call next week?</span></p>
+    <div class="why"><em style="color:var(--dim)">tap a sentence</em></div>
+  </div></div>
+  <div class="opt-foot"><b>Wins:</b> trains the watcher's eye in you. <b>Cost:</b> easy to make the mistake too obvious.</div></div>
+
+  <div class="opt"><div class="opt-head"><span class="opt-tag">D</span><span class="opt-name">Rewrite for a persona</span></div>
+  <p class="opt-thesis">Same email, different reader. Rewrite the CFO version for a founder; the panel diffs what you changed against what the corpus says matters to each.</p>
+  <div class="pane drD"><div class="bar"><span>drill · persona rewrite</span><span>CFO → founder</span></div><div class="in"><div class="cols">
+    <div class="col"><h6>ORIGINAL · CFO</h6>Localized outbound cut Notion's DACH cost-per-meeting 31%. 15 minutes to walk through the model?</div>
+    <div class="col mine"><h6>YOURS · FOUNDER</h6>Notion's DACH team booked 40% more meetings from localized sequences — no new hires. Want the 3 changes they made?</div>
+  </div><p style="margin-top:10px;font-size:11.5px;color:#C8C4BA"><span class="conf solid" style="font-size:8px">good</span> cost → growth framing, ask → curiosity. <span class="conf likely" style="font-size:8px">check</span> founders skim on phone: 34 words is near the ceiling.</p></div></div>
+  <div class="opt-foot"><b>Wins:</b> teaches audience-fit, the thing templates never do. <b>Cost:</b> grading is judgment, not ground truth.</div></div>
+</section>
+
+<!-- ══════════════ BALLOT ══════════════ -->
+<section id="decide">
+  <div class="eyebrow">Sign-off</div>
+  <h2>The ballot</h2>
+  <div class="ballot">
+    <ol>
+      <li><b>01</b> Structure — nine beats, the three-source feedback ladder, agent roster (Fable cartographer, Opus scouts/assessor/reconciler/architect), source policy as verified: approve or amend?</li>
+      <li><b>02</b> Angle map — <b>A</b> Constellation · <b>B</b> Outline ladder · <b>C</b> Level lanes · <b>D</b> Sunburst</li>
+      <li><b>03</b> Evidence — <b>A</b> Index cards · <b>B</b> Ledger · <b>C</b> Voices · <b>D</b> Consensus grid (combos are natural here: e.g. B to scan, A on click)</li>
+      <li><b>04</b> Simulator — <b>A</b> Persona margin · <b>B</b> Scorecard · <b>C</b> Inbox · <b>D</b> Redline (also combinable: tabs in the rail)</li>
+      <li><b>05</b> Drills — pick any subset of <b>A–D</b>; A is the one I'd never cut</li>
+      <li><b>06</b> Pilot = cold email; Reddit/YouTube verified on your machine at first run; FB partial, X full — ok?</li>
+    </ol>
+    <div class="fmt">reply like: 1 ok · 2 B · 3 B+A · 4 A+B · 5 A,C,D · 6 ok</div>
+    <p class="small">Then I spec it (new shared types, the research pipeline as a resumable job with a visible corpus, the skills workspace reusing ghost/hint/watcher), dispatch Opus builders, and drive it through a mock-corpus e2e suite before a live cold-email research run.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('on', e.isIntersecting)), {threshold: .25});
+document.querySelectorAll('.pane').forEach(el => io.observe(el));
+
+// drill A: predict the winner
+document.querySelectorAll('.drA .opt').forEach(o => o.addEventListener('click', () => {
+  const box = o.closest('.drA');
+  box.querySelectorAll('.opt').forEach(x => x.classList.add(x.dataset.win === '0' ? 'win' : 'lose'));
+  box.querySelector('.reveal').innerHTML = box.querySelector('.reveal').dataset.text;
+}));
+
+// drill C: spot the mistake
+document.querySelectorAll('.drC .mk').forEach(m => m.addEventListener('click', () => {
+  const box = m.closest('.drC');
+  box.querySelectorAll('.mk').forEach(x => x.classList.remove('hit'));
+  m.classList.add('hit');
+  box.querySelector('.why').textContent = m.dataset.why;
+}));
+
+// sprint timer
+(function(){ const t = document.getElementById('sprint'); if(!t) return; let s = 252;
+  setInterval(() => { s = s > 0 ? s - 1 : 300; t.textContent = String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }, 1000); })();
+</script>
