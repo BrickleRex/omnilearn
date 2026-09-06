@@ -33,19 +33,33 @@ export function newDraft(id: string, moduleId: string, title: string, body = '')
  * A new version only when the text actually changed (trimmed compare) — saving
  * the same words twice must not inflate the ladder. Returns the draft unchanged
  * (same reference) when nothing was appended.
+ *
+ * One exception: a draft that was created empty and never run has a PLACEHOLDER
+ * v1, so the learner's first real text fills it in place. Otherwise every ladder
+ * would open with a blank rung.
  */
 export function appendVersion(draft: Draft, body: string, at = new Date().toISOString()): Draft {
+  const text = String(body ?? '');
   const last = draft.versions[draft.versions.length - 1];
-  if (last && last.body.trim() === String(body ?? '').trim()) return draft;
-  const version: DraftVersion = { n: (last?.n ?? 0) + 1, at, body: String(body ?? '') };
+  if (last && last.body.trim() === text.trim()) return draft;
+  if (draft.versions.length === 1 && !last.body.trim() && !last.run) {
+    return { ...draft, versions: [{ ...last, at, body: text }] };
+  }
+  const version: DraftVersion = { n: (last?.n ?? 0) + 1, at, body: text };
   const versions = [...draft.versions, version].slice(-MAX_VERSIONS);
   return { ...draft, versions };
 }
 
-/** Version numbers survive capping, so look up by `n` first and only then by index. */
+/**
+ * Look up by `n`. The index fallback exists only for old rows written without a
+ * number — once the ladder has been capped, index and `n` no longer agree.
+ */
 export function findVersion(draft: Draft, n: number): DraftVersion | undefined {
   const wanted = Number(n);
-  return draft.versions.find((v) => v.n === wanted) ?? draft.versions[wanted - 1];
+  const found = draft.versions.find((v) => v.n === wanted);
+  if (found) return found;
+  const byIndex = draft.versions[wanted - 1];
+  return byIndex && !Number.isFinite(byIndex.n) ? byIndex : undefined;
 }
 
 /** What a shipment copies: the run's predicted range, or 0/0 when it never ran. */
