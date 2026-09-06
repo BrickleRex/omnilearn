@@ -15,7 +15,38 @@
   border-bottom: var(--border-w) solid var(--line);
   box-shadow: 0 var(--shadow-offset) 0 var(--shadow);
 }
+.lib-top-left { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .lib-top-right { display: flex; align-items: center; gap: 10px; }
+
+/* ---- Code | Skills track switch ---- */
+.lib-track {
+  display: inline-flex;
+  padding: 3px;
+  gap: 3px;
+  background: var(--surface2);
+  border: var(--border-w) solid var(--line);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+.lib-track-btn {
+  appearance: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  padding: 4px 14px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  transition: background .18s var(--ease), color .18s var(--ease), transform .18s var(--spring);
+}
+.lib-track-btn:hover:not(.is-on) { color: var(--ink); transform: translateY(-1px); }
+.lib-track-btn.is-on {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--line);
+}
 
 /* ---- sticker wordmark ---- */
 .wordmark {

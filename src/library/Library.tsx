@@ -7,7 +7,16 @@ import Segbar from '../components/Segbar';
 import SettingsModal from './SettingsModal';
 import NewProjectModal from './NewProjectModal';
 import Wordmark from './Wordmark';
+import SkillsLane from '../skills/flow/SkillsLane';
+import FrameModal from '../skills/flow/FrameModal';
 import './library.css';
+
+type Track = 'code' | 'skills';
+const TRACK_KEY = 'omnilearn.track';
+
+function readTrack(): Track {
+  try { return localStorage.getItem(TRACK_KEY) === 'skills' ? 'skills' : 'code'; } catch { return 'code'; }
+}
 
 function entryMilestoneId(p: Project): string | undefined {
   const current = p.milestones.find((m) => m.status === 'current');
@@ -25,6 +34,13 @@ export default function Library({
   const [showNew, setShowNew] = useState(false);
   const [opening, setOpening] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const [track, setTrack] = useState<Track>(readTrack);
+  const [showFrame, setShowFrame] = useState(false);
+
+  const pickTrack = useCallback((t: Track) => {
+    setTrack(t);
+    try { localStorage.setItem(TRACK_KEY, t); } catch { /* private mode: this session only */ }
+  }, []);
 
   const load = useCallback(() => {
     api.listProjects()
@@ -64,15 +80,47 @@ export default function Library({
   return (
     <div className="lib">
       <header className="lib-top scanlines">
-        <Wordmark />
+        <div className="lib-top-left">
+          <Wordmark />
+          <div className="lib-track" role="group" aria-label="Track">
+            <button
+              type="button"
+              className={`lib-track-btn${track === 'code' ? ' is-on' : ''}`}
+              data-testid="track-code"
+              aria-pressed={track === 'code'}
+              onClick={() => pickTrack('code')}
+            >
+              Code
+            </button>
+            <button
+              type="button"
+              className={`lib-track-btn${track === 'skills' ? ' is-on' : ''}`}
+              data-testid="track-skills"
+              aria-pressed={track === 'skills'}
+              onClick={() => pickTrack('skills')}
+            >
+              Skills
+            </button>
+          </div>
+        </div>
         <div className="lib-top-right">
-          <button
-            className="btn btn-primary"
-            data-testid="new-project"
-            onClick={() => setShowNew(true)}
-          >
-            <span aria-hidden="true">＋</span> New project
-          </button>
+          {track === 'code' ? (
+            <button
+              className="btn btn-primary"
+              data-testid="new-project"
+              onClick={() => setShowNew(true)}
+            >
+              <span aria-hidden="true">＋</span> New project
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary"
+              data-testid="new-skill"
+              onClick={() => setShowFrame(true)}
+            >
+              <span aria-hidden="true">＋</span> New skill
+            </button>
+          )}
           <button
             className="btn btn-icon"
             data-testid="settings"
@@ -86,13 +134,15 @@ export default function Library({
       </header>
 
       <main className="lib-main" data-testid="library">
-        {projects === null && (
+        {track === 'skills' && <SkillsLane onNew={() => setShowFrame(true)} />}
+
+        {track === 'code' && projects === null && (
           <div className="lib-skeletons" aria-hidden="true">
             {[0, 1, 2].map((i) => <div key={i} className="card lib-skel" style={{ animationDelay: `${i * 70}ms` }} />)}
           </div>
         )}
 
-        {projects !== null && projects.length === 0 && (
+        {track === 'code' && projects !== null && projects.length === 0 && (
           <section className="lib-empty anim-pop">
             <div className="lib-empty-art" aria-hidden="true">
               <span className="blob b1" />
@@ -111,7 +161,7 @@ export default function Library({
           </section>
         )}
 
-        {projects !== null && projects.length > 0 && (
+        {track === 'code' && projects !== null && projects.length > 0 && (
           <>
             <div className="lib-heading">
               <h1>Your projects</h1>
@@ -190,6 +240,17 @@ export default function Library({
           onSettings={onSettings}
           onError={(e) => pushError(e, 'Could not save settings:')}
           onClose={() => setShowSettings(false)}
+        />
+      )}
+
+      {showFrame && (
+        <FrameModal
+          onClose={() => setShowFrame(false)}
+          onError={(e) => pushError(e, 'Could not start that skill:')}
+          onCreated={(p) => {
+            setShowFrame(false);
+            go({ name: 'skill', skillId: p.id, screen: 'map' });
+          }}
         />
       )}
 
