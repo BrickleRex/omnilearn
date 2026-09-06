@@ -102,6 +102,8 @@ OTHER SCOUTS ARE COVERING: ${ctx.siblings.length ? ctx.siblings.join(', ') : '(n
   — stay in your lane; do not return sources that are really about their angles.
 
 HOW TO SEARCH
+- BUDGET: at most 10 searches and 8 fetches in total. When the budget is spent, STOP
+  searching and answer with what you have — a partial answer beats no answer.
 - Run SEVERAL searches, not one. Explicitly include platform-scoped queries:
   site:reddit.com, site:x.com, site:youtube.com, site:facebook.com, plus plain web
   searches for docs, vendor benchmark reports and practitioner blogs.

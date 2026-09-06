@@ -303,7 +303,8 @@ async function phaseScouting(ctl: JobCtl, project: SkillProject, map: AngleMap):
         model: models.scout,
         prompt: prompts.scoutPrompt({ name: project.name, frame: project.frame, angle, siblings }),
         allowedTools: ['WebSearch', 'WebFetch'],
-        maxTurns: 25,
+        // The prompt budgets ~18 tool calls; the cap only catches a runaway.
+        maxTurns: 40,
         timeoutMs: SCOUT_TIMEOUT_MS,
       });
       const result = coerceScout(raw, angle.id);
