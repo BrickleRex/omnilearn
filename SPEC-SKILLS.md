@@ -108,7 +108,7 @@ data-testids (must exist exactly):
   (enabled when done → Calibrate).
 - Calibrate: `skill-calibrate`, `calib-opt-<qi>-<oi>`, `calib-submit`, `grade-existing-input`, `grade-existing-submit`,
   `grade-existing-result`, `calib-continue`.
-- Learn: `skill-learn`, reuses primer deck ids (`primer-deck`, `unit-<id>`, `check-opt-<i>`, `check-submit`, `deck-next`)
+- Learn: `skill-learn`, own deck with ids `primer-deck`, `check-opt-<i>`, `primer-next`, `primer-finish`
   plus `claim-chip-<claimId>` (click opens `evidence-card-<claimId>`), `learn-to-drills`.
 - Drills: `skill-drills`, `rep-counter` (text contains the number), `drill-<id>`,
   predict: `predict-opt-<0|1>`, `predict-result`; sprint: `sprint-timer`, `sprint-line-<i>` (textarea/input), `sprint-submit`, `sprint-feedback`;
