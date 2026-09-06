@@ -60,6 +60,7 @@ test('frame a skill, prune the angle map, run mock research, calibrate', async (
   await page.getByTestId('calib-opt-2-3').click(); // "No idea yet"
   await page.getByTestId('calib-submit').click();
 
+  await page.getByTestId('grade-existing-toggle').click();
   await page.getByTestId('grade-existing-input').fill('Hi Priya, we are the leading platform. Got 15 minutes?');
   await page.getByTestId('grade-existing-submit').click();
   await expect(page.getByTestId('grade-existing-result')).toContainText(/trigger/i, { timeout: 10_000 });
@@ -140,11 +141,11 @@ test('make: ghost refused, hint flags the about-us line, run, v2 delta, ship, ev
   await expect(ghost).toBeVisible({ timeout: 10_000 });
   await expect(ghost).toContainText('subject: your q3 hiring');
   await page.keyboard.press('Tab');
+  await expect(page.getByTestId('ghost-refuse')).toBeVisible(); // refused, nothing inserted
   await expect(ghost).toBeVisible();
-  await expect(page.locator('.cm-content')).not.toContainText('subject:');
   await page.keyboard.type('subject: your q3 hiring', { delay: 12 });
-  await expect(ghost).toBeHidden({ timeout: 5_000 });
-  await expect(page.locator('.cm-content')).toContainText('subject: your q3 hiring');
+  await expect(ghost).toBeHidden({ timeout: 5_000 }); // fully typed through
+  await expect(page.locator('.cm-line').first()).toHaveText('subject: your q3 hiring');
 
   // --- Draft v1 with an about-us line
   await typeInEditor(page, '\nPriya — saw you opened 6 SDR roles this month.\nWe are the leading SDR ramp platform trusted by 500 companies.\nWorth a look, or is ramp not the bottleneck right now?');

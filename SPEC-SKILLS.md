@@ -106,7 +106,7 @@ data-testids (must exist exactly):
   `start-research`, `skip-to-drills`, `skip-to-make` (the two skips appear on EVERY skill screen header).
 - Research: `skill-research`, `research-phase` (text = current phase), `research-log`, `research-continue`
   (enabled when done → Calibrate).
-- Calibrate: `skill-calibrate`, `calib-opt-<qi>-<oi>`, `calib-submit`, `grade-existing-input`, `grade-existing-submit`,
+- Calibrate: `skill-calibrate`, `calib-opt-<qi>-<oi>`, `calib-submit`, `grade-existing-toggle`, `grade-existing-input`, `grade-existing-submit`,
   `grade-existing-result`, `calib-continue`.
 - Learn: `skill-learn`, own deck with ids `primer-deck`, `check-opt-<i>`, `primer-next`, `primer-finish`
   plus `claim-chip-<claimId>` (click opens `evidence-card-<claimId>`), `learn-to-drills`.

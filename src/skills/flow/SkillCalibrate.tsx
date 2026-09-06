@@ -197,6 +197,7 @@ export default function SkillCalibrate({
         <button
           type="button"
           className="sk-grade-head"
+          data-testid="grade-existing-toggle"
           aria-expanded={gradeOpen}
           onClick={() => setGradeOpen((v) => !v)}
         >
