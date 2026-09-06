@@ -15,7 +15,7 @@ import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
 import { markdown } from '@codemirror/lang-markdown';
 import type { Scheme } from '../../../shared/types';
 import { buildEditorTheme } from '../../workspace/theme';
-import { dismissGhost, ghostExtension, showGhost } from '../../workspace/ghost';
+import { dismissGhost, ghostActive, ghostExtension, showGhost } from '../../workspace/ghost';
 import { nudgeGutter, setNudgeLine } from '../../workspace/nudge';
 import { bailLineExtension, setBailLine } from './bailLine';
 import { ghostClassExtension, tagGhosts } from './ghostClass';
@@ -23,7 +23,8 @@ import { ghostClassExtension, tagGhosts } from './ghostClass';
 export interface MakeEditorHandle {
   getContent(): string;
   getCursorLine(): number;
-  showGhost(text: string): void;
+  /** false when the line already says it — nothing was shown. */
+  showGhost(text: string): boolean;
   dismissGhost(): void;
   setNudge(line: number | null): void;
   setBail(line: number | null): void;
@@ -140,9 +141,10 @@ const MakeEditor = forwardRef<MakeEditorHandle, MakeEditorProps>(function MakeEd
     },
     showGhost: (text) => {
       const v = view.current;
-      if (!v) return;
+      if (!v) return false;
       showGhost(v, text);
       requestAnimationFrame(() => tagGhosts(v.dom));
+      return ghostActive(v.state);
     },
     dismissGhost: () => { const v = view.current; if (v) dismissGhost(v); },
     setNudge: (line) => view.current?.dispatch({ effects: setNudgeLine.of(line) }),

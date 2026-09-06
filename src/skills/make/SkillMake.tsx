@@ -248,7 +248,8 @@ export default function SkillMake(props: {
     try {
       const saved = await saveVersion();
       if (!saved) return;
-      const n = saved.versions.length;
+      // count the rungs the ladder actually shows, not the raw versions
+      const n = saved.versions.filter((v) => v.body.trim() !== '' || v.run).length;
       push('good', `saved as v${n} — the ladder keeps it.`);
     } catch (e) { pushError(e, 'could not save:'); }
   }, [saveVersion, push, pushError]);
@@ -334,7 +335,10 @@ export default function SkillMake(props: {
         body: editorRef.current?.getContent() ?? '',
         cursorLine: editorRef.current?.getCursorLine() ?? 1,
       });
-      editorRef.current?.showGhost(res.text);
+      // showGhost peels off whatever is already on the line; when nothing is
+      // left there is no ghost, and silence would read as a broken key.
+      const shown = editorRef.current?.showGhost(res.text);
+      if (!shown) setHint({ text: 'This line already says it — start a new line and ask again.' });
     } catch {
       setHint({ text: 'no practice line right now — keep going in your own words.' });
     } finally {
