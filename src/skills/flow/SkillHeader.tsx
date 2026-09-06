@@ -46,7 +46,7 @@ export default function SkillHeader({
       </ol>
 
       <span className="chip chip-accent3 sk-reps" data-testid="rep-counter" title="drills + runs + ships">
-        {reps} reps
+        {reps} {reps === 1 ? 'rep' : 'reps'}
       </span>
 
       <div className="sk-skips">

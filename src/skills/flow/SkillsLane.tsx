@@ -96,7 +96,7 @@ export default function SkillsLane({ onNew }: { onNew: () => void }) {
                 <p className="lib-card-goal">{PHASE_NEXT[s.phase] ?? 'Pick up where you left off.'}</p>
 
                 <div className="lib-card-meta">
-                  <span className="chip chip-accent3" title="drills + runs + ships">{s.reps} reps</span>
+                  <span className="chip chip-accent3" title="drills + runs + ships">{s.reps} {s.reps === 1 ? 'rep' : 'reps'}</span>
                   <span className="lib-progress">
                     <Segbar
                       done={s.modulesDone}
