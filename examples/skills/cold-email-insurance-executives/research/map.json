@@ -1,0 +1,346 @@
+{
+  "angles": [
+    {
+      "id": "know-the-insurance-buyer",
+      "title": "Who Buys Inside an Insurance Firm",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 14,
+      "scope": "niche",
+      "why": "You cannot book a meeting with the wrong person; the right title changes by carrier, broker, and MGA."
+    },
+    {
+      "id": "carrier-broker-mga-differences",
+      "title": "Carriers vs Brokers vs MGAs",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 12,
+      "scope": "niche",
+      "why": "Carrier execs answer for loss ratio, broker execs for retention and new revenue; one email cannot fit both.",
+      "parentId": "know-the-insurance-buyer"
+    },
+    {
+      "id": "insurance-title-map",
+      "title": "Insurance C-suite and SVP Title Map",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 9,
+      "scope": "niche",
+      "why": "Chief Underwriting Officer, Chief Claims Officer, and Chief Actuary own different budgets; pick the one your offer helps.",
+      "parentId": "know-the-insurance-buyer"
+    },
+    {
+      "id": "signing-authority-by-firm-size",
+      "title": "Match Deal Size to Signing Authority",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "At a $10B carrier a $60k deal is an SVP's call; at a regional mutual or MGA the CEO signs it.",
+      "parentId": "know-the-insurance-buyer"
+    },
+    {
+      "id": "buying-committee",
+      "title": "The Insurance Buying Committee",
+      "level": "working",
+      "kept": true,
+      "estSources": 8,
+      "scope": "niche",
+      "why": "Five-to-six-figure deals pass through IT security, compliance, and vendor risk review; know who can kill it.",
+      "parentId": "know-the-insurance-buyer"
+    },
+    {
+      "id": "regulation-shapes-buying",
+      "title": "How Regulation Shapes Buying",
+      "level": "working",
+      "kept": true,
+      "estSources": 10,
+      "scope": "niche",
+      "why": "State regulators, NY DFS Part 500, and the model audit rule make execs cautious; show you know that.",
+      "parentId": "know-the-insurance-buyer"
+    },
+    {
+      "id": "list-building",
+      "title": "Fifty Firms, Not Five Thousand",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 20,
+      "scope": "general",
+      "why": "You have few targets worth five figures; pick them carefully, send tens a month, and research each one."
+    },
+    {
+      "id": "insurance-data-sources",
+      "title": "Insurance-Specific Data Sources",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 8,
+      "scope": "niche",
+      "why": "AM Best ratings, NAIC filings, and state DOI records tell you size and lines before you email.",
+      "parentId": "list-building"
+    },
+    {
+      "id": "trigger-events",
+      "title": "Insurance Trigger Events",
+      "level": "working",
+      "kept": true,
+      "estSources": 9,
+      "scope": "niche",
+      "why": "A rate filing, a rating downgrade, a merger, or a new CTO is your reason to write this week, not any week.",
+      "parentId": "list-building"
+    },
+    {
+      "id": "list-qualification",
+      "title": "Qualifying for Deal Size",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 15,
+      "scope": "general",
+      "why": "Premium volume and headcount tell you whether a six-figure engagement is realistic.",
+      "parentId": "list-building"
+    },
+    {
+      "id": "the-offer",
+      "title": "The Offer Behind the Email",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 18,
+      "scope": "general",
+      "why": "Executives take meetings for outcomes, not products; a weak offer makes every email fail."
+    },
+    {
+      "id": "insurance-pain-language",
+      "title": "Insurance Pain Points and Words",
+      "level": "working",
+      "kept": true,
+      "estSources": 10,
+      "scope": "niche",
+      "why": "Loss ratio, combined ratio, and claims leakage are the numbers execs are judged on; speak in them.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "vendor-due-diligence-proof",
+      "title": "Proof That Passes Vendor Review",
+      "level": "working",
+      "kept": true,
+      "estSources": 7,
+      "scope": "niche",
+      "why": "Named carrier clients, SOC 2, and a story of surviving vendor risk review earn the first call.",
+      "parentId": "the-offer"
+    },
+    {
+      "id": "writing-the-email",
+      "title": "Writing the Cold Email",
+      "level": "working",
+      "kept": true,
+      "estSources": 30,
+      "scope": "general",
+      "why": "The email is the whole pitch; every line either earns the next line or gets you deleted."
+    },
+    {
+      "id": "subject-and-first-line",
+      "title": "Subject Line and First Line",
+      "level": "working",
+      "kept": true,
+      "estSources": 25,
+      "scope": "general",
+      "why": "Execs decide in one line whether you did your homework on their firm; the subject just has to look human.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "named-peer-line",
+      "title": "The Named-Peer Line",
+      "level": "working",
+      "kept": true,
+      "estSources": 5,
+      "scope": "niche",
+      "why": "In a relationship industry, naming a carrier you helped or a person they know beats any clever opener.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "words-that-get-you-binned",
+      "title": "Words Insurance Execs Bin",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "Disrupt, AI-powered, insurtech, and guaranteed trigger compliance instincts and the delete key.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "the-ask",
+      "title": "Asking for the Meeting",
+      "level": "working",
+      "kept": true,
+      "estSources": 18,
+      "scope": "general",
+      "why": "A soft, low-effort ask books more executive calls than a calendar link demand.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "ask-for-the-owner",
+      "title": "Ask the Exec Who Owns It",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "A C-level who forwards you to the right SVP has just given you a warm intro; ask for that on purpose.",
+      "parentId": "writing-the-email"
+    },
+    {
+      "id": "getting-past-gatekeepers",
+      "title": "Getting Past Executive Assistants",
+      "level": "working",
+      "kept": true,
+      "estSources": 9,
+      "scope": "niche",
+      "why": "Most insurance C-suite inboxes are screened by an EA; write for the screener too."
+    },
+    {
+      "id": "writing-for-the-ea",
+      "title": "Writing for the Assistant",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "An EA forwards emails that are short, clear, and safe to forward; give them that.",
+      "parentId": "getting-past-gatekeepers"
+    },
+    {
+      "id": "ea-as-ally",
+      "title": "Turning the EA Into an Ally",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 5,
+      "scope": "niche",
+      "why": "The EA controls the calendar; a respectful direct approach can book the meeting for you.",
+      "parentId": "getting-past-gatekeepers"
+    },
+    {
+      "id": "deliverability",
+      "title": "Landing in the Insurer's Inbox",
+      "level": "working",
+      "kept": true,
+      "estSources": 25,
+      "scope": "general",
+      "why": "An unseen email books nothing; a real address and a one-line opt-out also keep you inside CAN-SPAM."
+    },
+    {
+      "id": "domain-setup",
+      "title": "Domain and Sending Setup",
+      "level": "foundation",
+      "kept": true,
+      "estSources": 22,
+      "scope": "general",
+      "why": "SPF, DKIM, DMARC, and a warmed secondary domain decide if you reach the inbox at all.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "insurance-email-security",
+      "title": "Insurance Email Security Gateways",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "Proofpoint and Mimecast rewrite links and quarantine unknown senders; plain text, no links, no tracking pixels.",
+      "parentId": "deliverability"
+    },
+    {
+      "id": "insurance-cycle-cadence",
+      "title": "Cadence for a Long Insurance Cycle",
+      "level": "working",
+      "kept": true,
+      "estSources": 12,
+      "scope": "niche",
+      "why": "Insurers buy on budget and renewal calendars; your timing and follow-up must match a months-long cycle."
+    },
+    {
+      "id": "carrier-budget-season",
+      "title": "Carrier Budget Season",
+      "level": "working",
+      "kept": true,
+      "estSources": 7,
+      "scope": "niche",
+      "why": "Carriers set next year's budgets in Q3 and Q4; an email in March asks for money that is already spent.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "broker-renewal-crunch",
+      "title": "Broker Renewal Crunch",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "January 1 and July 1 renewals swamp brokers; email in the quiet windows instead.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "quarterly-nurture",
+      "title": "Quarterly Nurture, Not Breakup Email",
+      "level": "working",
+      "kept": true,
+      "estSources": 6,
+      "scope": "niche",
+      "why": "Generic courses say five touches then quit; here a no-reply means not yet, so stay on the radar each quarter.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "follow-up-touches",
+      "title": "Follow-ups That Add Something",
+      "level": "working",
+      "kept": true,
+      "estSources": 20,
+      "scope": "general",
+      "why": "Most executive meetings come from the third to fifth touch; each one must bring a new reason, not a nudge.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "conferences-and-associations",
+      "title": "Conferences and Association Rooms",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 10,
+      "scope": "niche",
+      "why": "ITC Vegas, RIMS, NAMIC, and state Big I events give your email a face; mention the room you will both be in.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "handling-replies",
+      "title": "Handling Replies and Objections",
+      "level": "working",
+      "kept": true,
+      "estSources": 14,
+      "scope": "general",
+      "why": "A 'send me info' or 'talk to my VP' reply is a door; know how to turn it into a booked call.",
+      "parentId": "insurance-cycle-cadence"
+    },
+    {
+      "id": "measuring-and-improving",
+      "title": "Learning From Fifty Emails",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 18,
+      "scope": "general",
+      "why": "With a small list you cannot afford to guess; track what books meetings and cut the rest."
+    },
+    {
+      "id": "metrics-for-small-lists",
+      "title": "Metrics for Small High-Ticket Lists",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 12,
+      "scope": "general",
+      "why": "Reply rate and meetings booked beat open rate when you send fifty emails a month.",
+      "parentId": "measuring-and-improving"
+    },
+    {
+      "id": "track-firms-not-emails",
+      "title": "Track Firms, Not Emails",
+      "level": "advanced",
+      "kept": true,
+      "estSources": 6,
+      "scope": "general",
+      "why": "Score each firm by stage, owner found to meeting booked, so a long cycle looks like progress instead of silence.",
+      "parentId": "measuring-and-improving"
+    }
+  ]
+}

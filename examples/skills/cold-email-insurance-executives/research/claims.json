@@ -1,0 +1,4055 @@
+[
+  {
+    "id": "c1",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "Write three separate sequences — one for carriers, one for brokers, one for MGAs. Splitting a list into small same-persona cohorts lifts reply rate from 2.1% at 1,000+ recipients to 5.8% at 50 recipients.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s12",
+      "s5"
+    ],
+    "contextTags": [
+      "cold-email",
+      "list-segmentation",
+      "small-list",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2026-09-02"
+  },
+  {
+    "id": "c2",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "In a carrier exec email, promise movement in the combined ratio — the number their board reads. The US P/C industry finished 2025 at 93, its best in a decade, so your claim is measured against that.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s1"
+    ],
+    "contextTags": [
+      "carrier-execs",
+      "first-touch",
+      "us-market",
+      "personalization"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-07-27"
+  },
+  {
+    "id": "c3",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "In a broker exec email, promise retention or new business instead of loss ratio. Top agencies grew organically 10.7% in 2025 against a 7.8% median, and moving retention from 85% to 93% alone yields 8% organic growth.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s2",
+      "s3"
+    ],
+    "contextTags": [
+      "broker-execs",
+      "first-touch",
+      "us-market"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c4",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "In an MGA exec email, promise defended capacity. MGA premiums grew 17.8% to $108.7 billion in 2025 while carriers tightened due diligence and demanded loss ratio stability before renewing capacity.",
+    "verdict": "likely",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s4",
+      "s8"
+    ],
+    "contextTags": [
+      "mga-execs",
+      "first-touch",
+      "us-market",
+      "list-building"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-07-03"
+  },
+  {
+    "id": "c5",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "Carrier and MGA incentives are opposed. MGAs earn upfront commission on premium volume while the carrier absorbs the loss, so one email built on either motive reads as naive to the other side.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s5"
+    ],
+    "contextTags": [
+      "cold-email",
+      "list-segmentation",
+      "small-list",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2026-09-02"
+  },
+  {
+    "id": "c6",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "Name the specific line of business in a carrier email, not just \"insurance\". In 2025 personal auto produced about $28.9 billion of underwriting income while other liability ran a 114.7 combined ratio and lost about $11 billion.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s1"
+    ],
+    "contextTags": [
+      "carrier-execs",
+      "first-touch",
+      "us-market",
+      "personalization"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-07-27"
+  },
+  {
+    "id": "c7",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "Build the MGA list by hand — roughly 800 US MGAs file at the NAIC reporting threshold — instead of buying a generic \"insurance\" list.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s4"
+    ],
+    "contextTags": [
+      "mga-execs",
+      "first-touch",
+      "us-market",
+      "list-building"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-07-03"
+  },
+  {
+    "id": "c8",
+    "angleId": "carrier-broker-mga-differences",
+    "text": "Budget for below-average replies. Financial services has the lowest average cold email reply rate of any vertical at 6.72% — though a second dataset of 7,530,489 emails sent in 2025 puts the overall average at 0.45% with banking and insurance at the bottom of all industries, so plan for the low end and get the numbers from your own sends.",
+    "verdict": "contested",
+    "confidence": 0.37,
+    "sourceIds": [
+      "s12",
+      "s22"
+    ],
+    "contextTags": [
+      "cold-email",
+      "list-segmentation",
+      "small-list",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-06-26",
+    "sides": {
+      "for": [
+        "s12"
+      ],
+      "against": [
+        "s22"
+      ]
+    }
+  },
+  {
+    "id": "c9",
+    "angleId": "insurance-title-map",
+    "text": "Pick one title by the number it owns. The Chief Underwriting Officer owns risk selection, pricing discipline and loss ratio. The Chief Claims Officer owns indemnity spend and loss adjustment expense. The Chief Actuary owns pricing models and reserving.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s13",
+      "s16",
+      "s15"
+    ],
+    "contextTags": [
+      "c-suite",
+      "targeting",
+      "insurance",
+      "high-ticket"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "other": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-03"
+  },
+  {
+    "id": "c10",
+    "angleId": "insurance-title-map",
+    "text": "Write to the functional owner first — the CUO, Chief Claims Officer or product line owner — and let them carry it to the CEO, CFO or COO who signs. Urgency sits with the owner, budget sits with the signer.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s14",
+      "s13"
+    ],
+    "contextTags": [
+      "c-suite",
+      "targeting",
+      "high-ticket",
+      "mid-management"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-09-03"
+  },
+  {
+    "id": "c11",
+    "angleId": "insurance-title-map",
+    "text": "Choosing between a C-level and a VP at a carrier, pick the C-level: C-level replied at 0.42% versus 0.32% for VPs, about 30% better.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s22"
+    ],
+    "contextTags": [
+      "benchmarks",
+      "insurance",
+      "cold-email",
+      "carrier-execs"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c12",
+    "angleId": "insurance-title-map",
+    "text": "The letters in an insurance title do not fix seniority. The same Chief Underwriting Officer role is posted as EVP, SVP or VP depending on the carrier, so check who the person reports to before deciding they are your buyer.",
+    "verdict": "stale",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s17",
+      "s18",
+      "s23"
+    ],
+    "contextTags": [
+      "title-mapping",
+      "research",
+      "insurance",
+      "targeting"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45
+  },
+  {
+    "id": "c13",
+    "angleId": "signing-authority-by-firm-size",
+    "text": "The average US program administrator (MGA) does about $20.6M in revenue, so a $60k-a-year engagement is about 0.3% of revenue and the CEO or owner signs it. Write to the CEO.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s32"
+    ],
+    "contextTags": [
+      "mga",
+      "five-figure-deal",
+      "us"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2025-12-01"
+  },
+  {
+    "id": "c14",
+    "angleId": "signing-authority-by-firm-size",
+    "text": "Carriers spend about 4.6% of direct written premium on technology, so a carrier writing $2B in premium has about a $92M tech budget and your $60k is 0.07% of it — email the SVP or VP who owns the problem, not the CEO — general rule; the niche evidence disagrees.",
+    "verdict": "contested",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s35",
+      "s33",
+      "s32"
+    ],
+    "contextTags": [
+      "niche-disagrees",
+      "large-carriers",
+      "five-figure-deal",
+      "buyer-targeting"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026",
+    "sides": {
+      "for": [
+        "s35",
+        "s33"
+      ],
+      "against": [
+        "s32"
+      ]
+    }
+  },
+  {
+    "id": "c15",
+    "angleId": "signing-authority-by-firm-size",
+    "text": "Normal vendor deals at large carriers run $500k–$750k and platforms run $100k to $3M+, so frame a five-figure engagement to an SVP as pilot-sized spend rather than a strategic purchase.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s36"
+    ],
+    "contextTags": [
+      "large-carriers",
+      "five-figure-deal",
+      "positioning",
+      "us-carriers"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026-08"
+  },
+  {
+    "id": "c16",
+    "angleId": "signing-authority-by-firm-size",
+    "text": "The top 10 P&C groups hold 51.4% of a $1.06 trillion market and the top 25 hold 65.91%, so about a third of US premium sits with hundreds of regional and mutual carriers where two or three executives decide. Target that tail to reach the signer directly.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s33",
+      "s34"
+    ],
+    "contextTags": [
+      "large-carriers",
+      "five-figure-deal",
+      "buyer-targeting",
+      "us-p&c"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2025-03-17"
+  },
+  {
+    "id": "c17",
+    "angleId": "signing-authority-by-firm-size",
+    "text": "For a five-to-six-figure engagement aimed at one named executive, spend an hour researching that account instead of sending a templated blast.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s28",
+      "s31"
+    ],
+    "contextTags": [
+      "firm-size",
+      "buyer-targeting",
+      "enterprise",
+      "high-ticket"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2024-11"
+  },
+  {
+    "id": "c18",
+    "angleId": "buying-committee",
+    "text": "Plan for about 10 stakeholders on a five-to-six-figure deal: won deals of $50K–$250K typically involve at least 10 people.",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s45",
+      "s46"
+    ],
+    "contextTags": [
+      "b2b",
+      "50k-250k-deals",
+      "buying-committee",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-02-13"
+  },
+  {
+    "id": "c19",
+    "angleId": "buying-committee",
+    "text": "Win one champion first and bring executives in around the third touchpoint. Win rates fall about 6% when the evaluation opens with an executive and rise about 5% when executives enter later.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s45"
+    ],
+    "contextTags": [
+      "b2b",
+      "50k-250k-deals",
+      "buying-committee",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-02-13"
+  },
+  {
+    "id": "c20",
+    "angleId": "buying-committee",
+    "text": "Add 4–10 weeks to your forecast after the exec says yes, for security review, legal redlines and procurement. Security review alone takes 2–6 weeks.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s44"
+    ],
+    "contextTags": [
+      "insurance",
+      "enterprise",
+      "post-yes-timeline"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2026-05-15"
+  },
+  {
+    "id": "c21",
+    "angleId": "buying-committee",
+    "text": "Have the compliance pack ready before the first email: a SOC 2 Type II covering the last 12 months, a pen test summary from the last 12 months, a data flow diagram, a sub-processor list, an annual control certification, a written information security program and a 72-hour breach-notice clause. Carriers treat these as contract conditions, not nice-to-haves.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s38",
+      "s51"
+    ],
+    "contextTags": [
+      "insurance",
+      "pre-outreach-prep",
+      "security-review",
+      "insurers"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-08-10"
+  },
+  {
+    "id": "c22",
+    "angleId": "buying-committee",
+    "text": "Carrier pilots die in POC purgatory because of a weak internal sponsor more often than a weak product. Pick a strong sponsor and back them.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s39"
+    ],
+    "contextTags": [
+      "carriers",
+      "pilots",
+      "champion",
+      "first-touch"
+    ],
+    "consensus": {
+      "podcast": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-06-08"
+  },
+  {
+    "id": "c23",
+    "angleId": "buying-committee",
+    "text": "Pitch the executive who owns rollout, not the one running experiments: 82% of carriers use some AI but only 7% have scaled it.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s40"
+    ],
+    "contextTags": [
+      "carriers",
+      "ai-offers",
+      "buyer-targeting"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.65,
+    "newest": "2026-03-04"
+  },
+  {
+    "id": "c24",
+    "angleId": "regulation-shapes-buying",
+    "text": "Under NY DFS Part 500 the insurer stays accountable for what you do with their data. State in the first email that you will meet their vendor requirements — MFA, audit rights, incident notification — as if you were the covered entity.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s49",
+      "s50"
+    ],
+    "contextTags": [
+      "ny-dfs",
+      "first-touch",
+      "email-copy",
+      "new-york"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2025-11"
+  },
+  {
+    "id": "c25",
+    "angleId": "regulation-shapes-buying",
+    "text": "At least 28 US jurisdictions have enacted a version of the NAIC Insurance Data Security Model Law. Name the prospect's own state rule instead of writing the word \"compliance\".",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s52",
+      "s53"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "first-touch",
+      "regulated-buyer"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-03-31"
+  },
+  {
+    "id": "c26",
+    "angleId": "regulation-shapes-buying",
+    "text": "Open a cold email to a regulated buyer on a regulatory or compliance problem rather than a feature — it reads as work and survives the executive assistant screen. Note the counter-evidence: across cold email generally, problem-led hooks reply at 3.90% against a 6.72% financial-services average.",
+    "verdict": "contested",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s57",
+      "s59",
+      "s12"
+    ],
+    "contextTags": [
+      "regulated-buyer",
+      "high-ticket",
+      "sequence-design",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-19",
+    "sides": {
+      "for": [
+        "s57",
+        "s59"
+      ],
+      "against": [
+        "s12"
+      ]
+    }
+  },
+  {
+    "id": "c27",
+    "angleId": "regulation-shapes-buying",
+    "text": "Since 1 November 2025 NYDFS Part 500 requires MFA for every individual accessing any information system, and the 21 October 2025 DFS letter tells covered entities to push the same standard onto vendors. That is a dated hook for a first line to a New York carrier or broker.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s50",
+      "s49",
+      "s54"
+    ],
+    "contextTags": [
+      "ny-dfs",
+      "first-touch",
+      "email-copy",
+      "new-york"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2025-11"
+  },
+  {
+    "id": "c28",
+    "angleId": "regulation-shapes-buying",
+    "text": "Check size before using the Part 500 hook. Firms under 20 employees, under $7.5M gross annual revenue or under $15M in assets get partial exemptions, so the rule bites hardest at mid-size and large carriers and brokers.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s50",
+      "s60"
+    ],
+    "contextTags": [
+      "ny-dfs",
+      "first-touch",
+      "email-copy",
+      "new-york"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.5,
+    "newest": "2025-11"
+  },
+  {
+    "id": "c29",
+    "angleId": "regulation-shapes-buying",
+    "text": "Third-party oversight at a covered insurer is a board-level issue. Name in the proposal how your deal survives due diligence, contract terms and ongoing monitoring — that gives your sponsor something to carry upward.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s49",
+      "s57"
+    ],
+    "contextTags": [
+      "ny-dfs",
+      "first-touch",
+      "email-copy",
+      "new-york"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-08-19"
+  },
+  {
+    "id": "c30",
+    "angleId": "insurance-data-sources",
+    "text": "The NAIC Financial Data Repository holds 10 years of annual and quarterly filings on over 4,500 insurers, covering more than 98 percent of US premiums written.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s62"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "research",
+      "free-data",
+      "list-building"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026"
+  },
+  {
+    "id": "c31",
+    "angleId": "insurance-data-sources",
+    "text": "You do not need an AM Best subscription. NAIC InsData sells a single company's statutory statement as a PDF and gives a free Company Overview Report with complaint and financial information.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s63",
+      "s67"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "research",
+      "low-budget",
+      "account-mapping"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026-08-07"
+  },
+  {
+    "id": "c32",
+    "angleId": "insurance-data-sources",
+    "text": "Build the target list from NAIC market share reports, which rank groups by direct written premium countrywide and by line of business, so you email the top writers in the line you sell into.",
+    "verdict": "likely",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s34",
+      "s62"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "list-building",
+      "by-line"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026"
+  },
+  {
+    "id": "c33",
+    "angleId": "insurance-data-sources",
+    "text": "Check the state DOI or SBS license lookup before writing. It is free and returns license status, National Producer Number and entity type, confirming a broker or MGA is real and licensed where you think.",
+    "verdict": "stale",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s66",
+      "s65"
+    ],
+    "contextTags": [
+      "brokers-mgas",
+      "list-building",
+      "free-data"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45
+  },
+  {
+    "id": "c34",
+    "angleId": "insurance-data-sources",
+    "text": "SERFF Filing Access, run through each state's DOI, lets you search a company's rate and form filings by product line and date range — a dated, public reference for a first line.",
+    "verdict": "stale",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s64",
+      "s65"
+    ],
+    "contextTags": [
+      "carriers",
+      "first-line",
+      "research"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.72
+  },
+  {
+    "id": "c35",
+    "angleId": "insurance-data-sources",
+    "text": "In a regulated industry the mandatory public filing is the size signal — total assets on Schedule RC of a bank's FDIC call report, policyholders' surplus and direct written premium for an insurer. Read the filing, then write the email.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s70",
+      "s71"
+    ],
+    "contextTags": [
+      "general-rule",
+      "regulated-industries",
+      "research"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2025-08-26"
+  },
+  {
+    "id": "c36",
+    "angleId": "trigger-events",
+    "text": "Write off a dated event rather than a calendar slot. Signal-triggered sequences report 8-15% reply rates against 2-5% for static-list cold email, and multi-signal outreach reaches 25-40% against a 3.43% generic baseline.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s80",
+      "s79",
+      "s78"
+    ],
+    "contextTags": [
+      "general-rule",
+      "cold-email",
+      "trigger-based",
+      "exec-buyers"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-02-08"
+  },
+  {
+    "id": "c37",
+    "angleId": "trigger-events",
+    "text": "Insurance M&A gives you a reason to write almost every week: 695 US agency and broker deals closed in 2025 — roughly two per business day — plus 211 carrier and broker deals globally and 455 US/Bermuda transactions.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s72",
+      "s74"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "trigger-based",
+      "brokers-mgas"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026-03-27"
+  },
+  {
+    "id": "c38",
+    "angleId": "trigger-events",
+    "text": "Watch SERFF Filing Access for free to see carriers' rate and form filings state by state, then name the filing in your email — approved increases averaged 8.3% for homeowners and 3.7% for private passenger auto in 2025.",
+    "verdict": "likely",
+    "confidence": 0.66,
+    "sourceIds": [
+      "s64",
+      "s75"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers",
+      "first-line",
+      "research"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.72,
+    "newest": "2026-05-18"
+  },
+  {
+    "id": "c39",
+    "angleId": "trigger-events",
+    "text": "Move fast on a trigger — the first seller to reach a decision-maker after an event is about 5x more likely to win, and trigger-based prospecting shows roughly 4x conversion and 30% shorter cycles — but the event alone is weak: a bare trigger converts near 1.4%, while pairing it with a warm path or named peer moves conversion to 15-30%. Use the event as the reason to write and a relationship as the",
+    "verdict": "contested",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s80",
+      "s78",
+      "s79",
+      "s76"
+    ],
+    "contextTags": [
+      "general",
+      "general-rule",
+      "cold-email",
+      "trigger-based"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-02-08",
+    "sides": {
+      "for": [
+        "s80",
+        "s78"
+      ],
+      "against": [
+        "s79",
+        "s76"
+      ]
+    }
+  },
+  {
+    "id": "c40",
+    "angleId": "list-qualification",
+    "text": "Six-figure carrier deals are normal: vendors selling into carriers report typical contract values of $500K-$750K, with entry pricing from $100K to $500K.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s36"
+    ],
+    "contextTags": [
+      "niche",
+      "large-carriers",
+      "five-figure-deal",
+      "positioning"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026-08"
+  },
+  {
+    "id": "c41",
+    "angleId": "list-qualification",
+    "text": "US P&C premium is concentrated — the top 10 groups write about half of a $1.06 trillion market — so a list of 30 to 50 carrier groups covers almost all the budget that can fund a six-figure engagement — general rule; the niche evidence disagrees.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s33",
+      "s34"
+    ],
+    "contextTags": [
+      "general",
+      "niche-disagrees",
+      "us-carriers",
+      "list-building"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2025-03-17"
+  },
+  {
+    "id": "c42",
+    "angleId": "list-qualification",
+    "text": "Carriers above roughly $5B in premium with 50+ in-house developers are the ones most likely to say 'we build this ourselves' — target below that line, or lead with what they cannot build.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s36"
+    ],
+    "contextTags": [
+      "niche",
+      "us-carriers",
+      "objection-handling",
+      "qualifying"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026-08"
+  },
+  {
+    "id": "c43",
+    "angleId": "list-qualification",
+    "text": "Qualify brokers and agencies on their own commission revenue, not the premium they place: large-broker respondents cluster at $50M-$499M revenue with 200 to 4,999 employees.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s85"
+    ],
+    "contextTags": [
+      "niche",
+      "brokers-agencies",
+      "qualifying",
+      "list-building"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2024-10-31"
+  },
+  {
+    "id": "c44",
+    "angleId": "list-qualification",
+    "text": "When a broker or agency does not publish revenue, estimate it from headcount at roughly $200,000-$300,000 per employee for $25M+ firms and $100,000-$140,000 for firms under $1.25M — so a 40-person agency is roughly an $8M business.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s86",
+      "s87"
+    ],
+    "contextTags": [
+      "general",
+      "brokers-agencies",
+      "qualifying",
+      "no-public-data"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c45",
+    "angleId": "list-qualification",
+    "text": "Drop agencies under about $5M in revenue from a six-figure list: at the 2025 benchmark of $228,321 revenue per employee and 26.1% EBITDA margins, a $100K annual fee would eat a double-digit share of their profit.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s87",
+      "s86"
+    ],
+    "contextTags": [
+      "general",
+      "brokers-agencies",
+      "high-ticket",
+      "qualifying"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-13"
+  },
+  {
+    "id": "c46",
+    "angleId": "list-qualification",
+    "text": "Cap your Tier 1 list at the top 10-15% of scored accounts: one person can only work 15 to 25 Tier 1 accounts a week at 30-45 minutes of research each.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s88",
+      "s89"
+    ],
+    "contextTags": [
+      "general",
+      "general-b2b",
+      "small-list",
+      "solo-sender"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-27"
+  },
+  {
+    "id": "c47",
+    "angleId": "list-qualification",
+    "text": "If your Tier 1 accounts book meetings at under 8%, retighten the revenue and premium thresholds before rewriting the copy — the size filter is the problem.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s88"
+    ],
+    "contextTags": [
+      "general",
+      "general-b2b",
+      "small-list",
+      "solo-sender"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-27"
+  },
+  {
+    "id": "c48",
+    "angleId": "list-qualification",
+    "text": "Score size on more than one field: firmographics carry 20-30% of a good fit score, so pair premium or revenue with headcount and line-of-business mix.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s88",
+      "s90",
+      "s91"
+    ],
+    "contextTags": [
+      "general",
+      "general-b2b",
+      "small-list",
+      "solo-sender"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-27"
+  },
+  {
+    "id": "c49",
+    "angleId": "insurance-pain-language",
+    "text": "Claims leakage is the easiest number to put in front of a claims or operations executive: the industry range is 7-14% of total claims payouts, and one consultancy routinely measures 20-30% at individual carriers.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s92",
+      "s93"
+    ],
+    "contextTags": [
+      "niche",
+      "us-carriers",
+      "claims-ops-execs",
+      "email-copy"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.62,
+    "newest": "2026-07-14"
+  },
+  {
+    "id": "c50",
+    "angleId": "insurance-pain-language",
+    "text": "Price your value in combined ratio points, not dollars saved: McKinsey frames the opportunity as five points of combined ratio, and one point is a number an executive can defend internally.",
+    "verdict": "likely",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s97",
+      "s98"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance-c-level",
+      "email-copy",
+      "value-framing"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-05-14"
+  },
+  {
+    "id": "c51",
+    "angleId": "insurance-pain-language",
+    "text": "Use four words and only four — loss ratio, expense ratio, combined ratio, claims leakage — plus speed metrics like quote-to-bind and FNOL-to-settlement, because that is what insurance buyers rank vendor ROI against.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s95",
+      "s96"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance-c-level",
+      "email-copy",
+      "language"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.72,
+    "newest": "2026-02-02"
+  },
+  {
+    "id": "c52",
+    "angleId": "insurance-pain-language",
+    "text": "Aim the business case at finance and operations, not the innovation team — innovation sponsors pilots, finance decides whether a pilot ever scales.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s95"
+    ],
+    "contextTags": [
+      "adjacent",
+      "insurance",
+      "enterprise",
+      "targeting"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-02"
+  },
+  {
+    "id": "c53",
+    "angleId": "insurance-pain-language",
+    "text": "Do not open with 'carriers are struggling' — US P&C posted a decade-low combined ratio around 93% in 2025. Pitch forward-looking margin pressure instead, with Deloitte forecasting the combined ratio worsening toward 99% in 2026.",
+    "verdict": "likely",
+    "confidence": 0.63,
+    "sourceIds": [
+      "s98",
+      "s94"
+    ],
+    "contextTags": [
+      "niche",
+      "us-p&c",
+      "2025-2026",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-05-14"
+  },
+  {
+    "id": "c54",
+    "angleId": "insurance-pain-language",
+    "text": "On casualty lines, name social inflation as the severity story: 135 nuclear verdicts against corporate defendants in 2024, up 52%, totalling $31.3 billion, with the median nuclear verdict at $44 million versus $21 million in 2020.",
+    "verdict": "likely",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s99",
+      "s100"
+    ],
+    "contextTags": [
+      "niche",
+      "casualty-lines",
+      "us",
+      "2024-data"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2025-10-30"
+  },
+  {
+    "id": "c55",
+    "angleId": "insurance-pain-language",
+    "text": "Expect low reply rates from financial-services inboxes and budget more volume and tighter targeting than general B2B benchmarks imply: most benchmarks put the vertical at 3-4%, while one 11-million-email study puts the average at 6.72% — still the lowest of any vertical.",
+    "verdict": "contested",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s118",
+      "s111",
+      "s12"
+    ],
+    "contextTags": [
+      "general",
+      "adjacent",
+      "financial-services",
+      "benchmark"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-07-28",
+    "sides": {
+      "for": [
+        "s118",
+        "s111"
+      ],
+      "against": [
+        "s12"
+      ]
+    }
+  },
+  {
+    "id": "c56",
+    "angleId": "insurance-pain-language",
+    "text": "Get the two ratios right before you send: loss ratio is claims plus adjustment expense over earned premium, and combined ratio adds the expense ratio on top.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s101",
+      "s95"
+    ],
+    "contextTags": [
+      "adjacent",
+      "insurance",
+      "vocabulary",
+      "credibility"
+    ],
+    "consensus": {
+      "youtube": "agree",
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-02"
+  },
+  {
+    "id": "c57",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "Say SOC 2 Type 2 in the first email, not just 'SOC 2' — carrier CIOs and CISOs gate vendor approval on it before you touch their data, and a Type 1 report usually will not clear review.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s102",
+      "s103"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers",
+      "vendor-review",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026-04-08"
+  },
+  {
+    "id": "c58",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "If you do not have SOC 2 yet — it runs $45K-$150K and takes 9-16 months — say what you do have instead: pen test results, a completed questionnaire, named references.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s106",
+      "s103"
+    ],
+    "contextTags": [
+      "niche",
+      "b2b",
+      "enterprise",
+      "vendor-review"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026-04-08"
+  },
+  {
+    "id": "c59",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "Answer the four questions NYDFS Part 500 forces a US insurer to ask — access controls, MFA, encryption, incident-response reporting — on one linked page.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s105",
+      "s102"
+    ],
+    "contextTags": [
+      "niche",
+      "us-insurers",
+      "nydfs",
+      "vendor-review"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.55,
+    "newest": "2025-12-04"
+  },
+  {
+    "id": "c60",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "Publish your security evidence before anyone asks — the security team reviewing you already spends about 7 hours a week on vendor assessments, so readable proof gets you scheduled.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s108",
+      "s110"
+    ],
+    "contextTags": [
+      "general",
+      "enterprise",
+      "vendor-review",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-08-18"
+  },
+  {
+    "id": "c61",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "Assume the carrier lines you up against 3 or 4 competitors and routes you through risk, compliance and legal review, so name the peer carrier that already cleared you instead of describing features.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s104",
+      "s39"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers",
+      "first-touch",
+      "competitive-deal"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "podcast": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026-06-08"
+  },
+  {
+    "id": "c62",
+    "angleId": "vendor-due-diligence-proof",
+    "text": "Offer a scoped pilot with go/no-go KPIs agreed up front — carriers run more POCs than ever and most never move past them, so proposing exit criteria in the first email separates you from the pile.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s39"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers",
+      "first-touch",
+      "pilot-stage"
+    ],
+    "consensus": {
+      "podcast": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-06-08"
+  },
+  {
+    "id": "c63",
+    "angleId": "subject-and-first-line",
+    "text": "Keep the subject line to 2-4 words; that length opens at about 46% versus about 35% for 7 words or more.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s112",
+      "s111"
+    ],
+    "contextTags": [
+      "adjacent",
+      "cold-email",
+      "subject-line"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c64",
+    "angleId": "subject-and-first-line",
+    "text": "Write the subject in lowercase with no selling words so it reads like a note from someone inside the firm.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s116",
+      "s119",
+      "s111"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.55,
+    "newest": "2026-08-08"
+  },
+  {
+    "id": "c65",
+    "angleId": "subject-and-first-line",
+    "text": "Put something the firm owns in the subject line — its name, a client, a program, a project: personalized subjects opened at 46% versus 35% and doubled replies from 3% to 7%, and one operator moved open rate from 41% to 74% with that format.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s112",
+      "s114",
+      "s113",
+      "s127"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "subject-line",
+      "personalization"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.2,
+    "newest": "2026-04-27"
+  },
+  {
+    "id": "c66",
+    "angleId": "subject-and-first-line",
+    "text": "For an insurance exec, make the subject name their book or line of business — 'question about your P&C book' or '[Carrier Name] appointments' — not your product.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s116",
+      "s117"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-01"
+  },
+  {
+    "id": "c67",
+    "angleId": "subject-and-first-line",
+    "text": "Open with one sentence that proves you researched their specific firm — their state, their lines of business, a recent change — before you mention what you sell.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s116",
+      "s96"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.72,
+    "newest": "2026-01"
+  },
+  {
+    "id": "c68",
+    "angleId": "subject-and-first-line",
+    "text": "Executives reply about 30% less often than non-executives, so a subject line that only just clears the bar will not work at C-level.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s111"
+    ],
+    "contextTags": [
+      "adjacent",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c69",
+    "angleId": "subject-and-first-line",
+    "text": "Keep the whole email under 100 words, and under 50 if you can, because the first line has to earn the next nine seconds.",
+    "verdict": "likely",
+    "confidence": 0.58,
+    "sourceIds": [
+      "s115",
+      "s111",
+      "s117"
+    ],
+    "contextTags": [
+      "adjacent",
+      "cold-email",
+      "first-touch",
+      "general-rule"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-07-20"
+  },
+  {
+    "id": "c70",
+    "angleId": "subject-and-first-line",
+    "text": "Make the subject line state exactly what the email is about; insurance readers are trained to spot exaggeration and will archive a bait subject.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s117",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance-execs",
+      "subject-line",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-01"
+  },
+  {
+    "id": "c71",
+    "angleId": "named-peer-line",
+    "text": "Name a peer that matches the reader's industry and company size — proof from the wrong kind of company replies worse than no proof at all.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s122",
+      "s123"
+    ],
+    "contextTags": [
+      "general",
+      "proof-line",
+      "cold-email",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c72",
+    "angleId": "named-peer-line",
+    "text": "Emails built around a named proof story reply at 5-14%, versus 1-5% for a standard cold email.",
+    "verdict": "likely",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s122",
+      "s128"
+    ],
+    "contextTags": [
+      "general",
+      "proof-line",
+      "cold-email",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c73",
+    "angleId": "named-peer-line",
+    "text": "Pair the peer's name with a number: quantified-outcome and peer-benchmark hooks replied at 8.57%, versus 6.53% for case-study and reference-account hooks alone, and number-based hooks pulled 7.90% in financial services and 8.63% at CFO level.",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s12",
+      "s126"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "list-segmentation",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-04-01"
+  },
+  {
+    "id": "c74",
+    "angleId": "named-peer-line",
+    "text": "When you cannot name the carrier, use a tight anonymized descriptor like \"a regional P&C carrier in the Southeast\" instead of \"an insurance company\".",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s124",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance",
+      "proof-line",
+      "compliance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c75",
+    "angleId": "words-that-get-you-binned",
+    "text": "Hold emails under 60 words with no buzzwords, no opener question, and one specific ask — that moved positive reply rates from 0.4-1.2% to 3-6% across 200,000 sent emails.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s130"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "large-sample",
+      "copywriting"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-09-07"
+  },
+  {
+    "id": "c76",
+    "angleId": "words-that-get-you-binned",
+    "text": "Cut product-first lines like \"our AI-powered platform enables\" from your first sentence; C-level buyers reply about 30% less often, so feature language wastes the one sentence you get.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s111"
+    ],
+    "contextTags": [
+      "adjacent",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c77",
+    "angleId": "words-that-get-you-binned",
+    "text": "To an insurance executive \"AI-powered\" is a liability word, because regulators now examine whether AI claims match reality and a carrier repeating your wording owns that claim.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s132",
+      "s133"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance",
+      "regulated-buyer",
+      "word-choice"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2025-04-29"
+  },
+  {
+    "id": "c78",
+    "angleId": "words-that-get-you-binned",
+    "text": "Drop 'disrupt' and 'insurtech' and lead with the one workflow you fix. Carrier CEOs say the disruptors never took over, the sector settled into partnership, and the industry's own language moved from disruption to durability — the old words tag you as an outsider.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s136",
+      "s137",
+      "s138"
+    ],
+    "contextTags": [
+      "insurance-execs",
+      "carriers",
+      "copy",
+      "positioning"
+    ],
+    "consensus": {
+      "other": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-03-24"
+  },
+  {
+    "id": "c79",
+    "angleId": "words-that-get-you-binned",
+    "text": "Write plain description instead of polished sales language. Carrier buyers are coached to ignore the smoothest salesperson and scout for substance.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s39"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers",
+      "pilots",
+      "champion"
+    ],
+    "consensus": {
+      "podcast": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-06-08"
+  },
+  {
+    "id": "c80",
+    "angleId": "the-ask",
+    "text": "On a first cold email, ask for interest, not for time. Interest-based asks pull about 12% replies versus about 7% for a direct meeting request, and about 2.5x better on booked outcomes. Swapping 'book 30 minutes' for 'worth a look?' tripled replies on the same list across 200,000+ emails — 4.2% versus 1.4%. Pick an ask answerable in one word in under ten seconds; a 15-minute call ask only reaches ",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s139",
+      "s140",
+      "s141"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "general-rule",
+      "last-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c81",
+    "angleId": "the-ask",
+    "text": "With C-level executives, replace the meeting ask with a concrete thing you will send — a peer benchmark, say — and ask permission to send it. Execs are 30.2% less likely than non-executives to reply to a cold email at all.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s142",
+      "s111"
+    ],
+    "contextTags": [
+      "c-level",
+      "cold-email",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c82",
+    "angleId": "the-ask",
+    "text": "For insurance readers, keep the ask low-pressure with an explicit out like 'totally fine if not'. Urgency and aggressive CTAs trigger spam complaints from compliance-minded recipients.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s124",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance",
+      "proof-line",
+      "compliance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c83",
+    "angleId": "the-ask",
+    "text": "Insurance cold email replies land in the low single digits — most data says 3-6%, and one large run logged 66,392 sends, 835 replies and 18 closed policies. But 30-50% of the replies you do get turn into a booked appointment, so the ask's job is to earn a reply, not a slot.",
+    "verdict": "contested",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s124",
+      "s143",
+      "s159",
+      "s165"
+    ],
+    "contextTags": [
+      "insurance",
+      "proof-line",
+      "compliance",
+      "insurance-execs"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08",
+    "sides": {
+      "for": [
+        "s143",
+        "s159",
+        "s165"
+      ],
+      "against": [
+        "s124"
+      ]
+    }
+  },
+  {
+    "id": "c84",
+    "angleId": "the-ask",
+    "text": "Escalate the ask across the sequence: a question, then an offer to send something, then a call. In insurance most replies arrive between touches 3 and 5, across roughly three weeks.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s143",
+      "s124"
+    ],
+    "contextTags": [
+      "insurance-execs",
+      "sequence",
+      "follow-up",
+      "carriers-brokers-mgas"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c85",
+    "angleId": "the-ask",
+    "text": "Word the meeting ask as exploration, not a demo. 'Open to a brief call to explore' fits the long, committee-driven buying cycle at carriers, brokers and MGAs.",
+    "verdict": "likely",
+    "confidence": 0.37,
+    "sourceIds": [
+      "s144",
+      "s143"
+    ],
+    "contextTags": [
+      "insurance-execs",
+      "carriers-brokers-mgas",
+      "cta",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026"
+  },
+  {
+    "id": "c86",
+    "angleId": "the-ask",
+    "text": "Make your last touch a walk-away ask instead of another meeting request. Breakup lines like 'should I close your file?' pull 4-7% replies, among the highest of any CTA type.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s141",
+      "s143"
+    ],
+    "contextTags": [
+      "cold-email",
+      "first-touch",
+      "general-rule",
+      "last-touch"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c87",
+    "angleId": "ask-for-the-owner",
+    "text": "Do not ask a C-level for a meeting. Email one or two levels above your real buyer and ask them to point you to the owner — that is the ask they can actually act on. The Cold Calling 2.0 method runs this at 50-100 emails a day for about a 10% response rate, and a routing line like 'want me to loop in [name] instead if this isn't your call?' pulls roughly 3-5% replies when the reader is not the buye",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s148",
+      "s149",
+      "s150",
+      "s151",
+      "s141"
+    ],
+    "contextTags": [
+      "c-level",
+      "referral-ask",
+      "first-touch",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "other": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-08-27"
+  },
+  {
+    "id": "c88",
+    "angleId": "ask-for-the-owner",
+    "text": "Write the email so a forward counts as a win. The C-suite replies about 30% less often than non-executives, so a hand-off is often the best outcome available.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s142",
+      "s111"
+    ],
+    "contextTags": [
+      "c-level",
+      "cold-email",
+      "first-touch",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c89",
+    "angleId": "ask-for-the-owner",
+    "text": "Executives are the harder reply: they answer cold email about 30% less often than non-executives, and in insurance the operational leaders in underwriting, claims, policy administration and data reply more than the C-suite — so email the executive to get a name, and email the manager to get the conversation.",
+    "verdict": "contested",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s13",
+      "s142",
+      "s111",
+      "s156"
+    ],
+    "contextTags": [
+      "c-suite",
+      "targeting",
+      "insurance",
+      "high-ticket"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-09-03",
+    "sides": {
+      "for": [
+        "s13",
+        "s142",
+        "s111"
+      ],
+      "against": [
+        "s156"
+      ]
+    }
+  },
+  {
+    "id": "c90",
+    "angleId": "writing-for-the-ea",
+    "text": "Write as if an assistant reads it first. At large firms 80-90% of executive outreach is screened, and a CEO's EA can spend two hours a morning deleting from 400-500 overnight messages, half of them vendor pitches.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s154",
+      "s155"
+    ],
+    "contextTags": [
+      "large-firms",
+      "executive-assistants",
+      "screening",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.2,
+    "newest": "2026"
+  },
+  {
+    "id": "c91",
+    "angleId": "writing-for-the-ea",
+    "text": "Keep the body short — 40-80 words, and never past 125 — with a subject line of 1-4 words. Emails in the 50-125 word range reply best; longer ones get deferred instead of forwarded.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s154",
+      "s165"
+    ],
+    "contextTags": [
+      "large-firms",
+      "executive-assistants",
+      "screening",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c92",
+    "angleId": "writing-for-the-ea",
+    "text": "Write the email so the assistant can forward it with nothing added: who it is for, what you do in one line, the value in the first two lines, and one specific ask. Close with something like 'a quick forward of this message would be awesome.'",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s153",
+      "s158",
+      "s165",
+      "s155"
+    ],
+    "contextTags": [
+      "executive-assistants",
+      "forwardability",
+      "cold-email",
+      "screening"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c93",
+    "angleId": "writing-for-the-ea",
+    "text": "Once you are talking to the assistant, give them a scheduling-ready ask: a meeting length and two time windows. That turns the email into a calendar action instead of a decision.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s153",
+      "s157"
+    ],
+    "contextTags": [
+      "executive-assistants",
+      "forwardability",
+      "cold-email",
+      "screening"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "podcast": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026"
+  },
+  {
+    "id": "c94",
+    "angleId": "writing-for-the-ea",
+    "text": "At a large US carrier or broker the executive does not read their own inbox — 70% of positive C-level replies came from companies with 1-50 employees. Write every email for two readers: the EA who screens it and the executive who decides.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s156",
+      "s155"
+    ],
+    "contextTags": [
+      "large-firms",
+      "c-suite",
+      "reply-rate",
+      "benchmark"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026"
+  },
+  {
+    "id": "c95",
+    "angleId": "ea-as-ally",
+    "text": "Ask the EA for their judgment before asking for their boss: 'You know [Executive]'s priorities better than I do — in your experience, is this the type of initiative they'd want to evaluate?' Treating them as the expert lets them screen you in.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s164",
+      "s168",
+      "s155"
+    ],
+    "contextTags": [
+      "executive-assistants",
+      "email-script",
+      "first-touch",
+      "executive-assistant"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-04"
+  },
+  {
+    "id": "c96",
+    "angleId": "ea-as-ally",
+    "text": "Ask the executive assistant to book the slot for you and name the length: 'Could you please help me book a time to chat with them? It shouldn't take longer than 30 minutes.'",
+    "verdict": "contested",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s164",
+      "s166"
+    ],
+    "contextTags": [
+      "niche-disagrees",
+      "executive-assistants",
+      "email-script",
+      "first-touch"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-07-28",
+    "sides": {
+      "for": [
+        "s164"
+      ],
+      "against": [
+        "s166"
+      ]
+    }
+  },
+  {
+    "id": "c97",
+    "angleId": "ea-as-ally",
+    "text": "In US insurance, ask the assistant for a pre-booked conference slot at ILF, WSIA or TMPAA months ahead instead of a generic intro call.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s166"
+    ],
+    "contextTags": [
+      "niche",
+      "us-insurance",
+      "executive-assistant",
+      "conference-outreach"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c98",
+    "angleId": "ea-as-ally",
+    "text": "A handful of emails books nothing — keep touching the same assistant. 43% of salespeople quit after one contact and 68% after two.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s143",
+      "s165"
+    ],
+    "contextTags": [
+      "insurance-execs",
+      "sequence",
+      "follow-up",
+      "carriers-brokers-mgas"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-01-18"
+  },
+  {
+    "id": "c99",
+    "angleId": "domain-setup",
+    "text": "Never cold email from your company's main domain. Buy 2-3 lookalike domains — tryyourfirm.com, getyourfirm.com — forward them to your real site, and send from those.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s174",
+      "s124",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "deliverability",
+      "sending-setup"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c100",
+    "angleId": "domain-setup",
+    "text": "Set SPF, DKIM and DMARC on every sending domain before your first send. Gmail requires all three from bulk senders and wants spam complaints under 0.3%, ideally under 0.1%.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s173",
+      "s174",
+      "s182"
+    ],
+    "contextTags": [
+      "deliverability",
+      "sending-setup",
+      "bulk-sending",
+      "cold-email"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-04-09"
+  },
+  {
+    "id": "c101",
+    "angleId": "domain-setup",
+    "text": "Warm every new domain for 14-21 days before it touches your real list: 5-10 sends a day in week one, 15-25 in week two, 30-50 by week three.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s174",
+      "s116",
+      "s175",
+      "s181"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "deliverability",
+      "sending-setup"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-05-20"
+  },
+  {
+    "id": "c102",
+    "angleId": "domain-setup",
+    "text": "Send 25-40 emails a day per mailbox across 3-4 mailboxes per domain. Stay at the 30-40 low end for insurance lists, because insurance mail draws more complaints than generic B2B.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s175",
+      "s124",
+      "s179"
+    ],
+    "contextTags": [
+      "deliverability",
+      "sending-setup",
+      "new-domain",
+      "us-insurance"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "x": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c103",
+    "angleId": "domain-setup",
+    "text": "Send from Microsoft 365 mailboxes when selling to insurance and finance firms. They are overwhelmingly Microsoft 365, and matched-provider sends hit 87-92% inbox placement versus 74-81% cross-provider.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s176",
+      "s124"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "finance",
+      "deliverability",
+      "sending-setup"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c104",
+    "angleId": "domain-setup",
+    "text": "Insurance carriers, brokers and MGAs sit behind Proofpoint or Mimecast gateways that quarantine silently while still logging a successful delivery. Run an inbox-placement test instead of trusting a 99% 'delivered' number.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s177",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "us-insurance",
+      "email-gateways",
+      "deliverability"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.55,
+    "newest": "2026-08-02"
+  },
+  {
+    "id": "c105",
+    "angleId": "domain-setup",
+    "text": "Selling into insurance and finance, hold inbox placement above 90%. Below 85% means your setup is broken — stop sending until it is fixed.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s178",
+      "s124"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "finance",
+      "deliverability",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c106",
+    "angleId": "domain-setup",
+    "text": "Use a tracking domain you own instead of your platform's shared one, and keep to .com, .io or .co. Every link domain in the message is judged with your sender reputation.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s177",
+      "s175"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "email-gateways",
+      "deliverability",
+      "sending-setup"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-08-02"
+  },
+  {
+    "id": "c107",
+    "angleId": "domain-setup",
+    "text": "Buy and warm sending domains weeks before you need them. Retire any domain once bounces pass 4% or complaints pass 0.3%.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s180",
+      "s175"
+    ],
+    "contextTags": [
+      "deliverability",
+      "sending-setup",
+      "domain-health",
+      "new-domain"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.2,
+    "newest": "2026-05-20"
+  },
+  {
+    "id": "c108",
+    "angleId": "insurance-email-security",
+    "text": "Proofpoint and Mimecast usually quarantine your email silently instead of bouncing it, so your tool logs 'delivered' for a message the executive never saw. Never treat a delivery log as proof of arrival.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s177",
+      "s184"
+    ],
+    "contextTags": [
+      "us-insurance",
+      "email-gateways",
+      "deliverability",
+      "sending-setup"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-08-02"
+  },
+  {
+    "id": "c109",
+    "angleId": "insurance-email-security",
+    "text": "Gateways rewrite and fetch every link before a human sees it, so opens and clicks from big corporate domains are mostly machines. If over half your clicks look automated, you are measuring the scanner, not the buyer.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s183",
+      "s184",
+      "s177"
+    ],
+    "contextTags": [
+      "enterprise-domains",
+      "email-gateways",
+      "metrics",
+      "us-insurance"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-08-05"
+  },
+  {
+    "id": "c110",
+    "angleId": "insurance-email-security",
+    "text": "Put zero links in the first email and at most one in the second. Never attach a PDF to a cold email — attachments land in spam on most business mail servers.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s124",
+      "s192"
+    ],
+    "contextTags": [
+      "insurance",
+      "proof-line",
+      "compliance",
+      "insurance-execs"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "youtube": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c111",
+    "angleId": "insurance-email-security",
+    "text": "Assume any US insurance carrier, broker or MGA sits behind an email security gateway. Proofpoint sells a dedicated financial-services-and-insurance product line, and gateways cluster in regulated industries.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s188",
+      "s177"
+    ],
+    "contextTags": [
+      "adjacent",
+      "target-fit",
+      "us-insurance",
+      "regulated-industry"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-08-02"
+  },
+  {
+    "id": "c112",
+    "angleId": "insurance-email-security",
+    "text": "Check whether the account runs Proofpoint, Mimecast or Barracuda before you send. Route those accounts to a stripped-down email plus a second channel instead of your normal sequence.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s190",
+      "s177"
+    ],
+    "contextTags": [
+      "adjacent",
+      "cold-email",
+      "gateway-accounts",
+      "pre-send-check"
+    ],
+    "consensus": {
+      "x": "agree",
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-08-02"
+  },
+  {
+    "id": "c113",
+    "angleId": "insurance-email-security",
+    "text": "Send plain text, not HTML, and keep it short. Roughly 37% of cold email never reaches an inbox, and pixels, inline CSS and embedded links are what a gateway scores as suspicious. In one test a message under 7 words got through Mimecast and got a reply from a prospect whose longer emails were being filtered.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s185",
+      "s187"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "mimecast",
+      "plain-text"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-05-13"
+  },
+  {
+    "id": "c114",
+    "angleId": "carrier-budget-season",
+    "text": "A carrier on a calendar fiscal year locks next year's budget in October or November, and October through December is renewal crunch for commercial teams. Send the introduction in August or September, while the plan is still being written, and save the follow-up push for January — general rule; the niche evidence disagrees for small accounts, where an MGA owner can decide in any month.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s193",
+      "s194",
+      "s197"
+    ],
+    "contextTags": [
+      "general",
+      "niche-disagrees",
+      "carriers",
+      "calendar-fiscal-year"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c115",
+    "angleId": "carrier-budget-season",
+    "text": "If you email in March, do not ask for a new line item. Point at money that already exists: an upcoming renewal, a stalled approved project, or an unspent line.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s193",
+      "s194",
+      "s195"
+    ],
+    "contextTags": [
+      "general",
+      "carriers",
+      "calendar-fiscal-year",
+      "new-budget-ask"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.2,
+    "newest": "2026-07"
+  },
+  {
+    "id": "c116",
+    "angleId": "carrier-budget-season",
+    "text": "A five-to-six-figure carrier deal often runs past 12 months, and large-carrier procurement can stretch to 18 months, so treat the first cold email as aimed at next year's budget. A cross-industry benchmark puts the average insurance deal at about 127 days — start emailing in June to be inside an October decision — but that number does not match the high-ticket carrier evidence.",
+    "verdict": "contested",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s198",
+      "s199",
+      "s200",
+      "s201"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance",
+      "sales-cycle",
+      "budget-timing"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2026",
+    "sides": {
+      "for": [
+        "s198",
+        "s201",
+        "s200"
+      ],
+      "against": [
+        "s199"
+      ]
+    }
+  },
+  {
+    "id": "c117",
+    "angleId": "carrier-budget-season",
+    "text": "Timing matters most at the big end. Marsh-scale brokers and large carriers run multi-year procurement; a small MGA's owner can decide in any month.",
+    "verdict": "likely",
+    "confidence": 0.38,
+    "sourceIds": [
+      "s200"
+    ],
+    "contextTags": [
+      "niche",
+      "large-carriers",
+      "high-ticket",
+      "long-cycle"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.75,
+    "newest": "2024-04-09"
+  },
+  {
+    "id": "c118",
+    "angleId": "broker-renewal-crunch",
+    "text": "Brokers have two crunches — the run-up to January 1 and to July 1 — so send in the quiet stretches: late January through March, and late August through September. General reply-rate data pushes back on the second window: July and August are the worst months in the data.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s203",
+      "s197",
+      "s204"
+    ],
+    "contextTags": [
+      "general",
+      "brokers",
+      "renewal-calendar",
+      "send-timing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c119",
+    "angleId": "broker-renewal-crunch",
+    "text": "Shopping for a January 1 effective date starts 30 or more days ahead and commercial renewal season runs October to December. Treat October 15 to January 15 as a no-cold-email window.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s205",
+      "s197"
+    ],
+    "contextTags": [
+      "niche",
+      "brokers",
+      "commercial-renewals",
+      "blackout-window"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c120",
+    "angleId": "broker-renewal-crunch",
+    "text": "February is the strongest month for cold email replies and December the weakest — 0.54% versus 0.35% across 7.5 million emails, a 54% relative gap. Do not default to summer either: replies drop hardest in July and August and agencies are short-staffed then. February is also the month right after the insurance 1/1 crunch clears, so run the push in February and March.",
+    "verdict": "likely",
+    "confidence": 0.55,
+    "sourceIds": [
+      "s22",
+      "s203",
+      "s207"
+    ],
+    "contextTags": [
+      "general",
+      "general-advice",
+      "cold-email",
+      "large-sample"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c121",
+    "angleId": "broker-renewal-crunch",
+    "text": "Check your prospect's renewal date before picking a send week. A Florida property-cat shop is buried in May and June; a benefits broker is buried in November.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s204",
+      "s197"
+    ],
+    "contextTags": [
+      "general",
+      "brokers",
+      "renewal-calendar",
+      "send-timing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c122",
+    "angleId": "broker-renewal-crunch",
+    "text": "Segment the list by line of business: health and benefits brokers are slammed November to January, commercial brokers October to December, auto-heavy agencies in spring and summer.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s197",
+      "s205"
+    ],
+    "contextTags": [
+      "niche",
+      "commercial-insurance",
+      "q4-crunch",
+      "send-timing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c123",
+    "angleId": "broker-renewal-crunch",
+    "text": "Send mid-week and early. Wednesday and Thursday both hit 0.48% reply rate, 8 AM to noon hits 0.54%, and 5-8 AM sends reply about 25% more than later-in-day sends.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s22",
+      "s211"
+    ],
+    "contextTags": [
+      "general",
+      "benchmarks",
+      "insurance",
+      "cold-email"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c124",
+    "angleId": "quarterly-nurture",
+    "text": "Stop the active cold sequence after 4 to 6 touches over 3 to 4 weeks, then move the contact to a quarterly nurture instead of marking them closed-lost.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s215",
+      "s216",
+      "s214"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "long-cycle",
+      "sequence-design"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.2,
+    "newest": "2026-06-19"
+  },
+  {
+    "id": "c125",
+    "angleId": "quarterly-nurture",
+    "text": "Skip the breakup email: it forces an ending on a buyer whose only problem was timing — general rule; the niche evidence disagrees, and insurance-inbox data says the breakup often outperforms every earlier touch.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s213",
+      "s214"
+    ],
+    "contextTags": [
+      "general",
+      "niche-disagrees",
+      "cold-email",
+      "long-cycle"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2025-05-20"
+  },
+  {
+    "id": "c126",
+    "angleId": "quarterly-nurture",
+    "text": "Anchor every quarterly touch to a date the industry already publishes — appointment and licence renewal deadlines, commercial renewal season (October to December), health sign-up (November to January), budget season — so aim for February-March and June-July and never send a bare 'just checking in'.",
+    "verdict": "likely",
+    "confidence": 0.53,
+    "sourceIds": [
+      "s197",
+      "s203",
+      "s222"
+    ],
+    "contextTags": [
+      "general",
+      "commercial-insurance",
+      "q4-crunch",
+      "send-timing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2025-12-22"
+  },
+  {
+    "id": "c127",
+    "angleId": "quarterly-nurture",
+    "text": "Plan an insurance account as a multi-quarter campaign, not a month-long sequence. Carrier cycles run months to years and the buying group can top 20 people.",
+    "verdict": "likely",
+    "confidence": 0.59,
+    "sourceIds": [
+      "s220",
+      "s221",
+      "s216"
+    ],
+    "contextTags": [
+      "general",
+      "insurance-carriers",
+      "high-ticket",
+      "long-cycle"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-06-19"
+  },
+  {
+    "id": "c128",
+    "angleId": "follow-up-touches",
+    "text": "Adding 3 to 5 follow-ups roughly doubles reply rate — 8.3% versus 4.1% for a one-and-done email. Over 53% of email-sourced meetings come from step 3 or later, and step 3 alone books more than steps 1 and 2 combined, so write the third email before you send the first.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s223",
+      "s224",
+      "s225",
+      "s226"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "general-benchmark",
+      "follow-up"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-06-26"
+  },
+  {
+    "id": "c129",
+    "angleId": "follow-up-touches",
+    "text": "Executives need about 7 to 9 touches to reply, roughly double the 4 to 5 a mid-level contact needs, so budget that before writing off an SVP. Sending-side data disagrees: past four follow-ups, spam and unsubscribe risk roughly triples and your domain degrades, which argues for capping the active sequence at 5 to 7.",
+    "verdict": "contested",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s154",
+      "s226",
+      "s227",
+      "s229",
+      "s224",
+      "s223"
+    ],
+    "contextTags": [
+      "general",
+      "large-firms",
+      "executive-assistants",
+      "screening"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-06-23",
+    "sides": {
+      "for": [
+        "s154",
+        "s226",
+        "s227"
+      ],
+      "against": [
+        "s229",
+        "s224",
+        "s223"
+      ]
+    }
+  },
+  {
+    "id": "c130",
+    "angleId": "follow-up-touches",
+    "text": "Give every touch its own job: touch 2 reframes from another stakeholder's view, touch 3 brings proof or a peer, touch 4 hands over a useful resource, touch 5 is the breakup.",
+    "verdict": "likely",
+    "confidence": 0.41,
+    "sourceIds": [
+      "s226",
+      "s227"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "general-benchmark",
+      "meeting-booking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026"
+  },
+  {
+    "id": "c131",
+    "angleId": "follow-up-touches",
+    "text": "The breakup email — 'looks like now isn't the right time, I won't clutter your inbox' — often outperforms every earlier touch, sometimes by 2x, including on insurance inboxes.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s226",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "sequence-end",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026"
+  },
+  {
+    "id": "c132",
+    "angleId": "follow-up-touches",
+    "text": "Space touches at day 0, +3, +7, +12, +18. The first follow-up replies best at about 8.4% and each later one adds less.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s226",
+      "s224",
+      "s227"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "general-benchmark",
+      "meeting-booking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026-06-23"
+  },
+  {
+    "id": "c133",
+    "angleId": "follow-up-touches",
+    "text": "US P&C core system decisions run 12-18 months from selection to go-live. When the 3-week sequence ends, restart quarterly with a genuinely new reason each time rather than a nudge.",
+    "verdict": "likely",
+    "confidence": 0.6,
+    "sourceIds": [
+      "s231",
+      "s230",
+      "s116"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance-carriers",
+      "long-cycle",
+      "us"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.55,
+    "newest": "2026-01"
+  },
+  {
+    "id": "c134",
+    "angleId": "follow-up-touches",
+    "text": "Follow-ups that reference something specific about the recipient's business reply at about 18% versus 2% for generic ones. Every touch needs new content, not reworded phrasing.",
+    "verdict": "likely",
+    "confidence": 0.36,
+    "sourceIds": [
+      "s228",
+      "s154"
+    ],
+    "contextTags": [
+      "general",
+      "cold-email",
+      "personalization",
+      "general-rule"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.15,
+    "newest": "2026"
+  },
+  {
+    "id": "c135",
+    "angleId": "conferences-and-associations",
+    "text": "Send the conference email 2 to 6 weeks before doors open, not during the show, because executive calendars fill before the event starts. One source says insurance vendors plan conference meetings 4 to 6 months out, so for the largest accounts, earlier is safer.",
+    "verdict": "contested",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s240",
+      "s235",
+      "s233",
+      "s239"
+    ],
+    "contextTags": [
+      "niche",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "niche",
+    "relevance": 0.65,
+    "newest": "2026-08-06",
+    "sides": {
+      "for": [
+        "s240",
+        "s235",
+        "s233"
+      ],
+      "against": [
+        "s239"
+      ]
+    }
+  },
+  {
+    "id": "c136",
+    "angleId": "conferences-and-associations",
+    "text": "Naming a specific session, speaker or room lifts replies to about 3-8% versus 1-3% for plain cold email. Naming the show in general does not.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s240"
+    ],
+    "contextTags": [
+      "general",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-03-23"
+  },
+  {
+    "id": "c137",
+    "angleId": "conferences-and-associations",
+    "text": "Ask for a fixed 20 minutes in the ITC Vegas 1:1 meeting zone instead of 'let's connect at the show'. One booked slot beats wandering a 9,000-person floor.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s233",
+      "s234"
+    ],
+    "contextTags": [
+      "niche",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.65,
+    "newest": "2026-08-06"
+  },
+  {
+    "id": "c138",
+    "angleId": "conferences-and-associations",
+    "text": "Build the event list 8 to 12 weeks out against a defined target account list. One B2B team pre-booked 76 meetings from 320 target accounts by starting outreach 10 weeks ahead.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s241",
+      "s240",
+      "s244"
+    ],
+    "contextTags": [
+      "general",
+      "conference-outreach",
+      "target-account-list",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-05-27"
+  },
+  {
+    "id": "c139",
+    "angleId": "conferences-and-associations",
+    "text": "Match the room to the buyer: ITC Vegas (Sept 29-Oct 1, 2026, Mandalay Bay) for carriers and insurtech, RIMS RISKWORLD (May 3-6, 2026, Philadelphia) for risk managers and brokers, NAMIC's 131st Annual Convention (Sept 27-30, 2026, Denver) for mutual carrier leadership, and the Big 'I' Legislative Conference (April 22-24, 2026, Washington DC) for agency principals.",
+    "verdict": "likely",
+    "confidence": 0.54,
+    "sourceIds": [
+      "s235",
+      "s236"
+    ],
+    "contextTags": [
+      "niche",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-09"
+  },
+  {
+    "id": "c140",
+    "angleId": "conferences-and-associations",
+    "text": "For C-level, name the executive-only sub-event. The Insurance Leaders Forum runs the day before ITC opens and NAMIC runs separate executive events, so 'I'll be at the Leaders Forum on the 29th' is far narrower than 'I'll be at ITC'.",
+    "verdict": "solid",
+    "confidence": 0.73,
+    "sourceIds": [
+      "s238",
+      "s237",
+      "s234"
+    ],
+    "contextTags": [
+      "niche",
+      "c-level",
+      "insurance",
+      "conference-outreach"
+    ],
+    "consensus": {
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.7,
+    "newest": "2026-09-29"
+  },
+  {
+    "id": "c141",
+    "angleId": "conferences-and-associations",
+    "text": "Use the conference as a reason to meet people you have already touched at least once. A cold-from-zero pitch competes with every other vendor in the hall.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s242",
+      "s233"
+    ],
+    "contextTags": [
+      "niche",
+      "conference-outreach",
+      "warm-list",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.65,
+    "newest": "2026-08-06"
+  },
+  {
+    "id": "c142",
+    "angleId": "conferences-and-associations",
+    "text": "Follow up the same evening or within 48 hours. About 40% of exhibitors wait 3-5 days, and it takes roughly 3.5 touches to close an event lead, so plan 3-4 touches over the next two weeks.",
+    "verdict": "likely",
+    "confidence": 0.35,
+    "sourceIds": [
+      "s240"
+    ],
+    "contextTags": [
+      "general",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.25,
+    "newest": "2026-03-23"
+  },
+  {
+    "id": "c143",
+    "angleId": "conferences-and-associations",
+    "text": "Leave gaps between conference meetings. Insurance conversations run long, and one late meeting cascades into the next four.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s233"
+    ],
+    "contextTags": [
+      "niche",
+      "conference-outreach",
+      "timing",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.65,
+    "newest": "2026-08-06"
+  },
+  {
+    "id": "c144",
+    "angleId": "handling-replies",
+    "text": "Answer every reply the same day, ideally within minutes. Leads contacted within 5 minutes are 21x more likely to qualify than those contacted after 30 minutes, and an executive reply usually comes only once.",
+    "verdict": "likely",
+    "confidence": 0.5,
+    "sourceIds": [
+      "s246",
+      "s111"
+    ],
+    "contextTags": [
+      "adjacent",
+      "reply-handling",
+      "speed",
+      "executives"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "adjacent",
+    "relevance": 0.55,
+    "newest": "2026-02-16"
+  },
+  {
+    "id": "c145",
+    "angleId": "handling-replies",
+    "text": "Answer an objection with one question, never a pitch. Pitching inside a reply cuts response rates by up to 57%; top reps ask a question 54.3% of the time versus 31% for average reps and convert 29.6% of replies to meetings versus 15.3%. Use a binary question like 'Is it the worst possible time, or are you happy with what you have?'",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s245"
+    ],
+    "contextTags": [
+      "general",
+      "objection-handling",
+      "reply-handling",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c146",
+    "angleId": "handling-replies",
+    "text": "Treat a brush-off as reflex, not a verdict. 49.5% of objections are dismissive brush-offs rather than real reasons, so one more question usually reopens the conversation.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s245",
+      "s247"
+    ],
+    "contextTags": [
+      "general",
+      "objection-handling",
+      "reply-handling",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c147",
+    "angleId": "handling-replies",
+    "text": "When someone replies \"send me info\", say you'll send it, mark the parts that apply to them, and attach a tentative calendar invite they can decline.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s248",
+      "s247"
+    ],
+    "contextTags": [
+      "reply-handling",
+      "brush-off",
+      "booking",
+      "qualifying"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2025-04-18"
+  },
+  {
+    "id": "c148",
+    "angleId": "handling-replies",
+    "text": "Before sending anything, ask \"Just so I don't clutter your inbox, was there a specific question you had in mind or just a general overview?\" A generic answer tells you it was a brush-off.",
+    "verdict": "likely",
+    "confidence": 0.52,
+    "sourceIds": [
+      "s248",
+      "s253"
+    ],
+    "contextTags": [
+      "reply-handling",
+      "brush-off",
+      "booking",
+      "qualifying"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "other": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2025-04-18"
+  },
+  {
+    "id": "c149",
+    "angleId": "handling-replies",
+    "text": "Expect 30-50% of replies to become booked meetings. If replies come in but meetings don't, fix your reply copy, not your cold email.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s124",
+      "s246"
+    ],
+    "contextTags": [
+      "insurance",
+      "proof-line",
+      "compliance",
+      "insurance-execs"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c150",
+    "angleId": "handling-replies",
+    "text": "Put \"not now, ask me at renewal\" replies in a dated follow-up queue instead of closing them. In insurance those timing replies are near-certain future business tied to a known date.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s124",
+      "s249"
+    ],
+    "contextTags": [
+      "insurance",
+      "proof-line",
+      "compliance",
+      "insurance-execs"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c151",
+    "angleId": "metrics-for-small-lists",
+    "text": "Drop open rate from your scoreboard and keep positive reply rate and meetings booked. Apple preloads tracking pixels for about half of all opens, campaigns with tracking off got 7.4% replies versus 4.4%, and across 44 million emails open tracking cut reply rates from 2.36% to 1.08%. For the meetings line: average cold email books a meeting with about 1% of contacts, the top 10% hit 5%+.",
+    "verdict": "likely",
+    "confidence": 0.56,
+    "sourceIds": [
+      "s256",
+      "s255",
+      "s265"
+    ],
+    "contextTags": [
+      "metrics",
+      "email-tracking",
+      "general-rule",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-28"
+  },
+  {
+    "id": "c152",
+    "angleId": "metrics-for-small-lists",
+    "text": "At fifty emails a month you cannot A/B test. Reply-rate tests need hundreds of sends per version, so change one big thing per quarter instead of subject-line words.",
+    "verdict": "likely",
+    "confidence": 0.37,
+    "sourceIds": [
+      "s257",
+      "s120"
+    ],
+    "contextTags": [
+      "small-list",
+      "low-volume",
+      "testing"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.1,
+    "newest": "2026-09-03"
+  },
+  {
+    "id": "c153",
+    "angleId": "metrics-for-small-lists",
+    "text": "Track counts, not percentages. On a tight verified list expect one genuinely interested reply per 50-75 emails, so fifty sends a month is about one real conversation a month.",
+    "verdict": "likely",
+    "confidence": 0.44,
+    "sourceIds": [
+      "s258",
+      "s256"
+    ],
+    "contextTags": [
+      "small-list",
+      "metrics",
+      "verified-list",
+      "email-tracking"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-08-28"
+  },
+  {
+    "id": "c154",
+    "angleId": "metrics-for-small-lists",
+    "text": "Lists of 21-50 recipients reply at about 6.2% versus 2.4% for lists over 500. Treat a small list as an advantage to measure.",
+    "verdict": "likely",
+    "confidence": 0.57,
+    "sourceIds": [
+      "s255",
+      "s118",
+      "s12"
+    ],
+    "contextTags": [
+      "metrics",
+      "email-tracking",
+      "general-rule",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c155",
+    "angleId": "metrics-for-small-lists",
+    "text": "Count meetings per hundred emails. 200 signal-triggered sends booked three meetings while 2,000 blasted sends booked one.",
+    "verdict": "likely",
+    "confidence": 0.45,
+    "sourceIds": [
+      "s259",
+      "s118"
+    ],
+    "contextTags": [
+      "small-list",
+      "metrics",
+      "signal-triggered",
+      "financial-services"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c156",
+    "angleId": "metrics-for-small-lists",
+    "text": "In finance and insurance, reply rates run about 3-4% and opens 19-25%, below the cross-industry average, so a 4% reply rate on this list is fine.",
+    "verdict": "contested",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s118",
+      "s12",
+      "s124"
+    ],
+    "contextTags": [
+      "financial-services",
+      "benchmark",
+      "cold-email",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "mixed"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08",
+    "sides": {
+      "for": [
+        "s118",
+        "s12"
+      ],
+      "against": [
+        "s124"
+      ]
+    }
+  },
+  {
+    "id": "c157",
+    "angleId": "metrics-for-small-lists",
+    "text": "For high-ticket enterprise buyers, allow 30-90 days between the first reply and the meeting, and judge a batch of emails over a full quarter before rewriting it.",
+    "verdict": "likely",
+    "confidence": 0.51,
+    "sourceIds": [
+      "s256",
+      "s261"
+    ],
+    "contextTags": [
+      "metrics",
+      "email-tracking",
+      "general-rule",
+      "small-list"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-08-28"
+  },
+  {
+    "id": "c158",
+    "angleId": "metrics-for-small-lists",
+    "text": "Measure a sequence, not a single email. Three messages instead of one lifts total replies from 3.3% to 6.8%, and 42% of replies arrive after the first send.",
+    "verdict": "likely",
+    "confidence": 0.49,
+    "sourceIds": [
+      "s255",
+      "s118"
+    ],
+    "contextTags": [
+      "metrics",
+      "email-tracking",
+      "general-rule",
+      "small-list"
+    ],
+    "consensus": {
+      "docs": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-28"
+  },
+  {
+    "id": "c159",
+    "angleId": "metrics-for-small-lists",
+    "text": "On a fifty-name list, track what share of named accounts you have reached and had two real interactions with. Treat 15% penetration in the first quarter as passing.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s261"
+    ],
+    "contextTags": [
+      "high-ticket",
+      "enterprise",
+      "sales-cycle",
+      "abm"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-06-30"
+  },
+  {
+    "id": "c160",
+    "angleId": "metrics-for-small-lists",
+    "text": "Ignore insurance vendor advice built on 2,000-5,000 sends per 5-10 meetings. At fifty emails a month, report meetings and pipeline value per quarter instead.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s116",
+      "s256"
+    ],
+    "contextTags": [
+      "niche",
+      "cold-email",
+      "subject-line",
+      "executive-inbox"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.5,
+    "newest": "2026-08-28"
+  },
+  {
+    "id": "c161",
+    "angleId": "track-firms-not-emails",
+    "text": "Tier your firms first: big carriers run 12-24 month cycles with 8-12 stakeholders on $500K-$5M deals, MGAs 6-9 months with 4-6 stakeholders on $100K-$750K, brokers 3-6 months with 2-4 stakeholders on $25K-$150K. A carrier silent for three months is on schedule; a broker silent that long is stalled.",
+    "verdict": "likely",
+    "confidence": 0.47,
+    "sourceIds": [
+      "s76",
+      "s198"
+    ],
+    "contextTags": [
+      "niche",
+      "carriers-mgas-brokers",
+      "high-ticket",
+      "long-cycle"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026"
+  },
+  {
+    "id": "c162",
+    "angleId": "track-firms-not-emails",
+    "text": "Make each tracker row a firm, not an email, with a stage, an owner and a dated next step. An insurance deal can run twelve months with no revenue, and the stage is the only sign of movement.",
+    "verdict": "likely",
+    "confidence": 0.67,
+    "sourceIds": [
+      "s198",
+      "s263",
+      "s266"
+    ],
+    "contextTags": [
+      "niche",
+      "insurance",
+      "sales-cycle",
+      "budget-timing"
+    ],
+    "consensus": {
+      "blog": "agree",
+      "docs": "agree"
+    },
+    "specificity": "niche",
+    "relevance": 0.6,
+    "newest": "2026-06-01"
+  },
+  {
+    "id": "c163",
+    "angleId": "track-firms-not-emails",
+    "text": "Give each firm one engagement score that sums up every person there who engaged, then work the highest-scoring firms first. Teams doing this cut sales cycle time by about 18%.",
+    "verdict": "likely",
+    "confidence": 0.37,
+    "sourceIds": [
+      "s264"
+    ],
+    "contextTags": [
+      "b2b",
+      "account-based",
+      "pipeline-tracking",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-06-11"
+  },
+  {
+    "id": "c164",
+    "angleId": "track-firms-not-emails",
+    "text": "Count how many named people inside each firm have engaged. Insurance buying committees run 6-10 people and win rates lift once 4+ contacts are engaged, so \"4 of 8 contacts engaged\" is real progress even with zero meetings booked.",
+    "verdict": "likely",
+    "confidence": 0.43,
+    "sourceIds": [
+      "s264",
+      "s76"
+    ],
+    "contextTags": [
+      "insurance",
+      "enterprise",
+      "buying-committee"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-06-11"
+  },
+  {
+    "id": "c165",
+    "angleId": "track-firms-not-emails",
+    "text": "Judge each stage by its progression rate. 15-40% of firms moving to the next stage is healthy and 40%+ is elite, so under 15% means your message or list is broken, not that you need more patience.",
+    "verdict": "likely",
+    "confidence": 0.37,
+    "sourceIds": [
+      "s264"
+    ],
+    "contextTags": [
+      "b2b",
+      "account-based",
+      "pipeline-tracking",
+      "insurance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.4,
+    "newest": "2026-06-11"
+  },
+  {
+    "id": "c166",
+    "angleId": "track-firms-not-emails",
+    "text": "Size your list with insurance math: about 1-2.5% of insurance contacts reply and 30-50% of replies turn into a meeting, so 200 firms is what a handful of booked meetings actually costs — general rule; the niche evidence disagrees.",
+    "verdict": "likely",
+    "confidence": 0.39,
+    "sourceIds": [
+      "s124",
+      "s265"
+    ],
+    "contextTags": [
+      "niche-disagrees",
+      "insurance",
+      "proof-line",
+      "compliance"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.45,
+    "newest": "2026-09-08"
+  },
+  {
+    "id": "c167",
+    "angleId": "track-firms-not-emails",
+    "text": "Report pipeline created from your target firms each month. Revenue on a 12-24 month insurance cycle lands far too late to steer by.",
+    "verdict": "likely",
+    "confidence": 0.48,
+    "sourceIds": [
+      "s269",
+      "s267",
+      "s76"
+    ],
+    "contextTags": [
+      "insurance",
+      "long-cycle",
+      "metrics",
+      "carriers-mgas-brokers"
+    ],
+    "consensus": {
+      "youtube": "agree",
+      "x": "agree",
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.3,
+    "newest": "2026-07-08"
+  },
+  {
+    "id": "c168",
+    "angleId": "track-firms-not-emails",
+    "text": "Build your firm list from your last two years of closed-won deals. Find what those companies share and target lookalikes instead of filtering on title and headcount.",
+    "verdict": "likely",
+    "confidence": 0.4,
+    "sourceIds": [
+      "s268",
+      "s30"
+    ],
+    "contextTags": [
+      "b2b",
+      "list-building",
+      "has-past-wins",
+      "buyer-targeting"
+    ],
+    "consensus": {
+      "x": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2024-07-10"
+  },
+  {
+    "id": "c169",
+    "angleId": "track-firms-not-emails",
+    "text": "Set a rule that fires on time-in-stage: if a firm sits in one stage past its tier's normal window, the tracker tells you to act before the account goes quiet.",
+    "verdict": "likely",
+    "confidence": 0.42,
+    "sourceIds": [
+      "s263",
+      "s76"
+    ],
+    "contextTags": [
+      "insurance",
+      "pipeline-tracking",
+      "long-cycle",
+      "b2b"
+    ],
+    "consensus": {
+      "blog": "agree"
+    },
+    "specificity": "general",
+    "relevance": 0.35,
+    "newest": "2026-06-01"
+  }
+]

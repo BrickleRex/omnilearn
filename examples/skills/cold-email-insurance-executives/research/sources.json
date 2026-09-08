@@ -1,0 +1,4703 @@
+[
+  {
+    "id": "s1",
+    "url": "https://www.insurancejournal.com/magazines/mag-features/2026/07/27/878824.htm",
+    "kind": "blog",
+    "title": "US P/C Industry Books Best Result in a Decade, but Not All Lines Enjoy Success",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.78,
+    "soundness": 0.75,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-07-27",
+    "quote": "Overall, the industry's combined ratio finished at 93 in 2025–an improvement of 3.6 points over 2024.",
+    "note": "Established trade press relaying AM Best industry-wide data ($1.11T DPW, 93 combined ratio, $23B underwriting income) — solid market context for a carrier exec conversation, but zero about how these b",
+    "relevance": 0.6
+  },
+  {
+    "id": "s2",
+    "url": "https://www.sonant.ai/blog/insurance-agency-organic-growth-strategies",
+    "kind": "blog",
+    "title": "Organic Growth: How Top Agencies Hit 10.7% vs. 7.8%",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-07-28",
+    "quote": "Improving retention from 85% to 93% generates 8% organic growth without writing a single new account.",
+    "note": "Vendor selling AI call handling to agencies; the scrape is pure nav chrome and the only figures are an unsourced headline claim (10.7% vs 7.8%) with no method behind it.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s3",
+    "url": "https://www.marshberry.com/eu/blog/insurance-broker-organic-growth-metrics/",
+    "kind": "blog",
+    "title": "Insurance Broker Organic Growth: KPIs & Benchmarks Guide",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.65,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-05-16",
+    "quote": "While average firms achieved organic growth of 8.7% in 2024, peak performers reached an impressive average of 18.2%.",
+    "note": "Credible broker-benchmarking advisory naming the right mechanism (hard-market premium inflation masking true organic growth), but this is the Europe desk and the excerpt stops before any actual KPI be",
+    "relevance": 0.5
+  },
+  {
+    "id": "s4",
+    "url": "https://riskandinsurance.com/mga-premiums-hit-108-7-billion-in-2025-as-capacity-scrutiny-tightens/",
+    "kind": "blog",
+    "title": "MGA Premiums Hit $108.7 Billion in 2025 as Capacity Scrutiny Tightens",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-07-03",
+    "quote": "Managing general agents and other delegated underwriting authority enterprises wrote $108.7 billion in direct premiums in 2025, up 17.8% from $92.3 billion in 2024",
+    "note": "Trade press with a hard market-size figure ($108.7B MGA premium, 2025) and a capacity-scrutiny angle execs feel, but the body is truncated to navigation so the sourcing behind the number is unverifiab",
+    "relevance": 0.6
+  },
+  {
+    "id": "s5",
+    "url": "https://www.hyperexponential.com/blog/mga-carrier-relationships",
+    "kind": "blog",
+    "title": "MGA-carrier relationships: how alignment of interests drives profitable long-term partnerships",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-09-02",
+    "quote": "MGAs' primary remuneration comes through upfront commissions based on premium volume",
+    "note": "Vendor blog, but a named practitioner explains a real mechanism (commission structures rewarding production over performance, data-integration gaps); n=1 podcast opinion anchored on Lloyd's (45% deleg",
+    "relevance": 0.5
+  },
+  {
+    "id": "s6",
+    "url": "https://insly.com/en/glossary-insurance-terms/the-role-of-managing-general-agents-vs-brokers/",
+    "kind": "docs",
+    "title": "The Role of Managing General Agents (MGAs) vs Broker",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Vendor glossary page dressed as docs — the extract is entirely site navigation, so there is no argument or evidence to weigh, only segment definitions.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s7",
+    "url": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-mgas-opportunities-and-considerations-for-investors",
+    "kind": "blog",
+    "title": "Insurance MGAs: Opportunities and considerations for investors",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "note": "McKinsey carries weight, but only the title was retrieved; an investor lens on MGAs is also a different reader than an operating C-suite buyer.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s8",
+    "url": "https://www.aon.com/getmedia/9bcce983-f8ba-4aa3-8e51-f70b1f9d1cf1/2025-MGA-Market-and-Outlook.pdf",
+    "kind": "docs",
+    "title": "2025 MGA Market and Outlook (Aon)",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025",
+    "note": "Primary broker research from Aon would be strong, but the PDF came through as raw binary — nothing citable survived extraction, so it can't be scored on its actual reasoning.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s9",
+    "url": "https://www.forrester.com/report/pick-the-right-sales-strategy-to-sell-to-insurers/RES54733",
+    "kind": "docs",
+    "title": "Pick The Right Sales Strategy To Sell To Insurers (Forrester)",
+    "angleIds": [
+      "carrier-broker-mga-differences",
+      "named-peer-line"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "note": "Forrester title on insurer sales strategy is exactly on-target, but the text is a paywalled stub with zero retrievable reasoning.",
+    "relevance": 0.7
+  },
+  {
+    "id": "s10",
+    "url": "https://www.youtube.com/watch?v=zCq3bTTZ3ZY",
+    "kind": "youtube",
+    "title": "What Is An MGA? An Ask A Nerd Podcast Episode",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "adjacent",
+    "note": "Title-only podcast stub explaining what an MGA is — background definition at best, nothing about selling to executives.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s11",
+    "url": "https://x.com/BusInsMagazine/status/1938425552123187702",
+    "kind": "x",
+    "title": "Business Insurance: world's largest brokers profiles",
+    "angleIds": [
+      "carrier-broker-mga-differences"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "A trade-press tweet linking a broker ranking list; useful only for account naming, no sales insight.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s12",
+    "url": "https://thedigitalbloom.com/learn/cold-outbound-reply-rate-benchmarks/",
+    "kind": "blog",
+    "title": "Cold Email Reply-Rate Benchmarks 2025 (Hook × ICP × Industry Data)",
+    "angleIds": [
+      "carrier-broker-mga-differences",
+      "insurance-pain-language",
+      "vendor-due-diligence-proof",
+      "named-peer-line",
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-11-10",
+    "quote": "segmentation into smaller cohorts (50 recipients) achieves 5.8% reply rate versus 2.1% for 1,000+ recipient blasts—a 2.76x lift",
+    "note": "Agency blog with concrete reply-rate splits (10.01% timeline vs 4.39% problem hooks) but no methodology, no sample size, and the CMO sells the fix; segments are SaaS/FinServ/Healthcare/Consulting with",
+    "relevance": 0.25
+  },
+  {
+    "id": "s13",
+    "url": "https://www.spanglobalservices.com/blog/insurance-industry-contacts-b2b-leads/",
+    "kind": "blog",
+    "title": "20 Insurance Industry Contacts to Target for B2B Leads",
+    "angleIds": [
+      "insurance-title-map",
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-09-03",
+    "quote": "risk selection, pricing discipline and loss ratio",
+    "note": "List-vendor SEO page whose retrievable text is pure site navigation; the 'insurance titles to target' body never appears.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s14",
+    "url": "https://origami.chat/blog/insurance-underwriters-prospecting-2026",
+    "kind": "blog",
+    "title": "How to Prospect Insurance Underwriters (2026 Guide)",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-05-28",
+    "quote": "Insurance underwriters are evaluating risk all day. They respond to specificity, not volume.",
+    "note": "Vendor content marketing whose stated answer is 'buy our tool'; underwriters are also a rung below the C-level/SVP buyer named here.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s15",
+    "url": "https://send.technology/resources/blog/leading-insight-on-the-future-of-the-chief-underwriting-officer-cuo/",
+    "kind": "blog",
+    "title": "Leading Insight on the Future of the Chief Underwriting Officer (CUO)",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2021-08-02",
+    "quote": "The new breed of CUO is leading strategic change and taking responsibility for creating and setting underwriting strategy across all divisions.",
+    "note": "Insurtech vendor blog on the CUO role, but the scraped text is nav chrome and product promos rather than any argument.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s16",
+    "url": "https://www.linkedin.com/pulse/chief-underwriting-officer-global-insurance-organization-",
+    "kind": "other",
+    "title": "Chief Underwriting Officer — Global Insurance Organization (LinkedIn Pulse)",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2021-08-13",
+    "quote": "owns underwriting relationship with all carriers, including the setting of loss ratio targets, reporting related to loss ratio results and leading negotiation of binder renewals",
+    "note": "Recruiter job spec — primary-ish evidence of who a CUO reports to and owns (P&L, underwriting profit), which is real buying-motive fuel, but it is one posting and mostly a sales pitch for the search f",
+    "relevance": 0.45
+  },
+  {
+    "id": "s17",
+    "url": "https://careers-berkley.icims.com/jobs/11104/chief-underwriting-officer-(evp,-svp,-vp)/job",
+    "kind": "docs",
+    "title": "Chief Underwriting Officer (EVP, SVP, VP) — W. R. Berkley",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "note": "Primary employer job posting confirms the CUO title spans EVP/SVP/VP at a real carrier, but the scraped text is a bare title with no content to reason from.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s18",
+    "url": "https://www.alignedinsurance.com/officer-titles-explained/",
+    "kind": "blog",
+    "title": "Officer Titles Explained — ALIGNED Insurance",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "key decision-makers working closely with the executive team",
+    "note": "A Canadian broker's marketing page that scraped as pure nav menu — zero usable substance on officer titles.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s19",
+    "url": "https://www.organimi.com/insurance-company-organizational-structure/",
+    "kind": "blog",
+    "title": "Insurance Company Organizational Structure — How to Create & Template",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "note": "Org-chart software vendor selling its template; scraped text is title-only, so nothing to evaluate.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s20",
+    "url": "https://www.youtube.com/watch?v=Wxtg97kbZcM",
+    "kind": "youtube",
+    "title": "The Future of the Chief Underwriting Officer",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "niche",
+    "date": "2021-03-31",
+    "note": "Title-only capture of a 2021 CUO panel — plausibly on-target for the buyer persona but delivers no extractable claim.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s21",
+    "url": "https://www.youtube.com/watch?v=FYPhFr5ZTMU",
+    "kind": "youtube",
+    "title": "Unstructured Unlocked: Chief underwriting officer duties",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "niche",
+    "note": "Vendor-podcast episode reduced to its title; no content, and the show exists to sell document-AI.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s22",
+    "url": "https://belkins.io/blog/cold-email-response-rates",
+    "kind": "blog",
+    "title": "What are B2B Cold Email Response Rates? (2026 Study)",
+    "angleIds": [
+      "insurance-title-map",
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-06-26",
+    "quote": "Banking and Insurance sit at the bottom — heavily regulated industries where gatekeeping is institutional, procurement processes are lengthy, and unsolicited outreach faces the highest scrutiny.",
+    "note": "7.5M-email sample is the largest evidence here, but it's a lead-gen agency selling the conclusion and the text is generic B2B, not insurance executives.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s23",
+    "url": "https://pointfactors.com/posts/executive-title-classification-framework",
+    "kind": "blog",
+    "title": "Executive Title Hierarchy: AVP to Chief Explained",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Comp-consulting vendor, but it actually explains the AVP→VP→SVP→EVP ladder and why title inflation varies by industry — useful framing, no insurance-specific data.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s24",
+    "url": "https://www.fishbowlapp.com/post/anyone-aware-of-title-hierarchy-in-insuranceasset-management-companies-what-does-an-avp-mean-in-banking-its-a-fairly-junior",
+    "kind": "other",
+    "title": "Anyone aware of title hierarchy in insurance/asset management companies? What does an AVP mean?",
+    "angleIds": [
+      "insurance-title-map"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "note": "Anonymous forum question — literally a question, not an answer, so there is no reasoning to weigh.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s25",
+    "url": "https://www.procuredesk.com/invoice-approval-thresholds/",
+    "kind": "blog",
+    "title": "Invoice Approval Thresholds: How to Set Them by Company Size",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Over $100,000 CFO, with board visibility above $250,000",
+    "note": "Procurement vendor's nav-menu boilerplate — no actual threshold content survived in the text, and the vendor sells the workflow it recommends.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s26",
+    "url": "https://tallyfy.com/approval-limits-matrix-template/",
+    "kind": "blog",
+    "title": "Approval limits matrix with spending thresholds",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Only real numbers are Tallyfy's own seat prices; the approval-matrix substance never appears in the scraped text.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s27",
+    "url": "https://instantly.ai/blog/decision-maker-titles-job-titles-buying-authority/",
+    "kind": "blog",
+    "title": "Decision Maker Job Titles: Who Controls B2B Budgets",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "A single deal may require sign-off from the VP of Sales (champion), CFO (economic buyer), CISO (security review), Legal (contract approval), and Procurement (vendor onboarding).",
+    "note": "Cold-email vendor page on buying-authority titles, but the excerpt is pure site chrome with zero argument to judge.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s28",
+    "url": "https://www.saastr.com/why-smb-sales-and-enterprise-sales-have-nothing-in-common",
+    "kind": "blog",
+    "title": "Why SMB Sales and Enterprise Sales Have Nothing In Common",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "closing a $100k deal and a $1m deal are more similar than deal sizes another stage away",
+    "note": "Lemkin is a credible first-hand operator and the ACV-cadence point transfers to five-to-six-figure deals, but it's assertion plus one tweet, no data and nothing about insurance.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s29",
+    "url": "https://www.ncontracts.com/nsight-blog/vendor-contract-management",
+    "kind": "blog",
+    "title": "TPRM 101: What Is Contract Management for Financial Institutions?",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Vendor content on regulated-FI contract management — the regulated-buyer angle is adjacent to insurance procurement, but the text is all navigation and it sells the fix.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s30",
+    "url": "https://x.com/troyaitken_/status/2076780339062538435",
+    "kind": "x",
+    "title": "Troy Aitken on cold outreach across 15+ industries",
+    "angleIds": [
+      "signing-authority-by-firm-size",
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Signal-first lists (not job title + company size)",
+    "note": "Operator running outreach across many industries gives a concrete cadence (3 emails, 50-75 words), but they're describing their own service with no results data and nothing insurance-specific.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s31",
+    "url": "https://www.youtube.com/watch?v=lAIlTEWAHuw",
+    "kind": "youtube",
+    "title": "Selling to Executive Decision Makers: C-Level Sales Secrets",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2024-11",
+    "note": "Title only — no transcript, nothing to evaluate beyond the promise of C-level selling tips.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s32",
+    "url": "https://www.insurancejournal.com/magazines/mag-features/2025/12/01/848712.htm",
+    "kind": "blog",
+    "title": "Growth Momentum Continues for Program Business: TMPAA",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-12-01",
+    "quote": "Between 2022 and 2024, average administrator revenue rose by 49%, climbing from $13.8 million to $20.6 million.",
+    "note": "Insurance Journal reporting TMPAA association data with hard premium and administrator-revenue figures — genuinely about MGA/program economics, though it's market sizing, not buying-authority or outre",
+    "relevance": 0.6
+  },
+  {
+    "id": "s33",
+    "url": "https://agencychecklists.com/2025/03/17/naic-2025-market-share-report-pc-insurers-74868/",
+    "kind": "blog",
+    "title": "NAIC 2025 Market Share Report | Top 25 P&C Insurers",
+    "angleIds": [
+      "signing-authority-by-firm-size",
+      "list-qualification"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-03-17",
+    "quote": "The top 10 P&C insurers account for 51.40% of the total market share",
+    "note": "Trade outlet faithfully relaying official NAIC premium data — good for sizing accounts, but says nothing about how insurance executives buy.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s34",
+    "url": "https://content.naic.org/sites/default/files/publication-msr-pb-property-casualty.pdf",
+    "kind": "docs",
+    "title": "2025 Market Share Reports for Property/Casualty Groups (NAIC)",
+    "angleIds": [
+      "signing-authority-by-firm-size",
+      "insurance-data-sources",
+      "list-qualification"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Authoritative NAIC primary source, but the extract is unparsed PDF binary with no readable content to judge or use.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s35",
+    "url": "https://datos-insights.com/blog/insurer-it-in-2026-bigger-budgets-bolder-ai-and-a-data-problem-that-wont-wait",
+    "kind": "blog",
+    "title": "Insurer IT in 2026: Bigger Budgets, Bolder AI, and a Data Problem That Won't Wait",
+    "angleIds": [
+      "signing-authority-by-firm-size"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026",
+    "quote": "The average IT spend ratio reached 4.6% of direct written premium, up from 4.5% in 2025 and 3.7%",
+    "note": "Credible analyst firm on insurer IT budgets, but the captured text is site navigation only — the claim never appears.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s36",
+    "url": "https://www.finantrix.com/buyer-guides/insurtech-distribution-platforms-carriers",
+    "kind": "docs",
+    "title": "Buyer's Guide: Insurtech Distribution Platforms for Carriers",
+    "angleIds": [
+      "signing-authority-by-firm-size",
+      "list-qualification"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "Typical deal: $500K – $750K",
+    "date": "2026-08",
+    "note": "States carrier platform deals at $500K–$750K and weighted criteria, but it is an opaque vendor-ranking content funnel, not disclosed research.",
+    "relevance": 0.75
+  },
+  {
+    "id": "s37",
+    "url": "https://www.venminder.com/blog/understanding-vendor-management-insurance-industry",
+    "kind": "blog",
+    "title": "Understanding Vendor Risk Management in the Insurance Industry",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-05-21",
+    "quote": "For many insurance companies, cyber teams take on this role, but to effectively manage vendor risks, consider creating a dedicated team.",
+    "note": "TPRM vendor selling the fix; the only number is its own assessment volume and the body text is entirely nav chrome.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s38",
+    "url": "https://safeguard.sh/resources/blog/third-party-risk-assessment-for-insurtech-saas-platforms",
+    "kind": "blog",
+    "title": "Insurtech Third-Party Risk Assessment: A Step-by-Step Guide",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-08-10",
+    "quote": "SOC 2 Type II report (not just Type I) covering the last 12 months",
+    "note": "Security vendor page with zero insurance-specific substance in the captured text — pure product navigation.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s39",
+    "url": "https://insurtech.podbean.com/e/what-50-carriers-know-that-you-don-t-inside-s%C3%B8nr/",
+    "kind": "podcast",
+    "title": "What 50 Carriers Know That You Don't: Inside Sønr — Insurtech Leadership Podcast",
+    "angleIds": [
+      "buying-committee",
+      "vendor-due-diligence-proof",
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-06-08",
+    "quote": "POC purgatory. We're seeing mature innovation businesses doing more POCs than ever but not moving beyond them. The answer is often the people.",
+    "note": "First-hand operator with a verifiable tier-one carrier and broker roster, but the extract is a promotional episode blurb with no mechanism yet.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s40",
+    "url": "https://www.insurancebusinessmag.com/us/news/technology/carriers-stuck-in-pilot-purgatory-as-ai-fails-to-graduate--sedgwick-567339.aspx",
+    "kind": "blog",
+    "title": "Carriers stuck in 'pilot purgatory' as AI fails to graduate – Sedgwick",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-03-04",
+    "quote": "nearly two-thirds of carriers acknowledge a gap between their AI ambitions and actual capabilities",
+    "note": "Trade press on a Sedgwick report about carriers stalling AI at pilot stage — relevant execution dynamics, but the extract offers claims without figures and the source vendor sells claims services.",
+    "relevance": 0.65
+  },
+  {
+    "id": "s41",
+    "url": "https://www.prevalent.net/blog/nydfs-23-nycrr-500/",
+    "kind": "docs",
+    "title": "NYDFS 23 NYCRR 500: How to Meet Third-Party Risk Management Requirements",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025",
+    "note": "Filed as docs but it's a compliance vendor's blog about a rule it sells remediation for, and the captured text is 100% site navigation — nothing to assess.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s42",
+    "url": "https://www.agencybloc.com/agency-management-system/data-and-security/security-questions-you-should-ask-insurtech-vendors/",
+    "kind": "blog",
+    "title": "Essential Security Questions to Ask Insurtech Vendors",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025",
+    "note": "Insurance-native publisher (AMS vendor) writing for agencies vetting insurtech, but the scrape is menu chrome with zero argument or evidence.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s43",
+    "url": "https://www.kennedyslaw.com/en/thought-leadership/article/2025/understanding-the-naic-model-ai-bulletin-what-it-means-for-insurers/",
+    "kind": "blog",
+    "title": "Understanding the NAIC model AI bulletin: what it means for insurers",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "date": "2025",
+    "note": "Insurance regulatory law firm on the NAIC AI bulletin — credible source, but the text is a bare headline with no reasoning to weigh.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s44",
+    "url": "https://www.cyberbase.ai/blog/enterprise-saas-deal-acceleration",
+    "kind": "blog",
+    "title": "Enterprise SaaS Deal Acceleration: Stop Losing to Security",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-05-15",
+    "quote": "Security review alone adds 2–6 weeks to most enterprise sales cycles",
+    "note": "Clear mechanism for where security review stalls deals, but every number is unsourced and the vendor sells the exact three fixes it prescribes.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s45",
+    "url": "https://www.gong.io/blog/when-and-how-to-multi-thread-when-selling-to-executives",
+    "kind": "blog",
+    "title": "When (and how) to multi-thread when selling to executives",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-02-13",
+    "quote": "A won $50K–$250K deal these days typically involves at least 10 stakeholders.",
+    "note": "Gong sits on real call-data at scale and the multithreading tactics are concrete, but this excerpt asserts win-rate lift with no figure attached.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s46",
+    "url": "https://instantly.ai/blog/decision-maker-benchmarks-enterprise-buying-committee-size/",
+    "kind": "blog",
+    "title": "Enterprise Buying Committee Size Benchmarks",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "note": "A cold-email tool's SEO 'benchmarks' page; the captured text is pure nav with none of the promised committee-size data.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s47",
+    "url": "https://www.youtube.com/watch?v=nRdQVMi7I8g",
+    "kind": "youtube",
+    "title": "How to Sell into the Enterprise",
+    "angleIds": [
+      "buying-committee",
+      "carrier-budget-season"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2026-03",
+    "note": "Title-only YouTube capture with no transcript, no identified operator, and nothing to evaluate.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s48",
+    "url": "https://www.linkedin.com/videos/jason-kitenge-25709165_heres-what-youve-not-been-told-about-selling-activity-7368563713848532992-wAZB",
+    "kind": "other",
+    "title": "How to sell to enterprises: Mapping the buying committee (LinkedIn video)",
+    "angleIds": [
+      "buying-committee"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-09",
+    "note": "First-hand-styled LinkedIn post but it's the textbook four-role committee framework with no evidence, worked example, or industry specifics.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s49",
+    "url": "https://www.protiviti.com/us-en/in-focus/nydfs-2025-guidance-elevates-third-party-oversight-cybersecurity",
+    "kind": "blog",
+    "title": "NYDFS's 2025 Guidance: Elevates Third-Party Oversight & Security",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.62,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-10-21",
+    "quote": "The board and senior management must approve policies, establish risk appetite, and ensure integration of third-party oversight into the enterprise risk management framework.",
+    "note": "Credible consultancy byline but the captured text is 100% country-picker navigation — nothing to assess.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s50",
+    "url": "https://www.gtlaw.com/en/insights/2025/11/nydfs-final-cybersecurity-rules-mfa-asset-inventory-and-third-party-risk",
+    "kind": "blog",
+    "title": "NYDFS Final Cybersecurity Rules – MFA, Asset Inventory, and Third-Party Risk",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.7,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-11",
+    "quote": "Implement access controls, including MFA as if the vendor was itself subject to Part 500.",
+    "note": "Law-firm alert summarizing the actual Part 500 provisions and effective dates; solid primary-anchored reasoning but DFS-wide, not insurance-only.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s51",
+    "url": "https://safeguard.sh/resources/blog/naic-insurance-data-security-model-law-compliance-for-software-vendors",
+    "kind": "blog",
+    "title": "NAIC Model Law Software Vendor Compliance Guide",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.32,
+    "soundness": 0.22,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "certify annually that they maintain these controls, to provide SOC 2 Type II reports or equivalent independent attestations, and to disclose their software supply chain—including open-source dependencies, subprocessors, and any fourth-party vendors.",
+    "note": "Security vendor selling the compliance fix, and the scrape is pure product-menu nav with zero argument.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s52",
+    "url": "https://compassmsp.com/resources/articles/the-cybersecurity-law-your-state-passed-without-telling-you",
+    "kind": "blog",
+    "title": "The Insurance-Specific Cybersecurity Law Your State Passed Without Telling You",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.38,
+    "soundness": 0.22,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-03-31",
+    "quote": "at least 28 jurisdictions have enacted some version of this law as of early 2026",
+    "note": "MSP marketing article whose captured body is only site navigation; the insurance-specific claim is title-only.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s53",
+    "url": "https://content.naic.org/sites/default/files/government-affairs-brief-data-security-model-law.pdf",
+    "kind": "docs",
+    "title": "NAIC Government Affairs Brief: The NAIC Insurance Data Security Model Law",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.88,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-08",
+    "note": "Official NAIC primary brief — highest-authority source here, but the PDF extracted as binary garbage so no content is readable.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s54",
+    "url": "https://www.youtube.com/watch?v=Sv0XmdLUMbI",
+    "kind": "youtube",
+    "title": "Frameworks 101: NYDFS NYCRR Part 500 Compliance",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "adjacent",
+    "date": "2025-05-08",
+    "note": "Title card only; no transcript, no claim, nothing to weigh.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s55",
+    "url": "https://insurtech.podbean.com/",
+    "kind": "podcast",
+    "title": "Insurtech Leadership Podcast — full episodes",
+    "angleIds": [
+      "regulation-shapes-buying",
+      "insurance-pain-language"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Named consultancy guests arguing a concrete mechanism — four converging US insurance AI regimes pulling rules engines and vendor models into scope — but it's assertion, not evidence, and they sell the",
+    "relevance": 0.8
+  },
+  {
+    "id": "s56",
+    "url": "https://x.com/InsurTechNY/status/1981137779846500590",
+    "kind": "x",
+    "title": "InsurTech NY on core-system change without rip-and-replace",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.18,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "Stuck in upgrade purgatory?",
+    "note": "Promo tweet for a webinar; names the real carrier pain (core-system upgrade purgatory) but offers no reasoning behind it.",
+    "date": "2025-10-22",
+    "relevance": 0.45
+  },
+  {
+    "id": "s57",
+    "url": "https://demandzen.com/fintech-lead-generation-financial-services-buyers",
+    "kind": "blog",
+    "title": "Fintech Lead Generation: Why Finance Buyers Are Different",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-08-19",
+    "quote": "Fintech lead generation outreach designed for financial services buyers opens with regulatory and compliance awareness rather than feature and benefit positioning.",
+    "note": "Body is pure site navigation — the promised 'why finance buyers are different' argument never appears, and the publisher sells appointment setting.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s58",
+    "url": "https://www.dock.us/library/vendor-risk-assessments",
+    "kind": "blog",
+    "title": "Passing Vendor Risk Assessments: A guide for sales teams",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "every clarifying request made by a potential customer (on top of the original vendor risk assessment itself) adds an additional four days to the sales cycle",
+    "note": "Cites breach counts and cost, but they're borrowed stats framing a vendor's own deal-room fix; the security-review gauntlet itself transfers to any regulated buyer.",
+    "date": "2023-04-18",
+    "relevance": 0.45
+  },
+  {
+    "id": "s59",
+    "url": "https://thepointco.com/why-your-ciso-will-not-take-a-cold-call-and-how-cybersecurity-vendors-are-getting-past-that/",
+    "kind": "blog",
+    "title": "Why Your CISO Will Not Take a Cold Call — And How Cybersecurity Vendors Are Getting Past That",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Only nav chrome and a tag cloud survived the scrape — the CISO gatekeeping thesis is asserted in the title and nowhere in the text.",
+    "date": "2026-06-23",
+    "relevance": 0.3
+  },
+  {
+    "id": "s60",
+    "url": "https://hyperproof.io/23-nycrr-500-cybersecurity-regulation/",
+    "kind": "docs",
+    "title": "NYDFS Part 500 (23 NYCRR 500) Cybersecurity Compliance",
+    "angleIds": [
+      "regulation-shapes-buying"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "A GRC vendor's marketing guide, not the regulator's text; 23 NYCRR 500 does bind NY-licensed insurers, but nothing insurance-specific appears in the captured body.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s61",
+    "url": "https://foundershield.com/insurance-faqs/general-faqs/can-you-provide-a-ranking-of-a-m-best-ratings-along-with-financial-size-categories/",
+    "kind": "blog",
+    "title": "A.M. Best Ratings Ranked, With Financial Size Categories",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "Greater than $2 billion",
+    "note": "Practising broker explaining a real industry rating scale, but the scrape cuts off before the size-category figures and it says nothing about how executives buy.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s62",
+    "url": "https://content.naic.org/insurance-topics/financial-data-repository",
+    "kind": "docs",
+    "title": "NAIC Financial Data Repository",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "date": "2026",
+    "quote": "The FDR database contains 10 years of annual and quarterly financial data",
+    "note": "Primary NAIC catalog entry — authoritative account-research input for US carriers, but a one-line stub with no reasoning to assess.",
+    "relevance": 0.7
+  },
+  {
+    "id": "s63",
+    "url": "https://content.naic.org/industry/insdata",
+    "kind": "docs",
+    "title": "InsData — NAIC",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "quote": "Free Company Overview Report (complaint and Financial Information)",
+    "note": "Official NAIC free company reports; genuinely usable for pre-call carrier research, though the text is a bare description.",
+    "relevance": 0.7
+  },
+  {
+    "id": "s64",
+    "url": "https://content.naic.org/industry/serff",
+    "kind": "docs",
+    "title": "System for Electronic Rates & Forms Filing (SERFF) — NAIC",
+    "angleIds": [
+      "insurance-data-sources",
+      "trigger-events"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "quote": "SERFF Filing Access provides consumers and stakeholders with convenient online access to publicly available Rate and Form Filings, as well as Health Plan Binder information.",
+    "note": "Official rate-and-form filing access — a real trigger signal for insurance outreach timing, but the entry offers no argument, just the pointer.",
+    "relevance": 0.72
+  },
+  {
+    "id": "s65",
+    "url": "https://www.insurance.wa.gov/insurers-regulated-entities/rate-and-form-filing/search-company-filings-serff-filing-access",
+    "kind": "docs",
+    "title": "Search company filings with SERFF Filing Access — Washington OIC",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.93,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Official state regulator page — genuine primary source for carrier rate/form filings, but the captured text is nav chrome with no method for using it in prospecting.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s66",
+    "url": "https://doi.nebraska.gov/consumer/company-and-producer-search",
+    "kind": "docs",
+    "title": "Company and Producer Search — Nebraska Department of Insurance",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Official Nebraska DOI company/producer lookup; primary and verifiable, but scraped text is menus plus an SBS affiliation note, not usable prospecting guidance.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s67",
+    "url": "https://www.dakota.com/resources/blog/the-top-insurance-company-databases",
+    "kind": "blog",
+    "title": "The Top Insurance Company Databases: 2026 Guide",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-08-07",
+    "quote": "U.S. insurers held $639 billion in Schedule BA assets...at year-end 2025, a 10.5% increase from the prior year",
+    "note": "Vendor listicle from a database seller and the captured text is entirely site navigation — the conclusion it sells is its own product; also aimed at asset-raisers, not C-suite insurance selling.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s68",
+    "url": "https://x.com/CarrierSource/status/1857086518478635331",
+    "kind": "x",
+    "title": "CarrierSource on X: prospecting demo for finding top-rated carriers and brokerages",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Our latest blog includes a full prospecting demo to help you get the most from CarrierSource and consistently find top-rated carriers and brokerages for your needs.",
+    "note": "One-line vendor tweet promoting its own prospecting demo; no mechanism, no evidence, and the actual content sits behind the link.",
+    "date": "2024-11-14",
+    "relevance": 0.25
+  },
+  {
+    "id": "s69",
+    "url": "https://www.youtube.com/watch?v=jeUCBWgGX_I",
+    "kind": "youtube",
+    "title": "How to Analyze an Insurance Book of Business",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "adjacent",
+    "note": "Title only — no transcript, so nothing to evaluate; book-of-business analysis is insurance-adjacent but says nothing about reaching executives.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s70",
+    "url": "https://www.klaros.com/post/how-and-why-to-read-a-bank-s-call-report",
+    "kind": "blog",
+    "title": "How (and why) to read a bank's call report",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.7,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2023-10-31",
+    "quote": "Reading a bank call report is a basic but necessary skill for anyone interacting with a bank",
+    "note": "Credible bank-advisory firm explaining why and how to mine a primary regulatory filing — the transferable pattern, but it is banking, not insurance.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s71",
+    "url": "https://visbanking.com/fdic-call-reports-the-banking-data-goldmine-explained",
+    "kind": "blog",
+    "title": "FDIC Call Reports: The Banking Data Goldmine Explained",
+    "angleIds": [
+      "insurance-data-sources"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Competent but generic SEO explainer on FDIC call reports from a data vendor; wrong regulator, wrong industry, and it sells the access tooling.",
+    "date": "2025-08-26",
+    "relevance": 0.15
+  },
+  {
+    "id": "s72",
+    "url": "https://riskandinsurance.com/insurance-agent-and-broker-ma-deal-count-declines-in-2025/",
+    "kind": "blog",
+    "title": "Insurance Agent and Broker M&A Deal Count Declines in 2025",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-01-23",
+    "note": "Established trade publication on broker/agency M&A — exactly the trigger-event beat for this target, but the captured text is all site chrome with the deal-count figures cut off.",
+    "relevance": 0.75
+  },
+  {
+    "id": "s73",
+    "url": "https://riskandinsurance.com/u-s-insurers-face-increasing-ratings-downgrades/",
+    "kind": "blog",
+    "title": "U.S. Insurers Face Increasing Ratings Downgrades",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2024-09-12",
+    "quote": "52% increase in credit rating downgrades in 2023 over 2022",
+    "note": "Trade outlet on a genuine carrier trigger event, but the captured text is 95% site navigation with the article cut off at the first sentence.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s74",
+    "url": "https://www.carriermanagement.com/news/2026/03/27/286177.htm",
+    "kind": "blog",
+    "title": "More Insurance M&A Deals on the Horizon?",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-03-27",
+    "quote": "We're seeing a steady return to strategic dealmaking across the sector, driven less by any single transaction and more by market fundamentals.",
+    "note": "Publication written for P/C carrier executives and M&A is a real trigger, yet nothing but menus survived the scrape.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s75",
+    "url": "https://news.ambest.com/pr/PressContent.aspx?altsrc=2&refnum=37306",
+    "kind": "docs",
+    "title": "Best's Special Report: Personal Auto and Homeowners Markets' Stabilization Evident Despite a Decline in Approved Rate Changes",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.92,
+    "soundness": 0.75,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Primary rating-agency release with measured rate-change figures and a stated mechanism; it is market context, not buyer behaviour.",
+    "date": "2026-05-18",
+    "relevance": 0.6
+  },
+  {
+    "id": "s76",
+    "url": "https://abmatic.ai/blog/abm-for-insurtech-2026",
+    "kind": "blog",
+    "title": "ABM for Insurtech 2026: Target Carriers and MGAs",
+    "angleIds": [
+      "trigger-events",
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "Insurance buyers do not consume content the way SaaS buyers do",
+    "note": "Vendor selling the conclusion and the body is pure product menu — the carrier/MGA targeting exists only in the title.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s77",
+    "url": "https://www.russellreynolds.com/en/insights/reports-surveys/redefining-insurance-ceos-as-conductors-of-change",
+    "kind": "blog",
+    "title": "Orchestrating the Future: Redefining Insurance CEOs as Conductors of Change",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Credible search firm with first-hand access to insurance CEOs, but zero report content was captured to judge.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s78",
+    "url": "https://prospeo.io/s/new-hire-buying-signals",
+    "kind": "blog",
+    "title": "New Hire Buying Signals: The 90-Day Playbook",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "70% of new executives make a technology purchase within their first 100 days",
+    "note": "Data vendor promoting its own signal product; captured text is navigation with no playbook and nothing insurance-specific.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s79",
+    "url": "https://www.getboomerang.ai/glossaries/buying-signals-triggers-intent-2026",
+    "kind": "blog",
+    "title": "Buying Signals vs Buying Triggers vs Buying Intent: The Complete 2026 Guide",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "Funding decays 50% every 60 days. Champion job changes stay hot for 90-120 days. Third-party topic intent decays 50% every 30 days.",
+    "note": "Vendor glossary page with no argument or evidence in the text, just feature listings.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s80",
+    "url": "https://www.autobound.ai/blog/sales-trigger-events-templates",
+    "kind": "blog",
+    "title": "15 Sales Trigger Events That Convert",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-02-08",
+    "quote": "Speed is not everything, but it is a significant competitive advantage",
+    "note": "Signal-data vendor whose 15 trigger events never appear in the captured text; generic outbound craft at best.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s81",
+    "url": "https://www.youtube.com/watch?v=VSnNQHei178",
+    "kind": "youtube",
+    "title": "Signals vs. Triggers: The Prospecting Mistake Most Sales Reps Make",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only — no transcript, no argument, and nothing insurance-specific to evaluate.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s82",
+    "url": "https://www.linkedin.com/top-content/marketing/email-marketing-improvement/effective-email-outreach-for-m-a-sponsors/",
+    "kind": "blog",
+    "title": "Effective Email Outreach for M&A Sponsors",
+    "angleIds": [
+      "trigger-events"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "AI-summarized LinkedIn roundup; the relationship-driven, research-first framing transfers but it is M&A dealmaking, not insurance executives.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s83",
+    "url": "http://www.ambest.com/ratings/fsc/default.asp",
+    "kind": "docs",
+    "title": "AM Best Financial Size Category (FSC)",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Official AM Best FSC page — exactly the right sizing authority for carriers, but the fetch returned only a Radware bot-check, so there is no content to weigh.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s84",
+    "url": "https://www.safetynational.com/safety-national-surpasses-2-billion-in-surplus-to-achieve-a-m-best-financial-size-category-xv/",
+    "kind": "blog",
+    "title": "Safety National Surpasses $2 Billion in Surplus to Achieve A.M. Best Financial Size Category XV",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "A FSC of XV designates adjusted policyholders' surplus above $2 billion and is the highest FSC a company can achieve.",
+    "note": "Company press release: real $2B surplus / FSC XV figure that shows the AM Best scale in practice, but it is self-promotional and says nothing about selling to these buyers.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s85",
+    "url": "https://www.leadersedge.com/brokerage-ops/benchmarking-data-for-brokerage-operations",
+    "kind": "blog",
+    "title": "Benchmarking Data for Brokerage Operations | Leader's Edge Magazine",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2024-10-31",
+    "quote": "Just over half of the 135 respondents report annual revenue between $50 million and $499 million, with most between $100 million and $499 million.",
+    "note": "Council of Insurance Agents & Brokers survey, n=135 including CEO/CFO/COO, with revenue and headcount bands — the most usable deal-sizing evidence here, though self-reported and only a sub-$500M subse",
+    "relevance": 0.75
+  },
+  {
+    "id": "s86",
+    "url": "https://www.sonant.ai/blog/insurance-agency-benchmarks",
+    "kind": "blog",
+    "title": "Insurance Agency Benchmarks 2026: 25+ KPIs to Track Success",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-08-13",
+    "quote": "Revenue per employee should land between $150,000 to $250,000 per employee. Best Practices agencies at the higher end of the revenue scale routinely exceed $200,000 per employee, while smaller agencies often fall in the $120,000-$160,000 range.",
+    "note": "Vendor selling AI voice agents to agencies; the promised 25+ KPIs never appear — only navigation chrome and two unverified case-study ROI claims.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s87",
+    "url": "https://riskandinsurance.com/insurance-agencies-achieve-record-growth-despite-market-headwinds/",
+    "kind": "blog",
+    "title": "Insurance Agencies Achieve Record Growth Despite Market Headwinds",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-08-14",
+    "quote": "Best Practices agencies delivered another year of excellent results",
+    "note": "Credible trade outlet on agency growth, but the captured text is entirely site navigation with no article body to assess.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s88",
+    "url": "https://vendisys.com/blog/icp-tiering-prioritize-outbound-accounts-by-fit-score/",
+    "kind": "blog",
+    "title": "ICP Tiering: How to Prioritize Outbound Accounts by Fit Score",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07-27",
+    "quote": "an SDR running a full Tier 1 motion can work 15 to 25 accounts per week",
+    "note": "Outbound vendor, but it does explain the mechanism for tiering inside an ICP — reasoned craft advice with zero data and nothing insurance-specific.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s89",
+    "url": "https://hginsights.com/hg-product-briefs/account-segmentation-tiering",
+    "kind": "blog",
+    "title": "How to Segment & Tier Accounts for Effective ABM Programs",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Vendor product-brief page that scraped as pure site navigation — no argument, no evidence, nothing on insurance.",
+    "relevance": 0.08
+  },
+  {
+    "id": "s90",
+    "url": "https://tomba.io/blog/company-sizes",
+    "kind": "blog",
+    "title": "Company Sizes: SMB vs Mid-Market vs Enterprise",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Lead-gen tool blog whose captured text is entirely menu chrome; the SMB/mid-market/enterprise framing never appears, let alone insurance.",
+    "relevance": 0.08
+  },
+  {
+    "id": "s91",
+    "url": "https://www.youtube.com/watch?v=wTgfhbV5ox8",
+    "kind": "youtube",
+    "title": "Exactly How to Build The Perfect Lead List",
+    "angleIds": [
+      "list-qualification"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only, zero transcript — nothing to evaluate and nothing target-specific.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s92",
+    "url": "https://www.insurancethoughtleadership.com/claims/claims-leakage-costs-insurers-billions-annually",
+    "kind": "blog",
+    "title": "Claims Leakage Costs Insurers Billions Annually",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-07-14",
+    "quote": "Across the industry, it typically accounts for between 7% and 14% of total claims payouts, against insured losses that regularly exceed $100 billion annually.",
+    "note": "Credible insurance trade outlet naming claims leakage as a process-and-judgment problem — useful pain vocabulary, but the excerpt stops before any of the 'billions' is quantified.",
+    "relevance": 0.62
+  },
+  {
+    "id": "s93",
+    "url": "https://thelabconsulting.com/reduce-insurance-claims-leakage-loss-ratio-via-standardization-business-intelligence-robotic-process-automation-rpa/",
+    "kind": "blog",
+    "title": "How to reduce insurance claims leakage—and the loss ratio—via standardization, business intelligence, and RPA",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2020-04-02",
+    "quote": "The Lab routinely documents 20 to 30 percent, and even more",
+    "note": "Consultancy selling standardization/RPA as the cure for the leakage it describes; on-industry language but self-interested and the body is all nav.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s94",
+    "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/financial-services-industry-outlooks/insurance-industry-outlook.html",
+    "kind": "docs",
+    "title": "2026 global insurance outlook — Deloitte Insights",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-10-09",
+    "quote": "The combined ratio is expected to worsen from 97.2% in 2024 to 98.5% and 99% in 2025 and 2026",
+    "note": "Deloitte insurance outlook is a high-trust primary research source for executive priorities, though the scraped text is navigation with no findings to check.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s95",
+    "url": "https://upliift.com/2026/02/02/roi-in-insurtech/",
+    "kind": "blog",
+    "title": "Why ROI matters more than ever in InsurTech",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-02-02",
+    "quote": "Innovation teams may sponsor projects, but finance and operations increasingly determine whether those projects scale beyond a pilot.",
+    "note": "Vendor-adjacent but the mechanism is stated plainly and echoed by a named CEO: insurers now gate purchases on a measurable core-metric impact — weakened for US targets since it is explicitly about Eur",
+    "relevance": 0.55
+  },
+  {
+    "id": "s96",
+    "url": "https://www.linkedin.com/pulse/insurtech-start-ups-guide-navigating-insurance-stephen-goldstein/",
+    "kind": "blog",
+    "title": "An Insurtech start-up's guide to navigating an Insurance carrier",
+    "angleIds": [
+      "insurance-pain-language",
+      "subject-and-first-line",
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2018-03-03",
+    "quote": "Is your solution one that is going to help a carrier save costs and/or increase revenue?",
+    "note": "First-hand insurance-distribution operator writing exactly to vendors selling into carriers; experience-based rather than evidenced, and 2018-vintage.",
+    "relevance": 0.72
+  },
+  {
+    "id": "s97",
+    "url": "https://www.mckinsey.com/industries/financial-services/our-insights/how-insurers-can-improve-combined-ratios-by-five-percentage-points",
+    "kind": "docs",
+    "title": "How insurers can improve combined ratios by five percentage points",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "date": "2025",
+    "note": "McKinsey carries weight, but only a headline survives here — the 'five points' claim has no visible evidence behind it.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s98",
+    "url": "https://insuranceindustryblog.iii.org/u-s-p-c-market-records-hard-earned-decade-low-combined-ratio/",
+    "kind": "blog",
+    "title": "U.S. P/C Market Records Hard-Earned Decade-Low Combined Ratio (Triple-I)",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Industry body plus Milliman actuarial projections — real macro figures, though it describes the market rather than how to sell into it.",
+    "date": "2026-05-14",
+    "relevance": 0.6
+  },
+  {
+    "id": "s99",
+    "url": "https://www.claimsjournal.com/news/national/2025/10/30/333711.htm",
+    "kind": "blog",
+    "title": "The Impact of Nuclear Verdicts on Casualty Claims",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-10-30",
+    "note": "Trade press citing Chamber ILR verdict data; strong pain vocabulary, but aimed at claims staff not the C-suite buyer.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s100",
+    "url": "https://content.naic.org/insurance-topics/social-inflation",
+    "kind": "docs",
+    "title": "Insurance Topics: Social Inflation — NAIC",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "niche",
+    "note": "Authoritative regulator source in name only — the text is a bare topic title with no argument to weigh.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s101",
+    "url": "https://www.youtube.com/watch?v=jsZ0Jtt21IY",
+    "kind": "youtube",
+    "title": "Loss Ratio vs Combined Ratio",
+    "angleIds": [
+      "insurance-pain-language"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title-only explainer of basic ratio definitions; nothing about these buyers or this deal.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s102",
+    "url": "https://sortspoke.com/blog/why-soc-2-type-2-certification-matters",
+    "kind": "blog",
+    "title": "SOC 2 Type 2? What Insurance Carriers Need to Know",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2025-12-04",
+    "quote": "Carrier CIOs and CISOs now routinely require SOC 2 reports before approving any vendor that touches submission data. It's become table stakes for procurement.",
+    "note": "Vendor selling into carriers writes about the trust bar it must clear — the captured text is mostly site navigation and capacity claims.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s103",
+    "url": "https://episki.com/blog/soc2-for-insurance",
+    "kind": "blog",
+    "title": "SOC 2 for Insurance & Insurtech: Complete 2026 Guide",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-04-08",
+    "quote": "Carriers now require SOC 2 from MGAs and program administrators. MGAs require it from their tech vendors.",
+    "note": "Names the actual insurance compliance stack (NAIC Model Law, GLBA, NYDFS 500), but it's a compliance vendor arguing you need what it sells, with zero numbers.",
+    "relevance": 0.7
+  },
+  {
+    "id": "s104",
+    "url": "https://informaconnect.com/an-insurtech-start-ups-guide-to-navigating-an-insurance-carrier/",
+    "kind": "blog",
+    "title": "An InsurTech start-up's guide to navigating an insurance carrier",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2018-03-13",
+    "quote": "The carrier will also want to assess your solution against 3 or 4 others in the market.",
+    "note": "First-hand operator on navigating carrier buying process — directly on target, but 2018-vintage, startup-framed, and pure experience with no data.",
+    "relevance": 0.75
+  },
+  {
+    "id": "s105",
+    "url": "https://mitratech.com/resource-hub/blog/nydfs-23-nycrr-500/",
+    "kind": "blog",
+    "title": "NYDFS 23 NYCRR 500: How to Meet Third-Party Risk Management Requirements",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2023-02-27",
+    "quote": "access controls, multi-factor authentication (MFA), encryption, and incident response reporting",
+    "note": "Vendor GRC blog whose visible text is almost entirely site navigation; NYDFS 500 is genuinely on-point for US insurance carriers but nothing substantive is shown here.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s106",
+    "url": "https://iomergent.com/does-soc-2-help-close-deals/",
+    "kind": "blog",
+    "title": "Does SOC 2 Help Close Deals? Yes — Here's How Much",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "SOC 2 typically costs $50K-$150K in the first year including audit fees, tooling, and consultant support.",
+    "note": "Security consultancy asserting SOC 2 closes deals with zero data despite the 'how much' headline — the vendor sells the fix.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s107",
+    "url": "https://www.globalbankingandfinance.com/no-soc-2-no-deal-why-you-re-already-losing-clients-and-what-you-can-do-about-it/",
+    "kind": "blog",
+    "title": "No SOC 2, No Deal: Why You're Already Losing Clients",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-11-12",
+    "quote": "29% of organizations lost deals for lacking compliance, and 72% underwent audits specifically to win business",
+    "note": "Global Banking & Finance openly labels its content as commissioned advertorial; body text never appears past the disclaimer.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s108",
+    "url": "https://www.vanta.com/resources/zero-touch-assessments-future-of-security-reviews",
+    "kind": "blog",
+    "title": "Why zero-touch assessments are the future of security reviews",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-08-18",
+    "quote": "security teams are spending more time on security review: 7 hours per week (~9 weeks per year) on vendor security assessments, two weeks more than the previous year.",
+    "note": "Vanta marketing page selling the exact product it argues for, and the captured text is pure nav menu.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s109",
+    "url": "https://www.webanatomy.ai/best-landing-pages/insurtech",
+    "kind": "blog",
+    "title": "Best InsurTech Website Examples (And Why They Convert)",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Bestow shows \"Trusted by partners like\" with logos for Transamerica, USAA, and Nationwide immediately.",
+    "note": "AI-scored insurtech homepages — consumer D2C insurance brands, not carrier/broker exec buying, and the scoring rubric is unexplained.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s110",
+    "url": "https://aws.amazon.com/blogs/startups/the-impact-of-compliance-on-the-saas-sales-cycle/",
+    "kind": "blog",
+    "title": "The Impact of Compliance on the SaaS Sales Cycle",
+    "angleIds": [
+      "vendor-due-diligence-proof"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "AWS startups blog carries some institutional weight but the retrieved text is navigation chrome with no argument to judge.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s111",
+    "url": "https://salesmotion.io/blog/cold-email-executives-reply-rates",
+    "kind": "blog",
+    "title": "Cold Emailing Executives: What the Reply Data Shows",
+    "angleIds": [
+      "subject-and-first-line",
+      "words-that-get-you-binned",
+      "the-ask",
+      "ask-for-the-owner",
+      "handling-replies"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-02-16",
+    "quote": "C-level executives are 30.2% less likely to reply to cold emails than non-executive buyers.",
+    "note": "Vendor blog, but it relays Gong's million-cycle executive dataset with specific thresholds and a stated mechanism; executive-buyer fit is strong, insurance context absent.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s112",
+    "url": "https://prospeo.io/s/cold-email-subject-line-examples",
+    "kind": "blog",
+    "title": "Cold Email Subject Line Examples (5.5M Emails Tested)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Personalized subject lines pulled 46% opens vs 35% without and doubled reply rates from 3% to 7%",
+    "note": "Big claimed sample (5.5M emails) from a lead-data vendor, but the excerpt shows only nav — no methodology and nothing about regulated or executive buyers.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s113",
+    "url": "https://x.com/scaling_shields/status/2030187955428675911",
+    "kind": "x",
+    "title": "James Shields on a subject line format that moved open rates 41% to 74%",
+    "angleIds": [
+      "subject-and-first-line",
+      "named-peer-line"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "i found a subject line hack that took our open rates from 41% to 74% overnight",
+    "note": "Anonymous-tier growth account bragging about a 'borderline unethical' open-rate jump with no controls, no sample size, and the actual tactic truncated away.",
+    "date": "2026-03-07",
+    "relevance": 0.08
+  },
+  {
+    "id": "s114",
+    "url": "https://x.com/AndrewPierno/status/1616073498715201536",
+    "kind": "x",
+    "title": "Andrew Pierno on the highest-open-rate subject line across 1000+ campaigns",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "The #1 Cold Email subject line on Super Send so far for highest open rate (while sending over 250 emails out of over 1000 campaigns) was \"I have tips for {{company_name}}\" over 80% open rate",
+    "note": "Vendor founder citing his own tool's data, but 250 sends is a trivial sample and open rate is a vanity metric that ignores gatekeepers and reply quality.",
+    "date": "2023-01-19",
+    "relevance": 0.08
+  },
+  {
+    "id": "s115",
+    "url": "https://x.com/smartlead_ai/status/2079182631049281667",
+    "kind": "x",
+    "title": "Smartlead: what 850M+ cold emails show separates the top 10% of senders",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Write less: Emails under 50 words get the most replies",
+    "note": "850M-email sample is genuinely large, but it's the sending platform marketing itself and the post is truncated before any mechanism or segmentation appears.",
+    "date": "2026-07-20",
+    "relevance": 0.15
+  },
+  {
+    "id": "s116",
+    "url": "https://coldemailing101.com/blog/insurance-agents-agencies",
+    "kind": "blog",
+    "title": "The Ultimate Cold Email Playbook for Selling to Insurance Agents & Agencies (2026)",
+    "angleIds": [
+      "subject-and-first-line",
+      "named-peer-line",
+      "the-ask",
+      "domain-setup",
+      "follow-up-touches",
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-01",
+    "quote": "Keep it brief and relevant to their specific niche. Use lowercase for a more casual, internal feel.",
+    "note": "Genuinely written about the insurance vertical and the spam-radar mechanism, but it's SEO content-marketing for a sending tool, the '95%' figure is invented, and it targets agents/agency owners rather",
+    "relevance": 0.5
+  },
+  {
+    "id": "s117",
+    "url": "https://leadhaste.com/blog/cold-email-template-for-insurance",
+    "kind": "blog",
+    "title": "Cold Email Template for Insurance (Copy-Paste Examples That Get Replies)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "note": "Title only — no body text to judge, so nothing can be credited beyond the insurance framing.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s118",
+    "url": "https://www.cleverly.co/blog/cold-email-benchmarks-by-industry",
+    "kind": "blog",
+    "title": "Cold Email Benchmarks by Industry: What Open, Reply & Meeting Rates Should You Expect?",
+    "angleIds": [
+      "subject-and-first-line",
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-07-28",
+    "quote": "Subject lines between 6–10 words perform best",
+    "note": "Agency-published benchmark roundup with one real figure (27.7%) surfacing before the text turns to nav chrome and a pitch for their own service; industry cuts may cover insurance but aren't shown.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s119",
+    "url": "https://martal.ca/cold-email-subject-line/",
+    "kind": "blog",
+    "title": "Cold Email Subject Lines That Actually Get Opened (2026)",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Listicle from an outbound agency; the excerpt is almost entirely site navigation, with insurance appearing only as an industry menu item.",
+    "date": "2026-08-08",
+    "relevance": 0.08
+  },
+  {
+    "id": "s120",
+    "url": "https://tomba.io/blog/cold-email-reddit",
+    "kind": "blog",
+    "title": "Cold Email Reddit: What r/Sales Gets Wrong (2026)",
+    "angleIds": [
+      "subject-and-first-line",
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "A 12% reply rate on 60 emails to warm-adjacent contacts is not comparable to a 2% reply rate on 3,000 cold contacts",
+    "date": "2026",
+    "note": "Excerpt is pure product menu from an email-finder vendor — no argument, no data, nothing about insurance executives.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s121",
+    "url": "https://www.youtube.com/watch?v=zTgj7zOg-TU",
+    "kind": "youtube",
+    "title": "I Tried 225 Cold Email Subject Lines, These Are The Best",
+    "angleIds": [
+      "subject-and-first-line"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2025-03",
+    "note": "Title promises a 225-line test but the captured text is only the headline — no findings, no method, nothing to evaluate.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s122",
+    "url": "https://tomba.io/blog/case-study-email-template",
+    "kind": "blog",
+    "title": "Case Study Email Template: 7 Proven Examples (2026)",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-06-23",
+    "quote": "Lead with the metric, not the customer logo. 'Cut onboarding from 14 days to 3' outperforms 'We helped Acme Corp.'",
+    "note": "Captured text is pure vendor nav boilerplate from an email-finder tool; zero substantive content on case-study emails.",
+    "relevance": 0.08
+  },
+  {
+    "id": "s123",
+    "url": "https://www.scaledmail.com/blogs/how-to-use-social-proof-in-cold-emails",
+    "kind": "blog",
+    "title": "How to Use Social Proof in B2B Cold Emails to Win Clients",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-02-08",
+    "quote": "Use logos sparingly and only include ones that are highly relevant to the industry of the prospect you're targeting. Be sure to obtain permission from clients before including their logos in any outreach.",
+    "note": "Names the trust mechanism behind social proof but stays at vibes level with no data, from a vendor selling the outreach service.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s124",
+    "url": "https://litemail.ai/blog/cold-email-insurance-agents-2026",
+    "kind": "blog",
+    "title": "Cold Email for Insurance Agents 2026: The Compliant Playbook",
+    "angleIds": [
+      "named-peer-line",
+      "the-ask",
+      "domain-setup",
+      "insurance-email-security",
+      "handling-replies",
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "I recently helped a [similar type of business] in [industry/region] save $X on their [coverage type] renewal without reducing coverage.",
+    "date": "2026-09-08",
+    "note": "Insurance-vertical framing and a 0.6%→2.4% anecdote, but it is one unverifiable case and the vendor sells the pre-warmed inboxes it credits for the lift.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s125",
+    "url": "https://www.leadbeam.ai/blog/b2b-insurance-sales",
+    "kind": "blog",
+    "title": "B2B Insurance Sales: How to Win Corporate Clients in 2025",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-05-18",
+    "quote": "Build strong relationships with accountants, bankers, and lawyers. They can introduce you to great companies that need your help.",
+    "note": "Thin AI-flavored guide (unfilled 'Example H2' placeholders leaked into the page) about selling insurance to corporates, not about reaching insurance executives.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s126",
+    "url": "https://litemail.ai/blog/cold-email-financial-services-2026",
+    "kind": "blog",
+    "title": "Cold Email for Financial Services 2026: Compliance & Strategy",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Sensible framing of compliance and heavy filtering as design constraints for finance buyers, but it is vendor content with no measured evidence in the excerpt.",
+    "date": "2026-04-01",
+    "relevance": 0.35
+  },
+  {
+    "id": "s127",
+    "url": "https://x.com/coldemailchris/status/2048899467743752412",
+    "kind": "x",
+    "title": "Christian on X: analysis of 4,055 cold email script variants across 1,160 campaigns",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Claude code analyzed 4,055 cold email script variants across 1,160 campaigns that I launched in 2025.",
+    "note": "Large first-hand corpus (4,055 variants, 1,160 campaigns) but the output is an unaudited LLM trait listicle with no reply-rate deltas attached.",
+    "date": "2026-04-27",
+    "relevance": 0.15
+  },
+  {
+    "id": "s128",
+    "url": "https://x.com/DeanFiacco/status/2027009542744088644",
+    "kind": "x",
+    "title": "Dean Fiacco on X: the real math behind cold email",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "→ A good reply rate: 1-3%",
+    "note": "Operator-grade funnel math (1-3% reply) stated as a baseline, but it is agency-wide craft with nothing specific to insurance executives.",
+    "date": "2026-02-26",
+    "relevance": 0.15
+  },
+  {
+    "id": "s129",
+    "url": "https://www.youtube.com/watch?v=36VHqlfWjwY",
+    "kind": "youtube",
+    "title": "How To Send Targeted Cold Emails At Scale Using Clay",
+    "angleIds": [
+      "named-peer-line"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only, zero transcript — a tooling demo with nothing to evaluate and nothing about insurance.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s130",
+    "url": "https://www.builtforb2b.com/blog/ai-cold-email-how-to-use-ai-without-killing-reply-rate",
+    "kind": "blog",
+    "title": "AI Cold Email: How to Use AI Without Killing Your Reply Rate",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-09-07",
+    "quote": "Under 60 words. No buzzwords. No questions in the opener. End with one specific ask",
+    "note": "Agency practitioner with a plausible mechanism and a 3.4% reply benchmark, but it's a service pitch and the benchmark has no stated sample.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s131",
+    "url": "https://www.zerobounce.net/email-buzzwords",
+    "kind": "blog",
+    "title": "The Top 10 Most Overused Email Buzzwords (ZeroBounce study)",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "After combing through 1,000,967 real emails, ZeroBounce uncovered the most overused buzzwords in business email.",
+    "note": "1,000,967-email sample is real, but it counts cliché frequency only and never links a phrase to reply outcomes; vendor sells inbox hygiene.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s132",
+    "url": "https://www.monitaur.ai/blog-posts/ai-washing-is-the-new-greenwashing-and-regulators-are-paying-attention",
+    "kind": "blog",
+    "title": "AI washing is the new greenwashing, and regulators are paying attention",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "A vendor's marketing copy describes a model in aspirational terms. The carrier procures the vendor and reuses the same language in its own materials.",
+    "note": "Extracted text is pure site navigation from an AI-governance vendor — the insurance angle exists only in a menu item.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s133",
+    "url": "https://www.forbes.com/councils/forbesfinancecouncil/2025/04/29/ai-washing-in-insurance-are-companies-overpromising-and-underdelivering/",
+    "kind": "blog",
+    "title": "AI-Washing In Insurance: Are Companies Overpromising And Underdelivering?",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-04-29",
+    "quote": "True AI involves machine learning, systems that learn from data and improve over time. In contrast, automation follows preset rules without adapting.",
+    "note": "Forbes Councils is contributor/pay-to-play, and the body never loaded — only a headline about insurers overpromising AI.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s134",
+    "url": "https://agentsync.io/blog/insurance-101/the-unfair-trade-practices-act",
+    "kind": "blog",
+    "title": "The Unfair Trade Practices Act",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2023-04-17",
+    "quote": "Misrepresentation or false advertising of any aspect of an insurance policy is considered an unfair trade practice.",
+    "note": "Insurance-compliance vendor explaining a law that genuinely constrains claims language, but the scrape captured only nav chrome.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s135",
+    "url": "https://content.naic.org/sites/default/files/model-law-880.pdf",
+    "kind": "docs",
+    "title": "NAIC Model Unfair Trade Practices Act (MO-880-1)",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Primary NAIC model law — highest authority here, but the PDF extracted as binary noise so no argument is actually present.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s136",
+    "url": "https://www.carriermanagement.com/news/2022/06/28/237690.htm",
+    "kind": "other",
+    "title": "Don't Count Out InsurTech Disrupters, Carrier CEOs Say",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2022-06-28",
+    "quote": "they haven't taken over, which might have been the aim initially at least for certain of them, it's been more of a partnership model",
+    "note": "Trade press written for exactly these P/C carrier executives, yet the text is headlines and menus with no substantive claim.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s137",
+    "url": "https://www.insurancethoughtleadership.com/future-risk/where-insurtech-went-wrong",
+    "kind": "blog",
+    "title": "Where Insurtech Went Wrong",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2024-02-28",
+    "quote": "The early insurtech players believed they had a different model that would make the industry dinosaurs obsolete.",
+    "note": "Credible 38-year Munich Re executive on an industry trade outlet, but the retrieved text is almost entirely site chrome with only a bio stub — nothing on outreach language.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s138",
+    "url": "https://fintech.global/2026/03/24/the-next-phase-of-insurtech-from-disruption-to-durability/",
+    "kind": "blog",
+    "title": "The next phase of InsurTech: From disruption to durability",
+    "angleIds": [
+      "words-that-get-you-binned"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-03-24",
+    "note": "Trade-press aggregator page captured as pure navigation menu; no argument, evidence, or content to assess.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s139",
+    "url": "https://growleads.io/blog/interest-based-ctas-vs-meeting-requests-study/",
+    "kind": "blog",
+    "title": "Interest-Based CTAs Beat Meeting Requests: 304K Email Study",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-12-22",
+    "quote": "Interest-based CTAs that trigger curiosity and avoid time requests outperform direct meeting asks by 2.5x in cold outreach stages.",
+    "note": "Headline claims a 304K-email study but the body here is all agency navigation — the vendor sells the CTA fix and no methodology is visible.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s140",
+    "url": "https://puzzleinbox.com/blog/cold-email-cta-best-practices/",
+    "kind": "blog",
+    "title": "Cold Email CTAs: Why Soft Asks Outperform Hard Pitches 3-to-1",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-04-23",
+    "quote": "The soft-CTA reply rate is 3x the hard-CTA reply rate. Same email copy, same prospect list, different CTA — the difference is that dramatic.",
+    "note": "200K+ emails and a clean soft/medium/hard CTA split, but it's a deliverability vendor's own unaudited data with no controls and no exec or insurance segment.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s141",
+    "url": "https://www.salesforge.ai/blog/cold-email-ctas",
+    "kind": "blog",
+    "title": "30 Cold Email CTAs I've Tested (Backed by 1M+ Emails)",
+    "angleIds": [
+      "the-ask",
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-08-27",
+    "quote": "Interest-based cold email CTAs beat direct meeting asks on cold sends, and the Gong study of 304,000 emails proves it holds across industries.",
+    "note": "1M+ emails claimed in the title; retrieved text is entirely product menu, so the CTA list and any numbers are unverifiable from this capture.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s142",
+    "url": "https://www.gong.io/blog/do-execs-really-reply-to-cold-email-here-s-what-the-data-says",
+    "kind": "blog",
+    "title": "Do execs really reply to cold email? Here's what the data says",
+    "angleIds": [
+      "the-ask",
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.7,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-01-29",
+    "quote": "C-level executives are 30.2% less likely to reply to cold emails than non-executives",
+    "note": "Gong Labs has real conversation-data scale and gives a specific exec finding (C-level 30.2% less likely to reply) with a mechanism — offer over meeting request — though it's course marketing and not i",
+    "relevance": 0.55
+  },
+  {
+    "id": "s143",
+    "url": "https://firstsales.io/sales-guide/insurance-linkedin-outreach/",
+    "kind": "blog",
+    "title": "LinkedIn Outreach for Insurance | FirstSales Sales Guide",
+    "angleIds": [
+      "the-ask",
+      "ea-as-ally"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Open to seeing how this would look for {{company}}?",
+    "note": "Templated SEO 'industry guide' — the insurance framing is generic filler (2-6 month cycles, 'multiple stakeholders') with no evidence, no executive layer, and a trial CTA.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s144",
+    "url": "https://www.salescaptain.io/outreach-guide/how-to-do-cold-outreach-for-insurance-firms",
+    "kind": "blog",
+    "title": "How to Do Cold Outreach for Insurance Firms: Strategy, Templates, and Tools",
+    "angleIds": [
+      "the-ask",
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Would you be open to a brief call to explore these opportunities?",
+    "date": "2026",
+    "note": "Agency outreach guide that does name insurance personas, but it targets risk managers rather than C-suite/SVP buyers and offers assertions, not data.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s145",
+    "url": "https://www.youtube.com/watch?v=iwKdQFNqFjc",
+    "kind": "youtube",
+    "title": "I Tried 112 Cold Email CTAs, These Are The BEST",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title claims a 112-CTA test but the body is just the title — no data, no mechanism, nothing to evaluate.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s146",
+    "url": "https://www.youtube.com/watch?v=pP0msUqXnJU",
+    "kind": "youtube",
+    "title": "How to Book Executive Meetings Using Cold E-mail",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title-only scrape about executive cold email; no content to judge, so no credit for the exec angle it promises.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s147",
+    "url": "https://schoolofsdr.substack.com/p/how-to-write-effective-ctas-for-cold",
+    "kind": "blog",
+    "title": "How to Write Effective CTAs for Cold Emails That Actually Get Responses",
+    "angleIds": [
+      "the-ask"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Generic CTA advice with no evidence, and the urgency/'limited spots' tactic actively misfires on screened, long-cycle executive inboxes.",
+    "date": "2024-07-22",
+    "relevance": 0.15
+  },
+  {
+    "id": "s148",
+    "url": "https://pipeline.zoominfo.com/sales/12-tips-for-selling-to-the-c-suite",
+    "kind": "blog",
+    "title": "Selling to the C-Suite: A 2026 Guide for Sales Reps",
+    "angleIds": [
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07-07",
+    "quote": "You actually don't want a meeting with me right away,\" Schuck says. \"You want me to connect you with someone in the business who's going to take that meeting, and they will absolutely take that meeting. That's the game you're running when you reach out to me.",
+    "note": "Vendor content marketing whose scraped text is almost entirely site nav — the C-suite tips themselves never appear.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s149",
+    "url": "https://predictablerevenue.com/blog/15-minute-summary-of-predictable-revenue/",
+    "kind": "blog",
+    "title": "15-Minute Summary of Predictable Revenue",
+    "angleIds": [
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2022-02-07",
+    "quote": "send cold emails with the goal of receiving a referral to the key decision-maker",
+    "note": "Secondhand summary of a well-known playbook; the $100M figure is a single survivorship story from a 2000s SaaS motion, and the host sells the coaching.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s150",
+    "url": "https://www.slideshare.net/aaronross383/intro-to-cold-calling-2-presentation",
+    "kind": "other",
+    "title": "EBook: Introduction To Cold Calling 2.0 (Aaron Ross)",
+    "angleIds": [
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Failed page load — the text is a browser error, zero content.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s151",
+    "url": "https://blog.datananas.com/en/cold-calling-2-0/",
+    "kind": "blog",
+    "title": "What is Cold Calling 2.0?",
+    "angleIds": [
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Clear mechanism for the referral-from-above ask, but it is a vendor rehash of Ross with the same single $100M anecdote as its only evidence.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s152",
+    "url": "https://www.thesalesblog.com/blog/what-is-top-down-selling",
+    "kind": "blog",
+    "title": "Two Approaches to Top Down Selling [+ EXAMPLES]",
+    "angleIds": [
+      "ask-for-the-owner"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "generally do not advocate for shooting straight for the CEO in a modern sales approach",
+    "note": "Iannarino is a credible first-hand enterprise-sales operator, but the scrape captured only site navigation — none of the top-down selling argument survives.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s153",
+    "url": "https://www.getinboxzero.com/blog/post/executive-inbox-management-guide",
+    "kind": "blog",
+    "title": "How to Manage an Executive Inbox (2026)",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "EA can handle it now (reply, forward, file, schedule)",
+    "note": "Tool-agnostic triage system, but it's Inbox Zero's own blog selling the fix and the excerpt is all framing, no measured evidence.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s154",
+    "url": "https://prospeo.io/s/email-outreach-to-executives",
+    "kind": "blog",
+    "title": "Email Outreach to Executives: Data-Backed Guide (2026)",
+    "angleIds": [
+      "writing-for-the-ea",
+      "follow-up-touches"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "A CEO's executive assistant spends two hours every morning doing one thing: deleting emails. Out of 400-500 messages that hit the inbox overnight, at least half are vendor newsletters, conference invites, and cold pitches",
+    "note": "Title promises data on executive outreach but the captured text is pure site navigation — nothing to evaluate.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s155",
+    "url": "https://prospeo.io/s/how-to-get-past-executive-assistant",
+    "kind": "blog",
+    "title": "How to Get Past an Executive Assistant: Scripts & Tactics (2026)",
+    "angleIds": [
+      "writing-for-the-ea",
+      "ea-as-ally"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "Explaining why you're calling produces a 2.1x higher success rate",
+    "note": "Scripts for getting past an EA would be on-angle, but the scraped body is only menu chrome from a lead-data vendor.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s156",
+    "url": "https://sales.co/research/should-you-cold-email-the-ceo",
+    "kind": "blog",
+    "title": "Should You Cold Email the CEO? Data from 1 Million Emails",
+    "angleIds": [
+      "writing-for-the-ea",
+      "ea-as-ally"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-10",
+    "quote": "No gatekeepers. Small company CEOs read their own email.",
+    "note": "1M-email first-party sample with a real C-level vs director split, but the vendor sells the list and its own data says replies skew to 1-50 person firms — the opposite of large carriers.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s157",
+    "url": "https://goburrows.com/ep-338-tactics-for-managing-your-executives-email-inbox/",
+    "kind": "podcast",
+    "title": "Ep 338: Tactics for Managing Your Executive's Email Inbox — Leader Assistant",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-08-24",
+    "quote": "over 11,000 emails in their inbox",
+    "note": "Credible EA author, but this episode is an AI-generated NotebookLM rehash of his own blog with no substance in the text.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s158",
+    "url": "https://theeacampus.com/blog/managing-executive-emails/",
+    "kind": "blog",
+    "title": "The Ultimate Guide to Managing Executive Emails",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2024-11-20",
+    "quote": "Ideally, you should only process emails three times per day at most",
+    "note": "Experienced EA-training source on how assistants actually triage an exec inbox, but it's craft advice with zero numbers and no seller's perspective.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s159",
+    "url": "https://www.linkedin.com/posts/john-touma-15464516a_in-commercial-insurance-cold-email-outperforms-activity-7303213127293181952-wBIJ",
+    "kind": "blog",
+    "title": "How cold email outperforms other methods in insurance (John Touma)",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Total Emails Sent: 66,392 Replies Received: 835 Reply Rate: 3.2% Opportunities Generated: 123",
+    "note": "Rare insurance-specific funnel with full numbers, but it's an unverifiable self-promoting LinkedIn post selling to SMB business owners, not to carrier C-suites.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s160",
+    "url": "https://execviva.com/inbox-sweep-inbox-zero/",
+    "kind": "blog",
+    "title": "Inbox Zero With an Executive Assistant: How It Works",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Useful first-hand view of an exec handing his inbox to an EA, but n=1 and published by a company that sells EAs.",
+    "date": "2025-02-19",
+    "relevance": 0.2
+  },
+  {
+    "id": "s161",
+    "url": "https://execatlas.com/blogs/43-executive-engagement-gtm-guide.html",
+    "kind": "blog",
+    "title": "Executive Engagement: How to Reach C-Suite Decision-Makers Through Warm Introductions",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Scraped page is nothing but cookie banner and nav chrome — a vendor lead-gen page with zero actual argument.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s162",
+    "url": "https://www.youtube.com/watch?v=4lsJrUen1gk",
+    "kind": "youtube",
+    "title": "STEAL this Cold Email Template to Book Meetings with the C-Suite",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.05,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only, no body — nothing to evaluate beyond a clickbait promise.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s163",
+    "url": "https://x.com/Exec_Entourage/status/1427917543491084290",
+    "kind": "x",
+    "title": "Executive Entourage (@Exec_Entourage) on X",
+    "angleIds": [
+      "writing-for-the-ea"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.1,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "An EA recruitment firm's self-ad; the 80% figure is about unadvertised roles, irrelevant to outreach.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s164",
+    "url": "https://www.cognism.com/blog/get-past-the-gatekeeper",
+    "kind": "blog",
+    "title": "10+ Tips to Get Past the Gatekeeper in Sales [+Scripts]",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-04",
+    "quote": "I'd like to speak to [prospect name] regarding [offering], but I wanted to get your opinion first because I'm not sure if it's a good fit for your team or not.",
+    "note": "Data vendor's SEO listicle; captured text is all site navigation with no substantive reasoning visible.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s165",
+    "url": "https://mailshake.com/blog/get-past-the-gatekeeper-templates/",
+    "kind": "blog",
+    "title": "How to Get Past the Gatekeeper (With Templates)",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-01-18",
+    "quote": "A quick forward of this message would be awesome.",
+    "note": "Named founder with real track record, but it's Mailshake's own funnel content and the only number (38,000 users) is a product stat, not evidence.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s166",
+    "url": "https://www.runcopycat.com/blog/insurance-conferences-commercial-brokers-2026",
+    "kind": "blog",
+    "title": "Insurance conferences commercial brokers must attend in 2026: the fall circuit",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.6,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-07-28",
+    "quote": "Book meetings before you land. At ILF, WSIA, and TMPAA the entire value is the pre-scheduled calendar, and walking the floor cold wastes a flight.",
+    "note": "Genuinely insurance-specific and dates were verified against organizer sites, but it's a vendor plugging its own booths and it's about conferences, not EA screening.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s167",
+    "url": "https://iankoniak.com/how-to-book-executive-meetings-using-cold-e-mail/",
+    "kind": "blog",
+    "title": "How to Book Executive Meetings Using Cold E-mail",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "If you're reaching out to executives, spray-and-pray doesn't cut it.",
+    "note": "Credible ex-Salesforce enterprise seller with a real C-suite framework, but it's survivorship anecdote aimed at tech sellers and gated behind a course pitch.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s168",
+    "url": "https://salesscripter.com/leverage-the-executive-assistant-when-b2b-sales-prospecting/",
+    "kind": "blog",
+    "title": "Navigating the Gatekeepers: Executive Assistants",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Nine concrete cold-call gatekeeper tactics with no evidence behind them, and some ('present yourself as lost') would backfire on a screened executive inbox.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s169",
+    "url": "https://spotio.com/blog/how-to-get-past-the-gatekeeper/",
+    "kind": "blog",
+    "title": "How to Get Past the Gatekeeper in Sales (Scripts Included)",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Vendor blog whose retrieved text is almost entirely site navigation — no gatekeeper substance to judge, and the vendor sells field-sales software.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s170",
+    "url": "https://www.youtube.com/watch?v=3q0z7NBjI6k",
+    "kind": "youtube",
+    "title": "A Script to Get Past the Gatekeeper on a Cold Call",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only, zero transcript — nothing to evaluate beyond the promise of a script.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s171",
+    "url": "https://www.youtube.com/watch?v=fsOc257zASI",
+    "kind": "youtube",
+    "title": "Getting Through the Gatekeeper [exact cold calling script]",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only, no body text; unverifiable claim of an 'exact' script.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s172",
+    "url": "https://x.com/EAHowTo",
+    "kind": "x",
+    "title": "Executive Assistant How To (Alicia Fairclough) (@EAHowTo) / X",
+    "angleIds": [
+      "ea-as-ally"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "An EA's X profile handle with no captured posts — potentially useful first-hand perspective, but there is no content here.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s173",
+    "url": "https://support.google.com/a/answer/81126",
+    "kind": "docs",
+    "title": "Email sender guidelines — Google Workspace Admin Help",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.95,
+    "soundness": 0.85,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Keep spam rates reported in Postmaster Tools below 0.3%",
+    "note": "Primary Google sender documentation — authoritative and mechanism-explaining, though the excerpt stops before the numeric thresholds and covers personal Gmail, not corporate insurance inboxes.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s174",
+    "url": "https://www.unifygtm.com/explore/cold-email-domain-setup",
+    "kind": "blog",
+    "title": "Cold Email Domain Setup: SPF, DKIM & DMARC Guide (2026)",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "v=DMARC1; p=none; rua=mailto:dmarc@yourdomain.com",
+    "note": "Concrete, internally consistent sending-infrastructure numbers, but it is a vendor waitlist page selling the automation of exactly this stack and cites no measurement behind the thresholds.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s175",
+    "url": "https://emailbison.com/blogs/cold-email-secondary-domains",
+    "kind": "blog",
+    "title": "Cold Email Secondary Domains: 2026 Multi-Domain Strategy",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-05-20",
+    "quote": "Each secondary domain supports 3 to 4 active mailboxes sending 25 to 30 emails per inbox per day, producing approximately 100 emails per domain per day at safe capacity.",
+    "note": "Numbers are specific (3–10 domains, 25–30/day, 15–30% lift) but sourced to a third-party vendor benchmark for SaaS/agency sending, and the publisher sells warm-up and inbox tooling.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s176",
+    "url": "https://emailbison.com/blogs/google-workspace-vs-microsoft-365",
+    "kind": "blog",
+    "title": "Google Workspace vs Microsoft 365 For Cold Email at Scale",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07-07",
+    "quote": "87% to 92% inbox placement",
+    "note": "Sensible mechanism — match sending provider to the recipient's filter, which matters for Microsoft-heavy carrier inboxes — but the excerpt is vendor framing with criteria listed and no data yet.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s177",
+    "url": "https://willitinbox.com/blog/corporate-email-filters-proofpoint-mimecast",
+    "kind": "blog",
+    "title": "Why Corporate Domains Eat Your Emails: Proofpoint, Mimecast, and the SEG",
+    "angleIds": [
+      "domain-setup",
+      "insurance-email-security"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.65,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-08-02",
+    "quote": "their default action for suspicious mail is quarantine, not reject. The gateway accepts your message with a cheerful `250 OK`, files it in an admin quarantine, and your ESP logs a successful delivery.",
+    "note": "Solid mechanism on SEG silent quarantine, but it's a deliverability vendor's blog selling the diagnosis and it offers zero measured data.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s178",
+    "url": "https://mailtester.com/blog/email-deliverability-benchmarking-finance-sector/",
+    "kind": "blog",
+    "title": "Benchmark Email Deliverability in Finance",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-08-30",
+    "quote": "Top-tier finance firms maintain inbox placement above 90%. Rates below 85% indicate underlying deliverability issues.",
+    "note": "Title promises finance-sector benchmarks; the captured text is pure site navigation with no argument or data at all.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s179",
+    "url": "https://x.com/DeanFiacco/status/1829217390426521838",
+    "kind": "x",
+    "title": "Dean Fiacco on the shift from 1 domain / 2 mailboxes to many-inboxes-per-domain",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "The new: 49 inboxes per domain 2 emails per inbox per day No warmup",
+    "note": "First-hand operator config with concrete numbers, but he explicitly says 'we don't know' why it works — one agency's volume play, no mechanism.",
+    "date": "2024-08-29",
+    "relevance": 0.2
+  },
+  {
+    "id": "s180",
+    "url": "https://x.com/andrehaykaljr/status/2056367533234557382",
+    "kind": "x",
+    "title": "Andre Haykal Jr on pre-warmed domains and inboxes",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "every cold email agency should keep a few hundred generic domains warming up at all times",
+    "note": "Agency owner asserting pre-warmed domains lifted retention; truncated, self-promotional, no numbers or mechanism.",
+    "date": "2026-05-18",
+    "relevance": 0.2
+  },
+  {
+    "id": "s181",
+    "url": "https://www.youtube.com/watch?v=u861IDlELa4",
+    "kind": "youtube",
+    "title": "Email Deliverability Secrets Part 2: Warming Up Your Domain / Technical Foundation: SPF, DKIM, DMARC",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2025-03-13",
+    "note": "Title only — no transcript or claims to evaluate.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s182",
+    "url": "https://www.youtube.com/watch?v=5tftpaK4hPM",
+    "kind": "youtube",
+    "title": "DMARC record for cold email: everything you need to know [Cold Email Course: Chapter 2 · Lesson 5]",
+    "angleIds": [
+      "domain-setup"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2026-04-09",
+    "note": "Title only — no content, and DMARC basics are table stakes rather than target-specific.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s183",
+    "url": "https://www.suped.com/knowledge/email-deliverability/technical/understanding-and-reducing-high-proofpoint-click-events-for-email-marketers",
+    "kind": "docs",
+    "title": "Understanding and reducing high Proofpoint click events for email marketers",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.75,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-08-05",
+    "quote": "A request recorded by your tracking host proves that the URL was fetched, but it does not prove that a person clicked or that Proofpoint itself originated the request.",
+    "note": "Vendor knowledge base but genuinely technical: separates bot click inflation from sender-trust problems, dated and revised, no measured figures.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s184",
+    "url": "https://www.gblock.app/articles/email-link-wrapping-click-tracking-2026",
+    "kind": "blog",
+    "title": "Email Link Wrapping: How URL Rewriting Tracks You",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-07-02",
+    "quote": "a mail filter parses the HTML and plain text body, finds every `href`, and substitutes it with a new URL that encodes the original address as a parameter or token.",
+    "note": "Clear correct mechanism on gateway link rewriting, but 'majority of business email' is asserted with no source and the site is selling a blocker.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s185",
+    "url": "https://10xplaybooks.com/p/the-curious-case-of-mimecast",
+    "kind": "blog",
+    "title": "The Curious Case of Mimecast in Email Deliverability",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-05-13",
+    "quote": "I tested emailing the same Mimecast prospect using my company's main domain with extremely short copy (under 7 words). The email was delivered successfully and I got a reply.",
+    "note": "First-hand operator running a controlled test against Mimecast, but the excerpt stops before any results and names enterprise/legal/govt — not insurance — as the deployment base.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s186",
+    "url": "https://snov.io/blog/we-analyzed-44-million-emails/",
+    "kind": "blog",
+    "title": "We Analyzed 44+M Emails: Here's What We Learned",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-09-02",
+    "quote": "In fact, doing so more than doubled reply rates—2.36% compared to just 1.08%.",
+    "note": "44M-email sample is real but it's a vendor product-update post with no insurance or executive-buyer content in the visible text.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s187",
+    "url": "https://mailtester.com/blog/plain-text-vs-html-cold-email-inbox-deliverability/",
+    "kind": "blog",
+    "title": "Plain Text vs HTML Cold Email",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "37% of cold emails never reach the inbox",
+    "note": "Scraped nav chrome from a verification vendor's site; no argument or evidence survives in the text.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s188",
+    "url": "https://www.proofpoint.com/us/solutions/financial-services-and-insurance",
+    "kind": "docs",
+    "title": "Financial Services and Insurance | Proofpoint",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Official Proofpoint page confirms financial services/insurance as a targeted vertical, but the captured text is pure product menu — it says nothing about deliverability or cold outreach.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s189",
+    "url": "https://prospeo.io/s/enterprise-cold-email-outreach",
+    "kind": "blog",
+    "title": "Enterprise Cold Email Outreach: The 2026 Playbook",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026",
+    "note": "Enterprise cold-email angle would transfer to large carriers, but the text is all site navigation from a data vendor selling the fix.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s190",
+    "url": "https://x.com/chrispisarski/status/2082236016161677644",
+    "kind": "x",
+    "title": "Chris Pisarski on building GTM workflows in-house",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07",
+    "note": "First-hand in-house GTM tooling thread, but it's about MCP plumbing — nothing on gateways, insurance, or executive inboxes.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s191",
+    "url": "https://x.com/coldemailchris/status/2075655830070755507",
+    "kind": "x",
+    "title": "Christian on X: cold email deliverability cheatsheet",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "This cold email deliverability cheatsheet covers everything you need to know for 98%+ inboxing rates in 2026",
+    "note": "A '98%+ inboxing' teaser with the actual cheatsheet behind the link — claim without mechanism or sample.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s192",
+    "url": "https://www.youtube.com/watch?v=eWX3AFUvZHw",
+    "kind": "youtube",
+    "title": "How to add links to cold emails without risking deliverability issues",
+    "angleIds": [
+      "insurance-email-security"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2025-06",
+    "note": "Title only, no transcript captured, so there is nothing to evaluate.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s193",
+    "url": "https://www.saber.app/glossary/budget-cycle",
+    "kind": "docs",
+    "title": "Budget Cycle: Definition, Timing & B2B Sales Strategies — Saber glossary",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.45,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "68% of technology purchases above $50K are made in the first six months of the buyer's fiscal year",
+    "note": "Vendor glossary page with a plausible generic budget-cycle mechanism and an invented Fortune 500 example; nothing insurance-specific.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s194",
+    "url": "https://bouncewatch.com/blog/signal-intelligence/time-outreach-company-budget-cycles",
+    "kind": "blog",
+    "title": "Company Budget Cycle Selling: Time Your Outreach — Bounce Watch",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "January through March is the golden window for B2B sales. New budgets have been approved, department heads are eager to execute on their plans...",
+    "note": "Scraped nav menu only — no argument survives in the text, and the vendor sells signal timing.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s195",
+    "url": "https://supplier.io/resources/blog/how-to-win-fall-contracts-procurement-calendar",
+    "kind": "blog",
+    "title": "How to Win Q3 and Q4 Corporate Contracts: A Supplier's Guide to the Procurement Calendar",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07",
+    "quote": "if you want to win Q4 contracts, you need to be visible in Q3",
+    "note": "Body text is entirely site chrome; procurement-calendar claim is untestable from what's here and the vendor sells supplier intelligence.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s196",
+    "url": "https://datos-insights.com/reports/insurer-it-budgets-and-projects-2026-ins-2025-102218/",
+    "kind": "docs",
+    "title": "Insurer IT Budgets and Projects, 2026 — Datos Insights",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Datos Insights is a credible insurance-analyst house, but this is a paywalled report landing page — the title is on-target, the visible text carries no findings.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s197",
+    "url": "https://www.confie.com/insights/insurance-busy-season/",
+    "kind": "blog",
+    "title": "When Is the Insurance Busy Season for Each Sector? — Confie",
+    "angleIds": [
+      "carrier-budget-season",
+      "broker-renewal-crunch",
+      "quarterly-nurture"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "quote": "typically takes place from October to December",
+    "date": "2025-12-22",
+    "note": "One stranded sentence dating a sector busy season to Oct–Dec, with no sector named and no sourcing; a consumer-agency blog, not a carrier-budget source.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s198",
+    "url": "https://insnerds.com/insights/burn-capital-burn-how-to-shorten-the-long-insurance-sales-cycle",
+    "kind": "blog",
+    "title": "Burn Capital Burn – How To Shorten The Long Insurance Sales Cycle — InsNerds",
+    "angleIds": [
+      "carrier-budget-season",
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "in an enterprise insurance transaction, it may take longer than 12 months to come to an agreement and finalize a deal",
+    "date": "2023-12-17",
+    "note": "Named insurance-industry operator arguing long B2B insurance cycles come from bad qualification, not risk aversion — a real mechanism claim but all assertion, no data, and it's a consulting pitch.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s199",
+    "url": "https://prospeo.io/s/sales-cycle-length-by-industry",
+    "kind": "blog",
+    "title": "Sales Cycle Length by Industry: 2026 Benchmarks — Prospeo",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "No single study publishes a transparent, methodologically clear industry-by-industry benchmark.",
+    "note": "Benchmark page whose actual numbers never appear in the captured text; lead-gen vendor publishing stats as SEO bait.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s200",
+    "url": "https://www.scalevp.com/blog/insurtech-gtm-scorecard-selling-to-brokers",
+    "kind": "blog",
+    "title": "Insurtech GTM Scorecard: Selling to Brokers — Scale Venture Partners",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "the length of the sales cycles associated with the likes of a Marsh is upward of several years",
+    "note": "VC investor writing specifically on the mechanics of selling into broker distribution — relevant and experienced, but qualitative and portfolio-motivated.",
+    "date": "2024-04-09",
+    "relevance": 0.75
+  },
+  {
+    "id": "s201",
+    "url": "https://insurtechassociation.org/so-you-want-to-start-an-mga-three-hard-truths-from-the-people-whove-seen-3000-business-plans/",
+    "kind": "blog",
+    "title": "So You Want to Start an MGA? Three Hard Truths From the People Who've Seen 3,000 Business Plans — InsurTech Association",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "adjacent",
+    "note": "Title-only capture; the '3,000 business plans' claim never appears in retrievable text, and it addresses MGA founders, not the executives who buy.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s202",
+    "url": "https://techcrunch.com/2023/04/08/insuretech-b2b-b2c-insurance/",
+    "kind": "blog",
+    "title": "Selling insurance is hard, but that's not bad news for insurtechs — TechCrunch",
+    "angleIds": [
+      "carrier-budget-season"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2023-04-08",
+    "note": "Reputable outlet but the extract is nav chrome plus a newsletter preamble — no mechanism, no evidence, and framed for insurtech founders rather than carrier/broker buyers.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s203",
+    "url": "https://www.trustlayer.io/resources/blog-renewal-seasons",
+    "kind": "blog",
+    "title": "Transform Your Renewal Seasons: Tips for Effective Insurance Management",
+    "angleIds": [
+      "broker-renewal-crunch",
+      "quarterly-nurture"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "The busy season for insurance renewals typically occurs in January and July.",
+    "note": "Useful January/July renewal-cycle timing, but it is a vendor blog selling the automation it recommends and offers zero data behind the seasonality claim.",
+    "date": "2024-06-12",
+    "relevance": 0.45
+  },
+  {
+    "id": "s204",
+    "url": "https://www.artemis.bm/news/topic/reinsurance-renewals/",
+    "kind": "blog",
+    "title": "Reinsurance renewals news — Artemis.bm",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "The key reinsurance renewal periods are at January 1st, April 1st, June 1st and July 1st.",
+    "note": "Respected reinsurance/ILS trade outlet, but this is a bare topic-index page about treaty renewals — wrong segment and no argument at all.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s205",
+    "url": "https://brokerblog.wordandbrown.com/why-word-brown/q4-most-insurance-brokers-busiest-time-of-the-year",
+    "kind": "blog",
+    "title": "Q4: Most Insurance Brokers' Busiest Time of the Year",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2023-09-30",
+    "quote": "The fourth quarter is traditionally the busiest time of year for health insurance brokers",
+    "note": "Actually explains WHY Q4 is peak (calendar-year benefits, ACA, 30+ day shopping lead), but it is a general agency's staff-writer post aimed at producers, with no measured data.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s206",
+    "url": "https://brokerblog.wordandbrown.com/expert-ave/time-management-tips-brokers",
+    "kind": "blog",
+    "title": "9 Time Management Tips for Insurance Agents During Peak Season",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "One genuinely useful line — Q4 through early January is peak for brokers — wrapped in interchangeable time-management advice that would fit any industry.",
+    "date": "2024-10-28",
+    "relevance": 0.35
+  },
+  {
+    "id": "s207",
+    "url": "https://www.agencyperformancepartners.com/blog/insurance-busy-season-are-you-understaffed-during-the-summer/",
+    "kind": "blog",
+    "title": "Insurance Busy Season — Are You Understaffed During the Summer?",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Consultancy selling agency training; the extract is almost entirely site navigation, so the summer-staffing premise is asserted in the title and nowhere supported.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s208",
+    "url": "https://www.insurance-forums.com/community/threads/slow-time-of-year.72047/",
+    "kind": "other",
+    "title": "Slow Time of Year? | Insurance Forums",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "First-hand practitioner chatter is worth something, but it is a handful of anonymous life/personal-lines agents in 2015 guessing at seasonality — n of a few, no exec-level view.",
+    "date": "2015-01-21",
+    "relevance": 0.3
+  },
+  {
+    "id": "s209",
+    "url": "https://www.youtube.com/watch?v=L6RvH5iXz1E",
+    "kind": "youtube",
+    "title": "Commercial Insurance Agency Renewal: Master the Key Steps",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "adjacent",
+    "date": "2024-09-16",
+    "note": "Title-only YouTube stub about commercial renewal steps — no transcript, no reasoning, and agency-operations content rather than anything about reaching C-level buyers.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s210",
+    "url": "https://x.com/_theinsurer/status/1742199571533467652",
+    "kind": "x",
+    "title": "The Insurer on X — January 1 renewals coverage",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "The Insurer is a credible trade outlet, but this is a bare promo tweet — the five takeaways live behind the link, so there is nothing here to assess.",
+    "date": "2024-01-02",
+    "relevance": 0.4
+  },
+  {
+    "id": "s211",
+    "url": "https://martal.ca/best-time-to-send-cold-emails-lb/",
+    "kind": "blog",
+    "title": "Best Time to Send Cold Emails in 2025 for B2B Sales",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-04-30",
+    "quote": "Cold emails sent between 5 AM and 8 AM had about 25% higher reply rates than emails sent later in the day.",
+    "note": "Scraped nav menu from a lead-gen vendor selling the answer; the actual send-time data never appears in the text.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s212",
+    "url": "https://agedleadstore.com/when-to-buy-aged-leads-monthly-calendar-for-insurance-agents/",
+    "kind": "blog",
+    "title": "When to Buy Aged Leads: Monthly Calendar for Insurance Agents",
+    "angleIds": [
+      "broker-renewal-crunch"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Cost per acquisition: $111",
+    "note": "Aged-lead vendor page aimed at personal-lines agents buying consumer leads — wrong buyer entirely, and the body is all navigation.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s213",
+    "url": "https://www.retreva.com/breakup-sales-email/",
+    "kind": "blog",
+    "title": "Why You Should Never Send a Breakup Email to a Prospect",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-05-20",
+    "quote": "Just because someone isn't replying now doesn't mean they never will.",
+    "note": "Vendor whose product is long-term nurture argues against breakup emails — the mechanism is plausible and fits long cycles, but it is pure assertion from an interested party.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s214",
+    "url": "https://close.com/blog/cold-email-follow-up-plan",
+    "kind": "blog",
+    "title": "The Winning Cold Email Follow-up Plan for Sales Teams",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2023-03-10",
+    "quote": "If you've had a positive interaction...with someone who showed interest in your solution but then stopped responding...keep following up indefinitely. Forever. Until you get a result.",
+    "note": "Close/Steli Efti is a real operator with follow-up expertise, but the excerpt stops before any substance and the CRM vendor benefits from the conclusion.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s215",
+    "url": "https://prospeo.io/s/how-to-re-engage-prospects",
+    "kind": "blog",
+    "title": "How to Re-Engage Prospects in 2026 (Data-Backed)",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "Win-back sequences average 10-18% reply rates—roughly double cold outbound",
+    "note": "Claims 'data-backed' re-engagement but the captured text is entirely product navigation from a prospecting-data vendor.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s216",
+    "url": "https://martal.ca/sales-statistics-lb/",
+    "kind": "blog",
+    "title": "Sales Statistics 2026: Outbound, Pipeline & Funnel Data",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-06-19",
+    "quote": "80% of sales need five or more follow-ups, yet 44% of reps quit after one and only 2% of deals close on first contact",
+    "note": "Aggregated sales-stat listicle from the same lead-gen vendor; benchmarks are promised in the headings but no measured number survives in the text.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s217",
+    "url": "https://x.com/scaling_shields/article/2063688044843090179",
+    "kind": "x",
+    "title": "7 principles of cold email that you must follow — James Shields (@scaling_shields)",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title-only stub with no argument or evidence to judge; anonymous growth-marketing account.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s218",
+    "url": "https://www.youtube.com/watch?v=YKtB8yTnkWM",
+    "kind": "youtube",
+    "title": "How To Follow Up With Potential Clients (Without Being Annoying)",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.42,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Nothing but a video title — no mechanism, no data, no way to verify the advice.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s219",
+    "url": "https://www.linkedin.com/advice/0/what-essential-steps-managing-long-sales-cycle-ofy9f",
+    "kind": "other",
+    "title": "What are the essential steps to managing a long sales cycle in solution selling?",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.3,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "AI-assisted LinkedIn collaborative article: generic six-step scaffolding, no author accountability or evidence.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s220",
+    "url": "https://www.saastr.com/how-does-one-deal-with-long-sales-cycles-9-months-or-higher-how-do-you-adjust-burn-and-ops-until-revenues-kick-in",
+    "kind": "blog",
+    "title": "Dear SaaStr: How Do You Deal With Long Sales Cycles, E.g. 7-8+ Months?",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.75,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "note": "Lemkin is a credible first-hand enterprise-sales operator and explains the pipeline-hatching mechanism, but it's experience-based vibes, not measurement.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s221",
+    "url": "https://outofpocket.substack.com/p/we-should-sell-to-self-insured-employers",
+    "kind": "blog",
+    "title": "\"We Should Sell To Self-Insured Employers\"",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.62,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2020-05-11",
+    "quote": "have to make sure you catch these employers when they're setting up the following year's budgets, otherwise you're going to have to wait till the next cycle",
+    "note": "Sharp first-hand health-tech account of long insurer/employer cycles, but it's about selling to self-insured employers, not to insurance carrier executives.",
+    "relevance": 0.38
+  },
+  {
+    "id": "s222",
+    "url": "https://www.insurancejournal.com/blogs/agentsync/2025/02/18/811484.htm",
+    "kind": "blog",
+    "title": "2025 Insurance Carrier Appointment Renewals for Individual Producers",
+    "angleIds": [
+      "quarterly-nurture"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-02-18",
+    "note": "Vendor-sponsored compliance piece on producer appointment renewals — insurance-flavoured but says nothing about executive outreach or follow-up.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s223",
+    "url": "https://instantly.ai/cold-email-benchmark-report-2026",
+    "kind": "blog",
+    "title": "Cold Email Benchmark Report 2026: Reply Rates, Deliverability and Trends",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-01-12",
+    "quote": "The sweet spot for sequence length is 4-7 touchpoints: under four gives up too early and beyond seven diminishes returns unless each touch adds genuine new value.",
+    "note": "Huge sample (billions of sends, 700k+ businesses) but the vendor sells the fix and the excerpt is nav chrome, not method.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s224",
+    "url": "https://woodpecker.co/blog/cold-email-statistics/",
+    "kind": "blog",
+    "title": "Cold Email Statistics Based on Sending Over 20M Cold Emails",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-06-23",
+    "quote": "Campaigns with 3–5 follow-up steps hit 8.3% reply rates vs. 4.1% for sequences without any follow-ups",
+    "note": "20M-email dataset gives real scale, yet it's self-reported by the sending tool with no segmentation for regulated enterprise buyers.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s225",
+    "url": "https://belkins.io/blog/sales-follow-up-statistics",
+    "kind": "blog",
+    "title": "Sales Follow-Up Statistics in B2B (2026 Study)",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-06-26",
+    "quote": "Steps 2 through 6 together account for 58.6% of all replies, whereas the initial email captures just 41.4%.",
+    "note": "Lead-gen vendor's own multi-channel data could be strong, but the excerpt is nav chrome and claims ('majority of replies') with no figure attached.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s226",
+    "url": "https://moderninbound.com/blog/cold-email-follow-up-sequences",
+    "kind": "blog",
+    "title": "Cold Email Follow-Up Sequences 2026: 5-Touch Framework",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "60% of positive replies come from follow-up touches, not the first send",
+    "note": "Rehashes Belkins' 60% stat (and misdates it 2024) then bolts on unevidenced rules — 3-4 touches, under 80 words — that contradict other sources here.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s227",
+    "url": "https://www.lemlist.com/blog/how-many-cold-email-follow-ups",
+    "kind": "blog",
+    "title": "How many cold email follow-ups should you send? 4 to 9, backed by 22.37% reply-rate data",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-11-27",
+    "quote": "Add value with every new email (i.e. don't just say 'checking in!')",
+    "note": "22.37% off a large platform dataset is a real measurement, but the vendor sells sequencing and the visible text gives no mechanism or segmentation.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s228",
+    "url": "https://prospeo.io/s/just-checking-in-email",
+    "kind": "blog",
+    "title": "Just Checking In Email: 8 Alternatives That Get Replies",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "note": "Data vendor listicle; retrieved text is entirely site navigation with no argument or evidence to judge.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s229",
+    "url": "https://www.hyperbound.ai/blog/the-2-3-touch-rule-why-less-follow-up-converts-more",
+    "kind": "blog",
+    "title": "The 2-3 Touch Rule: Why Less Follow-Up Converts More",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "note": "Useful counterweight to volume-first advice — fewer touches convert more — but the excerpt is all nav and the claim arrives unsupported.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s230",
+    "url": "https://www.usecanopy.com/blog/insurance-sales-cycle-ultimate-guide",
+    "kind": "blog",
+    "title": "The Ultimate Guide to Mastering the Insurance Sales Cycle",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "Only 9% of potential customers will reply to your first email, but that percentage jumps to 13% if you follow up just once.",
+    "note": "Insurance-flavoured but aimed at personal/commercial P&C agencies doing intake, not C-suite buying committees; no retrievable content behind the title.",
+    "relevance": 0.3
+  },
+  {
+    "id": "s231",
+    "url": "https://www.coretechinsight.com/blog/how-long-do-core-implementations-really-take",
+    "kind": "blog",
+    "title": "How Long Do P&C Core System Implementations Really Take?",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.7,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Independent analyst with a stated method — 600+ US/Canadian P&C customers across 36+ vendors — though press releases skew toward successes and the durations sit behind a gated PDF.",
+    "relevance": 0.55
+  },
+  {
+    "id": "s232",
+    "url": "https://www.youtube.com/watch?v=dWZZG-Bk-6o",
+    "kind": "youtube",
+    "title": "7 Follow Ups That Get Responses (Cold Email Templates)",
+    "angleIds": [
+      "follow-up-touches"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2024-07",
+    "note": "Title only, no transcript; nothing here to evaluate beyond the promise of templates.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s233",
+    "url": "https://www.trustlayer.io/resources/itc-vegas-2026-attendee-playbook",
+    "kind": "blog",
+    "title": "ITC Vegas 2026 | Complete Attendee Playbook",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-08-06",
+    "quote": "A scheduled 20-minute conversation with the correct person can be worth more than an entire afternoon of accidental booth wandering.",
+    "note": "Vendor-authored attendee playbook with real scale figures (9,000+ attendees, 500+ speakers, dates/venue), but the excerpt is orientation and self-promotion rather than tested outreach mechanism.",
+    "relevance": 0.65
+  },
+  {
+    "id": "s234",
+    "url": "https://vegas.insuretechconnect.com/attend-itc-vegas",
+    "kind": "docs",
+    "title": "ITC Vegas | Why Attend",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "quote": "At the heart of the show is our 1:1 meeting zone where hundreds of deals and relationships originate and are strengthened",
+    "note": "Official event page — authoritative on who attends and when, but it is marketing nav copy with no reasoning or evidence.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s235",
+    "url": "https://wavecnct.com/blogs/insurance-conferences-trade-shows-usa-2026",
+    "kind": "blog",
+    "title": "Every Insurance Conference & Trade Show in the U.S. (2026)",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-03-21",
+    "quote": "The best meetings at ITC Vegas and RISKWORLD are booked before the doors open.",
+    "note": "Useful US insurance conference calendar from an operator who works with agencies, but it is lead-gen content for a business-card product and the excerpt shows list-building, not executive access tacti",
+    "relevance": 0.6
+  },
+  {
+    "id": "s236",
+    "url": "https://www.namic.org/event/namics-131st-annual-convention/",
+    "kind": "docs",
+    "title": "NAMIC's 131st Annual Convention",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-09",
+    "note": "Primary association event listing: confirms a real carrier-executive venue (NAMIC Denver, Sep 27-30) but carries no argument or data.",
+    "relevance": 0.6
+  },
+  {
+    "id": "s237",
+    "url": "https://www.namic.org/events-education/in-person-virtual-events/executive-events/",
+    "kind": "docs",
+    "title": "Executive Events - NAMIC",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.9,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Official NAMIC executive-events page, but the scraped text is almost entirely site navigation — near-zero substance to evaluate.",
+    "relevance": 0.5
+  },
+  {
+    "id": "s238",
+    "url": "https://datos-insights.com/events/conferences/ilfitc26/",
+    "kind": "docs",
+    "title": "Insurance Leaders Summit at ITC 2026 | Datos Insights",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.4,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "date": "2026-09-29",
+    "note": "Analyst-firm summit page pointing at a genuinely C-level insurance room co-located with ITC, but the excerpt is menu chrome with no mechanism.",
+    "relevance": 0.7
+  },
+  {
+    "id": "s239",
+    "url": "https://b2bsalesarrow.com/blogs/smart-strategies-for-itc-vegas-2025/",
+    "kind": "blog",
+    "title": "5 Smart Event Strategies for Insurance Brands at ITC Vegas 2025",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.3,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2025-08-14",
+    "quote": "Start planning 4-6 months before the ITC conference to secure optimal booth location, logistics, and branding alignment.",
+    "note": "Booth-design vendor selling its own services; the one number (9,000 crowd) is borrowed and the 'anchor zone' claim is anecdote dressed as insight.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s240",
+    "url": "https://app.whogoes.co/blog/trade-show-outreach-email-templates",
+    "kind": "blog",
+    "title": "Trade Show Outreach Email Templates That Book Meetings",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-03-23",
+    "quote": "By the time you're at the show, calendars are full. The SDRs who win are the ones who locked in meetings two weeks before the event even started.",
+    "note": "Sensible, mechanism-aware event-outreach templates (reference a specific session or post) from a vendor selling attendee lists, with nothing specific to insurance executives or gatekeeper screening.",
+    "relevance": 0.25
+  },
+  {
+    "id": "s241",
+    "url": "https://vendelux.com/event-marketing/event-marketing-examples",
+    "kind": "blog",
+    "title": "12 B2B Event Marketing Examples That Drove Pipeline in 2026",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.4,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-05-27",
+    "quote": "The first time they had our data they got 76 meetings pre-booked",
+    "note": "Vendor listicle drawn from its own case studies — pipeline claims are self-selected winners, and the captured text is mostly site navigation.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s242",
+    "url": "https://forstarters.substack.com/p/for-starters-25-on-attending-conferences",
+    "kind": "blog",
+    "title": "For Starters #25: On attending conferences",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.35,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2024-04-15",
+    "quote": "it's simply the wrong context to start a relationship, too much distraction",
+    "note": "Honest first-person opinion piece with zero evidence, and its 'your buyers aren't at conferences' premise is the opposite of true for association-driven insurance.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s243",
+    "url": "https://saleshive.com/blog/b2b-event-marketing-best-practices-events-2025/",
+    "kind": "blog",
+    "title": "B2B Event Marketing: Best Practices for Events",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.35,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025",
+    "note": "Outsourced-SDR vendor quoting unsourced 88%/52% event stats while selling the service those stats justify.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s244",
+    "url": "https://www.osercomm.com/pre-show-promotion-tactics-fill-booth/",
+    "kind": "blog",
+    "title": "Pre-Show Promotion Tactics: 7 Ways to Fill Your Booth",
+    "angleIds": [
+      "conferences-and-associations"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "note": "Trade-show publisher's booth-traffic tips; the retrieved text is entirely site menu with no argument to assess.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s245",
+    "url": "https://quantonica.com/blog/after-the-reply",
+    "kind": "blog",
+    "title": "Why negative cold email replies are where the meetings are",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.65,
+    "soundness": 0.75,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-07-28",
+    "quote": "three of every four replies are a no. That's where the meetings are.",
+    "note": "Genuinely large datasets (16.5M, 7.5M, 28M emails; 61,770 classified replies), openly flags a methodology change and fact-checks its own sources — but the author sells outreach services.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s246",
+    "url": "https://prospeo.io/s/convert-cold-email-replies-to-meetings",
+    "kind": "blog",
+    "title": "Convert Cold Email Replies to Meetings (2026 Guide)",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Leads contacted within 5 minutes are 21x more likely to qualify than those contacted after 30 minutes.",
+    "note": "SEO lead-gen page from a data vendor; retrieved body is navigation chrome with no visible reasoning or evidence.",
+    "relevance": 0.18
+  },
+  {
+    "id": "s247",
+    "url": "https://prospeo.io/s/send-me-an-email-objection",
+    "kind": "blog",
+    "title": "\"Send Me an Email\" Objection: 4 Scripts That Work (2026)",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.3,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "I'll send something over. Just so we skip the back-and-forth - would you be opposed to throwing something tentative on the calendar? Monday or Tuesday, mornings or afternoons?",
+    "note": "Same vendor SEO template as its sibling page — promises four scripts but the captured text contains none of them.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s248",
+    "url": "https://www.30mpc.com/newsletter/how-i-handle-send-me-some-information-on-a-cold-call",
+    "kind": "blog",
+    "title": "How I Handle \"Send Me Some Information\"",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.78,
+    "soundness": 0.6,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025-04-18",
+    "quote": "When folks tell me to send them some info, they're just too nice to tell me to go away. Is that what's happening?",
+    "note": "Named practitioner with a real prospecting track record giving a concrete three-step objection mechanic; persuasive craft, but pure anecdote with no measurement.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s249",
+    "url": "https://syncgtm.com/blog/is-insurance-sales-considered-a-b2b-sale",
+    "kind": "blog",
+    "title": "Is Insurance Sales a B2B Sale? What B2B Teams Should Know",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-05-24",
+    "quote": "Purchases typically require sign-off from more than one person — a budget owner, an operational stakeholder, and sometimes a legal or compliance reviewer.",
+    "note": "Vendor SEO page whose scraped text is 100% nav chrome — the insurance angle exists only in the title, and selling insurance is not selling to insurance execs.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s250",
+    "url": "https://instantly.ai/blog/how-to-email-executives-meeting-request-templates/",
+    "kind": "blog",
+    "title": "How to Email Executives: Meeting Request Templates",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "quote": "EAs handle most day-to-day messages, so write for two audiences: the EA who screens and the executive who decides.",
+    "note": "Cold-email vendor template post; nothing but menu markup extracted, so no claim or mechanism can be judged.",
+    "relevance": 0.2
+  },
+  {
+    "id": "s251",
+    "url": "https://www.youtube.com/watch?v=JX1UNIJwcCY",
+    "kind": "youtube",
+    "title": "Cold Email Masterclass: Everything You Need To Book Meetings in 2026 (Jason Bay)",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.2,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2026-05-05",
+    "note": "Jason Bay is a credible first-hand outbound operator, but only the title survived — zero content to weigh.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s252",
+    "url": "https://www.youtube.com/watch?v=D2mjP-FTqlI",
+    "kind": "youtube",
+    "title": "How to handle EVERY cold call objection",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.15,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "date": "2025-04-01",
+    "note": "Title-only cold-call objection video; generic craft with no transcript and no target context.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s253",
+    "url": "https://www.linkedin.com/pulse/top-5-cold-calling-objections-how-handle-them-kevin-hopp",
+    "kind": "other",
+    "title": "The Top 5 Cold Calling Objections and How to Handle Them (LinkedIn, Kevin Hopp)",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Sure thing Mr. Prospect, what information specifically can I help you out with?",
+    "note": "First-hand dialer citing 20-30 conversations/day and a real mechanism (calls fall into a few predictable paths), but it is personal anecdote and phone-only, not gatekeepered exec inboxes.",
+    "date": "2019-08-26",
+    "relevance": 0.15
+  },
+  {
+    "id": "s254",
+    "url": "https://bravado.co/war-room/posts/how-do-you-reply-to-common-objections-to-your-cold-emails",
+    "kind": "other",
+    "title": "How do you reply to common objections to your cold emails? (Bravado War Room)",
+    "angleIds": [
+      "handling-replies"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "failed",
+    "specificity": "general",
+    "note": "Community thread title with no captured answers — crowd opinion of unknown quality.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s255",
+    "url": "https://hunter.io/the-state-of-cold-email",
+    "kind": "docs",
+    "title": "The State of Cold Email (Hunter.io report)",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.8,
+    "soundness": 0.65,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2025",
+    "quote": "Sequences with 21–50 recipients outperform by +158% compared to 500+ recipients (6.2% vs 2.4%).",
+    "note": "31M-email dataset plus recipient surveys is the biggest sample here, but it is a sending-tool vendor aggregating mass-volume outreach — benchmarks like '1 in 20 replies' barely describe a small six-fi",
+    "relevance": 0.25
+  },
+  {
+    "id": "s256",
+    "url": "https://www.hypergen.io/blog/outbound-sales-metrics",
+    "kind": "blog",
+    "title": "Outbound Sales Metrics: The 7 Numbers We Actually Track",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-08-28",
+    "quote": "Enterprise and M&A buyers show different patterns: 0.6% to 1.5% lead rate, compared to 0.8% to 2% for SaaS, and take 30 to 90 days between first reply and meeting.",
+    "note": "Agency states concrete thresholds (2.5-4% reply, <3% bounce, <0.2% spam) across 120+ clients and explains why open rate is noise, but the numbers are unsourced house rules from a firm selling delivera",
+    "relevance": 0.3
+  },
+  {
+    "id": "s257",
+    "url": "https://www.unifygtm.com/explore/cold-email-ab-testing-statistical-rigor",
+    "kind": "blog",
+    "title": "Cold Email A/B Testing: Sample Size Math and Platform Config",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-09-03",
+    "quote": "Low-volume teams should test larger message differences and accept longer windows.",
+    "note": "Testing method is basically sound, but it's a vendor ranking itself first and the only number is its own '50% faster' marketing claim.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s258",
+    "url": "https://prospeo.io/s/positive-response-rate",
+    "kind": "blog",
+    "title": "Positive Response Rate: Benchmarks & Data (2026)",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.25,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026",
+    "quote": "Tightly targeted campaigns with verified data and strong personalization can bring that down to 50-75",
+    "note": "Retrieved text is all site navigation — a benchmark headline with no benchmarks, method, or sample visible.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s259",
+    "url": "https://www.getcleed.com/blog/cold-email-benchmarks-2026",
+    "kind": "blog",
+    "title": "Cold Email Benchmarks 2026: What Signal-Triggered Outreach Does to Reply Rates",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "date": "2026-05-01",
+    "quote": "Campaign A returned a 1.8% reply rate, 36 replies from 2,000 sends. Campaign B? 9.2% reply rate, 18 replies from 200 sends.",
+    "note": "Real 100M-email base rate (3.43%) but second-hand from another vendor, and the 5-18% signal-triggered lift is the fix this vendor sells.",
+    "relevance": 0.15
+  },
+  {
+    "id": "s260",
+    "url": "https://www.youtube.com/watch?v=0NKeDg1EF4U",
+    "kind": "youtube",
+    "title": "The Only 4 Cold Email Metrics That Matter",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.45,
+    "soundness": 0.1,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "note": "Title only — nothing to assess.",
+    "relevance": 0.1
+  },
+  {
+    "id": "s261",
+    "url": "https://www.miniloop.ai/blog/account-based-marketing-metrics",
+    "kind": "blog",
+    "title": "Account-Based Marketing Metrics: A Practical Guide for Lean GTM Teams (2026)",
+    "angleIds": [
+      "metrics-for-small-lists"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-06-30",
+    "quote": "For lean teams running a focused TAL of 50 to 100 accounts, 15 percent penetration in the first quarter is a realistic baseline to build from.",
+    "note": "Coherent account-level metric framework (penetration, buying-committee coverage) that transfers to small high-ticket lists, but no numbers surface in the text and the vendor sells the automation.",
+    "relevance": 0.45
+  },
+  {
+    "id": "s262",
+    "url": "https://podcasts.apple.com/us/podcast/full-episodes-insurtech-leadership-podcast/id1535079819",
+    "kind": "podcast",
+    "title": "Full Episodes | Insurtech Leadership Podcast",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "niche",
+    "note": "Genuinely inside the target's world — named consultancy partners on NAIC/DFS/Colorado AI rules — but it's a buyer-priority signal, not outreach evidence, and the guests sell the remediation.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s263",
+    "url": "https://www.salespulse.app/blog/insurance-pipeline-management",
+    "kind": "blog",
+    "title": "Insurance Pipeline Management: Track Every Deal to Policy",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-06-01",
+    "quote": "Overall Initial Contact to Closed Rate: 28-40%",
+    "note": "Insurance-specific pipeline stages, but written for producers selling policies rather than for anyone selling into carrier/broker executives; excerpt is table of contents only.",
+    "relevance": 0.35
+  },
+  {
+    "id": "s264",
+    "url": "https://salesmotion.io/blog/account-based-marketing-metrics",
+    "kind": "blog",
+    "title": "7 ABM Metrics That Actually Prove ROI (2026)",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.55,
+    "soundness": 0.5,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "adjacent",
+    "date": "2026-06-11",
+    "quote": "An Account Engagement Score is a single number that measures the depth and breadth of interactions from multiple contacts within a target account.",
+    "note": "Near-duplicate of the other ABM listicle; formulas and benchmarks are promised in the TOC but none appear in the text, and it's a demo-booking vendor.",
+    "relevance": 0.4
+  },
+  {
+    "id": "s265",
+    "url": "https://prospeo.io/s/cold-email-analytics",
+    "kind": "blog",
+    "title": "Cold Email Analytics in 2026: Metrics That Actually Matter",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.35,
+    "soundness": 0.12,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "turning off open tracking more than doubled reply rates—from 1.08% to 2.36%.",
+    "note": "Scraped text is almost entirely site navigation from a lead-data vendor — no argument, no evidence, and the vendor sells the metric stack it would recommend.",
+    "relevance": 0.05
+  },
+  {
+    "id": "s266",
+    "url": "https://knowledge.hubspot.com/prospecting/use-the-target-accounts-index-page",
+    "kind": "docs",
+    "title": "Use the target accounts index page (HubSpot)",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.85,
+    "soundness": 0.45,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "total number of notes, booked meetings, sent sales emails, and sales email replies",
+    "note": "Official product documentation, so trustworthy about the tool, but the captured text is menu chrome and it explains no reasoning about why account-level tracking beats email-level.",
+    "relevance": 0.12
+  },
+  {
+    "id": "s267",
+    "url": "https://x.com/coldemailchris/status/2074957696047132705",
+    "kind": "x",
+    "title": "Christian: \"How We're Approaching AI-Native Outbound In 2026\"",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.5,
+    "soundness": 0.28,
+    "hasRealNumbers": true,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "This is the system our team has used to send 10M+ cold emails, generate 20,000+ leads, and over 70M in pipeline for the 100+ B2B companies we've collectively worked with.",
+    "note": "Agency principal citing big aggregate totals (10M emails, $70M pipeline) as credentials, but the post is truncated before any mechanism and the numbers sell his own service.",
+    "date": "2026-07-08",
+    "relevance": 0.1
+  },
+  {
+    "id": "s268",
+    "url": "https://x.com/FlorinTatulea/status/1811166423512928585",
+    "kind": "x",
+    "title": "Florin Tatulea on building target account lists from closed-won data",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.6,
+    "soundness": 0.55,
+    "hasRealNumbers": false,
+    "fetched": "full",
+    "specificity": "general",
+    "quote": "Run a closed won report in your CRM for the last 2 years and ask your CS team what the top new business accounts are.",
+    "note": "First-hand sales operator giving a concrete, testable mechanism — mine closed-won and CS input for account commonalities — but the 8% reply figure is a prescribed threshold, not a measured result.",
+    "date": "2024-07-10",
+    "relevance": 0.35
+  },
+  {
+    "id": "s269",
+    "url": "https://www.youtube.com/watch?v=U4hAGO_MOfs",
+    "kind": "youtube",
+    "title": "The Two Sales Metrics That Actually Matter for Growth",
+    "angleIds": [
+      "track-firms-not-emails"
+    ],
+    "reputation": 0.4,
+    "soundness": 0.18,
+    "hasRealNumbers": false,
+    "fetched": "snippet",
+    "specificity": "general",
+    "quote": "pipeline created is a leading indicator to pipeline developed—and that leads to revenue",
+    "note": "A single near-tautological line about pipeline being a leading indicator, from an unidentified speaker with no evidence behind it.",
+    "relevance": 0.05
+  }
+]

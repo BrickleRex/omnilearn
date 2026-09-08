@@ -45,9 +45,17 @@ builds a course. Evidence stays one click away as **index cards** and a
   range next to the corpus median), climb a version ladder with score deltas,
   and **Ship** real results back to see prediction vs reality.
 
-A finished, real cold-email course (214 sources, 163 claims, 6 modules,
-researched live through the CLI) ships in `examples/skills/`; `npm run
-seed:skills` drops it into `data/skills/` so you can drill and make right away.
+Long-tail targets are first-class: give the frame a target (who, industry,
+where, deal size, what makes it different) and the crew searches **wide to
+narrow** — the craft at large, neighbouring situations, then exactly that niche —
+tagging every source and claim niche / adjacent / general. Niche evidence
+outranks general advice when they disagree, and the personas, exemplars and
+drills are built from the target.
+
+Two finished, real courses ship in `examples/skills/` (generic B2B cold email:
+214 sources, 163 claims; cold email to executives at US insurance firms: 269
+sources, 169 claims, 22 of 35 angles niche-specific). `npm run seed:skills`
+drops them into `data/skills/` so you can drill and make right away.
 `SPEC-SKILLS.md` has the decisions; `shared/skills.ts` the contract. Data lives in
 `data/skills/<slug>/`. Reddit's `.json` and YouTube transcripts are blocked from
 datacenter IPs but work from a laptop; the research log says which sources were
