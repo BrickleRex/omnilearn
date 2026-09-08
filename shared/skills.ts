@@ -17,6 +17,7 @@ export interface Angle {
   kept: boolean;         // pruning = false
   estSources: number;    // cartographer's guess, shown on the ladder
   why?: string;          // one line: why this angle matters for the frame
+  scope?: 'niche' | 'general'; // additive: niche-specific angle vs a general rule applied to the niche
 }
 export interface AngleMap { angles: Angle[] }
 
@@ -25,7 +26,20 @@ export interface Frame {
   context: string;       // "B2B SaaS, $0 budget, sent ~50 cold emails ever"
   level: 'new' | 'some' | 'experienced';
   existingWork?: string; // optional paste: their last few emails
+  // Additive: the long-tail target. When present the crew searches wide-to-narrow
+  // (general craft → adjacent fields → this exact niche) and niche evidence wins.
+  target?: SkillTarget;
 }
+export interface SkillTarget {
+  who: string;           // "executives (CEO/COO/CFO) at insurance firms"
+  industry: string;      // "insurance (carriers, brokers, MGAs)"
+  where: string;         // "United States"
+  deal: string;          // "high-ticket, $50k+ annual"
+  different: string;     // one line: what makes this niche unlike the generic skill
+}
+
+/** How close a source or claim is to the frame's target. */
+export type Specificity = 'niche' | 'adjacent' | 'general';
 
 // ---------- corpus ----------
 export type SourceKind = 'reddit' | 'youtube' | 'blog' | 'x' | 'facebook' | 'docs' | 'podcast' | 'user' | 'other';
@@ -43,6 +57,8 @@ export interface SourceRef {
   quote?: string;        // the most load-bearing excerpt
   note?: string;         // assessor's one-line judgement
   fetched: 'full' | 'partial' | 'snippet' | 'failed'; // facebook is typically 'snippet'
+  specificity?: Specificity; // additive (assessor): how close to the frame's target
+  relevance?: number;        // additive (assessor): 0..1 fit to the target; feeds confidence
 }
 
 export type Verdict = 'solid' | 'likely' | 'contested' | 'stale';
@@ -59,6 +75,8 @@ export interface Claim {
   sides?: { for: string[]; against: string[] }; // present iff contested
   // consensus grid cell per source kind: agree / disagree / mixed / silent
   consensus: Partial<Record<SourceKind, 'agree' | 'disagree' | 'mixed'>>;
+  specificity?: Specificity; // additive: niche = about this target; general = a rule of the wider skill
+  relevance?: number;        // additive: 0..1 fit to the target
 }
 
 // ---------- course ----------

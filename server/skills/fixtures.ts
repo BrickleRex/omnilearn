@@ -7,12 +7,13 @@ import type {
 } from '../../shared/skills';
 
 export const MOCK_SKILL_NAME = 'Cold email';
+export const MOCK_TARGET = { who: 'VPs of Sales', industry: 'B2B SaaS', where: 'United States', deal: '$400/mo tool', different: 'They are pitched all day and know every trick.' };
 
 export function mockMap(_frame: Frame): AngleMap {
   return {
     angles: [
-      { id: 'targeting', title: 'Who to email', level: 'foundation', kept: true, estSources: 14, why: 'A perfect email to the wrong person is spam.' },
-      { id: 'icp', title: 'Ideal customer profile', parentId: 'targeting', level: 'foundation', kept: true, estSources: 6 },
+      { id: 'targeting', title: 'Who to email', level: 'foundation', kept: true, estSources: 14, why: 'A perfect email to the wrong person is spam.', scope: 'general' },
+      { id: 'icp', title: 'Ideal customer profile', parentId: 'targeting', level: 'foundation', kept: true, estSources: 6, scope: 'niche' },
       { id: 'triggers', title: 'Timing triggers', parentId: 'targeting', level: 'working', kept: true, estSources: 8 },
       { id: 'copy', title: 'Writing the email', level: 'foundation', kept: true, estSources: 22, why: 'The words decide the reply.' },
       { id: 'subject', title: 'Subject lines', parentId: 'copy', level: 'foundation', kept: true, estSources: 9 },
@@ -28,12 +29,12 @@ export function mockMap(_frame: Frame): AngleMap {
 
 export function mockSources(): SourceRef[] {
   return [
-    { id: 's1', url: 'https://www.reddit.com/r/sales/comments/abc/cold_email_reply_rates/', kind: 'reddit', title: 'What reply rates are you actually seeing? (r/sales)', date: '2026-05-12', angleIds: ['metrics', 'copy'], reputation: 0.55, soundness: 0.6, hasRealNumbers: true, quote: 'Across 4k sends we sit at 6-8% replies when the first line is about them, 2% when it is about us.', note: 'Practitioner thread with numbers; self-reported.', fetched: 'full' },
-    { id: 's2', url: 'https://x.com/example/status/1', kind: 'x', title: 'Thread: 12 subject lines A/B tested', date: '2026-07-02', angleIds: ['subject'], reputation: 0.6, soundness: 0.7, hasRealNumbers: true, quote: 'Lowercase, 2-4 word subjects beat title-case by 31% opens over 9k sends.', note: 'Real A/B with sample size.', fetched: 'full' },
-    { id: 's3', url: 'https://blog.example.com/cold-email-benchmarks-2026', kind: 'blog', title: 'Cold email benchmarks 2026 (12M emails)', date: '2026-03-20', angleIds: ['metrics', 'followups', 'copy'], reputation: 0.8, soundness: 0.8, hasRealNumbers: true, quote: 'Median reply rate 5.1%. Sequences of 3-4 emails earn 2x the replies of a single send.', note: 'Vendor data, large sample, some self-promo.', fetched: 'full' },
+    { id: 's1', url: 'https://www.reddit.com/r/sales/comments/abc/cold_email_reply_rates/', kind: 'reddit', title: 'What reply rates are you actually seeing? (r/sales)', date: '2026-05-12', angleIds: ['metrics', 'copy'], reputation: 0.55, soundness: 0.6, hasRealNumbers: true, quote: 'Across 4k sends we sit at 6-8% replies when the first line is about them, 2% when it is about us.', note: 'Practitioner thread with numbers; self-reported.', fetched: 'full', specificity: 'niche', relevance: 0.9 },
+    { id: 's2', url: 'https://x.com/example/status/1', kind: 'x', title: 'Thread: 12 subject lines A/B tested', date: '2026-07-02', angleIds: ['subject'], reputation: 0.6, soundness: 0.7, hasRealNumbers: true, quote: 'Lowercase, 2-4 word subjects beat title-case by 31% opens over 9k sends.', note: 'Real A/B with sample size.', fetched: 'full', specificity: 'adjacent', relevance: 0.6 },
+    { id: 's3', url: 'https://blog.example.com/cold-email-benchmarks-2026', kind: 'blog', title: 'Cold email benchmarks 2026 (12M emails)', date: '2026-03-20', angleIds: ['metrics', 'followups', 'copy'], reputation: 0.8, soundness: 0.8, hasRealNumbers: true, quote: 'Median reply rate 5.1%. Sequences of 3-4 emails earn 2x the replies of a single send.', note: 'Vendor data, large sample, some self-promo.', fetched: 'full', specificity: 'general', relevance: 0.4 },
     { id: 's4', url: 'https://www.youtube.com/watch?v=xyz', kind: 'youtube', title: 'I sent 10,000 cold emails — what worked', date: '2026-01-15', angleIds: ['opener', 'cta'], reputation: 0.5, soundness: 0.55, hasRealNumbers: true, quote: 'Asking for "a quick call" got half the replies of asking a yes/no question.', note: 'Transcript; anecdotal but concrete.', fetched: 'full' },
     { id: 's5', url: 'https://www.facebook.com/groups/coldemailers/posts/123', kind: 'facebook', title: 'Warm-up schedule that kept us out of spam', date: '2025-11-03', angleIds: ['warmup', 'deliverability'], reputation: 0.4, soundness: 0.4, hasRealNumbers: false, quote: 'Ramp 5→40 sends a day over three weeks.', note: 'Snippet only (login wall).', fetched: 'snippet' },
-    { id: 's6', url: 'https://docs.example.com/google-bulk-sender-rules', kind: 'docs', title: 'Bulk sender requirements (SPF, DKIM, DMARC)', date: '2026-02-01', angleIds: ['deliverability'], reputation: 0.95, soundness: 0.95, hasRealNumbers: false, quote: 'Senders must authenticate with SPF, DKIM and DMARC and keep spam rates under 0.3%.', note: 'Primary source.', fetched: 'full' },
+    { id: 's6', url: 'https://docs.example.com/google-bulk-sender-rules', kind: 'docs', title: 'Bulk sender requirements (SPF, DKIM, DMARC)', date: '2026-02-01', angleIds: ['deliverability'], reputation: 0.95, soundness: 0.95, hasRealNumbers: false, quote: 'Senders must authenticate with SPF, DKIM and DMARC and keep spam rates under 0.3%.', note: 'Primary source.', fetched: 'full', specificity: 'general', relevance: 0.3 },
     { id: 's7', url: 'https://blog.example.com/personalization-is-dead', kind: 'blog', title: 'Personalization is dead, relevance is not', date: '2026-06-11', angleIds: ['opener', 'icp'], reputation: 0.65, soundness: 0.6, hasRealNumbers: false, quote: 'Compliments about their podcast do nothing; naming the trigger that makes you relevant does.', note: 'Opinion piece from an operator.', fetched: 'full' },
     { id: 's8', url: 'https://www.reddit.com/r/Entrepreneur/comments/def/long_emails_win/', kind: 'reddit', title: 'Long, detailed emails outperform short ones for us', date: '2024-09-30', angleIds: ['copy'], reputation: 0.45, soundness: 0.35, hasRealNumbers: false, quote: 'Our 250-word emails do better than 60-word ones.', note: 'Contradicts the majority; small shop, no numbers.', fetched: 'full' },
   ];
@@ -41,12 +42,12 @@ export function mockSources(): SourceRef[] {
 
 export function mockClaims(): Claim[] {
   return [
-    { id: 'c1', angleId: 'opener', text: 'A first line about THEM (their trigger) beats a first line about you, roughly 3x on replies.', verdict: 'solid', confidence: 0.86, sourceIds: ['s1', 's7', 's4'], newest: '2026-07-02', contextTags: ['b2b', 'first-touch'], consensus: { reddit: 'agree', blog: 'agree', youtube: 'agree' } },
+    { id: 'c1', angleId: 'opener', text: 'A first line about THEM (their trigger) beats a first line about you, roughly 3x on replies.', verdict: 'solid', confidence: 0.86, sourceIds: ['s1', 's7', 's4'], newest: '2026-07-02', contextTags: ['b2b', 'first-touch'], consensus: { reddit: 'agree', blog: 'agree', youtube: 'agree' }, specificity: 'niche', relevance: 0.9 },
     { id: 'c2', angleId: 'subject', text: 'Short lowercase subjects (2-4 words) out-open title-case subjects.', verdict: 'likely', confidence: 0.72, sourceIds: ['s2'], newest: '2026-07-02', contextTags: ['b2b'], consensus: { x: 'agree' } },
     { id: 'c3', angleId: 'copy', text: 'Emails under ~80 words get more replies than long ones.', verdict: 'contested', confidence: 0.61, sourceIds: ['s3', 's1', 's8'], newest: '2026-05-12', contextTags: ['b2b'], sides: { for: ['s3', 's1'], against: ['s8'] }, consensus: { blog: 'agree', reddit: 'mixed' } },
     { id: 'c4', angleId: 'cta', text: 'A yes/no question as the ask beats "got 15 minutes for a call?".', verdict: 'likely', confidence: 0.7, sourceIds: ['s4', 's1'], newest: '2026-05-12', contextTags: ['first-touch'], consensus: { youtube: 'agree', reddit: 'agree' } },
     { id: 'c5', angleId: 'followups', text: 'A 3-4 email sequence roughly doubles replies versus a single send.', verdict: 'solid', confidence: 0.84, sourceIds: ['s3', 's1'], newest: '2026-05-12', contextTags: ['b2b'], consensus: { blog: 'agree', reddit: 'agree' } },
-    { id: 'c6', angleId: 'deliverability', text: 'SPF, DKIM and DMARC are mandatory; without them bulk mail is filtered.', verdict: 'solid', confidence: 0.97, sourceIds: ['s6'], newest: '2026-02-01', contextTags: ['deliverability'], consensus: { docs: 'agree' } },
+    { id: 'c6', angleId: 'deliverability', text: 'SPF, DKIM and DMARC are mandatory; without them bulk mail is filtered.', verdict: 'solid', confidence: 0.97, sourceIds: ['s6'], newest: '2026-02-01', contextTags: ['deliverability'], consensus: { docs: 'agree' }, specificity: 'general', relevance: 0.3 },
     { id: 'c7', angleId: 'warmup', text: 'Ramp a new domain from ~5 to ~40 sends a day over three weeks.', verdict: 'stale', confidence: 0.4, sourceIds: ['s5'], newest: '2025-11-03', contextTags: ['deliverability'], consensus: { facebook: 'agree' } },
     { id: 'c8', angleId: 'metrics', text: 'A median cold-email reply rate is about 5%; 8%+ is very good.', verdict: 'solid', confidence: 0.8, sourceIds: ['s3', 's1'], newest: '2026-05-12', contextTags: ['b2b'], consensus: { blog: 'agree', reddit: 'agree' } },
   ];

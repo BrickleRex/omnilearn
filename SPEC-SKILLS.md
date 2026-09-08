@@ -120,3 +120,26 @@ data-testids (must exist exactly):
   `.cm-ghost` (ghost line, Tab must NOT accept), `ship-open`, `ship-sent`, `ship-replies`, `ship-submit`, `ship-<id>` (row with prediction vs reality),
   `evidence-cards`, `evidence-card-<claimId>`, `evidence-grid`, `grid-cell-<claimId>-<kind>`, `evidence-view-cards|grid`,
   `back-to-map` (link back to the map/learn).
+
+## Long-tail targets: wide → narrow (added 2026-09-08)
+A frame may carry a structured `target` (who / industry / where / deal / what makes
+it different). When present:
+- **Cartographer** maps niche-specific angles (scope 'niche') AND the general rules
+  of the skill (scope 'general'); the critique pass asks "what does a generic course
+  get wrong for this niche?".
+- **Scouts** search a ladder, wide to narrow, for every angle: (1) the general craft,
+  (2) adjacent fields (other high-ticket / executive / regulated-industry outreach),
+  (3) the exact niche (niche terms in every query, site-scoped too). Each source is
+  tagged `specificity` niche | adjacent | general. A thin niche is reported, never
+  faked.
+- **Assessor** adds `relevance` (0..1 fit to the target) per source; claims inherit
+  specificity from their sources and relevance feeds confidence (niche > adjacent >
+  general at equal evidence).
+- **Reconciler**: when niche evidence contradicts a general rule, the niche wins for
+  this frame — the general claim becomes contested with the niche sources "against".
+- **Architect**: modules lead with niche claims; a general claim used in a unit is
+  labelled "general rule, applied to your niche"; personas, exemplars, rewrite drills
+  and spot-the-mistake flaws are built from the target, not the corpus average.
+- **UI**: frame modal target fields (`frame-target-who|industry|where|deal|different`),
+  map rows show a NICHE / GENERAL scope chip, evidence cards and source rows show the
+  specificity badge (`specificity-<niche|adjacent|general>` on cards).
