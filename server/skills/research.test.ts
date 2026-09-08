@@ -4,7 +4,10 @@ import {
   guessSourceKind, xStatusId, youtubeVideoId,
 } from './research/enrich';
 import { applyMapEdit, coerceAngleMap, guessAngleIds, scoutTargets } from './research/angles';
-import { claimConfidence, consensusFrom, newestDate, resumeFrom, verdictFor, coerceScout } from './research/pipeline';
+import {
+  claimConfidence, consensusFrom, inheritSpecificity, moreSpecific, newestDate, nicheShare, resumeFrom,
+  scoutLogLine, verdictFor, coerceScout,
+} from './research/pipeline';
 import { DECAY_MONTHS, familyFor, horizonMonths, isStale, monthsSince, recencyFactor } from './research/decay';
 import { emptyJob, pushLog, LOG_CAP } from './research/job';
 import type { AngleMap, SourceKind } from '../../shared/skills';
@@ -147,6 +150,18 @@ describe('coerceAngleMap', () => {
     expect(map.angles[1].level).toBe('working');
     expect(map.angles.every((a) => a.kept)).toBe(true);
     expect(map.angles[1].parentId).toBe('who-to-email');
+  });
+
+  it('keeps the niche/general scope, defaulting to general', () => {
+    const map = coerceAngleMap({
+      angles: [
+        { id: 'a', title: 'Insurance exec buying calendar', scope: 'niche' },
+        { id: 'b', title: 'Subject lines', scope: 'general' },
+        { id: 'c', title: 'Follow-ups' },
+        { id: 'd', title: 'Junk scope', scope: 'nonsense' },
+      ],
+    });
+    expect(map.angles.map((a) => a.scope)).toEqual(['niche', 'general', 'general', 'general']);
   });
 
   it('drops angles whose parentId does not resolve', () => {
@@ -303,6 +318,63 @@ describe('claimConfidence', () => {
   });
 });
 
+describe('claimConfidence with a target', () => {
+  const now = new Date('2026-09-06T00:00:00Z');
+  const base = { reputations: [0.8, 0.8], soundnesses: [0.8, 0.8], newest: '2026-08-01', horizon: 36, consensus: 3, now };
+
+  it('scores a perfect fit exactly like a frame with no target at all', () => {
+    expect(claimConfidence({ ...base, relevance: 1 })).toBe(claimConfidence(base));
+  });
+
+  it('shaves a claim the further it sits from the target, never past 0.7 of it', () => {
+    const full = claimConfidence(base);
+    const half = claimConfidence({ ...base, relevance: 0.5 });
+    const none = claimConfidence({ ...base, relevance: 0 });
+    expect(half).toBeLessThan(full);
+    expect(none).toBeLessThan(half);
+    expect(none).toBeCloseTo(Math.round(full * 0.7 * 100) / 100, 2);
+  });
+
+  it('clamps a nonsense relevance into 0..1', () => {
+    expect(claimConfidence({ ...base, relevance: 9 })).toBe(claimConfidence({ ...base, relevance: 1 }));
+    expect(claimConfidence({ ...base, relevance: -3 })).toBe(claimConfidence({ ...base, relevance: 0 }));
+  });
+});
+
+describe('inheritSpecificity', () => {
+  it('takes the highest specificity among sources that are really about the target', () => {
+    const fit = inheritSpecificity([
+      { specificity: 'general', relevance: 0.3 },
+      { specificity: 'adjacent', relevance: 0.6 },
+      { specificity: 'niche', relevance: 0.9 },
+    ]);
+    expect(fit).toEqual({ specificity: 'niche', relevance: 0.9 });
+  });
+
+  it('ignores a niche source the assessor found barely relevant', () => {
+    const fit = inheritSpecificity([
+      { specificity: 'niche', relevance: 0.2 },
+      { specificity: 'adjacent', relevance: 0.7 },
+    ]);
+    expect(fit).toEqual({ specificity: 'adjacent', relevance: 0.7 });
+  });
+
+  it('reads as a general rule when nothing clears the bar', () => {
+    expect(inheritSpecificity([{ specificity: 'niche', relevance: 0.1 }])).toEqual({ specificity: 'general', relevance: 0.1 });
+  });
+
+  it('stays silent when the frame has no target', () => {
+    expect(inheritSpecificity([{}, {}])).toEqual({});
+  });
+
+  it('ranks niche over adjacent over general', () => {
+    expect(moreSpecific('general', 'niche')).toBe('niche');
+    expect(moreSpecific('adjacent', 'general')).toBe('adjacent');
+    expect(moreSpecific(undefined, 'general')).toBe('general');
+    expect(moreSpecific(undefined, undefined)).toBeUndefined();
+  });
+});
+
 describe('verdictFor', () => {
   it('puts stale ahead of everything and contested ahead of the score', () => {
     expect(verdictFor(0.95, { stale: true })).toBe('stale');
@@ -391,8 +463,63 @@ describe('coerceScout', () => {
     expect(result.claims[0].sourceUrls).toEqual(['https://reddit.com/r/sales/comments/a/b']);
   });
 
+  it('keeps the wide-to-narrow tag, defaulting to general, and counts the niche rung itself', () => {
+    const result = coerceScout({
+      sources: [
+        { url: 'https://a.example.com/1', kind: 'blog', title: 'Niche', specificity: 'niche' },
+        { url: 'https://b.example.com/2', kind: 'blog', title: 'Adjacent', specificity: 'adjacent' },
+        { url: 'https://c.example.com/3', kind: 'blog', title: 'Untagged' },
+        { url: 'https://d.example.com/4', kind: 'blog', title: 'Junk tag', specificity: 'very-niche' },
+      ],
+      nicheFound: 4,   // the scout's own count is never trusted over its list
+      claims: [],
+    }, 'targeting');
+    expect(result.sources.map((s) => s.specificity)).toEqual(['niche', 'adjacent', 'general', 'general']);
+    expect(result.nicheFound).toBe(1);
+  });
+
   it('returns empty structures for junk', () => {
-    expect(coerceScout(null, 'a')).toEqual({ angleId: 'a', sources: [], claims: [] });
+    expect(coerceScout(null, 'a')).toEqual({ angleId: 'a', sources: [], claims: [], nicheFound: 0 });
+  });
+});
+
+describe('nicheShare', () => {
+  it('measures how much of the ladder is niche-specific', () => {
+    const map = coerceAngleMap({
+      angles: [
+        { id: 'a', title: 'A', scope: 'niche' },
+        { id: 'b', title: 'B', scope: 'niche' },
+        { id: 'c', title: 'C' },
+        { id: 'd', title: 'D', scope: 'general' },
+      ],
+    });
+    expect(nicheShare(map)).toBe(0.5);
+    expect(nicheShare({ angles: [] })).toBe(0);
+  });
+});
+
+describe('scoutLogLine', () => {
+  const result = {
+    sources: [
+      ...Array.from({ length: 4 }, () => ({ specificity: 'niche' as const })),
+      ...Array.from({ length: 3 }, () => ({ specificity: 'adjacent' as const })),
+      ...Array.from({ length: 3 }, () => ({ specificity: 'general' as const })),
+    ],
+    claims: Array.from({ length: 6 }, () => ({ text: 'x', sourceUrls: [] })),
+  };
+
+  it('reports the ladder split when the frame has a target', () => {
+    expect(scoutLogLine('Insurance exec buying calendar', result, true))
+      .toBe("scout: 'Insurance exec buying calendar' found 10 sources (4 niche, 3 adjacent, 3 general)");
+  });
+
+  it('keeps the old sources-and-claims line without a target', () => {
+    expect(scoutLogLine('Subject lines', result, false)).toBe("scout: 'Subject lines' found 10 sources, 6 claims");
+  });
+
+  it('says one source, not 1 sources', () => {
+    expect(scoutLogLine('X', { sources: [{ specificity: 'general' as const }], claims: [] }, false))
+      .toBe("scout: 'X' found 1 source, 0 claims");
   });
 });
 

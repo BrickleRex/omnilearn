@@ -10,7 +10,7 @@ import fsp from 'node:fs/promises';
 import path from 'node:path';
 import type {
   Angle, AngleMap, Claim, Course, Drill, Frame, Persona, ResearchJob, ResearchPhase,
-  RubricItem, SkillModule, SkillProject, SourceKind, SourceRef, Verdict,
+  RubricItem, SkillModule, SkillProject, SourceKind, SourceRef, Specificity, Verdict,
 } from '../../../shared/skills';
 import type { Concept, PrimerUnit } from '../../../shared/types';
 import { callClaude, extractJson, isMock } from '../../llm/llm';
@@ -80,10 +80,13 @@ export interface ConfidenceInput {
   horizon: number;      // months, from the angle's decay family
   consensus: number;    // how many distinct sources support it
   contested?: boolean;
+  // 0..1 fit to the frame's target. Only passed when the frame HAS a target;
+  // without one every claim is equally relevant and the factor is 1.
+  relevance?: number;
   now?: Date;
 }
 
-/** confidence = f(reputation, soundness, consensus) decayed by recency. */
+/** confidence = f(reputation, soundness, consensus) × fit-to-target, decayed by recency. */
 export function claimConfidence(input: ConfidenceInput): number {
   const rep = mean(input.reputations);
   const sound = mean(input.soundnesses);
@@ -92,9 +95,51 @@ export function claimConfidence(input: ConfidenceInput): number {
   // on soundness, so a claim three independent sources agree on must still be
   // able to earn the 'solid' stamp (live calibration: cold-email corpus, 2026-09).
   const base = 0.35 * rep + 0.25 * sound + 0.4 * agreement;
-  const decayed = base * recencyFactor(input.newest, input.horizon, input.now);
+  // Evidence about someone else's situation still counts, at 0.7 of its weight.
+  const fit = Number.isFinite(Number(input.relevance))
+    ? 0.7 + 0.3 * Math.min(1, Math.max(0, Number(input.relevance)))
+    : 1;
+  const decayed = base * fit * recencyFactor(input.newest, input.horizon, input.now);
   const penalised = input.contested ? decayed * 0.85 : decayed;
   return Math.round(Math.min(1, Math.max(0, penalised)) * 100) / 100;
+}
+
+// ---------- specificity (long-tail targets) ----------
+
+export const SPECIFICITY_RANK: Record<Specificity, number> = { general: 1, adjacent: 2, niche: 3 };
+
+/** The more specific of two tags, either of which may be missing. */
+export function moreSpecific(a: Specificity | undefined, b: Specificity | undefined): Specificity | undefined {
+  if (!a) return b;
+  if (!b) return a;
+  return SPECIFICITY_RANK[a] >= SPECIFICITY_RANK[b] ? a : b;
+}
+
+export const MIN_RELEVANCE = 0.5;
+
+/**
+ * What a claim inherits from the sources under it: the HIGHEST specificity among
+ * sources that are actually about the target (relevance >= 0.5), and the best
+ * relevance of any of them. A claim whose only niche source barely mentions the
+ * target reads as a general rule, not niche evidence.
+ */
+export function inheritSpecificity(
+  refs: Array<{ specificity?: Specificity; relevance?: number }>,
+): { specificity?: Specificity; relevance?: number } {
+  const rels = refs.map((r) => Number(r.relevance)).filter((n) => Number.isFinite(n));
+  const out: { specificity?: Specificity; relevance?: number } = {};
+  if (rels.length) out.relevance = Math.round(Math.min(1, Math.max(0, Math.max(...rels))) * 100) / 100;
+
+  let best: Specificity | undefined;
+  for (const r of refs) {
+    if (!r.specificity) continue;
+    if (Number(r.relevance) < MIN_RELEVANCE) continue;   // NaN (no relevance scored) passes
+    best = moreSpecific(best, r.specificity);
+  }
+  // Sources exist but none of them is about the target: a general rule.
+  if (!best && refs.some((r) => r.specificity)) best = 'general';
+  if (best) out.specificity = best;
+  return out;
 }
 
 export const SOLID_CONFIDENCE = 0.7;
@@ -214,6 +259,14 @@ async function skillModels() {
 
 // ---------- cartographer ----------
 
+/** How much of the ladder is niche-specific — a third is the bar when a frame has a target. */
+export function nicheShare(map: AngleMap): number {
+  if (!map.angles.length) return 0;
+  return map.angles.filter((a) => a.scope === 'niche').length / map.angles.length;
+}
+
+export const MIN_NICHE_SHARE = 1 / 3;
+
 /** Two passes: draft the map, then let a skeptical practitioner merge in what is missing. */
 export async function runCartographer(name: string, frame: Frame): Promise<AngleMap> {
   if (isMock()) return fixtures.mockMap(frame);
@@ -231,7 +284,12 @@ export async function runCartographer(name: string, frame: Frame): Promise<Angle
       timeoutMs: CARTO_TIMEOUT_MS,
     });
     const second = coerceAngleMap(merged);
-    if (second.angles.length >= 4) return second;
+    if (second.angles.length >= 4) {
+      // A critique that flattened the niche back into general advice is not an
+      // improvement for a long-tail frame, so the first map stands instead.
+      if (!frame.target || nicheShare(second) >= MIN_NICHE_SHARE || nicheShare(second) >= nicheShare(first)) return second;
+      return first;
+    }
   } catch {
     // The critique pass is a bonus; the first map still stands on its own.
   }
@@ -242,9 +300,24 @@ export async function runCartographer(name: string, frame: Frame): Promise<Angle
 
 interface ScoutSource {
   url: string; kind: SourceKind; title: string; date?: string; why?: string; quote?: string; hasRealNumbers: boolean;
+  specificity: Specificity;
 }
 interface ScoutClaim { text: string; sourceUrls: string[]; quote?: string }
-interface ScoutResult { angleId: string; sources: ScoutSource[]; claims: ScoutClaim[]; error?: string }
+interface ScoutResult { angleId: string; sources: ScoutSource[]; claims: ScoutClaim[]; nicheFound: number; error?: string }
+
+const SPECIFICITIES = new Set<Specificity>(['niche', 'adjacent', 'general']);
+
+/** One log line per scout: with a target it reports the wide->narrow split it actually found. */
+export function scoutLogLine(
+  title: string,
+  result: { sources: Array<{ specificity: Specificity }>; claims: unknown[] },
+  hasTarget: boolean,
+): string {
+  const found = `scout: '${title}' found ${plural(result.sources.length, 'source')}`;
+  if (!hasTarget) return `${found}, ${plural(result.claims.length, 'claim')}`;
+  const count = (s: Specificity) => result.sources.filter((x) => x.specificity === s).length;
+  return `${found} (${count('niche')} niche, ${count('adjacent')} adjacent, ${count('general')} general)`;
+}
 
 export function coerceScout(raw: unknown, angleId: string): ScoutResult {
   const r = (raw ?? {}) as { sources?: unknown[]; claims?: unknown[] };
@@ -262,6 +335,8 @@ export function coerceScout(raw: unknown, angleId: string): ScoutResult {
       kind,
       title: (typeof s.title === 'string' && s.title.trim() ? s.title.trim() : shortUrl(url)).slice(0, 160),
       hasRealNumbers: s.hasRealNumbers === true,
+      // No target in the frame means no ladder: everything is the craft at large.
+      specificity: SPECIFICITIES.has(s.specificity as Specificity) ? (s.specificity as Specificity) : 'general',
     };
     const date = typeof s.date === 'string' ? s.date.trim().slice(0, 10) : '';
     if (/^\d{4}(-\d{2}){0,2}$/.test(date)) entry.date = date;
@@ -287,7 +362,9 @@ export function coerceScout(raw: unknown, angleId: string): ScoutResult {
     claims.push(entry);
     if (claims.length >= 14) break;
   }
-  return { angleId, sources, claims };
+  // Counted from the list we kept, not from whatever number the scout claimed.
+  const nicheFound = sources.filter((s) => s.specificity === 'niche').length;
+  return { angleId, sources, claims, nicheFound };
 }
 
 async function phaseScouting(ctl: JobCtl, project: SkillProject, map: AngleMap): Promise<void> {
@@ -309,17 +386,18 @@ async function phaseScouting(ctl: JobCtl, project: SkillProject, map: AngleMap):
         model: models.scout,
         prompt: prompts.scoutPrompt({ name: project.name, frame: project.frame, angle, siblings }),
         allowedTools: ['WebSearch', 'WebFetch'],
-        // The prompt budgets ~18 tool calls; the cap only catches a runaway.
-        maxTurns: 40,
+        // The prompt budgets the tool calls (more when a target adds the niche
+        // rung); the cap only catches a runaway.
+        maxTurns: project.frame.target ? 54 : 40,
         timeoutMs: SCOUT_TIMEOUT_MS,
       });
       const result = coerceScout(raw, angle.id);
       await writeJson(file, result);
-      await ctl.log(`scout: '${angle.title}' found ${plural(result.sources.length, 'source')}, ${plural(result.claims.length, 'claim')}`);
+      await ctl.log(scoutLogLine(angle.title, result, Boolean(project.frame.target)));
     } catch (err) {
       failures += 1;
       const why = err instanceof Error ? err.message.slice(0, 140) : 'scout failed';
-      await writeJson(file, { angleId: angle.id, sources: [], claims: [], error: why } satisfies ScoutResult);
+      await writeJson(file, { angleId: angle.id, sources: [], claims: [], nicheFound: 0, error: why } satisfies ScoutResult);
       await ctl.log(`scout: '${angle.title}' came back empty — ${why}`);
     }
     await ctl.bump('anglesDone');
@@ -353,6 +431,7 @@ export function mergeSources(scouts: ScoutResult[]): SourceRef[] {
         existing.hasRealNumbers = existing.hasRealNumbers || s.hasRealNumbers;
         if (!existing.quote && s.quote) existing.quote = s.quote;
         if (!existing.date && s.date) existing.date = s.date;
+        existing.specificity = moreSpecific(existing.specificity, s.specificity);
         continue;
       }
       const ref: SourceRef = {
@@ -365,6 +444,7 @@ export function mergeSources(scouts: ScoutResult[]): SourceRef[] {
         soundness: 0.5,
         hasRealNumbers: s.hasRealNumbers,
         fetched: 'failed',
+        specificity: s.specificity,
       };
       if (s.date) ref.date = s.date;
       if (s.quote) ref.quote = s.quote;
@@ -419,23 +499,29 @@ async function phaseAssessing(ctl: JobCtl, project: SkillProject, map: AngleMap)
       title: s.title,
       url: s.url,
       ...(s.date ? { date: s.date } : {}),
+      ...(s.specificity ? { specificity: s.specificity } : {}),
       angle: angleTitle.get(s.angleIds[0] ?? '') ?? s.angleIds[0] ?? 'general',
       text: await textFor(project.id, s),
     })));
     try {
       const scored = await askJson<{ sources?: Array<Partial<SourceRef> & { id?: string }> }>({
         model: models.assessor,
-        prompt: prompts.assessSourcesPrompt(items),
+        prompt: prompts.assessSourcesPrompt(items, project.frame.target),
       });
       const byId = new Map(batch.map((s) => [s.id, s]));
       for (const row of scored.sources ?? []) {
-        const target = byId.get(String(row?.id ?? ''));
-        if (!target) continue;
-        target.reputation = clamp01(row.reputation, target.reputation);
-        target.soundness = clamp01(row.soundness, target.soundness);
-        if (typeof row.hasRealNumbers === 'boolean') target.hasRealNumbers = row.hasRealNumbers;
-        if (typeof row.note === 'string' && row.note.trim()) target.note = row.note.trim().slice(0, 200);
-        if (!target.date && typeof row.date === 'string' && /^\d{4}(-\d{2}){0,2}$/.test(row.date.trim())) target.date = row.date.trim();
+        const ref = byId.get(String(row?.id ?? ''));
+        if (!ref) continue;
+        ref.reputation = clamp01(row.reputation, ref.reputation);
+        ref.soundness = clamp01(row.soundness, ref.soundness);
+        if (typeof row.hasRealNumbers === 'boolean') ref.hasRealNumbers = row.hasRealNumbers;
+        if (typeof row.note === 'string' && row.note.trim()) ref.note = row.note.trim().slice(0, 200);
+        if (!ref.date && typeof row.date === 'string' && /^\d{4}(-\d{2}){0,2}$/.test(row.date.trim())) ref.date = row.date.trim();
+        // Fit to the target: only meaningful, and only asked for, when there is one.
+        if (project.frame.target) {
+          ref.relevance = clamp01(row.relevance, ref.relevance ?? 0.5);
+          if (SPECIFICITIES.has(row.specificity as Specificity)) ref.specificity = row.specificity as Specificity;
+        }
       }
       await ctl.log(`assess: scored ${plural(batch.length, 'source')}`);
     } catch (err) {
@@ -494,6 +580,11 @@ async function phaseAssessing(ctl: JobCtl, project: SkillProject, map: AngleMap)
   const kept = drafts.filter((c) => c.text);
   await writeJson(draftClaimsFile(project.id), kept);
   await ctl.progress({ claims: kept.length });
+  if (project.frame.target) {
+    const niche = sources.filter((s) => s.specificity === 'niche').length;
+    const adjacent = sources.filter((s) => s.specificity === 'adjacent').length;
+    await ctl.log(`assess: ${niche} niche, ${adjacent} adjacent of ${plural(sources.length, 'source')}`);
+  }
   await ctl.log(`assess: ${plural(sources.length, 'source')} scored, ${plural(kept.length, 'candidate claim')}`);
   return { sources, claims: kept };
 }
@@ -508,6 +599,7 @@ function clamp01(v: unknown, fallback: number): number {
 
 interface Cluster {
   text?: string; angleId?: string; sourceIds?: unknown; contested?: boolean; sides?: { for?: unknown; against?: unknown };
+  contextTags?: unknown;
 }
 
 async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMap): Promise<Claim[]> {
@@ -517,14 +609,21 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
   const byId = new Map(sources.map((s) => [s.id, s]));
   const angleById = new Map(map.angles.map((a) => [a.id, a]));
 
+  const target = project.frame.target;
+  const specOf = (sourceIds: string[]) =>
+    inheritSpecificity(sourceIds.map((id) => byId.get(id)).filter((s): s is SourceRef => Boolean(s)));
+
   const clusters: Cluster[] = [];
   for (const batch of chunk(drafts, RECONCILE_BATCH)) {
     ctl.checkpoint();
-    const items = batch.map((c, i) => ({ i, text: c.text, angleId: c.angleId, sourceIds: c.sourceIds }));
+    const items = batch.map((c, i) => ({
+      i, text: c.text, angleId: c.angleId, sourceIds: c.sourceIds,
+      ...(target ? { specificity: specOf(c.sourceIds).specificity } : {}),
+    }));
     try {
       const out = await askJson<{ claims?: Cluster[] }>({
         model: models.reconciler,
-        prompt: prompts.reconcilerPrompt(items, sources),
+        prompt: prompts.reconcilerPrompt(items, sources, target),
       });
       clusters.push(...(Array.isArray(out.claims) ? out.claims : []));
     } catch (err) {
@@ -561,6 +660,7 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
     const contested = Boolean(sides && sides.against.length > 0);
     if (contested) contestedCount += 1;
     const stale = isStale(newest, angle);
+    const fit = specOf(sourceIds);
     const confidence = claimConfidence({
       reputations: refs.map((s) => s.reputation),
       soundnesses: refs.map((s) => s.soundness),
@@ -568,9 +668,16 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
       horizon,
       consensus: sourceIds.length,
       contested,
+      // Only a frame with a target has anything to be relevant TO.
+      ...(target && typeof fit.relevance === 'number' ? { relevance: fit.relevance } : {}),
     });
     if (confidence < MIN_CONFIDENCE) continue;
     const key = text.toLowerCase().replace(/[^a-z0-9 ]/g, '').slice(0, 90);
+    // The reconciler's own tags carry the "niche-disagrees" stamp, so they go first.
+    const modelTags = (Array.isArray(cluster.contextTags) ? cluster.contextTags : [])
+      .filter((t): t is string => typeof t === 'string' && t.trim().length > 0)
+      .map((t) => t.trim().toLowerCase().slice(0, 24));
+    const derivedTags = tagsFor.get(key) ?? [...new Set(sourceIds.flatMap((sid) => tagsBySource.get(sid) ?? []))];
     const claim: Claim = {
       id: `c${claims.length + 1}`,
       angleId,
@@ -578,9 +685,11 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
       verdict: verdictFor(confidence, { contested, stale, sources: sourceIds.length }),
       confidence,
       sourceIds,
-      contextTags: tagsFor.get(key) ?? [...new Set(sourceIds.flatMap((sid) => tagsBySource.get(sid) ?? []))].slice(0, 4),
+      contextTags: [...new Set([...modelTags, ...derivedTags])].slice(0, 4),
       consensus: consensusFrom(sourceIds, sides, (id) => byId.get(id)?.kind),
     };
+    if (fit.specificity) claim.specificity = fit.specificity;
+    if (typeof fit.relevance === 'number') claim.relevance = fit.relevance;
     if (newest) claim.newest = newest;
     if (contested && sides) claim.sides = { for: sides.for.length ? sides.for : sourceIds.filter((id) => !sides.against.includes(id)), against: sides.against };
     claims.push(claim);
@@ -589,6 +698,11 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
   await saveClaims(project.id, claims);
   await ctl.progress({ claims: claims.length });
   await ctl.log(`reconcile: ${plural(claims.length, 'claim')}, ${contestedCount} contested`);
+  if (target) {
+    const niche = claims.filter((c) => c.specificity === 'niche').length;
+    const adjacent = claims.filter((c) => c.specificity === 'adjacent').length;
+    await ctl.log(`reconcile: ${niche} niche, ${adjacent} adjacent, ${claims.length - niche - adjacent} general`);
+  }
   return claims;
 }
 
@@ -742,11 +856,21 @@ export function coerceDrills(raw: unknown, ctx: DrillCtx): Drill[] {
   return out;
 }
 
+/** Niche first, then adjacent, then general — the order the architect should read them in. */
+function nicheFirst<T extends { specificity?: Specificity }>(items: T[], hasTarget: boolean): T[] {
+  if (!hasTarget) return items;
+  return [...items].sort((a, b) => SPECIFICITY_RANK[b.specificity ?? 'general'] - SPECIFICITY_RANK[a.specificity ?? 'general']);
+}
+
 async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleMap): Promise<Course> {
   const models = await skillModels();
   const sources = await loadSources(project.id);
-  const claims = await loadClaims(project.id);
-  if (!claims.length) throw new Error('no claims survived reconciliation — start research again to re-scout');
+  const loaded = await loadClaims(project.id);
+  if (!loaded.length) throw new Error('no claims survived reconciliation — start research again to re-scout');
+  const hasTarget = Boolean(project.frame.target);
+  const claims = nicheFirst(loaded, hasTarget);
+  // The ladder keeps its order (children under parents); the prompt tags each
+  // angle's scope and tells the architect to lead with the niche ones.
   const angles = map.angles.filter((a) => a.kept);
   const ctx = { name: project.name, frame: project.frame, angles, claims };
   const claimIds = new Set(claims.map((c) => c.id));
@@ -769,7 +893,7 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
   // Personas first: the rewrite drills reference them by id.
   const extras = await askJson<{ personas?: unknown; exemplars?: unknown; metric?: unknown }>({
     model: models.architect,
-    prompt: prompts.architectExtrasPrompt(ctx, sources),
+    prompt: prompts.architectExtrasPrompt(ctx, nicheFirst(sources, hasTarget)),
   });
   const personas: Persona[] = (Array.isArray(extras.personas) ? extras.personas : [])
     .map((item, i) => {
@@ -815,8 +939,11 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
   for (const [i, m] of planned.entries()) {
     ctl.checkpoint();
     const moduleClaims = claims.filter((c) => m.angleIds.includes(c.angleId));
-    const pool = moduleClaims.length ? moduleClaims : claims;
-    const numberSources = sources.filter((s) => s.hasRealNumbers && s.angleIds.some((a) => m.angleIds.includes(a)));
+    const pool = nicheFirst(moduleClaims.length ? moduleClaims : claims, hasTarget);
+    const numberSources = nicheFirst(
+      sources.filter((s) => s.hasRealNumbers && s.angleIds.some((a) => m.angleIds.includes(a))),
+      hasTarget,
+    );
     const built = await askJson<Record<string, unknown>>({
       model: models.architect,
       prompt: prompts.architectModulePrompt({
@@ -893,8 +1020,9 @@ async function runMock(ctl: JobCtl, project: SkillProject): Promise<void> {
     // Same per-angle artifact the real scouts write, so resume behaves identically.
     await writeJson(scoutFile(project.id, angle.id), {
       angleId: angle.id,
-      sources: hits.map((s) => ({ url: s.url, kind: s.kind, title: s.title, hasRealNumbers: s.hasRealNumbers, ...(s.date ? { date: s.date } : {}), ...(s.quote ? { quote: s.quote } : {}) })),
+      sources: hits.map((s) => ({ url: s.url, kind: s.kind, title: s.title, hasRealNumbers: s.hasRealNumbers, ...(s.date ? { date: s.date } : {}), ...(s.quote ? { quote: s.quote } : {}), specificity: s.specificity ?? 'general' })),
       claims: [],
+      nicheFound: hits.filter((s) => s.specificity === 'niche').length,
     });
     await ctl.log(`scout: '${angle.title}' found ${plural(found, 'source')}`);
     await ctl.bump('anglesDone');
@@ -962,7 +1090,8 @@ async function runReal(ctl: JobCtl, project: SkillProject): Promise<void> {
     await saveMap(project.id, map);
     project.map = map;
     await saveSkill(project);
-    await ctl.log(`cartographer: ${plural(map.angles.length, 'angle')}`);
+    const niche = map.angles.filter((a) => a.scope === 'niche').length;
+    await ctl.log(`cartographer: ${plural(map.angles.length, 'angle')}${project.frame.target ? ` (${niche} niche)` : ''}`);
   }
   project.map = map;
 

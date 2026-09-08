@@ -8,7 +8,7 @@
 import { Router } from 'express';
 import fsp from 'node:fs/promises';
 import type {
-  AngleMap, CreateSkillRequest, Frame, ResearchJob, SkillProject, SkillSummary, SourceRef,
+  AngleMap, CreateSkillRequest, Frame, ResearchJob, SkillProject, SkillSummary, SkillTarget, SourceRef,
 } from '../../shared/skills';
 import { HttpError, ensureDir, writeTextFile } from '../store';
 import {
@@ -40,6 +40,23 @@ function summarize(p: SkillProject): SkillSummary {
   };
 }
 
+/**
+ * The long-tail target. Kept whenever the learner filled ANY of the five fields —
+ * a partly-filled target still points the crew at a niche; the blanks read as
+ * "(not said)" in the prompts.
+ */
+function coerceTarget(raw: unknown): SkillTarget | undefined {
+  const t = (raw ?? {}) as Partial<SkillTarget>;
+  const target: SkillTarget = {
+    who: str(t.who).slice(0, 200),
+    industry: str(t.industry).slice(0, 200),
+    where: str(t.where).slice(0, 200),
+    deal: str(t.deal).slice(0, 200),
+    different: str(t.different).slice(0, 400),
+  };
+  return Object.values(target).some((v) => v) ? target : undefined;
+}
+
 function coerceFrame(raw: unknown): Frame {
   const f = (raw ?? {}) as Partial<Frame>;
   const outcome = str(f.outcome);
@@ -52,6 +69,8 @@ function coerceFrame(raw: unknown): Frame {
   };
   const existing = str(f.existingWork);
   if (existing) frame.existingWork = existing.slice(0, 8000);
+  const target = coerceTarget(f.target);
+  if (target) frame.target = target;
   return frame;
 }
 

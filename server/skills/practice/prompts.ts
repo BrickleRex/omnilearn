@@ -9,6 +9,7 @@ import type {
   Claim, Course, Drill, Exemplar, Frame, Persona, RubricItem, SkillModule,
 } from '../../../shared/skills';
 import type { ChatMessage } from '../../../shared/types';
+import { targetBlock } from '../research/prompts';
 
 const VOICE = `VOICE
 - Explain like you are talking to a smart 15-year-old who is new to this, never condescending.
@@ -24,6 +25,14 @@ No markdown, no commentary, no code fence around the JSON — just the object.`;
 }
 
 const BODY_HEAD = 6000; // characters of a draft any prompt gets to see
+
+/**
+ * The long-tail target, when the frame carries one: the panel, the hints and the
+ * ghost all speak as these people rather than a generic reader.
+ */
+function targetLines(frame: Frame): string {
+  return frame.target ? `\n${targetBlock(frame.target)}\n` : '';
+}
 
 export function numbered(body: string): string {
   const lines = String(body ?? '').slice(0, BODY_HEAD).split('\n');
@@ -92,7 +101,7 @@ draft against a rubric built from researched claims. You are a MODEL of the audi
 WHAT THE LEARNER IS AFTER
 outcome: ${ctx.frame.outcome}
 context: ${ctx.frame.context}
-
+${targetLines(ctx.frame)}
 MODULE: ${ctx.module.title}
 
 RUBRIC — score every one of these ids: ${rubricIds}
@@ -107,7 +116,9 @@ THE DRAFT (line numbers on the left)
 ${numbered(ctx.body)}
 
 RULES
-- One reaction per NON-EMPTY line, per reader, written in that reader's voice, 1-2 sentences.
+${ctx.frame.target ? `- These three readers ARE the target above. React as those people: their industry's words, their
+  rules, their calendar, their idea of a big deal. Never as a generic reader.
+` : ''}- One reaction per NON-EMPTY line, per reader, written in that reader's voice, 1-2 sentences.
   Never react to a blank line. Use the printed line numbers.
 - If a reader would stop reading, set bailed: true on the line where they stop. At most ONE
   bailed line per reader, and only when they really would quit there.
@@ -150,7 +161,7 @@ export function hintPrompt(ctx: HintPromptCtx): string {
 WHAT THEY ARE AFTER
 outcome: ${ctx.frame.outcome}
 context: ${ctx.frame.context}
-
+${targetLines(ctx.frame)}
 MODULE: ${ctx.module.title}
 
 RUBRIC AND ITS EVIDENCE
@@ -166,6 +177,7 @@ ${numbered(ctx.body)}
 WHAT TO SAY
 - ${ask}
 - 1 to 2 lines. No rewritten draft, no paragraph they can paste. Name the move, not the words.
+${ctx.frame.target ? '- Point at what works on THIS target, not on readers in general. A general rule gets said as a general rule, then localised to these people.' : ''}
 
 LOOK BACK (the flag field)
 - Reread the lines already written. Set flag = { line, note } ONLY when an earlier line is
@@ -196,7 +208,7 @@ must TYPE themselves. It is never pasted for them, so it must be exactly one sen
 WHAT THEY ARE AFTER
 outcome: ${ctx.frame.outcome}
 context: ${ctx.frame.context}
-
+${targetLines(ctx.frame)}
 MODULE: ${ctx.module.title}
 
 RUBRIC AND ITS EVIDENCE
@@ -212,6 +224,7 @@ RULES
 - Return EXACTLY ONE sentence that belongs at line ${ctx.cursorLine}, in the register of the exemplars.
 - Plain text only: no quotes around it, no markdown, no label, no explanation, no trailing prose.
 - It must fit what is already written — same reader, same subject, no repeats.
+${ctx.frame.target ? '- Written for the target above: their words, their situation, nothing a generic reader would get.' : ''}
 
 ${fence(`{ text: string }`)}`;
 }
@@ -236,7 +249,7 @@ see where they stand before they learn anything. Be honest and kind; this is a s
 WHAT THEY ARE AFTER
 outcome: ${ctx.frame.outcome}
 context: ${ctx.frame.context}
-
+${targetLines(ctx.frame)}
 RUBRIC — score every one of these ids: ${ids}
 ${rubric}
 
@@ -249,6 +262,7 @@ RULES
 - One score per rubric id, 0..1, judging what they actually wrote, not what they meant.
 - Each note is ONE line: what is there or missing, citing claim ids like "(c1)".
 - summary is exactly 2 lines: the one strength, then the one thing to change first.
+${ctx.frame.target ? '- Judge it as the target above would read it, not as a general reader would.' : ''}
 
 ${VOICE}
 
@@ -357,7 +371,7 @@ WHAT THEY ARE AFTER
 outcome: ${ctx.frame.outcome}
 context: ${ctx.frame.context}
 they rate themselves: ${ctx.frame.level}
-
+${targetLines(ctx.frame)}
 MODULE: ${ctx.module.title}
 
 WHAT THE RESEARCH SAYS (cite these ids when you lean on them)
@@ -379,6 +393,7 @@ ${ctx.message}
 
 WHAT YOU ARE GREAT AT
 - Explaining WHY a move works, with the claim behind it and the reader it works on.
+${ctx.frame.target ? '- Answering for THIS target: a general rule gets said as "the general rule is X — for these people it means Y".' : ''}
 - Reading their draft and saying plainly what a reader would do with it.
 - Turning a vague worry into the one next move.
 

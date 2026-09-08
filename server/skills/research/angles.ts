@@ -53,6 +53,9 @@ export function coerceAngleMap(raw: unknown): AngleMap {
       level: LEVELS.has(a.level as AngleLevel) ? (a.level as AngleLevel) : 'working',
       kept: true,
       estSources: clampInt(a.estSources, 1, 40, 6),
+      // Long-tail frames split the ladder into niche and general; a map with no
+      // target (or a cartographer that forgot) reads as general throughout.
+      scope: a.scope === 'niche' ? 'niche' : 'general',
     };
     const why = str(a.why, 200);
     if (why) angle.why = why;
