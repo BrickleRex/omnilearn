@@ -54,8 +54,8 @@ drills are built from the target.
 
 Two finished, real courses ship in `examples/skills/` (generic B2B cold email:
 214 sources, 163 claims; cold email to executives at US insurance firms: 269
-sources, 169 claims, 22 of 35 angles niche-specific). `npm run seed:skills`
-drops them into `data/skills/` so you can drill and make right away.
+sources, 169 claims, 22 of 35 angles niche-specific). `npm run seed:skills` drops them into
+`data/skills/` so you can drill and make right away.
 `SPEC-SKILLS.md` has the decisions; `shared/skills.ts` the contract. Data lives in
 `data/skills/<slug>/`. Reddit's `.json` and YouTube transcripts are blocked from
 datacenter IPs but work from a laptop; the research log says which sources were

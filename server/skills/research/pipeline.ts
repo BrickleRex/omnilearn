@@ -928,8 +928,8 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
     .slice(0, 3);
   const rawMetric = (extras.metric ?? {}) as Record<string, unknown>;
   const metric = {
-    name: String(rawMetric.name ?? 'reply rate').trim().slice(0, 40) || 'reply rate',
-    unit: String(rawMetric.unit ?? '%').trim().slice(0, 12) || '%',
+    name: String(rawMetric.name ?? 'reply rate').trim().slice(0, 90) || 'reply rate',
+    unit: String(rawMetric.unit ?? '%').trim().slice(0, 24) || '%',
     corpusMedian: Number.isFinite(Number(rawMetric.corpusMedian)) ? Number(rawMetric.corpusMedian) : 0,
   };
 

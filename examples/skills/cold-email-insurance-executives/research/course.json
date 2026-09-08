@@ -47,14 +47,14 @@
           "id": "who-signs-at-insurance-firms-u1",
           "conceptId": "c-firm-type",
           "title": "Three firm types, three numbers",
-          "bodyMd": "A carrier underwrites the risk. Its number is the combined ratio — US P/C finished 2025 at 93, the best in a decade, so your claim is measured against that. Name the line too: in 2025 personal auto made about $28.9B of underwriting income while other liability ran 114.7 and lost about $11B.\n\nAn MGA underwrites on someone else's paper. Its number is defended capacity. MGA premiums grew 17.8% to $108.7B in 2025 while carriers tightened due diligence and demanded loss ratio stability before renewing.\n\nA broker sells and renews. Promise retention or new business.\n\nThe motives are opposed. One email written for all three reads as naive to all three."
+          "bodyMd": "A carrier underwrites the risk. Its number is the combined ratio \u2014 US P/C finished 2025 at 93, the best in a decade, so your claim is measured against that. Name the line too: in 2025 personal auto made about $28.9B of underwriting income while other liability ran 114.7 and lost about $11B.\n\nAn MGA underwrites on someone else's paper. Its number is defended capacity. MGA premiums grew 17.8% to $108.7B in 2025 while carriers tightened due diligence and demanded loss ratio stability before renewing.\n\nA broker sells and renews. Promise retention or new business.\n\nThe motives are opposed. One email written for all three reads as naive to all three."
         },
         {
           "kind": "card",
           "id": "who-signs-at-insurance-firms-u2",
           "conceptId": "c-size-signs",
           "title": "Who can sign $60k",
-          "bodyMd": "The average US program administrator does about $20.6M in revenue. A $60k-a-year engagement is roughly 0.3% of that. The CEO or owner signs it. Write to the CEO.\n\nA carrier is different arithmetic. Carriers spend about 4.6% of direct written premium on technology, so a carrier writing $2B has about a $92M tech budget and your $60k is 0.07% of it — that is not a CEO decision. Email the SVP or VP who owns the problem, and frame the money as pilot-sized: normal vendor deals there run $500k–$750k.\n\nThe top 10 P&C groups hold 51.4% of a $1.06 trillion market. The regional and mutual tail is where two or three executives decide."
+          "bodyMd": "The average US program administrator does about $20.6M in revenue. A $60k-a-year engagement is roughly 0.3% of that. The CEO or owner signs it. Write to the CEO.\n\nA carrier is different arithmetic. Carriers spend about 4.6% of direct written premium on technology, so a carrier writing $2B has about a $92M tech budget and your $60k is 0.07% of it \u2014 that is not a CEO decision. Email the SVP or VP who owns the problem, and frame the money as pilot-sized: normal vendor deals there run $500k\u2013$750k.\n\nThe top 10 P&C groups hold 51.4% of a $1.06 trillion market. The regional and mutual tail is where two or three executives decide."
         },
         {
           "kind": "card",
@@ -68,7 +68,7 @@
           "id": "who-signs-at-insurance-firms-u4",
           "conceptId": "c-committee",
           "title": "Rollout, not experiments",
-          "bodyMd": "Pitch the executive who owns rollout, not the one running experiments: 82% of carriers use some AI but only 7% have scaled it. The innovation lead can buy a pilot and never buy anything after it.\n\nCarrier pilots die in POC purgatory because the internal sponsor is weak more often than because the product is. Pick a sponsor with a budget line and back them — hand them the third-party oversight answer to carry upward.\n\nThen plan for the crowd. Won deals of $50k–$250k typically involve at least ten people. After the exec says yes, add 4–10 weeks for security review, legal redlines and procurement; security review alone is 2–6 weeks."
+          "bodyMd": "Pitch the executive who owns rollout, not the one running experiments: 82% of carriers use some AI but only 7% have scaled it. The innovation lead can buy a pilot and never buy anything after it.\n\nCarrier pilots die in POC purgatory because the internal sponsor is weak more often than because the product is. Pick a sponsor with a budget line and back them \u2014 hand them the third-party oversight answer to carry upward.\n\nThen plan for the crowd. Won deals of $50k\u2013$250k typically involve at least ten people. After the exec says yes, add 4\u201310 weeks for security review, legal redlines and procurement; security review alone is 2\u20136 weeks."
         },
         {
           "kind": "check",
@@ -181,11 +181,11 @@
           "moduleId": "who-signs-at-insurance-firms",
           "prompt": "You are sizing your $60k engagement against what a carrier normally spends. What does a buyer's guide put a typical insurtech distribution platform deal at?",
           "options": [
-            "About $60k–$100k, roughly what you are asking for",
-            "$500k–$750k, several times your ask"
+            "About $60k\u2013$100k, roughly what you are asking for",
+            "$500k\u2013$750k, several times your ask"
           ],
           "winner": 1,
-          "result": "The guide puts a typical carrier deal at $500K–$750K, with platforms running $100k to $3M+.",
+          "result": "The guide puts a typical carrier deal at $500K\u2013$750K, with platforms running $100k to $3M+.",
           "why": "Your five figures is pilot-sized spend to an SVP, so frame it that way instead of as a strategic purchase the CEO must sign.",
           "claimIds": [
             "c15",
@@ -212,13 +212,13 @@
           "moduleId": "who-signs-at-insurance-firms",
           "segments": [
             {
-              "text": "Subject: your Q4 capacity renewal — Marcus, writing to you and not your underwriting lead, because at your size this is a signature, not a committee."
+              "text": "Subject: your Q4 capacity renewal \u2014 Marcus, writing to you and not your underwriting lead, because at your size this is a signature, not a committee."
             },
             {
               "text": "Three of the four markets behind your habitational program moved to quarterly loss ratio reporting this year before they will talk about re-signing limits."
             },
             {
-              "text": "We move the combined ratio — you should be able to show your board a point or two off the 93 the industry printed in 2025.",
+              "text": "We move the combined ratio \u2014 you should be able to show your board a point or two off the 93 the industry printed in 2025.",
               "flaw": "Combined ratio is the carrier's board number. The MGA earns commission on premium volume and the carrier absorbs the loss, so Marcus does not carry it. Promise defended capacity instead.",
               "claimIds": [
                 "c4",
@@ -240,7 +240,7 @@
           "kind": "rewrite",
           "id": "who-signs-at-insurance-firms-d4",
           "moduleId": "who-signs-at-insurance-firms",
-          "original": "Dana — your other liability book ran a 114.7 combined ratio while the industry printed 93. We rebuild risk-selection rules inside the underwriting desk; one regional carrier tightened submission triage in two quarters. Worth 20 minutes with your pricing lead? We meet carrier vendor requirements: MFA, audit rights, 72-hour incident notice.",
+          "original": "Dana \u2014 your other liability book ran a 114.7 combined ratio while the industry printed 93. We rebuild risk-selection rules inside the underwriting desk; one regional carrier tightened submission triage in two quarters. Worth 20 minutes with your pricing lead? We meet carrier vendor requirements: MFA, audit rights, 72-hour incident notice.",
           "fromPersona": "p1",
           "toPersona": "p2",
           "rubricIds": [
@@ -254,7 +254,7 @@
       "rubric": [
         {
           "id": "r-firm-type",
-          "label": "The promise matches the firm type — combined ratio to a carrier, defended capaci",
+          "label": "The promise matches the firm type \u2014 combined ratio to a carrier, defended capaci",
           "claimIds": [
             "c2",
             "c3",
@@ -276,7 +276,7 @@
         },
         {
           "id": "r-owner-number",
-          "label": "One specific number or line of business, owned by that exact title — not the wor",
+          "label": "One specific number or line of business, owned by that exact title \u2014 not the wor",
           "claimIds": [
             "c9",
             "c6",
@@ -296,7 +296,7 @@
         },
         {
           "id": "r-vendor-proof",
-          "label": "Clears the gatekeeper in the first email — their own state rule and your vendor ",
+          "label": "Clears the gatekeeper in the first email \u2014 their own state rule and your vendor ",
           "claimIds": [
             "c25",
             "c24",
@@ -319,7 +319,7 @@
       "concepts": [
         {
           "id": "fifty-firms-not-five-thousand-c1",
-          "label": "Your list already exists in public filings — NAIC ranks the top writers by line for free",
+          "label": "Your list already exists in public filings \u2014 NAIC ranks the top writers by line for free",
           "mastery": 0,
           "cleared": false,
           "source": "unseen"
@@ -333,7 +333,7 @@
         },
         {
           "id": "fifty-firms-not-five-thousand-c3",
-          "label": "A trigger is why you are relevant today — a rate filing or a closed deal, with a date on it",
+          "label": "A trigger is why you are relevant today \u2014 a rate filing or a closed deal, with a date on it",
           "mastery": 0,
           "cleared": false,
           "source": "unseen"
@@ -352,28 +352,28 @@
           "id": "fifty-firms-not-five-thousand-u1",
           "conceptId": "fifty-firms-not-five-thousand-c1",
           "title": "The list is already written down",
-          "bodyMd": "The NAIC Financial Data Repository holds 10 years of annual and quarterly filings on over 4,500 insurers — more than 98% of US premiums written.\n\nYou do not need an AM Best subscription. NAIC InsData sells a single company's statutory statement as a PDF and gives a free Company Overview Report with complaint and financial information.\n\nBuild the list from the NAIC market share reports. They rank groups by direct written premium, countrywide and by line of business. Pull the ranking for the line you sell into and email the top writers in that line.\n\nThen SERFF Filing Access, run through each state's DOI, shows that company's rate and form filings by product line and date range."
+          "bodyMd": "The NAIC Financial Data Repository holds 10 years of annual and quarterly filings on over 4,500 insurers \u2014 more than 98% of US premiums written.\n\nYou do not need an AM Best subscription. NAIC InsData sells a single company's statutory statement as a PDF and gives a free Company Overview Report with complaint and financial information.\n\nBuild the list from the NAIC market share reports. They rank groups by direct written premium, countrywide and by line of business. Pull the ranking for the line you sell into and email the top writers in that line.\n\nThen SERFF Filing Access, run through each state's DOI, shows that company's rate and form filings by product line and date range."
         },
         {
           "kind": "card",
           "id": "fifty-firms-not-five-thousand-u2",
           "conceptId": "fifty-firms-not-five-thousand-c2",
           "title": "Money kept, not money touched",
-          "bodyMd": "Carriers: six-figure deals are normal here. Vendors selling into carriers report typical contract values of $500K–$750K, with entry pricing from $100K to $500K. But carriers above roughly $5B in premium with 50+ in-house developers are the ones who say \"we build this ourselves.\" Target below that line, or lead with the thing they cannot build.\n\nBrokers, agencies, MGAs: qualify on their own commission revenue, never the premium they place. A firm placing $400M keeps a fraction of it. Large-broker respondents cluster at $50M–$499M revenue with 200 to 4,999 employees. That band can sign a six-figure fee.\n\nOne number, wrong column, and you pitch a firm that cannot pay."
+          "bodyMd": "Carriers: six-figure deals are normal here. Vendors selling into carriers report typical contract values of $500K\u2013$750K, with entry pricing from $100K to $500K. But carriers above roughly $5B in premium with 50+ in-house developers are the ones who say \"we build this ourselves.\" Target below that line, or lead with the thing they cannot build.\n\nBrokers, agencies, MGAs: qualify on their own commission revenue, never the premium they place. A firm placing $400M keeps a fraction of it. Large-broker respondents cluster at $50M\u2013$499M revenue with 200 to 4,999 employees. That band can sign a six-figure fee.\n\nOne number, wrong column, and you pitch a firm that cannot pay."
         },
         {
           "kind": "card",
           "id": "fifty-firms-not-five-thousand-u3",
           "conceptId": "fifty-firms-not-five-thousand-c3",
           "title": "Two triggers you can pull every week",
-          "bodyMd": "SERFF Filing Access is free and shows carriers' rate and form filings state by state. Name the filing in the email: \"your 9.1% homeowners filing approved in Georgia on 12 June.\" Approved increases averaged 8.3% for homeowners and 3.7% for private passenger auto in 2025, so a filing above that average is a story — and one below it is a different story.\n\nM&A gives you a reason almost every week. 695 US agency and broker deals closed in 2025, roughly two per business day, plus 211 carrier and broker deals globally and 455 US/Bermuda transactions.\n\nBuying cycles here are long. The trigger buys the first reply, not the signature."
+          "bodyMd": "SERFF Filing Access is free and shows carriers' rate and form filings state by state. Name the filing in the email: \"your 9.1% homeowners filing approved in Georgia on 12 June.\" Approved increases averaged 8.3% for homeowners and 3.7% for private passenger auto in 2025, so a filing above that average is a story \u2014 and one below it is a different story.\n\nM&A gives you a reason almost every week. 695 US agency and broker deals closed in 2025, roughly two per business day, plus 211 carrier and broker deals globally and 455 US/Bermuda transactions.\n\nBuying cycles here are long. The trigger buys the first reply, not the signature."
         },
         {
           "kind": "card",
           "id": "fifty-firms-not-five-thousand-u4",
           "conceptId": "fifty-firms-not-five-thousand-c4",
           "title": "Why fifty is enough",
-          "bodyMd": "General rule, applied to your niche: US P&C premium is concentrated — the top 10 groups write about half of a $1.06 trillion market — so 30 to 50 carrier groups cover almost all the budget that can fund a six-figure engagement. Cap Tier 1 at the top 10–15% of scored accounts: one person works 15 to 25 Tier 1 accounts a week at 30–45 minutes of research each. If Tier 1 books meetings under 8%, retighten the premium and revenue thresholds before you rewrite a single line of copy.\n\nTwo caveats. If you sell into one line, use the line-of-business ranking, not the countrywide top 10. And brokers and MGAs never appear in a premium ranking at all."
+          "bodyMd": "General rule, applied to your niche: US P&C premium is concentrated \u2014 the top 10 groups write about half of a $1.06 trillion market \u2014 so 30 to 50 carrier groups cover almost all the budget that can fund a six-figure engagement. Cap Tier 1 at the top 10\u201315% of scored accounts: one person works 15 to 25 Tier 1 accounts a week at 30\u201345 minutes of research each. If Tier 1 books meetings under 8%, retighten the premium and revenue thresholds before you rewrite a single line of copy.\n\nTwo caveats. If you sell into one line, use the line-of-business ranking, not the countrywide top 10. And brokers and MGAs never appear in a premium ranking at all."
         },
         {
           "kind": "check",
@@ -401,7 +401,7 @@
             "The financial strength ratings of those carriers"
           ],
           "answerIndex": 1,
-          "explain": "c43: qualify brokers and agencies on their own commission revenue, not premium placed. Large-broker respondents cluster at $50M–$499M revenue."
+          "explain": "c43: qualify brokers and agencies on their own commission revenue, not premium placed. Large-broker respondents cluster at $50M\u2013$499M revenue."
         },
         {
           "kind": "check",
@@ -410,7 +410,7 @@
           "question": "You sell a pricing tool to personal lines carriers. Which first line gives a Chief Underwriting Officer a reason to read line two?",
           "options": [
             "I hope this note finds you well in a busy renewal season.",
-            "Your 9.4% homeowners rate filing was approved in Texas on 12 August — above the 8.3% 2025 average.",
+            "Your 9.4% homeowners rate filing was approved in Texas on 12 August \u2014 above the 8.3% 2025 average.",
             "We help insurance companies modernise pricing and grow revenue.",
             "Are you the right person to speak with about underwriting technology?"
           ],
@@ -429,7 +429,7 @@
             "Add a fourth and fifth follow-up"
           ],
           "answerIndex": 1,
-          "explain": "c47: under 8%, retighten the revenue and premium thresholds before rewriting copy — the size filter is the problem, not the words."
+          "explain": "c47: under 8%, retighten the revenue and premium thresholds before rewriting copy \u2014 the size filter is the problem, not the words."
         }
       ],
       "unitClaims": {
@@ -482,12 +482,12 @@
           "moduleId": "fifty-firms-not-five-thousand",
           "prompt": "You are deciding how long your US P&C carrier list needs to be. In the NAIC 2025 market share report, how much of the total market do the top 10 groups write?",
           "options": [
-            "About a quarter — you will need 200+ groups to reach most of the budget",
-            "About half — 30 to 50 groups cover almost all of it"
+            "About a quarter \u2014 you will need 200+ groups to reach most of the budget",
+            "About half \u2014 30 to 50 groups cover almost all of it"
           ],
           "winner": 1,
           "result": "The top 10 P&C insurers account for 51.40% of total market share (NAIC 2025 Market Share Report, Top 25 P&C Insurers).",
-          "why": "Premium is concentrated, so a fifty-firm list is not a small sample — it is most of the money that can fund a six-figure fee.",
+          "why": "Premium is concentrated, so a fifty-firm list is not a small sample \u2014 it is most of the money that can fund a six-figure fee.",
           "claimIds": [
             "c41",
             "c32"
@@ -513,14 +513,14 @@
           "moduleId": "fifty-firms-not-five-thousand",
           "segments": [
             {
-              "text": "Subject: Cardinal Risk Partners — the first 90 days"
+              "text": "Subject: Cardinal Risk Partners \u2014 the first 90 days"
             },
             {
-              "text": "Marcus — Insurance Journal listed Bellweather's purchase of Cardinal Risk Partners on 14 August. That is your third agency deal this year."
+              "text": "Marcus \u2014 Insurance Journal listed Bellweather's purchase of Cardinal Risk Partners on 14 August. That is your third agency deal this year."
             },
             {
               "text": "You place about $400M in premium, so a $180K engagement is under one-twentieth of one percent of what runs through the agency.",
-              "flaw": "Sizes the account on premium placed instead of the agency's own commission revenue — the money a broker keeps is a fraction of what it places, and an owner reads a $180K fee against revenue, not premium.",
+              "flaw": "Sizes the account on premium placed instead of the agency's own commission revenue \u2014 the money a broker keeps is a fraction of what it places, and an owner reads a $180K fee against revenue, not premium.",
               "claimIds": [
                 "c43",
                 "c44"
@@ -541,7 +541,7 @@
           "kind": "rewrite",
           "id": "fifty-firms-not-five-thousand-d4",
           "moduleId": "fifty-firms-not-five-thousand",
-          "original": "Dana — your 9.1% homeowners rate filing was approved in Florida on 6 August, above the 8.3% average for 2025. The two carriers we work with both found the approved change outran what the underwriting desk could re-price by hand, so the rate sat on paper for a quarter. Fifteen minutes on how they closed that gap?",
+          "original": "Dana \u2014 your 9.1% homeowners rate filing was approved in Florida on 6 August, above the 8.3% average for 2025. The two carriers we work with both found the approved change outran what the underwriting desk could re-price by hand, so the rate sat on paper for a quarter. Fifteen minutes on how they closed that gap?",
           "fromPersona": "p1",
           "toPersona": "p2",
           "rubricIds": [
@@ -554,7 +554,7 @@
       "rubric": [
         {
           "id": "r-filing",
-          "label": "Names a specific public record for THAT firm — an NAIC market share rank, a SERF",
+          "label": "Names a specific public record for THAT firm \u2014 an NAIC market share rank, a SERF",
           "claimIds": [
             "c32",
             "c38",
@@ -565,7 +565,7 @@
         },
         {
           "id": "r-trigger",
-          "label": "The reason to write is a dated event — an approved filing, a closed deal — not a",
+          "label": "The reason to write is a dated event \u2014 an approved filing, a closed deal \u2014 not a",
           "claimIds": [
             "c37",
             "c38",
@@ -596,7 +596,7 @@
         },
         {
           "id": "r-list-discipline",
-          "label": "The list stays small enough to research: 30–50 groups, 15–25 Tier 1 accounts a w",
+          "label": "The list stays small enough to research: 30\u201350 groups, 15\u201325 Tier 1 accounts a w",
           "claimIds": [
             "c41",
             "c46",
@@ -651,28 +651,28 @@
           "id": "the-offer-insurance-execs-buy-u1",
           "conceptId": "combined-ratio-points",
           "title": "Price it in combined ratio points",
-          "bodyMd": "Dollars saved is your unit. Combined ratio is theirs.\n\nLoss ratio is claims plus adjustment expense over earned premium. Add the expense ratio on top and you have combined ratio. McKinsey frames the whole opportunity as five points of combined ratio — and one point is a number a Chief Underwriting Officer can defend in a room full of people who will push back.\n\nUse four words and only four: loss ratio, expense ratio, combined ratio, claims leakage. Add speed if you have it — quote-to-bind, FNOL-to-settlement.\n\nAim the case at finance and operations, not the innovation team. Innovation sponsors pilots. Finance decides whether a pilot ever scales."
+          "bodyMd": "Dollars saved is your unit. Combined ratio is theirs.\n\nLoss ratio is claims plus adjustment expense over earned premium. Add the expense ratio on top and you have combined ratio. McKinsey frames the whole opportunity as five points of combined ratio \u2014 and one point is a number a Chief Underwriting Officer can defend in a room full of people who will push back.\n\nUse four words and only four: loss ratio, expense ratio, combined ratio, claims leakage. Add speed if you have it \u2014 quote-to-bind, FNOL-to-settlement.\n\nAim the case at finance and operations, not the innovation team. Innovation sponsors pilots. Finance decides whether a pilot ever scales."
         },
         {
           "kind": "card",
           "id": "the-offer-insurance-execs-buy-u2",
           "conceptId": "forward-margin-pressure",
           "title": "Never open with 'carriers are struggling'",
-          "bodyMd": "US P&C just posted a decade-low combined ratio, around 93% in 2025. Tell Dana Whitcomb her industry is in trouble and she closes the email — she knows her own numbers better than you do.\n\nPitch forward instead. Deloitte forecasts the combined ratio worsening toward 99% in 2026. That is margin pressure she has not solved yet.\n\nOn casualty lines, the severity story is social inflation: 135 nuclear verdicts against corporate defendants in 2024, up 52%, totalling $31.3 billion, median verdict $44 million versus $21 million in 2020.\n\nOn claims, leakage is the easiest number to put on the table — 7-14% of total payouts industry-wide, 20-30% at individual carriers by one consultancy's measure."
+          "bodyMd": "US P&C just posted a decade-low combined ratio, around 93% in 2025. Tell Dana Whitcomb her industry is in trouble and she closes the email \u2014 she knows her own numbers better than you do.\n\nPitch forward instead. Deloitte forecasts the combined ratio worsening toward 99% in 2026. That is margin pressure she has not solved yet.\n\nOn casualty lines, the severity story is social inflation: 135 nuclear verdicts against corporate defendants in 2024, up 52%, totalling $31.3 billion, median verdict $44 million versus $21 million in 2020.\n\nOn claims, leakage is the easiest number to put on the table \u2014 7-14% of total payouts industry-wide, 20-30% at individual carriers by one consultancy's measure."
         },
         {
           "kind": "card",
           "id": "the-offer-insurance-execs-buy-u3",
           "conceptId": "cleared-the-gate-proof",
           "title": "Carry the proof in email one",
-          "bodyMd": "Assume the carrier lines you up against three or four competitors and routes you through risk, compliance and legal. So the first email carries proof, not features.\n\nSay SOC 2 Type 2 — not just \"SOC 2.\" Carrier CIOs and CISOs gate vendor approval on it before you touch their data, and a Type 1 report usually will not clear review.\n\nNo SOC 2 yet? It runs $45K-$150K and takes 9-16 months. Say what you do have: pen test results, a completed security questionnaire, named references.\n\nPut the four answers NYDFS Part 500 forces a US insurer to ask — access controls, MFA, encryption, incident-response reporting — on one linked page. Then name the peer carrier that already cleared you."
+          "bodyMd": "Assume the carrier lines you up against three or four competitors and routes you through risk, compliance and legal. So the first email carries proof, not features.\n\nSay SOC 2 Type 2 \u2014 not just \"SOC 2.\" Carrier CIOs and CISOs gate vendor approval on it before you touch their data, and a Type 1 report usually will not clear review.\n\nNo SOC 2 yet? It runs $45K-$150K and takes 9-16 months. Say what you do have: pen test results, a completed security questionnaire, named references.\n\nPut the four answers NYDFS Part 500 forces a US insurer to ask \u2014 access controls, MFA, encryption, incident-response reporting \u2014 on one linked page. Then name the peer carrier that already cleared you."
         },
         {
           "kind": "card",
           "id": "the-offer-insurance-execs-buy-u4",
           "conceptId": "scoped-pilot-exit-criteria",
           "title": "Write your own exit criteria",
-          "bodyMd": "Carriers run more POCs than ever and most never move past them. One insurtech leader calls it POC purgatory. Renée Okafor has sat through it, which is why \"a quick pilot\" reads as another six months of nothing.\n\nOffer a scoped pilot with go/no-go KPIs agreed up front. Name the book, the window, and the one number that decides.\n\n\"Eight weeks on one commercial auto book. One KPI: leakage on closed files. Under a 1.5-point improvement, we stop and you owe nothing further.\"\n\nProposing your own exit criteria in a first email is rare enough to separate you from the pile — and it gives the exec something concrete to forward to finance."
+          "bodyMd": "Carriers run more POCs than ever and most never move past them. One insurtech leader calls it POC purgatory. Ren\u00e9e Okafor has sat through it, which is why \"a quick pilot\" reads as another six months of nothing.\n\nOffer a scoped pilot with go/no-go KPIs agreed up front. Name the book, the window, and the one number that decides.\n\n\"Eight weeks on one commercial auto book. One KPI: leakage on closed files. Under a 1.5-point improvement, we stop and you owe nothing further.\"\n\nProposing your own exit criteria in a first email is rare enough to separate you from the pile \u2014 and it gives the exec something concrete to forward to finance."
         },
         {
           "kind": "check",
@@ -695,7 +695,7 @@
           "question": "Which opening line works on a US P&C carrier executive right now?",
           "options": [
             "\"Carriers are struggling right now, and it shows in your numbers.\"",
-            "\"US P&C just posted a decade-low combined ratio — Deloitte expects it to worsen toward 99% in 2026.\"",
+            "\"US P&C just posted a decade-low combined ratio \u2014 Deloitte expects it to worsen toward 99% in 2026.\"",
             "\"The industry is in crisis and most carriers will not survive it.\"",
             "\"Everyone in insurance is feeling the pressure this year.\""
           ],
@@ -709,7 +709,7 @@
           "question": "You do not have SOC 2 yet. What belongs in the first email to a carrier?",
           "options": [
             "\"SOC 2 Type 1 report available on request.\"",
-            "\"We are SOC 2 compliant\" — close enough to start a conversation.",
+            "\"We are SOC 2 compliant\" \u2014 close enough to start a conversation.",
             "Nothing about security; save it for the review call.",
             "Pen test results, a completed security questionnaire, and named references."
           ],
@@ -778,7 +778,7 @@
             "Cohorts of 50, copy written per cohort"
           ],
           "winner": 1,
-          "result": "The 50-recipient cohorts replied at 5.8% versus 2.1% for the 1,000+ recipient blasts — a 2.76x lift.",
+          "result": "The 50-recipient cohorts replied at 5.8% versus 2.1% for the 1,000+ recipient blasts \u2014 a 2.76x lift.",
           "why": "Tighter cohorts let you name the right ratio, line and peer carrier, which is the only thing that moves a screened executive inbox.",
           "claimIds": [
             "c55",
@@ -790,7 +790,7 @@
           "kind": "sprint",
           "id": "the-offer-insurance-execs-buy-d2",
           "moduleId": "the-offer-insurance-execs-buy",
-          "prompt": "Renée Okafor is EVP Commercial Lines. Write value lines priced in her numbers — combined ratio points, loss ratio, expense ratio, claims leakage, quote-to-bind or FNOL-to-settlement. One sentence each. No dollars saved, no 'efficiency', no 'carriers are struggling'.",
+          "prompt": "Ren\u00e9e Okafor is EVP Commercial Lines. Write value lines priced in her numbers \u2014 combined ratio points, loss ratio, expense ratio, claims leakage, quote-to-bind or FNOL-to-settlement. One sentence each. No dollars saved, no 'efficiency', no 'carriers are struggling'.",
           "quota": 4,
           "seconds": 90,
           "rubricIds": [
@@ -807,8 +807,8 @@
               "text": "Subject: half a point of combined ratio on your commercial auto book"
             },
             {
-              "text": "Dana — with US P&C carriers struggling through a brutal stretch, most underwriting teams are just trying to hold the line right now.",
-              "flaw": "Wrong premise for this audience: US P&C posted a decade-low combined ratio around 93% in 2025, so a chief underwriting officer reads this as someone who has not looked at the industry results. Pitch forward-looking margin pressure — Deloitt",
+              "text": "Dana \u2014 with US P&C carriers struggling through a brutal stretch, most underwriting teams are just trying to hold the line right now.",
+              "flaw": "Wrong premise for this audience: US P&C posted a decade-low combined ratio around 93% in 2025, so a chief underwriting officer reads this as someone who has not looked at the industry results. Pitch forward-looking margin pressure \u2014 Deloitt",
               "claimIds": [
                 "c53"
               ]
@@ -817,13 +817,13 @@
               "text": "On casualty the severity story is social inflation: 135 nuclear verdicts against corporate defendants in 2024, up 52%, $31.3 billion in total, median verdict $44 million against $21 million in 2020."
             },
             {
-              "text": "We are SOC 2 Type 2. The report and our NYDFS Part 500 answers — access controls, MFA, encryption, incident-response reporting — sit on one page I can link before you route us to security."
+              "text": "We are SOC 2 Type 2. The report and our NYDFS Part 500 answers \u2014 access controls, MFA, encryption, incident-response reporting \u2014 sit on one page I can link before you route us to security."
             },
             {
               "text": "Keystone Mutual's claims operations team cleared our review last spring and their VP of Claims will take a reference call."
             },
             {
-              "text": "Proposal: eight weeks on one commercial auto book, one KPI — leakage on closed files. Under a 1.5-point improvement, we stop there."
+              "text": "Proposal: eight weeks on one commercial auto book, one KPI \u2014 leakage on closed files. Under a 1.5-point improvement, we stop there."
             }
           ]
         },
@@ -831,7 +831,7 @@
           "kind": "rewrite",
           "id": "the-offer-insurance-execs-buy-d4",
           "moduleId": "the-offer-insurance-execs-buy",
-          "original": "Dana — your commercial auto book is carrying more claims and adjustment expense than the loss ratio can absorb. We pull leakage out of closed files; the industry range is 7-14% of payouts and one consultancy measures 20-30% at individual carriers. SOC 2 Type 2, Part 500 answers on one linked page. Eight weeks, one KPI, go/no-go at the end. Worth 20 minutes?",
+          "original": "Dana \u2014 your commercial auto book is carrying more claims and adjustment expense than the loss ratio can absorb. We pull leakage out of closed files; the industry range is 7-14% of payouts and one consultancy measures 20-30% at individual carriers. SOC 2 Type 2, Part 500 answers on one linked page. Eight weeks, one KPI, go/no-go at the end. Worth 20 minutes?",
           "fromPersona": "p1",
           "toPersona": "p2",
           "rubricIds": [
@@ -844,7 +844,7 @@
       "rubric": [
         {
           "id": "r-ratio-language",
-          "label": "Value is priced in their four words — loss ratio, expense ratio, combined ratio,",
+          "label": "Value is priced in their four words \u2014 loss ratio, expense ratio, combined ratio,",
           "claimIds": [
             "c50",
             "c51",
@@ -939,39 +939,39 @@
           "id": "writing-the-insurance-cold-email-u1",
           "conceptId": "c-subject-names-their-book",
           "title": "Write the subject like internal mail",
-          "bodyMd": "The subject should read like a note from someone already inside the firm. Lowercase. No selling words. Two to four words where you can.\n\nName what they own — their book, their line, their firm: 'your P&C book', 'Meridian appointments'. Never your product.\n\nSay exactly what the email is about. Insurance readers are trained to spot exaggeration, and a bait subject gets archived by the assistant before the executive sees it.\n\nThe numbers: personalized subjects opened at 46% versus 35% and doubled replies from 3% to 7%. Short subjects open near 46%; seven words or more, near 35%. Executives reply about 30% less often, so a subject that only just clears the bar will not clear theirs."
+          "bodyMd": "The subject should read like a note from someone already inside the firm. Lowercase. No selling words. Two to four words where you can.\n\nName what they own \u2014 their book, their line, their firm: 'your P&C book', 'Meridian appointments'. Never your product.\n\nSay exactly what the email is about. Insurance readers are trained to spot exaggeration, and a bait subject gets archived by the assistant before the executive sees it.\n\nThe numbers: personalized subjects opened at 46% versus 35% and doubled replies from 3% to 7%. Short subjects open near 46%; seven words or more, near 35%. Executives reply about 30% less often, so a subject that only just clears the bar will not clear theirs."
         },
         {
           "kind": "card",
           "id": "writing-the-insurance-cold-email-u2",
           "conceptId": "c-first-line-proves-research",
           "title": "Spend the first sentence on their firm",
-          "bodyMd": "Your first sentence buys the next nine seconds. Spend it proving you looked at this specific firm: their state, their lines, a new appointment, a rate filing, a book they just took on. 'You added three MGA appointments in Texas this quarter' beats anything about you.\n\nNothing product-first goes here. 'Our AI-powered platform enables' burns the one sentence you get, and C-level buyers already reply about 30% less often.\n\nThen one peer, matched to their line and size. Name them if you can. If you cannot, go tight — 'a regional P&C carrier in the Southeast' — never 'an insurance company'. Pair the peer with a number: number hooks replied at 8.57% versus 6.53%."
+          "bodyMd": "Your first sentence buys the next nine seconds. Spend it proving you looked at this specific firm: their state, their lines, a new appointment, a rate filing, a book they just took on. 'You added three MGA appointments in Texas this quarter' beats anything about you.\n\nNothing product-first goes here. 'Our AI-powered platform enables' burns the one sentence you get, and C-level buyers already reply about 30% less often.\n\nThen one peer, matched to their line and size. Name them if you can. If you cannot, go tight \u2014 'a regional P&C carrier in the Southeast' \u2014 never 'an insurance company'. Pair the peer with a number: number hooks replied at 8.57% versus 6.53%."
         },
         {
           "kind": "card",
           "id": "writing-the-insurance-cold-email-u3",
           "conceptId": "c-plain-words-survive",
           "title": "The words that get you binned",
-          "bodyMd": "Carrier buyers are coached to ignore the smoothest salesperson and scout for substance. So write plain description, not sales language. Say what you change in one workflow, in the words their own underwriting or claims staff use.\n\nThree words to cut. 'AI-powered': regulators now examine whether AI claims match reality, and a carrier that repeats your wording owns that claim. 'Disrupt' and 'insurtech': carrier CEOs say the disruptors never took over, the sector settled into partnership, and the industry's language moved from disruption to durability. Those words tag you as an outsider.\n\nKeep the whole email under 100 words, under 60 if you can. Under-60-word, buzzword-free emails moved positive replies from 0.4–1.2% to 3–6%."
+          "bodyMd": "Carrier buyers are coached to ignore the smoothest salesperson and scout for substance. So write plain description, not sales language. Say what you change in one workflow, in the words their own underwriting or claims staff use.\n\nThree words to cut. 'AI-powered': regulators now examine whether AI claims match reality, and a carrier that repeats your wording owns that claim. 'Disrupt' and 'insurtech': carrier CEOs say the disruptors never took over, the sector settled into partnership, and the industry's language moved from disruption to durability. Those words tag you as an outsider.\n\nKeep the whole email under 100 words, under 60 if you can. Under-60-word, buzzword-free emails moved positive replies from 0.4\u20131.2% to 3\u20136%."
         },
         {
           "kind": "card",
           "id": "writing-the-insurance-cold-email-u4",
           "conceptId": "c-ask-small-or-sideways",
           "title": "Ask for interest, or for a name",
-          "bodyMd": "General rule, applied to your niche: with senior people, drop the meeting request and offer a concrete thing you will send, then ask permission to send it. For a US carrier, broker or MGA that thing is a peer benchmark — renewal retention or quote turnaround from firms their size, in their lines.\n\nThe C-suite replies about 30% less often, assistants screen the inbox, and the decision takes months and a committee. So write the email so a forward counts as a win: 'want me to loop in your VP of underwriting instead, if this isn't your call?'\n\nKeep it low-pressure and give an explicit out — 'totally fine if not'. Urgency triggers compliance complaints."
+          "bodyMd": "General rule, applied to your niche: with senior people, drop the meeting request and offer a concrete thing you will send, then ask permission to send it. For a US carrier, broker or MGA that thing is a peer benchmark \u2014 renewal retention or quote turnaround from firms their size, in their lines.\n\nThe C-suite replies about 30% less often, assistants screen the inbox, and the decision takes months and a committee. So write the email so a forward counts as a win: 'want me to loop in your VP of underwriting instead, if this isn't your call?'\n\nKeep it low-pressure and give an explicit out \u2014 'totally fine if not'. Urgency triggers compliance complaints."
         },
         {
           "kind": "check",
           "id": "writing-the-insurance-cold-email-u5",
           "conceptId": "c-subject-names-their-book",
-          "question": "You are emailing Renée Okafor, EVP Commercial Lines at a national broker. Which subject line do you send?",
+          "question": "You are emailing Ren\u00e9e Okafor, EVP Commercial Lines at a national broker. Which subject line do you send?",
           "options": [
             "your commercial lines book",
             "Transform Your Commercial Lines Underwriting With AI",
             "Quick question",
-            "Introducing OmniQuote — the future of insurtech distribution"
+            "Introducing OmniQuote \u2014 the future of insurtech distribution"
           ],
           "answerIndex": 0,
           "explain": "c64 and c66: lowercase, no selling words, and it names her book rather than your product, so it reads like mail from inside the firm."
@@ -1011,7 +1011,7 @@
           "question": "Last line of a first cold email to Marcus Delgado, CEO and owner. Which one?",
           "options": [
             "Do you have 30 minutes Thursday at 2pm?",
-            "Let me know today — I only have two slots left this week.",
+            "Let me know today \u2014 I only have two slots left this week.",
             "I pulled a renewal-retention benchmark for brokerages your size. Want me to send it? Totally fine if not.",
             "Book time on my calendar here: [link]"
           ],
@@ -1106,7 +1106,7 @@
             "Hard ask: 'Can we book 30 minutes Thursday?'"
           ],
           "winner": 0,
-          "result": "The soft-CTA reply rate came in at 3x the hard-CTA reply rate — same email copy, same list, only the CTA differed.",
+          "result": "The soft-CTA reply rate came in at 3x the hard-CTA reply rate \u2014 same email copy, same list, only the CTA differed.",
           "why": "A one-word answer costs the reader nothing; a calendar slot at a carrier costs a committee.",
           "claimIds": [
             "c80",
@@ -1119,7 +1119,7 @@
           "kind": "sprint",
           "id": "writing-the-insurance-cold-email-d3",
           "moduleId": "writing-the-insurance-cold-email",
-          "prompt": "Three names on your list: Dana Whitcomb (Chief Underwriting Officer, regional P&C carrier, Ohio), Marcus Delgado (CEO and owner, commercial brokerage, Arizona), Renée Okafor (EVP Commercial Lines, national broker). Write one subject line for each, plus one alternate for Dana. Lowercase, two to four words, naming their book, line or firm. No selling words, no product names.",
+          "prompt": "Three names on your list: Dana Whitcomb (Chief Underwriting Officer, regional P&C carrier, Ohio), Marcus Delgado (CEO and owner, commercial brokerage, Arizona), Ren\u00e9e Okafor (EVP Commercial Lines, national broker). Write one subject line for each, plus one alternate for Dana. Lowercase, two to four words, naming their book, line or firm. No selling words, no product names.",
           "quota": 4,
           "seconds": 90,
           "rubricIds": [
@@ -1135,14 +1135,14 @@
               "text": "subject: your E&S book"
             },
             {
-              "text": "Dana — you moved a chunk of your Colorado habitational risk into E&S after the 2025 wildfire season."
+              "text": "Dana \u2014 you moved a chunk of your Colorado habitational risk into E&S after the 2025 wildfire season."
             },
             {
               "text": "A regional P&C carrier in the Southeast, about your written premium, cut submission-to-quote from six days to two on that line."
             },
             {
               "text": "Our AI-powered platform lets carriers like yours disrupt legacy underwriting and finally join the insurtech era.",
-              "flaw": "'AI-powered', 'disrupt' and 'insurtech' are the three words a CUO reads as risk and as outsider language — regulators now test whether AI claims match reality, and a carrier repeating your wording owns that claim.",
+              "flaw": "'AI-powered', 'disrupt' and 'insurtech' are the three words a CUO reads as risk and as outsider language \u2014 regulators now test whether AI claims match reality, and a carrier repeating your wording owns that claim.",
               "claimIds": [
                 "c77",
                 "c78",
@@ -1158,7 +1158,7 @@
           "kind": "rewrite",
           "id": "writing-the-insurance-cold-email-d5",
           "moduleId": "writing-the-insurance-cold-email",
-          "original": "subject: your construction book\n\nMarcus — saw you picked up two new Phoenix contractor accounts this spring. A commercial brokerage in Nevada, about your headcount, cut quote turnaround from six days to two and wrote 11% more new business off the same submission flow. I wrote up how they did it. Want me to send it? Totally fine if not.",
+          "original": "subject: your construction book\n\nMarcus \u2014 saw you picked up two new Phoenix contractor accounts this spring. A commercial brokerage in Nevada, about your headcount, cut quote turnaround from six days to two and wrote 11% more new business off the same submission flow. I wrote up how they did it. Want me to send it? Totally fine if not.",
           "fromPersona": "p2",
           "toPersona": "p1",
           "rubricIds": [
@@ -1183,7 +1183,7 @@
         },
         {
           "id": "r-trigger",
-          "label": "First sentence proves you researched this specific firm — state, lines, or a rec",
+          "label": "First sentence proves you researched this specific firm \u2014 state, lines, or a rec",
           "claimIds": [
             "c67",
             "c76"
@@ -1215,7 +1215,7 @@
         },
         {
           "id": "r-ask",
-          "label": "One low-pressure ask with an explicit out — interest, permission to send, or a n",
+          "label": "One low-pressure ask with an explicit out \u2014 interest, permission to send, or a n",
           "claimIds": [
             "c82",
             "c81",
@@ -1275,14 +1275,14 @@
           "id": "getting-past-screens-and-filters-u1",
           "conceptId": "c-delivered-not-seen",
           "title": "The silent quarantine",
-          "bodyMd": "Assume every US carrier, broker and MGA sits behind Proofpoint or Mimecast. Proofpoint sells a product line built for insurance and financial services, and gateways cluster in regulated industries.\n\nThose gateways rarely bounce you. They quarantine silently and still hand your tool a 'delivered' receipt. So 99% delivered tells you nothing about whether Dana ever saw a word.\n\nTwo moves. Check what the account runs — Proofpoint, Mimecast, Barracuda — before you send, and route those to a stripped-down email plus a second channel. Then run an inbox-placement test to seed inboxes you control.\n\nOne more tell: gateways fetch every link before a human does. If most clicks look automated, you are measuring the scanner."
+          "bodyMd": "Assume every US carrier, broker and MGA sits behind Proofpoint or Mimecast. Proofpoint sells a product line built for insurance and financial services, and gateways cluster in regulated industries.\n\nThose gateways rarely bounce you. They quarantine silently and still hand your tool a 'delivered' receipt. So 99% delivered tells you nothing about whether Dana ever saw a word.\n\nTwo moves. Check what the account runs \u2014 Proofpoint, Mimecast, Barracuda \u2014 before you send, and route those to a stripped-down email plus a second channel. Then run an inbox-placement test to seed inboxes you control.\n\nOne more tell: gateways fetch every link before a human does. If most clicks look automated, you are measuring the scanner."
         },
         {
           "kind": "card",
           "id": "getting-past-screens-and-filters-u2",
           "conceptId": "c-two-readers",
           "title": "Write it so the EA can forward it",
-          "bodyMd": "General rule, applied to your niche: at large firms 80-90% of executive outreach is screened, and an EA can spend two hours a morning clearing 400-500 overnight messages, half of them vendor pitches. At a national carrier or a top-20 broker, Renée Okafor does not open her own inbox — 70% of positive C-level replies come from companies with 1-50 employees.\n\nSo write for two people. Subject line 1-4 words. Body 40-80 words, never past 125 — longer emails get deferred instead of forwarded.\n\nInside it: who it is for, what you do in one line, the value in the first two lines, one specific ask. Close with 'a quick forward of this message would be awesome.'"
+          "bodyMd": "General rule, applied to your niche: at large firms 80-90% of executive outreach is screened, and an EA can spend two hours a morning clearing 400-500 overnight messages, half of them vendor pitches. At a national carrier or a top-20 broker, Ren\u00e9e Okafor does not open her own inbox \u2014 70% of positive C-level replies come from companies with 1-50 employees.\n\nSo write for two people. Subject line 1-4 words. Body 40-80 words, never past 125 \u2014 longer emails get deferred instead of forwarded.\n\nInside it: who it is for, what you do in one line, the value in the first two lines, one specific ask. Close with 'a quick forward of this message would be awesome.'"
         },
         {
           "kind": "card",
@@ -1296,7 +1296,7 @@
           "id": "getting-past-screens-and-filters-u4",
           "conceptId": "c-domain-infra",
           "title": "Buy the domains before you need them",
-          "bodyMd": "Never cold email from yourfirm.com. One bad run there and your renewal mail, your quote requests and your invoices start landing in junk.\n\nBuy 2-3 lookalike domains — tryyourfirm.com, getyourfirm.com — forward them to your real site, and send from those.\n\nThen warm each one 14-21 days before it touches your real list: 5-10 sends a day in week one, 15-25 in week two, 30-50 by week three.\n\nUse a tracking domain you own, not your platform's shared one, and keep to .com, .io or .co. Every link domain in the message is judged with your sender reputation, and insurance gateways judge hard."
+          "bodyMd": "Never cold email from yourfirm.com. One bad run there and your renewal mail, your quote requests and your invoices start landing in junk.\n\nBuy 2-3 lookalike domains \u2014 tryyourfirm.com, getyourfirm.com \u2014 forward them to your real site, and send from those.\n\nThen warm each one 14-21 days before it touches your real list: 5-10 sends a day in week one, 15-25 in week two, 30-50 by week three.\n\nUse a tracking domain you own, not your platform's shared one, and keep to .com, .io or .co. Every link domain in the message is judged with your sender reputation, and insurance gateways judge hard."
         },
         {
           "kind": "check",
@@ -1304,7 +1304,7 @@
           "conceptId": "c-delivered-not-seen",
           "question": "You send 200 emails to underwriting and claims executives at US carriers. Your tool reports 99.4% delivered and you get two replies. What is the most likely explanation?",
           "options": [
-            "The list is bad — those titles do not buy",
+            "The list is bad \u2014 those titles do not buy",
             "The gateway quarantined most of them silently while logging a successful delivery",
             "You sent on the wrong weekday",
             "Your subject line was too clever"
@@ -1316,7 +1316,7 @@
           "kind": "check",
           "id": "getting-past-screens-and-filters-u6",
           "conceptId": "c-two-readers",
-          "question": "Renée Okafor's assistant opens your email first. Which version is most likely to reach Renée?",
+          "question": "Ren\u00e9e Okafor's assistant opens your email first. Which version is most likely to reach Ren\u00e9e?",
           "options": [
             "62 words, two-word subject, one line on what you do, one specific ask, ending 'a quick forward of this message would be ",
             "A 300-word case study so the EA has full context",
@@ -1335,7 +1335,7 @@
             "'Could you please help me book a time to chat with them? It shouldn't take longer than 30 minutes.'",
             "'Please forward this to whoever handles vendor evaluations.'",
             "'Can you give me his direct mobile number?'",
-            "'No problem — I'll circle back next quarter.'"
+            "'No problem \u2014 I'll circle back next quarter.'"
           ],
           "answerIndex": 0,
           "explain": "Asking the assistant to book, and naming 30 minutes, turns a screening decision into a calendar action they already own (c96)."
@@ -1346,7 +1346,7 @@
           "conceptId": "c-domain-infra",
           "question": "You bought getdeltarisk.com on Monday and want to email 40 SVPs at wholesale brokers. What now?",
           "options": [
-            "Start Tuesday at 40 a day — the domain is clean, so reputation is fine",
+            "Start Tuesday at 40 a day \u2014 the domain is clean, so reputation is fine",
             "Warm it 14-21 days first: 5-10 sends a day, then 15-25, then 30-50, before it touches the real list",
             "Send from your main company domain instead so the reply address matches your website",
             "Buy ten more domains and split the 40 across them today"
@@ -1405,12 +1405,12 @@
           "moduleId": "getting-past-screens-and-filters",
           "prompt": "Same 60-word email, same offer, both addressed to the CEO. Across a study of one million cold emails, which one produced more positive C-level replies?",
           "options": [
-            "To Marcus Delgado, CEO and owner of a 40-person MGA — no assistant, he opens his own inbox",
-            "To the CEO of a 3,000-person national carrier — an executive assistant screens the inbox"
+            "To Marcus Delgado, CEO and owner of a 40-person MGA \u2014 no assistant, he opens his own inbox",
+            "To the CEO of a 3,000-person national carrier \u2014 an executive assistant screens the inbox"
           ],
           "winner": 0,
           "result": "70% of positive C-level replies came from companies with 1-50 employees. Small-company CEOs read their own email; at the carrier the EA reads it first.",
-          "why": "Company size, not copy, decided who ever saw the message — so above about 50 employees you are writing for two readers.",
+          "why": "Company size, not copy, decided who ever saw the message \u2014 so above about 50 employees you are writing for two readers.",
           "claimIds": [
             "c94",
             "c90"
@@ -1421,7 +1421,7 @@
           "kind": "sprint",
           "id": "getting-past-screens-and-filters-d2",
           "moduleId": "getting-past-screens-and-filters",
-          "prompt": "Write 4 closing asks for emails an executive assistant reads first — one each for Dana Whitcomb (CUO, regional carrier), Marcus Delgado (CEO, 40-person MGA), Renée Okafor (EVP Commercial Lines, national broker), and one asking for a pre-booked slot at WSIA. Each must name a meeting length or two time windows, stay forwardable with nothing added, and contain no links.",
+          "prompt": "Write 4 closing asks for emails an executive assistant reads first \u2014 one each for Dana Whitcomb (CUO, regional carrier), Marcus Delgado (CEO, 40-person MGA), Ren\u00e9e Okafor (EVP Commercial Lines, national broker), and one asking for a pre-booked slot at WSIA. Each must name a meeting length or two time windows, stay forwardable with nothing added, and contain no links.",
           "quota": 4,
           "seconds": 90,
           "rubricIds": [
@@ -1436,14 +1436,14 @@
           "moduleId": "getting-past-screens-and-filters",
           "segments": [
             {
-              "text": "Target list: 60 named people — Chief Underwriting Officers, EVPs Commercial Lines and owner-CEOs at US carriers, wholesale brokers and MGAs. No generic info@ addresses."
+              "text": "Target list: 60 named people \u2014 Chief Underwriting Officers, EVPs Commercial Lines and owner-CEOs at US carriers, wholesale brokers and MGAs. No generic info@ addresses."
             },
             {
               "text": "Two lookalike domains bought three weeks ago and warmed 18 days: 8 sends a day in week one, 20 in week two, 40 now."
             },
             {
               "text": "Sending from ourfirm.com, our real domain, so the reply address matches the website. The dashboard says 99.4% delivered, so placement is fine.",
-              "flaw": "Two niche mistakes in one line: your main domain also carries renewals, quote requests and invoices, so cold volume there is not recoverable — and at carriers and brokers behind Proofpoint or Mimecast a 'delivered' number is a log entry for",
+              "flaw": "Two niche mistakes in one line: your main domain also carries renewals, quote requests and invoices, so cold volume there is not recoverable \u2014 and at carriers and brokers behind Proofpoint or Mimecast a 'delivered' number is a log entry for",
               "claimIds": [
                 "c99",
                 "c104"
@@ -1464,7 +1464,7 @@
           "kind": "rewrite",
           "id": "getting-past-screens-and-filters-d4",
           "moduleId": "getting-past-screens-and-filters",
-          "original": "Marcus — saw you're writing more coastal habitational this year. We cut a 45-agent Gulf Coast agency's E&O renewal 18% without dropping limits. Worth 20 minutes? Two-page breakdown here: deltarisk.io/coastal-2026 — happy to walk you through it Thursday. — Jordan",
+          "original": "Marcus \u2014 saw you're writing more coastal habitational this year. We cut a 45-agent Gulf Coast agency's E&O renewal 18% without dropping limits. Worth 20 minutes? Two-page breakdown here: deltarisk.io/coastal-2026 \u2014 happy to walk you through it Thursday. \u2014 Jordan",
           "fromPersona": "p2",
           "toPersona": "p3",
           "rubricIds": [
@@ -1488,7 +1488,7 @@
         },
         {
           "id": "r-ea-ask",
-          "label": "One scheduling-ready ask — a named meeting length, two windows, or a specific co",
+          "label": "One scheduling-ready ask \u2014 a named meeting length, two windows, or a specific co",
           "claimIds": [
             "c96",
             "c93",
@@ -1577,34 +1577,34 @@
           "id": "long-cycles-fifty-emails-u1",
           "conceptId": "c-window",
           "title": "The blackout window",
-          "bodyMd": "Treat October 15 to January 15 as a no-cold-email window. Commercial renewal season runs October to December, and shopping for a January 1 effective date starts 30 or more days ahead (c119). Then segment by line of business: health and benefits brokers are slammed November to January, commercial brokers October to December, auto-heavy agencies in spring and summer (c122). Timing bites hardest at the big end — Marsh-scale brokers and large carriers run multi-year procurement, while Marcus Delgado, who owns his MGA, can decide in any month (c117). General reply data agrees with the window: February is the strongest month at 0.54%, December the weakest at 0.35% (c120)."
+          "bodyMd": "Treat October 15 to January 15 as a no-cold-email window. Commercial renewal season runs October to December, and shopping for a January 1 effective date starts 30 or more days ahead (c119). Then segment by line of business: health and benefits brokers are slammed November to January, commercial brokers October to December, auto-heavy agencies in spring and summer (c122). Timing bites hardest at the big end \u2014 Marsh-scale brokers and large carriers run multi-year procurement, while Marcus Delgado, who owns his MGA, can decide in any month (c117). General reply data agrees with the window: February is the strongest month at 0.54%, December the weakest at 0.35% (c120)."
         },
         {
           "kind": "card",
           "id": "long-cycles-fifty-emails-u2",
           "conceptId": "c-restart",
           "title": "What happens after touch five",
-          "bodyMd": "Your three-week sequence is not the deal. US P&C core system decisions run 12 to 18 months from selection to go-live, so when the last touch lands, restart quarterly with a genuinely new reason each time — a rate filing, a new state, a peer's go-live — never a nudge (c133). End the active sequence with the breakup: 'looks like now isn't the right time, I won't clutter your inbox.' On insurance inboxes it often outperforms every earlier touch, sometimes by 2x (c131). General advice says skip the breakup because it forces an ending on a timing problem; the insurance-inbox evidence disagrees (c125)."
+          "bodyMd": "Your three-week sequence is not the deal. US P&C core system decisions run 12 to 18 months from selection to go-live, so when the last touch lands, restart quarterly with a genuinely new reason each time \u2014 a rate filing, a new state, a peer's go-live \u2014 never a nudge (c133). End the active sequence with the breakup: 'looks like now isn't the right time, I won't clutter your inbox.' On insurance inboxes it often outperforms every earlier touch, sometimes by 2x (c131). General advice says skip the breakup because it forces an ending on a timing problem; the insurance-inbox evidence disagrees (c125)."
         },
         {
           "kind": "card",
           "id": "long-cycles-fifty-emails-u3",
           "conceptId": "c-named-room",
           "title": "Name the room, book the slot",
-          "bodyMd": "'I'll be at ITC' competes with 9,000 people. 'I'll be at the Insurance Leaders Forum on the 29th' names a room Dana Whitcomb is actually in — the Forum runs the day before ITC Vegas opens, and NAMIC runs separate executive events (c140). Ask for a fixed 20 minutes in the ITC 1:1 meeting zone, not 'let's connect at the show' (c137). Match the room to the buyer: ITC Vegas (Sept 29–Oct 1, 2026) for carriers, RIMS RISKWORLD (May 3–6, 2026) for risk managers and brokers, NAMIC's 131st Annual (Sept 27–30, 2026) for mutual leadership (c139). Send 2 to 6 weeks out (c135)."
+          "bodyMd": "'I'll be at ITC' competes with 9,000 people. 'I'll be at the Insurance Leaders Forum on the 29th' names a room Dana Whitcomb is actually in \u2014 the Forum runs the day before ITC Vegas opens, and NAMIC runs separate executive events (c140). Ask for a fixed 20 minutes in the ITC 1:1 meeting zone, not 'let's connect at the show' (c137). Match the room to the buyer: ITC Vegas (Sept 29\u2013Oct 1, 2026) for carriers, RIMS RISKWORLD (May 3\u20136, 2026) for risk managers and brokers, NAMIC's 131st Annual (Sept 27\u201330, 2026) for mutual leadership (c139). Send 2 to 6 weeks out (c135)."
         },
         {
           "kind": "card",
           "id": "long-cycles-fifty-emails-u4",
           "conceptId": "c-firm-row",
           "title": "One row per firm",
-          "bodyMd": "Fifty emails a month cannot fill a percentage. Tier your firms first: big carriers run 12-24 month cycles with 8-12 stakeholders on $500K-$5M deals, MGAs 6-9 months with 4-6 stakeholders on $100K-$750K, brokers 3-6 months with 2-4 stakeholders on $25K-$150K (c161). Dana silent for three months is on schedule; Renée silent that long is stalled. Make every tracker row a firm — stage, owner, dated next step — because an insurance deal can run twelve months with no revenue and the stage is the only sign of movement (c162). Ignore vendor advice built on 2,000-5,000 sends; report meetings and pipeline per quarter (c160)."
+          "bodyMd": "Fifty emails a month cannot fill a percentage. Tier your firms first: big carriers run 12-24 month cycles with 8-12 stakeholders on $500K-$5M deals, MGAs 6-9 months with 4-6 stakeholders on $100K-$750K, brokers 3-6 months with 2-4 stakeholders on $25K-$150K (c161). Dana silent for three months is on schedule; Ren\u00e9e silent that long is stalled. Make every tracker row a firm \u2014 stage, owner, dated next step \u2014 because an insurance deal can run twelve months with no revenue and the stage is the only sign of movement (c162). Ignore vendor advice built on 2,000-5,000 sends; report meetings and pipeline per quarter (c160)."
         },
         {
           "kind": "check",
           "id": "long-cycles-fifty-emails-u5",
           "conceptId": "c-window",
-          "question": "You have never emailed Renée Okafor, EVP Commercial Lines at a US broker. When does the first cold email go out?",
+          "question": "You have never emailed Ren\u00e9e Okafor, EVP Commercial Lines at a US broker. When does the first cold email go out?",
           "options": [
             "November 12, so it lands while January 1 renewals are being placed",
             "Late February, once the 1/1 crunch has cleared",
@@ -1634,10 +1634,10 @@
           "conceptId": "c-named-room",
           "question": "Which closing line is likeliest to get 20 minutes with a carrier CUO at ITC Vegas?",
           "options": [
-            "I'll be at ITC Vegas this year — let's connect at the show.",
-            "I'll be at the Insurance Leaders Forum on the 29th — 20 minutes in the 1:1 zone?",
+            "I'll be at ITC Vegas this year \u2014 let's connect at the show.",
+            "I'll be at the Insurance Leaders Forum on the 29th \u2014 20 minutes in the 1:1 zone?",
             "Are you planning to attend any conferences this fall?",
-            "We're exhibiting at booth 2140 — stop by any time."
+            "We're exhibiting at booth 2140 \u2014 stop by any time."
           ],
           "answerIndex": 1,
           "explain": "Naming the executive-only sub-event is far narrower than naming the show, and one booked slot beats wandering a 9,000-person floor (c140, c137)."
@@ -1648,7 +1648,7 @@
           "conceptId": "c-firm-row",
           "question": "A large carrier in your tracker has gone three months with no reply. What does that mean?",
           "options": [
-            "Stalled — drop the firm and reallocate the sends",
+            "Stalled \u2014 drop the firm and reallocate the sends",
             "On schedule for its tier; keep the dated next step and work the stage",
             "Your message is broken; rewrite the subject line",
             "Close it lost and re-add it next year as a fresh name"
@@ -1723,7 +1723,7 @@
             "200 sends triggered by a signal on named target firms"
           ],
           "winner": 1,
-          "result": "The 200 signal-triggered sends replied at 9.2% — 18 replies. The 2,000 blasted sends replied at 1.8% — 36 replies from ten times the volume.",
+          "result": "The 200 signal-triggered sends replied at 9.2% \u2014 18 replies. The 2,000 blasted sends replied at 1.8% \u2014 36 replies from ten times the volume.",
           "why": "Fewer sends with a real reason beat volume, which is exactly the bet you are making at fifty emails a month.",
           "claimIds": [
             "c155",
@@ -1736,7 +1736,7 @@
           "kind": "sprint",
           "id": "long-cycles-fifty-emails-d2",
           "moduleId": "long-cycles-fifty-emails",
-          "prompt": "Write the first line of four quarterly restart touches to Dana Whitcomb, Chief Underwriting Officer at a US carrier. Each line names a different dated, published reason to be writing this quarter — budget lock, a filing, a conference room, a renewal deadline. No line may work as a nudge.",
+          "prompt": "Write the first line of four quarterly restart touches to Dana Whitcomb, Chief Underwriting Officer at a US carrier. Each line names a different dated, published reason to be writing this quarter \u2014 budget lock, a filing, a conference room, a renewal deadline. No line may work as a nudge.",
           "quota": 4,
           "seconds": 90,
           "rubricIds": [
@@ -1754,7 +1754,7 @@
               "text": "Subject: two days instead of six on Columbus submissions"
             },
             {
-              "text": "Renée — saw the two commercial producers your team added in Ohio last month."
+              "text": "Ren\u00e9e \u2014 saw the two commercial producers your team added in Ohio last month."
             },
             {
               "text": "I'm sending this the week of November 12 so it reaches you while your January 1 renewals are still being placed.",
@@ -1768,7 +1768,7 @@
               "text": "We took submission-to-quote from six days to two for a 40-person brokerage in Columbus, without adding headcount."
             },
             {
-              "text": "Twenty minutes, Wednesday or Thursday morning — I'll send an invite you can decline."
+              "text": "Twenty minutes, Wednesday or Thursday morning \u2014 I'll send an invite you can decline."
             },
             {
               "text": "If the timing is wrong, I'll come back once with the post-renewal numbers rather than keep nudging you."
@@ -1779,7 +1779,7 @@
           "kind": "rewrite",
           "id": "long-cycles-fifty-emails-d4",
           "moduleId": "long-cycles-fifty-emails",
-          "original": "Renée — saw the two commercial producers your team added in Ohio last month. We took submission-to-quote from six days to two for a 40-person brokerage in Columbus, no extra headcount. Worth 20 minutes in late February, before your July 1 book heats up?",
+          "original": "Ren\u00e9e \u2014 saw the two commercial producers your team added in Ohio last month. We took submission-to-quote from six days to two for a 40-person brokerage in Columbus, no extra headcount. Worth 20 minutes in late February, before your July 1 book heats up?",
           "fromPersona": "p3",
           "toPersona": "p1",
           "rubricIds": [
@@ -1851,7 +1851,7 @@
       "id": "p1",
       "name": "Dana Whitcomb, Chief Underwriting Officer",
       "role": "CUO at a $1.4B direct-written-premium regional P&C carrier in the Midwest; owns risk selection, pricing discipline and t",
-      "bio": "They stop reading at the first product sentence. \"Our AI-powered platform enables\" reads as a vendor who has never seen a rate filing, and a carrier repeating that wording owns the claim in front of a regulator. What earns the next nine seconds is a line of business named correctly — other liability at a 114.7 combined ratio, not \"insurance\" — and a number their board already tracks.\nThey reply wh",
+      "bio": "They stop reading at the first product sentence. \"Our AI-powered platform enables\" reads as a vendor who has never seen a rate filing, and a carrier repeating that wording owns the claim in front of a regulator. What earns the next nine seconds is a line of business named correctly \u2014 other liability at a 114.7 combined ratio, not \"insurance\" \u2014 and a number their board already tracks.\nThey reply wh",
       "sourceIds": [
         "s16",
         "s17",
@@ -1872,7 +1872,7 @@
       "id": "p2",
       "name": "Marcus Delgado, CEO and Owner",
       "role": "Founder-CEO of a $22M-revenue MGA / program administrator in Texas, writing a specialty casualty program on delegated au",
-      "bio": "They read their own email and answer it themselves — no assistant, no committee. A $60k-a-year engagement is about 0.3% of revenue, so they can say yes in one month if the email shows you understand that their whole business is the capacity renewal, not the software.\nThey stop on anything about defended capacity: loss ratio stability, the carrier's tightening due diligence, MGA premium up 17.8% to",
+      "bio": "They read their own email and answer it themselves \u2014 no assistant, no committee. A $60k-a-year engagement is about 0.3% of revenue, so they can say yes in one month if the email shows you understand that their whole business is the capacity renewal, not the software.\nThey stop on anything about defended capacity: loss ratio stability, the carrier's tightening due diligence, MGA premium up 17.8% to",
       "sourceIds": [
         "s4",
         "s32",
@@ -1888,9 +1888,9 @@
     },
     {
       "id": "p3",
-      "name": "Renée Okafor, EVP Commercial Lines",
+      "name": "Ren\u00e9e Okafor, EVP Commercial Lines",
       "role": "EVP of commercial lines at a $180M-revenue national retail brokerage, sitting between the producers and the COO who sign",
-      "bio": "They do not open most of their own inbox. An assistant screens it first, deleting from 400-500 overnight messages, so the email has to be forwardable with nothing added: who it is for, what you do in one line, and one specific ask. Anything they have to think about gets deferred, not forwarded.\nThey stop reading for retention and organic growth, not loss ratio — 85% to 93% retention is 8% organic ",
+      "bio": "They do not open most of their own inbox. An assistant screens it first, deleting from 400-500 overnight messages, so the email has to be forwardable with nothing added: who it is for, what you do in one line, and one specific ask. Anything they have to think about gets deferred, not forwarded.\nThey stop reading for retention and organic growth, not loss ratio \u2014 85% to 93% retention is 8% organic ",
       "sourceIds": [
         "s85",
         "s2",
@@ -1908,29 +1908,29 @@
   "exemplars": [
     {
       "id": "e1",
-      "title": "Carrier CUO — filing hook, one line of business, one ratio point",
-      "body": "Subject: other liability\n\nDana — saw your 8.4% homeowners filing clear in Ohio last month.\n\nThe line I'd guess is heavier on your desk is other liability. It ran a 114.7 combined ratio industry-wide in 2025 and lost about $11 billion.\n\nWe took roughly one point of combined ratio out of a regional P&C carrier in the Southeast, on claims handling, in nine months. SOC 2 Type 2, and they'll take a reference call.\n\nWorth a look, or not your area right now? Totally fine if not.",
+      "title": "Carrier CUO \u2014 filing hook, one line of business, one ratio point",
+      "body": "Subject: other liability\n\nDana \u2014 saw your 8.4% homeowners filing clear in Ohio last month.\n\nThe line I'd guess is heavier on your desk is other liability. It ran a 114.7 combined ratio industry-wide in 2025 and lost about $11 billion.\n\nWe took roughly one point of combined ratio out of a regional P&C carrier in the Southeast, on claims handling, in nine months. SOC 2 Type 2, and they'll take a reference call.\n\nWorth a look, or not your area right now? Totally fine if not.",
       "why": "SERFF filing as the dated first line (c38, c67), one named line of business instead of \"insurance\" (c6), value priced in combined ratio points (c50), anonymized peer descriptor plus a number (c74, c73), SOC 2 Type 2 spelled out in email one (c57), lowercase non-selling subject (c64), interest-not-ti",
       "sourceId": "s64"
     },
     {
       "id": "e2",
-      "title": "MGA owner — defended capacity, not software",
-      "body": "Subject: your GL program renewal\n\nMarcus — you write the contractors GL program through Ridgeline. That renewal is the business.\n\nMGA premium grew 17.8% last year and carriers are pricing capacity on loss ratio stability now, not volume.\n\nOn a $40M program we pulled claims leakage from about 11% to under 7% — the exact number that showed up in their carrier's due diligence pack the following year.\n\nI'll be at the Insurance Leaders Forum on the 29th. Want the two-page leakage breakdown before then?",
+      "title": "MGA owner \u2014 defended capacity, not software",
+      "body": "Subject: your GL program renewal\n\nMarcus \u2014 you write the contractors GL program through Ridgeline. That renewal is the business.\n\nMGA premium grew 17.8% last year and carriers are pricing capacity on loss ratio stability now, not volume.\n\nOn a $40M program we pulled claims leakage from about 11% to under 7% \u2014 the exact number that showed up in their carrier's due diligence pack the following year.\n\nI'll be at the Insurance Leaders Forum on the 29th. Want the two-page leakage breakdown before then?",
       "why": "Promises defended capacity, the MGA-specific motive (c4, c5), written to the owner because a five-figure fee is ~0.3% of a $20.6M-revenue administrator (c13), claims leakage inside the 7-14% industry range as the pain number (c49, c51), the executive-only sub-event named instead of the show (c140, c",
       "sourceId": "s4"
     },
     {
       "id": "e3",
-      "title": "Broker EVP — written so the assistant can forward it",
-      "body": "Subject: Hartwell commercial retention\n\nFor Renée Okafor, EVP Commercial Lines.\n\nWe work on commercial account retention at brokerages in the $100-499M revenue band. Moving retention from 85% to 93% is 8% organic growth without writing a single new account.\n\nOne $200M brokerage went from 87% to 92% in four renewal cycles. I can send the one-page breakdown of what changed.\n\nIf this belongs with your COO instead, point me there and I'll go quiet.\n\nA quick forward of this message would be great.",
+      "title": "Broker EVP \u2014 written so the assistant can forward it",
+      "body": "Subject: Hartwell commercial retention\n\nFor Ren\u00e9e Okafor, EVP Commercial Lines.\n\nWe work on commercial account retention at brokerages in the $100-499M revenue band. Moving retention from 85% to 93% is 8% organic growth without writing a single new account.\n\nOne $200M brokerage went from 87% to 92% in four renewal cycles. I can send the one-page breakdown of what changed.\n\nIf this belongs with your COO instead, point me there and I'll go quiet.\n\nA quick forward of this message would be great.",
       "why": "Broker email promises retention and organic growth, not loss ratio (c3), qualified on commission revenue rather than premium placed (c43), built as a self-contained forward for the assistant who screens it (c92, c90, c94), routing line so a hand-off counts as the win (c87, c88), send it in the Febru",
       "sourceId": "s2"
     }
   ],
   "metric": {
-    "name": "reply rate from US insurance firms (nich",
-    "unit": "% of emails ",
+    "name": "reply rate from US insurance firms (niche corpus)",
+    "unit": "% of emails sent",
     "corpusMedian": 3.2
   }
 }
