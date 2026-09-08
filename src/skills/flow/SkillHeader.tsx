@@ -2,7 +2,7 @@
 // two escape hatches (drills / make) that are never hidden.
 import type { SkillProject } from '../../../shared/skills';
 import { useNav, type SkillScreen } from '../../nav';
-import { BEATS, beatIndex, pickModule, repCount } from './util';
+import { BEATS, beatIndex, pickModule, repCount, targetLine } from './util';
 
 export default function SkillHeader({
   project, screen, moduleId,
@@ -12,6 +12,7 @@ export default function SkillHeader({
   const mod = pickModule(project, moduleId);
   const reps = repCount(project);
   const noCourse = !mod;
+  const aim = targetLine(project.frame?.target);
   const tip = 'Once research is done this opens up.';
 
   const jump = (s: SkillScreen) => {
@@ -30,6 +31,12 @@ export default function SkillHeader({
       </button>
 
       <b className="sk-name" title={project.name}>{project.name}</b>
+
+      {aim && (
+        <span className="sk-target" data-testid="skill-target" title={`aimed at ${aim}`}>
+          → {aim}
+        </span>
+      )}
 
       <ol className="sk-beats" aria-label="Skill beats">
         {BEATS.map((b, i) => (

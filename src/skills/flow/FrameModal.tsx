@@ -1,6 +1,7 @@
-// Frame: the four things the cartographer needs before it can map a skill.
+// Frame: what the cartographer needs before it can map a skill — the outcome,
+// your situation, and (optional) the long-tail target you are aiming at.
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { Frame, SkillProject } from '../../../shared/skills';
+import type { Frame, SkillProject, SkillTarget } from '../../../shared/skills';
 import Modal from '../../components/Modal';
 import Loader from '../../components/Loader';
 import { skillsApi } from '../api';
@@ -11,6 +12,17 @@ const LEVELS: Array<{ id: Frame['level']; label: string; note: string }> = [
   { id: 'some', label: 'Some', note: 'tried it, mixed results' },
   { id: 'experienced', label: 'Experienced', note: 'want the sharp edges' },
 ];
+
+// The long-tail fields, in the order they make sense out loud.
+const TARGET_FIELDS: Array<{ key: keyof SkillTarget; label: string; placeholder: string; wide?: boolean }> = [
+  { key: 'who', label: 'who exactly', placeholder: 'C-level at insurance carriers' },
+  { key: 'industry', label: 'their industry', placeholder: 'insurance (carriers, brokers, MGAs)' },
+  { key: 'where', label: 'where', placeholder: 'United States' },
+  { key: 'deal', label: 'the deal', placeholder: 'high-ticket, $50k+ a year' },
+  { key: 'different', label: 'what makes this niche different', placeholder: 'They are pitched all day and buy on trust.', wide: true },
+];
+
+const EMPTY_TARGET: SkillTarget = { who: '', industry: '', where: '', deal: '', different: '' };
 
 const MAPPING = [
   'mapping every angle… this takes a couple of minutes',
@@ -27,6 +39,7 @@ export default function FrameModal({
   const [context, setContext] = useState('');
   const [level, setLevel] = useState<Frame['level']>('new');
   const [existing, setExisting] = useState('');
+  const [target, setTarget] = useState<SkillTarget>(EMPTY_TARGET);
   const [busy, setBusy] = useState(false);
   const alive = useRef(false);
 
@@ -38,6 +51,15 @@ export default function FrameModal({
   const submit = useCallback(async () => {
     if (!name.trim() || !outcome.trim()) return;
     setBusy(true);
+    // A target only counts once we know who or what industry — the rest is colour.
+    const trimmed: SkillTarget = {
+      who: target.who.trim(),
+      industry: target.industry.trim(),
+      where: target.where.trim(),
+      deal: target.deal.trim(),
+      different: target.different.trim(),
+    };
+    const aimed = Boolean(trimmed.who || trimmed.industry);
     try {
       const p = await skillsApi.create({
         name: name.trim(),
@@ -46,6 +68,7 @@ export default function FrameModal({
           context: context.trim(),
           level,
           ...(existing.trim() ? { existingWork: existing.trim() } : {}),
+          ...(aimed ? { target: trimmed } : {}),
         },
       });
       onCreated(p);
@@ -53,7 +76,7 @@ export default function FrameModal({
       onError(e);
       if (alive.current) setBusy(false);
     }
-  }, [name, outcome, context, level, existing, onCreated, onError]);
+  }, [name, outcome, context, level, existing, target, onCreated, onError]);
 
   return (
     <Modal
@@ -114,6 +137,27 @@ export default function FrameModal({
             />
             <span className="sk-quiet">This filters every claim we keep. Be specific.</span>
           </label>
+
+          <div className="sk-field sk-target-box">
+            <span className="label">who you're aiming at (optional)</span>
+            <p className="sk-quiet sk-target-note">
+              The crew searches wide to narrow: the craft, then neighbours, then exactly this target.
+            </p>
+            <div className="sk-target-grid">
+              {TARGET_FIELDS.map((f) => (
+                <label key={f.key} className={`sk-field${f.wide ? ' sk-target-wide' : ''}`}>
+                  <span className="label">{f.label}</span>
+                  <input
+                    className="input"
+                    data-testid={`frame-target-${f.key}`}
+                    placeholder={f.placeholder}
+                    value={target[f.key]}
+                    onChange={(e) => setTarget((t) => ({ ...t, [f.key]: e.target.value }))}
+                  />
+                </label>
+              ))}
+            </div>
+          </div>
 
           <div className="sk-field">
             <span className="label">how far in are you</span>

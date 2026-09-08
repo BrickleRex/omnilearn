@@ -29,12 +29,20 @@ test('frame a skill, prune the angle map, run mock research, calibrate', async (
   await page.getByTestId('frame-name').fill('Cold email');
   await page.getByTestId('frame-outcome').fill('5 qualified meetings a month');
   await page.getByTestId('frame-context').fill('B2B SaaS, $0 budget, sent ~50 cold emails ever');
+  await page.getByTestId('frame-target-who').fill('VPs of Sales');
+  await page.getByTestId('frame-target-industry').fill('B2B SaaS');
+  await page.getByTestId('frame-target-where').fill('United States');
+  await page.getByTestId('frame-target-deal').fill('$400/mo tool');
+  await page.getByTestId('frame-target-different').fill('They are pitched all day.');
   await page.getByTestId('frame-level-new').click();
   await page.getByTestId('frame-submit').click();
 
   // --- Map: outline ladder; unchecking a parent takes its subtree with it
   await expect(page.getByTestId('skill-map')).toBeVisible({ timeout: 15_000 });
   await expect(page.getByTestId('angle-targeting')).toBeVisible();
+  // wide → narrow: niche angles are about the target, general ones are the craft
+  await expect(page.getByTestId('angle-scope-icp')).toHaveText('niche');
+  await expect(page.getByTestId('angle-scope-targeting')).toHaveText('general');
   await expect(page.getByTestId('angle-toggle-warmup')).toBeChecked();
   const estBefore = await page.getByTestId('map-est').innerText();
   await page.getByTestId('angle-toggle-deliverability').click();
@@ -184,6 +192,8 @@ test('make: ghost refused, hint flags the about-us line, run, v2 delta, ship, ev
   await page.getByTestId('rail-tab-evidence').click();
   await expect(page.getByTestId('evidence-cards')).toBeVisible();
   await expect(page.getByTestId('evidence-card-c3')).toContainText(/against/i);
+  await expect(page.getByTestId('evidence-card-c1').getByTestId('specificity-niche')).toBeVisible();
+  await expect(page.getByTestId('evidence-card-c6').getByTestId('specificity-general')).toBeVisible();
   await page.getByTestId('evidence-view-grid').click();
   await expect(page.getByTestId('evidence-grid')).toBeVisible();
   await expect(page.getByTestId('grid-cell-c1-reddit')).toBeVisible();
@@ -192,4 +202,5 @@ test('make: ghost refused, hint flags the about-us line, run, v2 delta, ship, ev
   await page.goto('/');
   await page.getByTestId('track-skills').click();
   await expect(page.getByTestId(`skill-card-${SKILL}`)).toContainText(/rep/i);
+  await expect(page.getByTestId(`skill-card-${SKILL}`).getByTestId('skill-target')).toBeVisible();
 });

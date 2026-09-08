@@ -2,7 +2,8 @@
 // CONSENSUS GRID (claims x source kinds). Shared by Learn (claim chips) and
 // Make (Evidence rail tab).
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { Claim, SourceKind, SourceRef, Verdict } from '../../../shared/skills';
+import type { Claim, SourceKind, SourceRef, Specificity, Verdict } from '../../../shared/skills';
+import { specRank } from '../flow/util';
 import '../skills.css';
 
 export interface EvidenceProps {
@@ -26,6 +27,12 @@ const VERDICT_WORD: Record<Verdict, string> = {
   solid: 'SOLID', likely: 'LIKELY', contested: 'CONTESTED', stale: 'STALE',
 };
 const CELL_WORD = { agree: 'agrees', disagree: 'disagrees', mixed: 'mixed', silent: 'says nothing' } as const;
+const SPEC_WORD: Record<Specificity, string> = { niche: 'NICHE', adjacent: 'ADJACENT', general: 'GENERAL' };
+const SPEC_WHY: Record<Specificity, string> = {
+  niche: 'about your exact target',
+  adjacent: 'from a neighbouring field',
+  general: 'a rule of the wider craft',
+};
 
 const pct = (n: number) => `${Math.round((n ?? 0) * 100)}%`;
 
@@ -46,12 +53,26 @@ function Meter({ label, value }: { label: string; value: number }) {
   );
 }
 
+/** How close this is to the frame's target: niche > adjacent > general. */
+function SpecBadge({ spec, small }: { spec: Specificity; small?: boolean }) {
+  return (
+    <span
+      className={`sk-spec is-${spec}${small ? ' is-small' : ''}`}
+      data-testid={small ? `source-spec-${spec}` : `specificity-${spec}`}
+      title={SPEC_WHY[spec]}
+    >
+      {SPEC_WORD[spec]}
+    </span>
+  );
+}
+
 function SourceRow({ s }: { s: SourceRef }) {
   return (
     <li className="sk-src">
       <span className="sk-kind" data-kind={s.kind}>{KIND_TAG[s.kind] ?? 'OTH'}</span>
       <a className="sk-src-title" href={s.url} target="_blank" rel="noreferrer noopener" title={s.title}>{s.title}</a>
       <span className="sk-src-meters">
+        {s.specificity && <SpecBadge spec={s.specificity} small />}
         <Meter label="rep" value={s.reputation} />
         <Meter label="sound" value={s.soundness} />
         <span className={`sk-fetched is-${s.fetched}`} title={`text fetched: ${s.fetched}`}>{s.fetched}</span>
@@ -79,6 +100,15 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
     const el = cardRefs.current[focus];
     if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
   }, [focus, shown]);
+
+  // Once the crew has tagged specificity, the closest claims to your target go first.
+  const ordered = useMemo(() => {
+    if (!claims.some((c) => c.specificity)) return claims;
+    return claims
+      .map((c, i) => ({ c, i }))
+      .sort((a, b) => specRank(a.c.specificity) - specRank(b.c.specificity) || a.i - b.i)
+      .map((x) => x.c);
+  }, [claims]);
 
   const byId = useMemo(() => {
     const m: Record<string, SourceRef> = {};
@@ -124,8 +154,8 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
 
       {shown === 'cards' && (
         <div className="sk-ev-cards" data-testid="evidence-cards">
-          {claims.length === 0 && <p className="sk-quiet">No claims yet — research fills this in.</p>}
-          {claims.map((c) => {
+          {ordered.length === 0 && <p className="sk-quiet">No claims yet — research fills this in.</p>}
+          {ordered.map((c) => {
             const srcs = c.sourceIds.map((id) => byId[id]).filter(Boolean);
             const side = (ids: string[]) => ids.map((id) => byId[id]).filter(Boolean);
             return (
@@ -136,9 +166,13 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
                 data-testid={`evidence-card-${c.id}`}
                 data-verdict={c.verdict}
               >
-                <span className={`sk-stamp sk-stamp-${c.verdict}`}>
-                  {VERDICT_WORD[c.verdict]} · {pct(c.confidence)}
-                </span>
+                <div className="sk-ev-top">
+                  <span className={`sk-stamp sk-stamp-${c.verdict}`}>
+                    {VERDICT_WORD[c.verdict]} · {pct(c.confidence)}
+                  </span>
+                  {c.specificity && <SpecBadge spec={c.specificity} />}
+                  {c.specificity && typeof c.relevance === 'number' && <Meter label="fit" value={c.relevance} />}
+                </div>
                 <p className="sk-ev-claim">{c.text}</p>
                 <div className="sk-ev-meta">
                   <span className="chip chip-quiet">{c.angleId}</span>
@@ -175,15 +209,23 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
             <thead>
               <tr>
                 <th className="sk-grid-corner">claim</th>
+                <th className="sk-grid-kind" title="how close to your target">fit</th>
                 {kinds.map((k) => <th key={k} className="sk-grid-kind">{KIND_LABEL[k]}</th>)}
               </tr>
             </thead>
             <tbody>
-              {claims.map((c) => (
+              {ordered.map((c) => (
                 <tr key={c.id}>
                   <th className="sk-grid-claim">
                     <button type="button" className="sk-grid-claim-btn" onClick={() => openCard(c.id)}>{c.text}</button>
                   </th>
+                  <td className="sk-grid-td">
+                    <span
+                      className={`sk-fit-dot is-${c.specificity ?? 'unknown'}`}
+                      title={c.specificity ? SPEC_WHY[c.specificity] : 'not tagged yet'}
+                      aria-label={c.specificity ?? 'fit unknown'}
+                    />
+                  </td>
                   {kinds.map((k) => {
                     const v = c.consensus?.[k] ?? 'silent';
                     return (
@@ -205,6 +247,9 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
             </tbody>
           </table>
           <p className="sk-legend">
+            <span className="sk-fit-dot is-niche" /> niche
+            <span className="sk-fit-dot is-adjacent" /> adjacent
+            <span className="sk-fit-dot is-general" /> general
             <span className="sk-cell is-agree" /> agrees
             <span className="sk-cell is-disagree" /> disagrees
             <span className="sk-cell is-mixed" /> mixed

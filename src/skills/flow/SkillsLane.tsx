@@ -1,10 +1,10 @@
 // The Skills lane in the Library: one card per skill project.
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { SkillPhase, SkillSummary } from '../../../shared/skills';
+import type { SkillPhase, SkillSummary, SkillTarget } from '../../../shared/skills';
 import Segbar from '../../components/Segbar';
 import { useNav } from '../../nav';
 import { skillsApi } from '../api';
-import { screenForPhase } from './util';
+import { screenForPhase, targetLine } from './util';
 import '../skills.css';
 
 const PHASE_NEXT: Record<SkillPhase, string> = {
@@ -27,17 +27,42 @@ const PHASE_WORD: Record<SkillPhase, string> = {
   making: 'making',
 };
 
+/** A summary plus the long-tail target, which the list may or may not carry. */
+type SkillRow = SkillSummary & { target?: SkillTarget };
+
 export default function SkillsLane({ onNew }: { onNew: () => void }) {
   const { go } = useNav();
-  const [skills, setSkills] = useState<SkillSummary[] | null>(null);
+  const [skills, setSkills] = useState<SkillRow[] | null>(null);
   const [failed, setFailed] = useState(false);
   const alive = useRef(false);
 
+  // Cards want to show what a skill is aimed at; if the summary didn't bring the
+  // target, ask the projects themselves (quietly, after the cards are up).
+  const hydrate = useCallback((rows: SkillRow[]) => {
+    const need = rows.filter((r) => !r.target).slice(0, 12);
+    if (need.length === 0) return;
+    void Promise.allSettled(need.map((r) => skillsApi.get(r.id))).then((res) => {
+      if (!alive.current) return;
+      const found = new Map<string, SkillTarget>();
+      for (const r of res) {
+        if (r.status === 'fulfilled' && r.value?.frame?.target) found.set(r.value.id, r.value.frame.target);
+      }
+      if (found.size === 0) return;
+      setSkills((cur) => (cur ? cur.map((row) => (found.has(row.id) ? { ...row, target: found.get(row.id) } : row)) : cur));
+    });
+  }, []);
+
   const load = useCallback(() => {
     skillsApi.list()
-      .then((s) => { if (alive.current) { setSkills(s); setFailed(false); } })
+      .then((s) => {
+        if (!alive.current) return;
+        const rows = s as SkillRow[];
+        setSkills(rows);
+        setFailed(false);
+        hydrate(rows);
+      })
       .catch(() => { if (alive.current) { setSkills([]); setFailed(true); } });
-  }, []);
+  }, [hydrate]);
 
   useEffect(() => {
     alive.current = true;
@@ -45,7 +70,7 @@ export default function SkillsLane({ onNew }: { onNew: () => void }) {
     return () => { alive.current = false; };
   }, [load]);
 
-  const open = (s: SkillSummary) => go({
+  const open = (s: SkillRow) => go({
     name: 'skill', skillId: s.id, screen: screenForPhase(s),
   });
 
@@ -92,6 +117,12 @@ export default function SkillsLane({ onNew }: { onNew: () => void }) {
                   <h2 className="lib-card-name">{s.name}</h2>
                   <span className="chip chip-accent2 chip-tilt">{PHASE_WORD[s.phase] ?? s.phase}</span>
                 </div>
+
+                {targetLine(s.target) && (
+                  <p className="lib-card-target" data-testid="skill-target" title="who this skill is aimed at">
+                    → {targetLine(s.target)}
+                  </p>
+                )}
 
                 <p className="lib-card-goal">{PHASE_NEXT[s.phase] ?? 'Pick up where you left off.'}</p>
 

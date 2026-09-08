@@ -73,6 +73,13 @@ export default function SkillMap({
           <label className="sk-angle-main" htmlFor={`angle-cb-${a.id}`}>
             <span className="sk-angle-title">{a.title}</span>
             <span className={`sk-level is-${a.level}`}>{a.level}</span>
+            <span
+              className={`sk-scope is-${a.scope === 'niche' ? 'niche' : 'general'}`}
+              data-testid={`angle-scope-${a.id}`}
+              title={a.scope === 'niche' ? 'about your exact target' : 'a rule of the craft, applied to your target'}
+            >
+              {a.scope === 'niche' ? 'niche' : 'general'}
+            </span>
             {a.why && <span className="sk-angle-why">{a.why}</span>}
           </label>
           <span className="sk-angle-cost" title={`about ${a.estSources} sources`}>
@@ -96,6 +103,10 @@ export default function SkillMap({
           <p className="sk-lede">
             Untick anything you don't care about — the ticked ones are what we go and read.
             Unticking a parent takes its sub-angles with it.
+          </p>
+          <p className="sk-quiet sk-scope-legend">
+            <span className="sk-scope is-niche">niche</span> angles are about your exact target.
+            <span className="sk-scope is-general">general</span> ones are the rules of the craft, applied to it.
           </p>
         </div>
         <div className="sk-est card" data-testid="map-est">

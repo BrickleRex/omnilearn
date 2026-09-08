@@ -143,3 +143,9 @@ it different). When present:
 - **UI**: frame modal target fields (`frame-target-who|industry|where|deal|different`),
   map rows show a NICHE / GENERAL scope chip, evidence cards and source rows show the
   specificity badge (`specificity-<niche|adjacent|general>` on cards).
+  Exact ids: `angle-scope-<angleId>` (text 'niche' | 'general', general when the scope
+  is missing); `skill-target` (the "→ who · industry · where" line on the skill header
+  and on each library card); `specificity-<niche|adjacent|general>` on the evidence
+  card badge and `source-spec-<...>` on a source row's small tag; the consensus grid
+  gains a leading "fit" column (dot only, cell ids unchanged) and cards sort niche
+  first once any claim carries a specificity.

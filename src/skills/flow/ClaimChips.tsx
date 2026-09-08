@@ -7,7 +7,7 @@ import { shorten } from './util';
 export function ClaimChips({
   claimIds, claims, onOpen, label = 'why we say that',
 }: { claimIds: string[]; claims: Claim[]; onOpen: (id: string) => void; label?: string }) {
-  const found = claimIds.map((id) => claims.find((c) => c.id === id) ?? { id, text: id, verdict: 'likely' as const });
+  const found = claimIds.map((id) => claims.find((c) => c.id === id) ?? { id, text: id, verdict: 'likely' as const, specificity: undefined });
   if (found.length === 0) return null;
   return (
     <div className="sk-chips">
@@ -16,11 +16,12 @@ export function ClaimChips({
         <button
           key={c.id}
           type="button"
-          className={`sk-chip-claim is-${c.verdict}`}
+          className={`sk-chip-claim is-${c.verdict}${c.specificity === 'niche' ? ' is-niche' : ''}`}
           data-testid={`claim-chip-${c.id}`}
-          title={c.text}
+          title={c.specificity === 'niche' ? `${c.text} — about your exact target` : c.text}
           onClick={() => onOpen(c.id)}
         >
+          {c.specificity === 'niche' && <span className="sk-chip-niche" title="about your exact target">● niche</span>}
           <span className="sk-chip-stamp">{c.verdict}</span>
           <span className="sk-chip-text">{shorten(c.text, 42)}</span>
         </button>

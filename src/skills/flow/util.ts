@@ -1,5 +1,5 @@
 // Small shared helpers for the skills flow screens.
-import type { Angle, SkillModule, SkillProject } from '../../../shared/skills';
+import type { Angle, SkillModule, SkillProject, SkillTarget, Specificity } from '../../../shared/skills';
 import type { SkillScreen } from '../../nav';
 
 /** The nine beats of a skill project, in order. */
@@ -96,3 +96,13 @@ export function shorten(text: string, max = 46): string {
 }
 
 export const mmss = (s: number) => `${Math.floor(Math.max(0, s) / 60)}:${String(Math.max(0, s) % 60).padStart(2, '0')}`;
+
+/** "VPs of Sales · B2B SaaS · United States" — the long-tail target, blanks dropped. */
+export function targetLine(t?: SkillTarget | null): string {
+  return [t?.who, t?.industry, t?.where].map((s) => (s ?? '').trim()).filter(Boolean).join(' · ');
+}
+
+/** Sort key: niche first, then adjacent, then general, then anything unlabelled. */
+export function specRank(s?: Specificity): number {
+  return s === 'niche' ? 0 : s === 'adjacent' ? 1 : s === 'general' ? 2 : 3;
+}
