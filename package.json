@@ -47,5 +47,11 @@
     "typescript": "^5.7.3",
     "vite": "^6.0.7",
     "vitest": "^2.1.8"
+  },
+  "description": "A local learning app: type every line of code yourself, and learn any non-code skill from a web-researched, evidence-tagged course.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrickleRex/omnilearn.git"
   }
 }
