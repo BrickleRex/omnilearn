@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="design/logo.svg" alt="Omnilearn" width="560">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="design/logo-dark.svg">
+    <img src="design/logo.svg" alt="Omnilearn" width="560">
+  </picture>
 </p>
 
 <p align="center">
