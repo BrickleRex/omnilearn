@@ -1,6 +1,6 @@
 import type {
   SkillSummary, SkillProject, CreateSkillRequest, AngleMap, ResearchJob, Claim, SourceRef,
-  CalibrationGrade, CalibrationGradeRes, SkillModule, Draft, RunReport, HintReq, HintRes,
+  CalibrationGrade, CalibrationGradeRes, ProbeGradeReq, ProbeGradeRes, SkillModule, Draft, RunReport, HintReq, HintRes,
   GhostReq, GhostRes, DrillSubmit, DrillAttempt, ShipReq, Shipment,
 } from '../../shared/skills';
 import type { ChatMessage, ChatRequest, ChatResponse } from '../../shared/types';
@@ -33,6 +33,7 @@ export const skillsApi = {
   sources: (id: string) => req<SourceRef[]>('GET', `${B}/${id}/sources`),
   addSource: (id: string, body: { url?: string; title: string; text: string }) => req<SourceRef>('POST', `${B}/${id}/sources`, body),
   gradeExisting: (id: string, body: CalibrationGrade) => req<CalibrationGradeRes>('POST', `${B}/${id}/calibration/grade`, body),
+  gradeProbes: (id: string, body: ProbeGradeReq) => req<ProbeGradeRes>('POST', `${B}/${id}/calibration/probes`, body),
   patchModule: (id: string, mid: string, patch: Partial<SkillModule>) => req<SkillProject>('PATCH', `${B}/${id}/modules/${mid}`, patch),
   drafts: (id: string) => req<Draft[]>('GET', `${B}/${id}/drafts`),
   createDraft: (id: string, body: { moduleId: string; title: string; body?: string }) => req<Draft>('POST', `${B}/${id}/drafts`, body),

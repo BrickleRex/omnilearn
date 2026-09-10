@@ -2,11 +2,11 @@
 // The ghost is TEXT ONLY — the learner types it. Nothing here writes into a buffer.
 
 import type {
-  CalibrationGradeRes, Claim, Exemplar, Frame, GhostRes, HintRes, SkillModule,
+  CalibrationGradeRes, Claim, Exemplar, Frame, GhostRes, HintRes, ProbeAnswer, ProbeGradeRes, SkillModule,
 } from '../../../shared/skills';
 import { callClaude, extractJson, isMock } from '../../llm/llm';
-import { mockGhost, mockGrade, mockHint } from '../fixtures';
-import { ghostPrompt, gradePrompt, hintPrompt } from './prompts';
+import { mockGhost, mockGrade, mockHint, mockProbeGrade } from '../fixtures';
+import { ghostPrompt, gradePrompt, hintPrompt, probeGradePrompt } from './prompts';
 
 /** Hints and ghosts are typed against, so they must land fast or not at all. */
 const FAST_MS = 45_000;
@@ -90,6 +90,24 @@ export interface GradeCtx {
   claims: Claim[];
   emails: string;
   model?: string;
+}
+
+export interface ProbeCtx { frame: Frame; answers: ProbeAnswer[]; model?: string }
+
+export async function gradeProbes(ctx: ProbeCtx): Promise<ProbeGradeRes> {
+  if (isMock()) return mockProbeGrade(ctx.answers);
+  const reply = await callClaude({ task: 'skill', model: ctx.model, prompt: probeGradePrompt(ctx), timeoutMs: 90_000 });
+  const root = rec(extractJson<unknown>(reply));
+  const byId = new Map<string, { mastery: number; note: string }>();
+  for (const entry of Array.isArray(root.results) ? root.results : []) {
+    const r = rec(entry);
+    const unitId = str(r.unitId);
+    if (!unitId || byId.has(unitId)) continue;
+    const m = Number(r.mastery);
+    byId.set(unitId, { mastery: Number.isFinite(m) ? Math.min(1, Math.max(0, m)) : 0.3, note: str(r.note) || 'Graded.' });
+  }
+  // Every asked probe gets a result; an unjudged one counts as a fair attempt.
+  return { results: ctx.answers.map((a) => ({ unitId: a.unitId, ...(byId.get(a.unitId) ?? { mastery: 0.3, note: 'Could not judge this one — treated as an attempt.' }) })) };
 }
 
 export async function gradeExisting(ctx: GradeCtx): Promise<CalibrationGradeRes> {

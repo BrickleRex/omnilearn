@@ -26,6 +26,9 @@ test('frame a skill, prune the angle map, run mock research, calibrate', async (
 
   // --- Frame
   await page.getByTestId('new-skill').click();
+  // The modal moves focus to its first field on a short timer; filling before
+  // that fires can lose keystrokes, so wait for the focus to land.
+  await expect(page.getByTestId('frame-name')).toBeFocused({ timeout: 3_000 });
   await page.getByTestId('frame-name').fill('Cold email');
   await page.getByTestId('frame-outcome').fill('5 qualified meetings a month');
   await page.getByTestId('frame-context').fill('B2B SaaS, $0 budget, sent ~50 cold emails ever');
@@ -61,12 +64,19 @@ test('frame a skill, prune the angle map, run mock research, calibrate', async (
   await expect(page.getByTestId('research-continue')).toBeEnabled();
   await page.getByTestId('research-continue').click();
 
-  // --- Calibrate: probes are the course's checks (u2, u4, u6 — answer index 1)
+  // --- Calibrate: probes are the course's checks (u2, u4, u6 — answer index 1).
+  // The course's own trailing "No idea yet" is stripped and one is appended, so
+  // each probe shows 3 real options, the opt-out at index 3, and an own-words row.
   await expect(page.getByTestId('skill-calibrate')).toBeVisible({ timeout: 10_000 });
+  await expect(page.getByTestId('calib-opt-0-3')).toHaveText(/no idea yet/i);
+  await expect(page.getByTestId('calib-opt-0-4')).toHaveCount(0);
   await page.getByTestId('calib-opt-0-1').click(); // correct
   await page.getByTestId('calib-opt-1-0').click(); // wrong
-  await page.getByTestId('calib-opt-2-3').click(); // "No idea yet"
+  await page.getByTestId('calib-own-2').click();   // own words, graded by the panel (mock: keyword overlap)
+  await page.getByTestId('calib-own-input-2').fill('Add one new reason in two lines, never just bump it');
   await page.getByTestId('calib-submit').click();
+  await expect(page.getByTestId('calib-summary')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByTestId('calib-own-note-2')).toContainText(/✓/);
 
   await page.getByTestId('grade-existing-toggle').click();
   await page.getByTestId('grade-existing-input').fill('Hi Priya, we are the leading platform. Got 15 minutes?');

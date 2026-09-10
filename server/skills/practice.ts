@@ -6,7 +6,7 @@
 
 import { Router } from 'express';
 import type {
-  CalibrationGrade, Draft, DrillAttempt, DrillSubmit, GhostReq, HintReq, RunReq,
+  CalibrationGrade, Draft, DrillAttempt, DrillSubmit, GhostReq, HintReq, ProbeAnswer, ProbeGradeReq, ProbeGradeRes, RunReq,
   Shipment, ShipReq, SkillModule,
 } from '../../shared/skills';
 import type { ChatRequest, Concept } from '../../shared/types';
@@ -17,7 +17,7 @@ import {
 import { findModule, loadPractice, panelModel, raisePhase, reps } from './practice/context';
 import { appendVersion, findVersion, ladderText, nextDraftId, newDraft, predictionFor } from './practice/drafts';
 import { runPanel } from './practice/run';
-import { gradeExisting, makeGhost, makeHint } from './practice/guidance';
+import { gradeExisting, gradeProbes, makeGhost, makeHint } from './practice/guidance';
 import { findDrill, gradeDrill } from './practice/drills';
 import {
   appendFlag, flagNote, flaggedClaimIds, nextShipId, outsideRange, realityRate,
@@ -44,6 +44,31 @@ const SOURCES = new Set<Concept['source']>(['unseen', 'calibration', 'check', 's
 const STATUSES = new Set<SkillModule['status']>(['todo', 'current', 'done']);
 
 // ---------- calibration ----------
+
+// Own-words answers to the calibration probes. Mastery >= 0.8 clears the concept.
+skillsPracticeRouter.post('/skills/:id/calibration/probes', async (req, res, next) => {
+  try {
+    const body = (req.body ?? {}) as ProbeGradeReq;
+    const answers: ProbeAnswer[] = (Array.isArray(body.answers) ? body.answers : []).map((raw) => {
+      const a = rec(raw);
+      return {
+        unitId: str(a.unitId),
+        question: str(a.question),
+        options: Array.isArray(a.options) ? a.options.map((o) => str(o)) : [],
+        answerIndex: num(a.answerIndex, -1),
+        explain: str(a.explain),
+        answer: str(a.answer).slice(0, 2000),
+      };
+    }).filter((a) => a.unitId && a.question && a.answer);
+    if (!answers.length) throw new HttpError(400, 'body.answers must contain at least one answered probe');
+    if (answers.length > 40) throw new HttpError(400, 'too many probes in one call');
+    const { project } = await loadPractice(String(req.params.id));
+    const out: ProbeGradeRes = await gradeProbes({ frame: project.frame, answers: answers as ProbeAnswer[], model: await panelModel() });
+    res.json(out);
+  } catch (err) {
+    next(err);
+  }
+});
 
 skillsPracticeRouter.post('/skills/:id/calibration/grade', async (req, res, next) => {
   try {

@@ -699,3 +699,14 @@
   background: var(--accent);
   color: var(--on-accent);
 }
+
+/* ---- calibrate: appended "No idea yet" + own-words answer ---- */
+.cal-own { display: grid; gap: 8px; }
+.cal-own .cal-opt { align-items: center; }
+.cal-own-input { margin-left: 36px; }
+.cal-own-note { margin: 4px 0 0 36px; font-size: 13px; color: var(--muted); }
+.cal-own-note b { color: var(--ink); }
+.sk-own-list { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 6px; }
+.sk-own-list li { font-size: 13px; }
+.sk-own-list li b { display: inline-block; min-width: 3.2em; }
+.sk-predict-opt, .sk-spot-seg, .sk-drill-opt { white-space: normal; height: auto; overflow-wrap: anywhere; }

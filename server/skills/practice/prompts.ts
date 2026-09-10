@@ -6,7 +6,7 @@
 // ONLY a JSON object back, so `extractJson` always has something to grab.
 
 import type {
-  Claim, Course, Drill, Exemplar, Frame, Persona, RubricItem, SkillModule,
+  Claim, Course, Drill, Exemplar, Frame, Persona, RubricItem, SkillModule, ProbeAnswer,
 } from '../../../shared/skills';
 import type { ChatMessage } from '../../../shared/types';
 import { targetBlock } from '../research/prompts';
@@ -267,6 +267,36 @@ ${ctx.frame.target ? '- Judge it as the target above would read it, not as a gen
 ${VOICE}
 
 ${fence(`{ scores: Array<{ rubricId: string; score: number; note: string }>; summary: string }`)}`;
+}
+
+// ---------- calibration probes answered in the learner's own words ----------
+
+export interface ProbeGradeCtx { frame: Frame; answers: ProbeAnswer[] }
+
+export function probeGradePrompt(ctx: ProbeGradeCtx): string {
+  const items = ctx.answers.map((a, i) => `${i + 1}. unitId: ${a.unitId}
+   question: ${a.question}
+   correct answer: ${a.options[a.answerIndex] ?? '(unknown)'}
+   why: ${a.explain}
+   THEIR ANSWER: <<<${a.answer.slice(0, 600)}>>>`).join('\n');
+  return `A learner answered calibration questions in their own words instead of picking an option.
+Decide how much of each concept they already have. This only decides what we skip teaching.
+
+WHAT THEY ARE AFTER
+outcome: ${ctx.frame.outcome}
+${targetLines(ctx.frame)}
+${items}
+
+RULES
+- mastery 1.0 = says the same thing as the correct answer, even in different words or a different example.
+- 0.6-0.8 = has the core idea but misses a piece the "why" line names.
+- 0.3 = a real attempt that is off. 0 = blank, "no idea", or unrelated.
+- Be generous with wording, strict with meaning. A vague answer that could mean anything is 0.3.
+- note is ONE kid-simple line: what they got, or the one piece they are missing.
+
+${VOICE}
+
+${fence(`{ results: Array<{ unitId: string; mastery: number; note: string }> }`)}`;
 }
 
 // ---------- drill grading (sprint / rewrite) ----------

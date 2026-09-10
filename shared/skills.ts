@@ -201,6 +201,11 @@ export interface DrillSubmit { drillId: string; answer: unknown }
 export interface ShipReq { draftId: string; version: number; sent: number; replies: number; meetings?: number; notes?: string }
 export interface CalibrationGrade { emails: string; }               // "grade my existing emails"
 export interface CalibrationGradeRes { scores: Array<{ rubricId: string; score: number; note: string }>; summary: string }
+// Additive: calibration probes answered in the learner's own words (the "your own
+// answer" option). Graded by the panel model against the check's correct option.
+export interface ProbeAnswer { unitId: string; question: string; options: string[]; answerIndex: number; explain: string; answer: string }
+export interface ProbeGradeReq { answers: ProbeAnswer[] }
+export interface ProbeGradeRes { results: Array<{ unitId: string; mastery: number; note: string }> } // mastery 0..1; >= 0.8 clears
 
 // ---------- REST (all JSON; errors {error}) ----------
 // GET    /api/skills                              -> SkillSummary[]
@@ -215,6 +220,7 @@ export interface CalibrationGradeRes { scores: Array<{ rubricId: string; score: 
 // GET    /api/skills/:id/sources                  -> SourceRef[]
 // POST   /api/skills/:id/sources                  -> SourceRef          (body: {url?, title, text}) user-pasted, kind 'user', reputation 0.9
 // POST   /api/skills/:id/calibration/grade        -> CalibrationGradeRes (body: CalibrationGrade) [LLM]
+// POST   /api/skills/:id/calibration/probes       -> ProbeGradeRes      (body: ProbeGradeReq)    [LLM panel; mock = keyword overlap]
 // PATCH  /api/skills/:id/modules/:mid             -> SkillProject       (body: Partial<SkillModule>: concepts/status)
 // GET    /api/skills/:id/drafts                   -> Draft[]
 // POST   /api/skills/:id/drafts                   -> Draft              (body: {moduleId, title, body?})

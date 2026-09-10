@@ -336,3 +336,8 @@
 @media (max-width: 520px) {
   .ms-top-left .wordmark { display: none; }
 }
+
+/* Options must show their whole text: wrap, never clip. The key chip stays put. */
+.cal-opt, .check-opt { white-space: normal; height: auto; align-items: flex-start; line-height: 1.35; }
+.cal-opt > span:last-child, .check-opt > span:last-child { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.cal-key { flex: 0 0 auto; margin-top: 1px; }

@@ -4,6 +4,7 @@
 
 import type {
   AngleMap, Claim, Course, Draft, DrillAttempt, Frame, RunReport, SourceRef, CalibrationGradeRes, HintRes, GhostRes,
+  ProbeAnswer, ProbeGradeRes,
 } from '../../shared/skills';
 
 export const MOCK_SKILL_NAME = 'Cold email';
@@ -163,6 +164,19 @@ export function mockGrade(_emails: string): CalibrationGradeRes {
       { rubricId: 'r-ask', score: 0.4, note: 'Asks for a call instead of a yes/no.' },
     ],
     summary: 'Short and polite, but every first line is about you. Start with their trigger.',
+  };
+}
+
+/** Own-words calibration answers: keyword overlap with the correct option + its explanation. */
+export function mockProbeGrade(answers: ProbeAnswer[]): ProbeGradeRes {
+  const words = (t: string) => new Set(t.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length >= 4));
+  return {
+    results: answers.map((a) => {
+      const key = words(`${a.options[a.answerIndex] ?? ''} ${a.explain}`);
+      const hits = [...words(a.answer)].filter((w) => key.has(w)).length;
+      const mastery = hits >= 2 ? 1 : hits === 1 ? 0.6 : 0.3;
+      return { unitId: a.unitId, mastery, note: mastery >= 0.8 ? 'Same idea as the answer, in your words.' : mastery >= 0.6 ? 'Half of it — see the explanation.' : `Not quite: ${a.explain}` };
+    }),
   };
 }
 
