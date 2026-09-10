@@ -87,6 +87,15 @@ export interface ConfidenceInput {
 }
 
 /** confidence = f(reputation, soundness, consensus) × fit-to-target, decayed by recency. */
+/** Cap prose by characters without cutting a word in half; adds an ellipsis only when something was dropped. */
+function capChars(text: string, max: number): string {
+  const t = text.trim().replace(/\s+/g, ' ');
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max);
+  const at = cut.lastIndexOf(' ');
+  return `${(at > max * 0.6 ? cut.slice(0, at) : cut).replace(/[,;:\-–—]$/, '')}…`;
+}
+
 export function claimConfidence(input: ConfidenceInput): number {
   const rep = mean(input.reputations);
   const sound = mean(input.soundnesses);
@@ -350,7 +359,7 @@ export function coerceScout(raw: unknown, angleId: string): ScoutResult {
   const claims: ScoutClaim[] = [];
   for (const item of Array.isArray(r.claims) ? r.claims : []) {
     const c = (item ?? {}) as Partial<ScoutClaim>;
-    const text = typeof c.text === 'string' ? c.text.trim().replace(/\s+/g, ' ').slice(0, 400) : '';
+    const text = typeof c.text === 'string' ? capChars(c.text, 480) : '';
     if (text.length < 12) continue;
     const urls = (Array.isArray(c.sourceUrls) ? c.sourceUrls : [])
       .filter((u): u is string => typeof u === 'string')
@@ -639,7 +648,7 @@ async function phaseReconciling(ctl: JobCtl, project: SkillProject, map: AngleMa
   const claims: Claim[] = [];
   let contestedCount = 0;
   for (const cluster of clusters) {
-    const text = typeof cluster.text === 'string' ? cluster.text.trim().replace(/\s+/g, ' ').slice(0, 400) : '';
+    const text = typeof cluster.text === 'string' ? capChars(cluster.text, 480) : '';
     if (text.length < 12) continue;
     const sourceIds = [...new Set((Array.isArray(cluster.sourceIds) ? cluster.sourceIds : [])
       .filter((x): x is string => typeof x === 'string' && byId.has(x)))];
@@ -832,7 +841,7 @@ export function coerceDrills(raw: unknown, ctx: DrillCtx): Drill[] {
         .map((s) => (s ?? {}) as Record<string, unknown>)
         .filter((s) => typeof s.text === 'string' && s.text.trim().length > 0)
         .map((s) => {
-          const seg: { text: string; flaw?: string; claimIds?: string[] } = { text: String(s.text).trim().slice(0, 400) };
+          const seg: { text: string; flaw?: string; claimIds?: string[] } = { text: capChars(String(s.text), 600) };
           if (typeof s.flaw === 'string' && s.flaw.trim()) {
             seg.flaw = s.flaw.trim().slice(0, 240);
             seg.claimIds = keepClaims(s.claimIds);
@@ -904,7 +913,7 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
         id: slugify(String(p.id ?? name.split(/[ ,]/)[0]), `persona-${i + 1}`),
         name,
         role: String(p.role ?? '').trim().slice(0, 120),
-        bio: String(p.bio ?? '').trim().slice(0, 400),
+        bio: capChars(String(p.bio ?? ''), 700),
         sourceIds: (Array.isArray(p.sourceIds) ? p.sourceIds : []).filter((s): s is string => typeof s === 'string' && sourceById.has(s)),
       } satisfies Persona;
     })
@@ -919,7 +928,7 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
         id: slugify(String(e.id ?? `x${i + 1}`), `x${i + 1}`),
         title: String(e.title ?? '').trim().slice(0, 80) || `Example ${i + 1}`,
         body: body.slice(0, 2000),
-        why: String(e.why ?? '').trim().slice(0, 300),
+        why: capChars(String(e.why ?? ''), 600),
       };
       if (typeof e.sourceId === 'string' && sourceById.has(e.sourceId)) out.sourceId = e.sourceId;
       return out;
