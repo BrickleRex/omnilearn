@@ -31,5 +31,11 @@ additively.
 - The product premise: the user types every line. Nothing may auto-insert AI
   code into the buffer (no Tab-accept on ghosts, no closeBrackets auto-pairs).
 - Guidance copy is 1–2 lines, explained like to a smart 15-year-old.
+- Spacing lives on the 4px scale in `theme/base.css` (`--s-1`…`--s-7`); content text
+  never truncates (wrap it), nothing scrolls sideways except the consensus grid
+  inside its own wrapper, layouts stack at ≤820px. Note the bundle order:
+  `main.tsx` imports `App` before `base.css`, so base rules win ties against
+  feature CSS — a feature file that must repaint a base primitive uses a
+  compound selector (`.card.sk-est`), never a bare `.card` override.
 - Watcher stays quiet by default; being wrong is allowed.
 - User data lives in `data/` (gitignored). `data-*` dirs are scratch.

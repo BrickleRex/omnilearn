@@ -912,7 +912,7 @@ async function phaseArchitecting(ctl: JobCtl, project: SkillProject, map: AngleM
       return {
         id: slugify(String(p.id ?? name.split(/[ ,]/)[0]), `persona-${i + 1}`),
         name,
-        role: String(p.role ?? '').trim().slice(0, 120),
+        role: capChars(String(p.role ?? ''), 240),
         bio: capChars(String(p.bio ?? ''), 700),
         sourceIds: (Array.isArray(p.sourceIds) ? p.sourceIds : []).filter((s): s is string => typeof s === 'string' && sourceById.has(s)),
       } satisfies Persona;

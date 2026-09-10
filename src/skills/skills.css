@@ -426,7 +426,7 @@
 .sk-chip-claim:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--shadow); }
 .sk-chip-badges { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--s-1, 4px); }
 .sk-chip-stamp {
-  font-size: 9.5px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase;
+  font-size: 10.5px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase;
   padding: 2px 8px;
   border-radius: 999px;
   border: 2px solid var(--line);
@@ -731,7 +731,7 @@
 .sk-kind {
   grid-column: 1;
   align-self: start;
-  font-size: 9.5px; font-weight: 900; letter-spacing: .04em;
+  font-size: 10.5px; font-weight: 900; letter-spacing: .04em;
   padding: 3px 6px;
   min-width: 36px; text-align: center;
   border: 2px solid var(--line);
@@ -759,7 +759,7 @@
 }
 
 .sk-meter { display: inline-flex; align-items: center; gap: var(--s-1, 4px); }
-.sk-meter b { font-size: 9.5px; font-weight: 900; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.sk-meter b { font-size: 10.5px; font-weight: 900; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .sk-meter i {
   display: block; width: 36px; height: 8px;
   border: 2px solid var(--line); border-radius: 999px;
@@ -767,7 +767,7 @@
 }
 .sk-meter em { display: block; height: 100%; background: var(--accent2); }
 .sk-fetched {
-  font-size: 9.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
+  font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .05em;
   padding: 2px 8px; border-radius: 999px;
   border: 2px solid var(--muted); color: var(--muted);
   white-space: nowrap;
@@ -951,7 +951,7 @@
 .sk-spec.is-niche { background: var(--accent); color: var(--on-accent); }
 .sk-spec.is-adjacent { background: var(--accent3); color: #1b1b1f; }
 .sk-spec.is-general { border-color: var(--muted); }
-.sk-spec.is-small { font-size: 9px; padding: 2px 6px; letter-spacing: .04em; }
+.sk-spec.is-small { font-size: 10px; padding: 2px 6px; letter-spacing: .04em; }
 
 /* the "fit" column in the consensus grid */
 .sk-fit-dot {
@@ -972,7 +972,7 @@
 /* claim chips: the ones about your exact target say so */
 .sk-chip-claim.is-niche { border-color: var(--accent); }
 .sk-chip-niche {
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: .05em;
   text-transform: uppercase;
