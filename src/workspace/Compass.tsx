@@ -39,7 +39,7 @@ export default function Compass({
             />
           ))}
         </div>
-        <span className="compassStep" data-testid="compass-step">
+        <span className="compassStep" data-testid="compass-step" title={current?.title ?? ''}>
           {current ? current.title : steps.length ? '—' : 'build'}
         </span>
         {thinking && <span className="compassThinking">thinking…</span>}

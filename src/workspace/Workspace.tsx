@@ -3,7 +3,7 @@
 // loop; the pieces (tree / compass / editor / rail / footlight) are dumb-ish
 // and talk back through callbacks.
 // ---------------------------------------------------------------------------
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import type {
   FileNode, MilestoneStatus, Project, RunResult, Scheme, Settings, Step, WatchResponse,
 } from '../../shared/types';
@@ -18,6 +18,10 @@ import { createWatcher, type Watcher } from './watcher';
 import './workspace.css';
 
 const TREE_KEY = 'omnilearn.workspace.treeCollapsed';
+/* Below this the tree stops being a column and becomes an overlay drawer, so
+   it starts life collapsed — 200px of chrome on a 390px screen is not a file
+   tree, it is the whole screen. */
+const NARROW = '(max-width: 820px)';
 const SCHEMES: Scheme[] = ['sunshower', 'blackboard', 'arcade', 'mint'];
 const HINT_COMPOSITE_WINDOW = 10_000;
 const DETAIL_HIDE_MS = 12_000;
@@ -42,8 +46,14 @@ export default function Workspace(props: {
   const [saveState, setSaveState] = useState<SaveState>('saved');
   const [explore, setExplore] = useState(false);
   const [treeCollapsed, setTreeCollapsed] = useState(() => {
-    try { return localStorage.getItem(TREE_KEY) === '1'; } catch { return false; }
+    try {
+      if (typeof matchMedia === 'function' && matchMedia(NARROW).matches) return true;
+      return localStorage.getItem(TREE_KEY) === '1';
+    } catch { return false; }
   });
+  /* The footlight is fixed to the bottom edge; it measures itself so a hint
+     that wraps to two lines still cannot cover the last line of code. */
+  const [footH, setFootH] = useState(44);
   const [railOpen, setRailOpen] = useState(false);
   const [railPinned, setRailPinned] = useState(false);
   const [railTab, setRailTab] = useState<RailTab>('run');
@@ -430,6 +440,21 @@ export default function Workspace(props: {
     window.setTimeout(() => nav.go({ name: 'library' }), 1200);
   }, [projectId, milestoneId, nav]);
 
+  // Crossing into narrow territory folds the tree away; the learner can still
+  // open it (it overlays the editor there) and widening restores their choice.
+  useEffect(() => {
+    if (typeof matchMedia !== 'function') return;
+    const mq = matchMedia(NARROW);
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (e.matches) setTreeCollapsed(true);
+      else {
+        try { setTreeCollapsed(localStorage.getItem(TREE_KEY) === '1'); } catch { setTreeCollapsed(false); }
+      }
+    };
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
   // --- file tree -----------------------------------------------------------
   const toggleTree = useCallback(() => {
     setTreeCollapsed((c) => {
@@ -512,9 +537,12 @@ export default function Workspace(props: {
   }, []);
 
   // -------------------------------------------------------------------------
+  const whereLabel = `${project?.name ?? 'loading…'}${milestone ? ` / ${milestone.title}` : ''}`;
+
   return (
     <div
       className={`workspace${footOn ? ' has-footlight' : ''}`}
+      style={{ '--foot-h': `${footH}px` } as CSSProperties}
       data-testid="workspace"
       data-explore={explore ? 'true' : 'false'}
     >
@@ -528,15 +556,19 @@ export default function Workspace(props: {
           ‹
         </button>
 
-        <div className="wsTitle">
+        {/* One line in the bar, but never a dead end: the full text is in the
+            title attribute and unfolds in a popover on hover/focus. */}
+        <div className="wsTitle hoverHost" tabIndex={0} title={whereLabel}>
           <span className="wsProject">{project?.name ?? 'loading…'}</span>
           {milestone && <span className="wsSlash">/</span>}
           {milestone && <span className="wsMilestone">{milestone.title}</span>}
+          <span className="hoverPop" role="tooltip">{whereLabel}</span>
         </div>
 
-        <div className="wsFileTag" title={activePath ?? ''}>
+        <div className="wsFileTag hoverHost" tabIndex={0} title={activePath ?? ''}>
           <span className="wsFileName">{activePath ?? (error ?? 'no file')}</span>
           <span className="wsSaveDot" data-save={saveState} title={saveState === 'saved' ? 'saved' : 'saving…'} />
+          {activePath && <span className="hoverPop" role="tooltip">{activePath}</span>}
         </div>
 
         <span className="wsGrow" />
@@ -545,9 +577,11 @@ export default function Workspace(props: {
           className="wsPrimer"
           data-testid="review-primer"
           title="re-read this milestone's primer"
+          aria-label="re-read the primer"
           onClick={() => nav.go({ name: 'milestone', projectId, milestoneId, review: true })}
         >
-          <span aria-hidden="true">▤</span> primer
+          <span className="wsIcon" aria-hidden="true">▤</span>
+          <span className="wsLabel">primer</span>
         </button>
 
         <button
@@ -559,7 +593,7 @@ export default function Workspace(props: {
           onClick={toggleExplore}
         >
           <span className="exploreTrack"><span className="exploreKnob" /></span>
-          <span className="exploreLabel">explore</span>
+          <span className="exploreLabel wsLabel">explore</span>
         </button>
 
         <button
@@ -569,17 +603,19 @@ export default function Workspace(props: {
           title="run this file (Cmd/Ctrl+Enter)"
           onClick={() => void doRun()}
         >
-          {running ? '…' : '▶'} run
+          <span aria-hidden="true">{running ? '…' : '▶'}</span>
+          <span className="wsRunLabel">run</span>
         </button>
 
         <button
           className="wsScheme"
           data-testid="scheme-btn"
           title="next colour scheme"
+          aria-label={`colour scheme: ${settings.scheme}`}
           onClick={cycleScheme}
         >
           <span className="schemeSwatch" />
-          {settings.scheme}
+          <span className="wsLabel">{settings.scheme}</span>
         </button>
       </header>
 
@@ -648,6 +684,7 @@ export default function Workspace(props: {
 
       {footOn && (
         <Footlight
+          onHeight={setFootH}
           lamp={lamp}
           message={footMsg}
           explore={explore}

@@ -30,14 +30,19 @@ export default function MakeHeader(props: MakeHeaderProps) {
     onTitle, onBack, onDrills, onMake, onHint, onRun, onShip, onScheme,
   } = props;
 
+  const where = moduleTitle ? `${skillName} / ${moduleTitle}` : skillName;
+
   return (
     <header className="mkTop">
       <button className="mkBack" data-testid="back-to-map" title="back to this module" onClick={onBack}>‹</button>
 
-      <div className="mkTitle">
+      {/* One line in a dense bar, but never a dead end: the whole label is in
+          the title attribute and unfolds on hover/focus. */}
+      <div className="mkTitle hoverHost" tabIndex={0} title={where}>
         <span className="mkSkill">{skillName}</span>
         {moduleTitle && <span className="mkSlash">/</span>}
         {moduleTitle && <span className="mkModule">{moduleTitle}</span>}
+        <span className="hoverPop" role="tooltip">{where}</span>
       </div>
 
       <input
@@ -62,8 +67,15 @@ export default function MakeHeader(props: MakeHeaderProps) {
         make
       </button>
 
-      <button className="mkHintBtn" data-testid="make-hint" title="a nudge, not the words (Ctrl+Space)" onClick={onHint}>
-        {thinking ? '…' : '?'} hint
+      <button
+        className="mkHintBtn"
+        data-testid="make-hint"
+        title="a nudge, not the words (Ctrl+Space)"
+        aria-label="hint"
+        onClick={onHint}
+      >
+        <span aria-hidden="true">{thinking ? '…' : '?'}</span>
+        <span className="mkLabel">hint</span>
       </button>
 
       <button
@@ -73,7 +85,8 @@ export default function MakeHeader(props: MakeHeaderProps) {
         title="run it against the panel (Cmd/Ctrl+Enter)"
         onClick={onRun}
       >
-        {running ? '…' : '▶'} run
+        <span aria-hidden="true">{running ? '…' : '▶'}</span>
+        <span>run</span>
       </button>
 
       <button
@@ -86,9 +99,15 @@ export default function MakeHeader(props: MakeHeaderProps) {
         ship
       </button>
 
-      <button className="mkScheme" data-testid="scheme-btn" title="next colour scheme" onClick={onScheme}>
+      <button
+        className="mkScheme"
+        data-testid="scheme-btn"
+        title="next colour scheme"
+        aria-label={`colour scheme: ${scheme}`}
+        onClick={onScheme}
+      >
         <span className="schemeSwatch" />
-        {scheme}
+        <span className="mkLabel">{scheme}</span>
       </button>
     </header>
   );

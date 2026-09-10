@@ -151,7 +151,7 @@ export default function RunPane(props: RunPaneProps) {
             <b>
               {report.predicted.low}–{report.predicted.high} {report.predicted.unit} {metric.name}
             </b>
-            <span> · corpus median {metric.corpusMedian} {metric.unit}</span>
+            <span>corpus median {metric.corpusMedian} {metric.unit}</span>
             <em>{report.predicted.note}</em>
           </div>
 

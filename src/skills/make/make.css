@@ -10,33 +10,41 @@
   position: fixed;
   inset: 0;
   display: grid;
+  /* The implicit column would otherwise be auto-sized to the widest child, so
+     one long header row could stretch the whole screen past the viewport. */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
   background: var(--ground);
   color: var(--ink);
   font-family: var(--font-ui);
   overflow: hidden;
 }
-.skillMake button,
-.skillMake input,
-.skillMake textarea { font-family: inherit; color: inherit; }
+/* A reset must be the weakest rule in the room: at zero specificity it still
+   beats the UA default, but every component that sets its own ink (.mkRun,
+   .mkShipBtn, .mkClaimChip…) wins. A plain `.skillMake button` selector
+   outranked all of them and quietly replaced their ink with `inherit`. */
+:where(.skillMake) :where(button, input, textarea) { font-family: inherit; color: inherit; }
 .skillMake button { cursor: pointer; }
 .skillMake button:disabled { cursor: not-allowed; opacity: 0.5; }
 
 /* ------------------------------------------------------------------ top -- */
+/* A dense bar: it wraps rather than overlaps, and below 1024 the action group
+   is pushed onto a row of its own (see the responsive block at the bottom). */
 .mkTop {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 9px;
-  padding: 7px 10px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
   background: var(--surface);
   border-bottom: var(--border-w) solid var(--line);
-  min-height: 46px;
+  min-height: 48px;
 }
 
 .mkBack {
   flex: none;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   font-size: 17px;
   font-weight: 900;
   line-height: 1;
@@ -49,34 +57,60 @@
 .mkBack:hover { transform: translate(-1px, -1px); }
 .mkBack:active { transform: translate(2px, 2px); box-shadow: none; }
 
-.mkTitle { display: flex; align-items: baseline; gap: 7px; min-width: 0; flex: none; }
-.mkSkill { font-weight: 800; font-size: 14px; letter-spacing: -0.01em; }
-.mkSlash { color: var(--muted); font-weight: 700; }
+/* Where you are: one line in the bar, the whole thing in a title attribute
+   and unfolded in a popover (.hoverPop, workspace.css) on hover/focus — so a
+   long course or module name is never a dead end. */
+.mkTitle {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-1);
+  min-width: 0;
+  flex: 0 1 auto;
+  white-space: nowrap;
+}
+.mkSkill {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 28ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.mkSlash { flex: none; color: var(--muted); font-weight: 700; }
 .mkModule {
+  flex: 0 1 auto;
+  min-width: 0;
   font-size: 12.5px;
   color: var(--muted);
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 22ch;
+  max-width: 24ch;
 }
 
 .mkDraftTitle {
-  width: min(280px, 26vw);
+  flex: 1 1 180px;
+  min-width: 132px;
+  max-width: 320px;
   font-size: 13px;
   font-weight: 700;
 }
 
-.mkGrow { flex: 1 1 auto; }
+.mkGrow { flex: 1 1 0; min-width: 0; }
 
 .mkRepChip {
   flex: none;
-  padding: 2px 10px 3px;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-1) var(--s-3);
   font-size: 11.5px;
   font-weight: 800;
+  white-space: nowrap;
   /* accent3 is a light fill in every scheme, so its ink is fixed near-black —
      the same rule base.css uses for .chip-accent3. */
-  color: #1b1b1f;
+  color: var(--on-accent3, #1b1b1f);
   background: var(--accent3);
   border: 2px solid var(--line);
   border-radius: 999px;
@@ -84,7 +118,7 @@
 
 .mkSkip {
   flex: none;
-  padding: 3px 9px;
+  padding: var(--s-1) var(--s-3);
   font-size: 11.5px;
   font-weight: 700;
   color: var(--muted);
@@ -101,8 +135,8 @@
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 11px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
   font-size: 12px;
   font-weight: 700;
   background: var(--surface2);
@@ -114,14 +148,14 @@
 .mkHintBtn:hover,
 .mkShipBtn:hover,
 .mkScheme:hover { transform: translate(-1px, -1px); }
-.mkShipBtn { background: var(--accent2); color: var(--surface); }
+.mkShipBtn { background: var(--accent2); color: var(--on-accent2, var(--surface)); }
 
 .mkRun {
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-4);
   font-size: 12.5px;
   font-weight: 800;
   background: var(--accent);
@@ -135,8 +169,9 @@
 .mkRun:active:not(:disabled) { transform: translate(var(--shadow-offset), var(--shadow-offset)); box-shadow: none; }
 
 .mkScheme .schemeSwatch {
-  width: 13px;
-  height: 13px;
+  flex: none;
+  width: 12px;
+  height: 12px;
   border-radius: 4px;
   border: 2px solid var(--line);
   background: linear-gradient(135deg, var(--accent) 50%, var(--accent2) 50%);
@@ -147,6 +182,7 @@
   display: grid;
   grid-template-columns: 252px minmax(0, 1fr);
   min-height: 0;
+  min-width: 0;
 }
 
 .mkMain {
@@ -167,8 +203,9 @@
 .mkEditor { height: 100%; }
 .mkEditor .cm-editor { height: 100%; }
 .mkEditorEmpty {
-  padding: 22px;
-  font-size: 13px;
+  padding: var(--s-5) var(--s-4);
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--muted);
   font-style: italic;
 }
@@ -183,47 +220,59 @@
 .mkLadder {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 10px 10px 16px;
-  overflow: auto;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-3) var(--s-5);
+  overflow-y: auto;
+  overflow-x: hidden;
   background: var(--surface2);
   min-height: 0;
+  min-width: 0;
 }
 .mkLadderHead {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--s-2);
 }
 .mkLadderHead h2 {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
 }
 .mkGhostBtn {
-  padding: 2px 8px 3px;
-  font-size: 10.5px;
+  flex: none;
+  padding: var(--s-1) var(--s-2);
+  font-size: 11px;
   font-weight: 800;
   color: var(--accent2);
   background: transparent;
   border: 2px solid var(--accent2);
   border-radius: 999px;
 }
-.mkGhostBtn:hover { background: var(--accent2); color: var(--surface); }
+.mkGhostBtn:hover { background: var(--accent2); color: var(--on-accent2, var(--surface)); }
 
-.mkQuiet { font-size: 11.5px; line-height: 1.45; color: var(--muted); font-style: italic; }
+.mkQuiet { font-size: 12px; line-height: 1.5; color: var(--muted); font-style: italic; }
 
-.mkRungs { list-style: none; display: flex; flex-direction: column; gap: 6px; padding: 0; }
+.mkRungs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  padding: 0;
+  min-width: 0;
+}
+.mkRungs > li { min-width: 0; }
 
 .mkRung {
   width: 100%;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 8px;
-  padding: 6px 9px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
   text-align: left;
   background: var(--surface);
   border: 2px solid var(--line);
@@ -232,22 +281,24 @@
   transition: transform 160ms var(--spring), background 140ms ease;
 }
 .mkRung:hover { transform: translate(-1px, -1px); }
-.mkRung[data-newest='true'] { background: var(--accent3); color: #1b1b1f; }
+.mkRung[data-newest='true'] { background: var(--accent3); color: var(--on-accent3, #1b1b1f); }
 .mkRung[data-selected='true'] { border-color: var(--accent2); box-shadow: 2px 2px 0 var(--accent2); }
 .mkRungName { font-weight: 900; font-size: 13px; }
-.mkRungWhen { font-size: 10.5px; color: var(--muted); }
+.mkRungWhen { min-width: 0; font-size: 11px; color: var(--muted); }
 .mkRung[data-newest='true'] .mkRungWhen { color: #4a4433; }
 .mkRungDelta {
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 800;
-  padding: 1px 6px;
+  white-space: nowrap;
+  padding: 2px 8px;
   border-radius: 6px;
   border: 1.5px solid var(--line);
   background: var(--surface2);
 }
-.mkRungDelta[data-tone='good'] { background: var(--good); color: #fff; }
-.mkRungDelta[data-tone='bad'] { background: var(--bad); color: #fff; }
+/* --surface flips light/dark with the scheme exactly as --good and --bad do */
+.mkRungDelta[data-tone='good'] { background: var(--good); color: var(--surface); }
+.mkRungDelta[data-tone='bad'] { background: var(--bad); color: var(--surface); }
 /* the lit rung is always a light accent3 fill, so its neutral chip needs a
    light ground of its own — surface2 is near-black in the dark schemes. */
 .mkRung[data-newest='true'] .mkRungDelta[data-tone='flat'] {
@@ -257,14 +308,15 @@
 }
 
 .mkPreview {
-  margin: 6px 0 2px 8px;
-  padding: 8px 9px;
+  margin: var(--s-2) 0 var(--s-1) var(--s-2);
+  padding: var(--s-3);
+  min-width: 0;
   background: var(--surface);
   border: 2px dashed var(--muted);
   border-radius: 10px;
 }
 .mkPreview pre {
-  margin: 0 0 8px;
+  margin: 0 0 var(--s-2);
   max-height: 180px;
   overflow: auto;
   white-space: pre-wrap;
@@ -276,7 +328,7 @@
 }
 .mkRestore {
   width: 100%;
-  padding: 4px 8px;
+  padding: var(--s-2) var(--s-3);
   font-size: 11.5px;
   font-weight: 800;
   background: var(--accent);
@@ -288,21 +340,22 @@
 .mkRestore:hover { transform: translate(-1px, -1px); }
 
 .mkReps {
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.5;
   color: var(--muted);
-  border-top: 1.5px dashed var(--line);
-  padding-top: 8px;
+  border-top: 2px dashed var(--line);
+  padding-top: var(--s-3);
 }
 
-.mkShips { display: flex; flex-direction: column; gap: 7px; }
+.mkShips { display: flex; flex-direction: column; gap: var(--s-2); margin-top: var(--s-2); }
 .mkShip {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 4px 8px;
-  padding: 6px 9px;
-  font-size: 11.5px;
+  gap: var(--s-1) var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  min-width: 0;
+  font-size: 12px;
   background: var(--surface);
   border: 2px solid var(--line);
   border-radius: 10px;
@@ -311,34 +364,51 @@
 .mkShip b { font-size: 12.5px; }
 .mkShipPred { font-weight: 700; color: var(--bad); }
 .mkShip[data-hit='true'] .mkShipPred { color: var(--good); }
-.mkShipNote { width: 100%; color: var(--muted); font-size: 11px; }
+.mkShipNote { width: 100%; color: var(--muted); font-size: 11.5px; line-height: 1.5; overflow-wrap: anywhere; }
 
 /* ------------------------------------------------------------- hint bar -- */
+/* The guidance strip: 1-2 kid-simple lines that WRAP — never clipped, never
+   overlapped by the buttons beside them. */
 .mkFoot {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  min-height: 38px;
-  padding: 6px 12px;
+  gap: var(--s-2) var(--s-3);
+  min-height: 40px;
+  padding: var(--s-2) var(--s-3);
   background: var(--surface);
   border-top: var(--border-w) solid var(--line);
   font-size: 12.5px;
 }
 .mkLamp {
   flex: none;
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   border: 2px solid var(--line);
   background: var(--muted);
 }
 .mkFoot[data-lit='true'] .mkLamp { background: var(--lamp); box-shadow: 0 0 10px 2px var(--lamp); }
 .mkLamp[data-on='true'] { background: var(--lamp); animation: breathe 1.4s ease-in-out infinite; }
-.mkHintText { flex: 1; min-width: 0; line-height: 1.4; }
-.mkHintIdle { flex: 1; min-width: 0; color: var(--muted); font-style: italic; }
+.mkHintText {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: var(--measure);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.mkHintIdle {
+  flex: 1 1 220px;
+  min-width: 0;
+  max-width: var(--measure);
+  line-height: 1.45;
+  color: var(--muted);
+  font-style: italic;
+}
 .mkFlagBtn {
   flex: none;
-  padding: 2px 9px 3px;
+  margin-left: auto;
+  padding: var(--s-1) var(--s-2);
   font-size: 11px;
   font-weight: 800;
   color: var(--warn);
@@ -349,6 +419,9 @@
 .mkFlagBtn:hover { background: var(--warn); color: var(--surface); border-style: solid; }
 .mkFootX {
   flex: none;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
   background: none;
   border: 0;
   color: var(--muted);
@@ -358,67 +431,103 @@
 .mkFootX:hover { color: var(--ink); }
 
 /* ------------------------------------------------------------ rail panes -- */
-.mkPane { overflow: hidden; }
+.mkPane { overflow: hidden; min-width: 0; }
 .mkRunPane {
   flex: 1;
+  min-width: 0;
   min-height: 0;
-  overflow: auto;
-  padding: 10px 11px 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--s-3) var(--s-3) var(--s-5);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--s-4);
 }
-.mkRunEmpty, .mkRunBusy { font-size: 12.5px; line-height: 1.5; color: var(--muted); font-style: italic; }
+.mkRunEmpty, .mkRunBusy {
+  font-size: 12.5px;
+  line-height: 1.55;
+  max-width: var(--measure);
+  color: var(--muted);
+  font-style: italic;
+}
 .mkRunBusy { animation: breathe 1.2s ease-in-out infinite; }
 
-.mkSubToggle { display: flex; gap: 6px; }
+.mkSubToggle { display: flex; flex-wrap: wrap; gap: var(--s-2); }
 .mkSeg {
-  padding: 3px 10px 4px;
-  font-size: 11px;
+  padding: var(--s-1) var(--s-3);
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--muted);
   background: transparent;
   border: 2px solid var(--muted);
   border-radius: 999px;
 }
-.mkSeg.is-on { color: #1b1b1f; border-color: var(--line); background: var(--accent3); }
+.mkSeg.is-on { color: var(--on-accent3, #1b1b1f); border-color: var(--line); background: var(--accent3); }
 
-.mkMargin { display: flex; flex-direction: column; gap: 10px; }
+.mkMargin { display: flex; flex-direction: column; gap: var(--s-3); min-width: 0; }
 .mkPersona {
-  padding: 8px 9px 9px;
+  padding: var(--s-3);
+  min-width: 0;
   background: var(--surface);
   border: 2px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 2px 2px 0 var(--shadow);
 }
+/* Long persona names are the norm here ("Marcus Reyes, Board Director and
+   Audit Committee Chair") — the head wraps line by line instead of clipping. */
 .mkPersonaHead {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 4px 8px;
-  margin-bottom: 7px;
+  gap: var(--s-1) var(--s-2);
+  margin-bottom: var(--s-2);
+  min-width: 0;
 }
-.mkPersonaHead b { font-size: 12.5px; }
-.mkPersonaHead span { font-size: 11px; color: var(--muted); }
-.mkBailTag {
-  font-size: 10px !important;
+.mkPersonaHead b {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 12.5px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.mkPersonaHead span {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+/* beats `.mkPersonaHead span` — the tag is a chip, not a wrapping label */
+.mkPersonaHead .mkBailTag {
+  flex: none;
+  font-size: 10.5px !important;
   font-weight: 800;
+  white-space: nowrap;
   color: var(--bad) !important;
   border: 1.5px solid var(--bad);
   border-radius: 999px;
-  padding: 0 7px 1px;
+  padding: 2px 8px;
 }
 
-.mkReactions { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 0; }
+.mkReactions {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+  padding: 0;
+  min-width: 0;
+}
 .mkReaction {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 7px;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--s-1) var(--s-2);
   align-items: baseline;
-  padding: 3px 6px;
-  font-size: 11.5px;
-  line-height: 1.45;
-  border-radius: 7px;
+  padding: var(--s-1) var(--s-2);
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 8px;
 }
 .mkReaction:hover { background: var(--surface2); }
 .mkReaction.is-bail {
@@ -427,32 +536,40 @@
 }
 .mkLineNo {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
+  white-space: nowrap;
   color: var(--muted);
 }
-.mkReactionText { min-width: 0; }
+.mkReactionText { min-width: 0; overflow-wrap: anywhere; }
 .mkBailFlag {
   grid-column: 2;
   justify-self: start;
-  margin-top: 3px;
-  padding: 1px 8px 2px;
-  font-size: 10px;
+  margin-top: var(--s-1);
+  padding: 2px 8px;
+  font-size: 10.5px;
   font-weight: 900;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: var(--surface);
   background: var(--bad);
   border: 1.5px solid var(--line);
   border-radius: 999px;
 }
 
-.mkScorecard { display: flex; flex-direction: column; gap: 10px; }
-.mkScore { display: flex; flex-direction: column; gap: 3px; }
-.mkScoreTop { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.mkScoreLabel { font-size: 12px; font-weight: 700; }
-.mkScoreNum { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.mkScorecard { display: flex; flex-direction: column; gap: var(--s-4); min-width: 0; }
+.mkScore { display: flex; flex-direction: column; gap: var(--s-2); min-width: 0; }
+.mkScoreTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-2);
+  min-width: 0;
+}
+.mkScoreLabel { flex: 1 1 auto; min-width: 0; font-size: 12.5px; font-weight: 700; overflow-wrap: anywhere; }
+.mkScoreNum { flex: none; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
 .mkBar {
-  height: 11px;
+  height: 12px;
   background: var(--surface2);
   border: 2px solid var(--line);
   border-radius: 999px;
@@ -466,11 +583,19 @@
 }
 .mkBar[data-tone='warn'] i { background: var(--warn); }
 .mkBar[data-tone='bad'] i { background: var(--bad); }
-.mkScoreNote { font-size: 11px; line-height: 1.45; color: var(--muted); }
+.mkScoreNote {
+  font-size: 12px;
+  line-height: 1.55;
+  max-width: var(--measure);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+/* citation chips ride inline at the end of the note and wrap with it */
 .mkClaimChip {
-  margin-left: 5px;
-  padding: 0 7px 1px;
-  font-size: 10px;
+  display: inline-block;
+  margin: 0 0 0 var(--s-1);
+  padding: 2px 8px;
+  font-size: 10.5px;
   font-weight: 800;
   font-family: var(--font-mono);
   color: var(--accent2);
@@ -478,29 +603,38 @@
   border: 1.5px solid var(--accent2);
   border-radius: 999px;
 }
-.mkClaimChip:hover { background: var(--accent2); color: var(--surface); }
+.mkClaimChip:hover { background: var(--accent2); color: var(--on-accent2, var(--surface)); }
 
 .mkPredict {
-  padding: 8px 10px;
+  padding: var(--s-3);
+  min-width: 0;
   font-size: 12px;
   line-height: 1.5;
   border: 2px dashed var(--line);
   border-radius: 10px;
+  overflow-wrap: anywhere;
 }
-.mkPredict b { font-size: 13px; }
-.mkPredict em { display: block; margin-top: 3px; font-size: 10.5px; color: var(--muted); }
+/* the metric name can be a whole sentence: each part gets its own line */
+.mkPredict b { display: block; font-size: 13px; line-height: 1.35; }
+.mkPredict > span { display: block; margin-top: var(--s-1); color: var(--muted); }
+.mkPredict em { display: block; margin-top: var(--s-2); font-size: 11.5px; line-height: 1.5; color: var(--muted); }
 
+/* the label sits on its own line above the sentence it labels */
 .mkLever {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 7px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s-2);
+  min-width: 0;
+  max-width: var(--measure);
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 .mkLeverTag {
-  padding: 1px 8px 2px;
-  font-size: 9.5px;
+  flex: none;
+  padding: 2px 8px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -510,13 +644,104 @@
   border-radius: 999px;
 }
 
-.mkEvidence { flex: 1; min-height: 0; overflow: auto; padding: 8px 10px 14px; }
+.mkEvidence {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--s-3) var(--s-3) var(--s-4);
+}
 
 /* ------------------------------------------------------------------ ship -- */
-.mkShipLede { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
-.mkShipGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
-.mkShipNotes { display: block; margin-top: 12px; }
-.mkShipMath { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+.mkShipLede {
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: var(--measure);
+  color: var(--muted);
+  margin-bottom: var(--s-4);
+}
+.mkShipGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: var(--s-3); }
+.mkShipNotes { display: block; margin-top: var(--s-4); }
+.mkShipMath {
+  margin-top: var(--s-4);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ============================================================== responsive ==
+   <=1200  the ladder narrows a step before anything has to clip
+   <=1024  the header's action group drops to a row of its own
+   <=820   the ladder becomes a strip above the editor and the rail a
+           full-width sheet; reading text steps up to 13px
+   <=560   labels fall off the icon buttons, every control is >=40px
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .mkBody { grid-template-columns: 216px minmax(0, 1fr); }
+  .mkSkill { max-width: 20ch; }
+  .mkModule { max-width: 16ch; }
+}
+
+@media (max-width: 1024px) {
+  /* the flexible spacer becomes a full-width line break: reps / drills / make /
+     hint / run / ship / scheme land on their own row instead of overlapping */
+  .mkGrow { flex: 1 0 100%; height: 0; }
+  .mkSkill { max-width: 34ch; }
+  .mkModule { max-width: 30ch; }
+  .mkDraftTitle { flex-basis: 220px; }
+}
+
+@media (max-width: 820px) {
+  /* one column: the ladder is a short strip above the editor, still scrollable */
+  .mkBody {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .mkLadder {
+    max-height: min(34vh, 280px);
+    border-bottom: var(--border-w) solid var(--line);
+  }
+  /* the button follows its label instead of being flung to the far edge */
+  .mkLadderHead { justify-content: flex-start; gap: var(--s-3); }
+  .mkRungs { flex-direction: row; flex-wrap: wrap; }
+  .mkRungs > li { flex: 0 1 auto; }
+  .mkRung { width: auto; }
+  .mkPreview { margin-left: 0; }
+  .mkEditorWrap { border-left: 0; }
+
+  .mkReaction,
+  .mkScoreNote,
+  .mkPredict,
+  .mkLever,
+  .mkShip,
+  .mkReps,
+  .mkQuiet,
+  .mkRunEmpty,
+  .mkRunBusy,
+  .mkHintText,
+  .mkHintIdle,
+  .mkShipMath { font-size: 13px; }
+}
+
+@media (max-width: 560px) {
+  .mkLabel { display: none; }
+  /* a small basis keeps the label on the back button's row instead of
+     claiming a whole row of its own */
+  .mkTitle { flex: 1 1 140px; }
+  .mkTop > button,
+  .mkRepChip { min-height: var(--touch); }
+  .mkBack { width: var(--touch); height: var(--touch); }
+  .mkSeg,
+  .mkGhostBtn,
+  .mkRestore,
+  .mkFlagBtn { min-height: 32px; }
+  .mkFootX { width: var(--touch); height: var(--touch); }
+  .mkRung { min-height: 36px; }
+  /* the draft name shares the identity row instead of claiming one */
+  .mkDraftTitle { flex: 1 1 132px; max-width: none; min-height: var(--touch); }
+  .mkLadder { max-height: min(26vh, 208px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .skillMake *, .mkRail {

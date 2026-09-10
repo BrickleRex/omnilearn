@@ -8,16 +8,25 @@
   position: fixed;
   inset: 0;
   display: grid;
+  /* The implicit column would otherwise be auto-sized to the widest child, so
+     one long header row could stretch the whole screen past the viewport. */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
   background: var(--ground);
   color: var(--ink);
   font-family: var(--font-ui);
   overflow: hidden;
 }
-.workspace.has-footlight { padding-bottom: 42px; }
+/* The footlight is fixed to the bottom edge; Footlight measures itself and
+   reports its real height so a wrapped two-line hint can never cover code. */
+.workspace.has-footlight { padding-bottom: var(--foot-h, 44px); }
 
-.workspace button,
-.workspace input {
+/* :where() keeps this reset at zero specificity for the element part, so a
+   component that sets its own ink (.wsRun, .wsBack, .railTab…) still wins —
+   with a plain `.workspace button` selector every one of them was silently
+   overridden by `inherit`, which is how light ink ended up on light accents
+   in the dark schemes. */
+:where(.workspace) :where(button, input, textarea) {
   font-family: inherit;
   color: inherit;
 }
@@ -36,10 +45,11 @@
 /* --------------------------------------------------------------- top bar -- */
 .wsTop {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  height: 46px;
-  padding: 0 12px;
+  gap: var(--s-2) var(--s-3);
+  min-height: 48px;
+  padding: var(--s-2) var(--s-3);
   background: var(--surface);
   border-bottom: var(--border-w) solid var(--line);
   z-index: 10;
@@ -47,8 +57,8 @@
 
 .wsBack {
   flex: none;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   font-size: 19px;
   line-height: 1;
   font-weight: 800;
@@ -56,41 +66,84 @@
   border: var(--border-w) solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
-  color: #1b1b1f;
+  color: var(--on-accent3, #1b1b1f);
 }
 .wsBack:hover { transform: translate(-1px, -1px); }
 .wsBack:active { transform: translate(var(--shadow-offset), var(--shadow-offset)); box-shadow: none; }
 
+/* Orientation label in a crowded bar: one line, but never a dead end — the
+   whole thing is in a title attribute AND unfolds on hover/focus (.hoverPop),
+   so no content is only-truncated. */
 .wsTitle {
+  position: relative;
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: var(--s-1);
   min-width: 0;
+  flex: 0 1 auto;
   white-space: nowrap;
 }
-.wsProject { font-weight: 800; font-size: 14px; letter-spacing: -0.01em; }
-.wsSlash { color: var(--muted); font-weight: 700; }
+.wsProject {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 30ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.wsSlash { flex: none; color: var(--muted); font-weight: 700; }
 .wsMilestone {
+  flex: 0 1 auto;
+  min-width: 0;
   font-size: 13px;
   color: var(--muted);
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 24ch;
+  max-width: 26ch;
 }
 
+/* the unfolded copy: an overlay, so showing it never reflows the bar */
+.hoverPop {
+  position: absolute;
+  top: calc(100% + var(--s-2));
+  left: 0;
+  z-index: 40;
+  display: none;
+  max-width: min(560px, calc(100vw - var(--s-6)));
+  padding: var(--s-2) var(--s-3);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  background: var(--surface);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+}
+.hoverHost:hover > .hoverPop,
+.hoverHost:focus-within > .hoverPop { display: block; }
+
 .wsFileTag {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 3px 9px;
+  gap: var(--s-2);
+  min-width: 0;
+  flex: 0 1 auto;
+  padding: var(--s-1) var(--s-3);
   background: var(--surface2);
   border: 2px solid var(--line);
   border-radius: 999px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   max-width: 30ch;
 }
-.wsFileName { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wsFileName { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wsFileTag > .hoverPop { font-family: var(--font-mono); left: auto; right: 0; }
 .wsSaveDot {
   flex: none;
   width: 8px;
@@ -102,14 +155,15 @@
 .wsSaveDot[data-save='saving'] { background: var(--warn); animation: breathe 1.1s ease-in-out infinite; }
 .wsSaveDot[data-save='error'] { background: var(--bad); }
 
-.wsGrow { flex: 1 1 auto; }
+.wsGrow { flex: 1 1 0; min-width: 0; }
 
 /* explore switch */
 .exploreSwitch {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 3px 10px 3px 4px;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3) var(--s-1) var(--s-1);
   background: var(--surface2);
   border: var(--border-w) solid var(--line);
   border-radius: 999px;
@@ -137,18 +191,19 @@
   background: var(--muted);
   transition: transform 260ms cubic-bezier(.34, 1.45, .4, 1), background 160ms ease;
 }
-.exploreSwitch[data-on='true'] { background: var(--accent2); color: #fff; }
-.exploreSwitch[data-on='true'] .exploreTrack { background: rgba(255, 255, 255, .35); border-color: #fff; }
-.exploreSwitch[data-on='true'] .exploreKnob { transform: translateX(15px); background: #fff; }
+.exploreSwitch[data-on='true'] { background: var(--accent2); color: var(--on-accent2, #fff); }
+.exploreSwitch[data-on='true'] .exploreTrack { background: rgba(127, 127, 127, .35); border-color: var(--on-accent2, #fff); }
+.exploreSwitch[data-on='true'] .exploreKnob { transform: translateX(15px); background: var(--on-accent2, #fff); }
 .exploreSwitch:hover { transform: translate(-1px, -1px); }
 
 .wsRun {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-4);
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent, #fff);
   font-weight: 800;
   font-size: 12.5px;
   letter-spacing: 0.02em;
@@ -161,10 +216,11 @@
 
 .wsPrimer,
 .wsScheme {
+  flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 11px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
   background: var(--surface2);
   border: var(--border-w) solid var(--line);
   border-radius: var(--radius);
@@ -174,7 +230,7 @@
 }
 .wsPrimer:hover,
 .wsScheme:hover { transform: translate(-1px, -1px); }
-.wsPrimer span { color: var(--accent2); }
+.wsPrimer .wsIcon { color: var(--accent2); }
 .schemeSwatch {
   width: 12px;
   height: 12px;
@@ -185,9 +241,11 @@
 
 /* ------------------------------------------------------------------ body -- */
 .wsBody {
+  position: relative;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   min-height: 0;
+  min-width: 0;
 }
 
 /* ------------------------------------------------------------- file tree -- */
@@ -204,12 +262,12 @@
 .wsTree.is-collapsed {
   width: 36px;
   align-items: center;
-  padding-top: 8px;
+  padding-top: var(--s-2);
 }
 .treeRailCaption {
   writing-mode: vertical-rl;
-  margin-top: 12px;
-  font-size: 9.5px;
+  margin-top: var(--s-3);
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -219,13 +277,14 @@
 .treeHead {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 8px 6px;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-2) var(--s-1);
   flex: none;
 }
 .treeTitle {
   flex: 1;
-  font-size: 10px;
+  min-width: 0;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -233,8 +292,8 @@
 }
 .treeIconBtn,
 .treeChevron {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   flex: none;
   display: inline-flex;
   align-items: center;
@@ -250,8 +309,9 @@
 .treeChevron:hover { background: var(--accent3); }
 
 .treeNewInput {
-  margin: 0 8px 6px;
-  padding: 4px 8px;
+  width: calc(100% - var(--s-4));
+  margin: 0 var(--s-2) var(--s-2);
+  padding: var(--s-1) var(--s-2);
   font-family: var(--font-mono);
   font-size: 12px;
   background: var(--surface);
@@ -260,42 +320,47 @@
   outline: none;
 }
 
-.treeBody { flex: 1; min-height: 0; overflow: auto; padding-bottom: 10px; }
-.treeEmpty { padding: 10px 12px; font-size: 11.5px; color: var(--muted); }
+.treeBody { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; padding-bottom: var(--s-3); }
+.treeEmpty { padding: var(--s-3); font-size: 12.5px; line-height: 1.5; color: var(--muted); }
 
 .treeRow {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: flex-start;
+  gap: var(--s-2);
   width: 100%;
-  padding: 4px 8px;
+  min-width: 0;
+  padding: var(--s-1) var(--s-2);
   background: none;
   border: 0;
   border-radius: 8px;
   text-align: left;
   font-size: 12.5px;
+  line-height: 1.45;
   color: var(--ink);
 }
 .treeRow:hover { background: var(--surface); }
-.treeName { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* file names wrap rather than clip: the name is content, not decoration */
+.treeName { min-width: 0; overflow-wrap: anywhere; }
 .treeFile { font-family: var(--font-mono); font-size: 12px; }
 .treeFile[data-active='true'] {
   background: var(--accent3);
-  color: #1b1b1f;
+  color: var(--on-accent3, #1b1b1f);
   font-weight: 700;
   box-shadow: inset 0 0 0 2px var(--line);
 }
 .treeDot {
   flex: none;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
   border-radius: 50%;
   background: var(--muted);
 }
 .treeFile[data-active='true'] .treeDot { background: var(--accent); }
 .treeCaret {
   flex: none;
-  font-size: 9px;
+  margin-top: 3px;
+  font-size: 10px;
   color: var(--muted);
   transition: transform 200ms cubic-bezier(.34, 1.45, .4, 1);
 }
@@ -321,34 +386,38 @@
 .wsEditor { height: 100%; }
 .wsEditor .cm-editor { height: 100%; }
 .wsEditorEmpty {
-  padding: 24px;
-  font-size: 13px;
+  padding: var(--s-5) var(--s-4);
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--muted);
 }
 
 /* --------------------------------------------------------------- compass -- */
 .compass {
   flex: none;
-  padding: 0 12px;
+  padding: 0 var(--s-3);
   background: var(--surface2);
   border-bottom: var(--border-w) solid var(--line);
 }
 .compassRow {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  height: 34px;
+  gap: var(--s-1) var(--s-3);
+  min-height: 36px;
+  padding: var(--s-1) 0;
   min-width: 0;
 }
 .compassLabel {
-  font-size: 9.5px;
+  flex: none;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
 }
-.compassPips { display: flex; align-items: center; gap: 7px; }
-.compassPipsEmpty { font-size: 11.5px; color: var(--muted); font-style: italic; }
+.compassPips { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); }
+.compassPipsEmpty { font-size: 12px; color: var(--muted); font-style: italic; }
 .pip {
   width: 11px;
   height: 11px;
@@ -362,17 +431,19 @@
 .pip:hover { transform: scale(1.45); }
 .pip[data-pulse='true'] { animation: pipPulse 900ms ease-in-out infinite; }
 
+/* the step title is content: it wraps to as many lines as it needs */
 .compassStep {
+  flex: 1 1 220px;
+  min-width: 0;
   font-size: 13px;
   font-weight: 800;
+  line-height: 1.3;
   letter-spacing: -0.01em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .compassThinking {
-  font-size: 11px;
+  flex: none;
+  font-size: 11.5px;
   color: var(--muted);
   font-style: italic;
   animation: breathe 1.4s ease-in-out infinite;
@@ -381,9 +452,9 @@
 .compassDetail {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin: 0 0 9px;
-  padding: 8px 10px;
+  gap: var(--s-3);
+  margin: 0 0 var(--s-2);
+  padding: var(--s-3);
   background: var(--surface);
   border: var(--border-w) solid var(--line);
   border-radius: var(--radius);
@@ -391,11 +462,18 @@
   transform-origin: top center;
   animation: unfold 320ms cubic-bezier(.34, 1.45, .4, 1);
 }
-.compassDetailText { flex: 1; font-size: 12.5px; line-height: 1.45; }
+.compassDetailText {
+  flex: 1;
+  min-width: 0;
+  max-width: var(--measure);
+  font-size: 12.5px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
 .compassDetailX {
   flex: none;
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   line-height: 1;
   font-size: 14px;
   background: none;
@@ -405,19 +483,25 @@
 .compassDetailX:hover { color: var(--ink); }
 
 /* ------------------------------------------------------------ ghost line -- */
+/* The practice line is as long as the sentence it teaches; on a narrow editor
+   it wraps inside the line rather than pushing the code column sideways. */
 .cm-ghost-widget {
   position: relative;
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 7px;
+  gap: var(--s-1) var(--s-2);
+  max-width: 100%;
   vertical-align: baseline;
   pointer-events: none;
   user-select: none;
 }
 .cm-ghost-text {
+  min-width: 0;
   font-family: var(--font-mono);
   font-style: italic;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   color: transparent;
   -webkit-text-stroke: 0.6px var(--ghost-ink);
 }
@@ -432,14 +516,14 @@
 .cm-ghost-chip {
   font-family: var(--font-ui);
   font-style: normal;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   padding: 1px 6px 2px;
   border: 1.5px solid var(--line);
   border-radius: 999px;
   background: var(--accent3);
-  color: #1b1b1f;
+  color: var(--on-accent3, #1b1b1f);
   white-space: nowrap;
   transform: translateY(-1px);
 }
@@ -447,14 +531,15 @@
 .cm-ghost-refuse {
   position: absolute;
   left: 0;
-  bottom: calc(100% + 7px);
+  bottom: calc(100% + var(--s-2));
   z-index: 30;
-  white-space: nowrap;
+  max-width: min(280px, 80vw);
   font-family: var(--font-ui);
   font-style: normal;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 800;
-  padding: 4px 10px;
+  line-height: 1.4;
+  padding: var(--s-1) var(--s-3);
   background: var(--surface);
   color: var(--ink);
   border: var(--border-w) solid var(--line);
@@ -489,13 +574,14 @@
 
 /* ------------------------------------------------------------------ rail -- */
 .rail {
+  --rail-strip: 28px;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: 8;
   display: flex;
-  width: 28px;
+  width: var(--rail-strip);
   overflow: hidden;
   color: var(--rail-ink);
   background: var(--rail-bg);
@@ -504,23 +590,26 @@
   border-left: var(--border-w) solid var(--line);
   transition: width 280ms cubic-bezier(.34, 1.45, .4, 1);
 }
+/* Never narrower than ~360px: below that the panes (and the evidence cards
+   the skills rail hosts) have nowhere to put a chip row. */
 .rail[data-state='open'],
-.rail[data-state='pinned'] { width: min(420px, 45vw); }
+.rail[data-state='pinned'] { width: clamp(360px, 40vw, 460px); }
 /* the tutor gets more room — prose needs a wider measure than a traceback */
 .rail[data-state='open'][data-tab='ask'],
-.rail[data-state='pinned'][data-tab='ask'] { width: min(520px, 55vw); }
+.rail[data-state='pinned'][data-tab='ask'] { width: clamp(360px, 48vw, 560px); }
 .rail[data-state='pinned'] { border-left-color: var(--accent2); }
 
 /* full height so a click anywhere on the strip opens the rail */
 .railStrip {
+  flex: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 9px;
-  width: 28px;
+  gap: var(--s-2);
+  width: 100%;
   height: 100%;
-  padding: 10px 0;
+  padding: var(--s-3) 0;
   background: none;
   border: 0;
 }
@@ -545,7 +634,7 @@
 }
 .railCaption {
   writing-mode: vertical-rl;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -560,15 +649,18 @@
 }
 .railHead {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  padding: 6px 8px;
+  gap: var(--s-1) var(--s-2);
+  padding: var(--s-2);
   flex: none;
+  min-width: 0;
   border-bottom: 2px solid var(--line);
 }
 .railTab {
-  padding: 3px 11px;
-  font-size: 11.5px;
+  flex: none;
+  padding: var(--s-1) var(--s-3);
+  font-size: 12px;
   font-weight: 800;
   background: transparent;
   border: 2px solid transparent;
@@ -580,10 +672,11 @@
   border-color: var(--line);
   color: var(--ink);
 }
-.railSpacer { flex: 1; }
+.railSpacer { flex: 1 1 auto; min-width: 0; }
 .railIcon {
-  width: 22px;
-  height: 22px;
+  flex: none;
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -595,21 +688,29 @@
   color: var(--muted);
 }
 .railIcon:hover { border-color: var(--line); color: var(--ink); }
-.railIcon[data-on='true'] { background: var(--accent2); border-color: var(--line); color: #fff; }
+.railIcon[data-on='true'] { background: var(--accent2); border-color: var(--line); color: var(--on-accent2, #fff); }
 
 .railBody { flex: 1; min-height: 0; display: flex; }
 .railPane { flex: 1; min-width: 0; min-height: 0; flex-direction: column; }
 
 .railRun {
   flex: 1;
+  min-width: 0;
   min-height: 0;
-  overflow: auto;
-  padding: 9px 10px 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--s-3) var(--s-3) var(--s-4);
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   line-height: 1.5;
 }
-.railCmd { color: var(--accent2); font-weight: 700; margin-bottom: 4px; }
+.railCmd {
+  color: var(--accent2);
+  font-weight: 700;
+  margin-bottom: var(--s-2);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 .railOut { white-space: pre-wrap; word-break: break-word; margin: 0; font: inherit; }
 .railErr { color: var(--bad); }
 .railQuiet { color: var(--muted); font-style: italic; }
@@ -617,30 +718,33 @@
 .railIdle { color: var(--muted); font-style: italic; }
 .railFoot {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  padding-top: 8px;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+  padding-top: var(--s-2);
   border-top: 1.5px dashed var(--line);
 }
 .railChip {
-  padding: 1px 9px 2px;
-  font-size: 10.5px;
+  padding: 2px 8px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.04em;
   border: 2px solid var(--line);
   border-radius: 999px;
   background: var(--bad);
-  color: #fff;
+  /* --surface flips light/dark with the scheme exactly as --good and --bad do */
+  color: var(--surface);
 }
 .railChip[data-ok='true'] { background: var(--good); }
-.railDur { font-size: 10.5px; color: var(--muted); }
+.railDur { font-size: 11px; color: var(--muted); }
 
 .railShell {
   flex: 1;
+  min-width: 0;
   min-height: 0;
   width: 100%;
-  padding: 6px 4px 6px 8px;
+  padding: var(--s-2) var(--s-1) var(--s-2) var(--s-2);
   overflow: hidden;
 }
 .railShell .xterm { height: 100%; }
@@ -657,19 +761,20 @@
 
 .askThread {
   flex: 1;
+  min-width: 0;
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  padding: 11px 11px 4px;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-3) var(--s-1);
 }
 
 .askEmpty {
-  margin: 4px 2px;
-  font-size: 12px;
-  line-height: 1.5;
+  margin: var(--s-1) 0;
+  font-size: 12.5px;
+  line-height: 1.55;
   font-style: italic;
   color: var(--muted);
 }
@@ -680,13 +785,15 @@
 
 /* the learner's own words: a sticker chip, loud and short */
 .askBubble {
-  max-width: 86%;
-  padding: 6px 11px 7px;
+  max-width: min(88%, var(--measure));
+  padding: var(--s-2) var(--s-3);
   font-size: 12.5px;
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 600;
   background: var(--accent3);
-  color: var(--on-accent);
+  /* accent3 is a light fill in every scheme (mint's is a warm orange), so its
+     ink is the near-black --on-accent3, never the primary accent's ink. */
+  color: var(--on-accent3, #1b1b1f);
   border: 2px solid var(--line);
   border-radius: var(--radius) var(--radius) 4px var(--radius);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
@@ -697,8 +804,9 @@
 
 /* the tutor: plain prose on the surface, no chrome fighting the words */
 .askMsg[data-role='tutor'] .askMd {
-  max-width: 94%;
-  padding: 7px 11px 8px;
+  max-width: min(94%, var(--measure));
+  min-width: 0;
+  padding: var(--s-2) var(--s-3);
   background: var(--surface);
   border: 2px solid var(--line);
   border-radius: var(--radius) var(--radius) var(--radius) 4px;
@@ -706,7 +814,7 @@
   overflow-wrap: anywhere;
   animation: popIn 260ms cubic-bezier(.34, 1.45, .4, 1);
 }
-.askMd.md { font-size: 12.5px; line-height: 1.5; }
+.askMd.md { font-size: 12.5px; line-height: 1.55; }
 .askMd.md > * + * { margin-top: .6em; }
 .askMd.md p { max-width: none; }
 .askMd.md h1, .askMd.md h2, .askMd.md h3 { font-size: 13.5px; margin-top: .8em; }
@@ -738,24 +846,25 @@
 
 .askFail {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  padding: 6px 9px;
-  font-size: 11.5px;
-  line-height: 1.4;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+  font-size: 12px;
+  line-height: 1.5;
   color: var(--ink);
   background: transparent;
   border: 2px dashed var(--bad);
   border-radius: var(--radius);
 }
-.askFailWhat { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.askFailWhat { flex: 1 1 160px; min-width: 0; overflow-wrap: anywhere; }
 .askRetry {
   flex: none;
-  padding: 2px 10px 3px;
-  font-size: 11px;
+  padding: var(--s-1) var(--s-3);
+  font-size: 11.5px;
   font-weight: 800;
   background: var(--bad);
-  color: #fff;
+  color: var(--surface);
   border: 2px solid var(--line);
   border-radius: 999px;
   transition: transform 180ms cubic-bezier(.34, 1.45, .4, 1);
@@ -766,16 +875,17 @@
   flex: none;
   display: flex;
   align-items: flex-end;
-  gap: 7px;
-  padding: 8px 10px 10px;
+  gap: var(--s-2);
+  min-width: 0;
+  padding: var(--s-2) var(--s-3) var(--s-3);
   border-top: 2px solid var(--line);
 }
 .askInput {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
-  min-height: 30px;
+  min-height: 32px;
   max-height: 84px;
-  padding: 6px 9px;
+  padding: var(--s-2) var(--s-3);
   resize: none;
   overflow-y: auto;
   font-family: var(--font-ui);
@@ -793,13 +903,13 @@
 .askInput:disabled { opacity: 0.55; cursor: progress; }
 .askSend {
   flex: none;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   font-size: 15px;
   font-weight: 900;
   line-height: 1;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent, #fff);
   border: var(--border-w) solid var(--line);
   border-radius: 10px;
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
@@ -816,20 +926,21 @@
   bottom: 0;
   z-index: 30;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  height: 42px;
-  padding: 0 12px;
+  gap: var(--s-2) var(--s-3);
+  min-height: 44px;
+  padding: var(--s-2) var(--s-3);
   background: var(--surface);
   border-top: var(--border-w) solid var(--line);
   font-size: 12.5px;
 }
-.footlight[data-celebrate] { background: var(--accent3); color: #1b1b1f; }
+.footlight[data-celebrate] { background: var(--accent3); color: var(--on-accent3, #1b1b1f); }
 
 .footLamp {
   flex: none;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   padding: 0;
   border-radius: 50%;
   border: var(--border-w) solid var(--line);
@@ -840,13 +951,13 @@
 .footLamp[data-state='hint'] { background: var(--lamp); box-shadow: 0 0 12px 2px var(--lamp); }
 .footLamp[data-state='nudge'] { background: var(--lamp); animation: lampNudge 2s ease-in-out infinite; }
 
+/* guidance is 1-2 kid-simple lines: it WRAPS, it is never clipped */
 .footText {
-  flex: 1;
+  flex: 1 1 220px;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 1.3;
+  max-width: var(--measure);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 .footCaret {
   display: inline-block;
@@ -860,23 +971,29 @@
 
 .footRight {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  flex: none;
+  justify-content: flex-end;
+  gap: var(--s-2) var(--s-3);
+  flex: 0 1 auto;
+  min-width: 0;
+  /* the guidance line is capped at a readable measure, so the persistent
+     facts still ride the right edge instead of floating mid-bar */
+  margin-left: auto;
 }
 .footDone {
-  padding: 4px 12px;
+  padding: var(--s-1) var(--s-3);
   font-size: 11.5px;
   font-weight: 800;
   background: var(--good);
-  color: #fff;
+  color: var(--surface);
   border: var(--border-w) solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
 }
 .footDone:hover { transform: translate(-1px, -1px); }
 .footPending {
-  padding: 3px 10px;
+  padding: var(--s-1) var(--s-3);
   font-size: 11.5px;
   font-weight: 800;
   color: var(--warn);
@@ -885,8 +1002,8 @@
   border-radius: 999px;
 }
 .footExplore {
-  padding: 2px 10px;
-  font-size: 11px;
+  padding: 2px 8px;
+  font-size: 11.5px;
   font-weight: 800;
   color: var(--accent2);
   border: 2px solid var(--accent2);
@@ -895,7 +1012,8 @@
 .footSave {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--s-2);
+  white-space: nowrap;
   font-size: 11.5px;
   color: var(--muted);
 }
@@ -907,6 +1025,73 @@
 }
 .footSave[data-save='saving'] .footSaveDot { background: var(--warn); }
 .footSave[data-save='error'] .footSaveDot { background: var(--bad); }
+
+
+/* ============================================================== responsive ==
+   <=1200  the header labels give up a few characters before anything clips
+   <=1024  the action group drops to a second row (nothing ever overlaps)
+   <=820   the file tree becomes an overlay drawer, the rail a full-width sheet,
+           reading text steps up to 13px
+   <=560   text labels fall off the icon buttons and every control is >=40px
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .wsProject { max-width: 22ch; }
+  .wsMilestone { max-width: 18ch; }
+  .wsFileTag { max-width: 22ch; }
+}
+
+@media (max-width: 1024px) {
+  /* the flexible spacer becomes a full-width line break: everything after it
+     (primer / explore / run / scheme) lands on its own row */
+  .wsGrow { flex: 1 0 100%; height: 0; }
+  .wsProject { max-width: 34ch; }
+  .wsMilestone { max-width: 30ch; }
+  .wsFileTag { max-width: 34ch; }
+}
+
+@media (max-width: 820px) {
+  .wsTree:not(.is-collapsed) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 24;
+    width: min(264px, 76vw);
+    box-shadow: var(--s-1) 0 0 var(--shadow);
+  }
+  .rail { --rail-strip: 36px; }
+  .rail[data-state='open'],
+  .rail[data-state='pinned'],
+  .rail[data-state='open'][data-tab='ask'],
+  .rail[data-state='pinned'][data-tab='ask'] { width: 100%; }
+  .compassStep { flex-basis: 100%; }
+  .railRun,
+  .askEmpty,
+  .askBubble,
+  .askInput,
+  .askMd.md,
+  .footText,
+  .compassDetailText,
+  .treeRow { font-size: 13px; }
+}
+
+@media (max-width: 560px) {
+  .wsLabel { display: none; }
+  /* a small basis keeps the label on the back button's row instead of
+     claiming a whole row of its own */
+  .wsTitle { flex: 1 1 140px; }
+  .wsTop > button,
+  .exploreSwitch { min-height: var(--touch); }
+  .wsBack { width: var(--touch); height: var(--touch); }
+  .railTab,
+  .footDone,
+  .footPending { min-height: var(--touch); }
+  .railIcon { width: var(--touch); height: 36px; }
+  .treeRow { min-height: 36px; align-items: center; }
+  .askSend { width: var(--touch); height: var(--touch); }
+  .askInput { min-height: var(--touch); }
+  .wsFileTag { max-width: 100%; }
+}
 
 /* ---------------------------------------------------------------- motion -- */
 @keyframes breathe {
