@@ -19,7 +19,7 @@ export default function Segbar({
         const cur = current !== undefined && i === Math.min(current, shown - 1) && !on;
         return <i key={i} className={on ? 'on' : cur ? 'cur' : ''} />;
       })}
-      {n > max && <b style={{ fontSize: 11, marginLeft: 4, color: 'var(--muted)' }}>+{n - max}</b>}
+      {n > max && <b>+{n - max}</b>}
     </span>
   );
 }

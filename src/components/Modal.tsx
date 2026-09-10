@@ -40,17 +40,16 @@ export default function Modal({
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     };
     document.addEventListener('keydown', onKey, true);
-    const t = window.setTimeout(() => {
-      const el = panelRef.current?.querySelector<HTMLElement>(
-        'textarea, input, button:not([data-autofocus-skip])',
-      );
-      el?.focus();
-    }, 30);
+    // Focus lands on the first field synchronously: the portal's DOM already
+    // exists by the time this effect runs, so no timer is needed (a timer also
+    // let a fast typist lose their first keystrokes).
+    panelRef.current?.querySelector<HTMLElement>(
+      'textarea, input, button:not([data-autofocus-skip])',
+    )?.focus({ preventScroll: true });
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', onKey, true);
-      window.clearTimeout(t);
       document.body.style.overflow = prevOverflow;
       (openerRef.current as HTMLElement | null)?.focus?.();
     };

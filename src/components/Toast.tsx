@@ -40,7 +40,7 @@ export function ToastStack({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: 
     <div className="toast-stack" role="status" aria-live="polite" data-testid="toasts">
       {toasts.map((t) => (
         <div key={t.id} className={`toast toast-${t.kind}`} data-testid={`toast-${t.kind}`}>
-          <span>
+          <span className="toast-msg">
             <b>{t.title}</b>
             {t.body}
           </span>

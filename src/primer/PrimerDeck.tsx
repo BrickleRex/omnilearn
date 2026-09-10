@@ -282,7 +282,7 @@ export default function PrimerDeck({
       {/* ---- persistent concept checklist ---- */}
       <footer className="deck-foot card">
         <div className="deck-foot-head">
-          <span className="label" style={{ margin: 0 }}>What counts as enough</span>
+          <span className="label label-flush">What counts as enough</span>
           <span className="chip chip-quiet">
             {concepts.filter((c) => c.cleared).length}/{concepts.length}
           </span>

@@ -128,7 +128,6 @@ export default function MilestoneFlow({
       </div>
       <div className="ms-crumbs">
         <span className="ms-project">{project?.name ?? '…'}</span>
-        <span className="ms-sep" aria-hidden="true">/</span>
         <strong className="ms-milestone">{milestone?.title ?? milestoneId}</strong>
       </div>
       <div className="ms-top-right">

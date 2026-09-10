@@ -247,7 +247,7 @@ export default function NewProjectModal({
             {seed && (
               <p className="np-seed-note">
                 <span className="chip chip-accent2 chip-tilt">seed</span>
-                &nbsp;riffing on: <em>{seed.length > 90 ? `${seed.slice(0, 90)}…` : seed}</em>
+                &nbsp;riffing on: <em>{seed}</em>
               </p>
             )}
             <ul className="np-ideas">
@@ -322,7 +322,7 @@ export default function NewProjectModal({
         </label>
 
         <div className="np-rows-head">
-          <span className="label" style={{ margin: 0 }}>Milestones</span>
+          <span className="label label-flush">Milestones</span>
           <span className="chip chip-quiet">{rows.length}</span>
         </div>
 

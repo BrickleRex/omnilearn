@@ -9,10 +9,36 @@
 
    ADDITIVE tokens introduced here (safe to use, never removed):
      --on-accent   ink that sits on top of an accent fill (always near-black)
+     --on-accent2  ink on the accent2 fill
+     --on-accent3  ink on the accent3 fill (near-black in every scheme)
      --scrim       modal scrim color
      --ring        focus ring color
      --shadow-soft a second, quieter offset color (nested/inset furniture)
+     --s-1..--s-7  the 4px spacing scale (4/8/12/16/24/32/48)
+     --measure     max line length on reading surfaces (70ch)
+     --touch       minimum interactive control height on touch widths (40px)
+   Shared utility classes: .chip-row .chip-nowrap .chip-clip .chip-sm .btn-row
+     .btn-nowrap .wrap-any .label-flush
    ========================================================================== */
+
+/* ----------------------------------------------------------------------------
+   SPACING / SIZING SCALE (additive, scheme-independent). 4px grid.
+   Shared by core, skills and workspace modules — names are load-bearing.
+     --s-1..--s-7  4 / 8 / 12 / 16 / 24 / 32 / 48
+     --measure     max line length for reading surfaces
+     --touch       minimum interactive control height on touch widths
+   -------------------------------------------------------------------------- */
+:root {
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --measure: 70ch;
+  --touch: 40px;
+}
 
 :root, :root[data-scheme='sunshower'] {
   --ground: #f2efe8;      /* app background */
@@ -54,6 +80,8 @@
 
   /* additive */
   --on-accent: #1b1b1f;
+  --on-accent2: #fffdf6;   /* ink on the accent2 fill */
+  --on-accent3: #1b1b1f;   /* ink on the accent3 fill — always near-black */
   --scrim: rgba(27, 27, 31, 0.44);
   --ring: #2b50ff;
   --shadow-soft: rgba(27, 27, 31, 0.28);
@@ -93,6 +121,8 @@
   --rail-ink: #efede6;
   --lamp: #f0b429;
   --on-accent: #14151a;
+  --on-accent2: #14151a;
+  --on-accent3: #14151a;
   --scrim: rgba(6, 7, 9, 0.62);
   --ring: #ffd34d;
   --shadow-soft: rgba(0, 0, 0, 0.5);
@@ -135,6 +165,8 @@
   --rail-ink: #e7ebf7;
   --lamp: #ffc700;
   --on-accent: #0d0e12;
+  --on-accent2: #0d0e12;
+  --on-accent3: #0d0e12;
   --scrim: rgba(4, 4, 8, 0.66);
   --ring: #3ddc97;
   --shadow-soft: rgba(0, 0, 0, 0.55);
@@ -176,6 +208,8 @@
   --rail-ink: #1e2521;
   --lamp: #d08a12;
   --on-accent: #fbfdfb;
+  --on-accent2: #fbfdfb;
+  --on-accent3: #1b1b1f;   /* mint accent3 is a warm orange: near-black ink */
   --scrim: rgba(30, 37, 33, 0.4);
   --ring: #3b6ce8;
   --shadow-soft: rgba(30, 37, 33, 0.24);
@@ -208,6 +242,11 @@ h2 { font-size: clamp(20px, 3vw, 26px); }
 h3 { font-size: 18px; }
 a { color: var(--accent2); }
 button, input, textarea, select { font: inherit; color: inherit; }
+/* Nothing truncates: labels wrap rather than clip. Opt out with .btn-nowrap. */
+button, .btn { white-space: normal; }
+button.btn-nowrap, .btn-nowrap { white-space: nowrap; }
+/* Long unbroken strings (urls, slugs, identifiers) never widen their box. */
+.wrap-any { overflow-wrap: anywhere; min-width: 0; }
 ::selection { background: var(--accent3); color: #1b1b1f; }
 
 :focus-visible {
@@ -307,7 +346,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -0.01em;
-  padding: 9px 16px;
+  padding: var(--s-2) var(--s-4);
+  min-height: 36px;
   border: var(--border-w) solid var(--line);
   border-radius: calc(var(--radius) - 3px);
   background: var(--btn-bg);
@@ -328,8 +368,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 .btn:disabled { opacity: .5; cursor: not-allowed; }
 .btn-primary { --btn-bg: var(--accent); --btn-ink: var(--on-accent); }
-.btn-secondary { --btn-bg: var(--accent2); --btn-ink: var(--surface); }
-.btn-highlight { --btn-bg: var(--accent3); --btn-ink: #1b1b1f; }
+.btn-secondary { --btn-bg: var(--accent2); --btn-ink: var(--on-accent2, var(--surface)); }
+.btn-highlight { --btn-bg: var(--accent3); --btn-ink: var(--on-accent3, #1b1b1f); }
 .btn-ghost {
   --btn-bg: transparent;
   box-shadow: none;
@@ -342,29 +382,50 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 .btn-ghost:active:not(:disabled) { box-shadow: none; transform: scale(.97); }
 .btn-danger { --btn-bg: var(--bad); --btn-ink: var(--surface); }
-.btn-sm { padding: 5px 10px; font-size: 12.5px; border-radius: 8px; }
-.btn-lg { padding: 13px 24px; font-size: 16px; }
-.btn-icon { padding: 6px; width: 32px; height: 32px; border-radius: 9px; }
+.btn-sm { padding: var(--s-1) var(--s-3); font-size: 13px; border-radius: 8px; min-height: 28px; }
+.btn-lg { padding: var(--s-3) var(--s-5); font-size: 16px; min-height: 44px; }
+.btn-icon { padding: var(--s-1); width: 32px; height: 32px; min-height: 0; border-radius: 9px; flex: none; }
+/* a row of buttons shares one height */
+.btn-row { display: flex; flex-wrap: wrap; align-items: stretch; gap: var(--s-2); }
+.btn-row > .btn { min-height: var(--touch); }
 
 /* --- sticker chips --- */
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--s-1);
   font-size: 12px;
+  line-height: 1.35;
   font-weight: 700;
   letter-spacing: -0.005em;
-  padding: 3px 10px;
+  padding: var(--s-1) var(--s-3);
   border: 2px solid var(--line);
   border-radius: 999px;
   background: var(--surface);
   color: var(--ink);
   box-shadow: 2px 2px 0 var(--shadow);
-  white-space: nowrap;
+  /* chips WRAP by default; a chip that must stay on one line opts in below */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  min-width: 0;
+  text-align: left;
 }
+.chip-sm { padding: 2px var(--s-2); font-size: 11.5px; }
+.chip-nowrap { white-space: nowrap; overflow-wrap: normal; }
+/* a truncating chip (decorative header furniture only) must expand on hover/focus */
+.chip-clip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+.chip-clip:hover, .chip-clip:focus-visible { overflow: visible; white-space: normal; overflow-wrap: anywhere; }
+/* rows of chips: consistent gap, always wrap */
+.chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2); min-width: 0; }
 .chip-accent  { background: var(--accent);  color: var(--on-accent); }
-.chip-accent2 { background: var(--accent2); color: var(--surface); }
-.chip-accent3 { background: var(--accent3); color: #1b1b1f; }
+.chip-accent2 { background: var(--accent2); color: var(--on-accent2, var(--surface)); }
+.chip-accent3 { background: var(--accent3); color: var(--on-accent3, #1b1b1f); }
 .chip-quiet   { background: var(--surface2); color: var(--muted); box-shadow: none; border-color: var(--muted); }
 .chip-good    { background: var(--good); color: var(--surface); }
 .chip-tilt    { transform: rotate(-1.6deg); }
@@ -390,8 +451,9 @@ button, input, textarea, select { font: inherit; color: inherit; }
   color: var(--ink);
   border: var(--border-w) solid var(--line);
   border-radius: calc(var(--radius) - 3px);
-  padding: 10px 12px;
+  padding: var(--s-3) var(--s-4);
   font-size: 15px;
+  line-height: 1.5;
   box-shadow: inset 2px 2px 0 var(--shadow-soft);
   transition: box-shadow .16s var(--ease);
 }
@@ -412,14 +474,16 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .input-bare:hover { border-color: var(--muted); }
 .input-bare:focus { outline: none; border-color: var(--ring); border-style: solid; background: var(--surface); }
 
+.label-flush { margin-bottom: 0; }
 .label {
   display: block;
-  font-size: 11.5px;
+  font-size: 12px;
+  line-height: 1.35;
   font-weight: 800;
   letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 6px;
+  margin-bottom: var(--s-2);
 }
 
 /* --- modal --- */
@@ -432,9 +496,10 @@ button, input, textarea, select { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: var(--s-5);
   animation: pl-fade .18s var(--ease) both;
   overflow: auto;
+  overscroll-behavior: contain;
 }
 .modal-panel {
   position: relative;
@@ -452,20 +517,29 @@ button, input, textarea, select { font: inherit; color: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
   border-bottom: var(--border-w) solid var(--line);
   background: var(--surface2);
   border-radius: calc(var(--radius) + 2px) calc(var(--radius) + 2px) 0 0;
+  flex: none;
 }
-.modal-head h2 { font-size: 19px; }
-.modal-body { padding: 18px 16px; overflow: auto; }
+.modal-head h2 { font-size: 19px; line-height: 1.25; min-width: 0; overflow-wrap: anywhere; }
+.modal-body {
+  padding: var(--s-5) var(--s-4);
+  overflow: auto;
+  overscroll-behavior: contain;
+  min-width: 0;
+  min-height: 0;
+}
 .modal-foot {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
-  padding: 13px 16px;
+  flex-wrap: wrap;
+  flex: none;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-4);
   border-top: var(--border-w) solid var(--line);
   background: var(--surface2);
   border-radius: 0 0 calc(var(--radius) + 2px) calc(var(--radius) + 2px);
@@ -474,19 +548,20 @@ button, input, textarea, select { font: inherit; color: inherit; }
 /* --- toasts --- */
 .toast-stack {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: var(--s-4);
+  bottom: var(--s-4);
   z-index: 120;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: min(380px, calc(100vw - 36px));
+  gap: var(--s-2);
+  width: min(380px, calc(100vw - var(--s-6)));
 }
 .toast {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 11px 12px 11px 14px;
+  gap: var(--s-2);
+  padding: var(--s-3) var(--s-3) var(--s-3) var(--s-4);
+  min-width: 0;
   background: var(--surface);
   border: var(--border-w) solid var(--line);
   border-left: 8px solid var(--accent);
@@ -499,25 +574,29 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .toast-error { border-left-color: var(--bad); }
 .toast-good  { border-left-color: var(--good); }
 .toast-info  { border-left-color: var(--accent2); }
-.toast b { display: block; font-size: 11.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.toast b { display: block; font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.toast-msg { min-width: 0; overflow-wrap: anywhere; line-height: 1.45; }
 .toast-x {
   margin-left: auto;
+  flex: 0 0 auto;
   background: none;
   border: 0;
   cursor: pointer;
   color: var(--muted);
   font-size: 16px;
   line-height: 1;
-  padding: 2px 4px;
+  padding: var(--s-1);
 }
 .toast-x:hover { color: var(--ink); }
 
 /* --- segmented progress --- */
-.segbar { display: inline-flex; align-items: center; gap: 3px; }
+.segbar { display: inline-flex; align-items: center; flex-wrap: wrap; gap: var(--s-1); max-width: 100%; }
+.segbar b { font-size: 12px; margin-left: var(--s-1); color: var(--muted); }
 .segbar i {
   display: block;
-  width: 15px;
-  height: 11px;
+  flex: none;
+  width: 16px;
+  height: 12px;
   border: 2px solid var(--line);
   border-radius: 3px;
   background: var(--surface2);
@@ -552,10 +631,10 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 /* --- rendered markdown (primer cards) --- */
-.md { font-size: 15.5px; line-height: 1.62; }
+.md { font-size: 15.5px; line-height: 1.55; max-width: var(--measure); overflow-wrap: anywhere; min-width: 0; }
 .md > * + * { margin-top: .8em; }
-.md h1, .md h2, .md h3 { font-size: 19px; margin-top: 1.1em; }
-.md p { max-width: 68ch; }
+.md h1, .md h2, .md h3 { font-size: 19px; line-height: 1.25; margin-top: 1.1em; }
+.md p { max-width: var(--measure); }
 .md ul, .md ol { padding-left: 1.3em; }
 .md li + li { margin-top: .3em; }
 .md code {
@@ -567,25 +646,27 @@ button, input, textarea, select { font: inherit; color: inherit; }
   padding: 0 5px;
 }
 .md pre {
+  max-width: 100%;
   background: var(--code-bg);
   color: var(--code-ink);
   border: var(--border-w) solid var(--line);
   border-radius: calc(var(--radius) - 4px);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
-  padding: 12px 14px;
+  padding: var(--s-3) var(--s-4);
   overflow-x: auto;
 }
 .md pre code { background: none; border: 0; padding: 0; font-size: 13.5px; }
 .md blockquote {
   border-left: 6px solid var(--accent3);
-  padding-left: 12px;
+  padding-left: var(--s-3);
   color: var(--muted);
   font-style: italic;
 }
 .md strong { font-weight: 800; }
 .md a { text-underline-offset: 3px; }
 .md table { border-collapse: collapse; }
-.md th, .md td { border: 2px solid var(--line); padding: 4px 8px; }
+.md th, .md td { border: 2px solid var(--line); padding: var(--s-1) var(--s-2); }
+.md .table-wrap, .md-table-wrap { overflow-x: auto; max-width: 100%; }
 
 /* --- svg figure frame --- */
 .figure {
@@ -595,14 +676,15 @@ button, input, textarea, select { font: inherit; color: inherit; }
   background: var(--surface2);
   border: var(--border-w) solid var(--line);
   border-radius: calc(var(--radius) - 2px);
-  padding: 12px;
+  padding: var(--s-3);
+  max-width: 100%;
   overflow: hidden;
 }
 .figure svg { max-width: 100%; height: auto; display: block; }
 
 /* --- playroom loader --- */
-.loader { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 28px 10px; }
-.loader-blocks { display: flex; gap: 8px; }
+.loader { display: flex; flex-direction: column; align-items: center; gap: var(--s-4); padding: var(--s-6) var(--s-3); }
+.loader-blocks { display: flex; gap: var(--s-2); }
 .loader-blocks i {
   width: 20px; height: 20px;
   border: var(--border-w) solid var(--line);
@@ -617,6 +699,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .loader-copy {
   font-weight: 700;
   font-size: 15px;
+  line-height: 1.45;
+  max-width: 46ch;
   color: var(--muted);
   text-align: center;
   min-height: 1.5em;
@@ -638,4 +722,46 @@ button, input, textarea, select { font: inherit; color: inherit; }
     transparent 0%, var(--accent) 25%, var(--accent3) 50%, var(--accent2) 75%, transparent 100%);
   background-size: 240% 100%;
   animation: pl-sheen 1.6s linear infinite;
+}
+
+
+/* ============================================================================
+   TOUCH / NARROW WIDTHS — shared floor for every module
+   ========================================================================== */
+@media (max-width: 820px) {
+  .btn { min-height: var(--touch); }
+  .modal-scrim { padding: var(--s-3); }
+  .modal-body { padding: var(--s-4); }
+  .btn-sm { min-height: 32px; }
+  .btn-icon { width: var(--touch); height: var(--touch); }
+  /* 16px avoids the iOS focus-zoom */
+  .input, .textarea, input, textarea, select { font-size: 16px; }
+}
+
+
+/* ============================================================================
+   TOKEN GATE (network-exposed login)
+   ========================================================================== */
+.gate { min-height: 100%; display: grid; place-items: center; padding: var(--s-5) var(--s-4); }
+.gate-card { width: min(400px, 100%); padding: var(--s-5); display: grid; gap: var(--s-3); }
+.gate-card h1 { font-size: clamp(24px, 5vw, 30px); }
+.gate-card p { color: var(--muted); line-height: 1.5; overflow-wrap: anywhere; }
+.gate-card code { font-family: var(--font-mono); font-size: .92em; overflow-wrap: anywhere; }
+.gate-bad { color: var(--bad); font-size: 13px; font-weight: 700; }
+.gate-card .btn { width: 100%; min-height: var(--touch); }
+
+/* ============================================================================
+   NARROW MODAL: the footer must stay on screen, the body takes the scroll
+   ========================================================================== */
+@media (max-width: 560px) {
+  .modal-scrim { padding: var(--s-2); align-items: flex-start; }
+  .modal-panel { max-height: calc(100vh - var(--s-4)); }
+  .modal-foot { justify-content: stretch; }
+  .modal-foot > .btn { flex: 1 1 auto; }
+  .toast-stack {
+    right: var(--s-2);
+    left: var(--s-2);
+    bottom: var(--s-2);
+    width: auto;
+  }
 }
