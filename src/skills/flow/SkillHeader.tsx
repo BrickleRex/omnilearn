@@ -1,5 +1,6 @@
 // One row on every skill screen: where you are, how many reps you have, and the
 // two escape hatches (drills / make) that are never hidden.
+import { useEffect, useRef } from 'react';
 import type { SkillProject } from '../../../shared/skills';
 import { useNav, type SkillScreen } from '../../nav';
 import { BEATS, beatIndex, pickModule, repCount, targetLine } from './util';
@@ -14,6 +15,26 @@ export default function SkillHeader({
   const noCourse = !mod;
   const aim = targetLine(project.frame?.target);
   const tip = 'Once research is done this opens up.';
+  const topRef = useRef<HTMLElement | null>(null);
+
+  // The header wraps into two or three rows as the width falls away; anything
+  // that has to sit under it (the sticky evidence panel, scroll-into-view
+  // margins) reads its real height from --sk-top-h.
+  useEffect(() => {
+    const el = topRef.current;
+    if (!el) return undefined;
+    const set = () => {
+      const h = Math.round(el.getBoundingClientRect().height);
+      if (h > 0) document.documentElement.style.setProperty('--sk-top-h', `${h}px`);
+    };
+    set();
+    const ro = new ResizeObserver(set);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      document.documentElement.style.removeProperty('--sk-top-h');
+    };
+  }, []);
 
   const jump = (s: SkillScreen) => {
     if (!mod) return;
@@ -21,7 +42,7 @@ export default function SkillHeader({
   };
 
   return (
-    <header className="sk-top scanlines">
+    <header className="sk-top scanlines" ref={topRef}>
       <button
         className="btn btn-ghost btn-sm sk-back"
         data-testid="back-to-library"
@@ -30,10 +51,10 @@ export default function SkillHeader({
         ← Library
       </button>
 
-      <b className="sk-name" title={project.name}>{project.name}</b>
+      <b className="sk-name">{project.name}</b>
 
       {aim && (
-        <span className="sk-target" data-testid="skill-target" title={`aimed at ${aim}`}>
+        <span className="sk-target" data-testid="skill-target" title={`aimed at ${aim}`} tabIndex={0}>
           → {aim}
         </span>
       )}

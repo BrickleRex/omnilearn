@@ -105,8 +105,12 @@ export default function SkillMap({
             Unticking a parent takes its sub-angles with it.
           </p>
           <p className="sk-quiet sk-scope-legend">
-            <span className="sk-scope is-niche">niche</span> angles are about your exact target.
-            <span className="sk-scope is-general">general</span> ones are the rules of the craft, applied to it.
+            <span className="sk-scope-legend-item">
+              <span className="sk-scope is-niche">niche</span> angles are about your exact target.
+            </span>
+            <span className="sk-scope-legend-item">
+              <span className="sk-scope is-general">general</span> ones are the rules of the craft, applied to it.
+            </span>
           </p>
         </div>
         <div className="sk-est card" data-testid="map-est">

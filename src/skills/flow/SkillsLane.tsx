@@ -109,7 +109,7 @@ export default function SkillsLane({ onNew }: { onNew: () => void }) {
             {skills.map((s, i) => (
               <li
                 key={s.id}
-                className="card card-lift lib-card anim-rise"
+                className="card card-lift lib-card sk-lane-card anim-rise"
                 style={{ animationDelay: `${Math.min(i, 8) * 45}ms` }}
                 data-testid={`skill-card-${s.id}`}
               >

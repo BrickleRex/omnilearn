@@ -47,7 +47,7 @@ function Meter({ label, value }: { label: string; value: number }) {
   const v = Math.max(0, Math.min(1, value ?? 0));
   return (
     <span className="sk-meter" title={`${label} ${pct(v)}`}>
-      <b>{label[0]}</b>
+      <b>{label}</b>
       <i><em style={{ width: `${v * 100}%` }} /></i>
     </span>
   );
@@ -69,8 +69,8 @@ function SpecBadge({ spec, small }: { spec: Specificity; small?: boolean }) {
 function SourceRow({ s }: { s: SourceRef }) {
   return (
     <li className="sk-src">
-      <span className="sk-kind" data-kind={s.kind}>{KIND_TAG[s.kind] ?? 'OTH'}</span>
-      <a className="sk-src-title" href={s.url} target="_blank" rel="noreferrer noopener" title={s.title}>{s.title}</a>
+      <span className="sk-kind" data-kind={s.kind} title={KIND_LABEL[s.kind] ?? 'other'}>{KIND_TAG[s.kind] ?? 'OTH'}</span>
+      <a className="sk-src-title" href={s.url} target="_blank" rel="noreferrer noopener">{s.title}</a>
       <span className="sk-src-meters">
         {s.specificity && <SpecBadge spec={s.specificity} small />}
         <Meter label="rep" value={s.reputation} />
@@ -208,9 +208,13 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
           <table className="sk-grid" data-testid="evidence-grid">
             <thead>
               <tr>
-                <th className="sk-grid-corner">claim</th>
-                <th className="sk-grid-kind" title="how close to your target">fit</th>
-                {kinds.map((k) => <th key={k} className="sk-grid-kind">{KIND_LABEL[k]}</th>)}
+                <th className="sk-grid-corner" scope="col">claim</th>
+                <th className="sk-grid-kind" scope="col" title="how close to your target">fit</th>
+                {kinds.map((k) => (
+                  <th key={k} className="sk-grid-kind" scope="col" title={`${KIND_LABEL[k]} sources`} aria-label={KIND_LABEL[k]}>
+                    <span className="sk-kind" data-kind={k} aria-hidden="true">{KIND_TAG[k]}</span>
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -246,6 +250,13 @@ export default function Evidence({ claims, sources, focusClaimId, view, onView }
               ))}
             </tbody>
           </table>
+          <p className="sk-grid-kinds">
+            {kinds.map((k) => (
+              <span key={k} className="sk-grid-kinds-item">
+                <span className="sk-kind" data-kind={k}>{KIND_TAG[k]}</span> {KIND_LABEL[k]}
+              </span>
+            ))}
+          </p>
           <p className="sk-legend">
             <span className="sk-fit-dot is-niche" /> niche
             <span className="sk-fit-dot is-adjacent" /> adjacent

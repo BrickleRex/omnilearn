@@ -1,8 +1,9 @@
 // Claim chips: the receipts. Every taught line and every drill answer carries the
 // claims it rests on; tapping one opens the evidence beside it.
+// The label sits on its own line above the list, and every chip shows the whole
+// claim — a receipt you cannot read is not a receipt.
 import type { Claim, SourceRef } from '../../../shared/skills';
 import Evidence from '../evidence/Evidence';
-import { shorten } from './util';
 
 export function ClaimChips({
   claimIds, claims, onOpen, label = 'why we say that',
@@ -12,20 +13,24 @@ export function ClaimChips({
   return (
     <div className="sk-chips">
       <span className="sk-chips-label">{label}</span>
-      {found.map((c) => (
-        <button
-          key={c.id}
-          type="button"
-          className={`sk-chip-claim is-${c.verdict}${c.specificity === 'niche' ? ' is-niche' : ''}`}
-          data-testid={`claim-chip-${c.id}`}
-          title={c.specificity === 'niche' ? `${c.text} — about your exact target` : c.text}
-          onClick={() => onOpen(c.id)}
-        >
-          {c.specificity === 'niche' && <span className="sk-chip-niche" title="about your exact target">● niche</span>}
-          <span className="sk-chip-stamp">{c.verdict}</span>
-          <span className="sk-chip-text">{shorten(c.text, 42)}</span>
-        </button>
-      ))}
+      <div className="sk-chips-row">
+        {found.map((c) => (
+          <button
+            key={c.id}
+            type="button"
+            className={`sk-chip-claim is-${c.verdict}${c.specificity === 'niche' ? ' is-niche' : ''}`}
+            data-testid={`claim-chip-${c.id}`}
+            title={c.specificity === 'niche' ? 'about your exact target — open the evidence' : 'open the evidence'}
+            onClick={() => onOpen(c.id)}
+          >
+            <span className="sk-chip-badges">
+              {c.specificity === 'niche' && <span className="sk-chip-niche" title="about your exact target">● niche</span>}
+              <span className="sk-chip-stamp">{c.verdict}</span>
+            </span>
+            <span className="sk-chip-text">{c.text}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
